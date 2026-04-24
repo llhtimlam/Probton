@@ -1,118 +1,153 @@
-# gf180mcu Project Template
+# chipathon-2026-gf180mcu-padring
 
-Project template for wafer.space MPW runs using the gf180mcu PDK.
+Chipathon 2026 workshop fork of the wafer-space `gf180mcu-project-template`.
+Adds a new LibreLane slot, `workshop`, that mirrors Juan Moya's
+standalone workshop padring as a native LibreLane slot definition so
+participants can take the flow all the way to GDS with the stock
+template Makefile.
 
-## Prerequisites
+No PRs are planned against upstream; all chipathon-specific material
+stays in this fork.
 
-We use a custom fork of the [gf180mcuD PDK variant](https://github.com/wafer-space/gf180mcu) until all changes have been upstreamed.
+## Credits
 
-To clone the latest PDK version, simply run `make clone-pdk`.
+This repository is a **derivation**. The template, Nix flake, and
+LibreLane flow are the work of Leo Moser and the wafer-space
+contributors; the workshop pad layout is a port of Juan Moya's
+`padring_gf180`. Both are Apache-2.0.
 
-In the next step, install LibreLane by following the Nix-based installation instructions: https://librelane.readthedocs.io/en/latest/installation/nix_installation/index.html
+- Upstream template — https://github.com/wafer-space/gf180mcu-project-template
+  pinned at commit `8bd0f6ff28947bf222c5288343f8f3ee1fc04632`
+  (`chore: update flake to librelane 3.0`, 2026-03-26).
+- Workshop pad layout — https://github.com/JuanMoya/padring_gf180
+  (`Workshop_CASS/padring/workshop_padring.cfg`).
 
-## Implement the Design
+See `CREDITS.md` for the per-artifact attribution and `NOTICE` for
+the formal Apache-2.0 notice.
 
-This repository contains a Nix flake that provides a shell with the [`leo/gf180mcu`](https://github.com/librelane/librelane/tree/leo/gf180mcu) branch of LibreLane.
+## What this fork changes vs upstream
 
-Simply run `nix-shell` in the root of this repository.
+Exactly 6 files (one commit on top of pinned upstream):
 
-> [!NOTE]
-> Since we are working on a branch of LibreLane, OpenROAD needs to be compiled locally. This will be done automatically by Nix, and the binary will be cached locally. 
+| File | Change |
+|------|--------|
+| `src/slot_defines.svh` | add `SLOT_WORKSHOP` block (NUM_INPUT=1, BIDIR=20, ANALOG=60, 4/4 DVDD/DVSS) |
+| `src/chip_core.sv` | replace example counter with a 20-bit counter driving the 20 bidir pads; analog pads float through |
+| `librelane/slots/slot_workshop.yaml` | **new** slot (DIE 2935x2935 um, CORE 2051x2051 um, VERILOG_DEFINES=SLOT_WORKSHOP) |
+| `librelane/config.yaml` | drop SRAM `MACROS` entry and PDN macro connections - not used in this slot |
+| `librelane/pdn_cfg.tcl` | drop SRAM-specific `define_pdn_grid` blocks |
+| `Makefile` | `AVAILABLE_SLOTS += workshop` |
 
-With this shell enabled, run the implementation:
+`git log upstream/main..main` shows the single derivation commit;
+`git diff upstream/main..main` shows the delta.
 
-```
-make librelane
-```
+## Workshop slot - pad map at a glance
 
-## View the Design
+- Die: **2935 x 2935 um** (same as Juan Moya's reference).
+- **60 x analog** (`gf180mcu_fd_io__asig_5p0`)
+- **20 x bidir** (`gf180mcu_fd_io__bi_24t`)
+- **4 x DVDD** + **4 x DVSS** (`gf180mcu_ws_io__dvdd` / `__dvss`)
+- **clk_pad** (`gf180mcu_fd_io__in_s`), **rst_n_pad** (`gf180mcu_fd_io__in_c`)
+- **1 x input_pad** - Yosys zero-width-vector workaround; chipathon
+  participants can ignore it (documented in `docs/workshop-slot-spec.md`).
+- **4 x corner** (`gf180mcu_fd_io__cor`, inserted by LibreLane).
 
-After completion, you can view the design using the OpenROAD GUI:
+Pad ordering in `PAD_NORTH` and `PAD_WEST` is **reversed** relative to
+Juan Moya's standalone `workshop_padring.cfg` because LibreLane reads
+pad lists clockwise from the SW corner. Full pad-by-pad mapping in
+`docs/workshop-slot-spec.md`.
 
-```
-make librelane-openroad
-```
+## Quickstart
 
-Or using KLayout:
+### Build the workshop slot (native, nix-shell)
 
-```
-make librelane-klayout
-```
-
-## Verification and Simulation
-
-We use [cocotb](https://www.cocotb.org/), a Python-based testbench environment, for the verification of the chip.
-The underlying simulator is Icarus Verilog (https://github.com/steveicarus/iverilog).
-
-The testbench is located in `cocotb/chip_top_tb.py`. To run the RTL simulation, run the following command:
-
-```
-make sim
-```
-
-To run the GL (gate-level) simulation, run the following command:
-
-```
-make sim-gl
-```
-
-> [!NOTE]
-> You need to have the latest implementation of your design in the `final/` folder. After a run has completed without errors, the final views will be copied to `final/`.
-
-In both cases, a waveform file will be generated under `cocotb/sim_build/chip_top.fst`.
-You can view it using a waveform viewer, for example, [GTKWave](https://gtkwave.github.io/gtkwave/).
-
-```
-make sim-view
-```
-
-You can now update the testbench according to your design.
-
-## Implementing Your Own Design
-
-The source files for this template can be found in the `src/` directory. `chip_top.sv` defines the top-level ports and instantiates `chip_core`, chip ID (QR code) and the wafer.space logo. To allow for the default bonding setup, do not change the number of pads in order to keep the original bondpad positions. To be compatible with the default breakout PCB, do not change any of the power or ground pads. However, you can change the type of the signal pads, e.g. to bidirectional, input-only or e.g. analog pads. The template provides the `NUM_INPUT` and `NUM_BIDIR` parameters for this purpose.
-
-The actual pad positions are defined in the LibreLane configuration file under `librelane/config.yaml`. The variables `PAD_SOUTH`/`PAD_EAST`/`PAD_NORTH`/`PAD_WEST` determine the respective pad placement. The LibreLane configuration also allows you to customize the flow (enable or disable steps), specify the source files, set various variables for the steps, and instantiate macros. For more information about the configuration, please refer to the LibreLane documentation: https://librelane.readthedocs.io/en/latest/
-
-To implement your own design, simply edit `chip_core.sv`. The `chip_core` module receives the clock and reset, as well as the signals from the pads defined in `chip_top`. As an example, a 42-bit wide counter is implemented.
-
-> [!NOTE]
-> For more comprehensive SystemVerilog support, enable the `USE_SLANG` variable in the LibreLane configuration.
-
-## Choosing a Different Slot Size
-
-The template supports the following slot sizes: `1x1`, `0p5x1`, `1x0p5`, `0p5x0p5`.
-By default, the design is implemented using the `1x1` slot definition.
-
-To select a different slot size, simply set the `SLOT` environment variable.
-This can be done when invoking a make target:
-
-```
-SLOT=0p5x0p5 make librelane
+```bash
+git clone <this-repo-url> chipathon-2026-gf180mcu-padring
+cd chipathon-2026-gf180mcu-padring
+nix-shell               # provides LibreLane 3.0.0
+make clone-pdk          # clones wafer-space/gf180mcu @ 1.8.0
+SLOT=workshop make librelane
 ```
 
-Alternatively, you can export the slot size:
+Runtime on a modern laptop: **~2h 15m** for the full signoff run
+(Magic DRC + KLayout DRC + LVS + antenna + STA across 3 corners).
+
+Final artifacts land in `final/`:
+- `final/gds/chip_top.gds` (~85 MB)
+- `final/metrics.csv` (signoff metrics)
+- `final/*.log` (per-stage logs)
+
+### Inspect a built GDS (Docker, hpretl/iic-osic-tools)
+
+`scripts/run_docker_iic.sh` spawns the iic-osic-tools container with
+this repo mounted; inside the container run `klayout final/gds/chip_top.gds`
+or `magic -T .../gf180mcuD.magicrc ...`.
+
+See `docs/reproducing-native.md` and `docs/reproducing-docker.md` for
+the detailed walkthroughs.
+
+### Use the workshop slot for your own RTL
+
+Swap `src/chip_core.sv` with your design, keeping the port list
+(NUM_INPUT=1, NUM_BIDIR=20, NUM_ANALOG=60, clk, rst_n), and re-run
+`SLOT=workshop make librelane`. Padring stays fixed.
+
+## Verification
+
+The repository was validated **end-to-end** against a known-good
+reference build. To re-run the pragmatic check (byte-compare the
+six tracked files against the reference tree):
+
+```bash
+scripts/verify_workshop_slot.sh /path/to/reference/template
+```
+
+The reference build (DRC/LVS/antenna/STA signoff on 2026-04-23 with
+LibreLane 3.0 + wafer-space PDK 1.8.0) is the source of truth for
+"clean". As long as the fork's six files byte-match that reference,
+a fresh build on a compatible host will reproduce the same result.
+
+If you do not have the reference tree, the repo itself is the ground
+truth - this fork *is* those six files.
+
+## Repository layout
 
 ```
-export SLOT=0p5x0p5
+.
+|-- README.md                       # this file
+|-- NOTICE                          # Apache-2.0 attribution
+|-- CREDITS.md                      # detailed credits
+|-- AUTHORS.md                      # copyright holders (upstream + fork)
+|-- LICENSE                         # Apache-2.0
+|-- docs/
+|   |-- workshop-slot-spec.md       # full pad-by-pad mapping
+|   |-- reproducing-native.md       # nix-shell walkthrough
+|   `-- reproducing-docker.md       # iic-osic-tools walkthrough
+|-- examples/
+|   `-- rtl2gds_chipathon_padring.ipynb   # standalone notebook
+|-- scripts/
+|   |-- run_docker_iic.sh           # iic-osic-tools launcher
+|   `-- verify_workshop_slot.sh     # pragmatic end-to-end check
+|-- librelane/
+|   |-- config.yaml                 # top-level LibreLane config (patched)
+|   |-- pdn_cfg.tcl                 # PDN generator (patched)
+|   |-- chip_top.sdc                # upstream, unchanged
+|   `-- slots/
+|       |-- slot_0p5x0p5.yaml       # upstream, unchanged
+|       |-- slot_0p5x1.yaml         # upstream, unchanged
+|       |-- slot_1x0p5.yaml         # upstream, unchanged
+|       |-- slot_1x1.yaml           # upstream, unchanged
+|       `-- slot_workshop.yaml      # new (this fork)
+|-- src/
+|   |-- chip_top.sv                 # upstream, unchanged
+|   |-- chip_core.sv                # patched (counter->bidir)
+|   `-- slot_defines.svh            # patched (SLOT_WORKSHOP)
+|-- Makefile                        # patched (AVAILABLE_SLOTS += workshop)
+`-- (upstream infra: flake.nix, gf180mcu/, ip/, cocotb/, scripts/, ...)
 ```
 
-You can change the slot that is selected by default in the Makefile by editing the value of `DEFAULT_SLOT`.
+## License
 
-## Building a Standalone Padring for Analog Design
-
-To build just the padring without any standard cell rows, digital routing or filler cells, run the following command:
-
-```
-make librelane-padring
-```
-
-It is also possible to build the padring for other slot sizes:
-
-```
-SLOT=0p5x0p5 make librelane-padring
-```
-
-## Precheck
-
-To check whether your design is suitable for manufacturing, run the [gf180mcu-precheck](https://github.com/wafer-space/gf180mcu-precheck) with your layout.
+Apache-2.0, inherited from upstream. See `LICENSE` for the full text,
+`NOTICE` for attribution of third-party material, and `AUTHORS.md`
+for the list of copyright holders.
