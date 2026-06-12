@@ -24,7 +24,7 @@ This offers a low-cost, integrable alternative to proprietary alignment hardware
 
 Size: 1100um x 1100um (estimate) - Block type A
 
-Required pins: 16
+Required pins: 22
 
 <img src="Chart\Optical Probe Station Full Design.png" width="100%" alt="Proposed Chip Architect">
 
@@ -41,13 +41,14 @@ We have created a [GitHub Organization for our team here](https://github.com/llh
 | Name              | GitHub         | Discord       | Email       | Role |
 | ----------------- | -------------- | ------------- | ------------- | ------------- |
 | Tim Lam | @llhtimlam | timlam0531 | llhtimlam@gmail.com | Team Lead |
-| Abraar | @abraaralam | abraaaar | a9raar@gmail.com |
+| Abraar | @abraaralam | abraaaar | a9raar@gmail.com | Analog Design |
 | Belkacem Benadda | @bekaben | belkaem | belkacem.benadda@ieee.org | Analog Design |
 | Nitin Indukuri | @nitin-indukuri | nitin_i | indukuri.nitin@gmail.com | Analog Design |
 | Reza Setiabekti | @rtsetiabekti | rezasetiabekti8375 | rtsetiabekti@gmail.com | Interfacing |
 | Ashmita Saha | @ashmita1509 | ash_1509 | ashmita03saha@gmail.com | Interfacing |
 | Victoria Evelyn Tjhin | @victoriatjhin | vik_lyn_ | tjhinevelyn28@gmail.com | Digital & Analog Design |
-| Annika | @ | anna_b75_06065 |  | Analog Design |
+| Annika Vednere | @anna-vee | anna_b75_06065 | annikav0985@gmail.com | Analog Design |
+| KALAM, Tayeeb Bin | @tayeeb02 | CadMiuM#9906 | tayeebkalam@gmail.com | Analog Design |
 
 ### Simulation result
 
