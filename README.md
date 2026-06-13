@@ -69,7 +69,7 @@ We have created a [GitHub Organization for our team here](https://github.com/llh
 | ----------------- | -------------- | ------------- | ------------- | ------------- |
 | Tim Lam | @llhtimlam | timlam0531 | llhtimlam@gmail.com | Team Lead |
 | Abraar | @abraaralam | abraaaar | a9raar@gmail.com | Analog Design |
-| Belkacem Benadda | @bekaben | belkaem | belkacem.benadda@ieee.org | Analog Design |
+| Belkacem Benadda | @bekaben | belkaem | belkacem.benadda@ieee.org | Digital & Analog Design |
 | Nitin Indukuri | @nitin-indukuri | nitin_i | indukuri.nitin@gmail.com | Analog Design |
 | Reza Setiabekti | @rtsetiabekti | rezasetiabekti8375 | rtsetiabekti@gmail.com | Interfacing |
 | Ashmita Saha | @ashmita1509 | ash_1509 | ashmita03saha@gmail.com | Interfacing |
