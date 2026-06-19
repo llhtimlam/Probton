@@ -2,7 +2,7 @@
 ### [2026 Chipathon SSCS PICO](https://sscs.ieee.org/technical-committees/tc-ose/sscs-pico-design-contest/) - Track B (Circuit for Sensors) - Team B18 Probton
 
 ## Project Description
-Our goal is to develop an open-source ASIC for auto aligner. In our demonstraction we are targeting optical probe stations where it reads photodetector signals, extracts vibration-synchronous alignment error from dither motion, estimates the peak offset, and drives a high speed and accuracy real-time alignment correction.
+Our goal is to develop an open-source ASIC for auto aligner. In our demonstration we are targeting optical probe stations where it reads photodetector signals, extracts vibration-synchronous alignment error from dither motion, estimates the peak offset, and drives a high speed and accuracy real-time alignment correction.
 
 ### Scoll down for more details!
 
