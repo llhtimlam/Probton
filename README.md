@@ -30,6 +30,8 @@ Required pins: 22
 
 <img src="Media\ChipArchitect\Optical Probe Station Full Design.png" width="100%" alt="Proposed Chip Architect">
 
+> For detail on navigating the chip design file, follow the README.md in /scripts folder
+
 ### Simulation result
 
 Convergence Step = 5.7 ± 1.1 @ 1% Transmission loss
