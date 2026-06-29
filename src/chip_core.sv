@@ -105,6 +105,18 @@ module chip_core #(
     //---------------------------------------------------------
     wire analog_readout_input = analog[0];
 
+    digital_signal_processing digital_signal_processing_inst (
+        .clk(clk),
+        .rst_n(rst_n),
+        .state_control(state_machine_dsp),
+        input  wire signed_bit_x,
+        input  wire signed_bit_y,
+        input  wire [7:0] tdc_area_x,
+        input  wire [7:0] tdc_area_y,
+        output wire [1:0] movement_x,
+        output wire [1:0] movement_y
+    )
+
     // Keep synthesis from optimising bidir_in / input_in away.
     logic _unused;
     assign _unused = &{1'b0, bidir_in, input_in};
