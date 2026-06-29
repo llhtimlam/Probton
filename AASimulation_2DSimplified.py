@@ -4,8 +4,8 @@ from matplotlib.animation import FuncAnimation
 
 # ======================== PARAMETERS ============================
 SIM_CYCLES = 100
-MIN_STEP = 0.01
-MAX_STEP = 1.28
+MIN_STEP = 0.0588 * 5
+MAX_STEP = 0.375 * 5
 NOISE_SIGMA = 0.01
 
 TRUE_PEAK_X = 0
@@ -15,12 +15,19 @@ MEMS_AMP_X = 5.0
 MEMS_AMP_Y = 5.0
 FX = 300
 FY = 400
-SAMPLE_RATE = 40000
+SAMPLE_RATE = 2000
 
 START_X = np.random.uniform(-20, 20)
 START_Y = np.random.uniform(-20.0, 20.0)
 
-def simulate_analog_readout(stage_x, stage_y, duration=0.001):
+duration = 0.1   # readout length (0.1 s)
+
+# ---------- Convergence parameters ----------
+STUCK_FLIPS = 5
+CONVERGENCE_FLIPS = 4          # require at least this many consecutive flips AND even
+MAX_REFINE_ITERATIONS = 50     # safety limit (overrides SIM_CYCLES if needed)
+
+def simulate_analog_readout(stage_x, stage_y, duration=duration):
     samples = int(duration * SAMPLE_RATE)
     t = np.linspace(0, duration, samples)
     x_mems = MEMS_AMP_X * np.sin(2 * np.pi * FX * t)
@@ -35,11 +42,9 @@ def simulate_analog_readout(stage_x, stage_y, duration=0.001):
     samples_TX = int(T_X * SAMPLE_RATE)
     samples_TY = int(T_Y * SAMPLE_RATE)
 
-    # Area (mean intensity over one MEMS period) – normalized to [0,1]
     area_x = np.mean(intensity[:samples_TX])
     area_y = np.mean(intensity[:samples_TY])
 
-    # Mixer and sign (direction indicator)
     local_dc_offset_x = np.mean(intensity[:samples_TX])
     local_dc_offset_y = np.mean(intensity[:samples_TY])
     mixer_x = (intensity[:samples_TX] - local_dc_offset_x) * np.sin(2 * np.pi * FX * t[:samples_TX])
@@ -49,7 +54,7 @@ def simulate_analog_readout(stage_x, stage_y, duration=0.001):
     sign_x = 1 if mixer_x[idx_peak_x] > 0 else -1
     sign_y = 1 if mixer_y[idx_peak_y] > 0 else -1
 
-    return area_x, area_y, sign_x, sign_y, t, intensity, x_total, y_total
+    return area_x, area_y, sign_x, sign_y, t, intensity, x_mems, y_mems, x_total, y_total
 
 def move_stage(curr_x, curr_y, step_x, step_y):
     # Simulate mechanical lag
@@ -59,21 +64,61 @@ def move_stage(curr_x, curr_y, step_x, step_y):
     new_y = curr_y + step_y * lag_y
     return new_x, new_y
 
-# ======================== FAIR COMPASS LOOP =====================
+# ==================== AXIS‑SPECIFIC STEP UPDATE ====================
+def update_axis_step(area, prev_area, sign, prev_sign, step, same_sign_count):
+    """
+    Update step size for one axis based on the measured area and sign.
+    Returns (new_step, new_same_sign_count, new_prev_area, new_prev_sign).
+    """
+    if prev_area is not None:
+        # Adjust step based on area change (hill‑climbing)
+        if area > prev_area:
+            step = min(MAX_STEP, step)          # keep or increase
+        else:
+            step = max(MIN_STEP, step * 0.5)    # slow down
+
+        # Detect sign change – overshoot crossing the peak
+        if prev_sign is not None and sign != prev_sign:
+            step = max(MIN_STEP, step * 0.5)    # reduce step
+            same_sign_count = 0
+        else:
+            same_sign_count += 1
+            # If we’ve had the same sign for threshold cycles and still not at max, speed up
+            if same_sign_count >= STUCK_FLIPS and step < MAX_STEP:
+                step = MAX_STEP
+                same_sign_count = 0
+
+    # Store current values for next comparison
+    prev_area = area
+    prev_sign = sign
+    return step, same_sign_count, prev_area, prev_sign
+
+# ======================== MAIN LOOP =============================
 current_x, current_y = START_X, START_Y
 
-# Initial step and direction (arbitrary, will be corrected)
-step_x = MAX_STEP
-step_y = MAX_STEP
-direction_x = 1.0   # will be overwritten by sign
-direction_y = 1.0
+# Axis‑specific state for hill‑climbing
+state_x = {
+    'step': MAX_STEP,
+    'prev_area': None,
+    'prev_sign': None,
+    'same_sign_count': 0,
+}
+state_y = {
+    'step': MAX_STEP,
+    'prev_area': None,
+    'prev_sign': None,
+    'same_sign_count': 0,
+}
 
-prev_area_x = None
-prev_area_y = None
-prev_sign_x = None
-prev_sign_y = None
-same_sign_count_x = 0
-same_sign_count_y = 0
+# Convergence state per axis
+converged_x = False
+converged_y = False
+flip_counter_x = 0
+flip_counter_y = 0
+prev_step_sign_x = 0
+prev_step_sign_y = 0
+
+move_x = True   # Toggle: True → move X, False → move Y
 
 # Storage for plotting
 stage_x_hist = [START_X]
@@ -91,8 +136,9 @@ step_y_hist = []
 
 print("Cycle |   x      y     areaX    areaY   signX signY  stepX stepY | Status")
 for cycle in range(1, SIM_CYCLES + 1):
-    area_x, area_y, sign_x, sign_y, t_w, intensity, x_path, y_path = simulate_analog_readout(current_x, current_y)
-    time_axis.append(t_w + (cycle-1)*0.001)
+    # Acquire readout
+    area_x, area_y, sign_x, sign_y, t_w, intensity, x_mems, y_mems, x_path, y_path = simulate_analog_readout(current_x, current_y)
+    time_axis.append(t_w + (cycle - 1) * duration)
     wave_data.append(intensity)
     mems_path_x.append(x_path)
     mems_path_y.append(y_path)
@@ -101,67 +147,91 @@ for cycle in range(1, SIM_CYCLES + 1):
     sign_x_hist.append(sign_x)
     sign_y_hist.append(sign_y)
 
-    # 1. Direction = mixer sign (always)
-    direction_x = sign_x
-    direction_y = sign_y
+    # ---- Update active axis only if not converged ----
+    if move_x and not converged_x:   # X is active and not yet converged
+        step_x, state_x['same_sign_count'], state_x['prev_area'], state_x['prev_sign'] = \
+            update_axis_step(area_x, state_x['prev_area'], sign_x, state_x['prev_sign'],
+                             state_x['step'], state_x['same_sign_count'])
+        state_x['step'] = step_x
 
-    # 2. Step adjustment based on area change (if previous area exists)
-    if prev_area_x is not None:
-        # X axis
-        if area_x > prev_area_x:
-            step_x = min(MAX_STEP, step_x)   # uphill
-        elif area_x < prev_area_x:
-            step_x = max(MIN_STEP, step_x * 0.5)    # downhill: slow down (but don't reverse!)
-        # if area unchanged, keep step
-
-        # Y axis same
-        if area_y > prev_area_y:
-            step_y = min(MAX_STEP, step_y)
-        elif area_y < prev_area_y:
-            step_y = max(MIN_STEP, step_y * 0.5)
-
-        # If sign changed, we crossed the peak – reduce step to avoid overshoot
-        if prev_sign_x is not None and sign_x != prev_sign_x:
-            step_x = max(MIN_STEP, step_x * 0.5)
-            same_sign_count_x = 0
+        # Track flips for X (direction = sign_x)
+        if sign_x != 0 and sign_x != prev_step_sign_x:
+            flip_counter_x += 1
         else:
-            # Sign unchanged: increment counter
-            same_sign_count_x += 1
-            # If we've been moving in the same direction for a while, increase step (recovery)
-            if same_sign_count_x >= 5 and step_x < MAX_STEP:
-                step_x = MAX_STEP
-                same_sign_count_x = 0  # reset to avoid constant boost
+            flip_counter_x = 0
+        prev_step_sign_x = sign_x
 
-        if prev_sign_y is not None and sign_y != prev_sign_y:
-            step_y = max(MIN_STEP, step_y * 0.5)
-            same_sign_count_y = 0
+        # Check convergence for X
+        if flip_counter_x >= CONVERGENCE_FLIPS and flip_counter_x % 2 == 0:
+            print(f"X converged at cycle {cycle} (flips={flip_counter_x})")
+            converged_x = True
+            step_x = 0.0
+            # Also freeze the step in state
+            state_x['step'] = 0.0
+
+        step_y = 0.0   # Y does not move
+
+    elif not move_x and not converged_y:   # Y is active and not converged
+        step_y, state_y['same_sign_count'], state_y['prev_area'], state_y['prev_sign'] = \
+            update_axis_step(area_y, state_y['prev_area'], sign_y, state_y['prev_sign'],
+                             state_y['step'], state_y['same_sign_count'])
+        state_y['step'] = step_y
+
+        # Track flips for Y (direction = sign_y)
+        if sign_y != 0 and sign_y != prev_step_sign_y:
+            flip_counter_y += 1
         else:
-            same_sign_count_y += 1
-            if same_sign_count_y >= 5 and step_y < MAX_STEP:
-                step_y = MAX_STEP
-                same_sign_count_y = 0
+            flip_counter_y = 0
+        prev_step_sign_y = sign_y
 
-    # Store for next cycle
-    prev_area_x = area_x
-    prev_area_y = area_y
-    prev_sign_x = sign_x
-    prev_sign_y = sign_y
+        if flip_counter_y >= CONVERGENCE_FLIPS and flip_counter_y % 2 == 0:
+            print(f"Y converged at cycle {cycle} (flips={flip_counter_y})")
+            converged_y = True
+            step_y = 0.0
+            state_y['step'] = 0.0
 
-    # (Optional: if step becomes tiny, we could stop, but we let it run)
+        step_x = 0.0
+
+    else:
+        # If the active axis is already converged, we do nothing (step=0)
+        if move_x:
+            step_x = 0.0
+            step_y = 0.0
+        else:
+            step_x = 0.0
+            step_y = 0.0
+
+    # Toggle for next cycle (even if converged, we still toggle to allow other axis to move)
+    move_x = not move_x
 
     step_x_hist.append(step_x)
     step_y_hist.append(step_y)
 
-    # Move the stage
-    current_x, current_y = move_stage(current_x, current_y, direction_x * step_x, direction_y * step_y)
+    # Move the stage (only one axis moves because the other step is zero)
+    current_x, current_y = move_stage(current_x, current_y, sign_x * step_x if not converged_x else 0.0,
+                                      sign_y * step_y if not converged_y else 0.0)
     stage_x_hist.append(current_x)
     stage_y_hist.append(current_y)
 
-    # Print status
-    status = f"dir={direction_x:+.0f} step={step_x:.2f}" if cycle > 1 else "Priming"
+    # Optional status print
+    status = f"dir={'X' if move_x else 'Y'} step={step_x if move_x else step_y:.2f}"
+    if converged_x and converged_y:
+        status += " (both converged)"
+    elif converged_x:
+        status += " (X converged)"
+    elif converged_y:
+        status += " (Y converged)"
+    else:
+        status += f" flips X={flip_counter_x}, Y={flip_counter_y}"
     if cycle % 1 == 0 or cycle == SIM_CYCLES:
         print(f"{cycle:5d} {current_x:10.2f} {current_y:10.2f} {area_x:10.2f} {area_y:10.2f}   {sign_x:2d}   {sign_y:2d}    {step_x:6.2f} {step_y:6.2f} | {status}")
 
+    # Early exit if both converged
+    if converged_x and converged_y:
+        print("Both axes converged. Stopping early.")
+        break
+
+# Final results
 final_x = stage_x_hist[-1]
 final_y = stage_y_hist[-1]
 err_x = abs(final_x - TRUE_PEAK_X)
@@ -170,6 +240,7 @@ print(f"\nFinal position: ({final_x:.2f}, {final_y:.2f})")
 print(f"Error: X = {err_x:.3f} µm, Y = {err_y:.3f} µm")
 
 # ======================== PLOTTING ===================
+# (unchanged from original)
 t_flat = np.concatenate(time_axis) * 1000
 wave_flat = np.concatenate(wave_data)
 num_frames = len(stage_x_hist) - 1
