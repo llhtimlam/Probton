@@ -2,9 +2,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
+# ======================== PARAMETERS ============================
 SIM_CYCLES = 100
-MIN_STEP = 0.05
-MAX_STEP = 2.0
+MIN_STEP = 0.01
+MAX_STEP = 1.28
 NOISE_SIGMA = 0.01
 
 TRUE_PEAK_X = 0
@@ -16,8 +17,8 @@ FX = 300
 FY = 400
 SAMPLE_RATE = 40000
 
-START_X = np.random.uniform(-10, 10)
-START_Y = np.random.uniform(-10.0, 10.0)
+START_X = np.random.uniform(-20, 20)
+START_Y = np.random.uniform(-20.0, 20.0)
 
 def simulate_analog_readout(stage_x, stage_y, duration=0.001):
     samples = int(duration * SAMPLE_RATE)
@@ -34,46 +35,47 @@ def simulate_analog_readout(stage_x, stage_y, duration=0.001):
     samples_TX = int(T_X * SAMPLE_RATE)
     samples_TY = int(T_Y * SAMPLE_RATE)
 
-    # 1-omega Integrator Area Outputs
-    area_x = np.sum(intensity[:samples_TX])
-    area_y = np.sum(intensity[:samples_TY])
+    # Area (mean intensity over one MEMS period) – normalized to [0,1]
+    area_x = np.mean(intensity[:samples_TX])
+    area_y = np.mean(intensity[:samples_TY])
 
-    # 3. PURE WAVE MIXER WITH PERIODIC LOCAL AC-COUPLING
-    # The capacitor only blocks the DC offset of the CURRENT active cycle window
+    # Mixer and sign (direction indicator)
     local_dc_offset_x = np.mean(intensity[:samples_TX])
     local_dc_offset_y = np.mean(intensity[:samples_TY])
-    
-    # Simple, non-complicated multiplication of current period data
     mixer_x = (intensity[:samples_TX] - local_dc_offset_x) * np.sin(2 * np.pi * FX * t[:samples_TX])
     mixer_y = (intensity[:samples_TY] - local_dc_offset_y) * np.sin(2 * np.pi * FY * t[:samples_TY])
-
-    # 4. DISCRETE 2-OMEGA SNAPSHOT (Latching the Comparator State)
-    # The clock edge strikes exactly at the 90-degree peak mark of each axis window
     idx_peak_x = np.argmax(np.sin(2 * np.pi * FX * t[:samples_TX]))
     idx_peak_y = np.argmax(np.sin(2 * np.pi * FY * t[:samples_TY]))
-
-    # The high-gain comparator outputs a sharp 1 or -1 based on real-time local phase
     sign_x = 1 if mixer_x[idx_peak_x] > 0 else -1
     sign_y = 1 if mixer_y[idx_peak_y] > 0 else -1
 
     return area_x, area_y, sign_x, sign_y, t, intensity, x_total, y_total
 
-def move_stage(curr_x, curr_y, heading_x, heading_y, step_x, step_y):
+def move_stage(curr_x, curr_y, step_x, step_y):
+    # Simulate mechanical lag
     lag_x = np.random.uniform(0.95, 1.05)
     lag_y = np.random.uniform(0.95, 1.05)
-    new_x = curr_x + heading_x * step_x * lag_x
-    new_y = curr_y + heading_y * step_y * lag_y
+    new_x = curr_x + step_x * lag_x
+    new_y = curr_y + step_y * lag_y
     return new_x, new_y
 
+# ======================== FAIR COMPASS LOOP =====================
 current_x, current_y = START_X, START_Y
-last_sign_x, last_sign_y = 0, 0
-step_x, step_y = MAX_STEP, MAX_STEP
 
-# --- NEW MEMORY REGISTERS ---
-max_area_x, max_observed_y = 0.0, 0.0
-prev_area_x, prev_area_y = 0.0, 0.0
-direction_x, direction_y = 1, 1
+# Initial step and direction (arbitrary, will be corrected)
+step_x = MAX_STEP
+step_y = MAX_STEP
+direction_x = 1.0   # will be overwritten by sign
+direction_y = 1.0
 
+prev_area_x = None
+prev_area_y = None
+prev_sign_x = None
+prev_sign_y = None
+same_sign_count_x = 0
+same_sign_count_y = 0
+
+# Storage for plotting
 stage_x_hist = [START_X]
 stage_y_hist = [START_Y]
 time_axis = []
@@ -87,16 +89,7 @@ sign_y_hist = []
 step_x_hist = []
 step_y_hist = []
 
-just_reversed_x = False
-just_reversed_y = False
-flip_count_x = 0
-flip_count_y = 0
-stuck_counter_x = 0
-stuck_counter_y = 0
-force_freeze_x = False
-force_freeze_y = False
-
-print("Cycle | areaX    areaY    signX signY  stepX stepY | Status")
+print("Cycle |   x      y     areaX    areaY   signX signY  stepX stepY | Status")
 for cycle in range(1, SIM_CYCLES + 1):
     area_x, area_y, sign_x, sign_y, t_w, intensity, x_path, y_path = simulate_analog_readout(current_x, current_y)
     time_axis.append(t_w + (cycle-1)*0.001)
@@ -107,114 +100,67 @@ for cycle in range(1, SIM_CYCLES + 1):
     area_y_hist.append(area_y)
     sign_x_hist.append(sign_x)
     sign_y_hist.append(sign_y)
+
+    # 1. Direction = mixer sign (always)
+    direction_x = sign_x
+    direction_y = sign_y
+
+    # 2. Step adjustment based on area change (if previous area exists)
+    if prev_area_x is not None:
+        # X axis
+        if area_x > prev_area_x:
+            step_x = min(MAX_STEP, step_x)   # uphill
+        elif area_x < prev_area_x:
+            step_x = max(MIN_STEP, step_x * 0.5)    # downhill: slow down (but don't reverse!)
+        # if area unchanged, keep step
+
+        # Y axis same
+        if area_y > prev_area_y:
+            step_y = min(MAX_STEP, step_y)
+        elif area_y < prev_area_y:
+            step_y = max(MIN_STEP, step_y * 0.5)
+
+        # If sign changed, we crossed the peak – reduce step to avoid overshoot
+        if prev_sign_x is not None and sign_x != prev_sign_x:
+            step_x = max(MIN_STEP, step_x * 0.5)
+            same_sign_count_x = 0
+        else:
+            # Sign unchanged: increment counter
+            same_sign_count_x += 1
+            # If we've been moving in the same direction for a while, increase step (recovery)
+            if same_sign_count_x >= 5 and step_x < MAX_STEP:
+                step_x = MAX_STEP
+                same_sign_count_x = 0  # reset to avoid constant boost
+
+        if prev_sign_y is not None and sign_y != prev_sign_y:
+            step_y = max(MIN_STEP, step_y * 0.5)
+            same_sign_count_y = 0
+        else:
+            same_sign_count_y += 1
+            if same_sign_count_y >= 5 and step_y < MAX_STEP:
+                step_y = MAX_STEP
+                same_sign_count_y = 0
+
+    # Store for next cycle
+    prev_area_x = area_x
+    prev_area_y = area_y
+    prev_sign_x = sign_x
+    prev_sign_y = sign_y
+
+    # (Optional: if step becomes tiny, we could stop, but we let it run)
+
     step_x_hist.append(step_x)
     step_y_hist.append(step_y)
 
-    # 1. Update High-Water Mark Memory
-    if area_x > max_area_x: max_area_x = area_x
-    if area_y > max_observed_y: max_observed_y = area_y
-
-    # 2. Check if TDC Area is flat-lined in background noise (Dark Current check)
-    # The noise floor sum over samples_TX leaves a baseline area (roughly 1.0 to 3.0)
-    tdc_x_is_flat = (area_x >= prev_area_x - 0.1) and (area_x <= prev_area_x + 0.1)
-    tdc_y_is_flat = (area_y >= prev_area_y - 0.1) and (area_y <= prev_area_y + 0.1)
-    status_str = "Climbing"
-    # =========================================================================
-    # CORE TRACKING INTERLOCK LAYER
-    # =========================================================================
-    status_x = "Climbing X"
-    status_y = "Climbing Y"
-
-    # --- PROCESS X MOTION ---
-    crossed_x = (sign_x != last_sign_x)
-    
-    if not crossed_x and area_x < prev_area_x:
-        # Check if our current heading is actually moving the wrong way 
-        # relative to what our absolute physical wave mixer compass dictates
-        if direction_x != sign_x:
-            # TRUE WRONG DIRECTION: We are moving away from the peak. Force the reversal!
-            if force_freeze_x:
-                stuck_counter_x = 0
-                force_freeze_x = False
-                status_x = "Watchdog Override X"
-            else:
-                stuck_counter_x += 1
-                if stuck_counter_x >= 3:
-                    force_freeze_x = True
-                    direction_x = -direction_x
-                    status_x = "Timeout Reversal X"
-                else:
-                    direction_x = -direction_x
-                    status_x = "Decreasing Reverse X"
-        else:
-            # FALSE TRAP: The area dropped, but the compass confirms we are headed the right way.
-            # This is pure high-frequency noise or mechanical lag. Ignore the drop and listen to the compass!
-            stuck_counter_x = 0
-            force_freeze_x = False
-            direction_x = -sign_x
-            status_x = "Noise Filtered X (Follow Compass)"
-    else:
-        stuck_counter_x = 0
-        force_freeze_x = False
-        if crossed_x and (area_x > prev_area_x):
-            direction_x = -sign_x
-            step_x = max(MIN_STEP, step_x * 0.4)
-            status_x = "Braking X"
-        else:
-            # Ensure a fallback default when climbing normally
-            direction_x = sign_x
-            status_x = "Climbing X"
-
-    # --- PROCESS Y MOTION ---
-    crossed_y = (sign_y != last_sign_y)
-    
-    if not crossed_y and area_y < prev_area_y:
-        if direction_y != sign_y:
-            if force_freeze_y:
-                stuck_counter_y = 0
-                force_freeze_y = False
-                status_y = "Watchdog Override Y"
-            else:
-                stuck_counter_y += 1
-                if stuck_counter_y >= 3:
-                    force_freeze_y = True
-                    direction_y = -direction_y
-                    status_y = "Timeout Reversal Y"
-                else:
-                    direction_y = -direction_y
-                    status_y = "Decreasing Reverse Y"
-        else:
-            stuck_counter_y = 0
-            force_freeze_y = False
-            direction_y = -sign_y
-            status_y = "Noise Filtered Y (Follow Compass)"
-    else:
-        stuck_counter_y = 0
-        force_freeze_y = False
-        if crossed_y and (area_y > prev_area_y):
-            direction_y = -sign_y
-            step_y = max(MIN_STEP, step_y * 0.4)
-            status_y = "Braking Y"
-        else:
-            direction_y = sign_y
-            status_y = "Climbing Y"
-    
-
-    # Bring to an absolute lock if error converges below resolution limits
-    if abs(current_x - TRUE_PEAK_X) < 0.2: step_x = 0.0
-    if abs(current_y - TRUE_PEAK_Y) < 0.2: step_y = 0.0
-
-    current_x, current_y = move_stage(current_x, current_y, direction_x, direction_y, step_x, step_y)
+    # Move the stage
+    current_x, current_y = move_stage(current_x, current_y, direction_x * step_x, direction_y * step_y)
     stage_x_hist.append(current_x)
     stage_y_hist.append(current_y)
 
-    # Update background tracking registers
-    prev_area_x = area_x
-    prev_area_y = area_y
-    last_sign_x, last_sign_y = sign_x, sign_y
-
+    # Print status
+    status = f"dir={direction_x:+.0f} step={step_x:.2f}" if cycle > 1 else "Priming"
     if cycle % 1 == 0 or cycle == SIM_CYCLES:
-        print(f"{cycle:5d} {current_x:10.2f} {current_y:10.2f} {area_x:10.2f} {area_y:10.2f}   {sign_x:2d}   {sign_y:2d}    {step_x:6.2f} {step_y:6.2f} |  | X: {status_x} / Y: {status_y}")
+        print(f"{cycle:5d} {current_x:10.2f} {current_y:10.2f} {area_x:10.2f} {area_y:10.2f}   {sign_x:2d}   {sign_y:2d}    {step_x:6.2f} {step_y:6.2f} | {status}")
 
 final_x = stage_x_hist[-1]
 final_y = stage_y_hist[-1]
@@ -223,6 +169,7 @@ err_y = abs(final_y - TRUE_PEAK_Y)
 print(f"\nFinal position: ({final_x:.2f}, {final_y:.2f})")
 print(f"Error: X = {err_x:.3f} µm, Y = {err_y:.3f} µm")
 
+# ======================== PLOTTING ===================
 t_flat = np.concatenate(time_axis) * 1000
 wave_flat = np.concatenate(wave_data)
 num_frames = len(stage_x_hist) - 1

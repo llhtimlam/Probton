@@ -21,7 +21,6 @@ SAMPLE_RATE = 40000
 START_X = np.random.uniform(-20, 20)
 START_Y = np.random.uniform(-20.0, 20.0)
 
-# Log‑area options
 ENABLE_BIT_LOG = True
 BITS = 8
 ENABLE_AREA_QUANT = False
@@ -76,7 +75,7 @@ def simulate_analog_readout(stage_x, stage_y, duration=0.001):
     samples_TY = int(T_Y * SAMPLE_RATE)
     area_x = np.mean(intensity[:samples_TX])
     area_y = np.mean(intensity[:samples_TY])
-    # Signs (for plotting only)
+    # Signs (for direction fallback)
     local_dc_offset_x = np.mean(intensity[:samples_TX])
     local_dc_offset_y = np.mean(intensity[:samples_TY])
     mixer_x = (intensity[:samples_TX] - local_dc_offset_x) * np.sin(2 * np.pi * FX * t[:samples_TX])
@@ -94,19 +93,16 @@ def move_stage(curr_x, curr_y, step_x, step_y):
     new_y = curr_y + step_y * lag_y
     return new_x, new_y
 
-# ======================== MAIN LOOP ==============================
+# ======================== MAIN LOOP ====================
 current_x, current_y = START_X, START_Y
 
 # Rolling histories (max 3 points)
 hist_x = deque(maxlen=3)
 hist_y = deque(maxlen=3)
 
-# Initial direction toward centre (used during priming)
-direction_x = -1 if current_x > 0 else 1
-direction_y = -1 if current_y > 0 else 1
-
-step_x = MAX_STEP * direction_x
-step_y = MAX_STEP * direction_y
+# Priming: first two steps are fixed positive
+step_x = MAX_STEP
+step_y = MAX_STEP
 
 # Storage for plotting
 stage_x_hist = [START_X]
@@ -122,7 +118,7 @@ sign_y_hist = []
 step_x_hist = []
 step_y_hist = []
 
-print("Cycle | areaX    areaY    signX signY  stepX stepY | Status")
+print("Cycle | x y areaX    areaY    signX signY  stepX stepY | Status")
 for cycle in range(1, SIM_CYCLES + 1):
     area_x, area_y, sign_x, sign_y, t_w, intensity, x_path, y_path = simulate_analog_readout(current_x, current_y)
     time_axis.append(t_w + (cycle-1)*0.001)
@@ -138,41 +134,35 @@ for cycle in range(1, SIM_CYCLES + 1):
     hist_x.append((current_x, area_x))
     hist_y.append((current_y, area_y))
 
-    # --- Compute step using log‑area if we have three points ---
-    if len(hist_x) == 3:
+    # --- Determine step for X ---
+    if len(hist_x) < 3:
+        step_x = MAX_STEP   # priming
+    else:
         x0, a0 = hist_x[0]
         x1, a1 = hist_x[1]
         x2, a2 = hist_x[2]
         step_x_calc = log_area_step(x0, a0, x1, a1, x2, a2)
         step_x_calc = np.clip(step_x_calc, -MAX_STEP, MAX_STEP)
-        if abs(step_x_calc) < MIN_STEP and abs(step_x_calc) > 0:
-            step_x_calc = MIN_STEP * np.sign(step_x_calc)
-        if np.isnan(step_x_calc) or abs(step_x_calc) < 1e-9:
-            step_x_calc = MAX_STEP * (-1 if current_x > 0 else 1)
-        step_x = step_x_calc
-    else:
-        # Priming: move toward centre
-        step_x = MAX_STEP * (-1 if current_x > 0 else 1)
 
-    if len(hist_y) == 3:
+        # If calculation fails, use mixer sign to move TOWARD the peak
+        if np.isnan(step_x_calc) or abs(step_x_calc) < 1e-9:
+            dir_x = sign_x if sign_x != 0 else 1.0
+            step_x_calc = dir_x * MAX_STEP
+        step_x = step_x_calc
+
+    # --- Determine step for Y ---
+    if len(hist_y) < 3:
+        step_y = MAX_STEP
+    else:
         y0, b0 = hist_y[0]
         y1, b1 = hist_y[1]
         y2, b2 = hist_y[2]
         step_y_calc = log_area_step(y0, b0, y1, b1, y2, b2)
         step_y_calc = np.clip(step_y_calc, -MAX_STEP, MAX_STEP)
-        if abs(step_y_calc) < MIN_STEP and abs(step_y_calc) > 0:
-            step_y_calc = MIN_STEP * np.sign(step_y_calc)
         if np.isnan(step_y_calc) or abs(step_y_calc) < 1e-9:
-            step_y_calc = MAX_STEP * (-1 if current_y > 0 else 1)
+            dir_y = sign_y if sign_y != 0 else 1.0   # CORRECTED
+            step_y_calc = dir_y * MAX_STEP
         step_y = step_y_calc
-    else:
-        step_y = MAX_STEP * (-1 if current_y > 0 else 1)
-
-    # Freeze near peak
-    if abs(current_x - TRUE_PEAK_X) < 0.2:
-        step_x = 0.0
-    if abs(current_y - TRUE_PEAK_Y) < 0.2:
-        step_y = 0.0
 
     step_x_hist.append(step_x)
     step_y_hist.append(step_y)
@@ -195,7 +185,7 @@ err_y = abs(final_y - TRUE_PEAK_Y)
 print(f"\nFinal position: ({final_x:.2f}, {final_y:.2f})")
 print(f"Error: X = {err_x:.3f} µm, Y = {err_y:.3f} µm")
 
-# ======================== PLOTTING (unchanged) ===================
+# ======================== PLOTTING ===================
 t_flat = np.concatenate(time_axis) * 1000
 wave_flat = np.concatenate(wave_data)
 num_frames = len(stage_x_hist) - 1
