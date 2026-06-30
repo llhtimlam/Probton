@@ -23,7 +23,7 @@ INITIAL_OFFSET_BOUNDS = (LOWER_BOUND, UPPER_BOUND)
 # ======================== RUNTIME ENVIRONMENT & SIMULATION TIMING ============================
 SIM_CYCLES    = 100         # Total iterations for global stage sweeps
 SAMPLE_RATE   = 2000        # Internal ADC sensor collection clock rate (Hz)
-duration      = 0.1         # Readout duration per cycle step window (seconds)
+DURATION      = 0.1         # Readout duration per cycle step window (seconds)
 NOISE_SIGMA   = 0.01        # White Gaussian sensor baseline noise standard deviation
 
 # Target alignment peak coordinate destination
@@ -42,6 +42,11 @@ duration = 0.1             # Readout duration per cycle (seconds)
 MIN_STEP = 0.0588 * 5      # Minimum allowable step (µm)
 MAX_STEP = 0.375 * 5       # Maximum allowable step (µm)
 
+ENABLE_MOTOR_ERRORS = True
+BACKLASH_UM = 0.195
+MIN_MOVE_UM = 0.195
+STEP_ERROR_PERCENT = 0.07   # ±7%
+
 # ======================== MEMS DITHER PARAMETERS ============================
 MEMS_AMP_X = 5.0           # X‑axis dither amplitude (µm)
 MEMS_AMP_Y = 5.0           # Y‑axis dither amplitude (µm)
@@ -51,11 +56,40 @@ FY = 400                   # Y MEMS frequency (Hz)
 # ======================== ALGORITHM PARAMETERS ============================
 ENABLE_BIT_LOG = True      # Use 8‑bit lookup table for log
 BITS = 8                   # Number of bits for area quantisation
-ENABLE_AREA_QUANT = False  # If True, quantise area before log
 
 LEVELS = [4.0, 2.0, 1.0]   # Multi‑scale step multipliers
 MAX_REFINE_ITERATIONS = 50 # Safety limit for refinement loop
-CONVERGENCE_FLIPS = 6      # Required consecutive even flips to declare convergence
+CONVERGENCE_THRESHOLD = 4  # Sign stay 0 for number of consecutive flips to converge
+SIGN_STUCK_LIMIT = 4       # if sign stuck in one side after converge, force damped step to nudge
+
+# ======================== ANALOG SIGNAL ERRORS ============================
+ENABLE_SIGNAL_ERRORS = True
+ERROR_LEVEL = 0.05
+
+ENABLE_WHITE_NOISE = True
+WHITE_NOISE_LEVEL = 0.2
+
+ENABLE_SHOT_NOISE = True
+SHOT_NOISE_LEVEL = 0.15
+
+ENABLE_SINE_RIPPLE = True
+SINE_RIPPLE_AMPLITUDE = 0.1
+SINE_RIPPLE_FREQ = 5
+
+ENABLE_OFFSET_DRIFT = True
+OFFSET_DRIFT = 0.05
+
+ENABLE_SPIKE_NOISE = True
+SPIKE_RATE = 0.1
+SPIKE_AMPLITUDE = 0.5
+
+# ======================== VOLTAGE‑TO‑TIME CONVERSION (8‑bit) =============
+ENABLE_VTT_ERRORS = True
+VTT_VREF = 2.0
+VTT_OFFSET_LSB = 1.5
+VTT_GAIN_ERROR = 0.02
+VTT_CLOCK_JITTER_NS = 1
+VTT_NONLINEARITY_LSB = 0.5
 
 # ======================== MONTE CARLO SETTINGS ============================
-MONTE_CARLO_RUNS = 1000    # Number of independent simulations
+MONTE_CARLO_RUNS = 10000    # Number of independent simulations
