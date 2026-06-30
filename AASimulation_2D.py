@@ -49,9 +49,7 @@ def quantize_amplitude(amp, bits=8):
     code = int(round(max(0, min(1, amp)) * max_code))
     return code / max_code
 
-def log_area_step(x0, a0, x1, a1, x2, a2):
-    h1 = x1 - x0
-    h2 = x2 - x1
+def log_area_step(a0, h1, a1, h2, a2):
     if abs(h1) < 1e-9 or abs(h2) < 1e-9:
         return 0.0
     a0_q = quantize_amplitude(a0)
@@ -77,20 +75,59 @@ def simulate_analog_readout(stage_x, stage_y, duration=duration):
     intensity = np.exp(-((x_total - TRUE_PEAK_X)**2 + (y_total - TRUE_PEAK_Y)**2) / (2 * BEAM_WIDTH**2))
     intensity += np.random.normal(0, NOISE_SIGMA, size=samples)
 
-    T_X = 1 / FX; T_Y = 1 / FY
+    T_X = 1 / FX
+    T_Y = 1 / FY
     samples_TX = int(T_X * SAMPLE_RATE)
     samples_TY = int(T_Y * SAMPLE_RATE)
+
     area_x = np.mean(intensity[:samples_TX])
     area_y = np.mean(intensity[:samples_TY])
 
     local_dc_offset_x = np.mean(intensity[:samples_TX])
     local_dc_offset_y = np.mean(intensity[:samples_TY])
-    mixer_x = (intensity[:samples_TX] - local_dc_offset_x) * np.sin(2 * np.pi * FX * t[:samples_TX])
-    mixer_y = (intensity[:samples_TY] - local_dc_offset_y) * np.sin(2 * np.pi * FY * t[:samples_TY])
-    idx_peak_x = np.argmax(np.sin(2 * np.pi * FX * t[:samples_TX]))
-    idx_peak_y = np.argmax(np.sin(2 * np.pi * FY * t[:samples_TY]))
-    sign_x = 1 if mixer_x[idx_peak_x] > 0 else -1
-    sign_y = 1 if mixer_y[idx_peak_y] > 0 else -1
+    
+    ref_wave_x = np.sin(2 * np.pi * FX * t[:samples_TX])
+    ref_wave_y = np.sin(2 * np.pi * FY * t[:samples_TY])
+    
+    mixer_x = (intensity[:samples_TX] - local_dc_offset_x) * ref_wave_x
+    mixer_y = (intensity[:samples_TY] - local_dc_offset_y) * ref_wave_y
+
+    # ---------------------------------------------------------------------
+    # SNAPSHOTS AT THE 90° AND 270° MIXER PEAKS
+    # ---------------------------------------------------------------------
+    # Find the exact array indices where the reference wave hits max (+1) and min (-1)
+    idx_90_x = np.argmax(ref_wave_x)
+    idx_270_x = np.argmin(ref_wave_x)
+    
+    idx_90_y = np.argmax(ref_wave_y)
+    idx_270_y = np.argmin(ref_wave_y)
+
+    # Sample the 1-bit comparator states directly at your hardware clock edges
+    comp_90_x  = 1 if mixer_x[idx_90_x] > 0 else -1
+    comp_270_x = 1 if mixer_x[idx_270_x] > 0 else -1
+    
+    comp_90_y  = 1 if mixer_y[idx_90_y] > 0 else -1
+    comp_270_y = 1 if mixer_y[idx_270_y] > 0 else -1
+
+    # In-phase side: both are 1. Out-of-phase side: both are -1.
+    # Combining them via an addition blocks noise coin-flips completely.
+    # Add the two 1-bit comparator states together
+    sum_x = comp_90_x + comp_270_x
+    sum_y = comp_90_y + comp_270_y
+
+    # --- THREE-STATE HARDWARE LOGIC ---
+    # Far Left of peak (Sum = 2)   -> sign_x = 1
+    # Far Right of peak (Sum = -2) -> sign_x = -1
+    # Perfect Center (Sum = 0)     -> sign_x = 0
+    if sum_x == 0:
+        sign_x = 0
+    else:
+        sign_x = 1 if sum_x > 0 else -1
+
+    if sum_y == 0:
+        sign_y = 0
+    else:
+        sign_y = 1 if sum_y > 0 else -1
 
     # 2ω amplitude (monitoring only)
     dc = np.mean(intensity)
@@ -199,50 +236,50 @@ for level_idx, mult in enumerate(LEVELS):
     log_cycle(area_x, area_y, sign_x, sign_y, t_w, intensity, x_path, y_path, 0.0, 0.0, current_x, current_y, amp_2x, amp_2y)
 
     step1_x = sign_x * current_max_step
+    print(f"Scale {mult:.2f}x Step 1: X={current_x:.2f}, Y={current_y:.2f}, sign_x={sign_x}, move X={step1_x:.2f}")
     current_x, current_y, area_x1, area_y1, sign_x1, sign_y1 = move_with_chunks(current_x, current_y, step1_x, 0.0)
     hist_x.append((current_x, area_x1, sign_x1))
 
     if area_x1 <= area_x:
-        step2_x = -step1_x
+        step2_x = -0.9*step1_x
     elif sign_x1 != sign_x:
         step2_x = -0.5 * step1_x
     else:
-        step2_x = step1_x
+        step2_x = 0.75*step1_x
 
+    print(f"Scale {mult:.2f}x Step 2: X={current_x:.2f}, Y={current_y:.2f}, sign_x={sign_x}, move X={step2_x:.2f}")
     current_x, current_y, area_x2, area_y2, sign_x2, sign_y2 = move_with_chunks(current_x, current_y, step2_x, 0.0)
     hist_x.append((current_x, area_x2, sign_x2))
 
     # Y collection
     hist_y = [(current_y, area_y2, sign_y2)]
     step1_y = sign_y2 * current_max_step
-    current_x, current_y, area_x1, area_y1, sign_x1, sign_y1 = move_with_chunks(current_x, current_y, 0.0, step1_y)
-    hist_y.append((current_y, area_y1, sign_y1))
+    print(f"Scale {mult:.2f}x Step 3: X={current_x:.2f}, Y={current_y:.2f}, sign_y={sign_y}, move Y={step1_y:.2f}")
+    current_x, current_y, area_x3_y, area_y3, sign_x3_y, sign_y3 = move_with_chunks(current_x, current_y, 0.0, step1_y)
+    hist_y.append((current_y, area_y3, sign_y3))
 
-    if area_y1 <= area_y2:
-        step2_y = -step1_y
-    elif sign_y1 != sign_y2:
+    if area_y3 <= area_y2:
+        step2_y = -0.9*step1_y
+    elif sign_y3 != sign_y2:
         step2_y = -0.5 * step1_y
     else:
-        step2_y = step1_y
+        step2_y = 0.75*step1_y
 
-    current_x, current_y, area_x2, area_y2, sign_x2, sign_y2 = move_with_chunks(current_x, current_y, 0.0, step2_y)
-    hist_y.append((current_y, area_y2, sign_y2))
+    print(f"Scale {mult:.2f}x Step 4: X={current_x:.2f}, Y={current_y:.2f}, sign_y={sign_y}, move Y={step2_y:.2f}")
+    current_x, current_y, area_x4_y, area_y4, sign_x4_y, sign_y4 = move_with_chunks(current_x, current_y, 0.0, step2_y)
+    hist_y.append((current_y, area_y4, sign_y4))
 
     # Jump
     x0, a0, _ = hist_x[0]; x1, a1, _ = hist_x[1]; x2, a2, _ = hist_x[2]
-    step_x_calc = log_area_step(x0, a0, x1, a1, x2, a2)
+    step_x_calc = log_area_step(a0, step1_x, a1, step2_x, a2)
     if np.isnan(step_x_calc) or abs(step_x_calc) < 1e-9:
         step_x_calc = sign_x2 * current_max_step
-    if abs(step_x_calc) > 1e-9 and np.sign(step_x_calc) != sign_x2:
-        step_x_calc = sign_x2 * current_max_step * 0.5
     step_x = np.clip(step_x_calc, -current_max_step, current_max_step)
 
     y0, b0, _ = hist_y[0]; y1, b1, _ = hist_y[1]; y2, b2, _ = hist_y[2]
-    step_y_calc = log_area_step(y0, b0, y1, b1, y2, b2)
+    step_y_calc = log_area_step(b0, step1_y, b1, step2_y, b2)
     if np.isnan(step_y_calc) or abs(step_y_calc) < 1e-9:
-        step_y_calc = sign_y2 * current_max_step
-    if abs(step_y_calc) > 1e-9 and np.sign(step_y_calc) != sign_y2:
-        step_y_calc = sign_y2 * current_max_step * 0.5
+        step_y_calc = sign_y4 * current_max_step
     step_y = np.clip(step_y_calc, -current_max_step, current_max_step)
 
     current_x, current_y, _, _, _, _ = move_with_chunks(current_x, current_y, step_x, step_y)
@@ -257,6 +294,15 @@ y_hist = [p for p, a, s in hist_y]
 b_hist = [a for p, a, s in hist_y]
 sign_y_last = hist_y[-1][2]
 
+# Initializing explicitly named local loop state variables using your exact outputs
+h1_x, h2_x = step1_x, step2_x
+ref_ax0, ref_ax1, ref_ax2 = area_x, area_x1, area_x2
+sign_x_last = sign_x2
+
+h1_y, h2_y = step1_y, step2_y
+ref_ay0, ref_ay1, ref_ay2 = hist_y[0][1], hist_y[1][1], hist_y[2][1]
+sign_y_last = sign_y4
+
 refine_count = 0
 converged_x = False
 converged_y = False
@@ -268,12 +314,9 @@ prev_step_sign_y = 0
 while not (converged_x and converged_y) and refine_count < MAX_REFINE_ITERATIONS:
     refine_count += 1
 
-    # Compute X step (only if not converged)
+    # Compute X step (only if not converged) using explicit named inputs
     if not converged_x:
-        x0, a0 = x_hist[0], a_hist[0]
-        x1, a1 = x_hist[1], a_hist[1]
-        x2, a2 = x_hist[2], a_hist[2]
-        step_x_calc = log_area_step(x0, a0, x1, a1, x2, a2)
+        step_x_calc = log_area_step(ref_ax0, h1_x, ref_ax1, h2_x, ref_ax2)
         if np.isnan(step_x_calc) or abs(step_x_calc) < 1e-9:
             step_x_calc = sign_x_last * MAX_STEP
         if abs(step_x_calc) > 1e-9 and np.sign(step_x_calc) != sign_x_last:
@@ -282,12 +325,9 @@ while not (converged_x and converged_y) and refine_count < MAX_REFINE_ITERATIONS
     else:
         step_x = 0.0
 
-    # Compute Y step (only if not converged)
+    # Compute Y step (only if not converged) using explicit named inputs
     if not converged_y:
-        y0, b0 = y_hist[0], b_hist[0]
-        y1, b1 = y_hist[1], b_hist[1]
-        y2, b2 = y_hist[2], b_hist[2]
-        step_y_calc = log_area_step(y0, b0, y1, b1, y2, b2)
+        step_y_calc = log_area_step(ref_ay0, h1_y, ref_ay1, h2_y, ref_ay2)
         if np.isnan(step_y_calc) or abs(step_y_calc) < 1e-9:
             step_y_calc = sign_y_last * MAX_STEP
         if abs(step_y_calc) > 1e-9 and np.sign(step_y_calc) != sign_y_last:
@@ -295,7 +335,7 @@ while not (converged_x and converged_y) and refine_count < MAX_REFINE_ITERATIONS
         step_y = np.clip(step_y_calc, -MAX_STEP, MAX_STEP)
     else:
         step_y = 0.0
-
+        
     # Update flip counters (only for non‑converged axes)
     if not converged_x:
         sign_x_step = 1 if step_x > 0 else (-1 if step_x < 0 else 0)
@@ -322,20 +362,28 @@ while not (converged_x and converged_y) and refine_count < MAX_REFINE_ITERATIONS
             converged_y = True
             step_y = 0.0
 
-    # Apply steps (both axes move; one may be zero)
-    current_x, current_y, new_area_x, new_area_y, new_sign_x, new_sign_y = move_with_chunks(current_x, current_y, step_x, step_y)
+    # Execute the motor commands
+    current_x, current_y, next_area_x, next_area_y, sign_x_next, sign_y_next = move_with_chunks(current_x, current_y, step_x, step_y)
 
-    # Update rolling windows **only** for non‑converged axes
+    # Shift streaming relative states forward for the X axis segment
     if not converged_x:
-        x_hist.pop(0); a_hist.pop(0)
-        x_hist.append(current_x); a_hist.append(new_area_x)
-        sign_x_last = new_sign_x
-    if not converged_y:
-        y_hist.pop(0); b_hist.pop(0)
-        y_hist.append(current_y); b_hist.append(new_area_y)
-        sign_y_last = new_sign_y
+        h1_x = h2_x
+        h2_x = step_x
+        ref_ax0 = ref_ax1
+        ref_ax1 = ref_ax2
+        ref_ax2 = next_area_x
+        sign_x_last = sign_x_next
 
-    print(f"Refine {refine_count}: X step={step_x:.2f}, flips={flip_counter_x}, Y step={step_y:.2f}, flips={flip_counter_y}")
+    # Shift streaming relative states forward for the Y axis segment
+    if not converged_y:
+        h1_y = h2_y
+        h2_y = step_y
+        ref_ay0 = ref_ay1
+        ref_ay1 = ref_ay2
+        ref_ay2 = next_area_y
+        sign_y_last = sign_y_next
+        
+    print(f"Refine {refine_count}: X={current_x:.2f}, Y={current_y:.2f}, X step={step_x:.2f}, flips={flip_counter_x}, Y step={step_y:.2f}, flips={flip_counter_y}")
 
 if not converged_x:
     print("X did not converge within iteration limit.")
