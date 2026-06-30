@@ -3,9 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from AASimulation_2D import run_AA_2D
 from AASimulation_2DSimplified import run_AA_2D_simplified
-from config2D import SIM_CYCLES
-
-MONTE_CARLO_RUNS = 1000
+from config2D import *
 
 def run_method(func, method_name):
     """Run Monte Carlo for one method, return error arrays and readouts."""

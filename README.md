@@ -34,11 +34,20 @@ Required pins: 22
 
 ### Simulation result
 
-Convergence Step = 5.7 ± 1.1 @ 1% Transmission loss
+Alignment Sensitivity = ±10.95 μm @ -3dB
 
-<img src="Media\Simulation\Optical Probe Station Simulation.png" width="100%" alt="Simulation Result">
+Alignment Precision = 0.755 ± 0.633 µm (Total Step movement 44.4 ± 17.7)
 
-<img src="Media\Simulation\Optical Probe Station Monte Carlo Simulation.png" width="100%" alt="Monte Carlo Simulation">
+Motor movement = 0.294 µm ~ 1.875 µm @ Step (25 nm/V)
+
+MEMS Span = ±5 µm @ 300/400Hz
+
+<img src="Media\Simulation\Optical Probe Station Simulation 1D.png" width="100%" alt="Simulation Result">
+
+<video src="Media\Simulation\Optical Probe Station Simulation 2D.mp4" controls="controls" width="100%">
+</video>
+
+<img src="Media\Simulation\Optical Probe Station Monte Carlo Simulation 2D.png" width="100%" alt="Monte Carlo Simulation 2D">
 
 ## Pitch deck
 

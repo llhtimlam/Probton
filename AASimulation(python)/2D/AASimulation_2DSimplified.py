@@ -291,79 +291,155 @@ def run_AA_2D_simplified(plotting=False, verbose=False):
         print(f"\nFinal position: ({final_x:.2f}, {final_y:.2f})")
         print(f"Error: X = {err_x:.3f} µm, Y = {err_y:.3f} µm")
         print(f"Total readouts: {total_readouts}")
-    # ---- Plotting ----
+    
     if plotting:
+        # Prepare data
         t_flat = np.concatenate(time_axis) * 1000
         wave_flat = np.concatenate(wave_data)
         num_frames = len(stage_x_hist) - 1
-        cycles = np.arange(1, len(area_x_hist)+1)
 
-        max_area_display = max(max(area_x_hist), max(area_y_hist), 1)
-        norm_area_x = np.array(area_x_hist) / max_area_display
-        norm_area_y = np.array(area_y_hist) / max_area_display
+        cycles = np.arange(1, len(area_x_hist) + 1)
+        max_area = max(max(area_x_hist), max(area_y_hist), 1)
+        norm_area_x = np.array(area_x_hist) / max_area
+        norm_area_y = np.array(area_y_hist) / max_area
 
-        fig, ((ax_track, ax_scope), (ax_tdc, ax_sign)) = plt.subplots(2, 2, figsize=(14, 10))
-        fig.suptitle("Simplified 2D Alignment Core", fontsize=14, fontweight='bold')
+        # ---- Compute per‑cycle mean intensity (DC offset) ----
+        cycle_means = [np.mean(w) for w in wave_data]
+        step_times = []
+        step_means = []
+        for i, (t_arr, mean_val) in enumerate(zip(time_axis, cycle_means)):
+            t_arr_ms = t_arr * 1000
+            t_start = t_arr_ms[0]
+            t_end = t_arr_ms[-1]
+            step_times.extend([t_start, t_end])
+            step_means.extend([mean_val, mean_val])
+        step_times = np.array(step_times)
+        step_means = np.array(step_means)
 
-        ax_track.set_xlim(min(start_x, TRUE_PEAK_X) - 10, max(start_x, TRUE_PEAK_X) + 10)
-        ax_track.set_ylim(min(start_y, TRUE_PEAK_Y) - 10, max(start_y, TRUE_PEAK_Y) + 10)
+        fig, ((ax_track, ax_scope), (ax_tdc, ax_sign)) = plt.subplots(
+            2, 2, figsize=(14, 10), constrained_layout=True
+        )
+        fig.suptitle("2D Active Alignment – Sign‑bit Algorithm", fontsize=16, fontweight='bold')
+
+        # ---- Stage path (top left) ----
+        all_x = stage_x_hist + [x for arr in mems_path_x for x in arr]
+        all_y = stage_y_hist + [y for arr in mems_path_y for y in arr]
+        margin = 2.0
+        x_min = min(min(all_x), TRUE_PEAK_X) - margin
+        x_max = max(max(all_x), TRUE_PEAK_X) + margin
+        y_min = min(min(all_y), TRUE_PEAK_Y) - margin
+        y_max = max(max(all_y), TRUE_PEAK_Y) + margin
+
+        ax_track.set_xlim(x_min, x_max)
+        ax_track.set_ylim(y_min, y_max)
         ax_track.grid(True, linestyle='--', alpha=0.5)
-        ax_track.set_title("Stage Path", fontsize=10)
-        ax_track.set_xlabel("X")
-        ax_track.set_ylabel("Y")
-        ax_track.plot(TRUE_PEAK_X, TRUE_PEAK_Y, 'X', color='red', markersize=14, label="True Peak")
-        stage_line, = ax_track.plot([], [], 'o--', color='crimson', lw=1.5, markersize=4, label="Stage")
-        mems_trace, = ax_track.plot([], [], color='teal', alpha=0.3, lw=1.0, label="MEMS")
-        ax_track.legend(loc="upper right", fontsize=8)
+        ax_track.set_title("Stage Path", fontsize=12)
+        ax_track.set_xlabel("X (µm)", fontsize=11)
+        ax_track.set_ylabel("Y (µm)", fontsize=11)
+        ax_track.plot(TRUE_PEAK_X, TRUE_PEAK_Y, 'X', color='#e60000', markersize=14, label="True Peak")
+        stage_line, = ax_track.plot([], [], 'o--', color='#e60000', lw=2, markersize=4, label="Stage")
+        mems_trace, = ax_track.plot([], [], color='#0066cc', alpha=0.3, lw=1.0, label="MEMS")
+        ax_track.legend(loc='upper right', fontsize=10)
 
-        ax_scope.set_xlim(0, t_flat[-1])
-        ax_scope.set_ylim(-0.1, 1.1)
+        # ---- Readout (top right) with DC offset overlay ----
+        ax_track.set_xlim(LOWER_BOUND, UPPER_BOUND)
+        ax_track.set_ylim(LOWER_BOUND, UPPER_BOUND)
         ax_scope.grid(True, linestyle='--', alpha=0.5)
-        ax_scope.set_title("TIA Readout", fontsize=10)
-        ax_scope.set_xlabel("Time (ms)")
-        ax_scope.set_ylabel("Intensity")
-        scope_line, = ax_scope.plot([], [], color='forestgreen', lw=2)
+        ax_scope.set_title("Readout", fontsize=12)
+        ax_scope.set_xlabel("Time (ms)", fontsize=11)
+        ax_scope.set_ylabel("Intensity", fontsize=11, color='forestgreen')
+        scope_line, = ax_scope.plot([], [], color='forestgreen', lw=1, alpha=0.4, label='History')
+        scope_line_last, = ax_scope.plot([], [], color='forestgreen', lw=2.5, alpha=0.8, label='Current cycle')
+        dc_line, = ax_scope.plot([], [], color='forestgreen', linestyle='--', lw=1.5, alpha=0.9, label='Mean intensity')
+        ax_scope.legend(loc='upper right', fontsize=9)
 
+        # ---- Area bars (bottom left) with trend line overlay ----
+        ax_tdc.set_title("Integrated Area per MEMS Period", fontsize=12)
+        ax_tdc.set_xlabel("Cycle", fontsize=11)
+        ax_tdc.set_ylabel("Normalized Area", fontsize=11)
+        ax_tdc.set_xlim(0, SIM_CYCLES + 1)
+        ax_tdc.set_ylim(0, 1.05)
+        ax_tdc.grid(True, linestyle='--', alpha=0.5)
+
+        # ---- Sign plot (bottom right) ----
+        ax_sign.set_title("Direction Sign", fontsize=12)
+        ax_sign.set_xlabel("Cycle", fontsize=11)
+        ax_sign.set_ylabel("Sign", fontsize=11)
+        ax_sign.axhline(0, color='gray', linestyle='--', alpha=0.5)
+        ax_sign.set_xlim(0, SIM_CYCLES + 1)
+        ax_sign.set_ylim(-1.2, 1.2)
+        ax_sign.grid(True, linestyle='--', alpha=0.5)
+
+        # ---- Animation update ----
         def update(frame):
+            # Stage path
             stage_line.set_data(stage_x_hist[:frame+1], stage_y_hist[:frame+1])
             if frame < len(mems_path_x):
                 mems_trace.set_data(mems_path_x[frame], mems_path_y[frame])
+
+            # Readout: cumulative + current cycle + DC offset
             end_idx = sum(len(w) for w in wave_data[:frame+1])
             scope_line.set_data(t_flat[:end_idx], wave_flat[:end_idx])
+            if frame >= 0 and frame < len(wave_data):
+                last_t = time_axis[frame] * 1000
+                last_w = wave_data[frame]
+                scope_line_last.set_data(last_t, last_w)
 
+            # DC offset step‑curve up to current frame
+            max_cycle = frame
+            if max_cycle >= 0:
+                idx_end = 2 * (max_cycle + 1)
+                if idx_end <= len(step_times):
+                    dc_line.set_data(step_times[:idx_end], step_means[:idx_end])
+                else:
+                    dc_line.set_data([], [])
+
+            # Area bars + trend lines
             ax_tdc.clear()
             ax_tdc.grid(True, linestyle='--', alpha=0.5)
-            ax_tdc.set_title("TDC Area (normalized)", fontsize=10)
-            ax_tdc.set_xlabel("Cycle")
-            ax_tdc.set_ylabel("Normalized Area")
+            ax_tdc.set_title("Integrated Area per MEMS Period", fontsize=12)
+            ax_tdc.set_xlabel("Cycle", fontsize=11)
+            ax_tdc.set_ylabel("Normalized Area", fontsize=11)
             x_vals = cycles[:frame+1]
             yx_vals = norm_area_x[:frame+1]
             yy_vals = norm_area_y[:frame+1]
-            ax_tdc.bar(x_vals, yx_vals, facecolor='none', edgecolor='darkorange', linewidth=1, hatch='/', label='TDC X')
-            ax_tdc.bar(x_vals, yy_vals, facecolor='none', edgecolor='purple', linewidth=1, hatch='\\\\', label='TDC Y')
-            ax_tdc.legend(loc="upper right", fontsize=8)
-            ax_tdc.set_xlim(0, SIM_CYCLES+1)
+
+            ax_tdc.bar(x_vals, yx_vals, facecolor='none', edgecolor='#2eb82e',
+                       linewidth=0.25, hatch='/', alpha=0.5, label='Area X')
+            ax_tdc.bar(x_vals, yy_vals, facecolor='none', edgecolor='#ff9900',
+                       linewidth=0.25, hatch='\\\\', alpha=0.5, label='Area Y')
+            if len(x_vals) > 0:
+                ax_tdc.plot(x_vals, yx_vals, 'o-', color='#2eb82e', markersize=4,
+                            linewidth=1.5, alpha=0.9, label='Trend X')
+                ax_tdc.plot(x_vals, yy_vals, 's-', color='#ff9900', markersize=4,
+                            linewidth=1.5, alpha=0.9, label='Trend Y')
+            ax_tdc.legend(loc='upper right', fontsize=9)
+            ax_tdc.set_xlim(0, SIM_CYCLES + 1)
             ax_tdc.set_ylim(0, 1.05)
 
+            # Sign plot
             ax_sign.clear()
             ax_sign.grid(True, linestyle='--', alpha=0.5)
-            ax_sign.set_title("Mixer Sign (direction)", fontsize=10)
-            ax_sign.set_xlabel("Cycle")
-            ax_sign.set_ylabel("Sign")
+            ax_sign.set_title("Direction Sign", fontsize=12)
+            ax_sign.set_xlabel("Cycle", fontsize=11)
+            ax_sign.set_ylabel("Sign", fontsize=11)
             ax_sign.axhline(0, color='gray', linestyle='--', alpha=0.5)
             x_vals = cycles[:frame+1]
             sx_vals = sign_x_hist[:frame+1]
             sy_vals = sign_y_hist[:frame+1]
-            ax_sign.plot(x_vals, sx_vals, 'o-', color='darkorange', label='Sign X')
-            ax_sign.plot(x_vals, sy_vals, 's-', color='purple', label='Sign Y')
-            ax_sign.legend(loc="upper right", fontsize=8)
-            ax_sign.set_xlim(0, SIM_CYCLES+1)
+
+            ax_sign.plot(x_vals, sx_vals, 'x-', color='#2eb82e',
+                         markersize=6, linewidth=0.8, label='Sign X')
+            ax_sign.plot(x_vals, sy_vals, 's-', color='#ff9900', markerfacecolor='none',
+                         markersize=6, linewidth=0.8, label='Sign Y')
+            ax_sign.legend(loc='upper right', fontsize=9)
+            ax_sign.set_xlim(0, SIM_CYCLES + 1)
             ax_sign.set_ylim(-1.2, 1.2)
 
-            return stage_line, mems_trace, scope_line
+            return stage_line, mems_trace, scope_line, scope_line_last, dc_line
 
-        ani = FuncAnimation(fig, update, frames=num_frames, interval=200, blit=False, repeat=True)
-        plt.tight_layout()
+        ani = FuncAnimation(fig, update, frames=num_frames,
+                            interval=200, blit=False, repeat=True)
         plt.show()
 
     return converged_x, converged_y, final_x, final_y, err_x, err_y, total_readouts
