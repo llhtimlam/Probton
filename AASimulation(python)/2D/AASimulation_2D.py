@@ -200,58 +200,61 @@ def move_with_chunks(curr_x, curr_y, total_step_x, total_step_y, max_chunk=MAX_S
         area_x, area_y, sign_x, sign_y, t_w, intensity, x_path, y_path = simulate_analog_readout(x, y)
         log_cycle(area_x, area_y, sign_x, sign_y, t_w, intensity, x_path, y_path, step_x, step_y, x, y)
     return x, y, area_x, area_y, sign_x, sign_y
-
-# ======================== MAIN ====================
+# ==============================================================================
+# --- MAIN EXECUTION CORE ---
+# ==============================================================================
 current_x, current_y = START_X, START_Y
 prev_sign_x = None
 prev_sign_y = None
 
-# ---------- Coarse scales ----------
+# ----------------------------------------------------------------------
+# ---------- PHASE 1: COARSE MULTI-SCALE SWEEPS (SMART 1-2) ------------
+# ----------------------------------------------------------------------
 for level_idx, mult in enumerate(LEVELS):
     current_max_step = MAX_STEP * mult
     if current_max_step < MIN_STEP:
         current_max_step = MIN_STEP
 
-    # X collection
+    # --- X-Axis Independent Data Collection Line ---
     area_x, area_y, sign_x, sign_y, t_w, intensity, x_path, y_path = simulate_analog_readout(current_x, current_y)
     hist_x = [(current_x, area_x, sign_x)]
     log_cycle(area_x, area_y, sign_x, sign_y, t_w, intensity, x_path, y_path, 0.0, 0.0, current_x, current_y)
 
     step1_x = sign_x * current_max_step
-    print(f"Scale {mult:.2f}x Step 1: X={current_x:.2f}, Y={current_y:.2f}, sign_x={sign_x}, move X={step1_x:.2f}")
+    print(f"Scale {mult:.2f}x Step 1: X={current_x:.2f}, Y={current_y:.2f}, AreaX={area_x:10.2f}, AreaY={area_y:10.2f}, sign_x={sign_x}, move X={step1_x:.2f}")
     current_x, current_y, area_x1, area_y1, sign_x1, sign_y1 = move_with_chunks(current_x, current_y, step1_x, 0.0)
     hist_x.append((current_x, area_x1, sign_x1))
 
     if area_x1 <= area_x:
-        step2_x = -0.9*step1_x
+        step2_x = -0.9 * step1_x
     elif sign_x1 != sign_x:
         step2_x = -0.5 * step1_x
     else:
-        step2_x = 0.75*step1_x
+        step2_x = 0.75 * step1_x
 
-    print(f"Scale {mult:.2f}x Step 2: X={current_x:.2f}, Y={current_y:.2f}, sign_x={sign_x}, move X={step2_x:.2f}")
+    print(f"Scale {mult:.2f}x Step 2: X={current_x:.2f}, Y={current_y:.2f}, AreaX={area_x1:10.2f}, AreaY={area_y1:10.2f}, sign_x={sign_x}, move X={step2_x:.2f}")
     current_x, current_y, area_x2, area_y2, sign_x2, sign_y2 = move_with_chunks(current_x, current_y, step2_x, 0.0)
     hist_x.append((current_x, area_x2, sign_x2))
 
-    # Y collection
+    # --- Y-Axis Independent Data Collection Line ---
     hist_y = [(current_y, area_y2, sign_y2)]
     step1_y = sign_y2 * current_max_step
-    print(f"Scale {mult:.2f}x Step 3: X={current_x:.2f}, Y={current_y:.2f}, sign_y={sign_y}, move Y={step1_y:.2f}")
+    print(f"Scale {mult:.2f}x Step 3: X={current_x:.2f}, Y={current_y:.2f}, AreaX={area_x2:10.2f}, AreaY={area_y2:10.2f}, sign_y={sign_y}, move Y={step1_y:.2f}")
     current_x, current_y, area_x3_y, area_y3, sign_x3_y, sign_y3 = move_with_chunks(current_x, current_y, 0.0, step1_y)
     hist_y.append((current_y, area_y3, sign_y3))
 
     if area_y3 <= area_y2:
-        step2_y = -0.9*step1_y
+        step2_y = -0.9 * step1_y
     elif sign_y3 != sign_y2:
         step2_y = -0.5 * step1_y
     else:
-        step2_y = 0.75*step1_y
+        step2_y = 0.75 * step1_y
 
-    print(f"Scale {mult:.2f}x Step 4: X={current_x:.2f}, Y={current_y:.2f}, sign_y={sign_y}, move Y={step2_y:.2f}")
+    print(f"Scale {mult:.2f}x Step 4: X={current_x:.2f}, Y={current_y:.2f}, AreaX={area_x3_y:10.2f}, AreaY={area_y3:10.2f}, sign_y={sign_y}, move Y={step2_y:.2f}")
     current_x, current_y, area_x4_y, area_y4, sign_x4_y, sign_y4 = move_with_chunks(current_x, current_y, 0.0, step2_y)
     hist_y.append((current_y, area_y4, sign_y4))
 
-    # Jump
+    # --- Coarse Mathematical Jump Window Execution ---
     x0, a0, _ = hist_x[0]; x1, a1, _ = hist_x[1]; x2, a2, _ = hist_x[2]
     step_x_calc = log_area_step(a0, step1_x, a1, step2_x, a2)
     if np.isnan(step_x_calc) or abs(step_x_calc) < 1e-9:
@@ -267,8 +270,12 @@ for level_idx, mult in enumerate(LEVELS):
     current_x, current_y, _, _, _, _ = move_with_chunks(current_x, current_y, step_x, step_y)
     print(f"Scale {mult:.2f}x: jump X={step_x:.2f}, Y={step_y:.2f}")
 
-# ---------- Refinement (independent axis convergence with freeze) ----------
-print("Entering refinement...")
+
+# ----------------------------------------------------------------------
+# ---------- PHASE 2: FINE TRACKING LOCAL REFINEMENT LAYER -------------
+# ----------------------------------------------------------------------
+print("\nEntering refinement...")
+
 x_hist = [p for p, a, s in hist_x]
 a_hist = [a for p, a, s in hist_x]
 sign_x_last = hist_x[-1][2]
@@ -288,19 +295,25 @@ sign_y_last = sign_y4
 refine_count = 0
 converged_x = False
 converged_y = False
+
+# Exact-zero filters
 zero_step_count_x = 0
 zero_step_count_y = 0
-prev_step_sign_x = 0
-prev_step_sign_y = 0
+
+# Cumulative cross-axis drift monitors
+cumulative_sign_x = 0
+cumulative_sign_y = 0
+SIGN_STUCK_LIMIT = 5  # Kickstart an isolated re-prime if an axis stays biased for 5 loops
 
 while not (converged_x and converged_y) and refine_count < MAX_REFINE_ITERATIONS:
     refine_count += 1
 
-    # Compute X step
+    # --- 1. Compute Active X Mathematical Step ---
     if not converged_x:
         step_x_calc = log_area_step(ref_ax0, h1_x, ref_ax1, h2_x, ref_ax2)
         if np.isnan(step_x_calc) or abs(step_x_calc) < 1e-9: # Algorithm command step invalid
             step_x_calc = sign_x_last * MAX_STEP
+        
         step_x = np.clip(step_x_calc, -MAX_STEP, MAX_STEP)
         
         if step_x == 0.0:
@@ -313,11 +326,12 @@ while not (converged_x and converged_y) and refine_count < MAX_REFINE_ITERATIONS
     else:
         step_x = 0.0
 
-    # Compute Y step
+    # --- 2. Compute Active Y Mathematical Step ---
     if not converged_y:
         step_y_calc = log_area_step(ref_ay0, h1_y, ref_ay1, h2_y, ref_ay2)
         if np.isnan(step_y_calc) or abs(step_y_calc) < 1e-9:
             step_y_calc = sign_y_last * MAX_STEP
+            
         step_y = np.clip(step_y_calc, -MAX_STEP, MAX_STEP)
 
         if step_y == 0.0:
@@ -330,29 +344,110 @@ while not (converged_x and converged_y) and refine_count < MAX_REFINE_ITERATIONS
     else:
         step_y = 0.0
         
-    # Execute the motor commands
+    # --- 3. Execute Translation Matrix ---
     current_x, current_y, next_area_x, next_area_y, sign_x_next, sign_y_next = move_with_chunks(current_x, current_y, step_x, step_y)
 
-    # Shift streaming relative states forward for the X axis segment
+    # --- 4. Evaluate Surveillance Bias Registers ---
+    if sign_x_next == sign_x_last and sign_x_next != 0:
+        cumulative_sign_x += sign_x_next
+    else:
+        cumulative_sign_x = sign_x_next
+
+    if sign_y_next == sign_y_last and sign_y_next != 0:
+        cumulative_sign_y += sign_y_next
+    else:
+        cumulative_sign_y = sign_y_next
+
     if not converged_x:
         h1_x = h2_x
         h2_x = step_x
         ref_ax0 = ref_ax1
         ref_ax1 = ref_ax2
         ref_ax2 = next_area_x
-        sign_x_last = sign_x_next
+    sign_x_last = sign_x_next
 
-    # Shift streaming relative states forward for the Y axis segment
     if not converged_y:
         h1_y = h2_y
         h2_y = step_y
         ref_ay0 = ref_ay1
         ref_ay1 = ref_ay2
         ref_ay2 = next_area_y
-        sign_y_last = sign_y_next
+    sign_y_last = sign_y_next
         
-    print(f"Refine {refine_count}: X={current_x:.2f}, Y={current_y:.2f}, Y step={step_y:.2f}")
+    print(f"Refine {refine_count}: X={current_x:10.2f}, Y={current_y:10.2f}, AreaX={ref_ax1:10.2f}, AreaY={ref_ay1:10.2f}, sign_x={sign_x_last:2d}, sign_y={sign_y_last:2d}, move X={step_x:6.2f}, move Y={step_y:6.2f} | sign_x count={cumulative_sign_x}, sign_y count={cumulative_sign_y}")
 
+    # ==========================================================================
+    # --- 5. FIXED CROSS-AXIS TRAP HANDLING (PARALLEL SAFE) ---
+    # ==========================================================================
+    trigger_x = abs(cumulative_sign_x) >= SIGN_STUCK_LIMIT
+    trigger_y = abs(cumulative_sign_y) >= SIGN_STUCK_LIMIT
+
+    if trigger_x or trigger_y:
+        print(f"Cross-Axis Shift Detected! [X Wake-up Needed: {trigger_x}, Y Wake-up Needed: {trigger_y}]")
+        
+        boot_max_step = MAX_STEP * 0.5
+        if boot_max_step < MIN_STEP:
+            boot_max_step = MIN_STEP
+
+        # FIXED CONDITION: Handles X bootstrapping safely, even if Y triggered simultaneously
+        if trigger_x:
+            print("   -> Running isolated X-axis re-priming...")
+            converged_x = False
+            zero_step_count_x = 0
+            cumulative_sign_x = 0
+            
+            area_x_base, _, _, _, _, _, _, _ = simulate_analog_readout(current_x, current_y)
+            step1_x = np.sign(sign_x_last) * boot_max_step
+            if step1_x == 0: step1_x = boot_max_step
+                
+            current_x, current_y, area_x1, _, sign_x1, _ = move_with_chunks(current_x, current_y, step1_x, 0.0)
+            
+            if area_x1 <= area_x_base:
+                step2_x = -0.9 * step1_x
+            elif sign_x1 != np.sign(step1_x):
+                step2_x = -0.5 * step1_x
+            else:
+                step2_x = 0.75 * step1_x
+                
+            current_x, current_y, area_x2, _, sign_x2, _ = move_with_chunks(current_x, current_y, step2_x, 0.0)
+            _, _, sign_x_next, _, _, _, _, _ = simulate_analog_readout(current_x, current_y)
+            
+            h1_x, h2_x = step1_x, step2_x
+            ref_ax0, ref_ax1, ref_ax2 = area_x_base, area_x1, area_x2
+            sign_x_last = sign_x_next
+
+        # FIXED CONDITION: Handles Y bootstrapping safely, even if X triggered simultaneously
+        if trigger_y:
+            print("   -> Running isolated Y-axis re-priming...")
+            converged_y = False
+            zero_step_count_y = 0
+            cumulative_sign_y = 0
+            
+            _, area_y_base, _, _, _, _, _, _ = simulate_analog_readout(current_x, current_y)
+            step1_y = np.sign(sign_y_last) * boot_max_step
+            if step1_y == 0: step1_y = boot_max_step
+                
+            current_x, current_y, _, area_y1, _, sign_y1 = move_with_chunks(current_x, current_y, 0.0, step1_y)
+            
+            if area_y1 <= area_y_base:
+                step2_y = -0.9 * step1_y
+            elif sign_y1 != np.sign(step1_y):
+                step2_y = -0.5 * step1_y
+            else:
+                step2_y = 0.75 * step1_y
+                
+            current_x, current_y, _, area_y2, _, sign_y2 = move_with_chunks(current_x, current_y, 0.0, step2_y)
+            _, _, _, sign_y_next, _, _, _, _ = simulate_analog_readout(current_x, current_y)
+            
+            h1_y, h2_y = step1_y, step2_y
+            ref_ay0, ref_ay1, ref_ay2 = area_y_base, area_y1, area_y2
+            sign_y_last = sign_y_next
+            
+        print(f"   -> Repriming completed successfully. Counters reset.")
+
+# ==============================================================================
+# --- PHASE 3: FINAL POSITION DIAGNOSTIC REPORT ---
+# ==============================================================================
 if not converged_x:
     print("X did not converge within iteration limit.")
 if not converged_y:
@@ -360,6 +455,7 @@ if not converged_y:
 
 final_x = current_x
 final_y = current_y
+
 err_x = abs(final_x - TRUE_PEAK_X)
 err_y = abs(final_y - TRUE_PEAK_Y)
 print(f"\nFinal position: ({final_x:.2f}, {final_y:.2f})")
