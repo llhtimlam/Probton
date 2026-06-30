@@ -296,13 +296,11 @@ prev_step_sign_y = 0
 while not (converged_x and converged_y) and refine_count < MAX_REFINE_ITERATIONS:
     refine_count += 1
 
-    # Compute X step (only if not converged) using explicit named inputs
+    # Compute X step
     if not converged_x:
         step_x_calc = log_area_step(ref_ax0, h1_x, ref_ax1, h2_x, ref_ax2)
-        if np.isnan(step_x_calc) or abs(step_x_calc) < 1e-9:
+        if np.isnan(step_x_calc) or abs(step_x_calc) < 1e-9: # Algorithm command step invalid
             step_x_calc = sign_x_last * MAX_STEP
-        if abs(step_x_calc) > 1e-9 and np.sign(step_x_calc) != sign_x_last:
-            step_x_calc = sign_x_last * MAX_STEP * 0.5
         step_x = np.clip(step_x_calc, -MAX_STEP, MAX_STEP)
         
         if step_x == 0.0:
@@ -315,13 +313,11 @@ while not (converged_x and converged_y) and refine_count < MAX_REFINE_ITERATIONS
     else:
         step_x = 0.0
 
-    # Compute Y step (only if not converged) using explicit named inputs
+    # Compute Y step
     if not converged_y:
         step_y_calc = log_area_step(ref_ay0, h1_y, ref_ay1, h2_y, ref_ay2)
         if np.isnan(step_y_calc) or abs(step_y_calc) < 1e-9:
             step_y_calc = sign_y_last * MAX_STEP
-        if abs(step_y_calc) > 1e-9 and np.sign(step_y_calc) != sign_y_last:
-            step_y_calc = sign_y_last * MAX_STEP * 0.5
         step_y = np.clip(step_y_calc, -MAX_STEP, MAX_STEP)
 
         if step_y == 0.0:
@@ -334,32 +330,6 @@ while not (converged_x and converged_y) and refine_count < MAX_REFINE_ITERATIONS
     else:
         step_y = 0.0
         
-    # Update flip counters (only for non‑converged axes)
-    if not converged_x:
-        sign_x_step = 1 if step_x > 0 else (-1 if step_x < 0 else 0)
-        if sign_x_step != 0 and sign_x_step != prev_step_sign_x:
-            flip_counter_x += 1
-        else:
-            flip_counter_x = 0
-        prev_step_sign_x = sign_x_step
-        if flip_counter_x >= CONVERGENCE_FLIPS and flip_counter_x % 2 == 0:
-            print(f"X converged at iteration {refine_count} (flips={flip_counter_x})")
-            converged_x = True
-            # Ensure step_x is zero for the move
-            step_x = 0.0
-
-    if not converged_y:
-        sign_y_step = 1 if step_y > 0 else (-1 if step_y < 0 else 0)
-        if sign_y_step != 0 and sign_y_step != prev_step_sign_y:
-            flip_counter_y += 1
-        else:
-            flip_counter_y = 0
-        prev_step_sign_y = sign_y_step
-        if flip_counter_y >= CONVERGENCE_FLIPS and flip_counter_y % 2 == 0:
-            print(f"Y converged at iteration {refine_count} (flips={flip_counter_y})")
-            converged_y = True
-            step_y = 0.0
-
     # Execute the motor commands
     current_x, current_y, next_area_x, next_area_y, sign_x_next, sign_y_next = move_with_chunks(current_x, current_y, step_x, step_y)
 
@@ -381,7 +351,7 @@ while not (converged_x and converged_y) and refine_count < MAX_REFINE_ITERATIONS
         ref_ay2 = next_area_y
         sign_y_last = sign_y_next
         
-    print(f"Refine {refine_count}: X={current_x:.2f}, Y={current_y:.2f}, X step={step_x:.2f}, flips={flip_counter_x}, Y step={step_y:.2f}, flips={flip_counter_y}")
+    print(f"Refine {refine_count}: X={current_x:.2f}, Y={current_y:.2f}, Y step={step_y:.2f}")
 
 if not converged_x:
     print("X did not converge within iteration limit.")
