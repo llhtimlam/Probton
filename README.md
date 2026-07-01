@@ -47,6 +47,9 @@ MEMS Span = ±5 µm @ 300/400Hz
 <video src="Media\Simulation\Optical Probe Station Simulation 2D.mp4" controls="controls" width="100%">
 </video>
 
+<video src="https://github.com/user-attachments/assets/78566907-bb74-424e-98aa-8ca5e5057ff0" controls="controls" width="100%">
+</video>
+
 <img src="Media\Simulation\Optical Probe Station Monte Carlo Simulation 2D.png" width="100%" alt="Monte Carlo Simulation 2D">
 
 ## Pitch deck
