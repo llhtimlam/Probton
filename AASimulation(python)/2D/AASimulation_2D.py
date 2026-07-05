@@ -185,11 +185,11 @@ def run_AA_2D(plotting=False, verbose=False):
         hist_x.append((current_x, area_x1, sign_x1))
 
         if area_x1 <= area_x:
-            step2_x = -0.9 * step1_x
+            step2_x = -0.9375 * step1_x
         elif sign_x1 != sign_x:
             step2_x = -0.5 * step1_x
         else:
-            step2_x = 0.75 * step1_x
+            step2_x = step1_x
 
         if verbose:
             print(f"Scale {mult:.2f}x Step 2: X={current_x:.2f}, Y={current_y:.2f}, AreaX={area_x1:.2f}, AreaY={area_y1:.2f}, sign_x={sign_x}, move X={step2_x:.2f}")
@@ -205,11 +205,11 @@ def run_AA_2D(plotting=False, verbose=False):
         hist_y.append((current_y, area_y3, sign_y3))
 
         if area_y3 <= area_y2:
-            step2_y = -0.9 * step1_y
+            step2_y = -0.9375 * step1_y
         elif sign_y3 != sign_y2:
             step2_y = -0.5 * step1_y
         else:
-            step2_y = 0.75 * step1_y
+            step2_y = step1_y
 
         if verbose:
             print(f"Scale {mult:.2f}x Step 4: X={current_x:.2f}, Y={current_y:.2f}, AreaX={area_x3_y:.2f}, AreaY={area_y3:.2f}, sign_y={sign_y}, move Y={step2_y:.2f}")

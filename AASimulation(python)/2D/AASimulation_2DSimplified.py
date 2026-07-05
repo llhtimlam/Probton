@@ -121,7 +121,6 @@ def run_AA_2D_simplified(plotting=False, verbose=False):
     for _ in range(SIM_CYCLES):   # loop without using cycle variable
         cycle_counter += 1        # ← increment before each readout
         area_x, area_y, sign_x, sign_y, t_w, intensity, x_mems, y_mems, x_path, y_path = simulate_analog_readout(current_x, current_y)
-        area_x, area_y, sign_x, sign_y, t_w, intensity, x_mems, y_mems, x_path, y_path = simulate_analog_readout(current_x, current_y)
         
         time_axis.append(t_w + (cycle_counter - 1) * DURATION)
         wave_data.append(intensity)
@@ -248,7 +247,7 @@ def run_AA_2D_simplified(plotting=False, verbose=False):
             converged_x = False                # Force axis back into active tracking mode
             zero_sign_count_x = 0              # Wipe out stale convergence counts
             zero_step_count_x = 0
-            state_x['step'] = MAX_STEP * 0.5   # Re-prime to a controlled, gear-reduced scale
+            state_x['step'] = MAX_STEP * 0.9   # Re-prime to a controlled, gear-reduced scale
             cumulative_sign_x = 0              # Clear bias register
 
         # --- Y-Axis Wake-up Gate ---
@@ -262,7 +261,7 @@ def run_AA_2D_simplified(plotting=False, verbose=False):
             converged_y = False                # Force axis back into active tracking mode
             zero_sign_count_y = 0              # Wipe out stale convergence counts
             zero_step_count_y = 0
-            state_y['step'] = MAX_STEP * 0.5   # Re-prime to a controlled, gear-reduced scale
+            state_y['step'] = MAX_STEP * 0.9   # Re-prime to a controlled, gear-reduced scale
             cumulative_sign_y = 0              # Clear bias register
 
         if verbose:
@@ -330,8 +329,8 @@ def run_AA_2D_simplified(plotting=False, verbose=False):
         y_min = min(min(all_y), TRUE_PEAK_Y) - margin
         y_max = max(max(all_y), TRUE_PEAK_Y) + margin
 
-        ax_track.set_xlim(x_min, x_max)
-        ax_track.set_ylim(y_min, y_max)
+        ax_track.set_xlim(LOWER_BOUND, UPPER_BOUND)
+        ax_track.set_ylim(LOWER_BOUND, UPPER_BOUND)
         ax_track.grid(True, linestyle='--', alpha=0.5)
         ax_track.set_title("Stage Path", fontsize=12)
         ax_track.set_xlabel("X (µm)", fontsize=11)
@@ -342,8 +341,8 @@ def run_AA_2D_simplified(plotting=False, verbose=False):
         ax_track.legend(loc='upper right', fontsize=10)
 
         # ---- Readout (top right) with DC offset overlay ----
-        ax_track.set_xlim(LOWER_BOUND, UPPER_BOUND)
-        ax_track.set_ylim(LOWER_BOUND, UPPER_BOUND)
+        ax_scope.set_xlim(0, t_flat[-1] if len(t_flat) > 0 else 1)
+        ax_scope.set_ylim(-0.1, 1.1)
         ax_scope.grid(True, linestyle='--', alpha=0.5)
         ax_scope.set_title("Readout", fontsize=12)
         ax_scope.set_xlabel("Time (ms)", fontsize=11)

@@ -367,7 +367,7 @@ def run_AA(plotting=False, verbose=False):
     direction_to_center = 1.0 if X2 < 0 else -1.0
     crossed_axis = (X1 * X2) < 0
 
-    if not crossed_axis: # Alwayas toward center
+    if not crossed_axis: # Always toward center
         min_bound = MIN_STEP
         max_bound = MAX_STEP
         area_heading = direction_to_center

@@ -28,11 +28,41 @@ Size: 1100um x 1100um (estimate) - Block type A
 
 Required pins: 22
 
-<img src="Media\ChipArchitect\Optical Probe Station Full Design.png" width="100%" alt="Proposed Chip Architect">
+<img src="Media\ChipArchitect\Optical Probe Station Chip Architect.png" width="100%" alt="Proposed Chip Architect">
+
+> Check /Media/ChipArchitect for detailed chip architect diagram
+
+> Check /src and /Analog/schematics for digital and analog circuit design files
 
 > For detail on navigating the chip design file, follow the README.md in /scripts folder
 
+## Schematic Review
+
+Video for Schematic Review:
+
+<video src="Media\Presentation\B18 Probton Schematic Review.mp4" controls="controls" width="100%">
+</video>
+
+<video src="" controls="controls" width="100%">
+</video>
+
+
 ### Simulation result
+
+Alignment Sensitivity = ±10.95 μm @ -3dB
+
+Alignment Precision = 2.665 ± 3.010 µm (Total Step movement 457.7 ± 326.3)
+
+Motor movement = 0.375 µm @ Step (25 nm/V @ 15V)
+
+MEMS Span = ±5 µm @ 300/400Hz
+
+> Simulation result could be further improved with error processing feature, not implemented in the simulation.
+
+<img src="Media\Simulation\Optical Probe Station Monte Carlo Simulation 2D.png" width="100%" alt="Monte Carlo Simulation 2D">
+
+<details>
+<summary><b>Original Simulation (Superceded by simplified version due to Chipathon timeline)</b></summary>
 
 Alignment Sensitivity = ±10.95 μm @ -3dB
 
@@ -42,12 +72,20 @@ Motor movement = 0.294 µm ~ 1.875 µm @ Step (25 nm/V)
 
 MEMS Span = ±5 µm @ 300/400Hz
 
+
 <img src="Media\Simulation\Optical Probe Station Simulation 1D.png" width="100%" alt="Simulation Result">
 
 <video src="Media\Simulation\Optical Probe Station Simulation 2D.mp4" controls="controls" width="100%">
 </video>
 
-<img src="Media\Simulation\Optical Probe Station Monte Carlo Simulation 2D.png" width="100%" alt="Monte Carlo Simulation 2D">
+<video src="https://github.com/user-attachments/assets/78566907-bb74-424e-98aa-8ca5e5057ff0" controls="controls" width="100%">
+</video>
+
+<img src="Media\Simulation\VersionProposal\Optical Probe Station Monte Carlo Simulation 2D.png" width="100%" alt="Monte Carlo Simulation 2D">
+
+</details>
+
+
 
 ## Pitch deck
 

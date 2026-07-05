@@ -21,9 +21,9 @@ LOWER_BOUND         = -offset_bound
 INITIAL_OFFSET_BOUNDS = (LOWER_BOUND, UPPER_BOUND)
 
 # ======================== RUNTIME ENVIRONMENT & SIMULATION TIMING ============================
-SIM_CYCLES    = 100         # Total iterations for global stage sweeps
+SIM_CYCLES    = 1000        # Total iterations for global stage sweeps
 SAMPLE_RATE   = 2000        # Internal ADC sensor collection clock rate (Hz)
-DURATION      = 0.1         # Readout duration per cycle step window (seconds)
+DURATION      = 10.0        # Readout duration per cycle step window (seconds)
 NOISE_SIGMA   = 0.01        # White Gaussian sensor baseline noise standard deviation
 
 # Target alignment peak coordinate destination
@@ -34,13 +34,9 @@ TRUE_PEAK_Y   = 0.0
 START_X       = np.random.uniform(LOWER_BOUND, UPPER_BOUND)
 START_Y       = np.random.uniform(LOWER_BOUND, UPPER_BOUND)
 
-NOISE_SIGMA = 0.01         # Standard deviation of additive white noise
-SAMPLE_RATE = 2000         # ADC sample rate (Hz)
-duration = 0.1             # Readout duration per cycle (seconds)
-
-# ======================== STAGE & MOTOR PARAMETERS ============================
-MIN_STEP = 0.0588 * 5      # Minimum allowable step (µm)
-MAX_STEP = 0.375 * 5       # Maximum allowable step (µm)
+# ======================== STAGE & MOTOR PARAMETERS ============================  
+MAX_STEP = 0.375            # Maximum allowable step (µm)
+MIN_STEP = MAX_STEP / 256  # Minimum allowable step (µm)
 
 ENABLE_MOTOR_ERRORS = True
 BACKLASH_UM = 0.195
@@ -57,8 +53,8 @@ FY = 400                   # Y MEMS frequency (Hz)
 ENABLE_BIT_LOG = True      # Use 8‑bit lookup table for log
 BITS = 8                   # Number of bits for area quantisation
 
-LEVELS = [4.0, 2.0, 1.0]   # Multi‑scale step multipliers
-MAX_REFINE_ITERATIONS = 50 # Safety limit for refinement loop
+LEVELS = [64.0, 32.0, 16.0, 8.0, 4.0, 2.0, 1.0]   # Multi‑scale step multipliers
+MAX_REFINE_ITERATIONS = 200# Safety limit for refinement loop
 CONVERGENCE_THRESHOLD = 4  # Sign stay 0 for number of consecutive flips to converge
 SIGN_STUCK_LIMIT = 4       # if sign stuck in one side after converge, force damped step to nudge
 
@@ -92,4 +88,4 @@ VTT_CLOCK_JITTER_NS = 1
 VTT_NONLINEARITY_LSB = 0.5
 
 # ======================== MONTE CARLO SETTINGS ============================
-MONTE_CARLO_RUNS = 10000    # Number of independent simulations
+MONTE_CARLO_RUNS = 5000    # Number of independent simulations
