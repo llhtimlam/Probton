@@ -38,12 +38,9 @@ Required pins: 22
 
 ## Schematic Review
 
-Video for Schematic Review:
+Video for Schematic Review: [Youtube](https://youtu.be/nWU8KJn_Hf8)
 
-<video src="Media\Presentation\B18 Probton Schematic Review.mp4" controls="controls" width="100%">
-</video>
-
-<video src="" controls="controls" width="100%">
+<video src="https://youtu.be/nWU8KJn_Hf8" controls="controls" width="100%">
 </video>
 
 
@@ -137,3 +134,7 @@ We have created a [GitHub Organization for our team here](https://github.com/llh
 4. W.-M. Wang *et al.*, "Low-voltage and high-performance buzzer-scanner based streamlined atomic force microscope system," *Nanotechnology*, vol. 24, no. 45, p. 455503, Nov. 2013. doi: [10.1088/0957-4484/24/45/455503](https://doi.org/10.1088/0957-4484/24/45/455503)
 
 5. J. Li, J. D. Valentine, and A. E. Rana, "The modified three point gaussian method for determining Gaussian peak parameters," *Nucl. Instrum. Methods Phys. Res. A*, vol. 422, no. 1–3, pp. 438–443, 1999. doi: [10.1016/S0168-9002(98)01113-9](https://doi.org/10.1016/S0168-9002(98)01113-9)
+
+6. S. S. Rout, S. K. Mohapatra, and K. Sethi, "Design of 2.4 GHz Improved Current Reuse Gilbert Mixer with Source Degeneration Technique," Wireless Personal Communications, vol. 122, no. 4, pp. 3875–3887, 2022, doi: [10.1016/S0168-9002(98)01113-9](https://doi.org/10.1007/s11277-021-09115-6)
+
+7. E. Altuner, I. S. Özoğuz, and M. B. Yelten,  "High-Linearity Gilbert-Cell Mixer Design for Cryogenic Applications," Analog Integrated Circuits and Signal Processing, vol. 113, no. 2, pp. 249–256, 2022, doi: [10.1007/s10470-022-02098-9](https://doi.org/10.1007/s10470-022-02098-9)
