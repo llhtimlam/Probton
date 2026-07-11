@@ -6,48 +6,48 @@ module wave_controller (
     input  wire rst_n,
 
     // Config Setting
-    // 17-bit: Frequency Control Word (Max MEMS Frequency: 97.6557KHz)
-    input logic [16:0]  cfg_f_MEMS_fcw, // Frequency Control Word (f_MEMS * 2^k) / f_clk
+    // 16-bit: Frequency Control Word (Max MEMS Frequency: 156.24716KHz)
+    input logic unsigned [15:0]     cfg_f_MEMS_fcw, // Frequency Control Word (f_MEMS * 2^k) / f_clk, where k is 21, f_clk is 5MHz
 
-    // 25-bit: MEMS phase offset in phase accumulator space
-    input logic [24:0]  cfg_phase0_offset,
-    input logic [24:0]  cfg_phase90_offset,
-    input logic [24:0]  cfg_phase270_offset,
+    // 21-bit: MEMS phase offset in phase accumulator space
+    input logic unsigned [20:0]     cfg_phase0_offset,
+    input logic unsigned [20:0]     cfg_phase90_offset,
+    input logic unsigned [20:0]     cfg_phase270_offset,
 
     // State Machine
-    input  logic        cfg_done,
-    output logic        cal_done,
-    output logic        cal_timeout,
+    input  logic                    cfg_done,
+    output logic                    cal_done,
+    output logic                    cal_timeout,
 
     // Calibration
-    input  logic        cal_start,
+    input  logic                    cal_start,
 
     // Interface from Analog Comparator Output
-    input  logic        comp_p,         // Comparator (+) raw async wire
-    input  logic        comp_m,         // Comparator (-) raw async wire
+    input  logic                    comp_p,         // Comparator (+) raw async wire
+    input  logic                    comp_m,         // Comparator (-) raw async wire
 
     // Latch Strobe
-    output logic        latch_phase90,
-    output logic        latch_phase270,
+    output logic                    latch_phase90,
+    output logic                    latch_phase270,
 
     // SPI Report
-    output logic [7:0]  delay_wave_cycle,
-    output logic [24:0] raw_edge1, raw_edge2, raw_edge3, raw_edge4,
-    output logic        cal_dir,
-    output logic [24:0] cal_phase0_offset, cal_phase90_offset, cal_phase270_offset
+    output logic unsigned [7:0]     delay_wave_cycle,
+    output logic unsigned [20:0]    raw_edge1, raw_edge2, raw_edge3, raw_edge4,
+    output logic                    cal_dir,
+    output logic unsigned [20:0]    cal_phase0_offset, cal_phase90_offset, cal_phase270_offset
 );
 
-    // 25-bit NCO Phase Accumulator
-    logic [24:0] phase_acc;
+    // 21-bit NCO Phase Accumulator
+    logic unsigned [20:0] phase_acc;
 
-    // Concatenate to fit 17-bit FCW in 25-bit Phase Accumulator
-    logic [24:0] delta_N;
-    assign delta_N = {8'h00, cfg_f_MEMS_fcw};
+    // Concatenate to fit 16-bit FCW in 21-bit Phase Accumulator
+    logic unsigned [20:0] delta_N;
+    assign delta_N = {5'h00, cfg_f_MEMS_fcw};
 
     // Phase Accumulator Engine
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
-            phase_acc <= 25'b0;
+            phase_acc <= 21'b0;
         end else if (cfg_done || cal_start) begin // Start Clock after config is loaded (proceed with calibration if prefill is empty)
             phase_acc <= phase_acc + delta_N;
         end
@@ -56,7 +56,6 @@ module wave_controller (
     // Asynchronous Comparator Sampling
     // Metastability Synchronization (4-tick) and Edge Detection
     logic comp_p_sync0, comp_p_sync1, comp_p_sync2, comp_p_sync3, comp_p_sync4;
-    logic comp_p_posedge, comp_p_negedge;
 
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
@@ -100,15 +99,15 @@ module wave_controller (
     assign comp_m_negedge = (!comp_m_sync3 && comp_m_sync4);
 
     // Calibration Run
-    logic [7:0] wave_cycle_cnt;
+    logic unsigned [7:0] wave_cycle_cnt;
 
-    logic       phase_overflow;
+    logic phase_overflow;
     assign phase_overflow = (phase_acc + delta_N < phase_acc); 
 
     logic cal_dir; // 1: In-phase 0: Out-of-phase
 
     logic capture_pending;
-    logic [1:0] capture_step;
+    logic unsigned [1:0] capture_step;
     
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
@@ -205,7 +204,7 @@ module wave_controller (
     assign raw_phase270_offset = raw_edge3 + ((raw_edge4 - raw_edge3) >> 1);
 
     // Latency Correction (4-cycle synchronization pipeline delay)
-    logic [24:0] sync_delay;
+    logic unsigned [20:0] sync_delay;
     assign sync_delay = (delta_N << 2); // 4 * delta_N
 
     // Latch point (stable midpoint)
@@ -213,11 +212,11 @@ module wave_controller (
     assign cal_phase270_offset = raw_phase270_offset - sync_delay;
 
     // Wave mixer reference wave delay estimated from two latch points
-    localparam logic [24:0] PHASE_90 = 25'h0800000; // 90-degree phase shift constant for 25-bit circle math
+    localparam logic unsigned [20:0] PHASE_90 = 21'b0_0100_0000_0000_0000_0000; // 90° phase shift constant: Bit (MSB-2) = 1, [1/4 wave cycle]
 
     // Averaging 90-90 and 270+90
-    wire [24:0] phase0_est90;
-    wire [24:0] phase0_est270;
+    wire unsigned [20:0] phase0_est90;
+    wire unsigned [20:0] phase0_est270;
     
     assign phase0_est90 = cal_phase90_offset - PHASE_90;
     assign phase0_est270 = cal_phase270_offset + PHASE_90;
@@ -249,12 +248,14 @@ module wave_controller (
 
             // Calibration Run
             if (cal_start) begin
-                // Generate 1-wave pulse
+                // Generate 1-wave pulse for calibration to measure delay
             end
 
             // Main Run
             else begin
-                // Generate continuous wave
+                // Generate continuous wave to MEMS driver
+                // Generate continuous delay reference wave to wave mixer
+                // + phase0_offset
             end
         
         end
