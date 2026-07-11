@@ -12,18 +12,32 @@ module spi_regs #(
     output logic spi_miso,
     output logic spi_miso_oe,
 
+    // MOSI (Import to ASIC)
     // Config Setting
     // 8 bit: Amp Ratio
     output logic [7:0]  cfg_amp_ratio,     
 
-    // 17 bit: MEMS frequency (Max: 97.65KHz)
-    output logic [16:0] cfg_f_MEMS_x,    
-    output logic [16:0] cfg_f_MEMS_y,    // 17 bit: Max: 97.65KHz
+    // 17 bit: MEMS frequency (Max: 97.6557KHz)
+    output logic [16:0] cfg_f_MEMS_fcw_x, cfg_f_MEMS_fcw_y, // Frequency Control Word (f_MEMS * 2^k) / f_clk
 
-    // 8 bit: MEMS phase offset (Resolution: 1/256 MEMS frequency)
-    output logic [7:0]  phase0_offset,
-    output logic [7:0]  phase90_offset,
-    output logic [7:0]  phase270_offset,
+    // Pre-Calibration
+    // 25-bit: MEMS phase offset in phase accumulator space (Optional)
+    output logic [24:0] cfg_phase0_offset_x, cfg_phase90_offset_x, cfg_phase270_offset_x,
+    output logic [24:0] cfg_phase0_offset_y, cfg_phase90_offset_y, cfg_phase270_offset_y,
+
+    output logic        cal_start,
+
+    // MISO (Export from ASIC)
+    // SPI Report
+    // Calibration
+    input  logic [7:0]  delay_wave_cycle_x, delay_wave_cycle_y,
+    input  logic [24:0] raw_edge1_x, raw_edge2_x, raw_edge3_x, raw_edge4_x,
+    input  logic [24:0] raw_edge1_y, raw_edge2_y, raw_edge3_y, raw_edge4_y,
+    input  logic        cal_dir_x, cal_dir_y,
+    input  logic [24:0] cal_phase0_offset_x, cal_phase90_offset_x, cal_phase270_offset_x,
+    input  logic [24:0] cal_phase0_offset_y, cal_phase90_offset_y, cal_phase270_offset_y,
+
+    input  logic        cal_timeout_x, cal_timeout_y,
 
     // State Machine
     input logic
