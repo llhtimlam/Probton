@@ -56,6 +56,7 @@ module wave_controller (
     // Asynchronous Comparator Sampling
     // Metastability Synchronization (4-tick) and Edge Detection
     logic comp_p_sync0, comp_p_sync1, comp_p_sync2, comp_p_sync3, comp_p_sync4;
+    logic comp_p_posedge, comp_p_negedge;
 
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
@@ -205,7 +206,7 @@ module wave_controller (
                         capture_pending <= 1'b1; // Retry
                     end
                 end
-                
+
             end // Freeze after timeout and calibration complete
         end // Freeze if NOT Condition: cal_start:1, cfg_done:1
     end
