@@ -120,83 +120,94 @@ module wave_controller (
             cal_done <= 1'b0;
         // Calibration State
         end else if (cfg_done && cal_start) begin // Condition: cal_start:1, cfg_done:1
-            // Track for waveform cycle count
-            if (phase_overflow) begin
-                wave_cycle_cnt <= wave_cycle_cnt + 1'b1;
-            end
+            // Stop loop after timeout and finish calibration
+            if (!cal_timeout && !cal_done) begin
+                // Track for waveform cycle count
+                if (phase_overflow) begin
+                    wave_cycle_cnt <= wave_cycle_cnt + 1'b1;
+                end
 
-            // Calibration Timeout
-            if (wave_cycle_cnt == 8'hFF) begin
-                cal_timeout <= 1'b1;
-            end
+                // Calibration Timeout
+                if (wave_cycle_cnt == 8'hFF) begin
+                    cal_timeout <= 1'b1;
+                end
 
-            // In-phase 1st edge detection
-            if (comp_p_posedge && capture_pending) begin
-                raw_edge1 <= phase_acc;
-                cal_dir <= 1'b1;
-                delay_wave_cycle <= wave_cycle_cnt;
-                capture_pending <= 1'b0;
-            end
+                // In-phase 1st edge detection
+                if (comp_p_posedge && capture_pending) begin
+                    raw_edge1 <= phase_acc;
+                    cal_dir <= 1'b1;
+                    delay_wave_cycle <= wave_cycle_cnt;
+                    capture_pending <= 1'b0;
+                end
 
-            // Out-of-phase 1st edge detection
-            if (comp_m_negedge && capture_pending) begin
-                raw_edge1 <= phase_acc;
-                cal_dir <= 1'b0;
-                delay_wave_cycle <= wave_cycle_cnt;
-                capture_pending <= 1'b0;
-            end
+                // Out-of-phase 1st edge detection
+                if (comp_m_negedge && capture_pending) begin
+                    raw_edge1 <= phase_acc;
+                    cal_dir <= 1'b0;
+                    delay_wave_cycle <= wave_cycle_cnt;
+                    capture_pending <= 1'b0;
+                end
 
-            // Capture consecutive edge detection 
-            if (~capture_pending) begin
-                // Condition: within 1 MEMS cycle from 1st edge detection
-                if (wave_cycle_cnt < (delay_wave_cycle + 8'd2)) begin
-                    // In-phase
-                    if (cal_dir) begin
-                        case (capture_step)
-                            2'd0: if (comp_p_negedge) begin
-                                    raw_edge2 <= phase_acc;
-                                    capture_step <= 2'd1;
+                // Capture consecutive edge detection 
+                if (~capture_pending) begin
+                    // Condition: within 1 MEMS cycle from 1st edge detection
+                    if (wave_cycle_cnt < (delay_wave_cycle + 8'd2)) begin
+                        // In-phase
+                        if (cal_dir) begin
+                            case (capture_step)
+                                2'd0: if (comp_p_negedge) begin
+                                        raw_edge2 <= phase_acc;
+                                        capture_step <= 2'd1;
+                                    end
+
+                                2'd1: if (comp_m_negedge) begin
+                                        raw_edge3 <= phase_acc;
+                                        capture_step <= 2'd2;
+                                    end
+
+                                2'd2: if (comp_m_posedge) begin
+                                        raw_edge4 <= phase_acc;
+                                        capture_step <= 2'd3; // Exit the Calibration Loop
+                                        cal_done <= 1'b1;
+                                    end
+                                default: begin
+                                    capture_step <= capture_step; // Do Nothing
                                 end
+                            endcase
+                        end
+                        // Out-of-phase
+                        else begin
+                            case (capture_step)
+                                2'd0: if (comp_m_posedge) begin
+                                        raw_edge2 <= phase_acc;
+                                        capture_step <= 2'd1;
+                                    end
 
-                            2'd1: if (comp_m_negedge) begin
-                                    raw_edge3 <= phase_acc;
-                                    capture_step <= 2'd2;
-                                end
+                                2'd1: if (comp_p_posedge) begin
+                                        raw_edge3 <= phase_acc;
+                                        capture_step <= 2'd2;
+                                    end
 
-                            2'd2: if (comp_m_posedge) begin
-                                    raw_edge4 <= phase_acc;
-                                    cal_done <= 1'b1;
+                                2'd2: if (comp_p_negedge) begin
+                                        raw_edge4 <= phase_acc;
+                                        capture_step <= 2'd3; // Exit the Calibration Loop
+                                        cal_done <= 1'b1;
+                                    end
+                                default: begin
+                                    capture_step <= capture_step; // Do Nothing
                                 end
-                        endcase
+                            endcase
+                        end
                     end
-                    // Out-of-phase
+                    // False Signal Reset (Condition not meet: within 1 MEMS cycle from 1st edge detection)
                     else begin
-                        case (capture_step)
-                            2'd0: if (comp_m_posedge) begin
-                                    raw_edge2 <= phase_acc;
-                                    capture_step <= 2'd1;
-                                end
-
-                            2'd1: if (comp_p_posedge) begin
-                                    raw_edge3 <= phase_acc;
-                                    capture_step <= 2'd2;
-                                end
-
-                            2'd2: if (comp_p_negedge) begin
-                                    raw_edge4 <= phase_acc;
-                                    cal_done <= 1'b1;
-                                end
-                        endcase
+                        capture_step <= 2'd0; // Invalid
+                        capture_pending <= 1'b1; // Retry
                     end
                 end
-                // False Signal Reset (Condition not meet: within 1 MEMS cycle from 1st edge detection)
-                else begin
-                    capture_step <= 2'd0; // Invalid
-                    capture_pending <= 1'b1; // Retry
-                end
-            end
-
-        end
+                
+            end // Freeze after timeout and calibration complete
+        end // Freeze if NOT Condition: cal_start:1, cfg_done:1
     end
 
     // Midpoint Determination for most stable latch (Handle Circular Wrapping)
