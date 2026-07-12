@@ -33,7 +33,9 @@ module wave_controller (
     output logic unsigned [7:0]     delay_wave_cycle,
     output logic unsigned [20:0]    raw_edge1, raw_edge2, raw_edge3,
     output logic                    cal_dir,
-    output logic unsigned [20:0]    cal_phase0_offset, cal_phase90_offset, cal_phase270_offset
+    output logic unsigned [20:0]    cal_phase0_offset, cal_phase90_offset, cal_phase270_offset,
+
+    output logic                    latch_error
 );
 
     // 21-bit NCO Phase Accumulator
@@ -201,9 +203,25 @@ module wave_controller (
             latch_phase270 <= 1'b0;
         // Readout State
         end else if (cfg_done && !cal_start) begin  // Condition: cal_start:0, cfg_done:1
-            // 1-tick Latch pulse
-            latch_phase90 <= ((cfg_phase90_offset - phase_acc) < delta_N);
-            latch_phase270 <= ((cfg_phase270_offset - phase_acc) < delta_N);
+            // Latch pulse
+            if ((cfg_phase90_offset - phase_acc) < delta_N) begin
+                latch_phase90 <= 1'b1;
+            end else if (latch_phase90_ack) begin
+                latch_phase90 <= 1'b0;  // Handshake to signal processor module
+            end
+
+            if ((cfg_phase270_offset - phase_acc) < delta_N) begin
+                latch_phase270 <= 1'b1;
+            end else if (latch_phase270_ack) begin
+                latch_phase270 <= 1'b0; // Handshake to signal processor module
+            end
+            // Latch fallout
+            if (latch_phase90 && latch_phase270) begin
+                latch_error    <= 1'b1;
+                latch_phase90  <= 1'b0;
+                latch_phase270 <= 1'b0;
+            end
+
         end else begin
             latch_phase90  <= 1'b0;
             latch_phase270 <= 1'b0;

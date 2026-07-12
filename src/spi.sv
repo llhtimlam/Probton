@@ -39,6 +39,9 @@ module spi_regs #(
 
     input  logic                    cal_timeout_x, cal_timeout_y,
 
+    // Main Loop
+    input  logic                    latch_error,
+
     // State Machine
     input logic
 
