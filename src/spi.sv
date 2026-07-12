@@ -31,8 +31,8 @@ module spi_regs #(
     // SPI Report
     // Calibration
     input  logic unsigned [7:0]     delay_wave_cycle_x, delay_wave_cycle_y,
-    input  logic unsigned [20:0]    raw_edge1_x, raw_edge2_x, raw_edge3_x, raw_edge4_x,
-    input  logic unsigned [20:0]    raw_edge1_y, raw_edge2_y, raw_edge3_y, raw_edge4_y,
+    input  logic unsigned [20:0]    raw_edge1_x, raw_edge2_x, raw_edge3_x,
+    input  logic unsigned [20:0]    raw_edge1_y, raw_edge2_y, raw_edge3_y,
     input  logic                    cal_dir_x, cal_dir_y,
     input  logic unsigned [20:0]    cal_phase0_offset_x, cal_phase90_offset_x, cal_phase270_offset_x,
     input  logic unsigned [20:0]    cal_phase0_offset_y, cal_phase90_offset_y, cal_phase270_offset_y,
