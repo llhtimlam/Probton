@@ -18,16 +18,23 @@ scl = os.getenv("SCL", "gf180mcu_fd_sc_mcu7t5v0")
 gl = os.getenv("GL", False)
 slot = os.getenv("SLOT", "1x1")
 
-hdl_toplevel = "chip_top"
+hdl_toplevel = "wave_controller"
 
 async def set_defaults(dut):
-    dut.input_PAD.value = 0
+    # Set all input in the module to default
+    dut.cfg_f_MEMS_fcw.value = 0
+    dut.cfg_phase0_offset.value = 0
+    dut.cfg_phase90_offset.value = 0
+    dut.cfg_phase270_offset.value = 0
+    dut.cfg_done.value = 0
+    dut.cal_start.value = 0
+    dut.comp.value = 0
 
 async def enable_power(dut):
     dut.VDD.value = 1
     dut.VSS.value = 0
 
-async def start_clock(clock, freq=50):
+async def start_clock(clock, freq=5):
     """Start the clock @ freq MHz"""
     c = Clock(clock, 1 / freq * 1000, "ns")
     cocotb.start_soon(c.start())
@@ -49,8 +56,8 @@ async def start_up(dut):
     await set_defaults(dut)
     if gl:
         await enable_power(dut)
-    await start_clock(dut.clk_PAD)
-    await reset(dut.rst_n_PAD)
+    await start_clock(dut.clk)
+    await reset(dut.rst_n)
 
 
 @cocotb.test()
@@ -67,22 +74,12 @@ async def test_counter(dut):
 
     logger.info("Running the test...")
 
-    # Wait for some time...
-    await ClockCycles(dut.clk_PAD, 10)
-
-    # Start the counter by setting all inputs to 1
-    dut.input_PAD.value = -1
-
-    # Wait for a number of clock cycles
-    await ClockCycles(dut.clk_PAD, 100)
-
-    # Check the end result of the counter
-    assert dut.bidir_PAD.value == 100 - 1
+    # Write your testbench
 
     logger.info("Done!")
 
 
-def chip_top_runner():
+def wave_controller_runner():
 
     proj_path = Path(__file__).resolve().parent
 
@@ -100,21 +97,7 @@ def chip_top_runner():
 
         defines = {"FUNCTIONAL": True, "USE_POWER_PINS": True}
     else:
-        sources.append(proj_path / "../src/chip_top.sv")
-        sources.append(proj_path / "../src/chip_core.sv")
-
-    sources += [
-        # IO pad models
-        Path(pdk_root) / pdk / "libs.ref/gf180mcu_fd_io/verilog/gf180mcu_fd_io.v",
-        Path(pdk_root) / pdk / "libs.ref/gf180mcu_fd_io/verilog/gf180mcu_ws_io.v",
-        
-        # SRAM macros
-        Path(pdk_root) / pdk / "libs.ref/gf180mcu_fd_ip_sram/verilog/gf180mcu_fd_ip_sram__sram512x8m8wm1.v",
-        
-        # Custom IP
-        proj_path / "../ip/gf180mcu_ws_ip__id/vh/gf180mcu_ws_ip__id.v",
-        proj_path / "../ip/gf180mcu_ws_ip__logo/vh/gf180mcu_ws_ip__logo.v",
-    ]
+        sources.append(proj_path / "../src/wave_controller.sv")
 
     build_args = []
 
@@ -141,11 +124,11 @@ def chip_top_runner():
 
     runner.test(
         hdl_toplevel=hdl_toplevel,
-        test_module="chip_top_tb",
+        test_module="wave_controller_tb",
         plusargs=plusargs,
         waves=True,
     )
 
 
 if __name__ == "__main__":
-    chip_top_runner()
+    wave_controller_runner()
