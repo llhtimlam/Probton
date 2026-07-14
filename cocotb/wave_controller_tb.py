@@ -3,12 +3,13 @@
 
 import math
 import os
+import random
 import logging
 from pathlib import Path
 
 import cocotb
 from cocotb.clock import Clock
-from cocotb.triggers import Timer, RisingEdge, ClockCycles
+from cocotb.triggers import Timer, Edge, RisingEdge, FallingEdge, ClockCycles
 from cocotb_tools.runner import get_runner
 
 sim = os.getenv("SIM", "icarus")
@@ -97,14 +98,11 @@ async def set_defaults(dut):
     dut.cfg_phase270_offset.value = 0
     dut.cfg_done.value = 0
     dut.cal_start.value = 0
-    dut.comp_p.value = 0
-    dut.comp_m.value = 0
-
+    dut.comp.value = 0
 
 async def enable_power(dut):
     dut.VDD.value = 1
     dut.VSS.value = 0
-
 
 async def start_clock(clock, freq=5):
     """Start the clock @ freq MHz"""
@@ -114,10 +112,11 @@ async def start_clock(clock, freq=5):
 
 async def reset(reset, active_low=True, time_ns=1000):
     """Reset dut"""
-    cocotb.log.info("Reset asserted...")
+
     reset.value = not active_low
     await Timer(time_ns, "ns")
     reset.value = active_low
+
     cocotb.log.info("Reset deasserted.")
 
 

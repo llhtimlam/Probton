@@ -141,7 +141,7 @@ def chip_top_runner():
 
     runner.test(
         hdl_toplevel=hdl_toplevel,
-        test_module="chip_top_tb,",
+        test_module="chip_top_tb",
         plusargs=plusargs,
         waves=True,
     )

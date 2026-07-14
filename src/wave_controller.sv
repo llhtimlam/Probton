@@ -37,8 +37,7 @@ module wave_controller (
     input  logic                    cal_start,
 
     // Interface from Analog Comparator Output
-    input  logic                    comp_p,         // Comparator (+) raw async wire
-    input  logic                    comp_m,         // Comparator (-) raw async wire
+    input  logic                    comp,         // Comparator raw async wire
 
     // Latch Strobe
     output logic                    latch_phase90,
@@ -50,9 +49,11 @@ module wave_controller (
 
     // SPI Report
     output logic unsigned [7:0]     delay_wave_cycle,
-    output logic unsigned [20:0]    raw_edge1, raw_edge2, raw_edge3, raw_edge4,
+    output logic unsigned [20:0]    raw_edge1, raw_edge2, raw_edge3,
     output logic                    cal_dir,
-    output logic unsigned [20:0]    cal_phase0_offset, cal_phase90_offset, cal_phase270_offset
+    output logic unsigned [20:0]    cal_phase0_offset, cal_phase90_offset, cal_phase270_offset,
+
+    output logic                    latch_error
 );
 
     // ------------------------------------------------------------------------
@@ -86,54 +87,29 @@ module wave_controller (
         end
     end
 
-    // ------------------------------------------------------------------------
-    // Asynchronous Comparator Sampling
+    // Comparator Sampling
     // Metastability Synchronization (4-tick) and Edge Detection
-    // ------------------------------------------------------------------------
-
-    logic comp_p_sync0, comp_p_sync1, comp_p_sync2, comp_p_sync3, comp_p_sync4;
-    logic comp_p_posedge, comp_p_negedge;
+    logic comp_sync0, comp_sync1, comp_sync2, comp_sync3, comp_sync4;
+    logic comp_posedge, comp_negedge;
 
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
-            comp_p_sync0 <= 1'b0;
-            comp_p_sync1 <= 1'b0;
-            comp_p_sync2 <= 1'b0;
-            comp_p_sync3 <= 1'b0;
-            comp_p_sync4 <= 1'b0;
+            comp_sync0 <= 1'b0;
+            comp_sync1 <= 1'b0;
+            comp_sync2 <= 1'b0;
+            comp_sync3 <= 1'b0;
+            comp_sync4 <= 1'b0;
         end else begin
-            comp_p_sync0 <= comp_p;
-            comp_p_sync1 <= comp_p_sync0;
-            comp_p_sync2 <= comp_p_sync1;
-            comp_p_sync3 <= comp_p_sync2;
-            comp_p_sync4 <= comp_p_sync3;
+            comp_sync0 <= comp;
+            comp_sync1 <= comp_sync0;
+            comp_sync2 <= comp_sync1;
+            comp_sync3 <= comp_sync2;
+            comp_sync4 <= comp_sync3;
         end
     end
 
-    assign comp_p_posedge = (comp_p_sync3 && !comp_p_sync4);
-    assign comp_p_negedge = (!comp_p_sync3 && comp_p_sync4);
-
-    logic comp_m_sync0, comp_m_sync1, comp_m_sync2, comp_m_sync3, comp_m_sync4;
-    logic comp_m_posedge, comp_m_negedge;
-
-    always_ff @(posedge clk or negedge rst_n) begin
-        if (!rst_n) begin
-            comp_m_sync0 <= 1'b0;
-            comp_m_sync1 <= 1'b0;
-            comp_m_sync2 <= 1'b0;
-            comp_m_sync3 <= 1'b0;
-            comp_m_sync4 <= 1'b0;
-        end else begin
-            comp_m_sync0 <= comp_m;
-            comp_m_sync1 <= comp_m_sync0;
-            comp_m_sync2 <= comp_m_sync1;
-            comp_m_sync3 <= comp_m_sync2;
-            comp_m_sync4 <= comp_m_sync3;
-        end
-    end
-
-    assign comp_m_posedge = (comp_m_sync3 && !comp_m_sync4);
-    assign comp_m_negedge = (!comp_m_sync3 && comp_m_sync4);
+    assign comp_posedge = (comp_sync3 && !comp_sync4);
+    assign comp_negedge = (!comp_sync3 && comp_sync4);
 
     // ------------------------------------------------------------------------
     // Calibration Run
@@ -174,18 +150,18 @@ module wave_controller (
                 end
 
                 // In-phase 1st edge detection
-                if (comp_p_posedge && capture_pending) begin
-                    raw_edge1        <= phase_acc;
-                    cal_dir          <= 1'b1;
+                if (comp_posedge && capture_pending) begin
+                    raw_edge1 <= phase_acc;
+                    cal_dir <= 1'b1;
                     delay_wave_cycle <= wave_cycle_cnt;
                     capture_pending  <= 1'b0;
                     capture_step     <= 2'd0;
                 end
 
                 // Out-of-phase 1st edge detection
-                if (comp_m_negedge && capture_pending) begin
-                    raw_edge1        <= phase_acc;
-                    cal_dir          <= 1'b0;
+                if (comp_negedge && capture_pending) begin
+                    raw_edge1 <= phase_acc;
+                    cal_dir <= 1'b0;
                     delay_wave_cycle <= wave_cycle_cnt;
                     capture_pending  <= 1'b0;
                     capture_step     <= 2'd0;
@@ -199,18 +175,15 @@ module wave_controller (
                         // In-phase
                         if (cal_dir) begin
                             case (capture_step)
-                                2'd0: if (comp_p_negedge) begin
-                                        raw_edge2    <= phase_acc;
+                                2'd0: if (comp_negedge) begin
+                                        raw_edge2 <= phase_acc;
                                         capture_step <= 2'd1;
                                     end
-                                2'd1: if (comp_m_negedge) begin
-                                        raw_edge3    <= phase_acc;
-                                        capture_step <= 2'd2;
-                                    end
-                                2'd2: if (comp_m_posedge) begin
-                                        raw_edge4    <= phase_acc;
-                                        capture_step <= 2'd3;   // Exit the Calibration Loop
-                                        cal_done     <= 1'b1;
+
+                                2'd1: if (comp_posedge) begin
+                                        raw_edge3 <= phase_acc;
+                                        capture_step <= 2'd2; // Exit the Calibration Loop
+                                        cal_done <= 1'b1;
                                     end
                                 default: begin
                                     capture_step <= capture_step;   // Do Nothing
@@ -220,18 +193,15 @@ module wave_controller (
                         // Out-of-phase
                         end else begin
                             case (capture_step)
-                                2'd0: if (comp_m_posedge) begin
-                                        raw_edge2    <= phase_acc;
+                                2'd0: if (comp_posedge) begin
+                                        raw_edge2 <= phase_acc;
                                         capture_step <= 2'd1;
                                     end
-                                2'd1: if (comp_p_posedge) begin
-                                        raw_edge3    <= phase_acc;
-                                        capture_step <= 2'd2;
-                                    end
-                                2'd2: if (comp_p_negedge) begin
-                                        raw_edge4    <= phase_acc;
-                                        capture_step <= 2'd3;   // Exit the Calibration Loop
-                                        cal_done     <= 1'b1;
+                                
+                                2'd1: if (comp_negedge) begin
+                                        raw_edge3 <= phase_acc;
+                                        capture_step <= 2'd2; // Exit the Calibration Loop
+                                        cal_done <= 1'b1;
                                     end
                                 default: begin
                                     capture_step <= capture_step;   // Do Nothing
@@ -255,11 +225,8 @@ module wave_controller (
     // ------------------------------------------------------------------------
 
     // Midpoint Determination for most stable latch (Handle Circular Wrapping)
-    logic unsigned [20:0] raw_phase90_offset;
-    logic unsigned [20:0] raw_phase270_offset;
-
-    assign raw_phase90_offset  = raw_edge1 + ((raw_edge2 - raw_edge1) >> 1);
-    assign raw_phase270_offset = raw_edge3 + ((raw_edge4 - raw_edge3) >> 1);
+    assign raw_phase90_offset = raw_edge1 + ((raw_edge2 - raw_edge1) >> 1);
+    assign raw_phase270_offset = raw_edge2 + ((raw_edge3 - raw_edge2) >> 1);
 
     // Latency Correction (4-cycle synchronization pipeline delay)
     logic unsigned [20:0] sync_delay;
@@ -269,18 +236,8 @@ module wave_controller (
     assign cal_phase90_offset  = raw_phase90_offset  - sync_delay;
     assign cal_phase270_offset = raw_phase270_offset - sync_delay;
 
-    // Wave mixer reference wave delay estimated from two latch points
-    // 90 degree phase shift constant: bit (MSB-2) = 1, i.e. 1/4 wave cycle
-    localparam logic unsigned [20:0] PHASE_90 = 21'b0_0100_0000_0000_0000_0000;
-
-    // Averaging (90 - 90) and (270 + 90)
-    logic unsigned [20:0] phase0_est90;
-    logic unsigned [20:0] phase0_est270;
-
-    assign phase0_est90  = cal_phase90_offset  - PHASE_90;
-    assign phase0_est270 = cal_phase270_offset + PHASE_90;
-
-    assign cal_phase0_offset = phase0_est90 + ((phase0_est270 - phase0_est90) >> 1);
+    // Wave mixer reference wave delay
+    assign cal_phase0_offset = raw_edge3 - sync_delay;
 
     // ------------------------------------------------------------------------
     // Main Readout Loop - Comparator Latch Strobes
@@ -292,11 +249,25 @@ module wave_controller (
             latch_phase270 <= 1'b0;
 
         // Readout State
-        end else if (cfg_done && !cal_start) begin
-            // 1-tick Latch pulse: fires on the single clock in which the
-            // accumulator steps across the target phase.
-            latch_phase90  <= ((cfg_phase90_offset  - phase_acc) < delta_N);
-            latch_phase270 <= ((cfg_phase270_offset - phase_acc) < delta_N);
+        end else if (cfg_done && !cal_start) begin  // Condition: cal_start:0, cfg_done:1
+            // Latch pulse
+            if ((cfg_phase90_offset - phase_acc) < delta_N) begin
+                latch_phase90 <= 1'b1;
+            end else if (latch_phase90_ack) begin
+                latch_phase90 <= 1'b0;  // Handshake to signal processor module
+            end
+
+            if ((cfg_phase270_offset - phase_acc) < delta_N) begin
+                latch_phase270 <= 1'b1;
+            end else if (latch_phase270_ack) begin
+                latch_phase270 <= 1'b0; // Handshake to signal processor module
+            end
+            // Latch fallout
+            if (latch_phase90 && latch_phase270) begin
+                latch_error    <= 1'b1;
+                latch_phase90  <= 1'b0;
+                latch_phase270 <= 1'b0;
+            end
 
         end else begin
             latch_phase90  <= 1'b0;
