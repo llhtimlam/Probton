@@ -22,6 +22,12 @@ This offers a low-cost, integrable alternative to proprietary alignment hardware
 
 <img src="Media\Setup\Optical Probe Station Validation Setup.png" width="100%" alt="Optical Probe Station Setup">
 
+## Progress Tracker
+
+[Progress Summary](https://docs.google.com/spreadsheets/d/1hN5MHLxyh5gYtU_8X9257t1sGRkRGrkGu-Tv-lXbI_Q/edit?gid=0#gid=0)
+
+[Notion](https://app.notion.com/p/abraaralam/Probton-Home-377a16d0b43280fa8b21c942e25e7d73)
+
 ## Chip Architect
 
 Size: 1100um x 1100um (estimate) - Block type A
@@ -35,6 +41,8 @@ Required pins: 22
 > Check /src and /Analog/schematics for digital and analog circuit design files
 
 > For detail on navigating the chip design file, follow the README.md in /scripts folder
+
+> For Digital Verilog Cocotb Simulation Result, follow the README.md in /cocotb folder
 
 ## Schematic Review
 

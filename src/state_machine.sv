@@ -6,30 +6,30 @@ module state_machine (
     input  wire rst_n,     // reset (active low)
 
     // Boot
-    input wire boot_complete,
+    input  logic boot_complete,
 
     // Load Config
-    input wire cfg_done,
-    input wire phase_offset_imported,
+    input  logic cfg_done,
+    input  logic phase_offset_imported,
 
     // Calibration
     output logic cal_start,
-    input wire cal_done,
-    input wire cal_timeout,
+    input  logic cal_done,
+    input  logic cal_timeout,
 
     // Readout
     output logic read_en,
 
     // Amp Ratio Adjuster
-    input wire amp_ratio_en,
+    input  logic amp_ratio_en,
     output logic write_amp_ratio_en,
-    input wire amp_update_done,
+    input  logic amp_update_done,
 
     // Manual Soft Reset
-    input wire soft_rst,
+    input  logic soft_rst,
 
     // SPI
-    output logic [2:0] state_o,
+    output logic [2:0] state_o
 );
     typedef enum logic [2:0] {
         S_BOOT     = 3'd0,
@@ -83,9 +83,16 @@ module state_machine (
         write_amp_ratio_en = 1'b0;
         read_en  = 1'b0;
         case (state_q)
-            S_CAL: cal_start = 1'b1; 
-            S_READOUT: read_en = 1'b1;
-            S_AMP_ADJ: write_amp_ratio_en = 1'b1;
+            S_CAL: begin 
+                cal_start = 1'b1; 
+                read_en   = 1'b1; 
+            end
+            S_READOUT: begin
+                read_en   = 1'b1;
+            end
+            S_AMP_ADJ: begin
+                write_amp_ratio_en = 1'b1;
+            end
             default: ;
         endcase
     end
