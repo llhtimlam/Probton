@@ -382,8 +382,7 @@ async def test_calibration_burst(dut):
     dut.cal_start.value = 1
     # Hold the comparators idle so calibration does not complete and freeze
     # the burst logic mid-test.
-    dut.comp_p.value = 0
-    dut.comp_m.value = 1
+    dut.comp.value = 0
     await RisingEdge(dut.clk)
 
     # Wait for the burst to open
@@ -400,7 +399,7 @@ async def test_calibration_burst(dut):
                 phase_at_open, NCO_MOD)
 
     # The burst must start at a phase wrap, so the stimulus always begins at
-    # 0 degrees and raw_edge1..4 are referenced to a known phase origin.
+    # 0 degrees and raw_edge1..3 are referenced to a known phase origin.
     assert phase_at_open < 2 * FCW_FAST, (
         f"burst opened at phase {phase_at_open}, not at a wrap -- the "
         f"calibration stimulus would start at an arbitrary phase")

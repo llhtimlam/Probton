@@ -43,6 +43,10 @@ module wave_controller (
     output logic                    latch_phase90,
     output logic                    latch_phase270,
 
+    // Latch Handshake
+    input  logic                    latch_phase90_ack,
+    input  logic                    latch_phase270_ack,
+
     // MEMS Drive / Mixer Reference
     output logic                    mems_drv,       // sine PWM -> ext. op-amp/LPF -> buzzer
     output logic                    ref_wave,       // reference LO -> wave mixer
@@ -132,7 +136,6 @@ module wave_controller (
             raw_edge1        <= 21'b0;
             raw_edge2        <= 21'b0;
             raw_edge3        <= 21'b0;
-            raw_edge4        <= 21'b0;
 
         // Calibration State
         end else if (cfg_done && cal_start) begin
@@ -223,6 +226,7 @@ module wave_controller (
     // ------------------------------------------------------------------------
     // Phase Offset Computation
     // ------------------------------------------------------------------------
+    logic unsigned [20:0] raw_phase90_offset, raw_phase270_offset;
 
     // Midpoint Determination for most stable latch (Handle Circular Wrapping)
     assign raw_phase90_offset = raw_edge1 + ((raw_edge2 - raw_edge1) >> 1);
