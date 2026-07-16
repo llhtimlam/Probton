@@ -64,12 +64,12 @@ def golden_sine(phase8: int) -> int:
     return (128 - q_val) if (quad & 2) else (128 + q_val)
 
 
-def reconstruct(pwm_bits, alpha=1.0 / 900.0, y0=0.5):
+def reconstruct(drive_bits, alpha=1.0 / 900.0, y0=0.5):
     """Single-pole RC low-pass, standing in for the external reconstruction
     filter that sits between the ASIC pin and the piezo buzzer."""
     y = y0
     out = []
-    for b in pwm_bits:
+    for b in drive_bits:
         y += alpha * (b - y)
         out.append(y)
     return out
@@ -256,7 +256,7 @@ async def test_idle_parks_at_midrail(dut):
 
 
 @cocotb.test()
-async def test_pwm_tracks_sine(dut):
+async def test_drive_tracks_sine(dut):
     """PWM duty follows the sine, with no DC bias into the actuator"""
 
     logger = logging.getLogger("wave_controller")
@@ -295,7 +295,7 @@ async def test_pwm_tracks_sine(dut):
 
 @cocotb.test()
 async def test_reconstructed_sine(dut):
-    """After an RC, the PWM reconstructs a clean sine at the dither tone"""
+    """After an RC, the delta-sigma drive reconstructs a clean sine at the tone"""
 
     logger = logging.getLogger("wave_controller")
 
@@ -325,6 +325,60 @@ async def test_reconstructed_sine(dut):
     assert thd3_db < -30, (
         f"3rd harmonic only {thd3_db:.1f} dB down -- the reconstructed drive "
         f"is not a clean tone, and its harmonics will fold to DC in the mixer")
+
+    logger.info("Done!")
+
+
+@cocotb.test()
+async def test_high_frequency_headroom(dut):
+    """Delta-sigma still reconstructs a tone where 8-bit PWM cannot
+
+    At a high FCW the MEMS period is fewer than 256 clocks. Fixed 8-bit PWM
+    needs 256 clocks per carrier period, so its carrier would fall BELOW the
+    signal and the tone could not be represented at all. This is exactly the
+    ceiling the delta-sigma modulator removes. The test asserts a recognisable
+    fundamental survives reconstruction in that regime.
+    """
+
+    logger = logging.getLogger("wave_controller")
+
+    logger.info("Startup sequence...")
+    await start_up(dut)
+
+    # FCW giving ~64 clocks/period -- a quarter of the 256 PWM would require.
+    FCW_HI = 32768
+    HI_PERIOD = (1 << NCO_BITS) // FCW_HI            # 64 clocks
+    logger.info("High-frequency test: %d clocks/period (PWM needs 256)", HI_PERIOD)
+    assert HI_PERIOD < 256, "test premise: period must be below the PWM floor"
+
+    await enter_readout(dut, fcw=FCW_HI)
+
+    # Capture many periods so the tone is well-resolved despite the coarse
+    # per-period sampling.
+    n_periods = 200
+    bits = await sample_drive(dut, HI_PERIOD * n_periods)
+
+    # Reconstruct with a filter matched to this (much higher) tone.
+    # Filter cutoff scaled to this (higher) tone -- a lower cutoff would
+    # attenuate the fundamental itself, not just the shaped noise.
+    rec = reconstruct(bits, alpha=1.0 / HI_PERIOD)
+    seg = rec[HI_PERIOD * 8:]                        # drop settling
+
+    fund = tone_amplitude(seg, HI_PERIOD, harmonic=1)
+    logger.info("high-freq fundamental = %.4f", fund)
+
+    # The bar is deliberately modest: at this frequency the tone is coarse, but
+    # PWM would produce NOTHING here, so any real fundamental proves the point.
+    assert fund > 0.03, (
+        f"no usable tone at {HI_PERIOD} clocks/period (fund={fund:.4f}) -- the "
+        f"delta-sigma driver failed in the regime it was added to cover. "
+        f"(8-bit PWM would produce fund=0 here: its carrier falls below the tone.)")
+
+    # And the drive must still be centred (no DC walk into the piezo).
+    mean = sum(bits) / len(bits)
+    logger.info("high-freq mean density = %.4f", mean)
+    assert 0.47 < mean < 0.53, (
+        f"drive mean {mean:.4f} at high frequency implies a DC bias")
 
     logger.info("Done!")
 
@@ -412,11 +466,16 @@ async def test_calibration_burst(dut):
             break
         active += 1
 
-    logger.info("burst active for %d clocks (one period = %d)",
-                active, PERIOD_CLKS)
+    # Tim's edge capture needs rise-fall-rise, so the burst spans TWO MEMS
+    # periods (CAL_BURST_PERIODS = 2), not one.
+    CAL_BURST_PERIODS = 2
+    expected = PERIOD_CLKS * CAL_BURST_PERIODS
+    logger.info("burst active for %d clocks (%d periods, one period = %d)",
+                active, CAL_BURST_PERIODS, PERIOD_CLKS)
 
-    assert abs(active - PERIOD_CLKS) <= 2, (
-        f"burst lasted {active} clocks, expected ~{PERIOD_CLKS} (one period)")
+    assert abs(active - expected) <= 2, (
+        f"burst lasted {active} clocks, expected ~{expected} "
+        f"({CAL_BURST_PERIODS} periods)")
     assert int(dut.cal_burst_active.value) == 0, "burst never closed"
 
     logger.info("Done!")
