@@ -281,14 +281,6 @@ module wave_controller (
 
     // ========================================================================
     // MEMS Wave Generator
-    //
-    // Single-ended 8-bit sine PWM, 1 pin per axis.
-    //
-    //   f_pwm = f_clk / 256 = 19.53 kHz
-    //
-    // That carrier sits ~54x above the dither tone (~360 Hz) and well clear of
-    // the buzzer-scanner's Z resonance (4.12 kHz), so an RC at the external
-    // op-amp reconstructs the sine without touching the dither band.
     // ========================================================================
 
     // --- Sine amplitude from NCO phase ---
@@ -299,29 +291,48 @@ module wave_controller (
         .amp   (sine_amp)
     );
 
-    // --- PWM carrier ---
-    // Free-running, deliberately NOT locked to phase_acc: the carrier must be
-    // asynchronous to the modulation.
-    logic unsigned [7:0] pwm_cnt;
+    // --- Delta-sigma modulator (first order) ---
+    logic unsigned [8:0] ds_acc;      // [8] = carry (this cycle's output bit)
+
+    // Mid-scale code: 50% density -> mid-rail -> zero displacement
+    localparam logic unsigned [7:0] DS_MID = 8'd128;
+
+    // The amplitude presented to the modulator this cycle (selected below).
+    logic unsigned [7:0] ds_code;
+    logic                ds_bit;
 
     always_ff @(posedge clk or negedge rst_n) begin
-        if (!rst_n) pwm_cnt <= 8'b0;
-        else        pwm_cnt <= pwm_cnt + 1'b1;
+        if (!rst_n) ds_acc <= 9'b0;
+        else        ds_acc <= {1'b0, ds_acc[7:0]} + {1'b0, ds_code};
     end
 
-    // 50% duty -> mid-rail out of the reconstruction filter -> zero displacement
-    localparam logic unsigned [7:0] PWM_MID = 8'd128;
+    assign ds_bit = ds_acc[8];
 
     // --- Mixer reference phase, compensated for measured mechanical lag ---
     logic unsigned [20:0] ref_phase;
     assign ref_phase = phase_acc - cfg_phase0_offset;
 
     // --- Calibration burst control ---
-    // Drive exactly one MEMS period, started on a phase wrap so the stimulus
-    // always begins at 0 degrees and raw_edge1..4 are referenced to a known
-    // phase origin.
     logic cal_burst_armed;
     logic cal_burst_active;
+
+    localparam int unsigned CAL_BURST_PERIODS = 2;
+    logic [$clog2(CAL_BURST_PERIODS+1)-1:0] cal_burst_count;
+
+    // --- MEMS drive code selection ---
+    always_comb begin
+        ds_code = DS_MID;
+
+        if (cfg_done) begin
+            if (cal_start) begin
+                // Calibration: drive the sine only during the burst; otherwise hold mid-rail
+                ds_code = cal_burst_active ? sine_amp : DS_MID;
+            end else begin
+                // Main run: continuous sine.
+                ds_code = sine_amp;
+            end
+        end
+    end
 
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
@@ -329,6 +340,7 @@ module wave_controller (
             ref_wave         <= 1'b0;
             cal_burst_armed  <= 1'b1;
             cal_burst_active <= 1'b0;
+            cal_burst_count  <= '0;
 
         end else if (cfg_done) begin
 
@@ -338,34 +350,35 @@ module wave_controller (
                     if (cal_burst_armed) begin
                         cal_burst_armed  <= 1'b0;
                         cal_burst_active <= 1'b1;   // burst opens at phase 0
+                        cal_burst_count  <= '0;
                     end else if (cal_burst_active) begin
-                        cal_burst_active <= 1'b0;   // one full period, then stop
+                        // Close after CAL_BURST_PERIODS wraps (rise-fall-rise).
+                        if (cal_burst_count ==
+                                CAL_BURST_PERIODS[$bits(cal_burst_count)-1:0] - 1'b1)
+                            cal_burst_active <= 1'b0;
+                        else
+                            cal_burst_count <= cal_burst_count + 1'b1;
                     end
                 end
 
-                // Park at mid-rail between bursts. Driving 0% duty instead would
-                // slam the buzzer to one rail -- a mechanical step that rings for
-                // roughly Q cycles and corrupts the very delay being measured.
-                mems_drv <= cal_burst_active ? (pwm_cnt < sine_amp)
-                                             : (pwm_cnt < PWM_MID);
-
-                ref_wave <= 1'b0;   // mixer reference unused during calibration
+                mems_drv <= ds_bit;                 // sine burst / mid-rail via DSM
+                ref_wave <= 1'b0;                   // mixer reference unused in cal
 
             // ---------------- Main Run ----------------
             end else begin
-                mems_drv         <= (pwm_cnt < sine_amp);   // continuous sine PWM
+                mems_drv         <= ds_bit;                 // continuous sine via DSM
                 ref_wave         <= ref_phase[20];          // square LO, phase-corrected
                 cal_burst_armed  <= 1'b1;                   // re-arm for next calibration
                 cal_burst_active <= 1'b0;
+                cal_burst_count  <= '0;
             end
 
         end else begin
-            // Not configured: hold mid-rail so the actuator rests at zero
-            // displacement rather than being pinned to a rail.
-            mems_drv         <= (pwm_cnt < PWM_MID);
+            mems_drv         <= ds_bit;
             ref_wave         <= 1'b0;
             cal_burst_armed  <= 1'b1;
             cal_burst_active <= 1'b0;
+            cal_burst_count  <= '0;
         end
     end
 
