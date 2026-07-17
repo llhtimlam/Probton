@@ -136,12 +136,12 @@ module wave_controller (
     logic [7:0] cycle_delta;
     assign cycle_delta = wave_cycle_cnt - delay_wave_cycle;
 
+    logic [20:0] step_baseline; // raw_edge1 in capture_step 0, raw_edge2 in capture_step 1
+    assign step_baseline = (capture_step == 2'd0) ? raw_edge1 : raw_edge2;
+
     logic window_open;
     assign window_open = (cycle_delta == 8'd0) || 
                          ((cycle_delta == 8'd1) && (phase_acc < step_baseline));
-
-    logic [20:0] step_baseline; // raw_edge1 in capture_step 0, raw_edge2 in capture_step 1
-    assign step_baseline = (capture_step == 2'd0) ? raw_edge1 : raw_edge2;
 
     logic [20:0] raw_delta;
     assign raw_delta = phase_acc - step_baseline;
