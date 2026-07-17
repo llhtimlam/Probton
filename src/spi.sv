@@ -17,7 +17,7 @@ module spi_regs #(
     // 8 bit: Amp Ratio
     output logic unsigned [7:0]     cfg_amp_ratio,     
 
-    // 16-bit: MEMS requency Control Word (Max MEMS Frequency: 156.24716KHz)
+    // 16-bit: MEMS requency Control Word (Min MEMS Frequency: 2.38418579102KHz, Max MEMS Frequency: 156.247615814KHz)
     output logic unsigned [15:0]    cfg_f_MEMS_fcw_x, cfg_f_MEMS_fcw_y, // Frequency Control Word (f_MEMS * 2^k) / f_clk, where k is 21, f_clk is 5MHz
 
     // Pre-Calibration

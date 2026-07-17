@@ -32,7 +32,7 @@ This offers a low-cost, integrable alternative to proprietary alignment hardware
 
 Size: 1100um x 1100um (estimate) - Block type A
 
-Required pins: 22
+Required pins: 14
 
 <img src="Media\ChipArchitect\Optical Probe Station Chip Architect.png" width="100%" alt="Proposed Chip Architect">
 
@@ -47,6 +47,8 @@ Required pins: 22
 ## Schematic Review
 
 Video for Schematic Review: [Youtube](https://youtu.be/nWU8KJn_Hf8)
+
+Presentation Deck for Schematic/Simulation Review : [Google Slides](https://docs.google.com/presentation/d/1yArg9eURDTD4U1TzQWk_HXc--uBOyANuxjhyyxrrQCk/edit?slide=id.g3f54761703b_0_330#slide=id.g3f54761703b_0_330)
 
 <video src="https://youtu.be/nWU8KJn_Hf8" controls="controls" width="100%">
 </video>
