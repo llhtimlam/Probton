@@ -3,7 +3,7 @@ initial begin
     string dumpfile_path;    if ($value$plusargs("dumpfile_path=%s", dumpfile_path)) begin
         $dumpfile(dumpfile_path);
     end else begin
-        $dumpfile("C:\\Users\\User\\Documents\\GitHub\\Probton\\cocotb\\sim_build\\wave_controller.fst");
+        $dumpfile("/workspace/cocotb/sim_build/wave_controller.fst");
     end
     $dumpvars(0, wave_controller);
 end
