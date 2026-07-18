@@ -1,0 +1,48 @@
+v {xschem version=3.4.8RC file_version=1.3}
+G {}
+K {type=subcircuit
+format="@name @pinlist @symname"
+spectre_format="@name ( @pinlist ) @symname"
+template="name=x1"
+}
+V {}
+S {}
+F {}
+E {}
+L 4 80 10 100 10 {}
+L 4 80 -10 100 -10 {}
+L 4 -10 80 -10 100 {}
+L 4 10 80 10 100 {}
+L 4 -100 -10 -80 -10 {}
+L 4 -100 10 -80 10 {}
+L 4 -40 -80 -40 -70 {}
+L 4 40 -80 40 -70 {}
+L 4 -50 -60 50 60 {}
+L 4 -50 60 50 -60 {}
+L 7 20 -100 20 -80 {}
+L 7 40 -100 40 -80 {}
+L 7 -20 -100 -20 -80 {}
+L 7 -40 -100 -40 -80 {}
+B 5 97.5 7.5 102.5 12.5 {name=Vout_n dir=out}
+B 5 97.5 -12.5 102.5 -7.5 {name=Vout_p dir=out}
+B 5 -12.5 97.5 -7.5 102.5 {name=vlo dir=in}
+B 5 7.5 97.5 12.5 102.5 {name=vlo_b dir=in}
+B 5 -102.5 -12.5 -97.5 -7.5 {name=vrf dir=in}
+B 5 -102.5 7.5 -97.5 12.5 {name=vrf_b dir=in}
+B 5 17.5 -102.5 22.5 -97.5 {name=Ibias_n_50uA dir=inout}
+B 5 37.5 -102.5 42.5 -97.5 {name=Ibias_p_50uA dir=inout}
+B 5 -22.5 -102.5 -17.5 -97.5 {name=VSS dir=inout}
+B 5 -42.5 -102.5 -37.5 -97.5 {name=VDD_3v3 dir=inout}
+A 4 0 0 80 0 360 {}
+T {@symname} 43.5 -86 0 0 0.3 0.3 {}
+T {@name} -15 -62 0 0 0.2 0.2 {}
+T {Vout_n} 75 6 0 1 0.2 0.2 {}
+T {Vout_p} 75 -14 0 1 0.2 0.2 {}
+T {vlo} -14 75 3 0 0.2 0.2 {}
+T {vlo_b} 6 75 3 0 0.2 0.2 {}
+T {vrf} -75 -14 0 0 0.2 0.2 {}
+T {vrf_b} -75 6 0 0 0.2 0.2 {}
+T {Ibias_n_50uA} 6 -155 3 1 0.2 0.2 {}
+T {Ibias_p_50uA} 26 -155 3 1 0.2 0.2 {}
+T {VSS} -26 -105 1 0 0.2 0.2 {}
+T {VDD_3v3} -46 -125 1 0 0.2 0.2 {}

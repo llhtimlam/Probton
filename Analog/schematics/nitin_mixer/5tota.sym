@@ -1,0 +1,34 @@
+v {xschem version=3.4.8RC file_version=1.3}
+G {}
+K {type=subcircuit
+format="@name @pinlist @symname"
+spectre_format="@name ( @pinlist ) @symname"
+template="name=x1"
+}
+V {}
+S {}
+F {}
+E {}
+L 4 60 -100 60 -80 {}
+L 4 140 -50 160 -50 {}
+L 4 -20 -70 0 -70 {}
+L 4 -20 -50 0 -50 {}
+L 4 60 -20 60 0 {}
+L 4 0 -100 0 0 {}
+L 4 0 0 140 -50 {}
+L 4 0 -100 140 -50 {}
+L 4 -20 -20 0 -20 {}
+B 5 57.5 -102.5 62.5 -97.5 {name=Vdd_3v3 dir=in}
+B 5 157.5 -52.5 162.5 -47.5 {name=Vout_5tota dir=out}
+B 5 -22.5 -72.5 -17.5 -67.5 {name=Vin_p_5tota dir=in}
+B 5 -22.5 -52.5 -17.5 -47.5 {name=Vin_m_5tota dir=in}
+B 5 57.5 -2.5 62.5 2.5 {name=VSS dir=in}
+B 5 -22.5 -22.5 -17.5 -17.5 {name=Ibias_30uA_nmos dir=inout}
+T {@symname} 9.5 -56 0 0 0.3 0.3 {}
+T {@name} 85 -82 0 0 0.2 0.2 {}
+T {Vdd_3v3} 74 -125 1 0 0.2 0.2 {}
+T {Vout_5tota} 195 -64 0 1 0.2 0.2 {}
+T {Vin_p_5tota} -65 -84 0 0 0.2 0.2 {}
+T {Vin_m_5tota} -65 -64 0 0 0.2 0.2 {}
+T {VSS} 66 5 3 0 0.2 0.2 {}
+T {Ibias_30uA_nmos} -95 -26 2 1 0.2 0.2 {}
