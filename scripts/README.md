@@ -55,6 +55,11 @@ DISPLAY=:0 EXTRA_VOLS="-v /mnt/wslg/.X11-unix:/tmp/.X11-unix:rw -v /mnt/wslg:/mn
 
 ## Launch Tools
 In the **Docker Desktop Terminal**, run
+Setup GF180 pdk
+```
+iic-pdk gf180mcuD
+```
+
 Check Available Tools
 ```
 ls -l /foss/tools/
