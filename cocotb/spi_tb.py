@@ -249,7 +249,7 @@ def spi_regs_runner():
 
         defines = {"FUNCTIONAL": True, "USE_POWER_PINS": True}
     else:
-        sources.append(proj_path / "../src/spi_regs.sv")
+        sources.append(proj_path / "../src/spi.sv")
 
     build_args = []
 
@@ -275,7 +275,7 @@ def spi_regs_runner():
 
     runner.test(
         hdl_toplevel=hdl_toplevel,
-        test_module="spi_regs_tb",
+        test_module="spi_tb",
         plusargs=plusargs,
         waves=True,
     )

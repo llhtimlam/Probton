@@ -556,14 +556,7 @@ async def test_phase_offset_shift(dut):
 
     logger.info("Done!")
 
-
-# ===========================================================================
-# Runner
-# ===========================================================================
-
-# ===========================================================================
-# Calibration tests (merged from wave_controller_calibration_tb.py)
-# ===========================================================================
+# Calibration tests
 
 @cocotb.test()
 async def test_meta_sync(dut):

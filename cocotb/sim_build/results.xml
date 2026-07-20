@@ -1,24 +1,12 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
-    <property name="random_seed" value="1784312780" />
-    <testcase name="test_sine_lut" classname="wave_controller_tb" file="/workspace/cocotb/wave_controller_tb.py" lineno="209" time="0.6688029766082764" sim_time_ns="833800.0" ratio_time="1246704.9776430104" />
-    <testcase name="test_idle_parks_at_midrail" classname="wave_controller_tb" file="/workspace/cocotb/wave_controller_tb.py" lineno="256" time="0.23395085334777832" sim_time_ns="412399.9999999999" ratio_time="1762763.3928180162" />
-    <testcase name="test_drive_tracks_sine" classname="wave_controller_tb" file="/workspace/cocotb/wave_controller_tb.py" lineno="285" time="1.0177960395812988" sim_time_ns="1639599.9999999998" ratio_time="1610931.7940306575" />
-    <testcase name="test_reconstructed_sine" classname="wave_controller_tb" file="/workspace/cocotb/wave_controller_tb.py" lineno="323" time="1.4251902103424072" sim_time_ns="2459399.9999999995" ratio_time="1725664.393533211" />
-    <testcase name="test_high_frequency_headroom" classname="wave_controller_tb" file="/workspace/cocotb/wave_controller_tb.py" lineno="359" time="1.640779733657837" sim_time_ns="2561800.0" ratio_time="1561330.8401176473" />
-    <testcase name="test_reference_lo_rate" classname="wave_controller_tb" file="/workspace/cocotb/wave_controller_tb.py" lineno="413" time="1.048499345779419" sim_time_ns="1640200.000000001" ratio_time="1564330.97130903" />
-    <testcase name="test_calibration_burst" classname="wave_controller_tb" file="/workspace/cocotb/wave_controller_tb.py" lineno="446" time="1.4101567268371582" sim_time_ns="2458800.0" ratio_time="1743635.9754953228" />
-    <testcase name="test_phase_offset_shift" classname="wave_controller_tb" file="/workspace/cocotb/wave_controller_tb.py" lineno="511" time="0.37883925437927246" sim_time_ns="615800.0" ratio_time="1625491.5320456624" />
-    <testcase name="test_meta_sync" classname="wave_controller_tb" file="/workspace/cocotb/wave_controller_tb.py" lineno="568" time="3.329078197479248" sim_time_ns="5836000.001" ratio_time="1753037.8245302178" />
-    <testcase name="test_calibration_tracker" classname="wave_controller_tb" file="/workspace/cocotb/wave_controller_tb.py" lineno="696" time="432.7805554866791" sim_time_ns="711088800.001" ratio_time="1643070.121764949" />
-    <testcase name="test_calibration_jitter_0" classname="wave_controller_tb" file="/workspace/cocotb/wave_controller_tb.py" lineno="792" time="0.00808572769165039" sim_time_ns="2200.00100004673" ratio_time="272084.47822433215" />
-    <testcase name="test_calibration_fail_jitter_1" classname="wave_controller_tb" file="/workspace/cocotb/wave_controller_tb.py" lineno="854" time="0.7892954349517822" sim_time_ns="1392000.0009999275" ratio_time="1763598.1906888443" />
-    <testcase name="test_calibration_fail_1MEMS_timeout_0" classname="wave_controller_tb" file="/workspace/cocotb/wave_controller_tb.py" lineno="936" time="1.6012060642242432" sim_time_ns="2779800.0009999275" ratio_time="1736066.3709119118" />
-    <testcase name="test_calibration_fail_1MEMS_timeout_1" classname="wave_controller_tb" file="/workspace/cocotb/wave_controller_tb.py" lineno="995" time="2.2523269653320312" sim_time_ns="4169600.0010000467" ratio_time="1851240.9899534178" />
-    <testcase name="test_calibration_fail_early_signal_0" classname="wave_controller_tb" file="/workspace/cocotb/wave_controller_tb.py" lineno="1075" time="0.3833427429199219" sim_time_ns="695000.0010000467" ratio_time="1812998.9776413436" />
-    <testcase name="test_calibration_fail_early_signal_1" classname="wave_controller_tb" file="/workspace/cocotb/wave_controller_tb.py" lineno="1140" time="1.3287360668182373" sim_time_ns="2084800.0010000467" ratio_time="1569009.868146549" />
-    <testcase name="test_calibration" classname="wave_controller_tb" file="/workspace/cocotb/wave_controller_tb.py" lineno="1225" time="13.911551713943481" sim_time_ns="16672800.0" ratio_time="1198486.0023406975" />
-    <testcase name="test_readout_latch_strobes" classname="wave_controller_tb" file="/workspace/cocotb/wave_controller_tb.py" lineno="1483" time="0.3878600597381592" sim_time_ns="617000.0" ratio_time="1590779.9334031225" />
-    <testcase name="test_no_latch_outside_readout" classname="wave_controller_tb" file="/workspace/cocotb/wave_controller_tb.py" lineno="1580" time="0.9917547702789307" sim_time_ns="1639200.0" ratio_time="1652827.9461050392" />
+    <property name="random_seed" value="1784581621" />
+    <testcase name="test_write_path" classname="spi_tb" file="c:\Users\User\Documents\GitHub\Probton\cocotb\spi_tb.py" lineno="128" time="0.026802539825439453" sim_time_ns="136000.0" ratio_time="5074145.990855557" />
+    <testcase name="test_readback_over_miso" classname="spi_tb" file="c:\Users\User\Documents\GitHub\Probton\cocotb\spi_tb.py" lineno="149" time="0.01767730712890625" sim_time_ns="110400.0" ratio_time="6245295.123003884">
+      <failure error_type="AssertionError" error_msg="amp readback: expected 0xa5, got 0x52" />
+    </testcase>
+    <testcase name="test_default_values" classname="spi_tb" file="c:\Users\User\Documents\GitHub\Probton\cocotb\spi_tb.py" lineno="171" time="0.0011594295501708984" sim_time_ns="1600.0" ratio_time="1379988.9779971212" />
+    <testcase name="test_unmapped_write_ignored" classname="spi_tb" file="c:\Users\User\Documents\GitHub\Probton\cocotb\spi_tb.py" lineno="188" time="0.016821861267089844" sim_time_ns="110400.00000000003" ratio_time="6562888.508418846" />
+    <testcase name="test_cs_abort_recovery" classname="spi_tb" file="c:\Users\User\Documents\GitHub\Probton\cocotb\spi_tb.py" lineno="206" time="0.011839151382446289" sim_time_ns="75200.0" ratio_time="6351806.609340073" />
   </testsuite>
 </testsuites>
