@@ -252,13 +252,37 @@ module chip_core #(
 
     // Wave Controller
     wave_controller wave_controller_x_inst (
-        .clk(clk), .rst_n(rst_n),
-        
+        .clk(clk), .rst_n(rst_n), .soft_rst_n(soft_rst_n),
+        .cfg_f_MEMS_fcw(cfg_f_MEMS_fcw_x),
+        .cfg_phase0_offset(cfg_phase0_offset_x), .cfg_phase90_offset(cfg_phase90_offset_x), .cfg_phase270_offset(cfg_phase270_offset_x),
+        .cfg_done(cfg_done), .cal_done(cal_done), .cal_timeout(cal_timeout),
+        .cal_start(cal_start),
+        .comp(comp_x),
+        .latch_phase90(latch_phase90_x), .latch_phase270(latch_phase270_x),
+        .latch_phase90_ack(latch_phase90_ack_x), .latch_phase270_ack(latch_phase270_ack_x),
+        .mems_drv(mems_drv_x), .ref_wave(ref_wave_x),
+        .delay_wave_cycle(delay_wave_cycle_x),
+        .raw_edge1(raw_edge1_x), .raw_edge2(raw_edge2_x), .raw_edge3(raw_edge3_x),
+        .cal_dir(cal_dir_x),
+        .cal_phase0_offset(cal_phase0_offset_x), cal_phase90_offset(cal_phase90_offset_x), cal_phase270_offset(cal_phase270_offset_x),
+        .latch_error(latch_error_x)
     )
 
     wave_controller wave_controller_y_inst (
-        .clk(clk), .rst_n(rst_n),
-        
+        .clk(clk), .rst_n(rst_n), .soft_rst_n(soft_rst_n),
+        .cfg_f_MEMS_fcw(cfg_f_MEMS_fcw_y),
+        .cfg_phase0_offset(cfg_phase0_offset_y), .cfg_phase90_offset(cfg_phase90_offset_y), .cfg_phase270_offset(cfg_phase270_offset_y),
+        .cfg_done(cfg_done), .cal_done(cal_done), .cal_timeout(cal_timeout),
+        .cal_start(cal_start),
+        .comp(comp_y),
+        .latch_phase90(latch_phase90_y), .latch_phase270(latch_phase270_y),
+        .latch_phase90_ack(latch_phase90_ack_y), .latch_phase270_ack(latch_phase270_ack_y),
+        .mems_drv(mems_drv_y), .ref_wave(ref_wave_y),
+        .delay_wave_cycle(delay_wave_cycle_y),
+        .raw_edge1(raw_edge1_y), .raw_edge2(raw_edge2_y), .raw_edge3(raw_edge3_y),
+        .cal_dir(cal_dir_y),
+        .cal_phase0_offset(cal_phase0_offset_y), cal_phase90_offset(cal_phase90_offset_y), cal_phase270_offset(cal_phase270_offset_y),
+        .latch_error(latch_error_y)
     )
 
     // Signal Processor
