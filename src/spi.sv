@@ -9,7 +9,7 @@ module spi_regs #(
     input wire spi_cs_n, 
     input wire spi_sclk,
     input wire spi_mosi, 
-    output logic spi_miso,
+    output wire spi_miso,
     output logic spi_miso_oe,
 
     // MOSI (Import to ASIC)
@@ -160,6 +160,7 @@ module spi_regs #(
 
     logic [7:0] rx_shift;
     logic [7:0] tx_shift;
+    assign spi_miso = tx_shift[7];
 
     logic reg_wr_en;
     logic [SPI_ADDR_WIDTH-1:0] reg_wr_addr;
@@ -179,7 +180,6 @@ module spi_regs #(
             reg_wr_en <= 1'b0;
             reg_wr_addr <= '0;
             reg_wr_data <= 8'd0;
-            spi_miso <= 1'b0;
             spi_miso_oe <= 1'b0;
         end else begin
             reg_wr_en <= 1'b0;
@@ -218,7 +218,6 @@ module spi_regs #(
                         tx_shift <= reg_rd_data;
                     else
                         tx_shift <= {tx_shift[6:0], 1'b0};
-                    spi_miso <= tx_shift[7];
                 end
             end
         end
