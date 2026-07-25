@@ -44,6 +44,12 @@ Required pins: 14
 
 > For Digital Verilog Cocotb Simulation Result, follow the README.md in /cocotb folder
 
+## SPI Interface 
+
+The SPI peripheral ('src/spi.sv') implements a slave/peripheral register interface and the ASIC responds to an external hose over CS_N/SCLK/MOSI/MISO.
+
+> Full register map and address table documented at the top of 'src/spi.sv'
+
 ## Schematic Review
 
 Video for Schematic Review: [Youtube](https://youtu.be/nWU8KJn_Hf8)
