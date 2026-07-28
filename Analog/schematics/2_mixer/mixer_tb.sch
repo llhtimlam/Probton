@@ -5,79 +5,43 @@ V {}
 S {}
 F {}
 E {}
-B 2 1770 -1280 2570 -880 {flags=graph
+B 2 870 -1590 1670 -1190 {flags=graph
 ypos1=0
 ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=-9.9869625e-07
-x2=4.0658649e-05
+x1=0
 divx=5
-subdivx=1
+subdivx=4
 xlabmag=1.0
 ylabmag=1.0
 dataset=-1
 unitx=1
 logx=0
 logy=0
-y2=3.5
-y1=-0.1
-color="4 5 6"
-node="vif
-vrf
-vlo"}
-B 2 1770 -870 2570 -470 {flags=graph,unlocked
-ypos1=0
-ypos2=2
-divy=5
-subdivy=1
-unity=1
-x1=-13150.392
-divx=5
-subdivx=1
-xlabmag=1.0
-ylabmag=1.0
-node="vrf
-vlo
-vif"
-color="4 5 6"
-dataset=-1
-unitx=1
-logx=0
-logy=0
-rainbow=1
-sim_type=sp
-sweep=frequency
+y1=-300
 autoload=1
-rawfile=$netlist_dir/mixer_tb.raw
-x2=169043.57
-y1=-0.1
-y2=1}
-N 700 -870 710 -870 {
+rawfile=/workspace/Analog/schematics/2_mixer/simulation_files/mixer_tb.raw
+sim_type=sp
+color="4 5 6"
+node="vif_db; vif_db -1 *
+vlo_db; vlo_db -1 *
+vrf_db; vrf_db -1 *"
+x2=400k
+y2=20}
+N 700 -870 800 -870 {
 lab=V_RF_b}
-N 700 -890 760 -890 {
+N 700 -890 800 -890 {
 lab=V_RF}
-N 710 -870 750 -870 {
-lab=V_RF_b}
-N 890 -780 890 -720 {
+N 890 -780 890 -700 {
 lab=V_LO}
-N 910 -780 910 -720 {
+N 910 -780 910 -700 {
 lab=V_LO_b}
 N 1120 -940 1120 -890 {
 lab=V_out_p}
 N 1120 -870 1120 -820 {
 lab=V_out_n}
-N 890 -720 890 -700 {
-lab=V_LO}
-N 910 -720 910 -700 {
-lab=V_LO_b}
-N 750 -870 800 -870 {
-lab=V_RF_b}
-N 760 -890 800 -890 {
-lab=V_RF}
-N 940 -1450 940 -1430 {lab=#net1
-spice_ignore=true}
 N 1230 -840 1230 -760 {lab=#net1}
 N 1410 -870 1510 -870 {lab=Vif}
 N 330 -1180 330 -1160 {
@@ -101,13 +65,13 @@ N 330 -1080 330 -1070 {
 lab=VDD}
 N 330 -720 330 -670 {
 lab=GND}
-N 330 -670 350 -670 {
+N 330 -670 380 -670 {
 lab=GND}
 N 380 -670 380 -650 {
 lab=GND}
 N 330 -820 330 -780 {
 lab=I_bias_pos}
-N 350 -670 430 -670 {
+N 380 -670 430 -670 {
 lab=GND}
 N 430 -720 430 -670 {
 lab=GND}
@@ -115,16 +79,16 @@ N 430 -820 430 -780 {
 lab=I_bias_neg}
 N 450 -1010 450 -990 {
 lab=GND}
-N 450 -1080 450 -1070 {
-lab=VSS}
-N 450 -1100 450 -1080 {lab=VSS}
+N 450 -1100 450 -1070 {lab=VSS}
 N 790 -980 860 -980 {lab=VDD}
 N 880 -1010 880 -980 {lab=GND}
 N 920 -1050 920 -980 {lab=I_bias_neg}
 N 940 -1050 940 -980 {lab=I_bias_pos}
-N 1000 -890 1230 -890 {lab=V_out_p}
-N 1000 -870 1230 -870 {lab=V_out_n}
+N 1120 -890 1230 -890 {lab=V_out_p}
+N 1120 -870 1230 -870 {lab=V_out_n}
 N 1310 -950 1310 -920 {lab=VDD}
+N 1000 -890 1120 -890 {lab=V_out_p}
+N 1000 -870 1120 -870 {lab=V_out_n}
 C {code.sym} 520 -740 0 0 {name=MODELS only_toplevel=true
 format="tcleval( @value )"
 value="
@@ -233,20 +197,24 @@ value="
     linearize v(vif) vlo vrf
 
     fft v(vif) vlo vrf
-    
-    plot db(mag(vlo)) db(mag(vrf)) db(mag(v(vif))) xlimit 0 400k
 
-    write mixer_tb.raw
+    let vlo_db = db(mag(vlo))
+    let vrf_db = db(mag(vrf))
+    let vif_db = db(mag(v(vif)))
+    
+    plot vlo_db vrf_db vif_db xlimit 0 400k
+
+    write /workspace/Analog/schematics/2_mixer/simulation_files/mixer_tb.raw
 
 .endc
 "}
-C {devices/launcher.sym} 1267.5 -1192.5 2 1 {name=h2
+C {devices/launcher.sym} 377.5 -1462.5 2 1 {name=h2
 descr="Run ngSpice simulation (ctrl+left-click)" 
 tclcommand="xschem save; xschem netlist; xschem simulate"
 }
-C {devices/launcher.sym} 1270 -1150 0 0 {name=h1
+C {devices/launcher.sym} 380 -1420 0 0 {name=h1
 descr="Load ngSpice waveforms (ctrl+left-click)" 
-tclcommand="xschem raw_read $netlist_dir/mixer_tb.raw tran"
+tclcommand="xschem raw_read /workspace/Analog/schematics/2_mixer/simulation_files/mixer_tb.raw tran"
 }
-C {5tota/gilbert_mixer.sym} 900 -880 0 0 {name=x1}
-C {5tota/5tota.sym} 1250 -820 0 0 {name=x2}
+C {Analog/schematics/2_mixer/gilbert_mixer.sym} 900 -880 0 0 {name=x1}
+C {Analog/schematics/2_mixer/5tota.sym} 1250 -820 0 0 {name=x2}
