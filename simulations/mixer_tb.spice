@@ -1,0 +1,123 @@
+** sch_path: /workspace/Analog/schematics/2_mixer/mixer_tb.sch
+**.subckt mixer_tb V_LO V_LO_b V_RF V_RF_b V_out_p V_out_n
+*.ipin V_LO
+*.ipin V_LO_b
+*.ipin V_RF
+*.ipin V_RF_b
+*.opin V_out_p
+*.opin V_out_n
+I2 net1 GND 30u
+V_PWR VDD GND 3.3
+.save i(v_pwr)
+V_LO V_LO GND pulse(0 1.5 0 1p 1p 0.25n 0.5n)
+.save i(v_lo)
+V_LO_b V_LO_b GND pulse(0 1.5 0 1p 1p 0.25n 0.5n)
+.save i(v_lo_b)
+V_RF V_RF GND sin( 1 1 1 0 )
+.save i(v_rf)
+V_RF_b V_RF_b GND sin( 1 1 1 0 0 180 )
+.save i(v_rf_b)
+I0 I_bias_pos GND 50u
+I1 I_bias_neg GND 50u
+V_PWR1 VSS GND 0
+.save i(v_pwr1)
+x1 V_out_n V_out_p V_LO V_LO_b V_RF V_RF_b I_bias_neg I_bias_pos GND VDD gilbert_mixer
+x2 VDD Vif V_out_p V_out_n VSS net1 5tota
+**** begin user architecture code
+?
+
+
+* let sets vectors to a plot, while set sets a variable, globally accessible in .control
+.control
+
+    * Set frequency and amplitude variables to proper values from within the control sequence
+    * sine-wave LO
+    * set cm_lo = 0.5
+    * set freq_lo = 2.50G
+    * set amp_lo = 0.5
+    * alter @V_LO[sin] = [ $cm_lo $amp_lo $freq_lo 0 ]
+    * alter @V_LO_b[sin] = [ $cm_lo $amp_lo $freq_lo 0 0 180 ]
+
+    set freq_lo = 156k
+    set cm_lo = 1.8
+    set amp_lo = 0.4
+
+    set cm_rf  = 1.2
+    set freq_rf = 156k
+    * set freq_rf = 10.7Meg
+    set amp_rf  = 0.1
+
+    * set the parameters to the voltage sources
+    * alter @V_LO[pulse] = [ 2 2.5 0 0.5p 0.5p 5n 10n ]
+    * alter @V_LO_b[pulse] = [ 2 2.5 5n 0.5p 0.5p 5n 10n]
+    alter @V_LO[sin] = [ $cm_lo $amp_lo $freq_lo 0 ]
+    alter @V_LO_b[sin] = [ $cm_lo $amp_lo $freq_lo 0 0 180 ]
+    alter @V_RF[sin] = [ $cm_rf $amp_rf $freq_rf 0 ]
+    alter @V_RF_b[sin] = [ $cm_rf $amp_rf $freq_rf 0 0 180 ]
+
+    save all
+
+    tran 100p 2m
+
+    let if_out = v(v_out_p) - v(v_out_n)
+    let vlo = v(v_lo) - v(v_lo_b)
+    let vrf = v(v_rf) - v(v_rf_b)
+
+    linearize v(vif) vlo vrf
+
+    fft v(vif) vlo vrf
+
+    plot db(mag(vlo)) db(mag(vrf)) db(mag(v(vif))) xlimit 0 400k
+
+    write mixer_tb.raw
+
+.endc
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  Analog/schematics/2_mixer/gilbert_mixer.sym # of pins=10
+** sym_path: /workspace/Analog/schematics/2_mixer/gilbert_mixer.sym
+** sch_path: /workspace/Analog/schematics/2_mixer/gilbert_mixer.sch
+.subckt gilbert_mixer Vout_n Vout_p vlo vlo_b vrf vrf_b Ibias_n_50uA Ibias_p_50uA VSS VDD_3v3
+*.ipin vlo
+*.ipin vlo_b
+*.ipin vrf
+*.ipin vrf_b
+*.opin Vout_p
+*.opin Vout_n
+*.iopin Ibias_n_50uA
+*.iopin Ibias_p_50uA
+*.iopin VSS
+*.iopin VDD_3v3
+*  M_dp_lo_pos -  nfet_03v3  IS MISSING !!!!
+*  M_dp_lo_neg -  nfet_03v3  IS MISSING !!!!
+*  M_dp_lo_b_pos -  nfet_03v3  IS MISSING !!!!
+*  M_dp_lo_b_neg -  nfet_03v3  IS MISSING !!!!
+*  M_rf_pos -  nfet_03v3  IS MISSING !!!!
+*  M_rf_neg -  nfet_03v3  IS MISSING !!!!
+*  R_load_2 -  ppolyf_u_1k  IS MISSING !!!!
+*  R_load_1 -  ppolyf_u_1k  IS MISSING !!!!
+.ends
+
+
+* expanding   symbol:  Analog/schematics/2_mixer/5tota.sym # of pins=6
+** sym_path: /workspace/Analog/schematics/2_mixer/5tota.sym
+** sch_path: /workspace/Analog/schematics/2_mixer/5tota.sch
+.subckt 5tota Vdd_3v3 Vout_5tota Vin_p_5tota Vin_m_5tota VSS Ibias_30uA_nmos
+*.ipin Vdd_3v3
+*.ipin Vin_p_5tota
+*.ipin Vin_m_5tota
+*.opin Vout_5tota
+*.iopin Ibias_30uA_nmos
+*.ipin VSS
+*  Mnmos_amp_p -  nfet_03v3  IS MISSING !!!!
+*  Mnmos_amp_n -  nfet_03v3  IS MISSING !!!!
+*  Mpmos_cs_p -  pfet_03v3  IS MISSING !!!!
+*  Mpmos_cs_n -  pfet_03v3  IS MISSING !!!!
+.ends
+
+.GLOBAL GND
+.GLOBAL VDD
+.end

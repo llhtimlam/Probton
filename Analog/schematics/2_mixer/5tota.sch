@@ -5,9 +5,9 @@ V {}
 S {}
 F {}
 E {}
-N 390 -410 390 -350 {
+N 390 -380 390 -350 {
 lab=#net1}
-N 610 -410 610 -350 {
+N 610 -380 610 -350 {
 lab=Vout_5tota}
 N 650 -320 730 -320 {
 lab=Vin_m_5tota}
@@ -23,19 +23,17 @@ N 390 -290 390 -220 {
 lab=Ibias_30uA_nmos}
 N 610 -290 610 -220 {
 lab=Ibias_30uA_nmos}
-N 390 -220 610 -220 {
+N 500 -220 610 -220 {
 lab=Ibias_30uA_nmos}
-N 500 -220 500 -170 {
+N 500 -220 500 -140 {
 lab=Ibias_30uA_nmos}
 N 610 -380 730 -380 {
 lab=Vout_5tota}
 N 730 -320 730 -260 {
 lab=Vin_m_5tota}
-N 220 -260 230 -260 {
+N 220 -260 730 -260 {
 lab=Vin_m_5tota}
-N 500 -170 500 -140 {
-lab=Ibias_30uA_nmos}
-N 430 -440 570 -440 {
+N 470 -440 570 -440 {
 lab=#net1}
 N 390 -380 470 -380 {
 lab=#net1}
@@ -49,14 +47,16 @@ N 390 -320 420 -320 {
 lab=VSS}
 N 360 -440 390 -440 {
 lab=VDD}
-N 290 -320 350 -320 {
+N 220 -320 350 -320 {
 lab=Vin_p_5tota}
-N 290 -260 730 -260 {
-lab=Vin_m_5tota}
-N 220 -320 290 -320 {
-lab=Vin_p_5tota}
-N 230 -260 290 -260 {
-lab=Vin_m_5tota}
+N 390 -220 500 -220 {
+lab=Ibias_30uA_nmos}
+N 610 -410 610 -380 {
+lab=Vout_5tota}
+N 390 -410 390 -380 {
+lab=#net1}
+N 430 -440 470 -440 {
+lab=#net1}
 C {symbols/nfet_03v3.sym} 370 -320 0 0 {name=Mnmos_amp_p
 L=0.28u
 W=6u

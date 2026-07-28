@@ -1,0 +1,150 @@
+** sch_path: /workspace/Analog/schematics/2_mixer/5tota_tb.sch
+**.subckt 5tota_tb Vout
+*.opin Vout
+V_PWR VDD GND 3.3
+.save i(v_pwr)
+V_IF Vif GND sin( 1 1 1 0 )
+.save i(v_if)
+V_IF_b Vif_b GND sin( 1 1 1 0 )
+.save i(v_if_b)
+I0 Ibias_30u GND 10u
+x1 VDD Vout Vif Vif_b GND Ibias_30u 5tota
+**** begin user architecture code
+?
+
+
+* Complete 5T OTA Verification Testbench for Gilbert Cell Interface
+
+.control
+    * ==========================================
+    * SETUP CONFIGURATIONS & GLOBAL VARIABLES
+    * ==========================================
+    set freq_if = 312k
+    set cm_if   = 2.0
+    set amp_if  = 0.005
+
+    * Pre-allocate vector space for clean file writing
+    save all
+
+    * ==========================================
+    * TEST 1: DC OPERATING POINT & ICMR SWEEP
+    * ==========================================
+    *echo '=== Running Test 1: DC Input Common-Mode Range Sweep ==='
+
+    * Configure inputs as matched DC sources for common-mode sweep
+    alter @V_IF[sin]   = [ 2.0 0 0 0 ]
+    alter @V_IF_b[sin] = [ 2.0 0 0 0 ]
+
+    * Sweep the common mode from 0V to VDD (assuming 3.3V supply)
+    dc V_IF 0 3.3 0.05
+
+    * Scripted calculation to check where Gain remains flat
+    setplot dc1
+    let ota_dc_gain = deriv(v(Vout))
+    plot ota_dc_gain xlimit 1.0 3.0 title 'OTA Gain vs Input Common Mode (ICMR)'
+
+    * Show operating parameters of the OTA transistors at the nominal 2.0V common-mode
+    *echo 'Transistor operating regions at nominal 2.0V common mode:'
+    show all
+
+    * ==========================================
+    * TEST 2: AC ANALYSIS (GAIN, BW, PHASE MARGIN)
+    * ==========================================
+    *echo '=== Running Test 2: AC Open-Loop Analysis ==='
+
+    * Reset DC levels to nominal Gilbert cell output, apply differential AC magnitudes
+    alter @V_IF[dc]    = $cm_if
+    alter @V_IF_b[dc]  = $cm_if
+    alter @V_IF[acmag]  = 0.5
+    alter @V_IF_b[acmag] = -0.5
+
+    * Run AC analysis across a wide frequency grid
+    ac dec 10 1 10G
+
+    setplot ac1
+    let mag_db = db(v(Vout))
+    let phase_deg = ph(v(Vout)) * 180 / pi
+
+    plot mag_db title 'OTA Open-Loop AC Magnitude'
+    plot phase_deg title 'OTA Open-Loop AC Phase'
+
+    * ==========================================
+    * TEST 3: TRANSIENT ANALYSIS WITH REAL MIXER INPUTS
+    * ==========================================
+    *echo '=== Running Test 3: Transient Response ==='
+
+    * Reconfigure voltage sources to deliver the 180-degree out-of-phase mixing product
+    alter @V_IF[sin]   = [ $cm_if $amp_if $freq_if 0 ]
+    alter @V_IF_b[sin] = [ $cm_if $amp_if $freq_if 0 0 180 ]
+
+    * Run transient simulation (300u duration covers ~93 full cycles of 312kHz)
+    tran 3n 300u
+
+    setplot tran1
+    plot v(Vif) v(Vif_b) v(Vout) title 'Transient Mixer-to-OTA Tracking Waveforms'
+
+    * ==========================================
+    * TEST 4: COMMON-MODE REJECTION RATIO (CMRR)
+    * ==========================================
+    *echo '=== Running Test 4: CMRR Analysis ==='
+
+    * Force inputs to be perfectly in-phase (Common Mode AC perturbation)
+    alter @V_IF[acmag]   = 1.0
+    alter @V_IF_b[acmag] = 1.0
+
+    ac dec 10 1 100meg
+
+    setplot ac2
+    let cm_gain_db = db(v(Vout))
+    * Subtract common-mode gain from the previously stored differential gain vector
+    let cmrr_db = ac1.mag_db - cm_gain_db
+
+    plot cmrr_db title 'Common-Mode Rejection Ratio (CMRR) vs Frequency'
+
+    * ==========================================
+    * TEST 5: NOISE ANALYSIS
+    * ==========================================
+    *echo '=== Running Test 5: Noise Analysis ==='
+
+    * Reset inputs back to clean DC biasing for quiet noise observation
+    *alter @V_IF[acmag]   = 0
+    *alter @V_IF_b[acmag] = 0
+
+    * Calculate input-referred and output noise across the IF baseband window
+    *noise v(Vout) V_IF dec 10 10 1meg
+
+    *setplot noise1
+    *plot db(onoise_spectrum) db(inoise_spectrum) title 'Output and Input-Referred Noise (V^2/Hz)'
+
+    * ==========================================
+    * DATA EXPORT
+    * ==========================================
+    *echo '=== Exporting all simulation plots to raw file ==='
+    set appendwrite = 0
+    write /workspace/Analog/schematics/2_mixer/simulation_files/5tota_tb.raw
+
+.endc
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  Analog/schematics/2_mixer/5tota.sym # of pins=6
+** sym_path: /workspace/Analog/schematics/2_mixer/5tota.sym
+** sch_path: /workspace/Analog/schematics/2_mixer/5tota.sch
+.subckt 5tota Vdd_3v3 Vout_5tota Vin_p_5tota Vin_m_5tota VSS Ibias_30uA_nmos
+*.ipin Vdd_3v3
+*.ipin Vin_p_5tota
+*.ipin Vin_m_5tota
+*.opin Vout_5tota
+*.iopin Ibias_30uA_nmos
+*.ipin VSS
+*  Mnmos_amp_p -  nfet_03v3  IS MISSING !!!!
+*  Mnmos_amp_n -  nfet_03v3  IS MISSING !!!!
+*  Mpmos_cs_p -  pfet_03v3  IS MISSING !!!!
+*  Mpmos_cs_n -  pfet_03v3  IS MISSING !!!!
+.ends
+
+.GLOBAL VDD
+.GLOBAL GND
+.end
