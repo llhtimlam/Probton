@@ -177,14 +177,14 @@ N 1380 -390 1400 -390 {lab=VDD_3V3}
 N 1400 -390 1400 -370 {lab=VDD_3V3}
 N 1640 -290 1750 -290 {lab=Comp_Out}
 N 1710 -290 1710 -240 {lab=Comp_Out}
-C {code_shown.sym} 130 -760 0 0 {name=NGSPICE only_toplevel=true value=
+C {code_shown.sym} 130 -750 0 0 {name=NGSPICE only_toplevel=true value=
 ".save all
 .save @m.x1.xm11.m0[id]
 .probe v(x1.Vp) v(x1.Vq)
 .probe v(INV1) v(INV2)
 .control
 tran 100p 250n
-write tb_comparator_slowmo.raw
+write /workspace/Analog/schematics/3_comparator/simulation_files/tb_comparator_slowmo.raw
 .endc"}
 C {vsource.sym} 150 -380 0 0 {name=V1 value=1.235 savecurrent=false}
 C {lab_pin.sym} 340 -250 0 0 {name=p1 sig_type=std_logic lab=IN_N}
@@ -211,7 +211,7 @@ C {gnd.sym} 150 -90 0 0 {name=l5 lab=GND
 }
 C {gnd.sym} 460 -220 0 0 {name=l6 lab=GND}
 C {gnd.sym} 1710 -180 0 0 {name=l8 lab=GND}
-C {devices/launcher.sym} 590 -710 0 0 {name=h3
+C {devices/launcher.sym} 700 -860 0 0 {name=h3
 descr="save, netlist & simulate"
 tclcommand="xschem save; xschem netlist; xschem simulate"}
 C {vsource.sym} 150 -510 0 0 {name=V5 value=
@@ -226,10 +226,10 @@ C {gnd.sym} 830 -90 0 0 {name=l12 lab=GND}
 C {lab_pin.sym} 700 -320 2 1 {name=p16 sig_type=std_logic lab=OUT1
 }
 C {lab_pin.sym} 700 -240 2 1 {name=p17 sig_type=std_logic lab=OUT2}
-C {launcher.sym} 590 -665 0 0 {name=h5 
+C {launcher.sym} 700 -815 0 0 {name=h5 
 descr="load ngspice waves" 
 tclcommand="
-xschem raw_read $netlist_dir/tb_comparator_slowmo.raw tran; xschem redraw
+xschem raw_read /workspace/Analog/schematics/3_comparator/simulation_files/tb_comparator_slowmo.raw tran; xschem redraw
 "
 }
 C {code_shown.sym} 130 -1180 0 0 {name="Dynamic Offset Calculation" only_toplevel=true value=
@@ -286,11 +286,11 @@ value=2p
 footprint=1206
 device="ceramic capacitor"}
 C {gnd.sym} 350 -170 0 0 {name=l3 lab=GND}
-C {comparator/strongArmLatch.sym} 540 -290 0 0 {name=x1}
-C {comparator/inv.sym} 750 -460 0 0 {name=xinv1}
-C {comparator/inv.sym} 750 -270 0 0 {name=xinv2}
-C {comparator/rslatch.sym} 1150 -270 0 0 {name=x2}
-C {code.sym} 410 -880 0 0 {name=MODELS only_toplevel=true
+C {Analog/schematics/3_comparator/strongArmLatch.sym} 540 -290 0 0 {name=x1}
+C {Analog/schematics/3_comparator/inv.sym} 750 -460 0 0 {name=xinv1}
+C {Analog/schematics/3_comparator/inv.sym} 750 -270 0 0 {name=xinv2}
+C {Analog/schematics/3_comparator/rslatch.sym} 1150 -270 0 0 {name=x2}
+C {code.sym} 490 -890 0 0 {name=MODELS only_toplevel=true
 format="tcleval( @value )"
 value="
 .include $::180MCU_MODELS/design.ngspice
@@ -303,7 +303,7 @@ value="
 }
 C {lab_pin.sym} 1550 -390 0 0 {name=p7 sig_type=std_logic lab=VDD_3V3}
 C {gnd.sym} 1570 -200 3 0 {name=l13 lab=GND}
-C {comparator/inv.sym} 1320 -370 0 0 {name=xinv3}
-C {comparator/inv.sym} 1490 -370 0 0 {name=xinv4}
+C {Analog/schematics/3_comparator/inv.sym} 1320 -370 0 0 {name=xinv3}
+C {Analog/schematics/3_comparator/inv.sym} 1490 -370 0 0 {name=xinv4}
 C {lab_pin.sym} 1380 -390 0 0 {name=p20 sig_type=std_logic lab=VDD_3V3}
 C {gnd.sym} 1400 -200 3 0 {name=l14 lab=GND}

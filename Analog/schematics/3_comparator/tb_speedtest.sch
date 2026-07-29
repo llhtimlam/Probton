@@ -87,16 +87,16 @@ T {Change Output Capacitance for Finding Speed of Comparator
 Input Capacitance from Digital Blocks: ~5p
 Capacitance from PADframe and package: ~5p
 Breadboard Adjacent Traces: ~3pF
-Potential Test for Max Robustness: ~10p} 900 -760 0 0 0.4 0.4 {}
+Potential Test for Max Robustness: ~10p} 940 -760 0 0 0.4 0.4 {}
 T {Change Output Capacitance for Finding Speed of Comparator:
 
 Input Capacitance from Digital Blocks: ~5p
 Potential Test for Max Robustness: ~10p} 1480 -130 0 0 0.4 0.4 {}
 N 450 -570 510 -570 {lab=#net1
 spice_ignore=true}
-N 160 -420 210 -420 {lab=#net1}
-N 160 -280 210 -280 {lab=#net2}
-N 160 -170 210 -170 {lab=#net3}
+N 160 -420 210 -420 {lab=#net2}
+N 160 -280 210 -280 {lab=#net3}
+N 160 -170 210 -170 {lab=#net4}
 N 570 -300 590 -300 {lab=IN_P}
 N 570 -270 590 -270 {lab=CLK}
 N 530 -240 550 -240 {lab=IN_N}
@@ -142,7 +142,7 @@ N 550 -240 590 -240 {lab=IN_N}
 N 530 -300 570 -300 {lab=IN_P}
 N 540 -320 540 -300 {lab=IN_P}
 N 540 -240 540 -220 {lab=IN_N}
-N 1730 -260 1750 -260 {lab=#net4}
+N 1730 -260 1750 -260 {lab=#net5}
 N 1660 -180 1660 -170 {lab=GND}
 N 1640 -360 1660 -360 {lab=VDD_3V3}
 N 1660 -360 1660 -340 {lab=VDD_3V3}
@@ -154,7 +154,7 @@ C {code_shown.sym} 130 -760 0 0 {name=NGSPICE only_toplevel=true value=
 .probe v(INV1) v(INV2)
 .control
 tran 100p 10u
-write tb_speedtest.raw
+write /workspace/Analog/schematics/3_comparator/simulation_files/tb_speedtest.raw
 quit
 .endc"}
 C {vsource.sym} 160 -390 0 0 {name=V1 value=1.235 savecurrent=false}
@@ -171,7 +171,7 @@ C {gnd.sym} 160 -360 0 0 {name=l2 lab=GND}
 C {gnd.sym} 160 -500 0 0 {name=l3 lab=GND
 }
 C {gnd.sym} 160 -220 0 0 {name=l4 lab=GND}
-C {devices/launcher.sym} 500 -720 0 0 {name=h3
+C {devices/launcher.sym} 1700 -720 0 0 {name=h3
 descr="save, netlist & simulate"
 tclcommand="xschem save; xschem netlist; xschem simulate"}
 C {vsource.sym} 450 -540 0 0 {name=V5 value=
@@ -180,10 +180,10 @@ savecurrent=false
 spice_ignore=true}
 C {lab_pin.sym} 570 -570 0 1 {name=p4 sig_type=std_logic lab=IN_P
 spice_ignore=true}
-C {launcher.sym} 500 -675 0 0 {name=h5 
+C {launcher.sym} 1700 -675 0 0 {name=h5 
 descr="load ngspice waves" 
 tclcommand="
-xschem raw_read $netlist_dir/tb_speedtest.raw tran; xschem redraw
+xschem raw_read /workspace/Analog/schematics/3_comparator/simulation_files/tb_speedtest.raw tran; xschem redraw
 "
 }
 C {vsource.sym} 160 -140 0 0 {name=V6 value="PULSE(0 3.3 0.5n 100p 100p 100.1n 200n 100)" savecurrent=false}
@@ -250,17 +250,17 @@ value=2p
 footprint=1206
 device="ceramic capacitor"}
 C {gnd.sym} 540 -160 0 0 {name=l1 lab=GND}
-C {comparator/strongArmLatch.sym} 730 -280 0 0 {name=x1}
-C {comparator/inv.sym} 940 -450 0 0 {name=xinv1}
-C {comparator/inv.sym} 940 -260 0 0 {name=xinv2}
-C {comparator/rslatch.sym} 1340 -260 0 0 {name=x2}
+C {Analog/schematics/3_comparator/strongArmLatch.sym} 730 -280 0 0 {name=x1}
+C {Analog/schematics/3_comparator/inv.sym} 940 -450 0 0 {name=xinv1}
+C {Analog/schematics/3_comparator/inv.sym} 940 -260 0 0 {name=xinv2}
+C {Analog/schematics/3_comparator/rslatch.sym} 1340 -260 0 0 {name=x2}
 C {gnd.sym} 450 -510 0 0 {name=l5 lab=GND
 spice_ignore=true}
-C {comparator/inv.sym} 1580 -340 0 0 {name=xinv3}
-C {comparator/inv.sym} 1750 -340 0 0 {name=xinv4}
+C {Analog/schematics/3_comparator/inv.sym} 1580 -340 0 0 {name=xinv3}
+C {Analog/schematics/3_comparator/inv.sym} 1750 -340 0 0 {name=xinv4}
 C {lab_pin.sym} 1640 -360 0 0 {name=p11 sig_type=std_logic lab=VDD_3V3}
 C {gnd.sym} 1660 -170 3 0 {name=l13 lab=GND}
-C {code.sym} 720 -590 0 0 {name=MODELS only_toplevel=true
+C {code.sym} 1990 -740 0 0 {name=MODELS only_toplevel=true
 format="tcleval( @value )"
 value="
 .include $::180MCU_MODELS/design.ngspice
