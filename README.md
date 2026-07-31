@@ -35,19 +35,25 @@ Size: 1100um x 1100um (estimate) - Block type A (not finalized)
 Required pins: 14
 
 Analog pin: (4)
+
 Input: (1)
 1. Readout
+
 Output: (3)
 1. Filtered Amp Readout
 2. Wave mixer (x) error
 3. Wave mixer (y) error
 
 Digital pin: (10)
+
 Input: (3)
+
 1. SPI: nCS
 2. SPI: sclk
 3. SPI: mosi
+
 Output: (7)
+
 1. SPI: miso
 2. Motion command: move_en (x)
 3. Motion command: dir (x)
