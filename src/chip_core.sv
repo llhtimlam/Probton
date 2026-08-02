@@ -301,7 +301,7 @@ module chip_core #(
         .votes_in_phase(votes_in_phase_x), .votes_out_phase(votes_out_phase_x)    
     );
 
-    signal_procssor signal_procssor_y_inst (
+    signal_processor signal_processor_y_inst (
         .clk(clk), .rst_n(rst_n), .soft_rst_n(soft_rst_n),
         .comp_raw(comp_y),
         .latch_phase90(latch_phase90_y), .latch_phase270(latch_phase270_y),
