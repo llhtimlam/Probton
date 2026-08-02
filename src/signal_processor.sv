@@ -5,7 +5,6 @@ module signal_processor #(
     parameter int unsigned VOTE_THRESHOLD = 13,  // supermajority needed to act (~87%)
     parameter int unsigned SYNC_DEPTH     = 4,   // metastability pipeline depth
     // Counter width: must hold 0..VOTE_WINDOW. Derived so counters resize
-    // automatically with VOTE_WINDOW (15 -> 4 bits, 16 -> 5 bits).
     localparam int unsigned CNT_W = $clog2(VOTE_WINDOW + 1)
 ) (
     input  wire  clk,

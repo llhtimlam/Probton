@@ -1,12 +1,16 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
-    <property name="random_seed" value="1784581621" />
-    <testcase name="test_write_path" classname="spi_tb" file="c:\Users\User\Documents\GitHub\Probton\cocotb\spi_tb.py" lineno="128" time="0.026802539825439453" sim_time_ns="136000.0" ratio_time="5074145.990855557" />
-    <testcase name="test_readback_over_miso" classname="spi_tb" file="c:\Users\User\Documents\GitHub\Probton\cocotb\spi_tb.py" lineno="149" time="0.01767730712890625" sim_time_ns="110400.0" ratio_time="6245295.123003884">
-      <failure error_type="AssertionError" error_msg="amp readback: expected 0xa5, got 0x52" />
-    </testcase>
-    <testcase name="test_default_values" classname="spi_tb" file="c:\Users\User\Documents\GitHub\Probton\cocotb\spi_tb.py" lineno="171" time="0.0011594295501708984" sim_time_ns="1600.0" ratio_time="1379988.9779971212" />
-    <testcase name="test_unmapped_write_ignored" classname="spi_tb" file="c:\Users\User\Documents\GitHub\Probton\cocotb\spi_tb.py" lineno="188" time="0.016821861267089844" sim_time_ns="110400.00000000003" ratio_time="6562888.508418846" />
-    <testcase name="test_cs_abort_recovery" classname="spi_tb" file="c:\Users\User\Documents\GitHub\Probton\cocotb\spi_tb.py" lineno="206" time="0.011839151382446289" sim_time_ns="75200.0" ratio_time="6351806.609340073" />
+    <property name="random_seed" value="1785694183" />
+    <testcase name="test_ack_handshake" classname="signal_processor_tb" file="c:\Users\User\Documents\GitHub\Probton\cocotb\signal_processor_tb.py" lineno="115" time="0.006356716156005859" sim_time_ns="5000.0" ratio_time="786569.6496886956" />
+    <testcase name="test_in_phase" classname="signal_processor_tb" file="c:\Users\User\Documents\GitHub\Probton\cocotb\signal_processor_tb.py" lineno="151" time="0.012833833694458008" sim_time_ns="79600.0" ratio_time="6202355.577848372" />
+    <testcase name="test_outputs_are_held" classname="signal_processor_tb" file="c:\Users\User\Documents\GitHub\Probton\cocotb\signal_processor_tb.py" lineno="171" time="0.018059253692626953" sim_time_ns="119600.00000000001" ratio_time="6622643.550814565" />
+    <testcase name="test_out_of_phase" classname="signal_processor_tb" file="c:\Users\User\Documents\GitHub\Probton\cocotb\signal_processor_tb.py" lineno="189" time="0.012956380844116211" sim_time_ns="79600.00000000003" ratio_time="6143690.970318167" />
+    <testcase name="test_all_00_jitter" classname="signal_processor_tb" file="c:\Users\User\Documents\GitHub\Probton\cocotb\signal_processor_tb.py" lineno="208" time="0.013458490371704102" sim_time_ns="79600.0" ratio_time="5914482.07054155" />
+    <testcase name="test_all_11_jitter" classname="signal_processor_tb" file="c:\Users\User\Documents\GitHub\Probton\cocotb\signal_processor_tb.py" lineno="225" time="0.012144327163696289" sim_time_ns="79600.0" ratio_time="6554500.626263816" />
+    <testcase name="test_below_threshold" classname="signal_processor_tb" file="c:\Users\User\Documents\GitHub\Probton\cocotb\signal_processor_tb.py" lineno="241" time="0.012337446212768555" sim_time_ns="79600.0" ratio_time="6451902.494830619" />
+    <testcase name="test_at_threshold" classname="signal_processor_tb" file="c:\Users\User\Documents\GitHub\Probton\cocotb\signal_processor_tb.py" lineno="264" time="0.012668848037719727" sim_time_ns="79600.0" ratio_time="6283128.4867418185" />
+    <testcase name="test_jitter_clears_on_good_window" classname="signal_processor_tb" file="c:\Users\User\Documents\GitHub\Probton\cocotb\signal_processor_tb.py" lineno="287" time="0.027014493942260742" sim_time_ns="157600.0" ratio_time="5833905.3227073345" />
+    <testcase name="test_fresh_window_each_time" classname="signal_processor_tb" file="c:\Users\User\Documents\GitHub\Probton\cocotb\signal_processor_tb.py" lineno="305" time="0.02599930763244629" sim_time_ns="157600.0" ratio_time="6061699.881704555" />
+    <testcase name="test_soft_reset" classname="signal_processor_tb" file="c:\Users\User\Documents\GitHub\Probton\cocotb\signal_processor_tb.py" lineno="323" time="0.03213000297546387" sim_time_ns="190400.0" ratio_time="5925925.377143578" />
   </testsuite>
 </testsuites>
