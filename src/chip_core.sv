@@ -14,7 +14,7 @@
 `include "spi.sv"
 `include "state_machine.sv"
 `include "wave_controller.sv"
-`include "signal_procssor.sv"
+`include "signal_processor.sv"
 
 module chip_core #(
     parameter NUM_INPUT_PADS,
@@ -127,6 +127,10 @@ module chip_core #(
     wire dir_x     = bidir_out[5];
     wire move_en_y = bidir_out[6];
     wire dir_y     = bidir_out[7];
+
+    // Soft reset
+    wire soft_rst;
+    wire soft_rst_n = ~soft_rst;
 
     always_comb begin // Replace top duplicated with bottom
         // Default behavior for the remaining pins [NUM_BIDIR_PADS-1] (CMOS buffer, fast slew).
@@ -266,7 +270,7 @@ module chip_core #(
         .cal_dir(cal_dir_x),
         .cal_phase0_offset(cal_phase0_offset_x), cal_phase90_offset(cal_phase90_offset_x), cal_phase270_offset(cal_phase270_offset_x),
         .latch_error(latch_error_x)
-    )
+    );
 
     wave_controller wave_controller_y_inst (
         .clk(clk), .rst_n(rst_n), .soft_rst_n(soft_rst_n),
@@ -283,18 +287,30 @@ module chip_core #(
         .cal_dir(cal_dir_y),
         .cal_phase0_offset(cal_phase0_offset_y), cal_phase90_offset(cal_phase90_offset_y), cal_phase270_offset(cal_phase270_offset_y),
         .latch_error(latch_error_y)
-    )
+    );
 
     // Signal Processor
-    signal_procssor signal_procssor_x_inst (
-        .clk(clk), .rst_n(rst_n),
-        
-    )
+    signal_processor signal_processor_x_inst (
+        .clk(clk), .rst_n(rst_n), .soft_rst_n(soft_rst_n),
+        .comp_raw(comp_x),
+        .latch_phase90(latch_phase90_x), .latch_phase270(latch_phase270_x),
+        .latch_phase90_ack(latch_phase90_ack_x), .latch_phase270_ack(latch_phase270_ack_x),
+        .dir(dir_x), .move_en(move_en_x),
+        .jitter_flag(jitter_flag_x),
+        .phase_state(phase_state_x),
+        .votes_in_phase(votes_in_phase_x), .votes_out_phase(votes_out_phase_x)    
+    );
 
     signal_procssor signal_procssor_y_inst (
-        .clk(clk), .rst_n(rst_n),
-        
-    )
+        .clk(clk), .rst_n(rst_n), .soft_rst_n(soft_rst_n),
+        .comp_raw(comp_y),
+        .latch_phase90(latch_phase90_y), .latch_phase270(latch_phase270_y),
+        .latch_phase90_ack(latch_phase90_ack_y), .latch_phase270_ack(latch_phase270_ack_y),
+        .dir(dir_y), .move_en(move_en_y),
+        .jitter_flag(jitter_flag_y),
+        .phase_state(phase_state_y),
+        .votes_in_phase(votes_in_phase_y), .votes_out_phase(votes_out_phase_y)  
+    );
 
 
 endmodule
