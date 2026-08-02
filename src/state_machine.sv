@@ -21,7 +21,7 @@ module state_machine (
     output logic read_en,
 
     // Manual Soft Reset
-    input  logic soft_rst,
+    input  logic soft_rst_n,
 
     // SPI
     output logic [2:0] state_o
@@ -31,7 +31,7 @@ module state_machine (
         S_LOAD_CFG = 3'd1,
         S_CAL      = 3'd2,
         S_FALLOUT  = 3'd3,
-        S_READOUT  = 3'd4,
+        S_READOUT  = 3'd4
     } state_t;
 
     state_t state_q, state_d;
@@ -53,10 +53,10 @@ module state_machine (
                 else if (cal_timeout) state_d = S_FALLOUT;
             end
             S_FALLOUT: begin
-                if (soft_rst) state_d = S_BOOT;
+                if (soft_rst_n) state_d = S_BOOT;
             end
             S_READOUT: begin
-                if (soft_rst) state_d = S_BOOT;
+                if (soft_rst_n) state_d = S_BOOT;
             end
 
             default: ;

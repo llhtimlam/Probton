@@ -3,12 +3,12 @@
 module spi_regs #(
     parameter int SPI_ADDR_WIDTH = 7
 )(
-    input wire clk, 
-    input wire rst_n,
+    input  wire clk, 
+    input  wire rst_n,
     
-    input wire spi_cs_n, 
-    input wire spi_sclk,
-    input wire spi_mosi, 
+    input  wire spi_cs_n, 
+    input  wire spi_sclk,
+    input  wire spi_mosi, 
     output wire spi_miso,
     output logic spi_miso_oe,
 
@@ -26,7 +26,7 @@ module spi_regs #(
     output logic boot_complete,
     output logic cfg_done,
     output logic phase_offset_imported,
-    output logic soft_rst,
+    output logic soft_rst_n,
 
     // MISO (Export from ASIC)
     // SPI Report
@@ -40,8 +40,12 @@ module spi_regs #(
 
     input  logic cal_timeout_x, cal_timeout_y,
 
-    // Main Loop
+    // Main Loop Debug
     input  logic latch_error_x, latch_error_y,
+    input  logic jitter_flag_x, jitter_flag_y,
+    input  logic [1:0] phase_state_x, phase_state_y,
+    input  logic [3:0] votes_in_phase_x, votes_out_phase_x,
+    input  logic [3:0] votes_in_phase_y, votes_out_phase_y,
 
     // State Machine
     input logic [2:0] state_o
@@ -117,8 +121,15 @@ module spi_regs #(
     localparam logic [SPI_ADDR_WIDTH-1:0] ADDR_CAL_PHASE270_OFF_Y_B1 = 7'h44;
     localparam logic [SPI_ADDR_WIDTH-1:0] ADDR_CAL_PHASE270_OFF_Y_B2 = 7'h45;
 
-    localparam logic [SPI_ADDR_WIDTH-1:0] ADDR_STATUS = 7'h46;
-    localparam logic [SPI_ADDR_WIDTH-1:0] ADDR_STATE = 7'h47;
+    localparam logic [SPI_ADDR_WIDTH-1:0] ADDR_JITTER_FLAG = 7'h46;
+    localparam logic [SPI_ADDR_WIDTH-1:0] ADDR_PHASE_STATE = 7'h47;
+    localparam logic [SPI_ADDR_WIDTH-1:0] ADDR_VOTES_IN_X = 7'h48;
+    localparam logic [SPI_ADDR_WIDTH-1:0] ADDR_VOTES_OUT_X = 7'h49;
+    localparam logic [SPI_ADDR_WIDTH-1:0] ADDR_VOTES_IN_Y = 7'h4A;
+    localparam logic [SPI_ADDR_WIDTH-1:0] ADDR_VOTES_OUT_Y = 7'h4B;
+
+    localparam logic [SPI_ADDR_WIDTH-1:0] ADDR_STATUS = 7'h4C;
+    localparam logic [SPI_ADDR_WIDTH-1:0] ADDR_STATE = 7'h4D;
 
     localparam logic [15:0] DEFAULT_MEMS_FCW  = 16'h0000;
     localparam logic [20:0] DEFAULT_PHASE_OFF = 21'h0;
@@ -233,7 +244,7 @@ module spi_regs #(
             boot_complete <= 1'b0;
             cfg_done <= 1'b0;
             phase_offset_imported  <= 1'b0;
-            soft_rst <= 1'b0;
+            soft_rst_n <= 1'b0;
         end else if (reg_wr_en) begin
             unique case (reg_wr_addr)
 
@@ -266,7 +277,7 @@ module spi_regs #(
                     boot_complete          <= reg_wr_data[0];
                     cfg_done               <= reg_wr_data[1];
                     phase_offset_imported  <= reg_wr_data[2];
-                    soft_rst                <= reg_wr_data[3];
+                    soft_rst_n                <= reg_wr_data[3];
                 end
 
                 default: ;
@@ -302,7 +313,7 @@ module spi_regs #(
             ADDR_PHASE270_OFF_Y_B1: reg_rd_data = cfg_phase270_offset_y[15:8];
             ADDR_PHASE270_OFF_Y_B2: reg_rd_data = {3'b0, cfg_phase270_offset_y[20:16]};
 
-            ADDR_CTRL: reg_rd_data = {4'b0, soft_rst, phase_offset_imported,
+            ADDR_CTRL: reg_rd_data = {4'b0, soft_rst_n, phase_offset_imported,
                                        cfg_done, boot_complete};
 
             ADDR_DELAY_WAVE_CYC_X: reg_rd_data = delay_wave_cycle_x;
@@ -347,6 +358,13 @@ module spi_regs #(
             ADDR_CAL_PHASE270_OFF_Y_B0: reg_rd_data = cal_phase270_offset_y[7:0];
             ADDR_CAL_PHASE270_OFF_Y_B1: reg_rd_data = cal_phase270_offset_y[15:8];
             ADDR_CAL_PHASE270_OFF_Y_B2: reg_rd_data = {3'b0, cal_phase270_offset_y[20:16]};
+
+            ADDR_JITTER_FLAG: reg_rd_data = {6'b0, jitter_flag_y, jitter_flag_x};
+            ADDR_PHASE_STATE: reg_rd_data = {4'b0, phase_state_y, phase_state_x};
+            ADDR_VOTES_IN_X:  reg_rd_data = {4'b0, votes_in_phase_x};
+            ADDR_VOTES_OUT_X: reg_rd_data = {4'b0, votes_out_phase_x};
+            ADDR_VOTES_IN_Y:  reg_rd_data = {4'b0, votes_in_phase_y};
+            ADDR_VOTES_OUT_Y: reg_rd_data = {4'b0, votes_out_phase_y};
 
             ADDR_STATUS: reg_rd_data = {2'b0, latch_error_y, latch_error_x, cal_timeout_y, cal_timeout_x, cal_dir_y, cal_dir_x};
             ADDR_STATE: reg_rd_data = {5'b0, state_o};
