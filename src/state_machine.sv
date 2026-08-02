@@ -20,11 +20,6 @@ module state_machine (
     // Readout
     output logic read_en,
 
-    // Amp Ratio Adjuster
-    input  logic amp_ratio_en,
-    output logic write_amp_ratio_en,
-    input  logic amp_update_done,
-
     // Manual Soft Reset
     input  logic soft_rst,
 
@@ -37,7 +32,6 @@ module state_machine (
         S_CAL      = 3'd2,
         S_FALLOUT  = 3'd3,
         S_READOUT  = 3'd4,
-        S_AMP_ADJ  = 3'd5
     } state_t;
 
     state_t state_q, state_d;
@@ -63,10 +57,6 @@ module state_machine (
             end
             S_READOUT: begin
                 if (soft_rst) state_d = S_BOOT;
-                else if (amp_ratio_en) state_d = S_AMP_ADJ;
-            end
-            S_AMP_ADJ: begin
-                if (amp_update_done) state_d = S_READOUT;
             end
 
             default: ;
@@ -80,7 +70,6 @@ module state_machine (
 
     always_comb begin
         cal_start = 1'b0;
-        write_amp_ratio_en = 1'b0;
         read_en  = 1'b0;
         case (state_q)
             S_CAL: begin 
@@ -89,9 +78,6 @@ module state_machine (
             end
             S_READOUT: begin
                 read_en   = 1'b1;
-            end
-            S_AMP_ADJ: begin
-                write_amp_ratio_en = 1'b1;
             end
             default: ;
         endcase

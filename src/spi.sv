@@ -14,8 +14,6 @@ module spi_regs #(
 
     // MOSI (Import to ASIC)
     // Config Setting
-    // 8 bit: Amp Ratio
-    output logic unsigned [7:0] cfg_amp_ratio,     
 
     // 16-bit: MEMS requency Control Word (Min MEMS Frequency: 2.38418579102KHz, Max MEMS Frequency: 156.247615814KHz)
     output logic unsigned [15:0] cfg_f_MEMS_fcw_x, cfg_f_MEMS_fcw_y, // Frequency Control Word (f_MEMS * 2^k) / f_clk, where k is 21, f_clk is 5MHz
@@ -48,7 +46,6 @@ module spi_regs #(
     // State Machine
     input logic [2:0] state_o
 );
-    localparam logic [SPI_ADDR_WIDTH-1:0] ADDR_AMP_RATIO = 7'h00;
 
     localparam logic [SPI_ADDR_WIDTH-1:0] ADDR_MEMS_FCW_X_L = 7'h01;
     localparam logic [SPI_ADDR_WIDTH-1:0] ADDR_MEMS_FCW_X_H = 7'h02;
@@ -123,7 +120,6 @@ module spi_regs #(
     localparam logic [SPI_ADDR_WIDTH-1:0] ADDR_STATUS = 7'h46;
     localparam logic [SPI_ADDR_WIDTH-1:0] ADDR_STATE = 7'h47;
 
-    localparam logic [7:0]  DEFAULT_AMP_RATIO = 8'h00;
     localparam logic [15:0] DEFAULT_MEMS_FCW  = 16'h0000;
     localparam logic [20:0] DEFAULT_PHASE_OFF = 21'h0;
 
@@ -226,7 +222,6 @@ module spi_regs #(
 
     always_ff @(posedge clk or negedge rst_n) begin 
         if (!rst_n) begin
-            cfg_amp_ratio <= DEFAULT_AMP_RATIO;
             cfg_f_MEMS_fcw_x <= DEFAULT_MEMS_FCW;
             cfg_f_MEMS_fcw_y <= DEFAULT_MEMS_FCW;
             cfg_phase0_offset_x <= DEFAULT_PHASE_OFF;
@@ -241,7 +236,6 @@ module spi_regs #(
             soft_rst <= 1'b0;
         end else if (reg_wr_en) begin
             unique case (reg_wr_addr)
-                ADDR_AMP_RATIO:    cfg_amp_ratio <= reg_wr_data;
 
                 ADDR_MEMS_FCW_X_L: cfg_f_MEMS_fcw_x[7:0] <= reg_wr_data;
                 ADDR_MEMS_FCW_X_H: cfg_f_MEMS_fcw_x[15:8] <= reg_wr_data;
@@ -282,7 +276,6 @@ module spi_regs #(
     logic [7:0] reg_rd_data;
     always_comb begin
         unique case (spi_addr)
-            ADDR_AMP_RATIO: reg_rd_data = cfg_amp_ratio;
 
             ADDR_MEMS_FCW_X_L: reg_rd_data = cfg_f_MEMS_fcw_x[7:0];
             ADDR_MEMS_FCW_X_H: reg_rd_data = cfg_f_MEMS_fcw_x[15:8];
