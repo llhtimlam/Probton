@@ -1,0 +1,1 @@
+yosys -y /usr/local/lib/python3.12/dist-packages/librelane/scripts/pyosys/synthesize.py -- --config-in /workspace/librelane/runs/RUN_2026-08-03_00-34-52/06-yosys-synthesis/config.json --extra-in /workspace/librelane/runs/RUN_2026-08-03_00-34-52/06-yosys-synthesis/extra.json --output /workspace/librelane/runs/RUN_2026-08-03_00-34-52/06-yosys-synthesis/chip_top.nl.v

@@ -1,0 +1,11 @@
+`verilator_config
+lint_off -rule DECLFILENAME
+lint_off -rule EOFNEWLINE
+lint_off -rule UNDRIVEN -file "/workspace/librelane/runs/RUN_2026-08-03_00-34-52/tmp/4901a66fbb4f48a584469bfa89527dd9.bb.v"
+lint_off -rule UNUSEDSIGNAL -file "/workspace/librelane/runs/RUN_2026-08-03_00-34-52/tmp/4901a66fbb4f48a584469bfa89527dd9.bb.v"
+lint_off -rule UNDRIVEN -file "/workspace/librelane/runs/RUN_2026-08-03_00-34-52/tmp/582e5d2c6ce84509a195320db07744f8.bb.v"
+lint_off -rule UNUSEDSIGNAL -file "/workspace/librelane/runs/RUN_2026-08-03_00-34-52/tmp/582e5d2c6ce84509a195320db07744f8.bb.v"
+lint_off -rule UNDRIVEN -file "/workspace/ip/gf180mcu_ws_ip__id/vh/gf180mcu_ws_ip__id.v"
+lint_off -rule UNUSEDSIGNAL -file "/workspace/ip/gf180mcu_ws_ip__id/vh/gf180mcu_ws_ip__id.v"
+lint_off -rule UNDRIVEN -file "/workspace/ip/gf180mcu_ws_ip__logo/vh/gf180mcu_ws_ip__logo.v"
+lint_off -rule UNUSEDSIGNAL -file "/workspace/ip/gf180mcu_ws_ip__logo/vh/gf180mcu_ws_ip__logo.v"
