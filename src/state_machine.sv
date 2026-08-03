@@ -53,10 +53,10 @@ module state_machine (
                 else if (cal_timeout) state_d = S_FALLOUT;
             end
             S_FALLOUT: begin
-                if (soft_rst_n) state_d = S_BOOT;
+                if (~soft_rst_n) state_d = S_BOOT;
             end
             S_READOUT: begin
-                if (soft_rst_n) state_d = S_BOOT;
+                if (~soft_rst_n) state_d = S_BOOT;
             end
 
             default: ;

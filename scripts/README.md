@@ -16,6 +16,15 @@ Open **Ubuntu (WSL) Terminal** and execute these commands to setup and launch th
 
 ### 3.1. Install Docker Desktop on Windows (Need restart computer, <5min>): [Link](https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-win-amd64) & [Guide](https://github.com/sscs-ose/sscs-chipathon-2026/blob/main/docs/install_instructions/Windows/install_docker_desktop.md)
 
+
+Open your **WSL Terminal** and run the following commands to update to latest version
+```
+docker pull hpretl/iic-osic-tools:latest
+
+python -m libraline --version
+should shows libraline version 3.1.0-dev1
+```
+
 ### 3.2. Install Nix-shell (one-time, ~4hr)
 It will crash at 74% if only run the command nix-shell
 ```
