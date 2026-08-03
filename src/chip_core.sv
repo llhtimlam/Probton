@@ -232,6 +232,7 @@ module chip_core #(
 
         // Default: counter/SRAM drives all bidir pads (Template Stuff, I dont know what it is about)
         //bidir_out = count ^ {24'd0, sram_0_out, sram_1_out};
+        bidir_out = count;  // count matches NUM_BIDIR_PADS (20 bits)
 
 
 

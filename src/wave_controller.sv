@@ -15,6 +15,8 @@
 
 `default_nettype none
 
+`include "sine_lut.sv"
+
 module wave_controller (
     input  wire clk,
     input  wire rst_n,
