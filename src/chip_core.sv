@@ -11,6 +11,8 @@
 
 `default_nettype none
 
+`include "slot_defines.svh" // Remove if include chip_top.sv
+
 `include "spi.sv"
 `include "state_machine.sv"
 `include "wave_controller.sv"
@@ -18,9 +20,9 @@
 `include "analog_macro.sv"
 
 module chip_core #(
-    parameter NUM_INPUT_PADS = 1,   // Added = 1 from default 
-    parameter NUM_BIDIR_PADS = 20,  // Added = 20 from default 
-    parameter NUM_ANALOG_PADS = 60  // Added = 60 from default 
+    parameter NUM_INPUT_PADS = 1,   // Added = 1 from default for verilator quick test
+    parameter NUM_BIDIR_PADS = 20,  // Added = 20 from default for verilator quick test
+    parameter NUM_ANALOG_PADS = 60  // Added = 60 from default for verilator quick test
     )(
     `ifdef USE_POWER_PINS
     inout  wire VDD,
@@ -118,10 +120,10 @@ module chip_core #(
     // ANALOG IO
 
     // (ANALOG) Readout Pin Definition
-    wire analog_readout_input = analog[0];
+    (* keep *) wire analog_readout_input = analog[0];
 
     // (ANALOG) Output Pin Definition
-    wire analog_readout_output, analog_error_x_output, analog_error_y_output;
+    (* keep *) wire analog_readout_output, analog_error_x_output, analog_error_y_output;
     assign analog[1] = analog_readout_output;
     assign analog[2] = analog_error_x_output;
     assign analog[3] = analog_error_y_output;
@@ -137,10 +139,10 @@ module chip_core #(
     wire spi_miso, spi_miso_oe;
 
     // (DIGITAL Output) Movement (X/Y) Pin Definition
-    wire move_en_x, dir_x, move_en_y, dir_y;
+    (* keep *) wire move_en_x, dir_x, move_en_y, dir_y;
 
     // (DIGITAL Output) MEMS (X/Y) Driver Pin Definition
-    wire mems_drv_x, mems_drv_y;
+    (* keep *) wire mems_drv_x, mems_drv_y;
 
     always_comb begin // Replace top duplicated with bottom
         // Default behavior for the remaining pins [NUM_BIDIR_PADS-1] (CMOS buffer, fast slew).
@@ -293,7 +295,7 @@ module chip_core #(
     assign cal_timeout = cal_timeout_x | cal_timeout_y;
 
     // ----- Comparator → Wave controller -----
-    wire        comp_x, comp_y;
+    (* keep *) wire comp_x, comp_y;
 
     // ----- Wave controller ↔ signal processor handshake -----
     wire        latch_phase90_x, latch_phase270_x;
@@ -310,6 +312,7 @@ module chip_core #(
 
     // Analog
     // Readout (Switch -> TIA -> Low Pass Filter)
+    (* keep_hierarchy *)
     analog_readout analog_readout_inst (
         .read_en(read_en),
         .ain (analog_readout_input),
@@ -319,6 +322,7 @@ module chip_core #(
     );
 
     // Wave mixer (X/Y)
+    (* keep_hierarchy *)
     analog_wave_mixer analog_wave_mixer_x_inst (
         .ain (analog_readout_output),
         .aref(mems_drv_x),
@@ -327,6 +331,7 @@ module chip_core #(
         .vss (VSS)
     );
 
+    (* keep_hierarchy *)
     analog_wave_mixer analog_wave_mixer_y_inst (
         .ain (analog_readout_output),
         .aref(mems_drv_y),
@@ -336,6 +341,7 @@ module chip_core #(
     );
 
     // Comparator (X/Y)
+    (* keep_hierarchy *)
     analog_comp analog_comp_x_inst (
         .clk (clk),
         .ain (analog_error_x_output),
@@ -344,6 +350,7 @@ module chip_core #(
         .vss (VSS)
     );
 
+    (* keep_hierarchy *)
     analog_comp analog_comp_y_inst (
         .clk (clk),
         .ain (analog_error_y_output),

@@ -1,0 +1,493 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= min_ss_125C_4v50 Corner ===================================
+
+Startpoint: rst_n (input port clocked by clk)
+Endpoint: _09465_ (recovery check against rising-edge clock clk)
+Path Group: asynchronous
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                                  0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (propagated)
+                                 40.000000   40.000000 ^ input external delay
+     1    0.003464    0.182967    0.055941   40.055943 ^ rst_n (in)
+                                                         rst_n (net)
+                      0.182967    0.000000   40.055943 ^ input5/I (gf180mcu_fd_sc_mcu7t5v0__dlyb_1)
+     2    0.048032    1.406565    2.374460   42.430401 ^ input5/Z (gf180mcu_fd_sc_mcu7t5v0__dlyb_1)
+                                                         net5 (net)
+                      1.406577    0.002256   42.432659 ^ fanout639/I (gf180mcu_fd_sc_mcu7t5v0__dlyb_1)
+     5    0.086499    2.442075    3.052733   45.485390 ^ fanout639/Z (gf180mcu_fd_sc_mcu7t5v0__dlyb_1)
+                                                         net639 (net)
+                      2.442088    0.003265   45.488655 ^ fanout638/I (gf180mcu_fd_sc_mcu7t5v0__dlyb_1)
+     6    0.082998    2.346589    2.974026   48.462681 ^ fanout638/Z (gf180mcu_fd_sc_mcu7t5v0__dlyb_1)
+                                                         net638 (net)
+                      2.346632    0.005702   48.468384 ^ fanout632/I (gf180mcu_fd_sc_mcu7t5v0__dlyb_1)
+     6    0.067537    1.929736    2.739125   51.207508 ^ fanout632/Z (gf180mcu_fd_sc_mcu7t5v0__dlyb_1)
+                                                         net632 (net)
+                      1.929736    0.000963   51.208473 ^ fanout629/I (gf180mcu_fd_sc_mcu7t5v0__dlyb_1)
+     8    0.077953    2.209655    2.913094   54.121567 ^ fanout629/Z (gf180mcu_fd_sc_mcu7t5v0__dlyb_1)
+                                                         net629 (net)
+                      2.209655    0.000831   54.122398 ^ fanout628/I (gf180mcu_fd_sc_mcu7t5v0__dlyb_1)
+     7    0.064785    1.855172    2.700539   56.822937 ^ fanout628/Z (gf180mcu_fd_sc_mcu7t5v0__dlyb_1)
+                                                         net628 (net)
+                      1.855172    0.001442   56.824379 ^ fanout627/I (gf180mcu_fd_sc_mcu7t5v0__dlyb_1)
+    10    0.089242    2.515063    3.092921   59.917301 ^ fanout627/Z (gf180mcu_fd_sc_mcu7t5v0__dlyb_1)
+                                                         net627 (net)
+                      2.515063    0.002188   59.919487 ^ _09465_/RN (gf180mcu_fd_sc_mcu7t5v0__dffrnq_1)
+                                             59.919487   data arrival time
+
+                                200.000000  200.000000   clock clk (rise edge)
+                                  0.000000  200.000000   clock source latency
+     1    0.082375    0.614990    0.331539  200.331528 ^ clk (in)
+                                                         clk (net)
+                      0.615589    0.000000  200.331528 ^ clkbuf_0_clk/I (gf180mcu_fd_sc_mcu7t5v0__clkbuf_16)
+     8    0.310637    0.609575    0.807432  201.138962 ^ clkbuf_0_clk/Z (gf180mcu_fd_sc_mcu7t5v0__clkbuf_16)
+                                                         clknet_0_clk (net)
+                      0.609614    0.007319  201.146286 ^ clkbuf_3_6__f_clk/I (gf180mcu_fd_sc_mcu7t5v0__clkbuf_16)
+     8    0.178943    0.405520    0.677389  201.823669 ^ clkbuf_3_6__f_clk/Z (gf180mcu_fd_sc_mcu7t5v0__clkbuf_16)
+                                                         clknet_3_6__leaf_clk (net)
+                      0.405568    0.002785  201.826462 ^ clkbuf_leaf_34_clk/I (gf180mcu_fd_sc_mcu7t5v0__clkbuf_8)
+    12    0.061678    0.312433    0.562693  202.389145 ^ clkbuf_leaf_34_clk/Z (gf180mcu_fd_sc_mcu7t5v0__clkbuf_8)
+                                                         clknet_leaf_34_clk (net)
+                      0.312433    0.000313  202.389465 ^ _09465_/CLK (gf180mcu_fd_sc_mcu7t5v0__dffrnq_1)
+                                 -0.250000  202.139465   clock uncertainty
+                                  0.000000  202.139465   clock reconvergence pessimism
+                                 -0.065462  202.074005   library recovery time
+                                            202.074005   data required time
+---------------------------------------------------------------------------------------------
+                                            202.074005   data required time
+                                            -59.919487   data arrival time
+---------------------------------------------------------------------------------------------
+                                            142.154526   slack (MET)
+
+
+Startpoint: analog[0] (input port clocked by clk)
+Endpoint: analog[3] (output port clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                                  0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (propagated)
+                                 40.000000   40.000000 ^ input external delay
+     2    0.081080    2.285070    1.266589   41.266590 ^ analog[0] (inout)
+                                                         analog[0] (net)
+                      2.285070    0.000000   41.266590 ^ analog_readout_inst/_0_/A1 (gf180mcu_fd_sc_mcu7t5v0__and2_1)
+     4    0.101405    2.855998    2.273918   43.540508 ^ analog_readout_inst/_0_/Z (gf180mcu_fd_sc_mcu7t5v0__and2_1)
+                                                         analog[1] (net)
+                      2.855998    0.000512   43.541019 ^ analog_wave_mixer_y_inst/_0_/A2 (gf180mcu_fd_sc_mcu7t5v0__and2_1)
+     3    0.081946    2.330143    1.876629   45.417648 ^ analog_wave_mixer_y_inst/_0_/Z (gf180mcu_fd_sc_mcu7t5v0__and2_1)
+                                                         analog[3] (net)
+                      2.330143    0.001151   45.418800 ^ analog[3] (inout)
+                                             45.418800   data arrival time
+
+                                200.000000  200.000000   clock clk (rise edge)
+                                  0.000000  200.000000   clock network delay (propagated)
+                                 -0.250000  199.750000   clock uncertainty
+                                  0.000000  199.750000   clock reconvergence pessimism
+                                -40.000000  159.749985   output external delay
+                                            159.749985   data required time
+---------------------------------------------------------------------------------------------
+                                            159.749985   data required time
+                                            -45.418800   data arrival time
+---------------------------------------------------------------------------------------------
+                                            114.331192   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= min_ss_125C_4v50 Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= min_ss_125C_4v50 Corner ===================================
+
+max slew
+
+Pin                                        Limit        Slew       Slack
+------------------------------------------------------------------------
+_07944_/A2                              3.000000    4.431136   -1.431136 (VIOLATED)
+_07953_/A2                              3.000000    4.431122   -1.431122 (VIOLATED)
+_07960_/A2                              3.000000    4.431108   -1.431108 (VIOLATED)
+_07963_/A2                              3.000000    4.431099   -1.431099 (VIOLATED)
+_07996_/A2                              3.000000    4.431083   -1.431083 (VIOLATED)
+_07993_/A2                              3.000000    4.431081   -1.431082 (VIOLATED)
+_08003_/A2                              3.000000    4.431079   -1.431079 (VIOLATED)
+_07972_/A2                              3.000000    4.431064   -1.431064 (VIOLATED)
+_07978_/A2                              3.000000    4.431064   -1.431064 (VIOLATED)
+_07981_/A2                              3.000000    4.431064   -1.431064 (VIOLATED)
+fanout34/Z                              3.000000    4.431064   -1.431064 (VIOLATED)
+_09092_/ZN                              3.000000    4.246032   -1.246032 (VIOLATED)
+_09094_/A1                              3.000000    4.246032   -1.246032 (VIOLATED)
+_09126_/A1                              3.000000    4.246032   -1.246032 (VIOLATED)
+_09169_/A1                              3.000000    4.246032   -1.246032 (VIOLATED)
+wire360/I                               3.000000    4.246032   -1.246032 (VIOLATED)
+_09274_/S                               3.000000    3.996854   -0.996854 (VIOLATED)
+_09275_/S                               3.000000    3.996850   -0.996850 (VIOLATED)
+_09276_/S                               3.000000    3.996835   -0.996836 (VIOLATED)
+_09277_/A2                              3.000000    3.996823   -0.996824 (VIOLATED)
+_09278_/A2                              3.000000    3.996817   -0.996817 (VIOLATED)
+_09280_/A2                              3.000000    3.996804   -0.996804 (VIOLATED)
+_09281_/A2                              3.000000    3.996804   -0.996804 (VIOLATED)
+_09279_/S                               3.000000    3.996730   -0.996730 (VIOLATED)
+_09282_/S                               3.000000    3.996730   -0.996730 (VIOLATED)
+_09283_/A2                              3.000000    3.996730   -0.996730 (VIOLATED)
+fanout172/Z                             3.000000    3.996730   -0.996730 (VIOLATED)
+_09261_/S                               3.000000    3.919783   -0.919783 (VIOLATED)
+_09260_/S                               3.000000    3.919781   -0.919781 (VIOLATED)
+_09256_/S                               3.000000    3.919774   -0.919774 (VIOLATED)
+_09255_/ZN                              3.000000    3.919760   -0.919760 (VIOLATED)
+_09262_/S                               3.000000    3.919760   -0.919760 (VIOLATED)
+max_cap300/I                            3.000000    3.919760   -0.919760 (VIOLATED)
+_06014_/ZN                              3.000000    3.892073   -0.892074 (VIOLATED)
+_06043_/B1                              3.000000    3.892073   -0.892074 (VIOLATED)
+_06819_/A3                              3.000000    3.892073   -0.892074 (VIOLATED)
+_07050_/A2                              3.000000    3.892073   -0.892074 (VIOLATED)
+_07123_/A2                              3.000000    3.892073   -0.892074 (VIOLATED)
+_07303_/B1                              3.000000    3.892073   -0.892074 (VIOLATED)
+load_slew223/I                          3.000000    3.892073   -0.892074 (VIOLATED)
+_08779_/A2                              3.000000    3.723650   -0.723651 (VIOLATED)
+_08775_/A2                              3.000000    3.723648   -0.723648 (VIOLATED)
+_08777_/A2                              3.000000    3.723649   -0.723649 (VIOLATED)
+_08781_/A2                              3.000000    3.723635   -0.723635 (VIOLATED)
+_08793_/A2                              3.000000    3.723608   -0.723608 (VIOLATED)
+_08797_/A2                              3.000000    3.723589   -0.723589 (VIOLATED)
+_08801_/A2                              3.000000    3.723587   -0.723587 (VIOLATED)
+_08805_/A2                              3.000000    3.723586   -0.723587 (VIOLATED)
+_08807_/A2                              3.000000    3.723587   -0.723587 (VIOLATED)
+_08572_/A1                              3.000000    3.723574   -0.723574 (VIOLATED)
+fanout73/Z                              3.000000    3.723574   -0.723574 (VIOLATED)
+_07457_/A2                              3.000000    3.580166   -0.580166 (VIOLATED)
+_07458_/A2                              3.000000    3.580166   -0.580166 (VIOLATED)
+_07474_/S                               3.000000    3.580162   -0.580162 (VIOLATED)
+_07473_/S                               3.000000    3.580160   -0.580161 (VIOLATED)
+_07471_/S                               3.000000    3.580158   -0.580159 (VIOLATED)
+_07472_/S                               3.000000    3.580158   -0.580158 (VIOLATED)
+_07475_/S                               3.000000    3.580144   -0.580144 (VIOLATED)
+_07476_/S                               3.000000    3.580144   -0.580144 (VIOLATED)
+_07477_/S                               3.000000    3.580144   -0.580144 (VIOLATED)
+_07478_/S                               3.000000    3.580144   -0.580144 (VIOLATED)
+fanout124/Z                             3.000000    3.580144   -0.580144 (VIOLATED)
+_05973_/ZN                              3.000000    3.475096   -0.475096 (VIOLATED)
+_06043_/A2                              3.000000    3.475096   -0.475096 (VIOLATED)
+_07245_/B1                              3.000000    3.475096   -0.475096 (VIOLATED)
+_07309_/A2                              3.000000    3.475096   -0.475096 (VIOLATED)
+_07370_/C2                              3.000000    3.475096   -0.475096 (VIOLATED)
+max_cap250/I                            3.000000    3.475096   -0.475096 (VIOLATED)
+_06909_/A1                              3.000000    3.451947   -0.451947 (VIOLATED)
+_05266_/I0                              3.000000    3.451930   -0.451930 (VIOLATED)
+_04851_/I                               3.000000    3.451916   -0.451916 (VIOLATED)
+_05792_/A1                              3.000000    3.451916   -0.451916 (VIOLATED)
+_05793_/A1                              3.000000    3.451916   -0.451916 (VIOLATED)
+_05794_/A1                              3.000000    3.451916   -0.451916 (VIOLATED)
+_05979_/A1                              3.000000    3.451916   -0.451916 (VIOLATED)
+_05980_/A1                              3.000000    3.451916   -0.451916 (VIOLATED)
+_06286_/A1                              3.000000    3.451916   -0.451916 (VIOLATED)
+_06291_/A1                              3.000000    3.451916   -0.451916 (VIOLATED)
+fanout447/Z                             3.000000    3.451916   -0.451916 (VIOLATED)
+_06022_/ZN                              3.000000    3.160045   -0.160045 (VIOLATED)
+_06913_/B1                              3.000000    3.160045   -0.160045 (VIOLATED)
+_07038_/B1                              3.000000    3.160045   -0.160045 (VIOLATED)
+_07137_/B1                              3.000000    3.160045   -0.160045 (VIOLATED)
+_07302_/B1                              3.000000    3.160045   -0.160045 (VIOLATED)
+_07363_/A2                              3.000000    3.160045   -0.160045 (VIOLATED)
+load_slew213/I                          3.000000    3.160045   -0.160045 (VIOLATED)
+_09152_/A2                              3.000000    3.139989   -0.139989 (VIOLATED)
+_09153_/A2                              3.000000    3.139988   -0.139988 (VIOLATED)
+_09158_/S                               3.000000    3.139984   -0.139984 (VIOLATED)
+_09157_/A2                              3.000000    3.139982   -0.139982 (VIOLATED)
+_09156_/A2                              3.000000    3.139981   -0.139981 (VIOLATED)
+_09154_/S                               3.000000    3.139948   -0.139948 (VIOLATED)
+_09155_/S                               3.000000    3.139937   -0.139937 (VIOLATED)
+_09148_/A2                              3.000000    3.139913   -0.139913 (VIOLATED)
+_09147_/S                               3.000000    3.139900   -0.139900 (VIOLATED)
+_09149_/A2                              3.000000    3.139900   -0.139900 (VIOLATED)
+fanout180/Z                             3.000000    3.139900   -0.139900 (VIOLATED)
+_06818_/ZN                              3.000000    3.138003   -0.138003 (VIOLATED)
+_06821_/A1                              3.000000    3.138003   -0.138003 (VIOLATED)
+_06042_/A1                              3.000000    3.093089   -0.093089 (VIOLATED)
+_05862_/A1                              3.000000    3.093087   -0.093087 (VIOLATED)
+_05863_/A1                              3.000000    3.093086   -0.093087 (VIOLATED)
+_05864_/A1                              3.000000    3.093086   -0.093086 (VIOLATED)
+_07027_/A1                              3.000000    3.093084   -0.093084 (VIOLATED)
+_06275_/A1                              3.000000    3.093082   -0.093083 (VIOLATED)
+_06276_/A1                              3.000000    3.093082   -0.093082 (VIOLATED)
+_06277_/A1                              3.000000    3.093081   -0.093082 (VIOLATED)
+_07528_/A2                              3.000000    3.093076   -0.093076 (VIOLATED)
+_04746_/I                               3.000000    3.093061   -0.093062 (VIOLATED)
+fanout548/Z                             3.000000    3.093061   -0.093062 (VIOLATED)
+_09283_/A1                              3.000000    3.075733   -0.075733 (VIOLATED)
+_09226_/I1                              3.000000    3.075729   -0.075729 (VIOLATED)
+_09195_/A1                              3.000000    3.075727   -0.075728 (VIOLATED)
+_09263_/I1                              3.000000    3.075725   -0.075725 (VIOLATED)
+_09124_/I1                              3.000000    3.075719   -0.075719 (VIOLATED)
+_09207_/I0                              3.000000    3.075685   -0.075685 (VIOLATED)
+_09107_/A1                              3.000000    3.075683   -0.075683 (VIOLATED)
+_09254_/I0                              3.000000    3.075673   -0.075673 (VIOLATED)
+_09177_/I0                              3.000000    3.075662   -0.075662 (VIOLATED)
+_09167_/I0                              3.000000    3.075650   -0.075650 (VIOLATED)
+fanout451/Z                             3.000000    3.075650   -0.075650 (VIOLATED)
+_07399_/ZN                              3.000000    3.035454   -0.035454 (VIOLATED)
+wire35/I                                3.000000    3.035454   -0.035454 (VIOLATED)
+_06815_/ZN                              3.000000    3.028486   -0.028487 (VIOLATED)
+_06833_/A2                              3.000000    3.028486   -0.028487 (VIOLATED)
+_07317_/A1                              3.000000    3.026014   -0.026014 (VIOLATED)
+_06312_/A1                              3.000000    3.026005   -0.026005 (VIOLATED)
+_06240_/A1                              3.000000    3.026002   -0.026002 (VIOLATED)
+_05827_/A1                              3.000000    3.025999   -0.025999 (VIOLATED)
+_05828_/A1                              3.000000    3.025999   -0.025999 (VIOLATED)
+_07516_/A2                              3.000000    3.025995   -0.025995 (VIOLATED)
+_07517_/A2                              3.000000    3.025995   -0.025995 (VIOLATED)
+_07841_/B2                              3.000000    3.025993   -0.025993 (VIOLATED)
+_07840_/A1                              3.000000    3.025990   -0.025990 (VIOLATED)
+_04743_/I                               3.000000    3.025977   -0.025977 (VIOLATED)
+fanout541/Z                             3.000000    3.025977   -0.025977 (VIOLATED)
+wire302/I                               3.000000    3.004721   -0.004721 (VIOLATED)
+_09238_/ZN                              3.000000    3.004699   -0.004699 (VIOLATED)
+_09156_/A1                              3.000000    3.003446   -0.003446 (VIOLATED)
+_09318_/I1                              3.000000    3.003443   -0.003443 (VIOLATED)
+_09293_/I1                              3.000000    3.003406   -0.003406 (VIOLATED)
+_09137_/A1                              3.000000    3.003403   -0.003403 (VIOLATED)
+_09328_/I0                              3.000000    3.003401   -0.003401 (VIOLATED)
+load_slew455/I                          3.000000    3.003350   -0.003350 (VIOLATED)
+_07477_/I1                              3.000000    3.003319   -0.003319 (VIOLATED)
+fanout454/Z                             3.000000    3.003319   -0.003319 (VIOLATED)
+
+max fanout
+
+Pin                                   Limit Fanout  Slack
+---------------------------------------------------------
+clkbuf_leaf_11_clk/Z                     10     13     -3 (VIOLATED)
+clkbuf_leaf_12_clk/Z                     10     12     -2 (VIOLATED)
+clkbuf_leaf_13_clk/Z                     10     12     -2 (VIOLATED)
+clkbuf_leaf_14_clk/Z                     10     12     -2 (VIOLATED)
+clkbuf_leaf_25_clk/Z                     10     12     -2 (VIOLATED)
+clkbuf_leaf_26_clk/Z                     10     12     -2 (VIOLATED)
+clkbuf_leaf_34_clk/Z                     10     12     -2 (VIOLATED)
+clkbuf_leaf_36_clk/Z                     10     12     -2 (VIOLATED)
+clkbuf_leaf_40_clk/Z                     10     12     -2 (VIOLATED)
+clkbuf_leaf_41_clk/Z                     10     12     -2 (VIOLATED)
+clkbuf_leaf_42_clk/Z                     10     12     -2 (VIOLATED)
+clkbuf_leaf_45_clk/Z                     10     12     -2 (VIOLATED)
+clkbuf_leaf_48_clk/Z                     10     12     -2 (VIOLATED)
+clkbuf_leaf_53_clk/Z                     10     12     -2 (VIOLATED)
+clkbuf_leaf_5_clk/Z                      10     12     -2 (VIOLATED)
+clkbuf_leaf_16_clk/Z                     10     11        (VIOLATED)
+clkbuf_leaf_29_clk/Z                     10     11        (VIOLATED)
+clkbuf_leaf_2_clk/Z                      10     11        (VIOLATED)
+clkbuf_leaf_3_clk/Z                      10     11        (VIOLATED)
+clkbuf_leaf_6_clk/Z                      10     11        (VIOLATED)
+
+max capacitance
+
+Pin                                        Limit         Cap       Slack
+------------------------------------------------------------------------
+clkbuf_0_clk/Z                          0.200000    0.310637   -0.110637 (VIOLATED)
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 120 unannotated drivers.
+ analog[10]
+ analog[11]
+ analog[12]
+ analog[13]
+ analog[14]
+ analog[15]
+ analog[16]
+ analog[17]
+ analog[18]
+ analog[19]
+ analog[20]
+ analog[21]
+ analog[22]
+ analog[23]
+ analog[24]
+ analog[25]
+ analog[26]
+ analog[27]
+ analog[28]
+ analog[29]
+ analog[30]
+ analog[31]
+ analog[32]
+ analog[33]
+ analog[34]
+ analog[35]
+ analog[36]
+ analog[37]
+ analog[38]
+ analog[39]
+ analog[40]
+ analog[41]
+ analog[42]
+ analog[43]
+ analog[44]
+ analog[45]
+ analog[46]
+ analog[47]
+ analog[48]
+ analog[49]
+ analog[4]
+ analog[50]
+ analog[51]
+ analog[52]
+ analog[53]
+ analog[54]
+ analog[55]
+ analog[56]
+ analog[57]
+ analog[58]
+ analog[59]
+ analog[5]
+ analog[6]
+ analog[7]
+ analog[8]
+ analog[9]
+ bidir_in[10]
+ bidir_in[11]
+ bidir_in[12]
+ bidir_in[13]
+ bidir_in[14]
+ bidir_in[15]
+ bidir_in[16]
+ bidir_in[17]
+ bidir_in[18]
+ bidir_in[19]
+ bidir_in[3]
+ bidir_in[4]
+ bidir_in[5]
+ bidir_in[6]
+ bidir_in[7]
+ bidir_in[8]
+ bidir_in[9]
+ _10062_/Z
+ _10063_/Z
+ _10064_/Z
+ _10065_/Z
+ clkload0/Z
+ clkload1/Z
+ clkload10/ZN
+ clkload11/ZN
+ clkload12/ZN
+ clkload13/Z
+ clkload14/ZN
+ clkload15/Z
+ clkload16/ZN
+ clkload17/ZN
+ clkload18/ZN
+ clkload19/Z
+ clkload2/Z
+ clkload20/ZN
+ clkload21/ZN
+ clkload22/ZN
+ clkload23/Z
+ clkload24/Z
+ clkload25/Z
+ clkload26/Z
+ clkload27/ZN
+ clkload28/ZN
+ clkload29/ZN
+ clkload3/Z
+ clkload30/ZN
+ clkload31/ZN
+ clkload32/ZN
+ clkload33/Z
+ clkload34/Z
+ clkload35/ZN
+ clkload36/ZN
+ clkload37/ZN
+ clkload38/Z
+ clkload39/ZN
+ clkload4/ZN
+ clkload40/ZN
+ clkload41/ZN
+ clkload42/ZN
+ clkload5/ZN
+ clkload6/ZN
+ clkload7/ZN
+ clkload8/ZN
+ clkload9/ZN
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 146
+max fanout violation count 20
+max cap violation count 1
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There are 57 unconstrained endpoints.
+  analog[0]
+  analog[10]
+  analog[11]
+  analog[12]
+  analog[13]
+  analog[14]
+  analog[15]
+  analog[16]
+  analog[17]
+  analog[18]
+  analog[19]
+  analog[20]
+  analog[21]
+  analog[22]
+  analog[23]
+  analog[24]
+  analog[25]
+  analog[26]
+  analog[27]
+  analog[28]
+  analog[29]
+  analog[30]
+  analog[31]
+  analog[32]
+  analog[33]
+  analog[34]
+  analog[35]
+  analog[36]
+  analog[37]
+  analog[38]
+  analog[39]
+  analog[40]
+  analog[41]
+  analog[42]
+  analog[43]
+  analog[44]
+  analog[45]
+  analog[46]
+  analog[47]
+  analog[48]
+  analog[49]
+  analog[4]
+  analog[50]
+  analog[51]
+  analog[52]
+  analog[53]
+  analog[54]
+  analog[55]
+  analog[56]
+  analog[57]
+  analog[58]
+  analog[59]
+  analog[5]
+  analog[6]
+  analog[7]
+  analog[8]
+  analog[9]

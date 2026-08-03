@@ -244,7 +244,7 @@ module spi_regs #(
             boot_complete <= 1'b0;
             cfg_done <= 1'b0;
             phase_offset_imported  <= 1'b0;
-            soft_rst_n <= 1'b0;
+            soft_rst_n <= 1'b1;
         end else if (reg_wr_en) begin
             unique case (reg_wr_addr)
 
@@ -277,7 +277,7 @@ module spi_regs #(
                     boot_complete          <= reg_wr_data[0];
                     cfg_done               <= reg_wr_data[1];
                     phase_offset_imported  <= reg_wr_data[2];
-                    soft_rst_n                <= reg_wr_data[3];
+                    soft_rst_n             <= ~reg_wr_data[3];
                 end
 
                 default: ;
