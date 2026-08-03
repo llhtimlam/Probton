@@ -1,0 +1,46 @@
+Reading timing models for corner nom_tt_025C_5v00…
+Reading timing library for the 'nom_tt_025C_5v00' corner at '/workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__tt_025C_5v00.lib'…
+Reading timing library for the 'nom_tt_025C_5v00' corner at '/workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lib/gf180mcu_fd_io__tt_025C_5v00.lib'…
+Reading timing library for the 'nom_tt_025C_5v00' corner at '/workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lib/gf180mcu_ws_io__tt_025C_5v00.lib'…
+Reading timing library for the 'nom_tt_025C_5v00' corner at '/workspace/ip/gf180mcu_ws_ip__id/lib/gf180mcu_ws_ip__id.lib'…
+Reading timing library for the 'nom_tt_025C_5v00' corner at '/workspace/ip/gf180mcu_ws_ip__logo/lib/gf180mcu_ws_ip__logo.lib'…
+Reading OpenROAD database at '/workspace/librelane/runs/RUN_2026-08-03_00-34-52/52-odb-cellfrequencytables/chip_top.odb'…
+[WARNING ORD-2001] LEF macro gf180mcu_ef_io__bi_t pin ANA missing from liberty cell.
+Reading design constraints file at '/workspace/librelane/chip_top.sdc'…
+[INFO] Using clock clk_PAD…
+[INFO] Setting output delay to: 8
+[INFO] Setting input delay to: 8
+[WARNING STA-0366] port 'input_PAD[*]' not found.
+[INFO] Setting load to: 0.07291
+[INFO] Setting clock uncertainty to: 0.25
+[INFO] Setting clock transition to: 0.15
+[INFO] Setting timing derate to: 5%
+[INFO] Using voltage extracted from lib (5V) for power nets and 0V for ground nets…
+%OL_CREATE_REPORT irdrop.rpt
++ analyze_power_grid -net VDD -voltage_file /workspace/librelane/runs/RUN_2026-08-03_00-34-52/55-openroad-irdropreport/net-VDD.csv
+[INFO PSM-0040] All shapes on net VDD are connected.
+########## IR report #################
+Net              : VDD
+Corner           : nom_tt_025C_5v00
+Total power      : 1.52e-03 W
+Supply voltage   : 5.00e+00 V
+Worstcase voltage: 5.00e+00 V
+Average voltage  : 5.00e+00 V
+Average IR drop  : 8.38e-07 V
+Worstcase IR drop: 7.56e-06 V
+Percentage drop  : 0.00 %
+######################################
++ analyze_power_grid -net VSS -voltage_file /workspace/librelane/runs/RUN_2026-08-03_00-34-52/55-openroad-irdropreport/net-VSS.csv
+[INFO PSM-0040] All shapes on net VSS are connected.
+########## IR report #################
+Net              : VSS
+Corner           : nom_tt_025C_5v00
+Total power      : 1.52e-03 W
+Supply voltage   : 0.00e+00 V
+Worstcase voltage: 6.52e-06 V
+Average voltage  : 8.45e-07 V
+Average IR drop  : 8.45e-07 V
+Worstcase IR drop: 6.52e-06 V
+Percentage drop  : 0.00 %
+######################################
+%OL_END_REPORT

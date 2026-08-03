@@ -1,0 +1,23 @@
+// DESCRIPTION: Verilator output: Waivers generated with --waiver-output
+
+`verilator_config
+
+// Below are suggested waivers. You have three options:
+//   1. Fix the reason for the linter warning in the Verilog sources
+//   2. Keep the waiver permanently if you are sure it is okay
+//   3. Keep the waiver temporarily to suppress the output
+
+// lint_off -rule UNUSEDSIGNAL -file "*/workspace/src/chip_core.sv" -match "Signal is not used: 'ref_wave_x'*"
+
+// lint_off -rule UNUSEDSIGNAL -file "*/workspace/src/chip_core.sv" -match "Signal is not used: 'ref_wave_y'*"
+
+// lint_off -rule UNUSEDSIGNAL -file "*/workspace/src/spi.sv" -match "Bits of signal are not used: 'rx_shift'[7]*"
+
+// lint_off -rule UNUSEDSIGNAL -file "*/workspace/src/wave_controller.sv" -match "Bits of signal are not used: 'raw_delta'[18:0]*"
+
+// lint_off -rule UNUSEDSIGNAL -file "*/workspace/src/wave_controller.sv" -match "Bits of signal are not used: 'ref_phase'[19:0]*"
+
+// lint_off -rule SYNCASYNCNET -file "*/workspace/src/chip_top.sv" -match "Signal flopped as both synchronous and async: 'chip_top.rst_n_PAD2CORE'*"
+
+// lint_off -rule UNOPTFLAT -file "*/workspace/src/chip_core.sv" -match "Signal unoptimizable: Circular combinational logic: 'chip_top.i_chip_core.analog_readout_output'*"
+
