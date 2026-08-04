@@ -40,7 +40,7 @@ Input: (1)
 1. Readout
 (Optional, under consideration)
 2. Reference wave input (x) (0 ~ 3.3V analog waveform)
-9. Reference wave input (y) (0 ~ 3.3V analog waveform)
+3. Reference wave input (y) (0 ~ 3.3V analog waveform)
 
 Output: (3)
 1. Filtered Amp Readout
