@@ -30,14 +30,17 @@ This offers a low-cost, integrable alternative to proprietary alignment hardware
 
 ## Chip Architect
 
-Size: 1100um x 1100um (estimate) - Block type A (not finalized)
+Size: 800um x 1000um (estimate) - Block type A (not finalized, optimizing for Block type B)
 
-Required pins: 14
+Required pins: 14 or 18 (under consideration)
 
 Analog pin: (4)
 
 Input: (1)
 1. Readout
+(Optional, under consideration)
+2. Reference wave input (x) (0 ~ 3.3V analog waveform)
+9. Reference wave input (y) (0 ~ 3.3V analog waveform)
 
 Output: (3)
 1. Filtered Amp Readout
@@ -55,22 +58,27 @@ Input: (3)
 Output: (7)
 
 1. SPI: miso
-2. Motion command: move_en (x)
-3. Motion command: dir (x)
-4. Motion command: move_en (y)
-5. Motion command: dir (y)
-6. MEMS driver (PWM waveform): mems_drv (x)
-7. MEMS driver (PWM waveform): mems_drv (y)
+2. Motion command: move_en_x (x)
+3. Motion command: dir_x (x)
+4. Motion command: move_en_y (y)
+5. Motion command: dir_y (y)
+6. MEMS driver (PWM waveform): mems_drv_x (x)
+7. MEMS driver (PWM waveform): mems_drv_y (y)
+(Optional, under consideration)
+8. Reference wave output (PWM waveform): ref_wave_x (x)
+9. Reference wave output (PWM waveform): ref_wave_y (y)
 
 <img src="Media\ChipArchitect\Optical Probe Station Chip Architect.png" width="100%" alt="Proposed Chip Architect">
 
 > Check /Media/ChipArchitect for detailed chip architect diagram
 
-> Check /src and /Analog/schematics for digital and analog circuit design files
+> Check /src and /Analog/schematics for digital and analog circuit design files respectively
 
 > For detail on navigating the chip design file, follow the README.md in /scripts folder
 
 > For Digital Verilog Cocotb Simulation Result, follow the README.md in /cocotb folder
+
+> For the final tapeout gds file, go to /gds folder
 
 ## SPI Interface 
 
