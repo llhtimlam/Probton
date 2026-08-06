@@ -8,6 +8,7 @@ from pathlib import Path
 
 import cocotb
 from cocotb.clock import Clock
+from cocotb.handle import Force, Release
 from cocotb.triggers import Timer, Edge, RisingEdge, FallingEdge, ClockCycles
 from cocotb_tools.runner import get_runner
 
@@ -18,66 +19,62 @@ scl = os.getenv("SCL", "gf180mcu_fd_sc_mcu7t5v0")
 gl = os.getenv("GL", False)
 slot = os.getenv("SLOT", "1x1")
 
-hdl_toplevel = "spi_regs"
+hdl_toplevel = "chip_core"
 
 ADDR_MEMS_FCW_X_L = 0x01
 ADDR_MEMS_FCW_X_H = 0x02
 ADDR_MEMS_FCW_Y_L = 0x03
 ADDR_MEMS_FCW_Y_H = 0x04
 ADDR_CTRL = 0x17
+ADDR_STATE = 0x4D
 
 CTRL_BOOT_COMPLETE = 0x01
 CTRL_CFG_DONE = 0x02
 CTRL_PHASE_OFFSET_IMPORTED = 0x04
 CTRL_SOFT_RST = 0x08
 
+PIN_CS_N = 0
+PIN_SCLK = 1
+PIN_MOSI = 2
+PIN_MISO = 3
+PIN_MEMS_DRV_X = 8
+PIN_MEMS_DRV_Y = 9
+
+S_BOOT = 0
+S_LOAD_CFG = 1
+S_CAL = 2
+
+FCW_X = 126
+FCW_Y = 168
+PERIOD_X = 16644
+PERIOD_Y = 12483
+
 SCLK_HALF = 8
 
+def get_pin(dut, bus, index):
+    v = getattr(dut, bus).value
+    s = getattr(v, "binstr", str(v))
+    ch = s[len(s) - 1 - index]
+    return int(ch) if ch in "01" else None
+
+async def drive_spi_pins(dut, cs_n, sclk, mosi):
+    dut.bidir_in.value = (cs_n << PIN_CS_N) | (sclk << PIN_SCLK) | (mosi << PIN_MOSI)
+
 async def set_defaults(dut):
-    dut.spi_cs_n.value = 1
-    dut.spi_sclk.value = 0
-    dut.spi_mosi.value = 0
+    await drive_spi_pins(dut, 1, 0, 0)
+    dut.input_in.value = 0
 
-    dut.delay_wave_cycle_x.value = 0
-    dut.delay_wave_cycle_y.value = 0
-    dut.raw_edge1_x.value = 0
-    dut.raw_edge2_x.value = 0
-    dut.raw_edge3_x.value = 0
-    dut.raw_edge1_y.value = 0
-    dut.raw_edge2_y.value = 0
-    dut.raw_edge3_y.value = 0
-    dut.cal_dir_x.value = 0
-    dut.cal_dir_y.value = 0
-    dut.cal_phase0_offset_x.value = 0
-    dut.cal_phase90_offset_x.value = 0
-    dut.cal_phase270_offset_x.value = 0
-    dut.cal_phase0_offset_y.value = 0
-    dut.cal_phase90_offset_y.value = 0
-    dut.cal_phase270_offset_y.value = 0
-    dut.cal_timeout_x.value = 0
-    dut.cal_timeout_y.value = 0
-    dut.latch_error_x.value = 0
-    dut.latch_error_y.value = 0
-    dut.jitter_flag_x.value = 0
-    dut.jitter_flag_y.value = 0
-    dut.phase_state_x.value = 0
-    dut.phase_state_y.value = 0
-    dut.votes_in_phase_x.value = 0
-    dut.votes_out_phase_x.value = 0
-    dut.votes_in_phase_y.value = 0
-    dut.votes_out_phase_y.value = 0
-    dut.state_o.value = 0
-
+    if not gl:
+        dut.comp_x.value = Force(0)
+        dut.comp_y.value = Force(0)
 
 async def enable_power(dut):
     dut.VDD.value = 1
     dut.VSS.value = 0
 
-
 async def start_clock(clock, freq=5):
     c = Clock(clock, 1 / freq * 1000, "ns")
     cocotb.start_soon(c.start())
-
 
 async def reset(reset, active_low=True, time_ns=1000):
     cocotb.log.info("Reset asserted...")
@@ -88,7 +85,6 @@ async def reset(reset, active_low=True, time_ns=1000):
 
     cocotb.log.info("Reset deasserted.")
 
-
 async def start_up(dut):
     await set_defaults(dut)
     if gl:
@@ -97,9 +93,8 @@ async def start_up(dut):
     await reset(dut.rst_n)
     await ClockCycles(dut.clk, 4)
 
-
 async def spi_xfer(dut, r_w, address, data_bytes):
-    if address <0 or address > 127:
+    if address < 0 or address > 127:
         raise ValueError("Address must be 7-bit (0-127)")
 
     first_byte = (int(r_w) << 7) | address
@@ -107,25 +102,23 @@ async def spi_xfer(dut, r_w, address, data_bytes):
     async def send_byte(byte):
         got = 0
         for i in range(8):
-            dut.spi_sclk.value = 0
-            dut.spi_mosi.value = (byte >> (7 - i)) & 0x1
+            mosi = (byte >> (7 - i)) & 0x1
+            await drive_spi_pins(dut, 0, 0, mosi)
             await ClockCycles(dut.clk, SCLK_HALF)
-            dut.spi_sclk.value = 1
+            await drive_spi_pins(dut, 0, 1, mosi)
             await ClockCycles(dut.clk, SCLK_HALF)
-            got = (got << 1) | int(dut.spi_miso.value)
+            got = (got << 1) | get_pin(dut, "bidir_out", PIN_MISO)
         return got
 
-    dut.spi_sclk.value = 0
-    dut.spi_cs_n.value = 0
+    await drive_spi_pins(dut, 1, 0, 0)
+    await drive_spi_pins(dut, 0, 0, 0)
     await ClockCycles(dut.clk, SCLK_HALF)
 
     await send_byte(first_byte)
     rx = []
     for b in data_bytes:
         rx.append(await send_byte(b))
-    dut.spi_sclk.value = 0
-    dut.spi_mosi.value = 0
-    dut.spi_cs_n.value = 1
+    await drive_spi_pins(dut, 1, 0, 0)
     await ClockCycles(dut.clk, 8)
 
     return rx
@@ -133,13 +126,33 @@ async def spi_xfer(dut, r_w, address, data_bytes):
 async def spi_write(dut, address, data_bytes):
     await spi_xfer(dut, 1, address, data_bytes)
 
-
 async def spi_read(dut, address, n):
     return await spi_xfer(dut, 0, address, [0x00] * n)
 
+@cocotb.test()
+async def test_default_values(dut):
+
+    logger = logging.getLogger("my_testbench")
+
+    logger.info("Startup sequence...")
+    await start_up(dut)
+
+    logger.info("Running the test...")
+
+    assert int(dut.cfg_f_MEMS_fcw_x.value) == 0x0000, "fcw x default"
+    assert int(dut.cfg_f_MEMS_fcw_y.value) == 0x0000, "fcw y default"
+    assert int(dut.state_o.value) == S_BOOT, "state default"
+    assert int(dut.soft_rst_n.value) == 1, "soft_rst_n default"
+    assert get_pin(dut, "bidir_oe", PIN_MISO) == 0, "miso_oe default"
+    assert get_pin(dut, "bidir_out", PIN_MEMS_DRV_X) == 0, "mems_drv_x default"
+    assert get_pin(dut, "bidir_out", PIN_MEMS_DRV_Y) == 0, "mems_drv_y default"
+    cocotb.log.info("PASS reset defaults")
+
+    logger.info("Done!")
 
 @cocotb.test()
 async def test_write_path(dut):
+
     logger = logging.getLogger("my_testbench")
 
     logger.info("Startup sequence...")
@@ -157,15 +170,11 @@ async def test_write_path(dut):
         f"fcw_y: expected 0x5678, got {int(dut.cfg_f_MEMS_fcw_y.value):#06x}"
     cocotb.log.info("PASS 16-bit FCW Y burst write (auto-increment)")
 
-    await spi_write(dut, ADDR_CTRL, [CTRL_BOOT_COMPLETE | CTRL_CFG_DONE])
-    assert int(dut.boot_complete.value) == 1, "boot_complete not set"
-    assert int(dut.cfg_done.value) == 1, "cfg_done not set"
-    cocotb.log.info("PASS ctrl write")
-
     logger.info("Done!")
 
 @cocotb.test()
 async def test_readback_over_miso(dut):
+
     logger = logging.getLogger("my_testbench")
 
     logger.info("Startup sequence...")
@@ -178,25 +187,10 @@ async def test_readback_over_miso(dut):
     assert rd == [0x34, 0x12], f"fcw burst readback: {[hex(v) for v in rd]}"
     cocotb.log.info("PASS 16-bit FCW burst readback")
 
-    logger.info("Done!")
-
-
-@cocotb.test()
-async def test_default_values(dut):
-
-    logger = logging.getLogger("my_testbench")
-
-    logger.info("Startup sequence...")
-    await start_up(dut)
-
-    logger.info("Running the test...")
-
-    assert int(dut.cfg_f_MEMS_fcw_x.value) == 0x0000, "fcw x default"
-    assert int(dut.cfg_f_MEMS_fcw_y.value) == 0x0000, "fcw y default"
-    assert int(dut.boot_complete.value) == 0, "boot_complete default"
-    assert int(dut.cfg_done.value) == 0, "cfg_done default"
-    assert int(dut.soft_rst_n.value) == 1, "soft_rst_n default"
-    cocotb.log.info("PASS reset defaults")
+    rd = await spi_read(dut, ADDR_STATE, 1)
+    assert rd[0] == int(dut.state_o.value), \
+        f"state readback: expected {int(dut.state_o.value)}, got {rd[0]}"
+    cocotb.log.info("PASS state readback")
 
     logger.info("Done!")
 
@@ -228,16 +222,14 @@ async def test_cs_abort_recovery(dut):
 
     logger.info("Running the test...")
 
-    dut.spi_cs_n.value = 0
+    await drive_spi_pins(dut, 0, 0, 0)
     await ClockCycles(dut.clk, SCLK_HALF)
     for i in range(5):
-        dut.spi_sclk.value = 0
-        dut.spi_mosi.value = 1
+        await drive_spi_pins(dut, 0, 0, 1)
         await ClockCycles(dut.clk, SCLK_HALF)
-        dut.spi_sclk.value = 1
+        await drive_spi_pins(dut, 0, 1, 1)
         await ClockCycles(dut.clk, SCLK_HALF)
-    dut.spi_sclk.value = 0
-    dut.spi_cs_n.value = 1
+    await drive_spi_pins(dut, 1, 0, 0)
     await ClockCycles(dut.clk, 8)
 
     await spi_write(dut, ADDR_MEMS_FCW_X_L, [0x5A, 0x5A])
@@ -247,8 +239,65 @@ async def test_cs_abort_recovery(dut):
 
     logger.info("Done!")
 
+@cocotb.test()
+async def test_comparator_x_y(dut):
 
-def spi_regs_runner():
+    logger = logging.getLogger("my_testbench")
+
+    logger.info("Startup sequence...")
+    await start_up(dut)
+
+    if gl:
+        cocotb.log.info("SKIP comparator injection under GL")
+        return
+
+    logger.info("Running the test...")
+
+    await spi_write(dut, ADDR_MEMS_FCW_X_L, [FCW_X & 0xFF, FCW_X >> 8])
+    await spi_write(dut, ADDR_MEMS_FCW_Y_L, [FCW_Y & 0xFF, FCW_Y >> 8])
+
+    await spi_write(dut, ADDR_CTRL, [CTRL_BOOT_COMPLETE])
+    await ClockCycles(dut.clk, 10)
+    await spi_write(dut, ADDR_CTRL, [CTRL_BOOT_COMPLETE | CTRL_CFG_DONE])
+    await ClockCycles(dut.clk, 10)
+    assert int(dut.state_o.value) == S_CAL, \
+        f"expected S_CAL, got {int(dut.state_o.value)}"
+    cocotb.log.info("PASS entered calibration")
+
+    buf_x = [0] * (PERIOD_X // 4)
+    buf_y = [0] * (PERIOD_Y // 4)
+    seen_x = set()
+    seen_y = set()
+
+    for i in range(PERIOD_X * 3):
+        await RisingEdge(dut.clk)
+
+        drv_x = get_pin(dut, "bidir_out", PIN_MEMS_DRV_X)
+        drv_y = get_pin(dut, "bidir_out", PIN_MEMS_DRV_Y)
+        seen_x.add(drv_x)
+        seen_y.add(drv_y)
+
+        buf_x.append(0 if drv_x is None else drv_x)
+        buf_y.append(0 if drv_y is None else drv_y)
+        dut.comp_x.value = Force(buf_x.pop(0))
+        dut.comp_y.value = Force(buf_y.pop(0))
+
+    assert seen_x == {0, 1}, f"mems_drv_x did not toggle, saw {seen_x}"
+    assert seen_y == {0, 1}, f"mems_drv_y did not toggle, saw {seen_y}"
+    cocotb.log.info("PASS mems drive toggling at 300Hz / 400Hz")
+
+    logger.info(f"cal_done x/y = {int(dut.cal_done_x.value)}/"
+                f"{int(dut.cal_done_y.value)}")
+    logger.info(f"latch_error x/y = {int(dut.latch_error_x.value)}/"
+                f"{int(dut.latch_error_y.value)}")
+
+    dut.comp_x.value = Release()
+    dut.comp_y.value = Release()
+
+    logger.info("Done!")
+
+
+def chip_core_runner():
 
     proj_path = Path(__file__).resolve().parent
 
@@ -261,10 +310,11 @@ def spi_regs_runner():
         sources.append(Path(pdk_root) / pdk / "libs.ref" / scl / "verilog" / "primitives.v")
 
         sources.append(proj_path / f"../final/pnl/{hdl_toplevel}.pnl.v")
+        sources.append(proj_path / "../src/analog_macro.sv")
 
         defines = {"FUNCTIONAL": True, "USE_POWER_PINS": True}
     else:
-        sources.append(proj_path / "../src/spi.sv")
+        sources.append(proj_path / "../src/chip_core.sv")
 
     build_args = []
 
@@ -290,11 +340,10 @@ def spi_regs_runner():
 
     runner.test(
         hdl_toplevel=hdl_toplevel,
-        test_module="spi_tb",
+        test_module="chip_core_tb",
         plusargs=plusargs,
         waves=True,
     )
 
-
 if __name__ == "__main__":
-    spi_regs_runner()
+    chip_core_runner()
