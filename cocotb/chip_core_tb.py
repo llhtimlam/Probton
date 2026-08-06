@@ -21,6 +21,7 @@ slot = os.getenv("SLOT", "1x1")
 
 hdl_toplevel = "chip_core"
 
+# SPI Setting
 ADDR_MEMS_FCW_X_L = 0x01
 ADDR_MEMS_FCW_X_H = 0x02
 ADDR_MEMS_FCW_Y_L = 0x03
@@ -33,6 +34,16 @@ CTRL_CFG_DONE = 0x02
 CTRL_PHASE_OFFSET_IMPORTED = 0x04
 CTRL_SOFT_RST = 0x08
 
+# Wave Contorller Settings
+NCO_BITS = 21
+NCO_MOD = 1 << NCO_BITS  # 2097152
+PWM_BITS = 8
+PWM_MOD = 1 << PWM_BITS  # 256
+PWM_MID = PWM_MOD // 2  # 128
+
+QUARTER_OFFSET = NCO_MOD // 4  # 2^19 = 524288
+
+# Pin
 PIN_CS_N = 0
 PIN_SCLK = 1
 PIN_MOSI = 2
@@ -40,20 +51,24 @@ PIN_MISO = 3
 PIN_MEMS_DRV_X = 8
 PIN_MEMS_DRV_Y = 9
 
+# State Machine
 S_BOOT = 0
 S_LOAD_CFG = 1
 S_CAL = 2
 
-FCW_X = 126
-FCW_Y = 168
-PERIOD_X = 16644
-PERIOD_Y = 12483
-
+# MEMS Frequency and timing Setting
+F_CLK = 5000000 # 5MHz
+FREQ_X = 300
+FREQ_Y = 400
+FCW_X = int(round((FREQ_X * NCO_MOD) / F_CLK)) # 126
+FCW_Y = int(round((FREQ_Y * NCO_MOD) / F_CLK)) # 168
+PERIOD_X = int(round(NCO_MOD / FCW_X)) # 16644
+PERIOD_Y = int(round(NCO_MOD / FCW_Y)) # 12483
 SCLK_HALF = 8
 
 def get_pin(dut, bus, index):
     v = getattr(dut, bus).value
-    s = getattr(v, "binstr", str(v))
+    s = str(v)
     ch = s[len(s) - 1 - index]
     return int(ch) if ch in "01" else None
 
@@ -129,6 +144,16 @@ async def spi_write(dut, address, data_bytes):
 async def spi_read(dut, address, n):
     return await spi_xfer(dut, 0, address, [0x00] * n)
 
+async def sample_bidir_pin(dut, pin_name, pin_idx, n_clks):
+    """Sample a bidir pin index over n_clks, one value per rising edge."""
+    bits = []
+    for _ in range(n_clks):
+        await RisingEdge(dut.clk)
+        # Capture the current 0 or 1 value of the pin
+        val = get_pin(dut, pin_name, pin_idx)
+        bits.append(int(val))
+    return bits
+
 @cocotb.test()
 async def test_default_values(dut):
 
@@ -144,8 +169,24 @@ async def test_default_values(dut):
     assert int(dut.state_o.value) == S_BOOT, "state default"
     assert int(dut.soft_rst_n.value) == 1, "soft_rst_n default"
     assert get_pin(dut, "bidir_oe", PIN_MISO) == 0, "miso_oe default"
-    assert get_pin(dut, "bidir_out", PIN_MEMS_DRV_X) == 0, "mems_drv_x default"
-    assert get_pin(dut, "bidir_out", PIN_MEMS_DRV_Y) == 0, "mems_drv_y default"
+
+    logger.info("Measuring default MEMS X/Y idle duty cycles...")
+    
+    # Sample long enough to capture complete PWM cycles (e.g., PWM_MOD * 8)
+    sample_depth = PWM_MOD * 8
+    
+    x_bits = await sample_bidir_pin(dut, "bidir_out", PIN_MEMS_DRV_X, sample_depth)
+    y_bits = await sample_bidir_pin(dut, "bidir_out", PIN_MEMS_DRV_Y, sample_depth)
+    
+    duty_x = sum(x_bits) / len(x_bits)
+    duty_y = sum(y_bits) / len(y_bits)
+    
+    logger.info(f"mems_drv_x default duty: {duty_x:.4f}")
+    logger.info(f"mems_drv_y default duty: {duty_y:.4f}")
+
+    assert 0.48 < duty_x < 0.52, f"mems_drv_x default duty {duty_x:.4f} is not mid-rail"
+    assert 0.48 < duty_y < 0.52, f"mems_drv_y default duty {duty_y:.4f} is not mid-rail"
+    
     cocotb.log.info("PASS reset defaults")
 
     logger.info("Done!")
