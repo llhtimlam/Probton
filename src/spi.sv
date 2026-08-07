@@ -15,7 +15,10 @@ module spi_regs #(
     // MOSI (Import to ASIC)
     // Config Setting
 
-    // 16-bit: MEMS requency Control Word (Min MEMS Frequency: 2.38418579102KHz, Max MEMS Frequency: 156.247615814KHz)
+    // 8-bit: Amplitude ratio applied during the Amp Ratio Adjuster state
+    output logic unsigned [7:0] cfg_amp_ratio,
+
+    // 16-bit: MEMS requency Control Word (Min MEMS Frequency: 2.38418579102Hz, Max MEMS Frequency: 156.247615814KHz)
     output logic unsigned [15:0] cfg_f_MEMS_fcw_x, cfg_f_MEMS_fcw_y, // Frequency Control Word (f_MEMS * 2^k) / f_clk, where k is 21, f_clk is 5MHz
 
     // Pre-Calibration
@@ -26,7 +29,10 @@ module spi_regs #(
     output logic boot_complete,
     output logic cfg_done,
     output logic phase_offset_imported,
-    output logic soft_rst_n,
+
+    // One clk pulses, self clearing
+    output logic soft_rst,
+    output logic amp_ratio_en,
 
     // MISO (Export from ASIC)
     // SPI Report
@@ -38,6 +44,7 @@ module spi_regs #(
     input logic unsigned [20:0] cal_phase0_offset_x, cal_phase90_offset_x, cal_phase270_offset_x,
     input logic unsigned [20:0] cal_phase0_offset_y, cal_phase90_offset_y, cal_phase270_offset_y,
 
+    input  logic cal_done_x, cal_done_y,
     input  logic cal_timeout_x, cal_timeout_y,
 
     // Main Loop Debug
@@ -50,6 +57,8 @@ module spi_regs #(
     // State Machine
     input logic [2:0] state_o
 );
+
+    localparam logic [SPI_ADDR_WIDTH-1:0] ADDR_AMP_RATIO = 7'h00;
 
     localparam logic [SPI_ADDR_WIDTH-1:0] ADDR_MEMS_FCW_X_L = 7'h01;
     localparam logic [SPI_ADDR_WIDTH-1:0] ADDR_MEMS_FCW_X_H = 7'h02;
@@ -131,8 +140,11 @@ module spi_regs #(
     localparam logic [SPI_ADDR_WIDTH-1:0] ADDR_STATUS = 7'h4C;
     localparam logic [SPI_ADDR_WIDTH-1:0] ADDR_STATE = 7'h4D;
 
+    localparam logic [7:0]  DEFAULT_AMP_RATIO = 8'h00;
     localparam logic [15:0] DEFAULT_MEMS_FCW  = 16'h0000;
     localparam logic [20:0] DEFAULT_PHASE_OFF = 21'h0;
+
+    logic [7:0] reg_rd_data;
 
     logic [1:0] cs_sync, sclk_sync, mosi_sync;
     always_ff @(posedge clk or negedge rst_n) begin
@@ -233,6 +245,7 @@ module spi_regs #(
 
     always_ff @(posedge clk or negedge rst_n) begin 
         if (!rst_n) begin
+            cfg_amp_ratio <= DEFAULT_AMP_RATIO;
             cfg_f_MEMS_fcw_x <= DEFAULT_MEMS_FCW;
             cfg_f_MEMS_fcw_y <= DEFAULT_MEMS_FCW;
             cfg_phase0_offset_x <= DEFAULT_PHASE_OFF;
@@ -244,49 +257,61 @@ module spi_regs #(
             boot_complete <= 1'b0;
             cfg_done <= 1'b0;
             phase_offset_imported  <= 1'b0;
-            soft_rst_n <= 1'b1;
-        end else if (reg_wr_en) begin
-            unique case (reg_wr_addr)
+            soft_rst <= 1'b0;
+            amp_ratio_en <= 1'b0;
+        end else begin
+            // pulses, self clearing after one clk
+            soft_rst <= 1'b0;
+            amp_ratio_en <= 1'b0;
 
-                ADDR_MEMS_FCW_X_L: cfg_f_MEMS_fcw_x[7:0] <= reg_wr_data;
-                ADDR_MEMS_FCW_X_H: cfg_f_MEMS_fcw_x[15:8] <= reg_wr_data;
-                ADDR_MEMS_FCW_Y_L: cfg_f_MEMS_fcw_y[7:0] <= reg_wr_data;
-                ADDR_MEMS_FCW_Y_H: cfg_f_MEMS_fcw_y[15:8] <= reg_wr_data;
+            if (reg_wr_en) begin
+                unique case (reg_wr_addr)
 
-                ADDR_PHASE0_OFF_X_B0: cfg_phase0_offset_x[7:0]    <= reg_wr_data;
-                ADDR_PHASE0_OFF_X_B1: cfg_phase0_offset_x[15:8]   <= reg_wr_data;
-                ADDR_PHASE0_OFF_X_B2: cfg_phase0_offset_x[20:16]  <= reg_wr_data[4:0];
-                ADDR_PHASE90_OFF_X_B0: cfg_phase90_offset_x[7:0]   <= reg_wr_data;
-                ADDR_PHASE90_OFF_X_B1: cfg_phase90_offset_x[15:8]  <= reg_wr_data;
-                ADDR_PHASE90_OFF_X_B2: cfg_phase90_offset_x[20:16] <= reg_wr_data[4:0];
-                ADDR_PHASE270_OFF_X_B0: cfg_phase270_offset_x[7:0]   <= reg_wr_data;
-                ADDR_PHASE270_OFF_X_B1: cfg_phase270_offset_x[15:8]  <= reg_wr_data;
-                ADDR_PHASE270_OFF_X_B2: cfg_phase270_offset_x[20:16] <= reg_wr_data[4:0];
+                    ADDR_AMP_RATIO: cfg_amp_ratio <= reg_wr_data;
 
-                ADDR_PHASE0_OFF_Y_B0: cfg_phase0_offset_y[7:0]    <= reg_wr_data;
-                ADDR_PHASE0_OFF_Y_B1: cfg_phase0_offset_y[15:8]   <= reg_wr_data;
-                ADDR_PHASE0_OFF_Y_B2: cfg_phase0_offset_y[20:16]  <= reg_wr_data[4:0];
-                ADDR_PHASE90_OFF_Y_B0: cfg_phase90_offset_y[7:0]   <= reg_wr_data;
-                ADDR_PHASE90_OFF_Y_B1: cfg_phase90_offset_y[15:8]  <= reg_wr_data;
-                ADDR_PHASE90_OFF_Y_B2: cfg_phase90_offset_y[20:16] <= reg_wr_data[4:0];
-                ADDR_PHASE270_OFF_Y_B0: cfg_phase270_offset_y[7:0]   <= reg_wr_data;
-                ADDR_PHASE270_OFF_Y_B1: cfg_phase270_offset_y[15:8]  <= reg_wr_data;
-                ADDR_PHASE270_OFF_Y_B2: cfg_phase270_offset_y[20:16] <= reg_wr_data[4:0];
+                    ADDR_MEMS_FCW_X_L: cfg_f_MEMS_fcw_x[7:0] <= reg_wr_data;
+                    ADDR_MEMS_FCW_X_H: cfg_f_MEMS_fcw_x[15:8] <= reg_wr_data;
+                    ADDR_MEMS_FCW_Y_L: cfg_f_MEMS_fcw_y[7:0] <= reg_wr_data;
+                    ADDR_MEMS_FCW_Y_H: cfg_f_MEMS_fcw_y[15:8] <= reg_wr_data;
 
-                ADDR_CTRL: begin
-                    boot_complete          <= reg_wr_data[0];
-                    cfg_done               <= reg_wr_data[1];
-                    phase_offset_imported  <= reg_wr_data[2];
-                    soft_rst_n             <= ~reg_wr_data[3];
-                end
+                    ADDR_PHASE0_OFF_X_B0: cfg_phase0_offset_x[7:0]    <= reg_wr_data;
+                    ADDR_PHASE0_OFF_X_B1: cfg_phase0_offset_x[15:8]   <= reg_wr_data;
+                    ADDR_PHASE0_OFF_X_B2: cfg_phase0_offset_x[20:16]  <= reg_wr_data[4:0];
+                    ADDR_PHASE90_OFF_X_B0: cfg_phase90_offset_x[7:0]   <= reg_wr_data;
+                    ADDR_PHASE90_OFF_X_B1: cfg_phase90_offset_x[15:8]  <= reg_wr_data;
+                    ADDR_PHASE90_OFF_X_B2: cfg_phase90_offset_x[20:16] <= reg_wr_data[4:0];
+                    ADDR_PHASE270_OFF_X_B0: cfg_phase270_offset_x[7:0]   <= reg_wr_data;
+                    ADDR_PHASE270_OFF_X_B1: cfg_phase270_offset_x[15:8]  <= reg_wr_data;
+                    ADDR_PHASE270_OFF_X_B2: cfg_phase270_offset_x[20:16] <= reg_wr_data[4:0];
 
-                default: ;
-            endcase
+                    ADDR_PHASE0_OFF_Y_B0: cfg_phase0_offset_y[7:0]    <= reg_wr_data;
+                    ADDR_PHASE0_OFF_Y_B1: cfg_phase0_offset_y[15:8]   <= reg_wr_data;
+                    ADDR_PHASE0_OFF_Y_B2: cfg_phase0_offset_y[20:16]  <= reg_wr_data[4:0];
+                    ADDR_PHASE90_OFF_Y_B0: cfg_phase90_offset_y[7:0]   <= reg_wr_data;
+                    ADDR_PHASE90_OFF_Y_B1: cfg_phase90_offset_y[15:8]  <= reg_wr_data;
+                    ADDR_PHASE90_OFF_Y_B2: cfg_phase90_offset_y[20:16] <= reg_wr_data[4:0];
+                    ADDR_PHASE270_OFF_Y_B0: cfg_phase270_offset_y[7:0]   <= reg_wr_data;
+                    ADDR_PHASE270_OFF_Y_B1: cfg_phase270_offset_y[15:8]  <= reg_wr_data;
+                    ADDR_PHASE270_OFF_Y_B2: cfg_phase270_offset_y[20:16] <= reg_wr_data[4:0];
+
+                    ADDR_CTRL: begin
+                        boot_complete          <= reg_wr_data[0];
+                        cfg_done               <= reg_wr_data[1];
+                        phase_offset_imported  <= reg_wr_data[2];
+                        soft_rst               <= reg_wr_data[3];
+                        amp_ratio_en           <= reg_wr_data[4];
+                    end
+
+                    default: ;
+                endcase
+            end
         end
     end
-    logic [7:0] reg_rd_data;
+
     always_comb begin
         unique case (spi_addr)
+
+            ADDR_AMP_RATIO: reg_rd_data = cfg_amp_ratio;
 
             ADDR_MEMS_FCW_X_L: reg_rd_data = cfg_f_MEMS_fcw_x[7:0];
             ADDR_MEMS_FCW_X_H: reg_rd_data = cfg_f_MEMS_fcw_x[15:8];
@@ -313,8 +338,9 @@ module spi_regs #(
             ADDR_PHASE270_OFF_Y_B1: reg_rd_data = cfg_phase270_offset_y[15:8];
             ADDR_PHASE270_OFF_Y_B2: reg_rd_data = {3'b0, cfg_phase270_offset_y[20:16]};
 
-            ADDR_CTRL: reg_rd_data = {4'b0, soft_rst_n, phase_offset_imported,
-                                       cfg_done, boot_complete};
+            // soft_rst and amp_ratio_en are one clk pulses, they read back 0
+            ADDR_CTRL: reg_rd_data = {3'b0, amp_ratio_en, soft_rst,
+                                      phase_offset_imported, cfg_done, boot_complete};
 
             ADDR_DELAY_WAVE_CYC_X: reg_rd_data = delay_wave_cycle_x;
             ADDR_DELAY_WAVE_CYC_Y: reg_rd_data = delay_wave_cycle_y;
@@ -366,7 +392,7 @@ module spi_regs #(
             ADDR_VOTES_IN_Y:  reg_rd_data = {4'b0, votes_in_phase_y};
             ADDR_VOTES_OUT_Y: reg_rd_data = {4'b0, votes_out_phase_y};
 
-            ADDR_STATUS: reg_rd_data = {2'b0, latch_error_y, latch_error_x, cal_timeout_y, cal_timeout_x, cal_dir_y, cal_dir_x};
+            ADDR_STATUS: reg_rd_data = {cal_done_y, cal_done_x, latch_error_y, latch_error_x, cal_timeout_y, cal_timeout_x, cal_dir_y, cal_dir_x};
             ADDR_STATE: reg_rd_data = {5'b0, state_o};
 
             default: reg_rd_data = 8'h00;
