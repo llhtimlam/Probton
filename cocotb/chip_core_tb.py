@@ -22,7 +22,6 @@ slot = os.getenv("SLOT", "1x1")
 hdl_toplevel = "chip_core"
 
 # SPI Setting
-ADDR_AMP_RATIO = 0x00
 ADDR_MEMS_FCW_X_L = 0x01
 ADDR_MEMS_FCW_X_H = 0x02
 ADDR_MEMS_FCW_Y_L = 0x03
@@ -57,9 +56,6 @@ PIN_MEMS_DRV_Y = 9
 S_BOOT = 0
 S_LOAD_CFG = 1
 S_CAL = 2
-S_FALLOUT = 3
-S_READOUT = 4
-S_AMP_ADJ = 5
 
 # MEMS Frequency and timing Setting
 F_CLK = 5000000 # 5MHz
@@ -158,18 +154,6 @@ async def sample_bidir_pin(dut, pin_name, pin_idx, n_clks):
         val = get_pin(dut, pin_name, pin_idx)
         bits.append(int(val))
     return bits
-
-async def wait_for_state(dut, state, timeout_clks=1000):
-    """Wait until the FSM reaches a state, return how many clks it took.
-    Returns on the same edge the state changes so the calibration timer
-    and the comparator injection start together."""
-    for i in range(timeout_clks):
-        if int(dut.state_o.value) == state:
-            return i
-        await RisingEdge(dut.clk)
-    raise AssertionError(
-        f"state {state} not reached in {timeout_clks} clk, "
-        f"stuck at {int(dut.state_o.value)}")
 
 @cocotb.test()
 async def test_default_values(dut):
