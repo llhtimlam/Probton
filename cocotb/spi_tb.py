@@ -20,7 +20,6 @@ slot = os.getenv("SLOT", "1x1")
 
 hdl_toplevel = "spi_regs"
 
-ADDR_AMP_RATIO = 0x00
 ADDR_MEMS_FCW_X_L = 0x01
 ADDR_MEMS_FCW_X_H = 0x02
 ADDR_MEMS_FCW_Y_L = 0x03
@@ -31,7 +30,6 @@ CTRL_BOOT_COMPLETE = 0x01
 CTRL_CFG_DONE = 0x02
 CTRL_PHASE_OFFSET_IMPORTED = 0x04
 CTRL_SOFT_RST = 0x08
-CTRL_AMP_RATIO_EN = 0x10
 
 SCLK_HALF = 8
 
@@ -151,11 +149,6 @@ async def test_write_path(dut):
 
     logger.info("Running the test...")
 
-    await spi_write(dut, ADDR_AMP_RATIO, [0xA5])
-    assert int(dut.cfg_amp_ratio.value) == 0xA5, \
-        f"cfg_amp_ratio: expected 0xa5, got {int(dut.cfg_amp_ratio.value):#04x}"
-    cocotb.log.info("PASS amp ratio write")
-
     await spi_write(dut, ADDR_MEMS_FCW_X_L, [0x34, 0x12])
     assert int(dut.cfg_f_MEMS_fcw_x.value) == 0x1234, \
         f"fcw_x: expected 0x1234, got {int(dut.cfg_f_MEMS_fcw_x.value):#06x}"
@@ -192,7 +185,7 @@ async def test_readback_over_miso(dut):
 
 @cocotb.test()
 async def test_pulse_outputs(dut):
-    """soft_rst and amp_ratio_en are one clk pulses, they must self clear."""
+    """soft_rst is a one clk pulse, it must self clear."""
     logger = logging.getLogger("my_testbench")
 
     logger.info("Startup sequence...")
@@ -204,10 +197,6 @@ async def test_pulse_outputs(dut):
     assert int(dut.soft_rst.value) == 0, "soft_rst did not self clear"
     assert int(dut.boot_complete.value) == 0, "soft_rst write must clear boot_complete"
     cocotb.log.info("PASS soft_rst pulse self clears")
-
-    await spi_write(dut, ADDR_CTRL, [CTRL_AMP_RATIO_EN])
-    assert int(dut.amp_ratio_en.value) == 0, "amp_ratio_en did not self clear"
-    cocotb.log.info("PASS amp_ratio_en pulse self clears")
 
     logger.info("Done!")
 
@@ -222,13 +211,11 @@ async def test_default_values(dut):
 
     logger.info("Running the test...")
 
-    assert int(dut.cfg_amp_ratio.value) == 0x00, "amp ratio default"
     assert int(dut.cfg_f_MEMS_fcw_x.value) == 0x0000, "fcw x default"
     assert int(dut.cfg_f_MEMS_fcw_y.value) == 0x0000, "fcw y default"
     assert int(dut.boot_complete.value) == 0, "boot_complete default"
     assert int(dut.cfg_done.value) == 0, "cfg_done default"
     assert int(dut.soft_rst.value) == 0, "soft_rst default"
-    assert int(dut.amp_ratio_en.value) == 0, "amp_ratio_en default"
     cocotb.log.info("PASS reset defaults")
 
     logger.info("Done!")
