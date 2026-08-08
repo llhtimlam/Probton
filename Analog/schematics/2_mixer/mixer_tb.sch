@@ -237,8 +237,8 @@ descr="Load ngSpice waveforms (ctrl+left-click)"
 tclcommand="xschem raw_read /workspace/Analog/schematics/2_mixer/simulation_files/mixer_tb.raw tran"
 }
 C {Analog/schematics/2_mixer/gilbert_mixer.sym} 900 -880 0 0 {name=x1}
-C {Analog/schematics/2_mixer/5tota.sym} 1250 -820 0 0 {name=x2}
-C {Analog/schematics/2_mixer/5tota.sym} 1710 -800 0 0 {name=x3}
+C {Analog/schematics/2_mixer/ota_5t.sym} 1250 -820 0 0 {name=x2}
+C {Analog/schematics/2_mixer/ota_5t.sym} 1710 -800 0 0 {name=x3}
 C {isource.sym} 1690 -730 0 0 {name=I3 value=30u}
 C {gnd.sym} 1690 -700 0 0 {name=l9 lab=GND}
 C {lab_wire.sym} 1770 -800 3 0 {name=p16 sig_type=std_logic lab=VSS}

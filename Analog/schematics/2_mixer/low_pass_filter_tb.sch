@@ -205,7 +205,7 @@ C {lab_pin.sym} 340 -720 0 0 {name=p1 sig_type=std_logic lab=Vif
 }
 C {opin.sym} 820 -700 0 0 {name=p3 lab=Vout}
 C {gnd.sym} 530 -610 0 0 {name=l3 lab=GND}
-C {Analog/schematics/2_mixer/5tota.sym} 470 -650 0 0 {name=x1}
+C {Analog/schematics/2_mixer/ota_5t.sym} 470 -650 0 0 {name=x1}
 C {code.sym} 625 -445 0 0 {name=SPICE1 only_toplevel=true 
 value="
 * Complete 5T OTA + RC Low-Pass Filter Verification Testbench

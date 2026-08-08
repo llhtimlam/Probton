@@ -217,4 +217,4 @@ descr="Load ngSpice waveforms (ctrl+left-click)"
 tclcommand="xschem raw_read /workspace/Analog/schematics/2_mixer/simulation_files/mixer_tb.raw tran"
 }
 C {Analog/schematics/2_mixer/gilbert_mixer.sym} 900 -880 0 0 {name=x1}
-C {Analog/schematics/2_mixer/5tota.sym} 1250 -820 0 0 {name=x2}
+C {Analog/schematics/2_mixer/ota_5t.sym} 1250 -820 0 0 {name=x2}

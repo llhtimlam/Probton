@@ -1,0 +1,34 @@
+* Extracted by KLayout with GF180MCU LVS runset on : 08/08/2026 08:03
+
+* cell ota_5t
+* pin VSS
+* pin Vdd_3v3
+* pin Vin_m_5tota
+* pin Vin_p_5tota
+* pin Vout_5tota
+.SUBCKT ota_5t VSS Vdd_3v3 Vin_m_5tota Vin_p_5tota Vout_5tota
+* device instance $1 m0 *1 19.36,-6.66 nfet_03v3
+M$1 \$3 \$I3 \$I1 VSS nfet_03v3 L=0.28U W=6U AS=2.64P AD=1.56P PS=12.88U
++ PD=6.52U
+* device instance $2 m0 *1 20.16,-6.66 nfet_03v3
+M$2 \$4 Vin_p_5tota \$3 VSS nfet_03v3 L=0.28U W=6U AS=1.56P AD=1.56P PS=6.52U
++ PD=6.52U
+* device instance $3 m0 *1 20.96,-6.66 nfet_03v3
+M$3 Vout_5tota Vin_m_5tota \$4 VSS nfet_03v3 L=0.28U W=6U AS=1.56P AD=1.56P
++ PS=6.52U PD=6.52U
+* device instance $4 m0 *1 21.76,-6.66 nfet_03v3
+M$4 \$I2 \$I4 Vout_5tota VSS nfet_03v3 L=0.28U W=6U AS=1.56P AD=2.64P PS=6.52U
++ PD=12.88U
+* device instance $5 m0 *1 19.36,6.78 pfet_03v3
+M$5 \$3 \$I7 \$I5 Vdd_3v3 pfet_03v3 L=0.28U W=10U AS=4.4P AD=2.6P PS=20.88U
++ PD=10.52U
+* device instance $6 m0 *1 20.16,6.78 pfet_03v3
+M$6 Vdd_3v3 \$3 \$3 Vdd_3v3 pfet_03v3 L=0.28U W=10U AS=2.6P AD=2.6P PS=10.52U
++ PD=10.52U
+* device instance $7 m0 *1 20.96,6.78 pfet_03v3
+M$7 Vout_5tota \$3 Vdd_3v3 Vdd_3v3 pfet_03v3 L=0.28U W=10U AS=2.6P AD=2.6P
++ PS=10.52U PD=10.52U
+* device instance $8 m0 *1 21.76,6.78 pfet_03v3
+M$8 \$I6 \$I8 Vout_5tota Vdd_3v3 pfet_03v3 L=0.28U W=10U AS=2.6P AD=4.4P
++ PS=10.52U PD=20.88U
+.ENDS ota_5t

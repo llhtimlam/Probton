@@ -40,13 +40,13 @@ lab=#net1}
 N 470 -440 470 -380 {
 lab=#net1}
 N 610 -440 640 -440 {
-lab=VDD}
+lab=Vdd_3v3}
 N 580 -320 610 -320 {
 lab=VSS}
 N 390 -320 420 -320 {
 lab=VSS}
 N 360 -440 390 -440 {
-lab=VDD}
+lab=Vdd_3v3}
 N 220 -320 350 -320 {
 lab=Vin_p_5tota}
 N 390 -220 500 -220 {
@@ -120,8 +120,8 @@ sa=0 sb=0 sd=0
 model=pfet_03v3
 spiceprefix=X
 }
-C {lab_pin.sym} 360 -440 0 0 {name=p6 sig_type=std_logic lab=VDD}
+C {lab_pin.sym} 360 -440 0 0 {name=p6 sig_type=std_logic lab=Vdd_3v3}
 C {ipin.sym} 220 -140 0 0 {name=p7 lab=VSS}
 C {lab_pin.sym} 580 -320 0 0 {name=p8 sig_type=std_logic lab=VSS}
 C {lab_pin.sym} 420 -320 0 1 {name=p9 sig_type=std_logic lab=VSS}
-C {lab_pin.sym} 640 -440 0 1 {name=p10 sig_type=std_logic lab=VDD}
+C {lab_pin.sym} 640 -440 0 1 {name=p10 sig_type=std_logic lab=Vdd_3v3}

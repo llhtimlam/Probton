@@ -1,12 +1,9 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
-    <property name="random_seed" value="1786147802" />
-    <testcase name="test_default_values" classname="chip_core_tb" file="c:\Users\User\Documents\GitHub\Probton\cocotb\chip_core_tb.py" lineno="173" time="0.17260265350341797" sim_time_ns="820800.0" ratio_time="4755430.946974092" />
-    <testcase name="test_write_path" classname="chip_core_tb" file="c:\Users\User\Documents\GitHub\Probton\cocotb\chip_core_tb.py" lineno="211" time="0.034750938415527344" sim_time_ns="161600.0" ratio_time="4650234.133757787" />
-    <testcase name="test_readback_over_miso" classname="chip_core_tb" file="c:\Users\User\Documents\GitHub\Probton\cocotb\chip_core_tb.py" lineno="233" time="0.04457378387451172" sim_time_ns="216000.00000000012" ratio_time="4845897.772737973" />
-    <testcase name="test_unmapped_write_ignored" classname="chip_core_tb" file="c:\Users\User\Documents\GitHub\Probton\cocotb\chip_core_tb.py" lineno="255" time="0.028627872467041016" sim_time_ns="136000.0" ratio_time="4750614.987424422" />
-    <testcase name="test_cs_abort_recovery" classname="chip_core_tb" file="c:\Users\User\Documents\GitHub\Probton\cocotb\chip_core_tb.py" lineno="273" time="0.021451950073242188" sim_time_ns="100800.0" ratio_time="4698873.512936783" />
-    <testcase name="test_soft_rst_from_calibration" classname="chip_core_tb" file="c:\Users\User\Documents\GitHub\Probton\cocotb\chip_core_tb.py" lineno="300" time="0.03500056266784668" sim_time_ns="164800.0" ratio_time="4708495.733738411" />
-    <testcase name="test_comparator_x_y" classname="chip_core_tb" file="c:\Users\User\Documents\GitHub\Probton\cocotb\chip_core_tb.py" lineno="323" time="3.262406826019287" sim_time_ns="13585600.0" ratio_time="4164287.5105729327" />
+    <property name="random_seed" value="1786161351" />
+    <testcase name="test_boot_to_calibration_freeze" classname="state_machine_tb" file="c:\Users\User\Documents\GitHub\Probton\cocotb\state_machine_tb.py" lineno="105" time="0.006209611892700195" sim_time_ns="14400.0" ratio_time="2318985.5096947593" />
+    <testcase name="test_reboot_with_imported_offsets" classname="state_machine_tb" file="c:\Users\User\Documents\GitHub\Probton\cocotb\state_machine_tb.py" lineno="142" time="0.001323699951171875" sim_time_ns="3800.0" ratio_time="2870741.21037464" />
+    <testcase name="test_calibration_timeout_freeze" classname="state_machine_tb" file="c:\Users\User\Documents\GitHub\Probton\cocotb\state_machine_tb.py" lineno="209" time="0.001583099365234375" sim_time_ns="5000.0" ratio_time="3158361.4457831327" />
+    <testcase name="test_soft_rst_from_readout" classname="state_machine_tb" file="c:\Users\User\Documents\GitHub\Probton\cocotb\state_machine_tb.py" lineno="237" time="0.0007429122924804688" sim_time_ns="2600.0" ratio_time="3499740.179717587" />
   </testsuite>
 </testsuites>
