@@ -25,11 +25,11 @@ S_LOAD_CFG = 1
 S_CAL = 2
 S_FALLOUT = 3
 S_READOUT = 4
-S_AMP_ADJ = 5
+# S_AMP_ADJ = 5   # amp ratio adjuster, not implemented this tapeout
 
 STATE_NAMES = {
     S_BOOT: "BOOT", S_LOAD_CFG: "LOAD_CFG", S_CAL: "CAL",
-    S_FALLOUT: "FALLOUT", S_READOUT: "READOUT", S_AMP_ADJ: "AMP_ADJ",
+    S_FALLOUT: "FALLOUT", S_READOUT: "READOUT",
 }
 
 
@@ -49,8 +49,8 @@ async def set_defaults(dut):
     dut.phase_offset_imported.value = 0
     dut.cal_done.value = 0
     dut.cal_timeout.value = 0
-    dut.amp_ratio_en.value = 0
-    dut.amp_update_done.value = 0
+    # dut.amp_ratio_en.value = 0
+    # dut.amp_update_done.value = 0
     dut.soft_rst.value = 0
 
 
@@ -131,7 +131,6 @@ async def test_boot_to_calibration_freeze(dut):
     check_state(dut, S_FALLOUT, "cal_done -> Fallout Report (freeze)")
     assert dut.cal_start.value == 0, "cal_start must drop in freeze"
     assert dut.read_en.value == 0, "read_en must be off in freeze"
-    assert dut.write_amp_ratio_en.value == 0, "amp write must be off in freeze"
     cocotb.log.info("PASS all outputs off while frozen")
 
     await ClockCycles(dut.clk, 50)
@@ -175,34 +174,36 @@ async def test_reboot_with_imported_offsets(dut):
     logger.info("Done!")
 
 
-@cocotb.test()
-async def test_amp_ratio_adjuster(dut):
-
-    logger = logging.getLogger("my_testbench")
-
-    logger.info("Startup sequence...")
-    await start_up(dut)
-
-    logger.info("Running the test...")
-    await goto_readout(dut)
-
-    dut.amp_ratio_en.value = 1
-    await ClockCycles(dut.clk, 2)
-    dut.amp_ratio_en.value = 0
-    check_state(dut, S_AMP_ADJ, "amp_ratio_en -> Amp Ratio Adjuster")
-    assert dut.write_amp_ratio_en.value == 1, "amp write en must be on"
-    assert dut.read_en.value == 0, "readout must pause during amp update"
-    cocotb.log.info("PASS amp write on, readout paused")
-
-    await ClockCycles(dut.clk, 10)
-    dut.amp_update_done.value = 1
-    await ClockCycles(dut.clk, 2)
-    dut.amp_update_done.value = 0
-    check_state(dut, S_READOUT, "amp_update_done -> back to Readout")
-    assert dut.read_en.value == 1, "read_en must be back on"
-    cocotb.log.info("PASS read_en restored")
-
-    logger.info("Done!")
+# Amp Ratio Adjuster is not implemented this tapeout, re-enable with S_AMP_ADJ
+#
+# @cocotb.test()
+# async def test_amp_ratio_adjuster(dut):
+#
+#     logger = logging.getLogger("my_testbench")
+#
+#     logger.info("Startup sequence...")
+#     await start_up(dut)
+#
+#     logger.info("Running the test...")
+#     await goto_readout(dut)
+#
+#     dut.amp_ratio_en.value = 1
+#     await ClockCycles(dut.clk, 2)
+#     dut.amp_ratio_en.value = 0
+#     check_state(dut, S_AMP_ADJ, "amp_ratio_en -> Amp Ratio Adjuster")
+#     assert dut.write_amp_ratio_en.value == 1, "amp write en must be on"
+#     assert dut.read_en.value == 0, "readout must pause during amp update"
+#     cocotb.log.info("PASS amp write on, readout paused")
+#
+#     await ClockCycles(dut.clk, 10)
+#     dut.amp_update_done.value = 1
+#     await ClockCycles(dut.clk, 2)
+#     dut.amp_update_done.value = 0
+#     check_state(dut, S_READOUT, "amp_update_done -> back to Readout")
+#     assert dut.read_en.value == 1, "read_en must be back on"
+#     cocotb.log.info("PASS read_en restored")
+#
+#     logger.info("Done!")
 
 
 @cocotb.test()

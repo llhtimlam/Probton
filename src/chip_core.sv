@@ -258,7 +258,6 @@ module chip_core #(
 
     // Intermediate Wire
     // ----- SPI → Config/Control Signal -----
-    wire [7:0]  cfg_amp_ratio;
     wire [15:0] cfg_f_MEMS_fcw_x, cfg_f_MEMS_fcw_y;
     wire [20:0] cfg_phase0_offset_x, cfg_phase90_offset_x, cfg_phase270_offset_x;
     wire [20:0] cfg_phase0_offset_y, cfg_phase90_offset_y, cfg_phase270_offset_y;
@@ -269,8 +268,8 @@ module chip_core #(
     wire        soft_rst;
     wire        soft_rst_n = ~soft_rst;
 
-    // ----- Amplitude Ratio Adjuster -----
-    wire        amp_ratio_en, amp_update_done, write_amp_ratio_en;
+    // ----- Amplitude Ratio Adjuster - not implemented this tapeout -----
+    // wire        amp_ratio_en, amp_update_done, write_amp_ratio_en;
 
     // ----- Wave Controller → SPI (Calibration) -----
     wire [7:0]  delay_wave_cycle_x, delay_wave_cycle_y;
@@ -298,10 +297,6 @@ module chip_core #(
     // OR on timeout: if either axis gives up, calibration is over.
     assign cal_done    = cal_done_x    & cal_done_y;
     assign cal_timeout = cal_timeout_x | cal_timeout_y;
-
-    // TODO: amp_update_done needs a real producer (analog amp ratio DAC).
-    // Placeholder keeps S_AMP_ADJ from deadlocking in simulation.
-    assign amp_update_done = write_amp_ratio_en;
 
     // ----- Comparator → Wave controller -----
     (* keep *) wire comp_x, comp_y;
@@ -376,12 +371,11 @@ module chip_core #(
         .clk(clk), .rst_n(rst_n),
         .spi_cs_n(spi_cs_n), .spi_sclk(spi_sclk), .spi_mosi(spi_mosi),
         .spi_miso(spi_miso), .spi_miso_oe(spi_miso_oe),
-        .cfg_amp_ratio(cfg_amp_ratio),
         .cfg_f_MEMS_fcw_x(cfg_f_MEMS_fcw_x), .cfg_f_MEMS_fcw_y(cfg_f_MEMS_fcw_y),
         .cfg_phase0_offset_x(cfg_phase0_offset_x), .cfg_phase90_offset_x(cfg_phase90_offset_x), .cfg_phase270_offset_x(cfg_phase270_offset_x),
         .cfg_phase0_offset_y(cfg_phase0_offset_y), .cfg_phase90_offset_y(cfg_phase90_offset_y), .cfg_phase270_offset_y(cfg_phase270_offset_y),
         .boot_complete(boot_complete), .cfg_done(cfg_done), .phase_offset_imported(phase_offset_imported),
-        .soft_rst(soft_rst), .amp_ratio_en(amp_ratio_en),
+        .soft_rst(soft_rst),
         .delay_wave_cycle_x(delay_wave_cycle_x), .delay_wave_cycle_y(delay_wave_cycle_y),
         .raw_edge1_x(raw_edge1_x), .raw_edge2_x(raw_edge2_x), .raw_edge3_x(raw_edge3_x),
         .raw_edge1_y(raw_edge1_y), .raw_edge2_y(raw_edge2_y), .raw_edge3_y(raw_edge3_y),
@@ -404,7 +398,6 @@ module chip_core #(
         .boot_complete(boot_complete), .cfg_done(cfg_done), .phase_offset_imported(phase_offset_imported),
         .cal_start(cal_start), .cal_done(cal_done), .cal_timeout(cal_timeout),
         .read_en(read_en),
-        .amp_ratio_en(amp_ratio_en), .amp_update_done(amp_update_done), .write_amp_ratio_en(write_amp_ratio_en),
         .soft_rst(soft_rst),
         .state_o(state_o)
     );

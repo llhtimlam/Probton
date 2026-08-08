@@ -19,10 +19,10 @@ module state_machine (
     // Readout
     output logic read_en,
 
-    // Amplitude Ratio Adjuster
-    input  logic amp_ratio_en,
-    input  logic amp_update_done,
-    output logic write_amp_ratio_en,
+    // Amplitude Ratio Adjuster - not implemented this tapeout
+    // input  logic amp_ratio_en,
+    // input  logic amp_update_done,
+    // output logic write_amp_ratio_en,
 
     // Manual Soft Reset (active high, one clk pulse from SPI)
     input  logic soft_rst,
@@ -35,8 +35,8 @@ module state_machine (
         S_LOAD_CFG = 3'd1,
         S_CAL      = 3'd2,
         S_FALLOUT  = 3'd3,
-        S_READOUT  = 3'd4,
-        S_AMP_ADJ  = 3'd5
+        S_READOUT  = 3'd4
+        // S_AMP_ADJ  = 3'd5   // amp ratio adjuster, not implemented
     } state_t;
 
     state_t state_q, state_d;
@@ -66,10 +66,7 @@ module state_machine (
                     // frozen, all outputs off, exits only on soft reset
                 end
                 S_READOUT: begin
-                    if (amp_ratio_en) state_d = S_AMP_ADJ;
-                end
-                S_AMP_ADJ: begin
-                    if (amp_update_done) state_d = S_READOUT;
+                    // if (amp_ratio_en) state_d = S_AMP_ADJ;
                 end
 
                 default: ;
@@ -85,7 +82,7 @@ module state_machine (
     always_comb begin
         cal_start = 1'b0;
         read_en = 1'b0;
-        write_amp_ratio_en = 1'b0;
+        // write_amp_ratio_en = 1'b0;
         case (state_q)
             S_CAL: begin
                 cal_start = 1'b1;
@@ -94,9 +91,9 @@ module state_machine (
             S_READOUT: begin
                 read_en   = 1'b1;
             end
-            S_AMP_ADJ: begin
-                write_amp_ratio_en = 1'b1;
-            end
+            // S_AMP_ADJ: begin
+            //     write_amp_ratio_en = 1'b1;
+            // end
             default: ;
         endcase
     end
