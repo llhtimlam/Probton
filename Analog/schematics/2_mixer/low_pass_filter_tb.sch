@@ -319,7 +319,7 @@ m=1}
 C {gnd.sym} 790 -500 0 0 {name=l9 lab=GND}
 C {symbols/ppolyf_u_3k.sym} 730 -700 1 0 {name=R1
 W=1e-6
-L=40u
+L=48u
 model=ppolyf_u_3k
 spiceprefix=X
 m=1}

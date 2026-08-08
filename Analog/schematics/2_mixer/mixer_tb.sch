@@ -252,7 +252,7 @@ m=1}
 C {gnd.sym} 2050 -650 0 0 {name=l15 lab=GND}
 C {symbols/ppolyf_u_3k.sym} 1990 -850 1 0 {name=R1
 W=1e-6
-L=40u
+L=48u
 model=ppolyf_u_3k
 spiceprefix=X
 m=1}
