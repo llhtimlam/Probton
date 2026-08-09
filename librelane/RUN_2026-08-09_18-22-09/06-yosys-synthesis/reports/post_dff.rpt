@@ -1,0 +1,328 @@
+146. Printing statistics.
+
+=== chip_core ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+       96        - wires
+      591        - wire bits
+       86        - public wires
+      581        - public wire bits
+       14        - ports
+       89        - port bits
+       17  190.982 cells
+        2        -   $_AND_
+        6        -   $_MUX_
+        2        -   $_NOT_
+        1        -   $_OR_
+        2        -   $_XOR_
+        1        -   analog_block
+        3  190.982   gf180mcu_fd_sc_mcu7t5v0__dffq_1
+        6        - submodules
+        1        -   signal_processor$chip_core.signal_processor_x_inst
+        1        -   signal_processor$chip_core.signal_processor_y_inst
+        1        -   spi_regs$chip_core.spi_regs_inst
+        1        -   state_machine$chip_core.state_machine_inst
+        1        -   wave_controller$chip_core.wave_controller_x_inst
+        1        -   wave_controller$chip_core.wave_controller_y_inst
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+   Area for cell type \analog_block is unknown!
+
+   Chip area for module '\chip_core': 190.982400
+     of which used for sequential elements: 190.982400 (100.00%)
+
+=== signal_processor$chip_core.signal_processor_x_inst ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      188        - wires
+      201        - wire bits
+       19        - public wires
+       32        - public wire bits
+       14        - ports
+       21        - port bits
+      195 3.06E+03 cells
+       23        -   $_ANDNOT_
+       32        -   $_AND_
+       41        -   $_MUX_
+        2        -   $_NAND_
+        3        -   $_NOR_
+       15        -   $_NOT_
+        8        -   $_ORNOT_
+       19        -   $_OR_
+        1        -   $_XNOR_
+       10        -   $_XOR_
+       41 3.06E+03   gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+
+   Chip area for module '\signal_processor$chip_core.signal_processor_x_inst': 3060.108800
+     of which used for sequential elements: 3060.108800 (100.00%)
+
+=== signal_processor$chip_core.signal_processor_y_inst ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      188        - wires
+      201        - wire bits
+       19        - public wires
+       32        - public wire bits
+       14        - ports
+       21        - port bits
+      195 3.06E+03 cells
+       23        -   $_ANDNOT_
+       32        -   $_AND_
+       41        -   $_MUX_
+        2        -   $_NAND_
+        3        -   $_NOR_
+       15        -   $_NOT_
+        8        -   $_ORNOT_
+       19        -   $_OR_
+        1        -   $_XNOR_
+       10        -   $_XOR_
+       41 3.06E+03   gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+
+   Chip area for module '\signal_processor$chip_core.signal_processor_y_inst': 3060.108800
+     of which used for sequential elements: 3060.108800 (100.00%)
+
+=== spi_regs$chip_core.spi_regs_inst ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     1542        - wires
+     1998        - wire bits
+       58        - public wires
+      498        - public wire bits
+       50        - ports
+      470        - port bits
+     1681 1.58E+04 cells
+      543        -   $_ANDNOT_
+       14        -   $_AND_
+      216        -   $_MUX_
+       29        -   $_NAND_
+       24        -   $_NOR_
+       16        -   $_NOT_
+       23        -   $_ORNOT_
+      597        -   $_OR_
+        1        -   $_XNOR_
+        6        -   $_XOR_
+      212 1.58E+04   gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+
+   Chip area for module '\spi_regs$chip_core.spi_regs_inst': 15823.001600
+     of which used for sequential elements: 15823.001600 (100.00%)
+
+=== state_machine$chip_core.state_machine_inst ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+       48        - wires
+       50        - wire bits
+       11        - public wires
+       13        - public wire bits
+       11        - ports
+       13        - port bits
+       42   223.91 cells
+       14        -   $_ANDNOT_
+        4        -   $_MUX_
+        1        -   $_NAND_
+        2        -   $_NOR_
+        5        -   $_NOT_
+        2        -   $_ORNOT_
+       11        -   $_OR_
+        3   223.91   gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+
+   Chip area for module '\state_machine$chip_core.state_machine_inst': 223.910400
+     of which used for sequential elements: 223.910400 (100.00%)
+
+=== wave_controller$chip_core.wave_controller_x_inst ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     2381        - wires
+     2953        - wire bits
+       39        - public wires
+      314        - public wire bits
+       27        - ports
+      229        - port bits
+     2762  9.7E+03 cells
+      814        -   $_ANDNOT_
+      145        -   $_AND_
+      371        -   $_MUX_
+      143        -   $_NAND_
+      136        -   $_NOR_
+      216        -   $_NOT_
+      106        -   $_ORNOT_
+      190        -   $_OR_
+      175        -   $_XNOR_
+      336        -   $_XOR_
+      130  9.7E+03   gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+
+   Chip area for module '\wave_controller$chip_core.wave_controller_x_inst': 9702.784000
+     of which used for sequential elements: 9702.784000 (100.00%)
+
+=== wave_controller$chip_core.wave_controller_y_inst ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     2381        - wires
+     2953        - wire bits
+       39        - public wires
+      314        - public wire bits
+       27        - ports
+      229        - port bits
+     2762  9.7E+03 cells
+      814        -   $_ANDNOT_
+      145        -   $_AND_
+      371        -   $_MUX_
+      143        -   $_NAND_
+      136        -   $_NOR_
+      216        -   $_NOT_
+      106        -   $_ORNOT_
+      190        -   $_OR_
+      175        -   $_XNOR_
+      336        -   $_XOR_
+      130  9.7E+03   gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+
+   Chip area for module '\wave_controller$chip_core.wave_controller_y_inst': 9702.784000
+     of which used for sequential elements: 9702.784000 (100.00%)
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        |        +-Area including submodules.
+        |        | 
+     7654 4.18E+04 chip_core
+      195 3.06E+03 signal_processor$chip_core.signal_processor_x_inst
+      195 3.06E+03 signal_processor$chip_core.signal_processor_y_inst
+     1681 1.58E+04 spi_regs$chip_core.spi_regs_inst
+       42   223.91 state_machine$chip_core.state_machine_inst
+     2762  9.7E+03 wave_controller$chip_core.wave_controller_x_inst
+     2762  9.7E+03 wave_controller$chip_core.wave_controller_y_inst
+
+        +----------Count including submodules.
+        |        +-Area including submodules.
+        |        | 
+     6824        - wires
+     8947        - wire bits
+      271        - public wires
+     1784        - public wire bits
+      157        - ports
+     1072        - port bits
+        -        - memories
+        -        - memory bits
+        -        - processes
+     7654 4.18E+04 cells
+     2231        -   $_ANDNOT_
+      370        -   $_AND_
+     1050        -   $_MUX_
+      320        -   $_NAND_
+      304        -   $_NOR_
+      485        -   $_NOT_
+      253        -   $_ORNOT_
+     1027        -   $_OR_
+      353        -   $_XNOR_
+      700        -   $_XOR_
+        1        -   analog_block
+        3  190.982   gf180mcu_fd_sc_mcu7t5v0__dffq_1
+      557 4.16E+04   gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
+        6 4.16E+04 submodules
+        1 3.06E+03   signal_processor$chip_core.signal_processor_x_inst
+        1 3.06E+03   signal_processor$chip_core.signal_processor_y_inst
+        1 1.58E+04   spi_regs$chip_core.spi_regs_inst
+        1   223.91   state_machine$chip_core.state_machine_inst
+        1  9.7E+03   wave_controller$chip_core.wave_controller_x_inst
+        1  9.7E+03   wave_controller$chip_core.wave_controller_y_inst
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+   Area for cell type \analog_block is unknown!
+
+   Chip area for top module '\chip_core': 41763.680000
+     of which used for sequential elements: 41763.680000 (100.00%)
+

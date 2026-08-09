@@ -1,0 +1,42 @@
+Clock: clk
+Sources: clk 
+Generated: no
+Virtual: yes
+Propagated: no
+Period: 200.000000
+
+===========================================================================
+report_clock_properties
+============================================================================
+Clock                   Period          Waveform
+----------------------------------------------------
+clk                 200.000000    0.000000100.000000
+
+===========================================================================
+report_clock_latency
+============================================================================
+Clock clk
+rise -> rise
+    min     max
+0.000000 0.000000 source latency
+10.810534         network latency wave_controller_y_inst/raw_edge2_gf180mcu_fd_sc_mcu7t5v0__dffrnq_1_Q_14/CLK
+        10.810728 network latency signal_processor_x_inst/comp_raw_gf180mcu_fd_sc_mcu7t5v0__and2_1_A2_Z_gf180mcu_fd_sc_mcu7t5v0__dffrnq_1_D/CLK
+---------------
+10.810534 10.810728 latency
+        0.000194 skew
+
+fall -> fall
+    min     max
+0.000000 0.000000 source latency
+5.959230         network latency wave_controller_y_inst/raw_edge1_gf180mcu_fd_sc_mcu7t5v0__dffrnq_1_Q_15/CLK
+        5.959429 network latency wave_controller_x_inst/cal_timeout_gf180mcu_fd_sc_mcu7t5v0__oai21_1_A1_A2_gf180mcu_fd_sc_mcu7t5v0__and3_1_Z_A3_gf180mcu_fd_sc_mcu7t5v0__and4_1_Z_A4_gf180mcu_fd_sc_mcu7t5v0__and3_2_A2_Z_gf180mcu_fd_sc_mcu7t5v0__aoi21_2_A2_ZN_gf180mcu_fd_sc_mcu7t5v0__dffrnq_1_D/CLK
+---------------
+5.959230 5.959429 latency
+        0.000199 skew
+
+
+
+===========================================================================
+report_clock_min_period
+============================================================================
+clk period_min = 36.24 fmax = 27.60

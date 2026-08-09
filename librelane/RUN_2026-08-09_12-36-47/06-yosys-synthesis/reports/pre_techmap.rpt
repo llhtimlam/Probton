@@ -1,0 +1,317 @@
+143. Printing statistics.
+
+=== chip_core ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       90 wires
+      585 wire bits
+       86 public wires
+      581 public wire bits
+       14 ports
+       89 port bits
+       11 cells
+        2   $_AND_
+        2   $_NOT_
+        1   $_OR_
+        3   $_SDFFE_PN0P_
+        2   $_XOR_
+        1   analog_block
+        6 submodules
+        1   signal_processor$chip_core.signal_processor_x_inst
+        1   signal_processor$chip_core.signal_processor_y_inst
+        1   spi_regs$chip_core.spi_regs_inst
+        1   state_machine$chip_core.state_machine_inst
+        1   wave_controller$chip_core.wave_controller_x_inst
+        1   wave_controller$chip_core.wave_controller_y_inst
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_DFFE_PN0P_ is unknown!
+   Area for cell type $_DFF_PN0_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_SDFFE_PN0P_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+   Area for cell type \analog_block is unknown!
+
+=== signal_processor$chip_core.signal_processor_x_inst ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      161 wires
+      174 wire bits
+       19 public wires
+       32 public wire bits
+       14 ports
+       21 port bits
+      168 cells
+       23   $_ANDNOT_
+       32   $_AND_
+       27   $_DFFE_PN0P_
+       14   $_DFF_PN0_
+       14   $_MUX_
+        2   $_NAND_
+        3   $_NOR_
+       15   $_NOT_
+        8   $_ORNOT_
+       19   $_OR_
+        1   $_XNOR_
+       10   $_XOR_
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_DFFE_PN0P_ is unknown!
+   Area for cell type $_DFF_PN0_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+
+=== signal_processor$chip_core.signal_processor_y_inst ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      161 wires
+      174 wire bits
+       19 public wires
+       32 public wire bits
+       14 ports
+       21 port bits
+      168 cells
+       23   $_ANDNOT_
+       32   $_AND_
+       27   $_DFFE_PN0P_
+       14   $_DFF_PN0_
+       14   $_MUX_
+        2   $_NAND_
+        3   $_NOR_
+       15   $_NOT_
+        8   $_ORNOT_
+       19   $_OR_
+        1   $_XNOR_
+       10   $_XOR_
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_DFFE_PN0P_ is unknown!
+   Area for cell type $_DFF_PN0_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+
+=== spi_regs$chip_core.spi_regs_inst ===
+
+        +----------Local Count, excluding submodules.
+        | 
+     1340 wires
+     1796 wire bits
+       58 public wires
+      498 public wire bits
+       50 ports
+      470 port bits
+     1479 cells
+      543   $_ANDNOT_
+       14   $_AND_
+      202   $_DFFE_PN0P_
+       10   $_DFF_PN0_
+       14   $_MUX_
+       29   $_NAND_
+       24   $_NOR_
+       16   $_NOT_
+       23   $_ORNOT_
+      597   $_OR_
+        1   $_XNOR_
+        6   $_XOR_
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_DFFE_PN0P_ is unknown!
+   Area for cell type $_DFF_PN0_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+
+=== state_machine$chip_core.state_machine_inst ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       45 wires
+       47 wire bits
+       11 public wires
+       13 public wire bits
+       11 ports
+       13 port bits
+       39 cells
+       14   $_ANDNOT_
+        3   $_DFFE_PN0P_
+        1   $_MUX_
+        1   $_NAND_
+        2   $_NOR_
+        5   $_NOT_
+        2   $_ORNOT_
+       11   $_OR_
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_DFFE_PN0P_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+
+=== wave_controller$chip_core.wave_controller_x_inst ===
+
+        +----------Local Count, excluding submodules.
+        | 
+     2270 wires
+     2842 wire bits
+       39 public wires
+      314 public wire bits
+       27 ports
+      229 port bits
+     2651 cells
+      814   $_ANDNOT_
+      145   $_AND_
+      111   $_DFFE_PN0P_
+       19   $_DFF_PN0_
+      260   $_MUX_
+      143   $_NAND_
+      136   $_NOR_
+      216   $_NOT_
+      106   $_ORNOT_
+      190   $_OR_
+      175   $_XNOR_
+      336   $_XOR_
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_DFFE_PN0P_ is unknown!
+   Area for cell type $_DFF_PN0_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+
+=== wave_controller$chip_core.wave_controller_y_inst ===
+
+        +----------Local Count, excluding submodules.
+        | 
+     2270 wires
+     2842 wire bits
+       39 public wires
+      314 public wire bits
+       27 ports
+      229 port bits
+     2651 cells
+      814   $_ANDNOT_
+      145   $_AND_
+      111   $_DFFE_PN0P_
+       19   $_DFF_PN0_
+      260   $_MUX_
+      143   $_NAND_
+      136   $_NOR_
+      216   $_NOT_
+      106   $_ORNOT_
+      190   $_OR_
+      175   $_XNOR_
+      336   $_XOR_
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_DFFE_PN0P_ is unknown!
+   Area for cell type $_DFF_PN0_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        | 
+     7167 chip_core
+      168 signal_processor$chip_core.signal_processor_x_inst
+      168 signal_processor$chip_core.signal_processor_y_inst
+     1479 spi_regs$chip_core.spi_regs_inst
+       39 state_machine$chip_core.state_machine_inst
+     2651 wave_controller$chip_core.wave_controller_x_inst
+     2651 wave_controller$chip_core.wave_controller_y_inst
+
+        +----------Count including submodules.
+        | 
+     6337 wires
+     8460 wire bits
+      271 public wires
+     1784 public wire bits
+      157 ports
+     1072 port bits
+        - memories
+        - memory bits
+        - processes
+     7167 cells
+     2231   $_ANDNOT_
+      370   $_AND_
+      481   $_DFFE_PN0P_
+       76   $_DFF_PN0_
+      563   $_MUX_
+      320   $_NAND_
+      304   $_NOR_
+      485   $_NOT_
+      253   $_ORNOT_
+     1027   $_OR_
+        3   $_SDFFE_PN0P_
+      353   $_XNOR_
+      700   $_XOR_
+        1   analog_block
+        6 submodules
+        1   signal_processor$chip_core.signal_processor_x_inst
+        1   signal_processor$chip_core.signal_processor_y_inst
+        1   spi_regs$chip_core.spi_regs_inst
+        1   state_machine$chip_core.state_machine_inst
+        1   wave_controller$chip_core.wave_controller_x_inst
+        1   wave_controller$chip_core.wave_controller_y_inst
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_DFFE_PN0P_ is unknown!
+   Area for cell type $_DFF_PN0_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_SDFFE_PN0P_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+   Area for cell type \analog_block is unknown!
+

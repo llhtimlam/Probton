@@ -21,8 +21,8 @@
 
 module chip_core #(
     parameter NUM_INPUT_PADS = 1,   // Added = 1 from default for verilator quick test
-    parameter NUM_BIDIR_PADS = 20,  // Added = 20 from default for verilator quick test
-    parameter NUM_ANALOG_PADS = 60  // Added = 60 from default for verilator quick test
+    parameter NUM_BIDIR_PADS = 10,  // Added = 20 from default for verilator quick test
+    parameter NUM_ANALOG_PADS = 4  // Added = 60 from default for verilator quick test
     )(
     `ifdef USE_POWER_PINS
     inout  wire VDD,
@@ -312,61 +312,27 @@ module chip_core #(
 
 
 
-    // Module Routing
 
-    // Analog
-    // Readout (Switch -> TIA -> Low Pass Filter)
-    (* keep_hierarchy *)
-    analog_readout analog_readout_inst (
-        .read_en(read_en),
-        .ain (analog_readout_input),
-        .aout(analog_readout_output),
-        .vdd (VDD),
-        .vss (VSS)
-    );
-
-    // Wave mixer (X/Y)
-    (* keep_hierarchy *)
-    analog_wave_mixer analog_wave_mixer_x_inst (
-        .ain (analog_readout_output),
-        .aref(mems_drv_x),
-        .aout(analog_error_x_output),
-        .vdd (VDD),
-        .vss (VSS)
-    );
 
     (* keep_hierarchy *)
-    analog_wave_mixer analog_wave_mixer_y_inst (
-        .ain (analog_readout_output),
-        .aref(mems_drv_y),
-        .aout(analog_error_y_output),
-        .vdd (VDD),
-        .vss (VSS)
-    );
-
-    // Comparator (X/Y)
-    (* keep_hierarchy *)
-    analog_comp analog_comp_x_inst (
-        .clk (clk),
-        .ain (analog_error_x_output),
-        .aout(comp_x),
-        .vdd (VDD),
-        .vss (VSS)
-    );
-
-    (* keep_hierarchy *)
-    analog_comp analog_comp_y_inst (
-        .clk (clk),
-        .ain (analog_error_y_output),
-        .aout(comp_y),
-        .vdd (VDD),
-        .vss (VSS)
+     analog_block analog_block_inst (
+        .clk                   (clk),
+        .read_en               (read_en),
+        .comp_x                (comp_x),
+        .comp_y                (comp_y),
+        .mems_drv_x            (mems_drv_x),
+        .mems_drv_y            (mems_drv_y),
+        .analog_readout_input  (analog_readout_input),
+        .analog_readout_output (analog_readout_output),
+        .analog_error_x_output (analog_error_x_output),
+        .analog_error_y_output (analog_error_y_output)
     );
 
 
 
     // Digital
     // SPI
+    (* keep_hierarchy *)
     spi_regs spi_regs_inst (
         .clk(clk), .rst_n(rst_n),
         .spi_cs_n(spi_cs_n), .spi_sclk(spi_sclk), .spi_mosi(spi_mosi),
@@ -393,6 +359,7 @@ module chip_core #(
     );
 
     // State Machine
+    (* keep_hierarchy *)
     state_machine state_machine_inst (
         .clk(clk), .rst_n(rst_n),
         .boot_complete(boot_complete), .cfg_done(cfg_done), .phase_offset_imported(phase_offset_imported),
@@ -403,6 +370,7 @@ module chip_core #(
     );
 
     // Wave Controller (X/Y)
+    (* keep_hierarchy *)
     wave_controller wave_controller_x_inst (
         .clk(clk), .rst_n(rst_n), .soft_rst_n(soft_rst_n),
         .cfg_f_MEMS_fcw(cfg_f_MEMS_fcw_x),
@@ -420,6 +388,7 @@ module chip_core #(
         .latch_error(latch_error_x)
     );
 
+    (* keep_hierarchy *)
     wave_controller wave_controller_y_inst (
         .clk(clk), .rst_n(rst_n), .soft_rst_n(soft_rst_n),
         .cfg_f_MEMS_fcw(cfg_f_MEMS_fcw_y),
@@ -438,6 +407,7 @@ module chip_core #(
     );
 
     // Signal Processor (X/Y)
+    (* keep_hierarchy *)
     signal_processor signal_processor_x_inst (
         .clk(clk), .rst_n(rst_n), .soft_rst_n(soft_rst_n),
         .comp_raw(comp_x),
@@ -449,6 +419,7 @@ module chip_core #(
         .votes_in_phase(votes_in_phase_x), .votes_out_phase(votes_out_phase_x)    
     );
 
+    (* keep_hierarchy *)
     signal_processor signal_processor_y_inst (
         .clk(clk), .rst_n(rst_n), .soft_rst_n(soft_rst_n),
         .comp_raw(comp_y),

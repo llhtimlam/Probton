@@ -1,0 +1,24 @@
+Reading timing models for corner nom_tt_025C_3v30…
+Reading timing library for the 'nom_tt_025C_3v30' corner at '/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib'…
+Reading OpenROAD database at '/workspace/librelane/runs/RUN_2026-08-09_18-22-09/19-openroad-tapendcapinsertion/chip_core.odb'…
+Reading design constraints file at '/usr/local/lib/python3.12/dist-packages/librelane/scripts/base.sdc'…
+[INFO] Using clock clk…
+[INFO] Setting output delay to: 40
+[INFO] Setting input delay to: 40
+[INFO] Setting load to: 0.07291
+[INFO] Setting clock uncertainty to: 0.25
+[INFO] Setting clock transition to: 0.15
+[INFO] Setting timing derate to: 5%
+[INFO] Setting global connections...
+analog_block_inst matched with analog_block_inst
+[INFO ODB-0403] 0 connections made, 0 conflicts skipped.
+[WARNING PDN-0231] analog_block_inst is not connected to any power/ground nets.
++ pdngen 
+[INFO PDN-0001] Inserting grid: stdcell_grid
+[WARNING PDN-0178] Remaining channel (6.7200, 23.2200) - (308.5600, 43.4200) on Metal1 for nets: VDD, VSS
+[WARNING PDN-0178] Remaining channel (6.7200, 176.1000) - (308.5600, 196.3000) on Metal1 for nets: VDD, VSS
+[WARNING PDN-0178] Remaining channel (6.7200, 332.9000) - (912.8000, 349.1800) on Metal1 for nets: VDD
+[WARNING PDN-0178] Remaining channel (6.7200, 485.7800) - (912.8000, 502.0600) on Metal1 for nets: VSS
+[WARNING PDN-0178] Remaining channel (809.2000, 15.3800) - (912.8000, 235.5000) on Metal1 for nets: VDD, VSS
+[ERROR PDN-0179] Unable to repair all channels.
+PDN-0179

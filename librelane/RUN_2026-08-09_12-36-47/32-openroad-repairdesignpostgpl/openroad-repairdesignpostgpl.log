@@ -1,0 +1,55 @@
+Reading timing models for corner max_ss_125C_3v00…
+Reading timing library for the 'max_ss_125C_3v00' corner at '/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__ss_125C_3v00.lib'…
+Reading timing models for corner min_ff_n40C_3v60…
+Reading timing library for the 'min_ff_n40C_3v60' corner at '/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__ff_n40C_3v60.lib'…
+Reading timing models for corner nom_tt_025C_3v30…
+Reading timing library for the 'nom_tt_025C_3v30' corner at '/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib'…
+Reading OpenROAD database at '/workspace/librelane/runs/RUN_2026-08-09_12-36-47/28-openroad-globalplacement/chip_core.odb'…
+Reading design constraints file at '/usr/local/lib/python3.12/dist-packages/librelane/scripts/base.sdc'…
+[INFO] Using clock clk…
+[INFO] Setting output delay to: 40
+[INFO] Setting input delay to: 40
+[INFO] Setting load to: 0.07291
+[INFO] Setting clock uncertainty to: 0.25
+[INFO] Setting clock transition to: 0.15
+[INFO] Setting timing derate to: 5%
+[INFO RSZ-0027] Inserted 5 gf180mcu_fd_sc_mcu7t5v0__buf_1 input buffers.
+[INFO RSZ-0028] Inserted 11 gf180mcu_fd_sc_mcu7t5v0__buf_1 output buffers.
++ repair_design -verbose -max_wire_length 0 -slew_margin 20 -cap_margin 20
+Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------------------
+        0 |     +0.0% |       0 |       0 |             0 |      5410
+     1000 |     +2.2% |      93 |     171 |            52 |      4410
+     2000 |     +4.6% |     294 |     214 |           145 |      3410
+     3000 |     +7.0% |     433 |     339 |           210 |      2410
+     4000 |     +9.9% |     620 |     501 |           320 |      1410
+     5000 |    +15.1% |     935 |    1003 |           533 |       410
+    final |    +20.2% |    1024 |    1598 |           610 |         0
+---------------------------------------------------------------------
+[INFO RSZ-0034] Found 1132 slew violations.
+[INFO RSZ-0035] Found 106 fanout violations.
+[INFO RSZ-0039] Resized 1024 instances.
+[INFO RSZ-0038] Inserted 1598 buffers in 610 nets.
+[INFO RSZ-0042] Inserted 47 tie gf180mcu_fd_sc_mcu7t5v0__tiel instances.
+[INFO RSZ-0042] Inserted 14 tie gf180mcu_fd_sc_mcu7t5v0__tieh instances.
+[WARNING RSZ-0020] found 2 floating nets.
+ VDD
+ VSS
++ detailed_placement -max_displacement  500 100 
+Placement Analysis
+---------------------------------
+total displacement      48770.8 u
+average displacement        4.0 u
+max displacement           60.0 u
+original HPWL          312623.0 u
+legalized HPWL         360143.5 u
+delta HPWL                   15 %
+
+[INFO DPL-0020] Mirrored 3050 instances
+[INFO DPL-0021] HPWL before          360143.5 u
+[INFO DPL-0022] HPWL after           352571.7 u
+[INFO DPL-0023] HPWL delta               -2.1 %
+[WARNING DPL-0011] Padding check failed (1).
+ analog_block_inst
+[ERROR DPL-0033] detailed placement checks failed.
+Error: repair_design.tcl, 71 DPL-0033

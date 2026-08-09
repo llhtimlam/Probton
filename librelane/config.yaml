@@ -17,13 +17,86 @@ FP_CORE_UTIL: 30
 PL_TARGET_DENSITY_PCT: 55
 
 # Synthesis strategy
+USE_SLANG: true
+SLANG_ARGUMENTS: ['--keep-hierarchy']
+
+SYNTH_AUTONAME: true # human readable names
+SYNTH_SIZING: true
+SYNTH_ABC_DFF: true
+
 SYNTH_STRATEGY: "AREA 0"
 
+# Reserve Metal5 for Power line
+RT_MAX_LAYER: Metal4
+
+PDN_MULTILAYER: true
+PDN_ENABLE_RAILS: true
+PDN_RAIL_LAYER:       Metal1
+PDN_VERTICAL_LAYER:   Metal4
+PDN_HORIZONTAL_LAYER: Metal3
+
+# 3.3V Standard Cell
+DEFAULT_CORNER: nom_tt_025C_3v30
+STA_CORNERS:
+  - nom_tt_025C_3v30
+  - min_ff_n40C_3v60
+  - max_ss_125C_3v00
+
+LIB:
+  "*_tt_025C_3v30":
+    - /foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib
+  "*_ss_125C_3v00":
+    - /foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__ss_125C_3v00.lib
+  "*_ff_n40C_3v60":
+    - /foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__ff_n40C_3v60.lib
+
+CTS_OBSTRUCTION_AWARE: true
+
 # Route congestion
-GRT_ALLOW_CONGESTION: true
+GRT_ALLOW_CONGESTION: false
 
 # Optional: keep power nets (good practice)
 VDD_NETS:
   - VDD
 GND_NETS:
   - VSS
+
+DIE_AREA: [-1117.5, 0.0, 2235.0, 1117.5] # [0.0, 0.0, 1117.5, 558.75]
+
+# Pin allocation
+#"IO_PIN_ORDER_CFG": "dir::pin_order.cfg"
+#"ERRORS_ON_UNMATCHED_IO": "none"
+"DPL_CELL_PADDING": 2
+
+# Area reserve for Analog
+PDN_HORIZONTAL_HALO: 10
+PDN_VERTICAL_HALO:   10
+
+FP_MACRO_HORIZONTAL_HALO: 10
+FP_MACRO_VERTICAL_HALO: 10
+
+# Manual Placement for Analog
+MACROS:
+  analog_block:
+    gds:
+      - dir::analog_block.gds
+    lef:
+      - dir::analog_block.lef
+    vh:
+      - dir::../src/analog_macro.sv
+    instances:
+      "analog_block_inst":
+        location: [318.75, 0.0]
+        orientation: N
+
+# Ignore Macro
+LVS_IGNORE_CELLS:
+  - "analog_block"
+
+MAGIC_DRC_MAGLEFS:
+  - "dir::analog_block.lef"
+
+PDN_MACRO_CONNECTIONS:
+- "analog_block_inst VDD VSS VDD VSS"
+
+PDN_CFG: dir::pdn_cfg.tcl

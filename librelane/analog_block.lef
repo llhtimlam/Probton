@@ -1,0 +1,102 @@
+VERSION 5.8 ;
+BUSBITCHARS "[]" ;
+DIVIDERCHAR "/" ;
+
+MACRO analog_block
+  CLASS BLOCK ;
+  # Sets exact bounding box size relative to 0 0 origin (480 x 220)
+  SIZE 480 BY 220 ;
+  ORIGIN 0 0 ;
+
+  PIN clk
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3  ;
+      RECT 239.72 100.0 240.0 100.28 ;
+    END
+  END clk
+
+  PIN read_en
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3  ;
+      RECT 239.72 219.72 240.0 220.0 ;
+    END
+  END read_en
+
+  PIN mems_drv_x
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3  ;
+      RECT 239.72 135.0 240.0 135.28 ;
+    END
+  END mems_drv_x
+
+  PIN mems_drv_y
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3  ;
+      RECT 239.72 345.0 240.0 345.28 ;
+    END
+  END mems_drv_y
+
+  PIN comp_x
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3  ;
+      RECT 0.0 135.0 0.28 135.28 ;
+    END
+  END comp_x
+
+  PIN comp_y
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3  ;
+      RECT 479.72 135.0 480.0 135.28 ;
+    END
+  END comp_y
+
+  # IO PIN
+  PIN analog_error_x_output
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3  ;
+      RECT 87.00 0.0 87.28 0.28 ;
+    END
+  END analog_error_x_output
+
+  PIN analog_readout_input
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3  ;
+      RECT 189.00 0.0 189.28 0.28 ;
+    END
+  END analog_readout_input
+
+  PIN analog_readout_output
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3  ;
+      RECT 291.00 0.0 291.28 0.28 ;
+    END
+  END analog_readout_output
+
+  PIN analog_error_y_output
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3  ;
+      RECT 393.00 0.0 393.28 0.28 ;
+    END
+  END analog_error_y_output
+END analog_block
+END LIBRARY

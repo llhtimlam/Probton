@@ -1,0 +1,85 @@
+%Warning-UNUSEDSIGNAL: /workspace/src/chip_core.sv:311:17: Signal is not used: 'ref_wave_x'
+                                                         : ... note: In instance 'chip_core'
+  311 |     wire        ref_wave_x, ref_wave_y;
+      |                 ^~~~~~~~~~
+                       ... For warning description see https://verilator.org/warn/UNUSEDSIGNAL?v=5.050
+                       ... Use "/* verilator lint_off UNUSEDSIGNAL */" and lint_on around source to disable this message.
+%Warning-UNUSEDSIGNAL: /workspace/src/chip_core.sv:311:29: Signal is not used: 'ref_wave_y'
+                                                         : ... note: In instance 'chip_core'
+  311 |     wire        ref_wave_x, ref_wave_y;
+      |                             ^~~~~~~~~~
+%Warning-UNUSEDSIGNAL: /workspace/src/spi.sv:180:17: Bits of signal are not used: 'rx_shift'[7]
+                                                   : ... note: In instance 'chip_core.spi_regs_inst'
+  180 |     logic [7:0] rx_shift;
+      |                 ^~~~~~~~
+                       /workspace/src/chip_core.sv:17:1: ... note: In file included from 'chip_core.sv'
+%Warning-UNUSEDSIGNAL: /workspace/src/wave_controller.sv:148:18: Bits of signal are not used: 'raw_delta'[18:0]
+                                                               : ... note: In instance 'chip_core.wave_controller_y_inst'
+  148 |     logic [20:0] raw_delta;
+      |                  ^~~~~~~~~
+                       /workspace/src/chip_core.sv:19:1: ... note: In file included from 'chip_core.sv'
+%Warning-UNUSEDSIGNAL: /workspace/src/wave_controller.sv:349:27: Bits of signal are not used: 'ref_phase'[19:0]
+                                                               : ... note: In instance 'chip_core.wave_controller_y_inst'
+  349 |     logic unsigned [20:0] ref_phase;
+      |                           ^~~~~~~~~
+                       /workspace/src/chip_core.sv:19:1: ... note: In file included from 'chip_core.sv'
+%Warning-UNUSEDSIGNAL: /workspace/src/analog_macro.sv:78:17: Signal is not used: 'read_en'
+                                                           : ... note: In instance 'chip_core.analog_block_inst.analog_readout_inst'
+   78 |     input  wire read_en,
+      |                 ^~~~~~~
+                       /workspace/src/chip_core.sv:21:1: ... note: In file included from 'chip_core.sv'
+%Warning-UNUSEDSIGNAL: /workspace/src/analog_macro.sv:79:17: Signal is not used: 'ain'
+                                                           : ... note: In instance 'chip_core.analog_block_inst.analog_readout_inst'
+   79 |     input  wire ain,
+      |                 ^~~
+                       /workspace/src/chip_core.sv:21:1: ... note: In file included from 'chip_core.sv'
+%Warning-UNDRIVEN: /workspace/src/analog_macro.sv:80:17: Signal is not driven: 'aout'
+                                                       : ... note: In instance 'chip_core.analog_block_inst.analog_readout_inst'
+   80 |     output wire aout,
+      |                 ^~~~
+                   /workspace/src/chip_core.sv:21:1: ... note: In file included from 'chip_core.sv'
+                   ... For warning description see https://verilator.org/warn/UNDRIVEN?v=5.050
+                   ... Use "/* verilator lint_off UNDRIVEN */" and lint_on around source to disable this message.
+%Warning-UNUSEDSIGNAL: /workspace/src/analog_macro.sv:90:17: Signal is not used: 'ain'
+                                                           : ... note: In instance 'chip_core.analog_block_inst.analog_wave_mixer_y_inst'
+   90 |     input  wire ain,
+      |                 ^~~
+                       /workspace/src/chip_core.sv:21:1: ... note: In file included from 'chip_core.sv'
+%Warning-UNUSEDSIGNAL: /workspace/src/analog_macro.sv:91:17: Signal is not used: 'aref'
+                                                           : ... note: In instance 'chip_core.analog_block_inst.analog_wave_mixer_y_inst'
+   91 |     input  wire aref,
+      |                 ^~~~
+                       /workspace/src/chip_core.sv:21:1: ... note: In file included from 'chip_core.sv'
+%Warning-UNDRIVEN: /workspace/src/analog_macro.sv:92:17: Signal is not driven: 'aout'
+                                                       : ... note: In instance 'chip_core.analog_block_inst.analog_wave_mixer_y_inst'
+   92 |     output wire aout,
+      |                 ^~~~
+                   /workspace/src/chip_core.sv:21:1: ... note: In file included from 'chip_core.sv'
+%Warning-UNUSEDSIGNAL: /workspace/src/analog_macro.sv:102:17: Signal is not used: 'clk'
+                                                            : ... note: In instance 'chip_core.analog_block_inst.analog_comp_y_inst'
+  102 |     input  wire clk,
+      |                 ^~~
+                       /workspace/src/chip_core.sv:21:1: ... note: In file included from 'chip_core.sv'
+%Warning-UNUSEDSIGNAL: /workspace/src/analog_macro.sv:103:17: Signal is not used: 'ain'
+                                                            : ... note: In instance 'chip_core.analog_block_inst.analog_comp_y_inst'
+  103 |     input  wire ain,
+      |                 ^~~
+                       /workspace/src/chip_core.sv:21:1: ... note: In file included from 'chip_core.sv'
+%Warning-UNDRIVEN: /workspace/src/analog_macro.sv:104:17: Signal is not driven: 'aout'
+                                                        : ... note: In instance 'chip_core.analog_block_inst.analog_comp_y_inst'
+  104 |     output wire aout,
+      |                 ^~~~
+                   /workspace/src/chip_core.sv:21:1: ... note: In file included from 'chip_core.sv'
+%Warning-SYNCASYNCNET: /workspace/src/chip_core.sv:33:17: Signal flopped as both synchronous and async: 'rst_n'
+                       /workspace/src/wave_controller.sv:90:14: ... Location of async usage
+   90 |         if (!rst_n) begin
+      |              ^~~~~
+                       /workspace/src/chip_core.sv:19:1: ... note: In file included from 'chip_core.sv'
+                       /workspace/src/chip_core.sv:60:14: ... Location of sync usage
+   60 |         if (!rst_n) begin
+      |              ^~~~~
+                       ... For warning description see https://verilator.org/warn/SYNCASYNCNET?v=5.050
+                       ... Use "/* verilator lint_off SYNCASYNCNET */" and lint_on around source to disable this message.
+- V e r i l a t i o n   R e p o r t: Verilator 5.050 2026-07-01 rev v5.050
+- Verilator: Built from 0.466 MB sources in 326 modules, into 0.169 MB in 3 C++ files needing 0.000 MB
+- Verilator: Walltime 0.128 s (elab=0.008, cvt=0.019, bld=0.000); cpu 0.063 s on 1 threads; allocated 40.688 MB

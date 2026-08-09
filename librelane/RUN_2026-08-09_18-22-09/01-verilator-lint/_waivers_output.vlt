@@ -1,0 +1,47 @@
+// DESCRIPTION: Verilator output: Waivers generated with --waiver-output
+
+`verilator_config
+
+// Below are suggested waivers. You have three options:
+//   1. Fix the reason for the linter warning in the Verilog sources
+//   2. Keep the waiver permanently if you are sure it is okay
+//   3. Keep the waiver temporarily to suppress the output
+
+// lint_off -rule MODDUP -file "*/workspace/src/analog_macro.sv" -match "Duplicate declaration of module: 'analog_block'*"
+
+// lint_off -rule MODDUP -file "*/workspace/src/analog_macro.sv" -match "Duplicate declaration of module: 'analog_readout'*"
+
+// lint_off -rule MODDUP -file "*/workspace/src/analog_macro.sv" -match "Duplicate declaration of module: 'analog_wave_mixer'*"
+
+// lint_off -rule MODDUP -file "*/workspace/src/analog_macro.sv" -match "Duplicate declaration of module: 'analog_comp'*"
+
+// lint_off -rule UNUSEDSIGNAL -file "*/workspace/src/chip_core.sv" -match "Signal is not used: 'ref_wave_x'*"
+
+// lint_off -rule UNUSEDSIGNAL -file "*/workspace/src/chip_core.sv" -match "Signal is not used: 'ref_wave_y'*"
+
+// lint_off -rule UNUSEDSIGNAL -file "*/workspace/src/spi.sv" -match "Bits of signal are not used: 'rx_shift'[7]*"
+
+// lint_off -rule UNUSEDSIGNAL -file "*/workspace/src/wave_controller.sv" -match "Bits of signal are not used: 'raw_delta'[18:0]*"
+
+// lint_off -rule UNUSEDSIGNAL -file "*/workspace/src/wave_controller.sv" -match "Bits of signal are not used: 'ref_phase'[19:0]*"
+
+// lint_off -rule UNUSEDSIGNAL -file "*/workspace/src/analog_macro.sv" -match "Signal is not used: 'read_en'*"
+
+// lint_off -rule UNUSEDSIGNAL -file "*/workspace/src/analog_macro.sv" -match "Signal is not used: 'ain'*"
+
+// lint_off -rule UNDRIVEN -file "*/workspace/src/analog_macro.sv" -match "Signal is not driven: 'aout'*"
+
+// lint_off -rule UNUSEDSIGNAL -file "*/workspace/src/analog_macro.sv" -match "Signal is not used: 'ain'*"
+
+// lint_off -rule UNUSEDSIGNAL -file "*/workspace/src/analog_macro.sv" -match "Signal is not used: 'aref'*"
+
+// lint_off -rule UNDRIVEN -file "*/workspace/src/analog_macro.sv" -match "Signal is not driven: 'aout'*"
+
+// lint_off -rule UNUSEDSIGNAL -file "*/workspace/src/analog_macro.sv" -match "Signal is not used: 'clk'*"
+
+// lint_off -rule UNUSEDSIGNAL -file "*/workspace/src/analog_macro.sv" -match "Signal is not used: 'ain'*"
+
+// lint_off -rule UNDRIVEN -file "*/workspace/src/analog_macro.sv" -match "Signal is not driven: 'aout'*"
+
+// lint_off -rule SYNCASYNCNET -file "*/workspace/src/chip_core.sv" -match "Signal flopped as both synchronous and async: 'rst_n'*"
+
