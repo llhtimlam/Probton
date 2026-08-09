@@ -1,0 +1,446 @@
+Reading timing models for corner nom_tt_025C_5v00…
+Reading timing library for the 'nom_tt_025C_5v00' corner at '/workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__tt_025C_5v00.lib'…
+Reading timing library for the 'nom_tt_025C_5v00' corner at '/workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lib/gf180mcu_fd_io__tt_025C_5v00.lib'…
+Reading timing library for the 'nom_tt_025C_5v00' corner at '/workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lib/gf180mcu_ws_io__tt_025C_5v00.lib'…
+Reading OpenROAD database at '/workspace/librelane/runs/RUN_2026-08-09_19-31-35/42-openroad-repairantennas/1-openroad-diodeinsertion/chip_core.odb'…
+[WARNING ORD-2001] LEF macro gf180mcu_ef_io__bi_t pin ANA missing from liberty cell.
+Reading design constraints file at '/usr/local/lib/python3.12/dist-packages/librelane/scripts/base.sdc'…
+[INFO] Using clock clk…
+[INFO] Setting output delay to: 40
+[INFO] Setting input delay to: 40
+[INFO] Setting load to: 0.07291
+[INFO] Setting clock uncertainty to: 0.25
+[INFO] Setting clock transition to: 0.15
+[INFO] Setting timing derate to: 5%
+[INFO ORD-0030] Using 16 thread(s).
++ detailed_route -droute_end_iter 64 -or_seed 42 -verbose 1 -output_drc /workspace/librelane/runs/RUN_2026-08-09_19-31-35/44-openroad-detailedrouting/drt-run-0/chip_core.drc
+[INFO DRT-0149] Reading tech and libs.
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer Via1
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer Via1
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer Via2
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer Via2
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer Via3
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer Via3
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer Via4
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer Via4
+
+Units:                2000
+Number of layers:     11
+Number of macros:     246
+Number of vias:       60
+Number of viarulegen: 16
+
+[INFO DRT-0150] Reading design.
+
+Design:                   chip_core
+Die area:                 ( 0 0 ) ( 1344730 1380570 )
+Number of track patterns: 10
+Number of DEF vias:       0
+Number of components:     8694
+Number of terminals:      91
+Number of snets:          2
+Number of nets:           5998
+
+[INFO DRT-0167] List of default vias:
+  Layer Via2
+    default via: Via2_VH
+  Layer Via3
+    default via: Via3_HV
+  Layer Via4
+    default via: Via4_VH
+[INFO DRT-0162] Library cell analysis.
+[INFO DRT-0163] Instance analysis.
+[INFO DRT-0164] Number of unique instances = 206.
+[INFO DRT-0168] Init region query.
+[INFO DRT-0024]   Complete Poly2.
+[INFO DRT-0024]   Complete CON.
+[INFO DRT-0024]   Complete Metal1.
+[INFO DRT-0024]   Complete Via1.
+[INFO DRT-0024]   Complete Metal2.
+[INFO DRT-0024]   Complete Via2.
+[INFO DRT-0024]   Complete Metal3.
+[INFO DRT-0024]   Complete Via3.
+[INFO DRT-0024]   Complete Metal4.
+[INFO DRT-0024]   Complete Via4.
+[INFO DRT-0024]   Complete Metal5.
+[INFO DRT-0033] Poly2 shape region query size = 0.
+[INFO DRT-0033] CON shape region query size = 0.
+[INFO DRT-0033] Metal1 shape region query size = 143534.
+[INFO DRT-0033] Via1 shape region query size = 2058.
+[INFO DRT-0033] Metal2 shape region query size = 1391.
+[INFO DRT-0033] Via2 shape region query size = 2058.
+[INFO DRT-0033] Metal3 shape region query size = 1444.
+[INFO DRT-0033] Via3 shape region query size = 2058.
+[INFO DRT-0033] Metal4 shape region query size = 745.
+[INFO DRT-0033] Via4 shape region query size = 342.
+[INFO DRT-0033] Metal5 shape region query size = 59.
+[INFO DRT-0165] Start pin access.
+[INFO DRT-0076]   Complete 1000 pins.
+[INFO DRT-0078]   Complete 1512 pins.
+[INFO DRT-0079]   Complete 100 unique inst patterns.
+[INFO DRT-0079]   Complete 200 unique inst patterns.
+[INFO DRT-0081]   Complete 202 unique inst patterns.
+[INFO DRT-0084]   Complete 4108 groups.
+#scanned instances     = 8694
+#unique  instances     = 206
+#stdCellGenAp          = 3751
+#stdCellValidPlanarAp  = 0
+#stdCellValidViaAp     = 3294
+#stdCellPinNoAp        = 0
+#stdCellPinCnt         = 20388
+#instTermValidViaApCnt = 0
+#macroGenAp            = 0
+#macroValidPlanarAp    = 0
+#macroValidViaAp       = 0
+#macroNoAp             = 0
+[INFO DRT-0166] Complete pin access.
+[INFO DRT-0267] cpu time = 00:00:18, elapsed time = 00:00:01, memory = 168.07 (MB), peak = 168.07 (MB)
+
+[INFO DRT-0157] Number of guides:     49629
+
+[INFO DRT-0169] Post process guides.
+[INFO DRT-0176] GCELLGRID X 0 DO 80 STEP 16800 ;
+[INFO DRT-0177] GCELLGRID Y 0 DO 82 STEP 16800 ;
+[INFO DRT-0028]   Complete Poly2.
+[INFO DRT-0028]   Complete CON.
+[INFO DRT-0028]   Complete Metal1.
+[INFO DRT-0028]   Complete Via1.
+[INFO DRT-0028]   Complete Metal2.
+[INFO DRT-0028]   Complete Via2.
+[INFO DRT-0028]   Complete Metal3.
+[INFO DRT-0028]   Complete Via3.
+[INFO DRT-0028]   Complete Metal4.
+[INFO DRT-0028]   Complete Via4.
+[INFO DRT-0028]   Complete Metal5.
+[INFO DRT-0178] Init guide query.
+[INFO DRT-0035]   Complete Poly2 (guide).
+[INFO DRT-0035]   Complete CON (guide).
+[INFO DRT-0035]   Complete Metal1 (guide).
+[INFO DRT-0035]   Complete Via1 (guide).
+[INFO DRT-0035]   Complete Metal2 (guide).
+[INFO DRT-0035]   Complete Via2 (guide).
+[INFO DRT-0035]   Complete Metal3 (guide).
+[INFO DRT-0035]   Complete Via3 (guide).
+[INFO DRT-0035]   Complete Metal4 (guide).
+[INFO DRT-0035]   Complete Via4 (guide).
+[INFO DRT-0035]   Complete Metal5 (guide).
+[INFO DRT-0036] Poly2 guide region query size = 0.
+[INFO DRT-0036] CON guide region query size = 0.
+[INFO DRT-0036] Metal1 guide region query size = 17559.
+[INFO DRT-0036] Via1 guide region query size = 0.
+[INFO DRT-0036] Metal2 guide region query size = 15609.
+[INFO DRT-0036] Via2 guide region query size = 0.
+[INFO DRT-0036] Metal3 guide region query size = 7743.
+[INFO DRT-0036] Via3 guide region query size = 0.
+[INFO DRT-0036] Metal4 guide region query size = 383.
+[INFO DRT-0036] Via4 guide region query size = 0.
+[INFO DRT-0036] Metal5 guide region query size = 124.
+[INFO DRT-0179] Init gr pin query.
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 185.69 (MB), peak = 185.69 (MB)
+[INFO DRT-0245] skipped writing guide updates to database.
+[INFO DRT-0185] Post process initialize RPin region query.
+[INFO DRT-0181] Start track assignment.
+[INFO DRT-0184] Done with 15992 vertical wires in 2 frboxes and 25426 horizontal wires in 2 frboxes.
+[INFO DRT-0186] Done with 4312 vertical wires in 2 frboxes and 3647 horizontal wires in 2 frboxes.
+[INFO DRT-0182] Complete track assignment.
+[INFO DRT-0267] cpu time = 00:00:01, elapsed time = 00:00:01, memory = 272.68 (MB), peak = 272.68 (MB)
+[INFO DRT-0187] Start routing data preparation.
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 279.81 (MB), peak = 279.81 (MB)
+[INFO DRT-0194] Start detail routing.
+[INFO DRT-0195] Start 0th optimization iteration.
+    Completing 10% with 0 violations.
+    elapsed time = 00:00:00, memory = 381.93 (MB).
+    Completing 20% with 0 violations.
+    elapsed time = 00:00:00, memory = 402.93 (MB).
+    Completing 30% with 348 violations.
+    elapsed time = 00:00:01, memory = 406.96 (MB).
+    Completing 40% with 348 violations.
+    elapsed time = 00:00:01, memory = 409.83 (MB).
+    Completing 50% with 348 violations.
+    elapsed time = 00:00:02, memory = 421.21 (MB).
+    Completing 60% with 624 violations.
+    elapsed time = 00:00:03, memory = 434.33 (MB).
+    Completing 70% with 624 violations.
+    elapsed time = 00:00:03, memory = 436.33 (MB).
+    Completing 80% with 942 violations.
+    elapsed time = 00:00:04, memory = 452.48 (MB).
+    Completing 90% with 942 violations.
+    elapsed time = 00:00:04, memory = 453.61 (MB).
+    Completing 100% with 1279 violations.
+    elapsed time = 00:00:05, memory = 462.73 (MB).
+[INFO DRT-0199]   Number of violations = 1603.
+Viol/Layer      Metal1 Metal2 Metal3 Metal4
+Metal Spacing        0    136     17      0
+Recheck              4    258     62      0
+Short                0   1018    106      2
+[INFO DRT-0267] cpu time = 00:00:51, elapsed time = 00:00:06, memory = 761.98 (MB), peak = 761.98 (MB)
+Total wire length = 338130 um.
+Total wire length on LAYER Metal1 = 0 um.
+Total wire length on LAYER Metal2 = 160946 um.
+Total wire length on LAYER Metal3 = 144771 um.
+Total wire length on LAYER Metal4 = 18606 um.
+Total wire length on LAYER Metal5 = 13806 um.
+Total number of vias = 40714.
+Up-via summary (total 40714):
+
+----------------
+  Poly2        0
+ Metal1    20879
+ Metal2    18666
+ Metal3      923
+ Metal4      246
+----------------
+       40714
+
+
+[INFO DRT-0195] Start 1st optimization iteration.
+    Completing 10% with 1603 violations.
+    elapsed time = 00:00:00, memory = 767.23 (MB).
+    Completing 20% with 1603 violations.
+    elapsed time = 00:00:00, memory = 768.48 (MB).
+    Completing 30% with 1358 violations.
+    elapsed time = 00:00:01, memory = 771.23 (MB).
+    Completing 40% with 1358 violations.
+    elapsed time = 00:00:01, memory = 775.48 (MB).
+    Completing 50% with 1358 violations.
+    elapsed time = 00:00:02, memory = 780.61 (MB).
+    Completing 60% with 1138 violations.
+    elapsed time = 00:00:03, memory = 782.73 (MB).
+    Completing 70% with 1138 violations.
+    elapsed time = 00:00:03, memory = 784.61 (MB).
+    Completing 80% with 834 violations.
+    elapsed time = 00:00:04, memory = 789.23 (MB).
+    Completing 90% with 834 violations.
+    elapsed time = 00:00:04, memory = 789.61 (MB).
+    Completing 100% with 602 violations.
+    elapsed time = 00:00:04, memory = 792.73 (MB).
+[INFO DRT-0199]   Number of violations = 602.
+Viol/Layer      Metal2 Metal3
+Metal Spacing       78      1
+Short              501     22
+[INFO DRT-0267] cpu time = 00:00:44, elapsed time = 00:00:04, memory = 793.86 (MB), peak = 793.86 (MB)
+Total wire length = 336369 um.
+Total wire length on LAYER Metal1 = 0 um.
+Total wire length on LAYER Metal2 = 159205 um.
+Total wire length on LAYER Metal3 = 143930 um.
+Total wire length on LAYER Metal4 = 19371 um.
+Total wire length on LAYER Metal5 = 13860 um.
+Total number of vias = 40669.
+Up-via summary (total 40669):
+
+----------------
+  Poly2        0
+ Metal1    20893
+ Metal2    18450
+ Metal3     1081
+ Metal4      245
+----------------
+       40669
+
+
+[INFO DRT-0195] Start 2nd optimization iteration.
+    Completing 10% with 602 violations.
+    elapsed time = 00:00:00, memory = 793.86 (MB).
+    Completing 20% with 602 violations.
+    elapsed time = 00:00:00, memory = 793.86 (MB).
+    Completing 30% with 543 violations.
+    elapsed time = 00:00:00, memory = 799.23 (MB).
+    Completing 40% with 543 violations.
+    elapsed time = 00:00:01, memory = 799.23 (MB).
+    Completing 50% with 543 violations.
+    elapsed time = 00:00:01, memory = 804.23 (MB).
+    Completing 60% with 506 violations.
+    elapsed time = 00:00:02, memory = 804.23 (MB).
+    Completing 70% with 506 violations.
+    elapsed time = 00:00:02, memory = 804.23 (MB).
+    Completing 80% with 507 violations.
+    elapsed time = 00:00:02, memory = 804.23 (MB).
+    Completing 90% with 507 violations.
+    elapsed time = 00:00:03, memory = 804.23 (MB).
+    Completing 100% with 505 violations.
+    elapsed time = 00:00:04, memory = 807.86 (MB).
+[INFO DRT-0199]   Number of violations = 505.
+Viol/Layer      Metal2 Metal3
+Metal Spacing       63      1
+Short              429     12
+[INFO DRT-0267] cpu time = 00:00:38, elapsed time = 00:00:04, memory = 810.86 (MB), peak = 810.86 (MB)
+Total wire length = 335886 um.
+Total wire length on LAYER Metal1 = 0 um.
+Total wire length on LAYER Metal2 = 158958 um.
+Total wire length on LAYER Metal3 = 143626 um.
+Total wire length on LAYER Metal4 = 19444 um.
+Total wire length on LAYER Metal5 = 13858 um.
+Total number of vias = 40454.
+Up-via summary (total 40454):
+
+----------------
+  Poly2        0
+ Metal1    20885
+ Metal2    18263
+ Metal3     1058
+ Metal4      248
+----------------
+       40454
+
+
+[INFO DRT-0195] Start 3rd optimization iteration.
+    Completing 10% with 505 violations.
+    elapsed time = 00:00:00, memory = 810.86 (MB).
+    Completing 20% with 505 violations.
+    elapsed time = 00:00:00, memory = 810.98 (MB).
+    Completing 30% with 355 violations.
+    elapsed time = 00:00:00, memory = 810.98 (MB).
+    Completing 40% with 355 violations.
+    elapsed time = 00:00:00, memory = 810.98 (MB).
+    Completing 50% with 355 violations.
+    elapsed time = 00:00:00, memory = 810.98 (MB).
+    Completing 60% with 262 violations.
+    elapsed time = 00:00:01, memory = 810.98 (MB).
+    Completing 70% with 262 violations.
+    elapsed time = 00:00:01, memory = 810.98 (MB).
+    Completing 80% with 123 violations.
+    elapsed time = 00:00:01, memory = 811.23 (MB).
+    Completing 90% with 123 violations.
+    elapsed time = 00:00:01, memory = 811.23 (MB).
+    Completing 100% with 1 violations.
+    elapsed time = 00:00:01, memory = 811.23 (MB).
+[INFO DRT-0199]   Number of violations = 1.
+Viol/Layer      Metal2
+Metal Spacing        1
+[INFO DRT-0267] cpu time = 00:00:18, elapsed time = 00:00:01, memory = 811.23 (MB), peak = 811.23 (MB)
+Total wire length = 335266 um.
+Total wire length on LAYER Metal1 = 0 um.
+Total wire length on LAYER Metal2 = 151296 um.
+Total wire length on LAYER Metal3 = 143952 um.
+Total wire length on LAYER Metal4 = 26155 um.
+Total wire length on LAYER Metal5 = 13861 um.
+Total number of vias = 41369.
+Up-via summary (total 41369):
+
+----------------
+  Poly2        0
+ Metal1    20891
+ Metal2    18566
+ Metal3     1664
+ Metal4      248
+----------------
+       41369
+
+
+[INFO DRT-0195] Start 4th guides tiles iteration.
+    Completing 50% with 1 violations.
+    elapsed time = 00:00:00, memory = 811.23 (MB).
+    Completing 100% with 1 violations.
+    elapsed time = 00:00:00, memory = 811.23 (MB).
+[INFO DRT-0199]   Number of violations = 1.
+Viol/Layer      Metal2
+Short                1
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 811.23 (MB), peak = 811.23 (MB)
+Total wire length = 335275 um.
+Total wire length on LAYER Metal1 = 0 um.
+Total wire length on LAYER Metal2 = 151287 um.
+Total wire length on LAYER Metal3 = 143953 um.
+Total wire length on LAYER Metal4 = 26171 um.
+Total wire length on LAYER Metal5 = 13861 um.
+Total number of vias = 41378.
+Up-via summary (total 41378):
+
+----------------
+  Poly2        0
+ Metal1    20891
+ Metal2    18570
+ Metal3     1669
+ Metal4      248
+----------------
+       41378
+
+
+[INFO DRT-0195] Start 5th stubborn tiles iteration.
+    Completing 10% with 1 violations.
+    elapsed time = 00:00:00, memory = 811.23 (MB).
+    Completing 20% with 1 violations.
+    elapsed time = 00:00:00, memory = 811.23 (MB).
+    Completing 30% with 1 violations.
+    elapsed time = 00:00:00, memory = 811.23 (MB).
+    Completing 40% with 1 violations.
+    elapsed time = 00:00:00, memory = 811.23 (MB).
+    Completing 50% with 1 violations.
+    elapsed time = 00:00:00, memory = 811.23 (MB).
+    Completing 60% with 1 violations.
+    elapsed time = 00:00:00, memory = 811.23 (MB).
+    Completing 70% with 1 violations.
+    elapsed time = 00:00:00, memory = 811.23 (MB).
+    Completing 80% with 1 violations.
+    elapsed time = 00:00:00, memory = 818.36 (MB).
+    Completing 90% with 1 violations.
+    elapsed time = 00:00:01, memory = 829.36 (MB).
+    Completing 100% with 0 violations.
+    elapsed time = 00:00:01, memory = 832.86 (MB).
+[INFO DRT-0199]   Number of violations = 0.
+[INFO DRT-0267] cpu time = 00:00:16, elapsed time = 00:00:01, memory = 832.86 (MB), peak = 832.86 (MB)
+Total wire length = 335269 um.
+Total wire length on LAYER Metal1 = 0 um.
+Total wire length on LAYER Metal2 = 151292 um.
+Total wire length on LAYER Metal3 = 143955 um.
+Total wire length on LAYER Metal4 = 26158 um.
+Total wire length on LAYER Metal5 = 13861 um.
+Total number of vias = 41373.
+Up-via summary (total 41373):
+
+----------------
+  Poly2        0
+ Metal1    20891
+ Metal2    18569
+ Metal3     1665
+ Metal4      248
+----------------
+       41373
+
+
+[INFO DRT-0198] Complete detail routing.
+Total wire length = 335269 um.
+Total wire length on LAYER Metal1 = 0 um.
+Total wire length on LAYER Metal2 = 151292 um.
+Total wire length on LAYER Metal3 = 143955 um.
+Total wire length on LAYER Metal4 = 26158 um.
+Total wire length on LAYER Metal5 = 13861 um.
+Total number of vias = 41373.
+Up-via summary (total 41373):
+
+----------------
+  Poly2        0
+ Metal1    20891
+ Metal2    18569
+ Metal3     1665
+ Metal4      248
+----------------
+       41373
+
+
+[INFO DRT-0267] cpu time = 00:02:50, elapsed time = 00:00:19, memory = 832.98 (MB), peak = 832.98 (MB)
+
+[INFO DRT-0180] Post processing.
++ check_antennas 
+[INFO ANT-0002] Found 0 net violations.
+[INFO ANT-0001] Found 0 pin violations.
+Setting global connections for newly added cells…
+[INFO] Setting global connections...
+[INFO ODB-0403] 0 connections made, 0 conflicts skipped.
+Updating metrics…
+Cell type report:                       Count       Area
+  Endcap cell                             336    1475.17
+  Tap cell                               2339   10269.15
+  Tie cell                                 61     535.63
+  Buffer                                   16     210.74
+  Clock buffer                             74    4355.28
+  Timing Repair Buffer                    632   16775.72
+  Inverter                                446    3916.24
+  Clock inverter                           27     434.65
+  Sequential cell                         561   41851.49
+  Multi-Input combinational cell         4202   83970.79
+  Total                                  8694  163794.85
+Writing OpenROAD database to '/workspace/librelane/runs/RUN_2026-08-09_19-31-35/44-openroad-detailedrouting/chip_core.odb'…
+Writing netlist to '/workspace/librelane/runs/RUN_2026-08-09_19-31-35/44-openroad-detailedrouting/chip_core.nl.v'…
+Writing powered netlist to '/workspace/librelane/runs/RUN_2026-08-09_19-31-35/44-openroad-detailedrouting/chip_core.pnl.v'…
+Writing layout to '/workspace/librelane/runs/RUN_2026-08-09_19-31-35/44-openroad-detailedrouting/chip_core.def'…
+Writing timing constraints to '/workspace/librelane/runs/RUN_2026-08-09_19-31-35/44-openroad-detailedrouting/chip_core.sdc'…

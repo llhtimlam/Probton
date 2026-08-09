@@ -1,0 +1,52 @@
+%Warning-UNUSEDSIGNAL: /workspace/src/chip_core.sv:311:17: Signal is not used: 'ref_wave_x'
+                                                         : ... note: In instance 'chip_core'
+  311 |     wire        ref_wave_x, ref_wave_y;
+      |                 ^~~~~~~~~~
+                       ... For warning description see https://verilator.org/warn/UNUSEDSIGNAL?v=5.050
+                       ... Use "/* verilator lint_off UNUSEDSIGNAL */" and lint_on around source to disable this message.
+%Warning-UNUSEDSIGNAL: /workspace/src/chip_core.sv:311:29: Signal is not used: 'ref_wave_y'
+                                                         : ... note: In instance 'chip_core'
+  311 |     wire        ref_wave_x, ref_wave_y;
+      |                             ^~~~~~~~~~
+%Warning-UNUSEDSIGNAL: /workspace/src/spi.sv:180:17: Bits of signal are not used: 'rx_shift'[7]
+                                                   : ... note: In instance 'chip_core.spi_regs_inst'
+  180 |     logic [7:0] rx_shift;
+      |                 ^~~~~~~~
+                       /workspace/src/chip_core.sv:17:1: ... note: In file included from 'chip_core.sv'
+%Warning-UNUSEDSIGNAL: /workspace/src/wave_controller.sv:148:18: Bits of signal are not used: 'raw_delta'[18:0]
+                                                               : ... note: In instance 'chip_core.wave_controller_y_inst'
+  148 |     logic [20:0] raw_delta;
+      |                  ^~~~~~~~~
+                       /workspace/src/chip_core.sv:19:1: ... note: In file included from 'chip_core.sv'
+%Warning-UNUSEDSIGNAL: /workspace/src/wave_controller.sv:349:27: Bits of signal are not used: 'ref_phase'[19:0]
+                                                               : ... note: In instance 'chip_core.wave_controller_y_inst'
+  349 |     logic unsigned [20:0] ref_phase;
+      |                           ^~~~~~~~~
+                       /workspace/src/chip_core.sv:19:1: ... note: In file included from 'chip_core.sv'
+%Warning-SYNCASYNCNET: /workspace/src/chip_core.sv:33:17: Signal flopped as both synchronous and async: 'rst_n'
+                       /workspace/src/wave_controller.sv:90:14: ... Location of async usage
+   90 |         if (!rst_n) begin
+      |              ^~~~~
+                       /workspace/src/chip_core.sv:19:1: ... note: In file included from 'chip_core.sv'
+                       /workspace/src/chip_core.sv:60:14: ... Location of sync usage
+   60 |         if (!rst_n) begin
+      |              ^~~~~
+                       ... For warning description see https://verilator.org/warn/SYNCASYNCNET?v=5.050
+                       ... Use "/* verilator lint_off SYNCASYNCNET */" and lint_on around source to disable this message.
+%Warning-UNOPTFLAT: /workspace/src/chip_core.sv:126:21: Signal unoptimizable: Circular combinational logic: 'chip_core.analog_readout_output'
+  126 |     (* keep *) wire analog_readout_output, analog_error_x_output, analog_error_y_output;
+      |                     ^~~~~~~~~~~~~~~~~~~~~
+                    ... For warning description see https://verilator.org/warn/UNOPTFLAT?v=5.050
+                    ... Use "/* verilator lint_off UNOPTFLAT */" and lint_on around source to disable this message.
+                    /workspace/src/chip_core.sv:126:21:      Example path: chip_core.analog_readout_output
+                    /workspace/src/chip_core.sv:126:44:      Example path: ASSIGNW
+                    /workspace/src/chip_core.sv:126:44:      Example path: chip_core.analog_error_x_output
+                    /workspace/src/chip_core.sv:128:22:      Example path: ASSIGNW
+                    /workspace/src/chip_core.sv:127:12:      Example path: chip_core.analog__out__strong__out3
+                    /workspace/src/chip_core.sv:50:39:      Example path: ASSIGNW
+                    /workspace/src/chip_core.sv:50:39:      Example path: analog
+                    /workspace/src/analog_macro.sv:83:17:      Example path: ASSIGNW
+                    /workspace/src/chip_core.sv:126:21:      Example path: chip_core.analog_readout_output
+- V e r i l a t i o n   R e p o r t: Verilator 5.050 2026-07-01 rev v5.050
+- Verilator: Built from 0.467 MB sources in 326 modules, into 0.184 MB in 3 C++ files needing 0.000 MB
+- Verilator: Walltime 0.119 s (elab=0.008, cvt=0.020, bld=0.000); cpu 0.061 s on 1 threads; allocated 40.684 MB

@@ -1,0 +1,331 @@
+156. Printing statistics.
+
+=== analog_block ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+       12        - wires
+       12        - wire bits
+       12        - public wires
+       12        - public wire bits
+       10        - ports
+       10        - port bits
+        5        - submodules
+        2        -   analog_comp
+        1        -   analog_readout
+        2        -   analog_wave_mixer
+
+   Chip area for module '\analog_block': 0.000000
+     of which used for sequential elements: 0.000000 (-nan%)
+
+=== analog_comp ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+        5        - wires
+        5        - wire bits
+        5        - public wires
+        5        - public wire bits
+        5        - ports
+        5        - port bits
+        1   63.661 cells
+        1   63.661   gf180mcu_fd_sc_mcu7t5v0__dffq_1
+
+   Chip area for module '\analog_comp': 63.660800
+     of which used for sequential elements: 63.660800 (100.00%)
+
+=== analog_readout ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+        5        - wires
+        5        - wire bits
+        5        - public wires
+        5        - public wire bits
+        5        - ports
+        5        - port bits
+        1   17.562 cells
+        1   17.562   gf180mcu_fd_sc_mcu7t5v0__and2_1
+
+   Chip area for module '\analog_readout': 17.561600
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== analog_wave_mixer ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+        5        - wires
+        5        - wire bits
+        5        - public wires
+        5        - public wire bits
+        5        - ports
+        5        - port bits
+        1   17.562 cells
+        1   17.562   gf180mcu_fd_sc_mcu7t5v0__and2_1
+
+   Chip area for module '\analog_wave_mixer': 17.561600
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== chip_core ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      514        - wires
+      589        - wire bits
+      506        - public wires
+      581        - public wire bits
+       14        - ports
+       89        - port bits
+       87 1.07E+03 cells
+        2   35.123   gf180mcu_fd_sc_mcu7t5v0__and2_1
+        2   35.123   gf180mcu_fd_sc_mcu7t5v0__aoi21_1
+       12  158.054   gf180mcu_fd_sc_mcu7t5v0__buf_1
+        1    8.781   gf180mcu_fd_sc_mcu7t5v0__clkinv_1
+        3  190.982   gf180mcu_fd_sc_mcu7t5v0__dffq_1
+        1   10.976   gf180mcu_fd_sc_mcu7t5v0__nand2_1
+        1   15.366   gf180mcu_fd_sc_mcu7t5v0__nand3_1
+        1   13.171   gf180mcu_fd_sc_mcu7t5v0__nor2_1
+        1   17.562   gf180mcu_fd_sc_mcu7t5v0__oai21_1
+        1   17.562   gf180mcu_fd_sc_mcu7t5v0__or2_1
+       14  122.931   gf180mcu_fd_sc_mcu7t5v0__tieh
+       47  412.698   gf180mcu_fd_sc_mcu7t5v0__tiel
+        1   28.538   gf180mcu_fd_sc_mcu7t5v0__xnor2_1
+        7        - submodules
+        1        -   analog_block
+        2        -   signal_processor
+        1        -   spi_regs
+        1        -   state_machine
+        2        -   wave_controller
+
+   Chip area for module '\chip_core': 1066.867200
+     of which used for sequential elements: 190.982400 (17.90%)
+
+=== signal_processor ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      148        - wires
+      155        - wire bits
+       40        - public wires
+       47        - public wire bits
+       14        - ports
+       21        - port bits
+      149  4879.93 cells
+       16  280.986   gf180mcu_fd_sc_mcu7t5v0__and2_1
+        1   17.562   gf180mcu_fd_sc_mcu7t5v0__aoi21_1
+        1   19.757   gf180mcu_fd_sc_mcu7t5v0__aoi22_1
+        9   79.027   gf180mcu_fd_sc_mcu7t5v0__clkinv_1
+       41 3.06E+03   gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
+       21  230.496   gf180mcu_fd_sc_mcu7t5v0__nand2_1
+        6   92.198   gf180mcu_fd_sc_mcu7t5v0__nand3_1
+        3    59.27   gf180mcu_fd_sc_mcu7t5v0__nand4_1
+       12  158.054   gf180mcu_fd_sc_mcu7t5v0__nor2_1
+        2   35.123   gf180mcu_fd_sc_mcu7t5v0__nor3_1
+        2   43.904   gf180mcu_fd_sc_mcu7t5v0__nor4_1
+        2   43.904   gf180mcu_fd_sc_mcu7t5v0__oai211_1
+       12  210.739   gf180mcu_fd_sc_mcu7t5v0__oai21_1
+        2   43.904   gf180mcu_fd_sc_mcu7t5v0__oai22_1
+        2   48.294   gf180mcu_fd_sc_mcu7t5v0__oai31_1
+        1   26.342   gf180mcu_fd_sc_mcu7t5v0__oai32_1
+        1   21.952   gf180mcu_fd_sc_mcu7t5v0__or3_1
+        6  171.226   gf180mcu_fd_sc_mcu7t5v0__xnor2_1
+        9  237.082   gf180mcu_fd_sc_mcu7t5v0__xor2_1
+
+   Chip area for module '\signal_processor': 4879.929600
+     of which used for sequential elements: 3060.108800 (62.71%)
+
+=== spi_regs ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      825        - wires
+     1245        - wire bits
+       99        - public wires
+      519        - public wire bits
+       50        - ports
+      470        - port bits
+      939 3.14E+04 cells
+        7  122.931   gf180mcu_fd_sc_mcu7t5v0__and2_1
+        1   21.952   gf180mcu_fd_sc_mcu7t5v0__and3_1
+        7   169.03   gf180mcu_fd_sc_mcu7t5v0__and4_1
+        6   105.37   gf180mcu_fd_sc_mcu7t5v0__aoi21_1
+        7   169.03   gf180mcu_fd_sc_mcu7t5v0__aoi221_1
+       20  614.656   gf180mcu_fd_sc_mcu7t5v0__aoi222_1
+      194 3.83E+03   gf180mcu_fd_sc_mcu7t5v0__aoi22_1
+       22  193.178   gf180mcu_fd_sc_mcu7t5v0__clkinv_1
+      211 1.57E+04   gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
+        2  158.054   gf180mcu_fd_sc_mcu7t5v0__dffsnq_1
+      178 5.86E+03   gf180mcu_fd_sc_mcu7t5v0__mux2_2
+       51  559.776   gf180mcu_fd_sc_mcu7t5v0__nand2_1
+       28  430.259   gf180mcu_fd_sc_mcu7t5v0__nand3_1
+       52 1.03E+03   gf180mcu_fd_sc_mcu7t5v0__nand4_1
+       98 1.29E+03   gf180mcu_fd_sc_mcu7t5v0__nor2_1
+       15  263.424   gf180mcu_fd_sc_mcu7t5v0__nor3_1
+       11  241.472   gf180mcu_fd_sc_mcu7t5v0__nor4_1
+        1   21.952   gf180mcu_fd_sc_mcu7t5v0__oai211_1
+       15  263.424   gf180mcu_fd_sc_mcu7t5v0__oai21_1
+        1   26.342   gf180mcu_fd_sc_mcu7t5v0__oai221_1
+        7   169.03   gf180mcu_fd_sc_mcu7t5v0__oai31_1
+        1   21.952   gf180mcu_fd_sc_mcu7t5v0__or3_1
+        2   52.685   gf180mcu_fd_sc_mcu7t5v0__or4_1
+        2   52.685   gf180mcu_fd_sc_mcu7t5v0__xor2_1
+
+   Chip area for module '\spi_regs': 31417.702400
+     of which used for sequential elements: 15906.419200 (50.63%)
+
+=== state_machine ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+       29        - wires
+       31        - wire bits
+       11        - public wires
+       13        - public wire bits
+       11        - ports
+       13        - port bits
+       23   544.41 cells
+        2   35.123   gf180mcu_fd_sc_mcu7t5v0__and2_1
+        2   43.904   gf180mcu_fd_sc_mcu7t5v0__aoi211_1
+        1   17.562   gf180mcu_fd_sc_mcu7t5v0__aoi21_1
+        1   19.757   gf180mcu_fd_sc_mcu7t5v0__aoi22_1
+        3   26.342   gf180mcu_fd_sc_mcu7t5v0__clkinv_1
+        3   223.91   gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
+        1   10.976   gf180mcu_fd_sc_mcu7t5v0__nand2_1
+        4   52.685   gf180mcu_fd_sc_mcu7t5v0__nor2_1
+        2   35.123   gf180mcu_fd_sc_mcu7t5v0__nor3_1
+        3   52.685   gf180mcu_fd_sc_mcu7t5v0__oai21_1
+        1   26.342   gf180mcu_fd_sc_mcu7t5v0__or4_1
+
+   Chip area for module '\state_machine': 544.409600
+     of which used for sequential elements: 223.910400 (41.13%)
+
+=== wave_controller ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     1852        - wires
+     2054        - wire bits
+       77        - public wires
+      279        - public wire bits
+       27        - ports
+      229        - port bits
+     1967 4.36E+04 cells
+       53  930.765   gf180mcu_fd_sc_mcu7t5v0__and2_1
+       24  526.848   gf180mcu_fd_sc_mcu7t5v0__and3_1
+        3   72.442   gf180mcu_fd_sc_mcu7t5v0__and4_1
+       38  834.176   gf180mcu_fd_sc_mcu7t5v0__aoi211_1
+      121 2.12E+03   gf180mcu_fd_sc_mcu7t5v0__aoi21_1
+       30  724.416   gf180mcu_fd_sc_mcu7t5v0__aoi221_1
+        2   61.466   gf180mcu_fd_sc_mcu7t5v0__aoi222_1
+       33  651.974   gf180mcu_fd_sc_mcu7t5v0__aoi22_1
+        2   26.342   gf180mcu_fd_sc_mcu7t5v0__buf_1
+      201 1.76E+03   gf180mcu_fd_sc_mcu7t5v0__clkinv_1
+      126  9.4E+03   gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
+        3  237.082   gf180mcu_fd_sc_mcu7t5v0__dffsnq_1
+       35  1152.48   gf180mcu_fd_sc_mcu7t5v0__mux2_2
+      299 3.28E+03   gf180mcu_fd_sc_mcu7t5v0__nand2_1
+       42  645.389   gf180mcu_fd_sc_mcu7t5v0__nand3_1
+        8  158.054   gf180mcu_fd_sc_mcu7t5v0__nand4_1
+      256 3.37E+03   gf180mcu_fd_sc_mcu7t5v0__nor2_1
+       30  526.848   gf180mcu_fd_sc_mcu7t5v0__nor3_1
+        1   21.952   gf180mcu_fd_sc_mcu7t5v0__nor4_1
+       23  504.896   gf180mcu_fd_sc_mcu7t5v0__oai211_1
+      153 2.69E+03   gf180mcu_fd_sc_mcu7t5v0__oai21_1
+       12  316.109   gf180mcu_fd_sc_mcu7t5v0__oai221_1
+        1   32.928   gf180mcu_fd_sc_mcu7t5v0__oai222_1
+       40   878.08   gf180mcu_fd_sc_mcu7t5v0__oai22_1
+       33  796.858   gf180mcu_fd_sc_mcu7t5v0__oai31_1
+       36  948.326   gf180mcu_fd_sc_mcu7t5v0__oai32_1
+       29  509.286   gf180mcu_fd_sc_mcu7t5v0__or2_1
+       12  263.424   gf180mcu_fd_sc_mcu7t5v0__or3_1
+        1   26.342   gf180mcu_fd_sc_mcu7t5v0__or4_1
+       59 1.68E+03   gf180mcu_fd_sc_mcu7t5v0__xnor2_1
+        4  210.739   gf180mcu_fd_sc_mcu7t5v0__xnor3_1
+      195 5.14E+03   gf180mcu_fd_sc_mcu7t5v0__xor2_1
+       62 3.13E+03   gf180mcu_fd_sc_mcu7t5v0__xor3_1
+
+   Chip area for module '\wave_controller': 43642.771200
+     of which used for sequential elements: 9641.318400 (22.09%)
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        |        +-Area including submodules.
+        |        | 
+     5286  1.3E+05 chip_core
+        1   63.661   analog_comp
+        1   17.562   analog_readout
+        1   17.562   analog_wave_mixer
+      149  4879.93 signal_processor
+      939 3.14E+04 spi_regs
+       23   544.41 state_machine
+     1967 4.36E+04 wave_controller
+
+        +----------Count including submodules.
+        |        +-Area including submodules.
+        |        | 
+     5405        - wires
+     6320        - wire bits
+      887        - public wires
+     1802        - public wire bits
+      192        - ports
+     1107        - port bits
+        -        - memories
+        -        - memory bits
+        -        - processes
+     5286  1.3E+05 cells
+      152 2.67E+03   gf180mcu_fd_sc_mcu7t5v0__and2_1
+       49 1.08E+03   gf180mcu_fd_sc_mcu7t5v0__and3_1
+       13  313.914   gf180mcu_fd_sc_mcu7t5v0__and4_1
+       78 1.71E+03   gf180mcu_fd_sc_mcu7t5v0__aoi211_1
+      253 4.44E+03   gf180mcu_fd_sc_mcu7t5v0__aoi21_1
+       67 1.62E+03   gf180mcu_fd_sc_mcu7t5v0__aoi221_1
+       24  737.587   gf180mcu_fd_sc_mcu7t5v0__aoi222_1
+      263  5.2E+03   gf180mcu_fd_sc_mcu7t5v0__aoi22_1
+       16  210.739   gf180mcu_fd_sc_mcu7t5v0__buf_1
+      446 3.92E+03   gf180mcu_fd_sc_mcu7t5v0__clkinv_1
+        5  318.304   gf180mcu_fd_sc_mcu7t5v0__dffq_1
+      548 4.09E+04   gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
+        8  632.218   gf180mcu_fd_sc_mcu7t5v0__dffsnq_1
+      248 8.17E+03   gf180mcu_fd_sc_mcu7t5v0__mux2_2
+      693 7.61E+03   gf180mcu_fd_sc_mcu7t5v0__nand2_1
+      125   1920.8   gf180mcu_fd_sc_mcu7t5v0__nand3_1
+       74 1.46E+03   gf180mcu_fd_sc_mcu7t5v0__nand4_1
+      639 8.42E+03   gf180mcu_fd_sc_mcu7t5v0__nor2_1
+       81  1422.49   gf180mcu_fd_sc_mcu7t5v0__nor3_1
+       17  373.184   gf180mcu_fd_sc_mcu7t5v0__nor4_1
+       51 1.12E+03   gf180mcu_fd_sc_mcu7t5v0__oai211_1
+      349 6.13E+03   gf180mcu_fd_sc_mcu7t5v0__oai21_1
+       25   658.56   gf180mcu_fd_sc_mcu7t5v0__oai221_1
+        2   65.856   gf180mcu_fd_sc_mcu7t5v0__oai222_1
+       84 1.84E+03   gf180mcu_fd_sc_mcu7t5v0__oai22_1
+       77 1.86E+03   gf180mcu_fd_sc_mcu7t5v0__oai31_1
+       74 1.95E+03   gf180mcu_fd_sc_mcu7t5v0__oai32_1
+       59 1.04E+03   gf180mcu_fd_sc_mcu7t5v0__or2_1
+       27  592.704   gf180mcu_fd_sc_mcu7t5v0__or3_1
+        5  131.712   gf180mcu_fd_sc_mcu7t5v0__or4_1
+       14  122.931   gf180mcu_fd_sc_mcu7t5v0__tieh
+       47  412.698   gf180mcu_fd_sc_mcu7t5v0__tiel
+      131 3.74E+03   gf180mcu_fd_sc_mcu7t5v0__xnor2_1
+        8  421.478   gf180mcu_fd_sc_mcu7t5v0__xnor3_1
+      410 1.08E+04   gf180mcu_fd_sc_mcu7t5v0__xor2_1
+      124  6260.71   gf180mcu_fd_sc_mcu7t5v0__xor3_1
+        7 1.29E+05 submodules
+        1  180.006   analog_block
+        2 9.76E+03   signal_processor
+        1 3.14E+04   spi_regs
+        1   544.41   state_machine
+        2 8.73E+04   wave_controller
+
+   Chip area for top module '\chip_core': 130254.387200
+     of which used for sequential elements: 41851.488000 (32.13%)
+

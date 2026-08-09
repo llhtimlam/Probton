@@ -13,7 +13,7 @@ MACRO analog_block
     USE SIGNAL ;
     PORT
       LAYER Metal3  ;
-      RECT 239.72 100.0 240.0 100.28 ;
+      RECT 100.0 239.72 100.28 240.0 ;
     END
   END clk
 
@@ -22,7 +22,7 @@ MACRO analog_block
     USE SIGNAL ;
     PORT
       LAYER Metal3  ;
-      RECT 239.72 219.72 240.0 220.0 ;
+      RECT 219.72 239.72 220.0 240.0 ;
     END
   END read_en
 
@@ -31,7 +31,7 @@ MACRO analog_block
     USE SIGNAL ;
     PORT
       LAYER Metal3  ;
-      RECT 239.72 135.0 240.0 135.28 ;
+      RECT 135.0 239.72 135.28 240.0 ;
     END
   END mems_drv_x
 
@@ -40,7 +40,7 @@ MACRO analog_block
     USE SIGNAL ;
     PORT
       LAYER Metal3  ;
-      RECT 239.72 345.0 240.0 345.28 ;
+      RECT 345.0 239.72 345.28 240.0 ;
     END
   END mems_drv_y
 
