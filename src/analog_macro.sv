@@ -1,6 +1,7 @@
 
 `default_nettype none
 
+(* blackbox *)
 module analog_block (
     input  wire       clk,
     input  wire       read_en,
@@ -80,7 +81,7 @@ module analog_readout (
     inout  wire vdd,
     inout  wire vss
 );
-    assign aout = read_en ? ain : 1'b0; // dummy
+    //assign aout = read_en ? ain : 1'b0; // dummy
 endmodule
 
 // Wave mixer (X/Y)
@@ -92,7 +93,7 @@ module analog_wave_mixer (
     inout  wire vdd,
     inout  wire vss
 );
-    assign aout = ain & aref; // dummy
+    //assign aout = ain & aref; // dummy
 endmodule
 
 // Comparator (X/Y)
@@ -105,11 +106,11 @@ module analog_comp (
     inout  wire vss
 );
     // dummy
-    reg aout_reg;
-    always @(posedge clk) begin
-        aout_reg <= ain;
-    end
-    assign aout = aout_reg;
+    //reg aout_reg;
+    //always @(posedge clk) begin
+    //    aout_reg <= ain;
+    //end
+    //assign aout = aout_reg;
 
 endmodule
 

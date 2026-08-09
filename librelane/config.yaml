@@ -19,29 +19,68 @@ PL_TARGET_DENSITY_PCT: 55
 # Synthesis strategy
 SYNTH_STRATEGY: "AREA 0"
 
+# 3.3V Standard Cell
+DEFAULT_CORNER: nom_tt_025C_3v30
+STA_CORNERS:
+  - nom_tt_025C_3v30
+  - min_ff_n40C_3v60
+  - max_ss_125C_3v00
+
+LIB:
+  "*_tt_025C_3v30":
+    - /foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib
+  "*_ss_125C_3v00":
+    - /foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__ss_125C_3v00.lib
+  "*_ff_n40C_3v60":
+    - /foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__ff_n40C_3v60.lib
+
 # Route congestion
 GRT_ALLOW_CONGESTION: true
 
 DIE_AREA: [0, 0.0, 1117.5, 558.75]
 
-# Area reserve for Analog
-FP_OBSTRUCTIONS:
-  - [318.75, 0.0, 798.75, 220.0]
-ROUTING_OBSTRUCTIONS:
-  - ["Metal1", 318.75, 0.0, 798.75, 220.0]
-  - ["Metal2", 318.75, 0.0, 798.75, 220.0]
-  - ["Metal3", 318.75, 0.0, 798.75, 220.0]
-  - ["Metal4", 318.75, 0.0, 798.75, 220.0]
-  - ["Metal5", 318.75, 0.0, 798.75, 220.0]
-PDN_OBSTRUCTIONS:
-  - ["Metal1", 318.75, 0.0, 798.75, 220.0]
-  - ["Metal2", 318.75, 0.0, 798.75, 220.0]
-  - ["Metal3", 318.75, 0.0, 798.75, 220.0]
-  - ["Metal4", 318.75, 0.0, 798.75, 220.0]
-  - ["Metal5", 318.75, 0.0, 798.75, 220.0]
-  
 # Optional: keep power nets (good practice)
 VDD_NETS:
   - VDD
 GND_NETS:
   - VSS
+
+# Pin allocation
+#"IO_PIN_ORDER_CFG": "dir::pin_order.cfg"
+#"ERRORS_ON_UNMATCHED_IO": "none"
+"DPL_CELL_PADDING": 2
+IGNORE_DISCONNECTED_MODULES:
+  - "analog_block"
+
+# Area reserve for Analog
+PDN_HORIZONTAL_HALO: 10
+PDN_VERTICAL_HALO:   10
+
+FP_MACRO_HORIZONTAL_HALO: 10
+FP_MACRO_VERTICAL_HALO: 10
+
+# Manual Placement for Analog
+MACROS:
+  analog_block:
+    gds:
+      - dir::analog_block.gds
+    lef:
+      - dir::analog_block.lef
+    vh:
+      - dir::../src/analog_macro.sv
+    instances:
+      "analog_block_inst":
+        location: [318.75, 10.0]
+        orientation: N
+
+# Ignore Macro
+LVS_IGNORE_CELLS:
+  - "analog_block"
+
+MAGIC_DRC_MAGLEFS:
+  - "dir::analog_block.lef"
+
+PDN_MACRO_CONNECTIONS:
+- "analog_block_inst VDD VSS VDD VSS"
+
+PDN_CFG: dir::pdn_cfg.tcl

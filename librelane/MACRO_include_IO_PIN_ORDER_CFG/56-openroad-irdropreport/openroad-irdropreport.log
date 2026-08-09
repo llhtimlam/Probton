@@ -1,0 +1,40 @@
+Reading timing models for corner nom_tt_025C_3v30…
+Reading timing library for the 'nom_tt_025C_3v30' corner at '/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib'…
+Reading OpenROAD database at '/workspace/librelane/runs/RUN_2026-08-09_20-32-35/53-odb-cellfrequencytables/chip_core.odb'…
+Reading design constraints file at '/usr/local/lib/python3.12/dist-packages/librelane/scripts/base.sdc'…
+[INFO] Using clock clk…
+[INFO] Setting output delay to: 40
+[INFO] Setting input delay to: 40
+[INFO] Setting load to: 0.07291
+[INFO] Setting clock uncertainty to: 0.25
+[INFO] Setting clock transition to: 0.15
+[INFO] Setting timing derate to: 5%
+[INFO] Using voltage extracted from lib (3.3V) for power nets and 0V for ground nets…
+%OL_CREATE_REPORT irdrop.rpt
++ analyze_power_grid -net VDD -voltage_file /workspace/librelane/runs/RUN_2026-08-09_20-32-35/56-openroad-irdropreport/net-VDD.csv
+[INFO PSM-0040] All shapes on net VDD are connected.
+########## IR report #################
+Net              : VDD
+Corner           : nom_tt_025C_3v30
+Total power      : 1.36e-03 W
+Supply voltage   : 3.30e+00 V
+Worstcase voltage: 3.30e+00 V
+Average voltage  : 3.30e+00 V
+Average IR drop  : 1.17e-05 V
+Worstcase IR drop: 8.53e-05 V
+Percentage drop  : 0.00 %
+######################################
++ analyze_power_grid -net VSS -voltage_file /workspace/librelane/runs/RUN_2026-08-09_20-32-35/56-openroad-irdropreport/net-VSS.csv
+[INFO PSM-0040] All shapes on net VSS are connected.
+########## IR report #################
+Net              : VSS
+Corner           : nom_tt_025C_3v30
+Total power      : 1.36e-03 W
+Supply voltage   : 0.00e+00 V
+Worstcase voltage: 6.38e-05 V
+Average voltage  : 1.15e-05 V
+Average IR drop  : 1.15e-05 V
+Worstcase IR drop: 6.38e-05 V
+Percentage drop  : 0.00 %
+######################################
+%OL_END_REPORT

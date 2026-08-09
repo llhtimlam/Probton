@@ -1,0 +1,35 @@
+Reading timing models for corner nom_tt_025C_3v30…
+Reading timing library for the 'nom_tt_025C_3v30' corner at '/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib'…
+Reading OpenROAD database at '/workspace/librelane/runs/RUN_2026-08-09_20-16-44/39-openroad-globalrouting/chip_core.odb'…
+Reading design constraints file at '/usr/local/lib/python3.12/dist-packages/librelane/scripts/base.sdc'…
+[INFO] Using clock clk…
+[INFO] Setting output delay to: 40
+[INFO] Setting input delay to: 40
+[INFO] Setting load to: 0.07291
+[INFO] Setting clock uncertainty to: 0.25
+[INFO] Setting clock transition to: 0.15
+[INFO] Setting timing derate to: 5%
++ repair_antennas gf180mcu_fd_sc_mcu7t5v0__antenna -iterations 3 -ratio_margin 10 -allow_congestion
+[INFO GRT-0012] Found 3 antenna violations.
+[INFO GRT-0302] Inserted 3 jumpers for 3 nets.
+[INFO GRT-0012] Found 0 antenna violations.
+Setting global connections for newly added cells…
+[INFO] Setting global connections...
+analog_block_inst matched with analog_block_inst
+[INFO ODB-0403] 0 connections made, 0 conflicts skipped.
+Updating metrics…
+Cell type report:                       Count       Area
+  Macro                                     1  105600.00
+  Endcap cell                             566    2484.97
+  Tap cell                               4364   19159.71
+  Tie cell                                 61     535.63
+  Buffer                                   16     210.74
+  Clock buffer                             94    5839.23
+  Timing Repair Buffer                   1590   31386.97
+  Inverter                                416    3916.24
+  Clock inverter                           22     491.72
+  Sequential cell                         559   42944.70
+  Multi-Input combinational cell         4185  102351.20
+  Total                                 11874  314921.10
+Writing OpenROAD database to '/workspace/librelane/runs/RUN_2026-08-09_20-16-44/42-openroad-repairantennas/1-openroad-diodeinsertion/chip_core.odb'…
+Writing layout to '/workspace/librelane/runs/RUN_2026-08-09_20-16-44/42-openroad-repairantennas/1-openroad-diodeinsertion/chip_core.def'…

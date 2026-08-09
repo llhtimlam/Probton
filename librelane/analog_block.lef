@@ -4,8 +4,8 @@ DIVIDERCHAR "/" ;
 
 MACRO analog_block
   CLASS BLOCK ;
-  # Sets exact bounding box size relative to 0 0 origin (480 x 220)
-  SIZE 480 BY 220 ;
+  # Sets exact bounding box size relative to 0 0 origin (480 x 240)
+  SIZE 480 BY 240 ;
   ORIGIN 0 0 ;
 
   PIN clk
