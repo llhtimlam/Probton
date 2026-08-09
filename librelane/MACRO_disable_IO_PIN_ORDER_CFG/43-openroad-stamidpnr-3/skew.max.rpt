@@ -2,14 +2,14 @@
 ===========================================================================
 Clock Skew (Setup)
 ============================================================================
-Writing metric clock__skew__worst_setup__corner:nom_tt_025C_3v30: 0.32152012517987
+Writing metric clock__skew__worst_setup__corner:nom_tt_025C_3v30: 0.35186318743485073
 ======================= nom_tt_025C_3v30 Corner ===================================
 
 Clock clk
-2.459331 source latency wave_controller_y_inst/_3585_/CLK ^
--2.387811 target latency wave_controller_y_inst/_3629_/CLK ^
+2.469680 source latency wave_controller_x_inst/_3615_/CLK ^
+-2.367817 target latency spi_regs_inst/_1647_/CLK ^
 0.250000 clock uncertainty
 0.000000 CRPR
 --------------
-0.321520 setup skew
+0.351863 setup skew
 

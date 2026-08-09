@@ -1,19 +1,19 @@
-VERSION 5.8 ;
-BUSBITCHARS "[]" ;
-DIVIDERCHAR "/" ;
-
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
 MACRO analog_block
   CLASS BLOCK ;
-  # Sets exact bounding box size relative to 0 0 origin (480 x 240)
-  SIZE 480 BY 240 ;
-  ORIGIN 0 0 ;
+  FOREIGN analog_block ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 480.000 BY 240.000 ;
 
   PIN clk
     DIRECTION INPUT ;
     USE SIGNAL ;
     PORT
-      LAYER Metal3  ;
-      RECT 100.0 239.72 100.28 240.0 ;
+      LAYER Metal3 ;
+        RECT 100.000 237.000 100.280 240.000 ;
     END
   END clk
 
@@ -21,8 +21,8 @@ MACRO analog_block
     DIRECTION INPUT ;
     USE SIGNAL ;
     PORT
-      LAYER Metal3  ;
-      RECT 219.72 239.72 220.0 240.0 ;
+      LAYER Metal3 ;
+        RECT 219.720 237.000 220.000 240.000 ;
     END
   END read_en
 
@@ -30,8 +30,8 @@ MACRO analog_block
     DIRECTION INPUT ;
     USE SIGNAL ;
     PORT
-      LAYER Metal3  ;
-      RECT 135.0 239.72 135.28 240.0 ;
+      LAYER Metal3 ;
+        RECT 135.000 237.000 135.280 240.000 ;
     END
   END mems_drv_x
 
@@ -39,8 +39,8 @@ MACRO analog_block
     DIRECTION INPUT ;
     USE SIGNAL ;
     PORT
-      LAYER Metal3  ;
-      RECT 345.0 239.72 345.28 240.0 ;
+      LAYER Metal3 ;
+        RECT 345.000 237.000 345.280 240.000 ;
     END
   END mems_drv_y
 
@@ -48,8 +48,8 @@ MACRO analog_block
     DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
-      LAYER Metal3  ;
-      RECT 0.0 135.0 0.28 135.28 ;
+      LAYER Metal3 ;
+        RECT 0.000 135.000 0.280 135.280 ;
     END
   END comp_x
 
@@ -57,18 +57,17 @@ MACRO analog_block
     DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
-      LAYER Metal3  ;
-      RECT 479.72 135.0 480.0 135.28 ;
+      LAYER Metal3 ;
+        RECT 479.720 135.000 480.000 135.280 ;
     END
   END comp_y
 
-  # IO PIN
   PIN analog_error_x_output
     DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
-      LAYER Metal3  ;
-      RECT 87.00 0.0 87.28 0.28 ;
+      LAYER Metal3 ;
+        RECT 87.000 0.000 87.280 3.000 ;
     END
   END analog_error_x_output
 
@@ -76,8 +75,8 @@ MACRO analog_block
     DIRECTION INPUT ;
     USE SIGNAL ;
     PORT
-      LAYER Metal3  ;
-      RECT 189.00 0.0 189.28 0.28 ;
+      LAYER Metal3 ;
+        RECT 189.000 0.000 189.280 3.000 ;
     END
   END analog_readout_input
 
@@ -85,8 +84,8 @@ MACRO analog_block
     DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
-      LAYER Metal3  ;
-      RECT 291.00 0.0 291.28 0.28 ;
+      LAYER Metal3 ;
+        RECT 291.000 0.000 291.280 3.000 ;
     END
   END analog_readout_output
 
@@ -94,9 +93,10 @@ MACRO analog_block
     DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
-      LAYER Metal3  ;
-      RECT 393.00 0.0 393.28 0.28 ;
+      LAYER Metal3 ;
+        RECT 393.000 0.000 393.280 3.000 ;
     END
   END analog_error_y_output
+
 END analog_block
 END LIBRARY

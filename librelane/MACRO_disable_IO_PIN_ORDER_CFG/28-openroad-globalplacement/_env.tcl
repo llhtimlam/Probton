@@ -90,9 +90,9 @@ set ::env(FP_CORE_UTIL) 30
 set ::env(GPL_CELL_PADDING) 0
 set ::env(PL_TIMING_DRIVEN) 0
 set ::env(PL_ROUTABILITY_DRIVEN) 1
-set ::env(CURRENT_ODB) /workspace/librelane/runs/RUN_2026-08-09_20-16-44/25-openroad-ioplacement/chip_core.odb
-set ::env(SAVE_ODB) /workspace/librelane/runs/RUN_2026-08-09_20-16-44/28-openroad-globalplacement/chip_core.odb
-set ::env(SAVE_DEF) /workspace/librelane/runs/RUN_2026-08-09_20-16-44/28-openroad-globalplacement/chip_core.def
-set ::env(SAVE_SDC) /workspace/librelane/runs/RUN_2026-08-09_20-16-44/28-openroad-globalplacement/chip_core.sdc
-set ::env(SAVE_NL) /workspace/librelane/runs/RUN_2026-08-09_20-16-44/28-openroad-globalplacement/chip_core.nl.v
-set ::env(SAVE_PNL) /workspace/librelane/runs/RUN_2026-08-09_20-16-44/28-openroad-globalplacement/chip_core.pnl.v
+set ::env(CURRENT_ODB) /workspace/librelane/runs/RUN_2026-08-09_21-04-40/25-openroad-ioplacement/chip_core.odb
+set ::env(SAVE_ODB) /workspace/librelane/runs/RUN_2026-08-09_21-04-40/28-openroad-globalplacement/chip_core.odb
+set ::env(SAVE_DEF) /workspace/librelane/runs/RUN_2026-08-09_21-04-40/28-openroad-globalplacement/chip_core.def
+set ::env(SAVE_SDC) /workspace/librelane/runs/RUN_2026-08-09_21-04-40/28-openroad-globalplacement/chip_core.sdc
+set ::env(SAVE_NL) /workspace/librelane/runs/RUN_2026-08-09_21-04-40/28-openroad-globalplacement/chip_core.nl.v
+set ::env(SAVE_PNL) /workspace/librelane/runs/RUN_2026-08-09_21-04-40/28-openroad-globalplacement/chip_core.pnl.v

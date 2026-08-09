@@ -573,7 +573,7 @@
     "DRT_ASSIGN_NDR": null,
     "ERROR_ON_TR_DRC": true,
     "IGNORE_DISCONNECTED_MODULES": [
-        "analog_block_inst"
+        "analog_block"
     ],
     "ERROR_ON_DISCONNECTED_PINS": true,
     "ERROR_ON_LONG_WIRE": true,
@@ -1079,9 +1079,7 @@
     "ERROR_ON_XOR_ERROR": true,
     "MAGIC_DRC_USE_GDS": true,
     "MAGIC_GDS_FLATGLOB": null,
-    "MAGIC_DRC_MAGLEFS": [
-        "/workspace/librelane/analog_block.lef"
-    ],
+    "MAGIC_DRC_MAGLEFS": null,
     "KLAYOUT_DRC_RUNSET": "/workspace/gf180mcu/gf180mcuD/libs.tech/klayout/tech/drc/gf180mcu.drc",
     "KLAYOUT_DRC_OPTIONS": {
         "feol": 1,

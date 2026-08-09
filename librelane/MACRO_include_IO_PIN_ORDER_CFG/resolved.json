@@ -469,7 +469,7 @@
     "GPL_CELL_PADDING": 0,
     "PL_KEEP_RESIZE_BELOW_OVERFLOW": null,
     "IO_PIN_PLACEMENT_MODE": "matching",
-    "IO_PIN_ORDER_CFG": null,
+    "IO_PIN_ORDER_CFG": "/workspace/librelane/pin_order.cfg",
     "FP_DEF_TEMPLATE": null,
     "IO_PIN_H_LAYER": "Metal3",
     "IO_PIN_V_LAYER": "Metal2",
@@ -483,7 +483,7 @@
     "IO_PIN_MIN_DISTANCE": null,
     "IO_PIN_MIN_DISTANCE_IN_TRACKS": null,
     "IO_EXCLUDE_PIN_REGION": null,
-    "ERRORS_ON_UNMATCHED_IO": "unmatched_design",
+    "ERRORS_ON_UNMATCHED_IO": "none",
     "FP_TEMPLATE_MATCH_MODE": "strict",
     "FP_TEMPLATE_COPY_POWER_PINS": false,
     "PL_TIMING_DRIVEN": false,
@@ -1079,9 +1079,7 @@
     "ERROR_ON_XOR_ERROR": true,
     "MAGIC_DRC_USE_GDS": true,
     "MAGIC_GDS_FLATGLOB": null,
-    "MAGIC_DRC_MAGLEFS": [
-        "/workspace/librelane/analog_block.lef"
-    ],
+    "MAGIC_DRC_MAGLEFS": null,
     "KLAYOUT_DRC_RUNSET": "/workspace/gf180mcu/gf180mcuD/libs.tech/klayout/tech/drc/gf180mcu.drc",
     "KLAYOUT_DRC_OPTIONS": {
         "feol": 1,

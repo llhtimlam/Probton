@@ -98,9 +98,9 @@ set ::env(PL_RESIZER_SETUP_GATE_CLONING) 1
 set ::env(PL_RESIZER_SETUP_BUFFERING) 1
 set ::env(PL_RESIZER_SETUP_BUFFER_REMOVAL) 1
 set ::env(PL_RESIZER_FIX_HOLD_FIRST) 0
-set ::env(CURRENT_ODB) /workspace/librelane/runs/RUN_2026-08-09_20-16-44/35-openroad-cts/chip_core.odb
-set ::env(SAVE_ODB) /workspace/librelane/runs/RUN_2026-08-09_20-16-44/37-openroad-resizertimingpostcts/chip_core.odb
-set ::env(SAVE_DEF) /workspace/librelane/runs/RUN_2026-08-09_20-16-44/37-openroad-resizertimingpostcts/chip_core.def
-set ::env(SAVE_SDC) /workspace/librelane/runs/RUN_2026-08-09_20-16-44/37-openroad-resizertimingpostcts/chip_core.sdc
-set ::env(SAVE_NL) /workspace/librelane/runs/RUN_2026-08-09_20-16-44/37-openroad-resizertimingpostcts/chip_core.nl.v
-set ::env(SAVE_PNL) /workspace/librelane/runs/RUN_2026-08-09_20-16-44/37-openroad-resizertimingpostcts/chip_core.pnl.v
+set ::env(CURRENT_ODB) /workspace/librelane/runs/RUN_2026-08-09_21-04-40/35-openroad-cts/chip_core.odb
+set ::env(SAVE_ODB) /workspace/librelane/runs/RUN_2026-08-09_21-04-40/37-openroad-resizertimingpostcts/chip_core.odb
+set ::env(SAVE_DEF) /workspace/librelane/runs/RUN_2026-08-09_21-04-40/37-openroad-resizertimingpostcts/chip_core.def
+set ::env(SAVE_SDC) /workspace/librelane/runs/RUN_2026-08-09_21-04-40/37-openroad-resizertimingpostcts/chip_core.sdc
+set ::env(SAVE_NL) /workspace/librelane/runs/RUN_2026-08-09_21-04-40/37-openroad-resizertimingpostcts/chip_core.nl.v
+set ::env(SAVE_PNL) /workspace/librelane/runs/RUN_2026-08-09_21-04-40/37-openroad-resizertimingpostcts/chip_core.pnl.v

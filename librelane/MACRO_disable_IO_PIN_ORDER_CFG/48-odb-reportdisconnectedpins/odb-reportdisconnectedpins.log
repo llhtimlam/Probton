@@ -1,17 +1,2 @@
 [WARNING ORD-0039] .openroad ignored with -python
-[ERROR] Macro/instance analog_block_inst has no power pins- add it to IGNORE_DISCONNECTED_MODULES if this is intentional
-Found 8 disconnected pin(s), of which 1 are critical.
-┏━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┓
-┃ Macro/Instance ┃ Power Pins ┃ Disconnected   ┃ Signal Pins    ┃ Disconnected ┃
-┡━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━┩
-│ analog_block_… │            │ <ANY POWER     │ analog_block_… │              │
-│                │            │ PIN>           │ analog_block_… │              │
-│                │            │                │ analog_block_… │              │
-│                │            │                │ analog_block_… │              │
-│                │            │                │ analog_block_… │              │
-│                │            │                │ analog_block_… │              │
-│                │            │                │ analog_block_… │              │
-│                │            │                │ analog_block_… │              │
-│                │            │                │ analog_block_… │              │
-│                │            │                │ analog_block_… │              │
-└────────────────┴────────────┴────────────────┴────────────────┴──────────────┘
+Found 7 disconnected pin(s), of which 0 are critical.

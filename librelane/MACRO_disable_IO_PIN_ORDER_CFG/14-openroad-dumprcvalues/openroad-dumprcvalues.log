@@ -15,6 +15,9 @@ The NOWIREEXTENSIONATPIN statement will be ignored. See file /workspace/gf180mcu
 
 [INFO ODB-0227] LEF file: /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lef/gf180mcu_fd_sc_mcu7t5v0.lef, created 229 library cells
 Reading macro LEF file at '/workspace/librelane/analog_block.lef'…
+[WARNING ODB-0220] WARNING (LEFPARS-2008): NOWIREEXTENSIONATPIN statement is obsolete in version 5.6 or later.
+The NOWIREEXTENSIONATPIN statement will be ignored. See file /workspace/librelane/analog_block.lef at line 2.
+
 [INFO ODB-0227] LEF file: /workspace/librelane/analog_block.lef, created 1 library cells
 Reading gpio pad LEF file at '/workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_ef_io__bi_t.lef'…
 [WARNING ODB-0220] WARNING (LEFPARS-2008): NOWIREEXTENSIONATPIN statement is obsolete in version 5.6 or later.
@@ -101,13 +104,13 @@ Reading gpio pad LEF file at '/workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd
 The NOWIREEXTENSIONATPIN statement will be ignored. See file /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_ws_io__dvss.lef at line 2.
 
 [INFO ODB-0227] LEF file: /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_ws_io__dvss.lef, created 1 library cells
-[INFO ODB-0127] Reading DEF file: /workspace/librelane/runs/RUN_2026-08-09_20-16-44/13-openroad-floorplan/chip_core.def
+[INFO ODB-0127] Reading DEF file: /workspace/librelane/runs/RUN_2026-08-09_21-04-40/13-openroad-floorplan/chip_core.def
 [INFO ODB-0128] Design: chip_core
 [INFO ODB-0130]     Created 89 pins.
 [INFO ODB-0131]     Created 5238 components and 39881 component-terminals.
 [INFO ODB-0132]     Created 2 special nets and 20948 connections.
 [INFO ODB-0133]     Created 5256 nets and 18933 connections.
-[INFO ODB-0134] Finished DEF file: /workspace/librelane/runs/RUN_2026-08-09_20-16-44/13-openroad-floorplan/chip_core.def
+[INFO ODB-0134] Finished DEF file: /workspace/librelane/runs/RUN_2026-08-09_21-04-40/13-openroad-floorplan/chip_core.def
 %OL_CREATE_REPORT tlef_values.rpt
  time 1ns
  capacitance 1pF

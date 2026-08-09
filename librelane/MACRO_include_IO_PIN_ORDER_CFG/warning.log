@@ -21,52 +21,106 @@ No libs found for macro analog_block at corner nom_tt_025C_3v30. The module will
 No libs found for macro analog_block at corner nom_tt_025C_3v30. The module will be black-boxed.
 No libs found for macro analog_block at corner nom_tt_025C_3v30. The module will be black-boxed.
 [PDN-0231] analog_block_inst is not connected to any power/ground nets.
-No libs found for macro analog_block at corner nom_tt_025C_3v30. The module will be black-boxed.
-No libs found for macro analog_block at corner nom_tt_025C_3v30. The module will be black-boxed.
-No libs found for macro analog_block at corner nom_tt_025C_3v30. The module will be black-boxed.
-No libs found for macro analog_block at corner nom_tt_025C_3v30. The module will be black-boxed.
-No libs found for macro analog_block at corner nom_tt_025C_3v30. The module will be black-boxed.
-No libs found for macro analog_block at corner min_ff_n40C_3v60. The module will be black-boxed.
-No libs found for macro analog_block at corner max_ss_125C_3v00. The module will be black-boxed.
-[RSZ-0020] found 2 floating nets.
-No libs found for macro analog_block at corner nom_tt_025C_3v30. The module will be black-boxed.
-No libs found for macro analog_block at corner nom_tt_025C_3v30. The module will be black-boxed.
-No libs found for macro analog_block at corner min_ff_n40C_3v60. The module will be black-boxed.
-No libs found for macro analog_block at corner max_ss_125C_3v00. The module will be black-boxed.
-No libs found for macro analog_block at corner nom_tt_025C_3v30. The module will be black-boxed.
-No libs found for macro analog_block at corner nom_tt_025C_3v30. The module will be black-boxed.
-No libs found for macro analog_block at corner min_ff_n40C_3v60. The module will be black-boxed.
-No libs found for macro analog_block at corner max_ss_125C_3v00. The module will be black-boxed.
-No libs found for macro analog_block at corner nom_tt_025C_3v30. The module will be black-boxed.
-No libs found for macro analog_block at corner nom_tt_025C_3v30. The module will be black-boxed.
-No libs found for macro analog_block at corner nom_tt_025C_3v30. The module will be black-boxed.
-No libs found for macro analog_block at corner nom_tt_025C_3v30. The module will be black-boxed.
-No libs found for macro analog_block at corner nom_tt_025C_3v30. The module will be black-boxed.
-No libs found for macro analog_block at corner nom_tt_025C_3v30. The module will be black-boxed.
-No libs found for macro analog_block at corner nom_tt_025C_3v30. The module will be black-boxed.
-[DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer Via1
-[DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer Via1
-[DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer Via2
-[DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer Via2
-[DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer Via3
-[DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer Via3
-[DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer Via4
-[DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer Via4
-[DRT-0418] Term analog_block_inst/clk has no pins on routing grid
-[DRT-0418] Term analog_block_inst/read_en has no pins on routing grid
-[DRT-0419] No routing tracks pass through the center of Term analog_block_inst/mems_drv_x
-[DRT-0419] No routing tracks pass through the center of Term analog_block_inst/mems_drv_y
-[DRT-0419] No routing tracks pass through the center of Term analog_block_inst/comp_x
-[DRT-0418] Term analog_block_inst/comp_y has no pins on routing grid
-[DRT-0418] Term analog_block_inst/analog_error_x_output has no pins on routing grid
-[DRT-0418] Term analog_block_inst/analog_readout_input has no pins on routing grid
-[DRT-0418] Term analog_block_inst/analog_readout_output has no pins on routing grid
-[DRT-0418] Term analog_block_inst/analog_error_y_output has no pins on routing grid
-No libs found for macro analog_block at corner nom_tt_025C_3v30. The module will be black-boxed.
-Threshold for Threshold-surpassing long wires is not set. The checker will be skipped.
-No libs found for macro analog_block at corner nom_tt_025C_3v30. The module will be black-boxed.
-No libs found for macro analog_block at corner nom_tt_025C_3v30. The module will be black-boxed.
-No libs found for macro analog_block at corner min_ff_n40C_3v60. The module will be black-boxed.
-No libs found for macro analog_block at corner max_ss_125C_3v00. The module will be black-boxed.
-'VSRC_LOC_FILES' was not given a value, which may make the results of IR drop analysis inaccurate. If you are not integrating a top-level chip for manufacture, you may ignore this warning, otherwise, see the documentation for 'VSRC_LOC_FILES'.
-No libs found for macro analog_block at corner nom_tt_025C_3v30. The module will be black-boxed.
+bidir_in[1] not found in design but found in config.
+analog[3] not found in design but found in config.
+analog[0] not found in design but found in config.
+analog[1] not found in design but found in config.
+bidir_out[4] not found in design but found in config.
+analog[2] not found in design but found in config.
+bidir_in[2] not found in design but found in config.
+bidir_out[8] not found in design but found in config.
+bidir_out[5] not found in design but found in config.
+bidir_out[6] not found in design but found in config.
+bidir_out[9] not found in design but found in config.
+bidir_in[0] not found in design but found in config.
+bidir_out[3] not found in design but found in config.
+bidir_out[7] not found in design but found in config.
+bidir_pu[6] not found in config but found in design.
+bidir_pu[7] not found in config but found in design.
+bidir_out[6] not found in config but found in design.
+bidir_out[1] not found in config but found in design.
+bidir_oe[2] not found in config but found in design.
+bidir_in[9] not found in config but found in design.
+bidir_oe[9] not found in config but found in design.
+analog[1] not found in config but found in design.
+bidir_in[6] not found in config but found in design.
+bidir_oe[6] not found in config but found in design.
+bidir_out[3] not found in config but found in design.
+bidir_oe[0] not found in config but found in design.
+bidir_sl[5] not found in config but found in design.
+input_pd not found in config but found in design.
+bidir_pd[9] not found in config but found in design.
+bidir_pd[8] not found in config but found in design.
+bidir_in[3] not found in config but found in design.
+bidir_sl[0] not found in config but found in design.
+bidir_oe[1] not found in config but found in design.
+bidir_out[5] not found in config but found in design.
+bidir_cs[0] not found in config but found in design.
+bidir_oe[4] not found in config but found in design.
+bidir_pu[4] not found in config but found in design.
+bidir_cs[1] not found in config but found in design.
+bidir_ie[3] not found in config but found in design.
+bidir_ie[1] not found in config but found in design.
+bidir_out[4] not found in config but found in design.
+input_in not found in config but found in design.
+bidir_ie[5] not found in config but found in design.
+bidir_pu[3] not found in config but found in design.
+bidir_ie[9] not found in config but found in design.
+analog[3] not found in config but found in design.
+bidir_pu[9] not found in config but found in design.
+bidir_ie[7] not found in config but found in design.
+bidir_cs[3] not found in config but found in design.
+bidir_in[8] not found in config but found in design.
+analog[2] not found in config but found in design.
+bidir_pd[1] not found in config but found in design.
+bidir_ie[4] not found in config but found in design.
+rst_n not found in config but found in design.
+analog[0] not found in config but found in design.
+bidir_out[0] not found in config but found in design.
+bidir_ie[0] not found in config but found in design.
+bidir_cs[2] not found in config but found in design.
+bidir_in[2] not found in config but found in design.
+bidir_out[8] not found in config but found in design.
+clk not found in config but found in design.
+bidir_pd[6] not found in config but found in design.
+bidir_pu[8] not found in config but found in design.
+bidir_pu[1] not found in config but found in design.
+bidir_cs[7] not found in config but found in design.
+bidir_ie[2] not found in config but found in design.
+bidir_pd[4] not found in config but found in design.
+bidir_ie[6] not found in config but found in design.
+bidir_oe[8] not found in config but found in design.
+bidir_oe[5] not found in config but found in design.
+bidir_cs[6] not found in config but found in design.
+bidir_pd[5] not found in config but found in design.
+bidir_sl[2] not found in config but found in design.
+bidir_sl[6] not found in config but found in design.
+bidir_pu[2] not found in config but found in design.
+bidir_pu[5] not found in config but found in design.
+bidir_cs[9] not found in config but found in design.
+bidir_in[1] not found in config but found in design.
+bidir_oe[3] not found in config but found in design.
+bidir_sl[4] not found in config but found in design.
+bidir_out[2] not found in config but found in design.
+bidir_sl[9] not found in config but found in design.
+bidir_out[9] not found in config but found in design.
+bidir_sl[8] not found in config but found in design.
+bidir_in[0] not found in config but found in design.
+bidir_in[4] not found in config but found in design.
+bidir_cs[8] not found in config but found in design.
+bidir_in[5] not found in config but found in design.
+bidir_oe[7] not found in config but found in design.
+bidir_ie[8] not found in config but found in design.
+bidir_pu[0] not found in config but found in design.
+bidir_in[7] not found in config but found in design.
+bidir_pd[0] not found in config but found in design.
+bidir_pd[7] not found in config but found in design.
+bidir_sl[3] not found in config but found in design.
+bidir_cs[4] not found in config but found in design.
+input_pu not found in config but found in design.
+bidir_sl[7] not found in config but found in design.
+bidir_pd[2] not found in config but found in design.
+bidir_cs[5] not found in config but found in design.
+bidir_sl[1] not found in config but found in design.
+bidir_pd[3] not found in config but found in design.
+bidir_out[7] not found in config but found in design.

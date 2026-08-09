@@ -86,9 +86,9 @@ set ::env(CTS_DISTANCE_BETWEEN_BUFFERS) 0
 set ::env(CTS_ROOT_BUFFER) gf180mcu_fd_sc_mcu7t5v0__clkbuf_16
 set ::env(CTS_CLK_BUFFERS) "gf180mcu_fd_sc_mcu7t5v0__clkbuf_2 gf180mcu_fd_sc_mcu7t5v0__clkbuf_4 gf180mcu_fd_sc_mcu7t5v0__clkbuf_8"
 set ::env(CTS_APPLY_NDR) half
-set ::env(CURRENT_ODB) /workspace/librelane/runs/RUN_2026-08-09_20-16-44/34-openroad-detailedplacement/chip_core.odb
-set ::env(SAVE_ODB) /workspace/librelane/runs/RUN_2026-08-09_20-16-44/35-openroad-cts/chip_core.odb
-set ::env(SAVE_DEF) /workspace/librelane/runs/RUN_2026-08-09_20-16-44/35-openroad-cts/chip_core.def
-set ::env(SAVE_SDC) /workspace/librelane/runs/RUN_2026-08-09_20-16-44/35-openroad-cts/chip_core.sdc
-set ::env(SAVE_NL) /workspace/librelane/runs/RUN_2026-08-09_20-16-44/35-openroad-cts/chip_core.nl.v
-set ::env(SAVE_PNL) /workspace/librelane/runs/RUN_2026-08-09_20-16-44/35-openroad-cts/chip_core.pnl.v
+set ::env(CURRENT_ODB) /workspace/librelane/runs/RUN_2026-08-09_21-04-40/34-openroad-detailedplacement/chip_core.odb
+set ::env(SAVE_ODB) /workspace/librelane/runs/RUN_2026-08-09_21-04-40/35-openroad-cts/chip_core.odb
+set ::env(SAVE_DEF) /workspace/librelane/runs/RUN_2026-08-09_21-04-40/35-openroad-cts/chip_core.def
+set ::env(SAVE_SDC) /workspace/librelane/runs/RUN_2026-08-09_21-04-40/35-openroad-cts/chip_core.sdc
+set ::env(SAVE_NL) /workspace/librelane/runs/RUN_2026-08-09_21-04-40/35-openroad-cts/chip_core.nl.v
+set ::env(SAVE_PNL) /workspace/librelane/runs/RUN_2026-08-09_21-04-40/35-openroad-cts/chip_core.pnl.v

@@ -4,7 +4,7 @@ Reading timing models for corner min_ff_n40C_3v60…
 Reading timing library for the 'min_ff_n40C_3v60' corner at '/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__ff_n40C_3v60.lib'…
 Reading timing models for corner nom_tt_025C_3v30…
 Reading timing library for the 'nom_tt_025C_3v30' corner at '/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib'…
-Reading OpenROAD database at '/workspace/librelane/runs/RUN_2026-08-09_20-16-44/28-openroad-globalplacement/chip_core.odb'…
+Reading OpenROAD database at '/workspace/librelane/runs/RUN_2026-08-09_21-04-40/28-openroad-globalplacement/chip_core.odb'…
 Reading design constraints file at '/usr/local/lib/python3.12/dist-packages/librelane/scripts/base.sdc'…
 [INFO] Using clock clk…
 [INFO] Setting output delay to: 40
@@ -19,18 +19,18 @@ Reading design constraints file at '/usr/local/lib/python3.12/dist-packages/libr
 Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
 ---------------------------------------------------------------------
         0 |     +0.0% |       0 |       0 |             0 |      5275
-     1000 |     +2.6% |     138 |     136 |            69 |      4275
-     2000 |     +5.2% |     328 |     180 |           133 |      3275
-     3000 |     +8.1% |     477 |     323 |           200 |      2275
-     4000 |    +12.0% |     677 |     559 |           310 |      1275
-     5000 |    +17.7% |    1025 |    1104 |           512 |       275
-    final |    +21.8% |    1078 |    1574 |           558 |         0
+     1000 |     +2.5% |     132 |     135 |            70 |      4275
+     2000 |     +5.0% |     323 |     175 |           131 |      3275
+     3000 |     +7.8% |     472 |     320 |           197 |      2275
+     4000 |    +11.5% |     679 |     543 |           305 |      1275
+     5000 |    +16.9% |    1032 |    1085 |           509 |       275
+    final |    +20.8% |    1077 |    1538 |           550 |         0
 ---------------------------------------------------------------------
-[INFO RSZ-0034] Found 1173 slew violations.
+[INFO RSZ-0034] Found 1168 slew violations.
 [INFO RSZ-0035] Found 111 fanout violations.
 [INFO RSZ-0036] Found 1 capacitance violations.
-[INFO RSZ-0039] Resized 1078 instances.
-[INFO RSZ-0038] Inserted 1574 buffers in 558 nets.
+[INFO RSZ-0039] Resized 1077 instances.
+[INFO RSZ-0038] Inserted 1538 buffers in 550 nets.
 [INFO RSZ-0042] Inserted 47 tie gf180mcu_fd_sc_mcu7t5v0__tiel instances.
 [INFO RSZ-0042] Inserted 14 tie gf180mcu_fd_sc_mcu7t5v0__tieh instances.
 [WARNING RSZ-0020] found 2 floating nets.
@@ -39,35 +39,35 @@ Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
 + detailed_placement -max_displacement  500 100 
 Placement Analysis
 ---------------------------------
-total displacement      54890.8 u
-average displacement        4.7 u
-max displacement          240.8 u
-original HPWL          295421.9 u
-legalized HPWL         349646.0 u
-delta HPWL                   18 %
+total displacement      55184.8 u
+average displacement        4.6 u
+max displacement          248.6 u
+original HPWL          294000.6 u
+legalized HPWL         349239.7 u
+delta HPWL                   19 %
 
-[INFO DPL-0020] Mirrored 2935 instances
-[INFO DPL-0021] HPWL before          349646.0 u
-[INFO DPL-0022] HPWL after           342356.4 u
-[INFO DPL-0023] HPWL delta               -2.1 %
+[INFO DPL-0020] Mirrored 2971 instances
+[INFO DPL-0021] HPWL before          349239.7 u
+[INFO DPL-0022] HPWL after           341710.2 u
+[INFO DPL-0023] HPWL delta               -2.2 %
 Setting global connections for newly added cells…
 [INFO] Setting global connections...
 analog_block_inst matched with analog_block_inst
-[INFO ODB-0403] 6604 connections made, 0 conflicts skipped.
+[INFO ODB-0403] 6460 connections made, 0 conflicts skipped.
 Updating metrics…
 Cell type report:                       Count       Area
-  Macro                                     1  105600.00
-  Endcap cell                             566    2484.97
-  Tap cell                               4364   19159.71
+  Macro                                     1  115200.00
+  Endcap cell                             586    2572.77
+  Tap cell                               4529   19884.12
   Tie cell                                 61     535.63
   Buffer                                   16     210.74
-  Timing Repair Buffer                   1590   31386.97
-  Inverter                                416    3916.24
-  Sequential cell                         559   42944.70
-  Multi-Input combinational cell         4185  102351.20
-  Total                                 11758  308590.14
-Writing OpenROAD database to '/workspace/librelane/runs/RUN_2026-08-09_20-16-44/32-openroad-repairdesignpostgpl/chip_core.odb'…
-Writing netlist to '/workspace/librelane/runs/RUN_2026-08-09_20-16-44/32-openroad-repairdesignpostgpl/chip_core.nl.v'…
-Writing powered netlist to '/workspace/librelane/runs/RUN_2026-08-09_20-16-44/32-openroad-repairdesignpostgpl/chip_core.pnl.v'…
-Writing layout to '/workspace/librelane/runs/RUN_2026-08-09_20-16-44/32-openroad-repairdesignpostgpl/chip_core.def'…
-Writing timing constraints to '/workspace/librelane/runs/RUN_2026-08-09_20-16-44/32-openroad-repairdesignpostgpl/chip_core.sdc'…
+  Timing Repair Buffer                   1554   30930.37
+  Inverter                                416    3920.63
+  Sequential cell                         559   42905.18
+  Multi-Input combinational cell         4185  102471.94
+  Total                                 11907  318631.38
+Writing OpenROAD database to '/workspace/librelane/runs/RUN_2026-08-09_21-04-40/32-openroad-repairdesignpostgpl/chip_core.odb'…
+Writing netlist to '/workspace/librelane/runs/RUN_2026-08-09_21-04-40/32-openroad-repairdesignpostgpl/chip_core.nl.v'…
+Writing powered netlist to '/workspace/librelane/runs/RUN_2026-08-09_21-04-40/32-openroad-repairdesignpostgpl/chip_core.pnl.v'…
+Writing layout to '/workspace/librelane/runs/RUN_2026-08-09_21-04-40/32-openroad-repairdesignpostgpl/chip_core.def'…
+Writing timing constraints to '/workspace/librelane/runs/RUN_2026-08-09_21-04-40/32-openroad-repairdesignpostgpl/chip_core.sdc'…

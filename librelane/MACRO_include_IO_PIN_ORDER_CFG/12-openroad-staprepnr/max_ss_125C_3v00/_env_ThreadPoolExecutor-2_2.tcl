@@ -76,6 +76,6 @@ set ::env(PDN_MACRO_CONNECTIONS) "\"analog_block_inst VDD VSS VDD VSS\""
 set ::env(PDN_ENABLE_GLOBAL_CONNECTIONS) 1
 set ::env(DEDUPLICATE_CORNERS) 0
 set ::env(STA_MACRO_PRIORITIZE_NL) 1
-set ::env(CURRENT_NL) /workspace/librelane/runs/RUN_2026-08-09_20-32-35/06-yosys-synthesis/chip_core.nl.v
-set ::env(SAVE_SDC) /workspace/librelane/runs/RUN_2026-08-09_20-32-35/12-openroad-staprepnr/chip_core.sdc
+set ::env(CURRENT_NL) /workspace/librelane/runs/RUN_2026-08-09_21-20-01/06-yosys-synthesis/chip_core.nl.v
+set ::env(SAVE_SDC) /workspace/librelane/runs/RUN_2026-08-09_21-20-01/12-openroad-staprepnr/chip_core.sdc
 set ::env(OPENLANE_SDC_IDEAL_CLOCKS) 1

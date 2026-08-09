@@ -77,6 +77,6 @@ set ::env(PDN_ENABLE_GLOBAL_CONNECTIONS) 1
 set ::env(DEDUPLICATE_CORNERS) 0
 set ::env(FP_MACRO_HORIZONTAL_HALO) 10
 set ::env(FP_MACRO_VERTICAL_HALO) 10
-set ::env(CURRENT_ODB) /workspace/librelane/runs/RUN_2026-08-09_20-32-35/17-odb-manualmacroplacement/chip_core.odb
-set ::env(SAVE_ODB) /workspace/librelane/runs/RUN_2026-08-09_20-32-35/18-openroad-cutrows/chip_core.odb
-set ::env(SAVE_DEF) /workspace/librelane/runs/RUN_2026-08-09_20-32-35/18-openroad-cutrows/chip_core.def
+set ::env(CURRENT_ODB) /workspace/librelane/runs/RUN_2026-08-09_21-20-01/17-odb-manualmacroplacement/chip_core.odb
+set ::env(SAVE_ODB) /workspace/librelane/runs/RUN_2026-08-09_21-20-01/18-openroad-cutrows/chip_core.odb
+set ::env(SAVE_DEF) /workspace/librelane/runs/RUN_2026-08-09_21-20-01/18-openroad-cutrows/chip_core.def

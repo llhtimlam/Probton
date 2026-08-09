@@ -105,9 +105,9 @@ set ::env(PDN_VERTICAL_LAYER) Metal4
 set ::env(PDN_EXTEND_TO) core_ring
 set ::env(PDN_ENABLE_PINS) 1
 set ::env(PDN_CFG) /workspace/librelane/pdn_cfg.tcl
-set ::env(CURRENT_ODB) /workspace/librelane/runs/RUN_2026-08-09_20-16-44/19-openroad-tapendcapinsertion/chip_core.odb
-set ::env(SAVE_ODB) /workspace/librelane/runs/RUN_2026-08-09_20-16-44/21-openroad-generatepdn/chip_core.odb
-set ::env(SAVE_DEF) /workspace/librelane/runs/RUN_2026-08-09_20-16-44/21-openroad-generatepdn/chip_core.def
-set ::env(SAVE_SDC) /workspace/librelane/runs/RUN_2026-08-09_20-16-44/21-openroad-generatepdn/chip_core.sdc
-set ::env(SAVE_NL) /workspace/librelane/runs/RUN_2026-08-09_20-16-44/21-openroad-generatepdn/chip_core.nl.v
-set ::env(SAVE_PNL) /workspace/librelane/runs/RUN_2026-08-09_20-16-44/21-openroad-generatepdn/chip_core.pnl.v
+set ::env(CURRENT_ODB) /workspace/librelane/runs/RUN_2026-08-09_21-04-40/19-openroad-tapendcapinsertion/chip_core.odb
+set ::env(SAVE_ODB) /workspace/librelane/runs/RUN_2026-08-09_21-04-40/21-openroad-generatepdn/chip_core.odb
+set ::env(SAVE_DEF) /workspace/librelane/runs/RUN_2026-08-09_21-04-40/21-openroad-generatepdn/chip_core.def
+set ::env(SAVE_SDC) /workspace/librelane/runs/RUN_2026-08-09_21-04-40/21-openroad-generatepdn/chip_core.sdc
+set ::env(SAVE_NL) /workspace/librelane/runs/RUN_2026-08-09_21-04-40/21-openroad-generatepdn/chip_core.nl.v
+set ::env(SAVE_PNL) /workspace/librelane/runs/RUN_2026-08-09_21-04-40/21-openroad-generatepdn/chip_core.pnl.v

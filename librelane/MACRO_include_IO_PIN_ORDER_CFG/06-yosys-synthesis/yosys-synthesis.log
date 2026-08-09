@@ -16,7 +16,7 @@ Generating RTLIL representation for module `\analog_readout'.
 Generating RTLIL representation for module `\analog_wave_mixer'.
 Generating RTLIL representation for module `\analog_comp'.
 Successfully finished Verilog frontend.
-[INFO] Using SDC file '/workspace/librelane/runs/RUN_2026-08-09_20-32-35/06-yosys-synthesis/synthesis.abc.sdc' for ABC…wtaf
+[INFO] Using SDC file '/workspace/librelane/runs/RUN_2026-08-09_21-20-01/06-yosys-synthesis/synthesis.abc.sdc' for ABC…wtaf
 
 3. Executing Verilog-2005 frontend: /workspace/src/chip_core.sv
 Parsing SystemVerilog input from `/workspace/src/chip_core.sv' to AST representation.
@@ -3033,7 +3033,7 @@ Removed 1 unused cells and 11 unused wires.
 <suppressed ~12 debug messages>
 {
    "creator": "Yosys 0.67 (git sha1 2d1509d1b, Release, GNU /usr/bin/c++ 13.3.0)",
-   "invocation": "stat -json -liberty /workspace/librelane/runs/RUN_2026-08-09_20-32-35/tmp/69e3a717def6474795baa8dbf3f534ec.lib ",
+   "invocation": "stat -json -liberty /workspace/librelane/runs/RUN_2026-08-09_21-20-01/tmp/4a12c23db4a64b6096c7f2ff705b179d.lib ",
    "modules": {
       "\\chip_core": {
          "num_wires":         89,
@@ -3502,7 +3502,7 @@ Mapping DFF cells in module `\wave_controller':
   mapped 3 $_DFF_PN1_ cells to \gf180mcu_fd_sc_mcu7t5v0__dffsnq_1 cells.
 {
    "creator": "Yosys 0.67 (git sha1 2d1509d1b, Release, GNU /usr/bin/c++ 13.3.0)",
-   "invocation": "stat -json -liberty /workspace/librelane/runs/RUN_2026-08-09_20-32-35/tmp/69e3a717def6474795baa8dbf3f534ec.lib ",
+   "invocation": "stat -json -liberty /workspace/librelane/runs/RUN_2026-08-09_21-20-01/tmp/4a12c23db4a64b6096c7f2ff705b179d.lib ",
    "modules": {
       "\\chip_core": {
          "num_wires":         95,
@@ -3930,25 +3930,25 @@ Mapping DFF cells in module `\wave_controller':
    Chip area for top module '\chip_core': 41873.440000
      of which used for sequential elements: 41873.440000 (100.00%)
 
-[INFO] Using generated ABC script '/workspace/librelane/runs/RUN_2026-08-09_20-32-35/06-yosys-synthesis/AREA_0.abc'…
+[INFO] Using generated ABC script '/workspace/librelane/runs/RUN_2026-08-09_21-20-01/06-yosys-synthesis/AREA_0.abc'…
 
 148. Executing ABC pass (technology mapping using ABC).
 
-148.1. Extracting gate netlist of module `\chip_core' to `/tmp/yosys-abc-NvNvbf/input.blif'..
+148.1. Extracting gate netlist of module `\chip_core' to `/tmp/yosys-abc-6gdiHq/input.blif'..
 
 148.1.1. Executed ABC.
 Extracted 13 gates and 24 wires to a netlist network with 10 inputs and 6 outputs.
-Running ABC script: /tmp/yosys-abc-NvNvbf/abc.script
+Running ABC script: /tmp/yosys-abc-6gdiHq/abc.script
 ABC: UC Berkeley, ABC 1.01 (compiled Jul 27 2026 18:12:25)
 ABC: abc 01> empty
-ABC: abc 01> source /tmp/yosys-abc-NvNvbf/abc.script
-ABC: + read_blif /tmp/yosys-abc-NvNvbf/input.blif 
-ABC: + read_scl /tmp/yosys-liberty-scl-cache/yosys_merged_6e3a6ec5.scl 
+ABC: abc 01> source /tmp/yosys-abc-6gdiHq/abc.script
+ABC: + read_blif /tmp/yosys-abc-6gdiHq/input.blif 
+ABC: + read_scl /tmp/yosys-liberty-scl-cache/yosys_merged_5958df04.scl 
 ABC: Warning: Detected 6 multi-output cells (for example, "gf180mcu_fd_sc_mcu7t5v0__addf_1").
-ABC: + read_constr -v /workspace/librelane/runs/RUN_2026-08-09_20-32-35/06-yosys-synthesis/synthesis.abc.sdc 
+ABC: + read_constr -v /workspace/librelane/runs/RUN_2026-08-09_21-20-01/06-yosys-synthesis/synthesis.abc.sdc 
 ABC: Setting driving cell to be "gf180mcu_fd_sc_mcu7t5v0__inv_1/ZN".
 ABC: Setting output load to be 72.910004.
-ABC: + source /workspace/librelane/runs/RUN_2026-08-09_20-32-35/06-yosys-synthesis/AREA_0.abc 
+ABC: + source /workspace/librelane/runs/RUN_2026-08-09_21-20-01/06-yosys-synthesis/AREA_0.abc 
 ABC: Error: The network is combinational.
 ABC: Cannot find the default PI driving cell (gf180mcu_fd_sc_mcu7t5v0__inv_1/ZN) in the library.
 ABC: WireLoad = "none"  Gates =     11 (  9.1 %)   Cap = 25.9 ff (  3.0 %)   Area =      182.20 ( 90.9 %)   Delay =  2593.23 ps  ( 27.3 %)               
@@ -3958,7 +3958,7 @@ ABC: Path  2 --      22 : 2    1 gf180mcu_fd_sc_mcu7t5v0__nand2_1 A =  10.98  Df
 ABC: Path  3 --      23 : 2    1 gf180mcu_fd_sc_mcu7t5v0__nor2_1  A =  13.17  Df =2593.2-1056.3 ps  S =3431.1 ps  Cin =  4.3 ff  Cout =  72.9 ff  Cmax = 182.9 ff  G = 1705  
 ABC: Start-point = pi3 (\bidir_out [1]).  End-point = po3 ($auto$rtlil.cc:3510:MuxGate$17403).
 ABC: netlist                       : i/o =   10/    6  lat =    0  nd =    11  edge =     25  area =182.20  delay = 3.00  lev = 3
-ABC: + write_blif /tmp/yosys-abc-NvNvbf/output.blif 
+ABC: + write_blif /tmp/yosys-abc-6gdiHq/output.blif 
 ABC:                                                                                
 ABC: YOSYS_ABC_DONE 
 
@@ -3977,22 +3977,22 @@ ABC RESULTS:           input signals:       10
 ABC RESULTS:          output signals:        6
 Removing temp directory.
 
-148.2. Extracting gate netlist of module `\signal_processor' to `/tmp/yosys-abc-zVfgiN/input.blif'..
-ABC: using cached merged SCL: /tmp/yosys-liberty-scl-cache/yosys_merged_6e3a6ec5.scl (1 files)
+148.2. Extracting gate netlist of module `\signal_processor' to `/tmp/yosys-abc-OoSOfL/input.blif'..
+ABC: using cached merged SCL: /tmp/yosys-liberty-scl-cache/yosys_merged_5958df04.scl (1 files)
 
 148.2.1. Executed ABC.
 Extracted 146 gates and 189 wires to a netlist network with 43 inputs and 41 outputs.
-Running ABC script: /tmp/yosys-abc-zVfgiN/abc.script
+Running ABC script: /tmp/yosys-abc-OoSOfL/abc.script
 ABC: UC Berkeley, ABC 1.01 (compiled Jul 27 2026 18:12:25)
 ABC: abc 01> empty
-ABC: abc 01> source /tmp/yosys-abc-zVfgiN/abc.script
-ABC: + read_blif /tmp/yosys-abc-zVfgiN/input.blif 
-ABC: + read_scl /tmp/yosys-liberty-scl-cache/yosys_merged_6e3a6ec5.scl 
+ABC: abc 01> source /tmp/yosys-abc-OoSOfL/abc.script
+ABC: + read_blif /tmp/yosys-abc-OoSOfL/input.blif 
+ABC: + read_scl /tmp/yosys-liberty-scl-cache/yosys_merged_5958df04.scl 
 ABC: Warning: Detected 6 multi-output cells (for example, "gf180mcu_fd_sc_mcu7t5v0__addf_1").
-ABC: + read_constr -v /workspace/librelane/runs/RUN_2026-08-09_20-32-35/06-yosys-synthesis/synthesis.abc.sdc 
+ABC: + read_constr -v /workspace/librelane/runs/RUN_2026-08-09_21-20-01/06-yosys-synthesis/synthesis.abc.sdc 
 ABC: Setting driving cell to be "gf180mcu_fd_sc_mcu7t5v0__inv_1/ZN".
 ABC: Setting output load to be 72.910004.
-ABC: + source /workspace/librelane/runs/RUN_2026-08-09_20-32-35/06-yosys-synthesis/AREA_0.abc 
+ABC: + source /workspace/librelane/runs/RUN_2026-08-09_21-20-01/06-yosys-synthesis/AREA_0.abc 
 ABC: Error: The network is combinational.
 ABC: Cannot find the default PI driving cell (gf180mcu_fd_sc_mcu7t5v0__inv_1/ZN) in the library.
 ABC: WireLoad = "none"  Gates =    108 (  8.3 %)   Cap = 27.5 ff (  7.4 %)   Area =     1819.82 ( 86.1 %)   Delay =  7549.72 ps  ( 10.2 %)               
@@ -4004,7 +4004,7 @@ ABC: Path  4 --     169 : 4    3 gf180mcu_fd_sc_mcu7t5v0__oai211_1 A =  21.95  D
 ABC: Path  5 --     173 : 5    1 gf180mcu_fd_sc_mcu7t5v0__oai32_1  A =  26.34  Df =7549.7-2538.3 ps  S =5655.9 ps  Cin =  4.6 ff  Cout =  72.9 ff  Cmax = 114.5 ff  G = 1577  
 ABC: Start-point = pi3 (\strobe270).  End-point = po30 ($auto$rtlil.cc:3510:MuxGate$17445).
 ABC: netlist                       : i/o =   43/   41  lat =    0  nd =   108  edge =    256  area =1819.85  delay = 6.00  lev = 6
-ABC: + write_blif /tmp/yosys-abc-zVfgiN/output.blif 
+ABC: + write_blif /tmp/yosys-abc-OoSOfL/output.blif 
 ABC:                                                                                
 ABC: YOSYS_ABC_DONE 
 
@@ -4032,22 +4032,22 @@ ABC RESULTS:           input signals:       43
 ABC RESULTS:          output signals:       41
 Removing temp directory.
 
-148.3. Extracting gate netlist of module `\spi_regs' to `/tmp/yosys-abc-acWv8l/input.blif'..
-ABC: using cached merged SCL: /tmp/yosys-liberty-scl-cache/yosys_merged_6e3a6ec5.scl (1 files)
+148.3. Extracting gate netlist of module `\spi_regs' to `/tmp/yosys-abc-SLGUWn/input.blif'..
+ABC: using cached merged SCL: /tmp/yosys-liberty-scl-cache/yosys_merged_5958df04.scl (1 files)
 
 148.3.1. Executed ABC.
 Extracted 1434 gates and 1944 wires to a netlist network with 510 inputs and 206 outputs.
-Running ABC script: /tmp/yosys-abc-acWv8l/abc.script
+Running ABC script: /tmp/yosys-abc-SLGUWn/abc.script
 ABC: UC Berkeley, ABC 1.01 (compiled Jul 27 2026 18:12:25)
 ABC: abc 01> empty
-ABC: abc 01> source /tmp/yosys-abc-acWv8l/abc.script
-ABC: + read_blif /tmp/yosys-abc-acWv8l/input.blif 
-ABC: + read_scl /tmp/yosys-liberty-scl-cache/yosys_merged_6e3a6ec5.scl 
+ABC: abc 01> source /tmp/yosys-abc-SLGUWn/abc.script
+ABC: + read_blif /tmp/yosys-abc-SLGUWn/input.blif 
+ABC: + read_scl /tmp/yosys-liberty-scl-cache/yosys_merged_5958df04.scl 
 ABC: Warning: Detected 6 multi-output cells (for example, "gf180mcu_fd_sc_mcu7t5v0__addf_1").
-ABC: + read_constr -v /workspace/librelane/runs/RUN_2026-08-09_20-32-35/06-yosys-synthesis/synthesis.abc.sdc 
+ABC: + read_constr -v /workspace/librelane/runs/RUN_2026-08-09_21-20-01/06-yosys-synthesis/synthesis.abc.sdc 
 ABC: Setting driving cell to be "gf180mcu_fd_sc_mcu7t5v0__inv_1/ZN".
 ABC: Setting output load to be 72.910004.
-ABC: + source /workspace/librelane/runs/RUN_2026-08-09_20-32-35/06-yosys-synthesis/AREA_0.abc 
+ABC: + source /workspace/librelane/runs/RUN_2026-08-09_21-20-01/06-yosys-synthesis/AREA_0.abc 
 ABC: Error: The network is combinational.
 ABC: Cannot find the default PI driving cell (gf180mcu_fd_sc_mcu7t5v0__inv_1/ZN) in the library.
 ABC: WireLoad = "none"  Gates =    726 (  3.0 %)   Cap = 21.3 ff ( 12.4 %)   Area =    15511.28 ( 75.2 %)   Delay = 10054.44 ps  (  2.6 %)               
@@ -4060,7 +4060,7 @@ ABC: Path  5 --     745 : 2   23 gf180mcu_fd_sc_mcu7t5v0__nand2_1  A =  10.98  D
 ABC: Path  6 --    1355 : 3    1 gf180mcu_fd_sc_mcu7t5v0__oai21_1  A =  17.56  Df =10054.4 -724.1 ps  S =3532.6 ps  Cin =  4.7 ff  Cout =  72.9 ff  Cmax = 181.9 ff  G = 1536  
 ABC: Start-point = pi9 (\sclk_sync_q).  End-point = po133 ($auto$rtlil.cc:3510:MuxGate$17727).
 ABC: netlist                       : i/o =  510/  206  lat =    0  nd =   726  edge =   2326  area =15512.49  delay = 8.00  lev = 8
-ABC: + write_blif /tmp/yosys-abc-acWv8l/output.blif 
+ABC: + write_blif /tmp/yosys-abc-SLGUWn/output.blif 
 ABC:                                                                                
 ABC: YOSYS_ABC_DONE 
 
@@ -4092,22 +4092,22 @@ ABC RESULTS:           input signals:      510
 ABC RESULTS:          output signals:      206
 Removing temp directory.
 
-148.4. Extracting gate netlist of module `\state_machine' to `/tmp/yosys-abc-B8m8WK/input.blif'..
-ABC: using cached merged SCL: /tmp/yosys-liberty-scl-cache/yosys_merged_6e3a6ec5.scl (1 files)
+148.4. Extracting gate netlist of module `\state_machine' to `/tmp/yosys-abc-PtiiSH/input.blif'..
+ABC: using cached merged SCL: /tmp/yosys-liberty-scl-cache/yosys_merged_5958df04.scl (1 files)
 
 148.4.1. Executed ABC.
 Extracted 39 gates and 48 wires to a netlist network with 9 inputs and 5 outputs.
-Running ABC script: /tmp/yosys-abc-B8m8WK/abc.script
+Running ABC script: /tmp/yosys-abc-PtiiSH/abc.script
 ABC: UC Berkeley, ABC 1.01 (compiled Jul 27 2026 18:12:25)
 ABC: abc 01> empty
-ABC: abc 01> source /tmp/yosys-abc-B8m8WK/abc.script
-ABC: + read_blif /tmp/yosys-abc-B8m8WK/input.blif 
-ABC: + read_scl /tmp/yosys-liberty-scl-cache/yosys_merged_6e3a6ec5.scl 
+ABC: abc 01> source /tmp/yosys-abc-PtiiSH/abc.script
+ABC: + read_blif /tmp/yosys-abc-PtiiSH/input.blif 
+ABC: + read_scl /tmp/yosys-liberty-scl-cache/yosys_merged_5958df04.scl 
 ABC: Warning: Detected 6 multi-output cells (for example, "gf180mcu_fd_sc_mcu7t5v0__addf_1").
-ABC: + read_constr -v /workspace/librelane/runs/RUN_2026-08-09_20-32-35/06-yosys-synthesis/synthesis.abc.sdc 
+ABC: + read_constr -v /workspace/librelane/runs/RUN_2026-08-09_21-20-01/06-yosys-synthesis/synthesis.abc.sdc 
 ABC: Setting driving cell to be "gf180mcu_fd_sc_mcu7t5v0__inv_1/ZN".
 ABC: Setting output load to be 72.910004.
-ABC: + source /workspace/librelane/runs/RUN_2026-08-09_20-32-35/06-yosys-synthesis/AREA_0.abc 
+ABC: + source /workspace/librelane/runs/RUN_2026-08-09_21-20-01/06-yosys-synthesis/AREA_0.abc 
 ABC: Error: The network is combinational.
 ABC: Cannot find the default PI driving cell (gf180mcu_fd_sc_mcu7t5v0__inv_1/ZN) in the library.
 ABC: WireLoad = "none"  Gates =     20 ( 15.0 %)   Cap = 19.8 ff (  0.0 %)   Area =      320.50 (100.0 %)   Delay =  6582.30 ps  ( 20.0 %)               
@@ -4118,7 +4118,7 @@ ABC: Path  3 --      31 : 3    1 gf180mcu_fd_sc_mcu7t5v0__oai21_1  A =  17.56  D
 ABC: Path  4 --      32 : 4    1 gf180mcu_fd_sc_mcu7t5v0__aoi211_1 A =  21.95  Df =6582.3-2789.1 ps  S =5318.9 ps  Cin =  4.2 ff  Cout =  72.9 ff  Cmax = 120.6 ff  G = 1747  
 ABC: Start-point = pi2 (\state_o [1]).  End-point = po3 ($auto$rtlil.cc:3510:MuxGate$17875).
 ABC: netlist                       : i/o =    9/    5  lat =    0  nd =    20  edge =     51  area =320.48  delay = 5.00  lev = 5
-ABC: + write_blif /tmp/yosys-abc-B8m8WK/output.blif 
+ABC: + write_blif /tmp/yosys-abc-PtiiSH/output.blif 
 ABC:                                                                                
 ABC: YOSYS_ABC_DONE 
 
@@ -4138,22 +4138,22 @@ ABC RESULTS:           input signals:        9
 ABC RESULTS:          output signals:        5
 Removing temp directory.
 
-148.5. Extracting gate netlist of module `\wave_controller' to `/tmp/yosys-abc-J1Kg2G/input.blif'..
-ABC: using cached merged SCL: /tmp/yosys-liberty-scl-cache/yosys_merged_6e3a6ec5.scl (1 files)
+148.5. Extracting gate netlist of module `\wave_controller' to `/tmp/yosys-abc-mZhyro/input.blif'..
+ABC: using cached merged SCL: /tmp/yosys-liberty-scl-cache/yosys_merged_5958df04.scl (1 files)
 
 148.5.1. Executed ABC.
 Extracted 2554 gates and 2766 wires to a netlist network with 212 inputs and 190 outputs.
-Running ABC script: /tmp/yosys-abc-J1Kg2G/abc.script
+Running ABC script: /tmp/yosys-abc-mZhyro/abc.script
 ABC: UC Berkeley, ABC 1.01 (compiled Jul 27 2026 18:12:25)
 ABC: abc 01> empty
-ABC: abc 01> source /tmp/yosys-abc-J1Kg2G/abc.script
-ABC: + read_blif /tmp/yosys-abc-J1Kg2G/input.blif 
-ABC: + read_scl /tmp/yosys-liberty-scl-cache/yosys_merged_6e3a6ec5.scl 
+ABC: abc 01> source /tmp/yosys-abc-mZhyro/abc.script
+ABC: + read_blif /tmp/yosys-abc-mZhyro/input.blif 
+ABC: + read_scl /tmp/yosys-liberty-scl-cache/yosys_merged_5958df04.scl 
 ABC: Warning: Detected 6 multi-output cells (for example, "gf180mcu_fd_sc_mcu7t5v0__addf_1").
-ABC: + read_constr -v /workspace/librelane/runs/RUN_2026-08-09_20-32-35/06-yosys-synthesis/synthesis.abc.sdc 
+ABC: + read_constr -v /workspace/librelane/runs/RUN_2026-08-09_21-20-01/06-yosys-synthesis/synthesis.abc.sdc 
 ABC: Setting driving cell to be "gf180mcu_fd_sc_mcu7t5v0__inv_1/ZN".
 ABC: Setting output load to be 72.910004.
-ABC: + source /workspace/librelane/runs/RUN_2026-08-09_20-32-35/06-yosys-synthesis/AREA_0.abc 
+ABC: + source /workspace/librelane/runs/RUN_2026-08-09_21-20-01/06-yosys-synthesis/AREA_0.abc 
 ABC: Error: The network is combinational.
 ABC: Cannot find the default PI driving cell (gf180mcu_fd_sc_mcu7t5v0__inv_1/ZN) in the library.
 ABC: WireLoad = "none"  Gates =   1816 ( 10.3 %)   Cap = 17.5 ff ( 11.6 %)   Area =    33828.03 ( 80.4 %)   Delay = 14655.24 ps  (  2.4 %)               
@@ -4171,7 +4171,7 @@ ABC: Path 10 --    2090 : 4    1 gf180mcu_fd_sc_mcu7t5v0__aoi211_1 A =  21.95  D
 ABC: Path 11 --    2091 : 5    1 gf180mcu_fd_sc_mcu7t5v0__oai32_1  A =  26.34  Df =14655.2-3440.5 ps  S =5657.2 ps  Cin =  4.6 ff  Cout =  72.9 ff  Cmax = 114.5 ff  G = 1577  
 ABC: Start-point = pi200 (\delay_wave_cycle [0]).  End-point = po137 ($auto$rtlil.cc:3510:MuxGate$17995).
 ABC: netlist                       : i/o =  212/  190  lat =    0  nd =  1816  edge =   4546  area =33827.92  delay =17.00  lev = 17
-ABC: + write_blif /tmp/yosys-abc-J1Kg2G/output.blif 
+ABC: + write_blif /tmp/yosys-abc-mZhyro/output.blif 
 ABC:                                                                                
 ABC: YOSYS_ABC_DONE 
 
@@ -4249,7 +4249,7 @@ Checking module wave_controller...
 Found and reported 0 problems.
 {
    "creator": "Yosys 0.67 (git sha1 2d1509d1b, Release, GNU /usr/bin/c++ 13.3.0)",
-   "invocation": "stat -json -liberty /workspace/librelane/runs/RUN_2026-08-09_20-32-35/tmp/69e3a717def6474795baa8dbf3f534ec.lib ",
+   "invocation": "stat -json -liberty /workspace/librelane/runs/RUN_2026-08-09_21-20-01/tmp/4a12c23db4a64b6096c7f2ff705b179d.lib ",
    "modules": {
       "\\chip_core": {
          "num_wires":         514,

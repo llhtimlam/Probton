@@ -89,9 +89,9 @@ set ::env(PL_WIRE_LENGTH_COEF) 0.25
 set ::env(FP_CORE_UTIL) 30
 set ::env(GPL_CELL_PADDING) 0
 set ::env(IO_PIN_PLACEMENT_MODE) matching
-set ::env(CURRENT_ODB) /workspace/librelane/runs/RUN_2026-08-09_20-16-44/21-openroad-generatepdn/chip_core.odb
-set ::env(SAVE_ODB) /workspace/librelane/runs/RUN_2026-08-09_20-16-44/24-openroad-globalplacementskipio/chip_core.odb
-set ::env(SAVE_DEF) /workspace/librelane/runs/RUN_2026-08-09_20-16-44/24-openroad-globalplacementskipio/chip_core.def
-set ::env(SAVE_SDC) /workspace/librelane/runs/RUN_2026-08-09_20-16-44/24-openroad-globalplacementskipio/chip_core.sdc
-set ::env(SAVE_NL) /workspace/librelane/runs/RUN_2026-08-09_20-16-44/24-openroad-globalplacementskipio/chip_core.nl.v
-set ::env(SAVE_PNL) /workspace/librelane/runs/RUN_2026-08-09_20-16-44/24-openroad-globalplacementskipio/chip_core.pnl.v
+set ::env(CURRENT_ODB) /workspace/librelane/runs/RUN_2026-08-09_21-04-40/21-openroad-generatepdn/chip_core.odb
+set ::env(SAVE_ODB) /workspace/librelane/runs/RUN_2026-08-09_21-04-40/24-openroad-globalplacementskipio/chip_core.odb
+set ::env(SAVE_DEF) /workspace/librelane/runs/RUN_2026-08-09_21-04-40/24-openroad-globalplacementskipio/chip_core.def
+set ::env(SAVE_SDC) /workspace/librelane/runs/RUN_2026-08-09_21-04-40/24-openroad-globalplacementskipio/chip_core.sdc
+set ::env(SAVE_NL) /workspace/librelane/runs/RUN_2026-08-09_21-04-40/24-openroad-globalplacementskipio/chip_core.nl.v
+set ::env(SAVE_PNL) /workspace/librelane/runs/RUN_2026-08-09_21-04-40/24-openroad-globalplacementskipio/chip_core.pnl.v

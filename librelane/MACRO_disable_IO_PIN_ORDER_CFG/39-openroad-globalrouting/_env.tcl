@@ -88,6 +88,6 @@ set ::env(PL_OPTIMIZE_MIRRORING) 1
 set ::env(PL_MAX_DISPLACEMENT_X) 500
 set ::env(PL_MAX_DISPLACEMENT_Y) 100
 set ::env(DPL_CELL_PADDING) 2
-set ::env(CURRENT_ODB) /workspace/librelane/runs/RUN_2026-08-09_20-16-44/37-openroad-resizertimingpostcts/chip_core.odb
-set ::env(SAVE_ODB) /workspace/librelane/runs/RUN_2026-08-09_20-16-44/39-openroad-globalrouting/chip_core.odb
-set ::env(SAVE_DEF) /workspace/librelane/runs/RUN_2026-08-09_20-16-44/39-openroad-globalrouting/chip_core.def
+set ::env(CURRENT_ODB) /workspace/librelane/runs/RUN_2026-08-09_21-04-40/37-openroad-resizertimingpostcts/chip_core.odb
+set ::env(SAVE_ODB) /workspace/librelane/runs/RUN_2026-08-09_21-04-40/39-openroad-globalrouting/chip_core.odb
+set ::env(SAVE_DEF) /workspace/librelane/runs/RUN_2026-08-09_21-04-40/39-openroad-globalrouting/chip_core.def

@@ -1,0 +1,13 @@
+set circuit1 [readnet spice /workspace/librelane/runs/RUN_2026-08-09_21-04-40/68-magic-spiceextraction/chip_core.spice]
+set circuit2 [readnet verilog /dev/null]
+puts "Reading SPICE netlist file '/workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/spice/gf180mcu_fd_sc_mcu7t5v0.spice'..."
+readnet spice /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/spice/gf180mcu_fd_sc_mcu7t5v0.spice $circuit2
+puts "Reading SPICE netlist file '/workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/spice/gf180mcu_ef_io.spice'..."
+readnet spice /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/spice/gf180mcu_ef_io.spice $circuit2
+puts "Reading SPICE netlist file '/workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/spice/gf180mcu_fd_io.spice'..."
+readnet spice /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/spice/gf180mcu_fd_io.spice $circuit2
+puts "Reading SPICE netlist file '/workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/spice/gf180mcu_ws_io.spice'..."
+readnet spice /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/spice/gf180mcu_ws_io.spice $circuit2
+puts "Reading Verilog netlist file '/workspace/librelane/runs/RUN_2026-08-09_21-04-40/52-openroad-fillinsertion/chip_core.pnl.v'..."
+readnet verilog /workspace/librelane/runs/RUN_2026-08-09_21-04-40/52-openroad-fillinsertion/chip_core.pnl.v $circuit2
+lvs "$circuit1 chip_core" "$circuit2 chip_core" /usr/local/lib/python3.12/dist-packages/librelane/scripts/netgen/setup.tcl /workspace/librelane/runs/RUN_2026-08-09_21-04-40/70-netgen-lvs/reports/lvs.netgen.rpt -blackbox -json

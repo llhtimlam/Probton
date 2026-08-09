@@ -2,14 +2,14 @@
 ===========================================================================
 Clock Skew (Hold)
 ============================================================================
-Writing metric clock__skew__worst_hold__corner:nom_tt_025C_3v30: -0.33417977664310516
+Writing metric clock__skew__worst_hold__corner:nom_tt_025C_3v30: -0.3463447127125758
 ======================= nom_tt_025C_3v30 Corner ===================================
 
 Clock clk
-2.376619 source latency spi_regs_inst/_1657_/CLK ^
--2.460799 target latency spi_regs_inst/_1607_/CLK ^
+2.373336 source latency wave_controller_x_inst/_3624_/CLK ^
+-2.469680 target latency wave_controller_x_inst/_3615_/CLK ^
 -0.250000 clock uncertainty
 0.000000 CRPR
 --------------
--0.334180 hold skew
+-0.346345 hold skew
 
