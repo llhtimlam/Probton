@@ -44,6 +44,15 @@ MACRO analog_block
     END
   END ref_wave_y
 
+  PIN clk1
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT 379.72 239.72 380 240.000 ;
+    END
+  END clk1
+
   PIN comp_x
     DIRECTION OUTPUT ;
     USE SIGNAL ;
@@ -66,8 +75,8 @@ MACRO analog_block
     DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
-      LAYER Metal3 ;
-        RECT 87.000 0.000 87.280 3.000 ;
+      LAYER Metal2 ;
+        RECT 88.6 0.000 89.16 0.56 ;
     END
   END analog_error_x_output
 
@@ -75,8 +84,8 @@ MACRO analog_block
     DIRECTION INPUT ;
     USE SIGNAL ;
     PORT
-      LAYER Metal3 ;
-        RECT 189.000 0.000 189.280 3.000 ;
+      LAYER Metal2 ;
+        RECT 189.40 0.000 189.96 0.56 ;
     END
   END analog_readout_input
 
@@ -84,8 +93,8 @@ MACRO analog_block
     DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
-      LAYER Metal3 ;
-        RECT 291.000 0.000 291.280 3.000 ;
+      LAYER Metal2 ;
+        RECT 290.20 0.000 290.76 0.56 ;
     END
   END analog_readout_output
 
@@ -93,8 +102,8 @@ MACRO analog_block
     DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
-      LAYER Metal3 ;
-        RECT 393.000 0.000 393.280 3.000 ;
+      LAYER Metal2 ;
+        RECT 391.00 0.000 391.56 0.56 ;
     END
   END analog_error_y_output
 

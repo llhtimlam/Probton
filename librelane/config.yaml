@@ -87,7 +87,7 @@ LIB:
 
 # Route congestion
 GRT_ALLOW_CONGESTION: false
-RT_MAX_LAYER: Metal4
+RT_MAX_LAYER: Metal5
 
 # Placement
 MAX_FANOUT_CONSTRAINT: 10
@@ -106,10 +106,9 @@ VDD_NETS:
 GND_NETS:
   - VSS
 
-DIE_AREA: [0, 0.0, 1117.5, 758.75]
-CORE_AREA: [10, 10.0, 1107.5, 748.75]
+DIE_AREA: [0, 0.0, 1117.5, 558.75]
+CORE_AREA: [0, 10.0, 1107.5, 558.75]
 
-# Pin allocation
 # Pin allocation
 "IO_PIN_ORDER_CFG": "dir::pin_order.cfg"
 "ERRORS_ON_UNMATCHED_IO": "both"
@@ -126,12 +125,12 @@ FP_MACRO_VERTICAL_HALO: 10
 
 # Area reserve for Analog
 FP_OBSTRUCTIONS:
-  - [267.64, 10.0, 747.64, 250]
+  - [267.64, 2.0, 727.64, 242]
 
 ROUTING_OBSTRUCTIONS:
-  - ["Metal1", 268.14, 10.5, 747.14, 249.5]
-  - ["Metal2", 268.14, 10.5, 747.14, 249.5]
-  - ["Metal3", 268.14, 10.5, 747.14, 249.5]
+  - ["Metal1", 268.14, 3.0, 727.14, 241]
+  - ["Metal2", 268.14, 3.0, 727.14, 241]
+  - ["Metal3", 268.14, 3.0, 727.14, 241]
 
 # Manual Placement for Analog
 MACROS:
@@ -144,7 +143,7 @@ MACROS:
       - dir::../src/analog_macro.sv
     instances:
       "analog_block_inst":
-        location: [267.64, 10.0]
+        location: [267.64, 2.0]
         orientation: N
 
 # Ignore Macro

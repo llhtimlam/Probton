@@ -1,0 +1,11 @@
+- cell: analog_block
+  inout: []
+  input:
+  - clk
+  - ref_wave_x
+  - read_en
+  - ref_wave_y
+  - clk1
+  output:
+  - comp_x
+  - comp_y

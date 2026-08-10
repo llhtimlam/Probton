@@ -30,7 +30,7 @@ This offers a low-cost, integrable alternative to proprietary alignment hardware
 
 ## Chip Architect
 
-Size: 880um x 660um - Block type A
+Size: 1117.5um x 558.75um - Block type B
 
 Required pins: 14 or 18 (under consideration)
 
@@ -96,6 +96,16 @@ Presentation Deck for Schematic/Simulation Review : [Google Slides](https://docs
 
 <video src="https://youtu.be/nWU8KJn_Hf8" controls="controls" width="100%">
 </video>
+
+## Layout Review
+
+<img src="Media\Layout\pre-integration.png" width="100%" alt="Proposed Layout Floorplan">
+
+DRC Clean except Density Rule and external ESD Protection Circuit
+
+LVS in progress
+
+Only Missing Analog Readout Layout
 
 
 ### Simulation result

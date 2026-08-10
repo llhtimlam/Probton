@@ -71,41 +71,5 @@ MACRO analog_block
     END
   END comp_y
 
-  PIN analog_error_x_output
-    DIRECTION OUTPUT ;
-    USE SIGNAL ;
-    PORT
-      LAYER Metal2 ;
-        RECT 88.6 0.000 89.16 0.56 ;
-    END
-  END analog_error_x_output
-
-  PIN analog_readout_input
-    DIRECTION INPUT ;
-    USE SIGNAL ;
-    PORT
-      LAYER Metal2 ;
-        RECT 189.40 0.000 189.96 0.56 ;
-    END
-  END analog_readout_input
-
-  PIN analog_readout_output
-    DIRECTION OUTPUT ;
-    USE SIGNAL ;
-    PORT
-      LAYER Metal2 ;
-        RECT 290.20 0.000 290.76 0.56 ;
-    END
-  END analog_readout_output
-
-  PIN analog_error_y_output
-    DIRECTION OUTPUT ;
-    USE SIGNAL ;
-    PORT
-      LAYER Metal2 ;
-        RECT 391.00 0.000 391.56 0.56 ;
-    END
-  END analog_error_y_output
-
 END analog_block
 END LIBRARY

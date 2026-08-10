@@ -1,7 +1,7 @@
 `default_nettype none
 
 `include "digital_domain.sv"
-`include "analog_macro.sv"
+`include "analog_block.sv"
 
 module wrapper (
     `ifdef USE_POWER_PINS
@@ -27,13 +27,13 @@ module wrapper (
 
     // MEMS Driver
     output logic mems_drv_x, // bidir_out_8
-    output logic mems_drv_y, // bidir_out_9
+    output logic mems_drv_y // bidir_out_9
 
     // Analog Module
-    input  wire analog_readout_input,
-    output wire analog_readout_output,
-    output wire analog_error_x_output,
-    output wire analog_error_y_output
+    //input  wire analog_readout_input,
+    //output wire analog_readout_output,
+    //output wire analog_error_x_output,
+    //output wire analog_error_y_output
 );
 
     wire read_en, comp_x, comp_y, ref_wave_x, ref_wave_y;
@@ -71,11 +71,7 @@ module wrapper (
         .comp_y                (comp_y),
         .clk1                  (clk),
         .ref_wave_x            (ref_wave_x),
-        .ref_wave_y            (ref_wave_y),
-        .analog_readout_input  (analog_readout_input),
-        .analog_readout_output (analog_readout_output),
-        .analog_error_x_output (analog_error_x_output),
-        .analog_error_y_output (analog_error_y_output)
+        .ref_wave_y            (ref_wave_y)
     );
 
 endmodule
