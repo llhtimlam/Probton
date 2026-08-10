@@ -4,6 +4,7 @@
 (* blackbox *)
 module analog_block (
     input  wire       clk,
+    input  wire       clk1,
     input  wire       read_en,
     input  wire       ref_wave_x,
     input  wire       ref_wave_y,
@@ -62,7 +63,7 @@ module analog_block (
 
     (* keep_hierarchy *)
     analog_comp analog_comp_y_inst (
-        .clk (clk),
+        .clk (clk1),
         .ain (analog_error_y_output),
         .aout(comp_y),
         .vdd (VDD),

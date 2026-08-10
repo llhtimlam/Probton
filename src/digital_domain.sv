@@ -99,7 +99,6 @@ module digital_domain (
 
     // Digital
     // SPI
-    (* keep_hierarchy *)
     spi_regs spi_regs_inst (
         .clk(clk), .rst_n(rst_n),
         .spi_cs_n(spi_cs_n), .spi_sclk(spi_sclk), .spi_mosi(spi_mosi),
@@ -126,7 +125,6 @@ module digital_domain (
     );
 
     // State Machine
-    (* keep_hierarchy *)
     state_machine state_machine_inst (
         .clk(clk), .rst_n(rst_n),
         .boot_complete(boot_complete), .cfg_done(cfg_done), .phase_offset_imported(phase_offset_imported),
@@ -137,7 +135,6 @@ module digital_domain (
     );
 
     // Wave Controller (X/Y)
-    (* keep_hierarchy *)
     wave_controller wave_controller_x_inst (
         .clk(clk), .rst_n(rst_n), .soft_rst_n(soft_rst_n),
         .cfg_f_MEMS_fcw(cfg_f_MEMS_fcw_x),
@@ -155,7 +152,6 @@ module digital_domain (
         .latch_error(latch_error_x)
     );
 
-    (* keep_hierarchy *)
     wave_controller wave_controller_y_inst (
         .clk(clk), .rst_n(rst_n), .soft_rst_n(soft_rst_n),
         .cfg_f_MEMS_fcw(cfg_f_MEMS_fcw_y),
@@ -174,7 +170,6 @@ module digital_domain (
     );
 
     // Signal Processor (X/Y)
-    (* keep_hierarchy *)
     signal_processor signal_processor_x_inst (
         .clk(clk), .rst_n(rst_n), .soft_rst_n(soft_rst_n),
         .comp_raw(comp_x),
@@ -186,7 +181,6 @@ module digital_domain (
         .votes_in_phase(votes_in_phase_x), .votes_out_phase(votes_out_phase_x)    
     );
 
-    (* keep_hierarchy *)
     signal_processor signal_processor_y_inst (
         .clk(clk), .rst_n(rst_n), .soft_rst_n(soft_rst_n),
         .comp_raw(comp_y),

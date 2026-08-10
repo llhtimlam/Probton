@@ -1,0 +1,20 @@
+** sch_path: /workspace/Analog/schematics/2_mixer/ota_5t.sch
+.subckt ota_5t Vdd_3v3 Vout_5tota Vin_p_5tota Vin_m_5tota VSS Ibias_30uA_nmos
+*.PININFO Vdd_3v3:I Vin_p_5tota:I Vin_m_5tota:I Vout_5tota:O Ibias_30uA_nmos:B VSS:I
+XMnmos_amp_p net1 Vin_p_5tota Ibias_30uA_nmos VSS nfet_03v3 L=0.28u W=6u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u'
++ pd='2*int((nf+1)/2) * (W/nf + 0.18u)' ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XMnmos_amp_n Vout_5tota Vin_m_5tota Ibias_30uA_nmos VSS nfet_03v3 L=0.28u W=6u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u'
++ pd='2*int((nf+1)/2) * (W/nf + 0.18u)' ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XMpmos_cs_p net1 net1 Vdd_3v3 Vdd_3v3 pfet_03v3 L=0.28u W=10u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u'
++ pd='2*int((nf+1)/2) * (W/nf + 0.18u)' ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XMpmos_cs_n Vout_5tota net1 Vdd_3v3 Vdd_3v3 pfet_03v3 L=0.28u W=10u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u'
++ pd='2*int((nf+1)/2) * (W/nf + 0.18u)' ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XMpmos_cs_p_dummy net1 net2 net3 Vdd_3v3 pfet_03v3 L=0.28u W=10u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u'
++ pd='2*int((nf+1)/2) * (W/nf + 0.18u)' ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XMpmos_cs_n_dummy Vout_5tota net4 net5 Vdd_3v3 pfet_03v3 L=0.28u W=10u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u'
++ pd='2*int((nf+1)/2) * (W/nf + 0.18u)' ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XMnmos_amp_p_dummy Ibias_30uA_nmos net7 net6 VSS nfet_03v3 L=0.28u W=6u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u'
++ pd='2*int((nf+1)/2) * (W/nf + 0.18u)' ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XMnmos_amp_n_dummy Ibias_30uA_nmos net8 net9 VSS nfet_03v3 L=0.28u W=6u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u'
++ pd='2*int((nf+1)/2) * (W/nf + 0.18u)' ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+.ends

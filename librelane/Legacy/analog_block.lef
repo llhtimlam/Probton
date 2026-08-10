@@ -13,36 +13,36 @@ MACRO analog_block
     USE SIGNAL ;
     PORT
       LAYER Metal3 ;
-        RECT 100.000 237.000 100.280 240.000 ;
+        RECT 100.000 239.72 100.280 240.000 ;
     END
   END clk
+
+  PIN ref_wave_x
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT 135.000 239.72 135.280 240.000 ;
+    END
+  END ref_wave_x
 
   PIN read_en
     DIRECTION INPUT ;
     USE SIGNAL ;
     PORT
       LAYER Metal3 ;
-        RECT 219.720 237.000 220.000 240.000 ;
+        RECT 219.720 239.72 220.000 240.000 ;
     END
   END read_en
 
-  PIN mems_drv_x
+  PIN ref_wave_y
     DIRECTION INPUT ;
     USE SIGNAL ;
     PORT
       LAYER Metal3 ;
-        RECT 135.000 237.000 135.280 240.000 ;
+        RECT 345.000 239.72 345.280 240.000 ;
     END
-  END mems_drv_x
-
-  PIN mems_drv_y
-    DIRECTION INPUT ;
-    USE SIGNAL ;
-    PORT
-      LAYER Metal3 ;
-        RECT 345.000 237.000 345.280 240.000 ;
-    END
-  END mems_drv_y
+  END ref_wave_y
 
   PIN comp_x
     DIRECTION OUTPUT ;

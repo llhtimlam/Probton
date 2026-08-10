@@ -1,0 +1,111 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO analog_block
+  CLASS BLOCK ;
+  FOREIGN analog_block ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 480.000 BY 240.000 ;
+
+  PIN clk
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT 100.000 239.72 100.280 240.000 ;
+    END
+  END clk
+
+  PIN ref_wave_x
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT 135.000 239.72 135.280 240.000 ;
+    END
+  END ref_wave_x
+
+  PIN read_en
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT 219.720 239.72 220.000 240.000 ;
+    END
+  END read_en
+
+  PIN ref_wave_y
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT 345.000 239.72 345.280 240.000 ;
+    END
+  END ref_wave_y
+
+  PIN clk1
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT 379.72 239.72 380 240.000 ;
+    END
+  END clk1
+
+  PIN comp_x
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 135.000 0.280 135.280 ;
+    END
+  END comp_x
+
+  PIN comp_y
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT 479.720 135.000 480.000 135.280 ;
+    END
+  END comp_y
+
+  PIN analog_error_x_output
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 88.6 0.000 89.16 0.56 ;
+    END
+  END analog_error_x_output
+
+  PIN analog_readout_input
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 189.40 0.000 189.96 0.56 ;
+    END
+  END analog_readout_input
+
+  PIN analog_readout_output
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 290.20 0.000 290.76 0.56 ;
+    END
+  END analog_readout_output
+
+  PIN analog_error_y_output
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 391.00 0.000 391.56 0.56 ;
+    END
+  END analog_error_y_output
+
+END analog_block
+END LIBRARY

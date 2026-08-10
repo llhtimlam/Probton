@@ -1,0 +1,69 @@
+Reading timing models for corner max_ss_125C_3v00…
+Reading timing library for the 'max_ss_125C_3v00' corner at '/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__ss_125C_3v00.lib'…
+Reading timing models for corner min_ff_n40C_3v60…
+Reading timing library for the 'min_ff_n40C_3v60' corner at '/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__ff_n40C_3v60.lib'…
+Reading timing models for corner nom_tt_025C_3v30…
+Reading timing library for the 'nom_tt_025C_3v30' corner at '/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib'…
+Reading OpenROAD database at '/workspace/librelane/runs/RUN_2026-08-10_10-35-54/28-openroad-globalplacement/wrapper.odb'…
+Reading design constraints file at '/usr/local/lib/python3.12/dist-packages/librelane/scripts/base.sdc'…
+[INFO] Using clock clk…
+[INFO] Setting output delay to: 40
+[INFO] Setting input delay to: 40
+[INFO] Setting load to: 0.07291
+[INFO] Setting clock uncertainty to: 0.25
+[INFO] Setting clock transition to: 0.15
+[INFO] Setting timing derate to: 5%
+[INFO RSZ-0027] Inserted 4 gf180mcu_fd_sc_mcu7t5v0__buf_1 input buffers.
+[INFO RSZ-0028] Inserted 11 gf180mcu_fd_sc_mcu7t5v0__buf_1 output buffers.
++ repair_design -verbose -max_wire_length 0 -slew_margin 10 -cap_margin 10
+Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------------------
+        0 |     +0.0% |       0 |       0 |             0 |      6349
+     1000 |     +2.3% |     109 |     161 |            78 |      5349
+     2000 |     +4.0% |     258 |     200 |           146 |      4349
+     3000 |     +5.7% |     398 |     231 |           218 |      3349
+     4000 |     +8.1% |     522 |     331 |           303 |      2349
+     5000 |    +12.3% |     686 |     633 |           413 |      1349
+     6000 |    +20.3% |     950 |    1453 |           653 |       349
+    final |    +27.2% |    1087 |    2240 |           784 |         0
+---------------------------------------------------------------------
+[INFO RSZ-0034] Found 1206 slew violations.
+[INFO RSZ-0035] Found 177 fanout violations.
+[INFO RSZ-0039] Resized 1087 instances.
+[INFO RSZ-0038] Inserted 2240 buffers in 784 nets.
+[WARNING RSZ-0020] found 2 floating nets.
+ VDD
+ VSS
++ detailed_placement -max_displacement  800 500 
+Placement Analysis
+---------------------------------
+total displacement      68390.2 u
+average displacement        5.1 u
+max displacement          212.2 u
+original HPWL          440249.3 u
+legalized HPWL         509735.9 u
+delta HPWL                   16 %
+
+[INFO DPL-0020] Mirrored 3706 instances
+[INFO DPL-0021] HPWL before          509735.9 u
+[INFO DPL-0022] HPWL after           499939.6 u
+[INFO DPL-0023] HPWL delta               -1.9 %
+Setting global connections for newly added cells…
+[INFO] Setting global connections...
+analog_block_inst matched with analog_block_inst
+[INFO ODB-0403] 9020 connections made, 0 conflicts skipped.
+Updating metrics…
+Cell type report:                       Count       Area
+  Macro                                     1  115200.00
+  Endcap cell                             504    2212.76
+  Tap cell                               4412   19370.44
+  Timing Repair Buffer                   2255   47903.65
+  Inverter                                452    4320.15
+  Sequential cell                         548   42281.75
+  Multi-Input combinational cell         5323  119486.93
+  Total                                 13495  350775.69
+Writing OpenROAD database to '/workspace/librelane/runs/RUN_2026-08-10_10-35-54/32-openroad-repairdesignpostgpl/wrapper.odb'…
+Writing netlist to '/workspace/librelane/runs/RUN_2026-08-10_10-35-54/32-openroad-repairdesignpostgpl/wrapper.nl.v'…
+Writing powered netlist to '/workspace/librelane/runs/RUN_2026-08-10_10-35-54/32-openroad-repairdesignpostgpl/wrapper.pnl.v'…
+Writing layout to '/workspace/librelane/runs/RUN_2026-08-10_10-35-54/32-openroad-repairdesignpostgpl/wrapper.def'…
+Writing timing constraints to '/workspace/librelane/runs/RUN_2026-08-10_10-35-54/32-openroad-repairdesignpostgpl/wrapper.sdc'…
