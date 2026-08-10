@@ -187,4 +187,4 @@ value="
 .lib $::180MCU_MODELS/sm141064.ngspice typical
 "}
 C {devices/lab_wire.sym} 470 190 2 0 {name=p10 sig_type=std_logic lab=VSS}
-C {tia/B18_TIA_OTA.sym} 400 190 0 0 {name=x1}
+C {Analog/schematics/1_readout/tia/B18_TIA_OTA.sym} 400 190 0 0 {name=x1}

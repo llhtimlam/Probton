@@ -190,4 +190,4 @@ C {devices/lab_wire.sym} 470 190 2 0 {name=p10 sig_type=std_logic lab=VSS}
 C {code_shown.sym} 1660 160 0 0 {name=s1 only_toplevel=false value="
 *ICMR is 3.3v to 1.24v, tested op with vcm = 2.2v
 "}
-C {bpf/B18_BPF_OTA.sym} 390 190 0 0 {name=x1}
+C {Analog/schematics/1_readout/bpf/B18_BPF_OTA.sym} 390 190 0 0 {name=x1}
