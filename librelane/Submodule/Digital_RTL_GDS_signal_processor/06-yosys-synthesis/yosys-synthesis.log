@@ -1,0 +1,1200 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.67 (git sha1 2d1509d1b, Release, GNU /usr/bin/c++ 13.3.0)
+
+1. Executing Liberty frontend: /foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib
+Imported 229 cell types from liberty file.
+[INFO] Using SDC file '/workspace/librelane/runs/RUN_2026-08-10_00-05-58/06-yosys-synthesis/synthesis.abc.sdc' for ABC…wtaf
+
+2. Executing Verilog-2005 frontend: /workspace/src/signal_processor.sv
+Parsing SystemVerilog input from `/workspace/src/signal_processor.sv' to AST representation.
+Storing AST representation for module `$abstract\signal_processor'.
+Successfully finished Verilog frontend.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+4. Executing AST frontend in derive mode using pre-parsed AST for module `\signal_processor'.
+Generating RTLIL representation for module `\signal_processor'.
+
+4.1. Analyzing design hierarchy..
+Top module:  \signal_processor
+
+4.2. Analyzing design hierarchy..
+Top module:  \signal_processor
+Removing unused module `$abstract\signal_processor'.
+Removed 1 unused modules.
+Renaming module signal_processor to signal_processor.
+
+5. Executing ATTRMAP pass (move or copy attributes).
+
+6. Executing HIERARCHY pass (managing design hierarchy).
+
+6.1. Analyzing design hierarchy..
+Top module:  \signal_processor
+
+6.2. Analyzing design hierarchy..
+Top module:  \signal_processor
+Removed 0 unused modules.
+
+7. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+8. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 5 switch rules as full_case in process $proc$/workspace/src/signal_processor.sv:101$10 in module signal_processor.
+Marked 2 switch rules as full_case in process $proc$/workspace/src/signal_processor.sv:87$5 in module signal_processor.
+Marked 2 switch rules as full_case in process $proc$/workspace/src/signal_processor.sv:46$1 in module signal_processor.
+Removed a total of 0 dead cases.
+
+9. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 5 redundant assignments.
+Promoted 2 assignments to connections.
+
+10. Executing PROC_INIT pass (extract init attributes).
+
+11. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `\signal_processor.$proc$/workspace/src/signal_processor.sv:101$10'.
+Found async reset \rst_n in `\signal_processor.$proc$/workspace/src/signal_processor.sv:46$1'.
+
+12. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~9 debug messages>
+
+13. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\signal_processor.$proc$/workspace/src/signal_processor.sv:101$10'.
+     1/13: $0\latch_phase270_ack[0:0]
+     2/13: $0\latch_phase90_ack[0:0]
+     3/13: $0\cycle_count[3:0]
+     4/13: $0\cnt_out[3:0]
+     5/13: $0\cnt_in[3:0]
+     6/13: $0\s90_valid[0:0]
+     7/13: $0\s90[0:0]
+     8/13: $0\votes_out_phase[3:0]
+     9/13: $0\votes_in_phase[3:0]
+    10/13: $0\phase_state[1:0]
+    11/13: $0\jitter_flag[0:0]
+    12/13: $0\move_en[0:0]
+    13/13: $0\dir[0:0]
+Creating decoders for process `\signal_processor.$proc$/workspace/src/signal_processor.sv:87$5'.
+     1/4: $2\next_in[3:0]
+     2/4: $2\next_out[3:0]
+     3/4: $1\next_out[3:0]
+     4/4: $1\next_in[3:0]
+Creating decoders for process `\signal_processor.$proc$/workspace/src/signal_processor.sv:46$1'.
+     1/3: $0\s270_pipe[3:0]
+     2/3: $0\s90_pipe[3:0]
+     3/3: $0\comp_pipe[3:0]
+
+14. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\signal_processor.\next_in' from process `\signal_processor.$proc$/workspace/src/signal_processor.sv:87$5'.
+No latch inferred for signal `\signal_processor.\next_out' from process `\signal_processor.$proc$/workspace/src/signal_processor.sv:87$5'.
+
+15. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\signal_processor.\latch_phase90_ack' using process `\signal_processor.$proc$/workspace/src/signal_processor.sv:101$10'.
+  created $adff cell `$procdff$153' with positive edge clock and positive level reset.
+Creating register for signal `\signal_processor.\latch_phase270_ack' using process `\signal_processor.$proc$/workspace/src/signal_processor.sv:101$10'.
+  created $adff cell `$procdff$158' with positive edge clock and positive level reset.
+Creating register for signal `\signal_processor.\dir' using process `\signal_processor.$proc$/workspace/src/signal_processor.sv:101$10'.
+  created $adff cell `$procdff$163' with positive edge clock and positive level reset.
+Creating register for signal `\signal_processor.\move_en' using process `\signal_processor.$proc$/workspace/src/signal_processor.sv:101$10'.
+  created $adff cell `$procdff$168' with positive edge clock and positive level reset.
+Creating register for signal `\signal_processor.\jitter_flag' using process `\signal_processor.$proc$/workspace/src/signal_processor.sv:101$10'.
+  created $adff cell `$procdff$173' with positive edge clock and positive level reset.
+Creating register for signal `\signal_processor.\phase_state' using process `\signal_processor.$proc$/workspace/src/signal_processor.sv:101$10'.
+  created $adff cell `$procdff$178' with positive edge clock and positive level reset.
+Creating register for signal `\signal_processor.\votes_in_phase' using process `\signal_processor.$proc$/workspace/src/signal_processor.sv:101$10'.
+  created $adff cell `$procdff$183' with positive edge clock and positive level reset.
+Creating register for signal `\signal_processor.\votes_out_phase' using process `\signal_processor.$proc$/workspace/src/signal_processor.sv:101$10'.
+  created $adff cell `$procdff$188' with positive edge clock and positive level reset.
+Creating register for signal `\signal_processor.\s90' using process `\signal_processor.$proc$/workspace/src/signal_processor.sv:101$10'.
+  created $adff cell `$procdff$193' with positive edge clock and positive level reset.
+Creating register for signal `\signal_processor.\s90_valid' using process `\signal_processor.$proc$/workspace/src/signal_processor.sv:101$10'.
+  created $adff cell `$procdff$198' with positive edge clock and positive level reset.
+Creating register for signal `\signal_processor.\cnt_in' using process `\signal_processor.$proc$/workspace/src/signal_processor.sv:101$10'.
+  created $adff cell `$procdff$203' with positive edge clock and positive level reset.
+Creating register for signal `\signal_processor.\cnt_out' using process `\signal_processor.$proc$/workspace/src/signal_processor.sv:101$10'.
+  created $adff cell `$procdff$208' with positive edge clock and positive level reset.
+Creating register for signal `\signal_processor.\cycle_count' using process `\signal_processor.$proc$/workspace/src/signal_processor.sv:101$10'.
+  created $adff cell `$procdff$213' with positive edge clock and positive level reset.
+Creating register for signal `\signal_processor.\comp_pipe' using process `\signal_processor.$proc$/workspace/src/signal_processor.sv:46$1'.
+  created $adff cell `$procdff$218' with positive edge clock and positive level reset.
+Creating register for signal `\signal_processor.\s90_pipe' using process `\signal_processor.$proc$/workspace/src/signal_processor.sv:46$1'.
+  created $adff cell `$procdff$223' with positive edge clock and positive level reset.
+Creating register for signal `\signal_processor.\s270_pipe' using process `\signal_processor.$proc$/workspace/src/signal_processor.sv:46$1'.
+  created $adff cell `$procdff$228' with positive edge clock and positive level reset.
+
+16. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+17. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 6 empty switches in `\signal_processor.$proc$/workspace/src/signal_processor.sv:101$10'.
+Removing empty process `signal_processor.$proc$/workspace/src/signal_processor.sv:101$10'.
+Found and cleaned up 2 empty switches in `\signal_processor.$proc$/workspace/src/signal_processor.sv:87$5'.
+Removing empty process `signal_processor.$proc$/workspace/src/signal_processor.sv:87$5'.
+Found and cleaned up 1 empty switch in `\signal_processor.$proc$/workspace/src/signal_processor.sv:46$1'.
+Removing empty process `signal_processor.$proc$/workspace/src/signal_processor.sv:46$1'.
+Cleaned up 9 empty switches.
+
+18. Executing CHECK pass (checking for obvious problems).
+Checking module signal_processor...
+Found and reported 0 problems.
+
+19. Executing OPT_EXPR pass (perform const folding).
+Optimizing module signal_processor.
+<suppressed ~48 debug messages>
+
+20. Executing FLATTEN pass (flatten design).
+
+21. Executing OPT_EXPR pass (perform const folding).
+Optimizing module signal_processor.
+
+22. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \signal_processor..
+Removed 20 unused cells and 108 unused wires.
+<suppressed ~21 debug messages>
+
+23. Executing OPT_EXPR pass (perform const folding).
+Optimizing module signal_processor.
+
+24. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\signal_processor'.
+Computing hashes of 74 cells of `\signal_processor'.
+Finding duplicate cells in `\signal_processor'.
+Removed a total of 0 cells.
+
+25. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \signal_processor..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$132.
+    dead port 2/2 on $mux $procmux$126.
+Removed 2 multiplexer ports.
+<suppressed ~66 debug messages>
+
+26. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \signal_processor.
+Performed a total of 0 changes.
+
+27. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\signal_processor'.
+Computing hashes of 72 cells of `\signal_processor'.
+Finding duplicate cells in `\signal_processor'.
+Removed a total of 0 cells.
+
+28. Executing OPT_DFF pass (perform DFF optimizations).
+
+29. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \signal_processor..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+30. Executing OPT_EXPR pass (perform const folding).
+Optimizing module signal_processor.
+
+31. Rerunning OPT passes. (Maybe there is more to do…)
+
+32. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \signal_processor..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~64 debug messages>
+
+33. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \signal_processor.
+Performed a total of 0 changes.
+
+34. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\signal_processor'.
+Computing hashes of 72 cells of `\signal_processor'.
+Finding duplicate cells in `\signal_processor'.
+Removed a total of 0 cells.
+
+35. Executing OPT_DFF pass (perform DFF optimizations).
+
+36. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \signal_processor..
+
+37. Executing OPT_EXPR pass (perform const folding).
+Optimizing module signal_processor.
+
+38. Executing FSM pass (extract and optimize FSM).
+
+38.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+38.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+38.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+38.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \signal_processor..
+
+38.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+38.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+38.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+38.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+39. Executing OPT_EXPR pass (perform const folding).
+Optimizing module signal_processor.
+
+40. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\signal_processor'.
+Computing hashes of 72 cells of `\signal_processor'.
+Finding duplicate cells in `\signal_processor'.
+Removed a total of 0 cells.
+
+41. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \signal_processor..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~64 debug messages>
+
+42. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \signal_processor.
+Performed a total of 0 changes.
+
+43. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\signal_processor'.
+Computing hashes of 72 cells of `\signal_processor'.
+Finding duplicate cells in `\signal_processor'.
+Removed a total of 0 cells.
+
+44. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$213 ($adff) from module signal_processor (D = $0\cycle_count[3:0], Q = \cycle_count).
+Adding EN signal on $procdff$208 ($adff) from module signal_processor (D = $0\cnt_out[3:0], Q = \cnt_out).
+Adding EN signal on $procdff$203 ($adff) from module signal_processor (D = $0\cnt_in[3:0], Q = \cnt_in).
+Adding EN signal on $procdff$198 ($adff) from module signal_processor (D = $0\s90_valid[0:0], Q = \s90_valid).
+Adding EN signal on $procdff$193 ($adff) from module signal_processor (D = $0\s90[0:0], Q = \s90).
+Adding EN signal on $procdff$188 ($adff) from module signal_processor (D = $0\votes_out_phase[3:0], Q = \votes_out_phase).
+Adding EN signal on $procdff$183 ($adff) from module signal_processor (D = $0\votes_in_phase[3:0], Q = \votes_in_phase).
+Adding EN signal on $procdff$178 ($adff) from module signal_processor (D = $0\phase_state[1:0], Q = \phase_state).
+Adding EN signal on $procdff$173 ($adff) from module signal_processor (D = $0\jitter_flag[0:0], Q = \jitter_flag).
+Adding EN signal on $procdff$168 ($adff) from module signal_processor (D = $0\move_en[0:0], Q = \move_en).
+Adding EN signal on $procdff$163 ($adff) from module signal_processor (D = $0\dir[0:0], Q = \dir).
+
+45. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \signal_processor..
+
+46. Executing OPT_EXPR pass (perform const folding).
+Optimizing module signal_processor.
+
+47. Rerunning OPT passes. (Maybe there is more to do…)
+
+48. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \signal_processor..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~64 debug messages>
+
+49. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \signal_processor.
+Performed a total of 0 changes.
+
+50. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\signal_processor'.
+Computing hashes of 94 cells of `\signal_processor'.
+Finding duplicate cells in `\signal_processor'.
+Computing hashes of 82 cells of `\signal_processor'.
+Finding duplicate cells in `\signal_processor'.
+Computing hashes of 79 cells of `\signal_processor'.
+Finding duplicate cells in `\signal_processor'.
+<suppressed ~45 debug messages>
+Removed a total of 15 cells.
+
+51. Executing OPT_DFF pass (perform DFF optimizations).
+
+52. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \signal_processor..
+Removed 0 unused cells and 15 unused wires.
+<suppressed ~1 debug messages>
+
+53. Executing OPT_EXPR pass (perform const folding).
+Optimizing module signal_processor.
+
+54. Rerunning OPT passes. (Maybe there is more to do…)
+
+55. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \signal_processor..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~64 debug messages>
+
+56. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \signal_processor.
+Performed a total of 0 changes.
+
+57. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\signal_processor'.
+Computing hashes of 79 cells of `\signal_processor'.
+Finding duplicate cells in `\signal_processor'.
+Removed a total of 0 cells.
+
+58. Executing OPT_DFF pass (perform DFF optimizations).
+
+59. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \signal_processor..
+
+60. Executing OPT_EXPR pass (perform const folding).
+Optimizing module signal_processor.
+
+61. Executing WREDUCE pass (reducing word size of cells).
+Removed top 2 bits (of 3) from port B of cell signal_processor.$auto$opt_dff.cc:320:make_patterns_logic$281 ($ne).
+Removed top 1 bits (of 2) from port B of cell signal_processor.$auto$opt_dff.cc:320:make_patterns_logic$279 ($ne).
+Removed top 1 bits (of 2) from port B of cell signal_processor.$auto$opt_dff.cc:320:make_patterns_logic$277 ($ne).
+Removed top 1 bits (of 2) from port B of cell signal_processor.$auto$opt_dff.cc:320:make_patterns_logic$243 ($ne).
+Removed top 2 bits (of 3) from port B of cell signal_processor.$auto$opt_dff.cc:320:make_patterns_logic$240 ($ne).
+Removed top 3 bits (of 4) from port B of cell signal_processor.$add$/workspace/src/signal_processor.sv:92$6 ($add).
+Removed top 3 bits (of 4) from port B of cell signal_processor.$add$/workspace/src/signal_processor.sv:93$7 ($add).
+Removed top 3 bits (of 4) from port B of cell signal_processor.$add$/workspace/src/signal_processor.sv:180$15 ($add).
+Removed top 1 bits (of 2) from port B of cell signal_processor.$procmux$131_CMP0 ($eq).
+
+62. Executing PEEPOPT pass (run peephole optimizers).
+
+63. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \signal_processor..
+
+64. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module signal_processor:
+  creating $macc model for $add$/workspace/src/signal_processor.sv:180$15 ($add).
+  creating $macc model for $add$/workspace/src/signal_processor.sv:92$6 ($add).
+  creating $macc model for $add$/workspace/src/signal_processor.sv:93$7 ($add).
+  creating $alu model for $macc $add$/workspace/src/signal_processor.sv:93$7.
+  creating $alu model for $macc $add$/workspace/src/signal_processor.sv:92$6.
+  creating $alu model for $macc $add$/workspace/src/signal_processor.sv:180$15.
+  creating $alu model for $ge$/workspace/src/signal_processor.sv:155$13 ($ge): new $alu
+  creating $alu model for $ge$/workspace/src/signal_processor.sv:161$14 ($ge): new $alu
+  creating $alu cell for $ge$/workspace/src/signal_processor.sv:161$14: $auto$alumacc.cc:512:replace_alu$286
+  creating $alu cell for $ge$/workspace/src/signal_processor.sv:155$13: $auto$alumacc.cc:512:replace_alu$299
+  creating $alu cell for $add$/workspace/src/signal_processor.sv:180$15: $auto$alumacc.cc:512:replace_alu$312
+  creating $alu cell for $add$/workspace/src/signal_processor.sv:92$6: $auto$alumacc.cc:512:replace_alu$315
+  creating $alu cell for $add$/workspace/src/signal_processor.sv:93$7: $auto$alumacc.cc:512:replace_alu$318
+  created 5 $alu and 0 $macc cells.
+
+65. Executing SHARE pass (SAT-based resource sharing).
+
+66. Executing OPT_EXPR pass (perform const folding).
+Optimizing module signal_processor.
+
+67. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\signal_processor'.
+Computing hashes of 89 cells of `\signal_processor'.
+Finding duplicate cells in `\signal_processor'.
+Removed a total of 0 cells.
+
+68. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \signal_processor..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~64 debug messages>
+
+69. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \signal_processor.
+Performed a total of 0 changes.
+
+70. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\signal_processor'.
+Computing hashes of 89 cells of `\signal_processor'.
+Finding duplicate cells in `\signal_processor'.
+Removed a total of 0 cells.
+
+71. Executing OPT_DFF pass (perform DFF optimizations).
+
+72. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \signal_processor..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+73. Executing OPT_EXPR pass (perform const folding).
+Optimizing module signal_processor.
+
+74. Rerunning OPT passes. (Maybe there is more to do…)
+
+75. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \signal_processor..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~64 debug messages>
+
+76. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \signal_processor.
+Performed a total of 0 changes.
+
+77. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\signal_processor'.
+Computing hashes of 89 cells of `\signal_processor'.
+Finding duplicate cells in `\signal_processor'.
+Removed a total of 0 cells.
+
+78. Executing OPT_DFF pass (perform DFF optimizations).
+
+79. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \signal_processor..
+
+80. Executing OPT_EXPR pass (perform const folding).
+Optimizing module signal_processor.
+
+81. Executing MEMORY pass.
+
+81.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+81.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+81.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+81.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+81.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+81.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \signal_processor..
+
+81.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+81.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+81.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \signal_processor..
+
+81.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+82. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \signal_processor..
+
+83. Executing OPT_EXPR pass (perform const folding).
+Optimizing module signal_processor.
+<suppressed ~29 debug messages>
+
+84. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\signal_processor'.
+Computing hashes of 70 cells of `\signal_processor'.
+Finding duplicate cells in `\signal_processor'.
+Removed a total of 0 cells.
+
+85. Executing OPT_DFF pass (perform DFF optimizations).
+
+86. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \signal_processor..
+Removed 0 unused cells and 19 unused wires.
+<suppressed ~1 debug messages>
+
+87. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+88. Executing OPT_EXPR pass (perform const folding).
+Optimizing module signal_processor.
+<suppressed ~1 debug messages>
+
+89. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\signal_processor'.
+Computing hashes of 70 cells of `\signal_processor'.
+Finding duplicate cells in `\signal_processor'.
+Removed a total of 0 cells.
+
+90. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \signal_processor..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~29 debug messages>
+
+91. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \signal_processor.
+Performed a total of 0 changes.
+
+92. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\signal_processor'.
+Computing hashes of 70 cells of `\signal_processor'.
+Finding duplicate cells in `\signal_processor'.
+Removed a total of 0 cells.
+
+93. Executing OPT_SHARE pass.
+
+94. Executing OPT_DFF pass (perform DFF optimizations).
+
+95. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \signal_processor..
+
+96. Executing OPT_EXPR pass (perform const folding).
+Optimizing module signal_processor.
+
+97. Executing TECHMAP pass (map to technology primitives).
+
+97.1. Executing Verilog-2005 frontend: /foss/tools/yosys/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/foss/tools/yosys/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+97.2. Continuing TECHMAP pass.
+Using template $paramod$32a7b7b86c07519b7537abc18e96f0331f97914d\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $reduce_and.
+Using template $paramod$740b056ede97228d3eae64ea2fdc81f0a33e0fe7\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $ne.
+Using extmapper simplemap for cells of type $adffe.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $adff.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000100 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000100 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+No more expansions possible.
+<suppressed ~422 debug messages>
+
+98. Executing OPT_EXPR pass (perform const folding).
+Optimizing module signal_processor.
+<suppressed ~199 debug messages>
+
+99. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\signal_processor'.
+Computing hashes of 214 cells of `\signal_processor'.
+Finding duplicate cells in `\signal_processor'.
+Computing hashes of 200 cells of `\signal_processor'.
+Finding duplicate cells in `\signal_processor'.
+Computing hashes of 199 cells of `\signal_processor'.
+Finding duplicate cells in `\signal_processor'.
+<suppressed ~45 debug messages>
+Removed a total of 15 cells.
+
+100. Executing OPT_DFF pass (perform DFF optimizations).
+
+101. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \signal_processor..
+Removed 24 unused cells and 268 unused wires.
+<suppressed ~25 debug messages>
+
+102. Executing OPT_EXPR pass (perform const folding).
+Optimizing module signal_processor.
+
+103. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\signal_processor'.
+Computing hashes of 175 cells of `\signal_processor'.
+Finding duplicate cells in `\signal_processor'.
+Removed a total of 0 cells.
+
+104. Executing OPT_DFF pass (perform DFF optimizations).
+
+105. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \signal_processor..
+
+106. Executing ABC pass (technology mapping using ABC).
+
+106.1. Extracting gate netlist of module `\signal_processor' to `<abc-temp-dir>/input.blif'..
+
+106.1.1. Executed ABC.
+Extracted 134 gates and 165 wires to a netlist network with 30 inputs and 46 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: UC Berkeley, ABC 1.01 (compiled Jul 27 2026 18:12:25)
+ABC: abc 01> empty
+ABC: abc 01> source <abc-temp-dir>/abc.script
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+ABC: 
+ABC: YOSYS_ABC_DONE 
+
+106.1.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:       19
+ABC RESULTS:            ANDNOT cells:       36
+ABC RESULTS:               MUX cells:       14
+ABC RESULTS:              NAND cells:        4
+ABC RESULTS:               NOR cells:        3
+ABC RESULTS:               NOT cells:       10
+ABC RESULTS:                OR cells:       15
+ABC RESULTS:             ORNOT cells:        8
+ABC RESULTS:              XNOR cells:        4
+ABC RESULTS:               XOR cells:        7
+ABC RESULTS:        internal signals:       89
+ABC RESULTS:           input signals:       30
+ABC RESULTS:          output signals:       46
+Removing temp directory.
+Removing global temp directory.
+
+107. Executing OPT pass (performing simple optimizations).
+
+107.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module signal_processor.
+
+107.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\signal_processor'.
+Computing hashes of 161 cells of `\signal_processor'.
+Finding duplicate cells in `\signal_processor'.
+Computing hashes of 160 cells of `\signal_processor'.
+Finding duplicate cells in `\signal_processor'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+107.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+107.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \signal_processor..
+Removed 0 unused cells and 130 unused wires.
+<suppressed ~5 debug messages>
+
+107.5. Finished fast OPT passes.
+
+108. Executing HIERARCHY pass (managing design hierarchy).
+
+108.1. Analyzing design hierarchy..
+Top module:  \signal_processor
+
+108.2. Analyzing design hierarchy..
+Top module:  \signal_processor
+Removed 0 unused modules.
+
+109. Executing CHECK pass (checking for obvious problems).
+Checking module signal_processor...
+Found and reported 0 problems.
+
+110. Printing statistics.
+
+=== signal_processor ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      120 wires
+      171 wire bits
+       26 public wires
+       52 public wire bits
+       14 ports
+       21 port bits
+      160 cells
+       36   $_ANDNOT_
+       18   $_AND_
+       27   $_DFFE_PN0P_
+       14   $_DFF_PN0_
+       14   $_MUX_
+        4   $_NAND_
+        3   $_NOR_
+       10   $_NOT_
+        8   $_ORNOT_
+       15   $_OR_
+        4   $_XNOR_
+        7   $_XOR_
+
+111. Executing OPT pass (performing simple optimizations).
+
+111.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module signal_processor.
+
+111.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\signal_processor'.
+Computing hashes of 160 cells of `\signal_processor'.
+Finding duplicate cells in `\signal_processor'.
+Removed a total of 0 cells.
+
+111.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \signal_processor..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+111.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \signal_processor.
+Performed a total of 0 changes.
+
+111.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\signal_processor'.
+Computing hashes of 160 cells of `\signal_processor'.
+Finding duplicate cells in `\signal_processor'.
+Removed a total of 0 cells.
+
+111.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+111.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \signal_processor..
+
+111.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module signal_processor.
+
+111.9. Finished fast OPT passes. (There is nothing left to do.)
+
+112. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \signal_processor..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+{
+   "creator": "Yosys 0.67 (git sha1 2d1509d1b, Release, GNU /usr/bin/c++ 13.3.0)",
+   "invocation": "stat -json -liberty /workspace/librelane/runs/RUN_2026-08-10_00-05-58/tmp/c3aa5a4e65f749cf996d9cfc8b311a9b.lib ",
+   "modules": {
+      "\\signal_processor": {
+         "num_wires":         119,
+         "num_wire_bits":     169,
+         "num_pub_wires":     25,
+         "num_pub_wire_bits": 50,
+         "num_ports":         14,
+         "num_port_bits":     21,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         160,
+         "num_submodules":       0,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 36,
+            "$_AND_": 18,
+            "$_DFFE_PN0P_": 27,
+            "$_DFF_PN0_": 14,
+            "$_MUX_": 14,
+            "$_NAND_": 4,
+            "$_NOR_": 3,
+            "$_NOT_": 10,
+            "$_ORNOT_": 8,
+            "$_OR_": 15,
+            "$_XNOR_": 4,
+            "$_XOR_": 7
+         }
+      }
+   },
+      "design": {
+         "num_wires":         119,
+         "num_wire_bits":     169,
+         "num_pub_wires":     25,
+         "num_pub_wire_bits": 50,
+         "num_ports":         14,
+         "num_port_bits":     21,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         160,
+         "num_submodules":       0,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 36,
+            "$_AND_": 18,
+            "$_DFFE_PN0P_": 27,
+            "$_DFF_PN0_": 14,
+            "$_MUX_": 14,
+            "$_NAND_": 4,
+            "$_NOR_": 3,
+            "$_NOT_": 10,
+            "$_ORNOT_": 8,
+            "$_OR_": 15,
+            "$_XNOR_": 4,
+            "$_XOR_": 7
+         }
+      }
+}
+
+113. Printing statistics.
+
+=== signal_processor ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      119 wires
+      169 wire bits
+       25 public wires
+       50 public wire bits
+       14 ports
+       21 port bits
+      160 cells
+       36   $_ANDNOT_
+       18   $_AND_
+       27   $_DFFE_PN0P_
+       14   $_DFF_PN0_
+       14   $_MUX_
+        4   $_NAND_
+        3   $_NOR_
+       10   $_NOT_
+        8   $_ORNOT_
+       15   $_OR_
+        4   $_XNOR_
+        7   $_XOR_
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_DFFE_PN0P_ is unknown!
+   Area for cell type $_DFF_PN0_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+
+114. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell gf180mcu_fd_sc_mcu7t5v0__dffnq_1 (noninv, pins=3, area=65.86) is a direct match for cell type $_DFF_N_.
+  cell gf180mcu_fd_sc_mcu7t5v0__dffq_1 (noninv, pins=3, area=63.66) is a direct match for cell type $_DFF_P_.
+  cell gf180mcu_fd_sc_mcu7t5v0__dffnrnq_1 (noninv, pins=4, area=74.64) is a direct match for cell type $_DFF_NN0_.
+  cell gf180mcu_fd_sc_mcu7t5v0__dffnsnq_1 (noninv, pins=4, area=79.03) is a direct match for cell type $_DFF_NN1_.
+  cell gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 (noninv, pins=4, area=74.64) is a direct match for cell type $_DFF_PN0_.
+  cell gf180mcu_fd_sc_mcu7t5v0__dffsnq_1 (noninv, pins=4, area=79.03) is a direct match for cell type $_DFF_PN1_.
+  cell gf180mcu_fd_sc_mcu7t5v0__dffnrsnq_1 (noninv, pins=5, area=94.39) is a direct match for cell type $_DFFSR_NNN_.
+  cell gf180mcu_fd_sc_mcu7t5v0__dffrsnq_1 (noninv, pins=5, area=85.61) is a direct match for cell type $_DFFSR_PNN_.
+  final dff cell mappings:
+    \gf180mcu_fd_sc_mcu7t5v0__dffnq_1 _DFF_N_ (.CLKN( C), .D( D), .Q( Q));
+    \gf180mcu_fd_sc_mcu7t5v0__dffq_1 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+    \gf180mcu_fd_sc_mcu7t5v0__dffnrnq_1 _DFF_NN0_ (.CLKN( C), .D( D), .Q( Q), .RN( R));
+    \gf180mcu_fd_sc_mcu7t5v0__dffnsnq_1 _DFF_NN1_ (.CLKN( C), .D( D), .Q( Q), .SETN( R));
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RN( R));
+    \gf180mcu_fd_sc_mcu7t5v0__dffsnq_1 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SETN( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    unmapped dff cell: $_DFFE_NN_
+    unmapped dff cell: $_DFFE_NP_
+    unmapped dff cell: $_DFFE_PN_
+    unmapped dff cell: $_DFFE_PP_
+    \gf180mcu_fd_sc_mcu7t5v0__dffnrsnq_1 _DFFSR_NNN_ (.CLKN( C), .D( D), .Q( Q), .RN( R), .SETN( S));
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    \gf180mcu_fd_sc_mcu7t5v0__dffrsnq_1 _DFFSR_PNN_ (.CLK( C), .D( D), .Q( Q), .RN( R), .SETN( S));
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+114.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+Mapping DFF cells in module `\signal_processor':
+  mapped 41 $_DFF_PN0_ cells to \gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 cells.
+{
+   "creator": "Yosys 0.67 (git sha1 2d1509d1b, Release, GNU /usr/bin/c++ 13.3.0)",
+   "invocation": "stat -json -liberty /workspace/librelane/runs/RUN_2026-08-10_00-05-58/tmp/c3aa5a4e65f749cf996d9cfc8b311a9b.lib ",
+   "modules": {
+      "\\signal_processor": {
+         "num_wires":         146,
+         "num_wire_bits":     196,
+         "num_pub_wires":     25,
+         "num_pub_wire_bits": 50,
+         "num_ports":         14,
+         "num_port_bits":     21,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         187,
+         "num_submodules":       0,
+         "area":              3060.108800,
+         "sequential_area":    3060.108800,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 36,
+            "$_AND_": 18,
+            "$_MUX_": 41,
+            "$_NAND_": 4,
+            "$_NOR_": 3,
+            "$_NOT_": 10,
+            "$_ORNOT_": 8,
+            "$_OR_": 15,
+            "$_XNOR_": 4,
+            "$_XOR_": 7,
+            "gf180mcu_fd_sc_mcu7t5v0__dffrnq_1": 41
+         }
+      }
+   },
+      "design": {
+         "num_wires":         146,
+         "num_wire_bits":     196,
+         "num_pub_wires":     25,
+         "num_pub_wire_bits": 50,
+         "num_ports":         14,
+         "num_port_bits":     21,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         187,
+         "num_submodules":       0,
+         "area":              3060.108800,
+         "sequential_area":    3060.108800,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 36,
+            "$_AND_": 18,
+            "$_MUX_": 41,
+            "$_NAND_": 4,
+            "$_NOR_": 3,
+            "$_NOT_": 10,
+            "$_ORNOT_": 8,
+            "$_OR_": 15,
+            "$_XNOR_": 4,
+            "$_XOR_": 7,
+            "gf180mcu_fd_sc_mcu7t5v0__dffrnq_1": 41
+         }
+      }
+}
+
+115. Printing statistics.
+
+=== signal_processor ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      146        - wires
+      196        - wire bits
+       25        - public wires
+       50        - public wire bits
+       14        - ports
+       21        - port bits
+      187 3.06E+03 cells
+       36        -   $_ANDNOT_
+       18        -   $_AND_
+       41        -   $_MUX_
+        4        -   $_NAND_
+        3        -   $_NOR_
+       10        -   $_NOT_
+        8        -   $_ORNOT_
+       15        -   $_OR_
+        4        -   $_XNOR_
+        7        -   $_XOR_
+       41 3.06E+03   gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+
+   Chip area for module '\signal_processor': 3060.108800
+     of which used for sequential elements: 3060.108800 (100.00%)
+
+[INFO] Using generated ABC script '/workspace/librelane/runs/RUN_2026-08-10_00-05-58/06-yosys-synthesis/AREA_0.abc'…
+
+116. Executing ABC pass (technology mapping using ABC).
+
+116.1. Extracting gate netlist of module `\signal_processor' to `/tmp/yosys-abc-0Dbuji/input.blif'..
+
+116.1.1. Executed ABC.
+Extracted 146 gates and 189 wires to a netlist network with 43 inputs and 41 outputs.
+Running ABC script: /tmp/yosys-abc-0Dbuji/abc.script
+ABC: UC Berkeley, ABC 1.01 (compiled Jul 27 2026 18:12:25)
+ABC: abc 01> empty
+ABC: abc 01> source /tmp/yosys-abc-0Dbuji/abc.script
+ABC: + read_blif /tmp/yosys-abc-0Dbuji/input.blif 
+ABC: + read_scl /tmp/yosys-liberty-scl-cache/yosys_merged_eaa0c860.scl 
+ABC: Warning: Detected 6 multi-output cells (for example, "gf180mcu_fd_sc_mcu7t5v0__addf_1").
+ABC: + read_constr -v /workspace/librelane/runs/RUN_2026-08-10_00-05-58/06-yosys-synthesis/synthesis.abc.sdc 
+ABC: Setting driving cell to be "gf180mcu_fd_sc_mcu7t5v0__inv_1/ZN".
+ABC: Setting output load to be 72.910004.
+ABC: + source /workspace/librelane/runs/RUN_2026-08-10_00-05-58/06-yosys-synthesis/AREA_0.abc 
+ABC: Error: The network is combinational.
+ABC: Cannot find the default PI driving cell (gf180mcu_fd_sc_mcu7t5v0__inv_1/ZN) in the library.
+ABC: WireLoad = "none"  Gates =    108 (  8.3 %)   Cap = 27.5 ff (  7.4 %)   Area =     1819.82 ( 86.1 %)   Delay =  7549.72 ps  ( 10.2 %)               
+ABC: Path  0 --       4 : 0    3 pi                                A =   0.00  Df =   0.0   -0.0 ps  S =   0.0 ps  Cin =  0.0 ff  Cout =   9.9 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --     107 : 2    9 gf180mcu_fd_sc_mcu7t5v0__nand2_1  A =  10.98  Df = 624.0 -123.7 ps  S =1059.3 ps  Cin =  4.6 ff  Cout =  36.0 ff  Cmax = 322.3 ff  G =  790  
+ABC: Path  2 --     138 : 4    3 gf180mcu_fd_sc_mcu7t5v0__nor4_1   A =  21.95  Df =1975.1 -664.1 ps  S =2132.4 ps  Cin =  3.7 ff  Cout =  19.1 ff  Cmax =  91.0 ff  G =  512  
+ABC: Path  3 --     143 : 2    1 gf180mcu_fd_sc_mcu7t5v0__xor2_1   A =  26.34  Df =3238.2-1358.6 ps  S = 536.0 ps  Cin =  7.3 ff  Cout =   4.4 ff  Cmax = 181.9 ff  G =   60  
+ABC: Path  4 --     169 : 4    3 gf180mcu_fd_sc_mcu7t5v0__oai211_1 A =  21.95  Df =3835.0-1438.9 ps  S = 831.3 ps  Cin =  4.6 ff  Cout =  12.4 ff  Cmax = 180.3 ff  G =  266  
+ABC: Path  5 --     173 : 5    1 gf180mcu_fd_sc_mcu7t5v0__oai32_1  A =  26.34  Df =7549.7-2538.3 ps  S =5655.9 ps  Cin =  4.6 ff  Cout =  72.9 ff  Cmax = 114.5 ff  G = 1577  
+ABC: Start-point = pi3 (\strobe270).  End-point = po30 ($auto$rtlil.cc:3510:MuxGate$1044).
+ABC: netlist                       : i/o =   43/   41  lat =    0  nd =   108  edge =    256  area =1819.85  delay = 6.00  lev = 6
+ABC: + write_blif /tmp/yosys-abc-0Dbuji/output.blif 
+ABC:                                                                                
+ABC: YOSYS_ABC_DONE 
+
+116.1.2. Re-integrating ABC results.
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__and2_1 cells:       16
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__aoi21_1 cells:        1
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__aoi22_1 cells:        1
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__clkinv_1 cells:        9
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__nand2_1 cells:       21
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__nand3_1 cells:        6
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__nand4_1 cells:        3
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__nor2_1 cells:       12
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__nor3_1 cells:        2
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__nor4_1 cells:        2
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__oai211_1 cells:        2
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__oai21_1 cells:       12
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__oai22_1 cells:        2
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__oai31_1 cells:        2
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__oai32_1 cells:        1
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__or3_1 cells:        1
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__xnor2_1 cells:        6
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__xor2_1 cells:        9
+ABC RESULTS:        internal signals:      105
+ABC RESULTS:           input signals:       43
+ABC RESULTS:          output signals:       41
+Removing temp directory.
+Removing global temp directory.
+
+117. Executing SETUNDEF pass (replace undef values with defined constants).
+
+118. Executing HILOMAP pass (mapping to constant drivers).
+
+119. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+120. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \signal_processor..
+Removed 0 unused cells and 192 unused wires.
+<suppressed ~4 debug messages>
+
+121. Executing INSBUF pass (insert buffer cells for connected wires).
+
+122. Executing CHECK pass (checking for obvious problems).
+Checking module signal_processor...
+Found and reported 0 problems.
+{
+   "creator": "Yosys 0.67 (git sha1 2d1509d1b, Release, GNU /usr/bin/c++ 13.3.0)",
+   "invocation": "stat -json -liberty /workspace/librelane/runs/RUN_2026-08-10_00-05-58/tmp/c3aa5a4e65f749cf996d9cfc8b311a9b.lib ",
+   "modules": {
+      "\\signal_processor": {
+         "num_wires":         148,
+         "num_wire_bits":     155,
+         "num_pub_wires":     40,
+         "num_pub_wire_bits": 47,
+         "num_ports":         14,
+         "num_port_bits":     21,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         149,
+         "num_submodules":       0,
+         "area":              4879.929600,
+         "sequential_area":    3060.108800,
+         "num_cells_by_type": {
+            "gf180mcu_fd_sc_mcu7t5v0__and2_1": 16,
+            "gf180mcu_fd_sc_mcu7t5v0__aoi21_1": 1,
+            "gf180mcu_fd_sc_mcu7t5v0__aoi22_1": 1,
+            "gf180mcu_fd_sc_mcu7t5v0__clkinv_1": 9,
+            "gf180mcu_fd_sc_mcu7t5v0__dffrnq_1": 41,
+            "gf180mcu_fd_sc_mcu7t5v0__nand2_1": 21,
+            "gf180mcu_fd_sc_mcu7t5v0__nand3_1": 6,
+            "gf180mcu_fd_sc_mcu7t5v0__nand4_1": 3,
+            "gf180mcu_fd_sc_mcu7t5v0__nor2_1": 12,
+            "gf180mcu_fd_sc_mcu7t5v0__nor3_1": 2,
+            "gf180mcu_fd_sc_mcu7t5v0__nor4_1": 2,
+            "gf180mcu_fd_sc_mcu7t5v0__oai211_1": 2,
+            "gf180mcu_fd_sc_mcu7t5v0__oai21_1": 12,
+            "gf180mcu_fd_sc_mcu7t5v0__oai22_1": 2,
+            "gf180mcu_fd_sc_mcu7t5v0__oai31_1": 2,
+            "gf180mcu_fd_sc_mcu7t5v0__oai32_1": 1,
+            "gf180mcu_fd_sc_mcu7t5v0__or3_1": 1,
+            "gf180mcu_fd_sc_mcu7t5v0__xnor2_1": 6,
+            "gf180mcu_fd_sc_mcu7t5v0__xor2_1": 9
+         }
+      }
+   },
+      "design": {
+         "num_wires":         148,
+         "num_wire_bits":     155,
+         "num_pub_wires":     40,
+         "num_pub_wire_bits": 47,
+         "num_ports":         14,
+         "num_port_bits":     21,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         149,
+         "num_submodules":       0,
+         "area":              4879.929600,
+         "sequential_area":    3060.108800,
+         "num_cells_by_type": {
+            "gf180mcu_fd_sc_mcu7t5v0__and2_1": 16,
+            "gf180mcu_fd_sc_mcu7t5v0__aoi21_1": 1,
+            "gf180mcu_fd_sc_mcu7t5v0__aoi22_1": 1,
+            "gf180mcu_fd_sc_mcu7t5v0__clkinv_1": 9,
+            "gf180mcu_fd_sc_mcu7t5v0__dffrnq_1": 41,
+            "gf180mcu_fd_sc_mcu7t5v0__nand2_1": 21,
+            "gf180mcu_fd_sc_mcu7t5v0__nand3_1": 6,
+            "gf180mcu_fd_sc_mcu7t5v0__nand4_1": 3,
+            "gf180mcu_fd_sc_mcu7t5v0__nor2_1": 12,
+            "gf180mcu_fd_sc_mcu7t5v0__nor3_1": 2,
+            "gf180mcu_fd_sc_mcu7t5v0__nor4_1": 2,
+            "gf180mcu_fd_sc_mcu7t5v0__oai211_1": 2,
+            "gf180mcu_fd_sc_mcu7t5v0__oai21_1": 12,
+            "gf180mcu_fd_sc_mcu7t5v0__oai22_1": 2,
+            "gf180mcu_fd_sc_mcu7t5v0__oai31_1": 2,
+            "gf180mcu_fd_sc_mcu7t5v0__oai32_1": 1,
+            "gf180mcu_fd_sc_mcu7t5v0__or3_1": 1,
+            "gf180mcu_fd_sc_mcu7t5v0__xnor2_1": 6,
+            "gf180mcu_fd_sc_mcu7t5v0__xor2_1": 9
+         }
+      }
+}
+
+123. Printing statistics.
+
+=== signal_processor ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      148        - wires
+      155        - wire bits
+       40        - public wires
+       47        - public wire bits
+       14        - ports
+       21        - port bits
+      149  4879.93 cells
+       16  280.986   gf180mcu_fd_sc_mcu7t5v0__and2_1
+        1   17.562   gf180mcu_fd_sc_mcu7t5v0__aoi21_1
+        1   19.757   gf180mcu_fd_sc_mcu7t5v0__aoi22_1
+        9   79.027   gf180mcu_fd_sc_mcu7t5v0__clkinv_1
+       41 3.06E+03   gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
+       21  230.496   gf180mcu_fd_sc_mcu7t5v0__nand2_1
+        6   92.198   gf180mcu_fd_sc_mcu7t5v0__nand3_1
+        3    59.27   gf180mcu_fd_sc_mcu7t5v0__nand4_1
+       12  158.054   gf180mcu_fd_sc_mcu7t5v0__nor2_1
+        2   35.123   gf180mcu_fd_sc_mcu7t5v0__nor3_1
+        2   43.904   gf180mcu_fd_sc_mcu7t5v0__nor4_1
+        2   43.904   gf180mcu_fd_sc_mcu7t5v0__oai211_1
+       12  210.739   gf180mcu_fd_sc_mcu7t5v0__oai21_1
+        2   43.904   gf180mcu_fd_sc_mcu7t5v0__oai22_1
+        2   48.294   gf180mcu_fd_sc_mcu7t5v0__oai31_1
+        1   26.342   gf180mcu_fd_sc_mcu7t5v0__oai32_1
+        1   21.952   gf180mcu_fd_sc_mcu7t5v0__or3_1
+        6  171.226   gf180mcu_fd_sc_mcu7t5v0__xnor2_1
+        9  237.082   gf180mcu_fd_sc_mcu7t5v0__xor2_1
+
+   Chip area for module '\signal_processor': 4879.929600
+     of which used for sequential elements: 3060.108800 (62.71%)
+
+124. Executing Verilog backend.
+Dumping module `\signal_processor'.
+
+125. Executing JSON backend.

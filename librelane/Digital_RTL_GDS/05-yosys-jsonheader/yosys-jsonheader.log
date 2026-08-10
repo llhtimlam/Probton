@@ -1,0 +1,792 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.67 (git sha1 2d1509d1b, Release, GNU /usr/bin/c++ 13.3.0)
+
+1. Executing Verilog-2005 frontend: /workspace/librelane/runs/RUN_2026-08-10_01-25-13/tmp/052291076ba44805ac8a1bc1173f07a1.bb.v
+Parsing SystemVerilog input from `/workspace/librelane/runs/RUN_2026-08-10_01-25-13/tmp/052291076ba44805ac8a1bc1173f07a1.bb.v' to AST representation.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__addf_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__addf_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__addf_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__addf_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__addh_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__addh_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__addh_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__addh_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__and2_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__and2_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__and2_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__and2_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__and3_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__and3_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__and3_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__and3_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__and4_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__and4_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__and4_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__and4_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__antenna'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__antenna_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi211_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi211_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi211_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi211_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi21_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi21_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi21_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi21_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi221_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi221_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi221_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi221_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi222_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi222_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi222_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi222_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi22_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi22_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi22_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi22_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__buf_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__buf_12'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__buf_16'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__buf_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__buf_20'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__buf_3'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__buf_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__buf_8'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__buf_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__bufz_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__bufz_12'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__bufz_16'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__bufz_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__bufz_3'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__bufz_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__bufz_8'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__bufz_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__clkbuf_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__clkbuf_12'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__clkbuf_16'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__clkbuf_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__clkbuf_20'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__clkbuf_3'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__clkbuf_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__clkbuf_8'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__clkbuf_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__clkinv_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__clkinv_12'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__clkinv_16'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__clkinv_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__clkinv_20'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__clkinv_3'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__clkinv_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__clkinv_8'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__clkinv_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffnq_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffnq_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffnq_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffnq_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffnrnq_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffnrnq_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffnrnq_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffnrnq_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffnrsnq_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffnrsnq_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffnrsnq_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffnrsnq_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffnsnq_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffnsnq_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffnsnq_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffnsnq_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffq_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffq_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffq_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffq_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffrnq_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffrnq_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffrnq_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffrnq_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffrsnq_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffrsnq_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffrsnq_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffrsnq_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffsnq_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffsnq_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffsnq_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffsnq_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dlya_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dlya_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dlya_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dlya_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dlyb_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dlyb_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dlyb_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dlyb_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dlyc_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dlyc_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dlyc_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dlyc_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dlyd_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dlyd_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dlyd_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dlyd_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__endcap'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__endcap_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__fill_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__fill_16'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__fill_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__fill_32'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__fill_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__fill_64'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__fill_8'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__fill_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__fillcap_16'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__fillcap_32'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__fillcap_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__fillcap_64'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__fillcap_8'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__fillcap_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__filltie'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__filltie_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__hold'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__hold_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__icgtn_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__icgtn_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__icgtn_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__icgtn_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__icgtp_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__icgtp_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__icgtp_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__icgtp_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__inv_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__inv_12'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__inv_16'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__inv_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__inv_20'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__inv_3'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__inv_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__inv_8'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__inv_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__invz_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__invz_12'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__invz_16'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__invz_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__invz_3'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__invz_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__invz_8'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__invz_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__latq_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__latq_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__latq_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__latq_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__latrnq_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__latrnq_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__latrnq_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__latrnq_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__latrsnq_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__latrsnq_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__latrsnq_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__latrsnq_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__latsnq_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__latsnq_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__latsnq_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__latsnq_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__mux2_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__mux2_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__mux2_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__mux2_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__mux4_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__mux4_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__mux4_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__mux4_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nand2_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nand2_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nand2_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nand2_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nand3_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nand3_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nand3_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nand3_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nand4_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nand4_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nand4_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nand4_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nor2_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nor2_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nor2_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nor2_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nor3_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nor3_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nor3_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nor3_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nor4_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nor4_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nor4_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nor4_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai211_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai211_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai211_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai211_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai21_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai21_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai21_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai21_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai221_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai221_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai221_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai221_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai222_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai222_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai222_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai222_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai22_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai22_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai22_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai22_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai31_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai31_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai31_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai31_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai32_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai32_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai32_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai32_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai33_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai33_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai33_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai33_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__or2_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__or2_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__or2_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__or2_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__or3_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__or3_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__or3_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__or3_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__or4_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__or4_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__or4_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__or4_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__sdffq_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__sdffq_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__sdffq_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__sdffq_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__sdffrnq_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__sdffrnq_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__sdffrnq_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__sdffrnq_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__sdffrsnq_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__sdffrsnq_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__sdffrsnq_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__sdffrsnq_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__sdffsnq_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__sdffsnq_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__sdffsnq_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__sdffsnq_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__tieh'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__tieh_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__tiel'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__tiel_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__xnor2_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__xnor2_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__xnor2_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__xnor2_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__xnor3_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__xnor3_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__xnor3_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__xnor3_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__xor2_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__xor2_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__xor2_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__xor2_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__xor3_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__xor3_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__xor3_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__xor3_func'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /workspace/librelane/runs/RUN_2026-08-10_01-25-13/tmp/4efa0d0df6dd48b9b795d52e5e89190a.bb.v
+Parsing SystemVerilog input from `/workspace/librelane/runs/RUN_2026-08-10_01-25-13/tmp/4efa0d0df6dd48b9b795d52e5e89190a.bb.v' to AST representation.
+Generating RTLIL representation for module `\gf180mcu_ef_io__bi_t'.
+Generating RTLIL representation for module `\gf180mcu_fd_io__asig_5p0'.
+Generating RTLIL representation for module `\gf180mcu_fd_io__bi_24t'.
+Generating RTLIL representation for module `\gf180mcu_fd_io__bi_t'.
+Generating RTLIL representation for module `\gf180mcu_fd_io__brk2'.
+Generating RTLIL representation for module `\gf180mcu_fd_io__brk5'.
+Generating RTLIL representation for module `\gf180mcu_fd_io__cor'.
+Generating RTLIL representation for module `\gf180mcu_fd_io__dvdd'.
+Generating RTLIL representation for module `\gf180mcu_fd_io__dvss'.
+Generating RTLIL representation for module `\gf180mcu_fd_io__fill1'.
+Generating RTLIL representation for module `\gf180mcu_fd_io__fill10'.
+Generating RTLIL representation for module `\gf180mcu_fd_io__fill5'.
+Generating RTLIL representation for module `\gf180mcu_fd_io__fillnc'.
+Generating RTLIL representation for module `\gf180mcu_fd_io__in_c'.
+Generating RTLIL representation for module `\gf180mcu_fd_io__in_s'.
+Generating RTLIL representation for module `\gf180mcu_ws_io__dvdd'.
+Generating RTLIL representation for module `\gf180mcu_ws_io__dvss'.
+Successfully finished Verilog frontend.
+wtaf
+
+3. Executing Verilog-2005 frontend: /workspace/src/digital_domain.sv
+Parsing SystemVerilog input from `/workspace/src/digital_domain.sv' to AST representation.
+Storing AST representation for module `$abstract\spi_regs'.
+Storing AST representation for module `$abstract\state_machine'.
+Storing AST representation for module `$abstract\sine_lut'.
+Storing AST representation for module `$abstract\wave_controller'.
+Storing AST representation for module `$abstract\signal_processor'.
+Storing AST representation for module `$abstract\digital_domain'.
+Successfully finished Verilog frontend.
+
+4. Executing HIERARCHY pass (managing design hierarchy).
+
+5. Executing AST frontend in derive mode using pre-parsed AST for module `\digital_domain'.
+Generating RTLIL representation for module `\digital_domain'.
+
+5.1. Analyzing design hierarchy..
+Top module:  \digital_domain
+
+5.2. Executing AST frontend in derive mode using pre-parsed AST for module `\signal_processor'.
+Generating RTLIL representation for module `\signal_processor'.
+
+5.3. Executing AST frontend in derive mode using pre-parsed AST for module `\wave_controller'.
+Generating RTLIL representation for module `\wave_controller'.
+
+5.4. Executing AST frontend in derive mode using pre-parsed AST for module `\state_machine'.
+Generating RTLIL representation for module `\state_machine'.
+
+5.5. Executing AST frontend in derive mode using pre-parsed AST for module `\spi_regs'.
+Generating RTLIL representation for module `\spi_regs'.
+
+5.6. Analyzing design hierarchy..
+Top module:  \digital_domain
+Used module:     \signal_processor
+Used module:     \wave_controller
+Used module:     \state_machine
+Used module:     \spi_regs
+
+5.7. Executing AST frontend in derive mode using pre-parsed AST for module `\sine_lut'.
+Generating RTLIL representation for module `\sine_lut'.
+
+5.8. Analyzing design hierarchy..
+Top module:  \digital_domain
+Used module:     \signal_processor
+Used module:     \wave_controller
+Used module:         \sine_lut
+Used module:     \state_machine
+Used module:     \spi_regs
+
+5.9. Analyzing design hierarchy..
+Top module:  \digital_domain
+Used module:     \signal_processor
+Used module:     \wave_controller
+Used module:         \sine_lut
+Used module:     \state_machine
+Used module:     \spi_regs
+Removing unused module `$abstract\digital_domain'.
+Removing unused module `$abstract\signal_processor'.
+Removing unused module `$abstract\wave_controller'.
+Removing unused module `$abstract\sine_lut'.
+Removing unused module `$abstract\state_machine'.
+Removing unused module `$abstract\spi_regs'.
+Removed 6 unused modules.
+Renaming module digital_domain to digital_domain.
+
+6. Executing PROC pass (convert processes to netlists).
+
+6.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+6.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/workspace/src/spi.sv:246$106 in module spi_regs.
+Removed 1 dead cases from process $proc$/workspace/src/spi.sv:191$97 in module spi_regs.
+Marked 4 switch rules as full_case in process $proc$/workspace/src/spi.sv:191$97 in module spi_regs.
+Marked 1 switch rules as full_case in process $proc$/workspace/src/spi.sv:166$91 in module spi_regs.
+Marked 1 switch rules as full_case in process $proc$/workspace/src/spi.sv:150$89 in module spi_regs.
+Marked 1 switch rules as full_case in process $proc$/workspace/src/state_machine.sv:82$88 in module state_machine.
+Marked 1 switch rules as full_case in process $proc$/workspace/src/state_machine.sv:77$86 in module state_machine.
+Marked 7 switch rules as full_case in process $proc$/workspace/src/state_machine.sv:44$85 in module state_machine.
+Marked 5 switch rules as full_case in process $proc$/workspace/src/wave_controller.sv:374$81 in module wave_controller.
+Marked 2 switch rules as full_case in process $proc$/workspace/src/wave_controller.sv:360$79 in module wave_controller.
+Marked 1 switch rules as full_case in process $proc$/workspace/src/wave_controller.sv:341$75 in module wave_controller.
+Marked 5 switch rules as full_case in process $proc$/workspace/src/wave_controller.sv:281$65 in module wave_controller.
+Marked 5 switch rules as full_case in process $proc$/workspace/src/wave_controller.sv:154$42 in module wave_controller.
+Marked 2 switch rules as full_case in process $proc$/workspace/src/wave_controller.sv:104$25 in module wave_controller.
+Marked 2 switch rules as full_case in process $proc$/workspace/src/wave_controller.sv:89$22 in module wave_controller.
+Marked 5 switch rules as full_case in process $proc$/workspace/src/signal_processor.sv:101$13 in module signal_processor.
+Marked 2 switch rules as full_case in process $proc$/workspace/src/signal_processor.sv:87$8 in module signal_processor.
+Marked 2 switch rules as full_case in process $proc$/workspace/src/signal_processor.sv:46$4 in module signal_processor.
+Marked 1 switch rules as full_case in process $proc$/workspace/src/sine_lut.sv:71$112 in module sine_lut.
+Removed 1 dead cases from process $proc$/workspace/src/sine_lut.sv:32$111 in module sine_lut.
+Marked 1 switch rules as full_case in process $proc$/workspace/src/sine_lut.sv:32$111 in module sine_lut.
+Removed a total of 2 dead cases.
+
+6.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 21 redundant assignments.
+Promoted 9 assignments to connections.
+
+6.4. Executing PROC_INIT pass (extract init attributes).
+
+6.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `\spi_regs.$proc$/workspace/src/spi.sv:246$106'.
+Found async reset \rst_n in `\spi_regs.$proc$/workspace/src/spi.sv:191$97'.
+Found async reset \rst_n in `\spi_regs.$proc$/workspace/src/spi.sv:166$91'.
+Found async reset \rst_n in `\spi_regs.$proc$/workspace/src/spi.sv:150$89'.
+Found async reset \rst_n in `\state_machine.$proc$/workspace/src/state_machine.sv:77$86'.
+Found async reset \rst_n in `\wave_controller.$proc$/workspace/src/wave_controller.sv:374$81'.
+Found async reset \rst_n in `\wave_controller.$proc$/workspace/src/wave_controller.sv:341$75'.
+Found async reset \rst_n in `\wave_controller.$proc$/workspace/src/wave_controller.sv:281$65'.
+Found async reset \rst_n in `\wave_controller.$proc$/workspace/src/wave_controller.sv:154$42'.
+Found async reset \rst_n in `\wave_controller.$proc$/workspace/src/wave_controller.sv:104$25'.
+Found async reset \rst_n in `\wave_controller.$proc$/workspace/src/wave_controller.sv:89$22'.
+Found async reset \rst_n in `\signal_processor.$proc$/workspace/src/signal_processor.sv:101$13'.
+Found async reset \rst_n in `\signal_processor.$proc$/workspace/src/signal_processor.sv:46$4'.
+
+6.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 1 switch.
+<suppressed ~59 debug messages>
+
+6.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\spi_regs.$proc$/workspace/src/spi.sv:311$108'.
+     1/1: $1\reg_rd_data[7:0]
+Creating decoders for process `\spi_regs.$proc$/workspace/src/spi.sv:246$106'.
+     1/26: $0\cfg_phase270_offset_y[20:0] [20:16]
+     2/26: $0\cfg_phase270_offset_y[20:0] [15:8]
+     3/26: $0\cfg_phase270_offset_y[20:0] [7:0]
+     4/26: $0\cfg_phase90_offset_y[20:0] [15:8]
+     5/26: $0\cfg_phase90_offset_y[20:0] [7:0]
+     6/26: $0\cfg_phase0_offset_y[20:0] [15:8]
+     7/26: $0\cfg_phase0_offset_y[20:0] [7:0]
+     8/26: $0\cfg_phase270_offset_x[20:0] [15:8]
+     9/26: $0\cfg_phase270_offset_x[20:0] [7:0]
+    10/26: $0\cfg_phase90_offset_x[20:0] [15:8]
+    11/26: $0\cfg_phase90_offset_x[20:0] [7:0]
+    12/26: $0\cfg_phase0_offset_x[20:0] [15:8]
+    13/26: $0\cfg_phase0_offset_x[20:0] [7:0]
+    14/26: $0\cfg_f_MEMS_fcw_y[15:0] [7:0]
+    15/26: $0\cfg_f_MEMS_fcw_x[15:0] [7:0]
+    16/26: $0\phase_offset_imported[0:0]
+    17/26: $0\cfg_done[0:0]
+    18/26: $0\boot_complete[0:0]
+    19/26: $0\cfg_phase90_offset_y[20:0] [20:16]
+    20/26: $0\cfg_phase0_offset_y[20:0] [20:16]
+    21/26: $0\cfg_phase270_offset_x[20:0] [20:16]
+    22/26: $0\cfg_phase90_offset_x[20:0] [20:16]
+    23/26: $0\cfg_phase0_offset_x[20:0] [20:16]
+    24/26: $0\cfg_f_MEMS_fcw_y[15:0] [15:8]
+    25/26: $0\cfg_f_MEMS_fcw_x[15:0] [15:8]
+    26/26: $0\soft_rst[0:0]
+Creating decoders for process `\spi_regs.$proc$/workspace/src/spi.sv:191$97'.
+     1/10: $0\spi_miso_oe[0:0]
+     2/10: $0\reg_wr_en[0:0]
+     3/10: $0\reg_wr_data[7:0]
+     4/10: $0\reg_wr_addr[6:0]
+     5/10: $0\tx_shift[7:0]
+     6/10: $0\rx_shift[7:0]
+     7/10: $0\spi_addr[6:0]
+     8/10: $0\rw_n[0:0]
+     9/10: $0\bit_cnt[2:0]
+    10/10: $0\spi_state[0:0]
+Creating decoders for process `\spi_regs.$proc$/workspace/src/spi.sv:166$91'.
+     1/1: $0\sclk_d[0:0]
+Creating decoders for process `\spi_regs.$proc$/workspace/src/spi.sv:150$89'.
+     1/3: $0\mosi_sync[1:0]
+     2/3: $0\sclk_sync[1:0]
+     3/3: $0\cs_sync[1:0]
+Creating decoders for process `\state_machine.$proc$/workspace/src/state_machine.sv:82$88'.
+     1/2: $1\read_en[0:0]
+     2/2: $1\cal_start[0:0]
+Creating decoders for process `\state_machine.$proc$/workspace/src/state_machine.sv:77$86'.
+     1/1: $0\state_q[2:0]
+Creating decoders for process `\state_machine.$proc$/workspace/src/state_machine.sv:44$85'.
+     1/7: $7\state_d[2:0]
+     2/7: $6\state_d[2:0]
+     3/7: $5\state_d[2:0]
+     4/7: $4\state_d[2:0]
+     5/7: $3\state_d[2:0]
+     6/7: $2\state_d[2:0]
+     7/7: $1\state_d[2:0]
+Creating decoders for process `\wave_controller.$proc$/workspace/src/wave_controller.sv:374$81'.
+     1/5: $0\ref_wave[0:0]
+     2/5: $0\mems_drv[0:0]
+     3/5: $0\cal_burst_count[1:0]
+     4/5: $0\cal_burst_active[0:0]
+     5/5: $0\cal_burst_armed[0:0]
+Creating decoders for process `\wave_controller.$proc$/workspace/src/wave_controller.sv:360$79'.
+     1/2: $2\ds_code[7:0]
+     2/2: $1\ds_code[7:0]
+Creating decoders for process `\wave_controller.$proc$/workspace/src/wave_controller.sv:341$75'.
+     1/1: $0\ds_acc[8:0]
+Creating decoders for process `\wave_controller.$proc$/workspace/src/wave_controller.sv:281$65'.
+     1/3: $0\latch_error[0:0]
+     2/3: $0\latch_phase270[0:0]
+     3/3: $0\latch_phase90[0:0]
+Creating decoders for process `\wave_controller.$proc$/workspace/src/wave_controller.sv:154$42'.
+     1/10: $0\capture_step[1:0]
+     2/10: $0\capture_pending[0:0]
+     3/10: $0\wave_cycle_cnt[7:0]
+     4/10: $0\cal_dir[0:0]
+     5/10: $0\raw_edge3[20:0]
+     6/10: $0\raw_edge2[20:0]
+     7/10: $0\raw_edge1[20:0]
+     8/10: $0\delay_wave_cycle[7:0]
+     9/10: $0\cal_timeout[0:0]
+    10/10: $0\cal_done[0:0]
+Creating decoders for process `\wave_controller.$proc$/workspace/src/wave_controller.sv:104$25'.
+     1/5: $0\comp_sync4[0:0]
+     2/5: $0\comp_sync3[0:0]
+     3/5: $0\comp_sync2[0:0]
+     4/5: $0\comp_sync1[0:0]
+     5/5: $0\comp_sync0[0:0]
+Creating decoders for process `\wave_controller.$proc$/workspace/src/wave_controller.sv:89$22'.
+     1/1: $0\phase_acc[20:0]
+Creating decoders for process `\signal_processor.$proc$/workspace/src/signal_processor.sv:101$13'.
+     1/13: $0\latch_phase270_ack[0:0]
+     2/13: $0\latch_phase90_ack[0:0]
+     3/13: $0\cycle_count[3:0]
+     4/13: $0\cnt_out[3:0]
+     5/13: $0\cnt_in[3:0]
+     6/13: $0\s90_valid[0:0]
+     7/13: $0\s90[0:0]
+     8/13: $0\votes_out_phase[3:0]
+     9/13: $0\votes_in_phase[3:0]
+    10/13: $0\phase_state[1:0]
+    11/13: $0\jitter_flag[0:0]
+    12/13: $0\move_en[0:0]
+    13/13: $0\dir[0:0]
+Creating decoders for process `\signal_processor.$proc$/workspace/src/signal_processor.sv:87$8'.
+     1/4: $2\next_in[3:0]
+     2/4: $2\next_out[3:0]
+     3/4: $1\next_out[3:0]
+     4/4: $1\next_in[3:0]
+Creating decoders for process `\signal_processor.$proc$/workspace/src/signal_processor.sv:46$4'.
+     1/3: $0\s270_pipe[3:0]
+     2/3: $0\s90_pipe[3:0]
+     3/3: $0\comp_pipe[3:0]
+Creating decoders for process `\sine_lut.$proc$/workspace/src/sine_lut.sv:71$112'.
+     1/1: $1\amp[7:0]
+Creating decoders for process `\sine_lut.$proc$/workspace/src/sine_lut.sv:32$111'.
+     1/1: $1\q_val[6:0]
+
+6.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\spi_regs.\reg_rd_data' from process `\spi_regs.$proc$/workspace/src/spi.sv:311$108'.
+No latch inferred for signal `\state_machine.\read_en' from process `\state_machine.$proc$/workspace/src/state_machine.sv:82$88'.
+No latch inferred for signal `\state_machine.\cal_start' from process `\state_machine.$proc$/workspace/src/state_machine.sv:82$88'.
+No latch inferred for signal `\state_machine.\state_d' from process `\state_machine.$proc$/workspace/src/state_machine.sv:44$85'.
+No latch inferred for signal `\wave_controller.\ds_code' from process `\wave_controller.$proc$/workspace/src/wave_controller.sv:360$79'.
+No latch inferred for signal `\signal_processor.\next_in' from process `\signal_processor.$proc$/workspace/src/signal_processor.sv:87$8'.
+No latch inferred for signal `\signal_processor.\next_out' from process `\signal_processor.$proc$/workspace/src/signal_processor.sv:87$8'.
+No latch inferred for signal `\sine_lut.\amp' from process `\sine_lut.$proc$/workspace/src/sine_lut.sv:71$112'.
+No latch inferred for signal `\sine_lut.\q_val' from process `\sine_lut.$proc$/workspace/src/sine_lut.sv:32$111'.
+
+6.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\spi_regs.\cfg_f_MEMS_fcw_x' using process `\spi_regs.$proc$/workspace/src/spi.sv:246$106'.
+  created $adff cell `$procdff$1209' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\cfg_f_MEMS_fcw_y' using process `\spi_regs.$proc$/workspace/src/spi.sv:246$106'.
+  created $adff cell `$procdff$1214' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\cfg_phase0_offset_x' using process `\spi_regs.$proc$/workspace/src/spi.sv:246$106'.
+  created $adff cell `$procdff$1219' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\cfg_phase90_offset_x' using process `\spi_regs.$proc$/workspace/src/spi.sv:246$106'.
+  created $adff cell `$procdff$1224' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\cfg_phase270_offset_x' using process `\spi_regs.$proc$/workspace/src/spi.sv:246$106'.
+  created $adff cell `$procdff$1229' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\cfg_phase0_offset_y' using process `\spi_regs.$proc$/workspace/src/spi.sv:246$106'.
+  created $adff cell `$procdff$1234' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\cfg_phase90_offset_y' using process `\spi_regs.$proc$/workspace/src/spi.sv:246$106'.
+  created $adff cell `$procdff$1239' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\cfg_phase270_offset_y' using process `\spi_regs.$proc$/workspace/src/spi.sv:246$106'.
+  created $adff cell `$procdff$1244' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\boot_complete' using process `\spi_regs.$proc$/workspace/src/spi.sv:246$106'.
+  created $adff cell `$procdff$1249' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\cfg_done' using process `\spi_regs.$proc$/workspace/src/spi.sv:246$106'.
+  created $adff cell `$procdff$1254' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\phase_offset_imported' using process `\spi_regs.$proc$/workspace/src/spi.sv:246$106'.
+  created $adff cell `$procdff$1259' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\soft_rst' using process `\spi_regs.$proc$/workspace/src/spi.sv:246$106'.
+  created $adff cell `$procdff$1264' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\spi_miso_oe' using process `\spi_regs.$proc$/workspace/src/spi.sv:191$97'.
+  created $adff cell `$procdff$1269' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\spi_state' using process `\spi_regs.$proc$/workspace/src/spi.sv:191$97'.
+  created $adff cell `$procdff$1274' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\bit_cnt' using process `\spi_regs.$proc$/workspace/src/spi.sv:191$97'.
+  created $adff cell `$procdff$1279' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\rw_n' using process `\spi_regs.$proc$/workspace/src/spi.sv:191$97'.
+  created $adff cell `$procdff$1284' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\spi_addr' using process `\spi_regs.$proc$/workspace/src/spi.sv:191$97'.
+  created $adff cell `$procdff$1289' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\rx_shift' using process `\spi_regs.$proc$/workspace/src/spi.sv:191$97'.
+  created $adff cell `$procdff$1294' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\tx_shift' using process `\spi_regs.$proc$/workspace/src/spi.sv:191$97'.
+  created $adff cell `$procdff$1299' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\reg_wr_en' using process `\spi_regs.$proc$/workspace/src/spi.sv:191$97'.
+  created $adff cell `$procdff$1304' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\reg_wr_addr' using process `\spi_regs.$proc$/workspace/src/spi.sv:191$97'.
+  created $adff cell `$procdff$1309' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\reg_wr_data' using process `\spi_regs.$proc$/workspace/src/spi.sv:191$97'.
+  created $adff cell `$procdff$1314' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\sclk_d' using process `\spi_regs.$proc$/workspace/src/spi.sv:166$91'.
+  created $adff cell `$procdff$1319' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\cs_sync' using process `\spi_regs.$proc$/workspace/src/spi.sv:150$89'.
+  created $adff cell `$procdff$1324' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\sclk_sync' using process `\spi_regs.$proc$/workspace/src/spi.sv:150$89'.
+  created $adff cell `$procdff$1329' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\mosi_sync' using process `\spi_regs.$proc$/workspace/src/spi.sv:150$89'.
+  created $adff cell `$procdff$1334' with positive edge clock and positive level reset.
+Creating register for signal `\state_machine.\state_q' using process `\state_machine.$proc$/workspace/src/state_machine.sv:77$86'.
+  created $adff cell `$procdff$1339' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\mems_drv' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:374$81'.
+  created $adff cell `$procdff$1344' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\ref_wave' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:374$81'.
+  created $adff cell `$procdff$1349' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\cal_burst_armed' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:374$81'.
+  created $adff cell `$procdff$1354' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\cal_burst_active' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:374$81'.
+  created $adff cell `$procdff$1359' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\cal_burst_count' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:374$81'.
+  created $adff cell `$procdff$1364' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\ds_acc' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:341$75'.
+  created $adff cell `$procdff$1369' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\latch_phase90' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:281$65'.
+  created $adff cell `$procdff$1374' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\latch_phase270' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:281$65'.
+  created $adff cell `$procdff$1379' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\latch_error' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:281$65'.
+  created $adff cell `$procdff$1384' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\cal_done' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:154$42'.
+  created $adff cell `$procdff$1389' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\cal_timeout' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:154$42'.
+  created $adff cell `$procdff$1394' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\delay_wave_cycle' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:154$42'.
+  created $adff cell `$procdff$1399' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\raw_edge1' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:154$42'.
+  created $adff cell `$procdff$1404' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\raw_edge2' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:154$42'.
+  created $adff cell `$procdff$1409' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\raw_edge3' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:154$42'.
+  created $adff cell `$procdff$1414' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\cal_dir' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:154$42'.
+  created $adff cell `$procdff$1419' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\wave_cycle_cnt' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:154$42'.
+  created $adff cell `$procdff$1424' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\capture_pending' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:154$42'.
+  created $adff cell `$procdff$1429' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\capture_step' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:154$42'.
+  created $adff cell `$procdff$1434' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\comp_sync0' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:104$25'.
+  created $adff cell `$procdff$1439' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\comp_sync1' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:104$25'.
+  created $adff cell `$procdff$1444' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\comp_sync2' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:104$25'.
+  created $adff cell `$procdff$1449' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\comp_sync3' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:104$25'.
+  created $adff cell `$procdff$1454' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\comp_sync4' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:104$25'.
+  created $adff cell `$procdff$1459' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\phase_acc' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:89$22'.
+  created $adff cell `$procdff$1464' with positive edge clock and positive level reset.
+Creating register for signal `\signal_processor.\latch_phase90_ack' using process `\signal_processor.$proc$/workspace/src/signal_processor.sv:101$13'.
+  created $adff cell `$procdff$1469' with positive edge clock and positive level reset.
+Creating register for signal `\signal_processor.\latch_phase270_ack' using process `\signal_processor.$proc$/workspace/src/signal_processor.sv:101$13'.
+  created $adff cell `$procdff$1474' with positive edge clock and positive level reset.
+Creating register for signal `\signal_processor.\dir' using process `\signal_processor.$proc$/workspace/src/signal_processor.sv:101$13'.
+  created $adff cell `$procdff$1479' with positive edge clock and positive level reset.
+Creating register for signal `\signal_processor.\move_en' using process `\signal_processor.$proc$/workspace/src/signal_processor.sv:101$13'.
+  created $adff cell `$procdff$1484' with positive edge clock and positive level reset.
+Creating register for signal `\signal_processor.\jitter_flag' using process `\signal_processor.$proc$/workspace/src/signal_processor.sv:101$13'.
+  created $adff cell `$procdff$1489' with positive edge clock and positive level reset.
+Creating register for signal `\signal_processor.\phase_state' using process `\signal_processor.$proc$/workspace/src/signal_processor.sv:101$13'.
+  created $adff cell `$procdff$1494' with positive edge clock and positive level reset.
+Creating register for signal `\signal_processor.\votes_in_phase' using process `\signal_processor.$proc$/workspace/src/signal_processor.sv:101$13'.
+  created $adff cell `$procdff$1499' with positive edge clock and positive level reset.
+Creating register for signal `\signal_processor.\votes_out_phase' using process `\signal_processor.$proc$/workspace/src/signal_processor.sv:101$13'.
+  created $adff cell `$procdff$1504' with positive edge clock and positive level reset.
+Creating register for signal `\signal_processor.\s90' using process `\signal_processor.$proc$/workspace/src/signal_processor.sv:101$13'.
+  created $adff cell `$procdff$1509' with positive edge clock and positive level reset.
+Creating register for signal `\signal_processor.\s90_valid' using process `\signal_processor.$proc$/workspace/src/signal_processor.sv:101$13'.
+  created $adff cell `$procdff$1514' with positive edge clock and positive level reset.
+Creating register for signal `\signal_processor.\cnt_in' using process `\signal_processor.$proc$/workspace/src/signal_processor.sv:101$13'.
+  created $adff cell `$procdff$1519' with positive edge clock and positive level reset.
+Creating register for signal `\signal_processor.\cnt_out' using process `\signal_processor.$proc$/workspace/src/signal_processor.sv:101$13'.
+  created $adff cell `$procdff$1524' with positive edge clock and positive level reset.
+Creating register for signal `\signal_processor.\cycle_count' using process `\signal_processor.$proc$/workspace/src/signal_processor.sv:101$13'.
+  created $adff cell `$procdff$1529' with positive edge clock and positive level reset.
+Creating register for signal `\signal_processor.\comp_pipe' using process `\signal_processor.$proc$/workspace/src/signal_processor.sv:46$4'.
+  created $adff cell `$procdff$1534' with positive edge clock and positive level reset.
+Creating register for signal `\signal_processor.\s90_pipe' using process `\signal_processor.$proc$/workspace/src/signal_processor.sv:46$4'.
+  created $adff cell `$procdff$1539' with positive edge clock and positive level reset.
+Creating register for signal `\signal_processor.\s270_pipe' using process `\signal_processor.$proc$/workspace/src/signal_processor.sv:46$4'.
+  created $adff cell `$procdff$1544' with positive edge clock and positive level reset.
+
+6.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+6.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\spi_regs.$proc$/workspace/src/spi.sv:311$108'.
+Removing empty process `spi_regs.$proc$/workspace/src/spi.sv:311$108'.
+Found and cleaned up 2 empty switches in `\spi_regs.$proc$/workspace/src/spi.sv:246$106'.
+Removing empty process `spi_regs.$proc$/workspace/src/spi.sv:246$106'.
+Found and cleaned up 7 empty switches in `\spi_regs.$proc$/workspace/src/spi.sv:191$97'.
+Removing empty process `spi_regs.$proc$/workspace/src/spi.sv:191$97'.
+Removing empty process `spi_regs.$proc$/workspace/src/spi.sv:166$91'.
+Removing empty process `spi_regs.$proc$/workspace/src/spi.sv:150$89'.
+Found and cleaned up 1 empty switch in `\state_machine.$proc$/workspace/src/state_machine.sv:82$88'.
+Removing empty process `state_machine.$proc$/workspace/src/state_machine.sv:82$88'.
+Removing empty process `state_machine.$proc$/workspace/src/state_machine.sv:77$86'.
+Found and cleaned up 7 empty switches in `\state_machine.$proc$/workspace/src/state_machine.sv:44$85'.
+Removing empty process `state_machine.$proc$/workspace/src/state_machine.sv:44$85'.
+Found and cleaned up 6 empty switches in `\wave_controller.$proc$/workspace/src/wave_controller.sv:374$81'.
+Removing empty process `wave_controller.$proc$/workspace/src/wave_controller.sv:374$81'.
+Found and cleaned up 2 empty switches in `\wave_controller.$proc$/workspace/src/wave_controller.sv:360$79'.
+Removing empty process `wave_controller.$proc$/workspace/src/wave_controller.sv:360$79'.
+Removing empty process `wave_controller.$proc$/workspace/src/wave_controller.sv:341$75'.
+Found and cleaned up 7 empty switches in `\wave_controller.$proc$/workspace/src/wave_controller.sv:281$65'.
+Removing empty process `wave_controller.$proc$/workspace/src/wave_controller.sv:281$65'.
+Found and cleaned up 13 empty switches in `\wave_controller.$proc$/workspace/src/wave_controller.sv:154$42'.
+Removing empty process `wave_controller.$proc$/workspace/src/wave_controller.sv:154$42'.
+Found and cleaned up 1 empty switch in `\wave_controller.$proc$/workspace/src/wave_controller.sv:104$25'.
+Removing empty process `wave_controller.$proc$/workspace/src/wave_controller.sv:104$25'.
+Found and cleaned up 2 empty switches in `\wave_controller.$proc$/workspace/src/wave_controller.sv:89$22'.
+Removing empty process `wave_controller.$proc$/workspace/src/wave_controller.sv:89$22'.
+Found and cleaned up 6 empty switches in `\signal_processor.$proc$/workspace/src/signal_processor.sv:101$13'.
+Removing empty process `signal_processor.$proc$/workspace/src/signal_processor.sv:101$13'.
+Found and cleaned up 2 empty switches in `\signal_processor.$proc$/workspace/src/signal_processor.sv:87$8'.
+Removing empty process `signal_processor.$proc$/workspace/src/signal_processor.sv:87$8'.
+Found and cleaned up 1 empty switch in `\signal_processor.$proc$/workspace/src/signal_processor.sv:46$4'.
+Removing empty process `signal_processor.$proc$/workspace/src/signal_processor.sv:46$4'.
+Found and cleaned up 1 empty switch in `\sine_lut.$proc$/workspace/src/sine_lut.sv:71$112'.
+Removing empty process `sine_lut.$proc$/workspace/src/sine_lut.sv:71$112'.
+Found and cleaned up 1 empty switch in `\sine_lut.$proc$/workspace/src/sine_lut.sv:32$111'.
+Removing empty process `sine_lut.$proc$/workspace/src/sine_lut.sv:32$111'.
+Cleaned up 60 empty switches.
+
+6.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module digital_domain.
+Optimizing module spi_regs.
+<suppressed ~63 debug messages>
+Optimizing module state_machine.
+<suppressed ~4 debug messages>
+Optimizing module wave_controller.
+<suppressed ~88 debug messages>
+Optimizing module signal_processor.
+<suppressed ~48 debug messages>
+Optimizing module sine_lut.
+
+7. Executing FLATTEN pass (flatten design).
+Keeping digital_domain.spi_regs_inst (found keep_hierarchy attribute).
+Keeping digital_domain.state_machine_inst (found keep_hierarchy attribute).
+Keeping digital_domain.wave_controller_x_inst (found keep_hierarchy attribute).
+Keeping digital_domain.wave_controller_y_inst (found keep_hierarchy attribute).
+Keeping digital_domain.signal_processor_x_inst (found keep_hierarchy attribute).
+Keeping digital_domain.signal_processor_y_inst (found keep_hierarchy attribute).
+Deleting now unused module sine_lut.
+<suppressed ~1 debug messages>
+
+8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_regs..
+Finding unused cells or wires in module \state_machine..
+Finding unused cells or wires in module \wave_controller..
+Finding unused cells or wires in module \signal_processor..
+Finding unused cells or wires in module \digital_domain..
+Removed 91 unused cells and 554 unused wires.
+<suppressed ~112 debug messages>

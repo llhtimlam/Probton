@@ -1,0 +1,76 @@
+Reading timing models for corner nom_tt_025C_3v30…
+Reading timing library for the 'nom_tt_025C_3v30' corner at '/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib'…
+Reading OpenROAD database at '/workspace/librelane/runs/RUN_2026-08-10_00-21-44/37-openroad-resizertimingpostcts/wave_controller.odb'…
+Reading design constraints file at '/usr/local/lib/python3.12/dist-packages/librelane/scripts/base.sdc'…
+[INFO] Using clock clk…
+[INFO] Setting output delay to: 40
+[INFO] Setting input delay to: 40
+[INFO] Setting load to: 0.07291
+[INFO] Setting clock uncertainty to: 0.25
+[INFO] Setting clock transition to: 0.15
+[INFO] Setting timing derate to: 5%
+[INFO] Setting signal min routing layer to: Metal2 and clock min routing layer to Metal2. 
+[INFO] Setting signal max routing layer to: Metal5 and clock max routing layer to Metal5. 
++ global_route -congestion_iterations 50 -verbose -allow_congestion
+[INFO GRT-0020] Min routing layer: Metal2
+[INFO GRT-0021] Max routing layer: Metal5
+[INFO GRT-0022] Global adjustment: 30%
+[INFO GRT-0023] Grid origin: (0, 0)
+[INFO GRT-0088] Layer Metal1  Track-Pitch = 0.5600  line-2-Via Pitch: 0.4750
+[INFO GRT-0088] Layer Metal2  Track-Pitch = 0.5600  line-2-Via Pitch: 0.5600
+[INFO GRT-0088] Layer Metal3  Track-Pitch = 0.5600  line-2-Via Pitch: 0.5600
+[INFO GRT-0088] Layer Metal4  Track-Pitch = 0.5600  line-2-Via Pitch: 0.5600
+[INFO GRT-0088] Layer Metal5  Track-Pitch = 0.9000  line-2-Via Pitch: 0.8200
+[INFO GRT-0003] Macros: 0
+[INFO GRT-0004] Blockages: 0
+[INFO GRT-0019] Found 18 clock nets.
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 17
+
+[INFO GRT-0053] Routing resources analysis:
+          Routing      Original      Derated      Resource
+Layer     Direction    Resources     Resources    Reduction (%)
+---------------------------------------------------------------
+Metal1     Horizontal          0             0          0.00%
+Metal2     Vertical        32916         21960          33.28%
+Metal3     Horizontal      32763         21807          33.44%
+Metal4     Vertical        32907         21954          33.28%
+Metal5     Horizontal      20025         13500          32.58%
+---------------------------------------------------------------
+
+[INFO GRT-0197] Via related to pin nodes: 14896
+[INFO GRT-0198] Via related Steiner nodes: 279
+[INFO GRT-0199] Via filling finished.
+[INFO GRT-0111] Final number of vias: 18807
+[INFO GRT-0112] Final usage 3D: 71211
+
+[INFO GRT-0096] Final congestion report:
+Layer         Resource        Demand        Usage (%)    Max H / Max V / Total Overflow
+---------------------------------------------------------------------------------------
+Metal1               0             0            0.00%             0 /  0 /  0
+Metal2           21960          6864           31.26%             0 /  0 /  0
+Metal3           21807          6257           28.69%             0 /  0 /  0
+Metal4           21954          1007            4.59%             0 /  0 /  0
+Metal5           13500           662            4.90%             0 /  0 /  0
+---------------------------------------------------------------------------------------
+Total            79221         14790           18.67%             0 /  0 /  0
+
+[INFO GRT-0018] Total wirelength: 180910 um
+[INFO GRT-0014] Routed nets: 2754
+[INFO GRT-0303] Global routing runtime = 00:00:00
+Setting global connections for newly added cells…
+[INFO] Setting global connections...
+[INFO ODB-0403] 0 connections made, 0 conflicts skipped.
+Updating metrics…
+Cell type report:                       Count       Area
+  Endcap cell                             194     851.74
+  Tap cell                                940    4126.98
+  Buffer                                    2      26.34
+  Clock buffer                             32    1286.39
+  Timing Repair Buffer                    663   12899.00
+  Inverter                                187    1773.72
+  Sequential cell                         129   10036.45
+  Multi-Input combinational cell         1669   35834.44
+  Total                                  3816   66835.06
+Writing OpenROAD database to '/workspace/librelane/runs/RUN_2026-08-10_00-21-44/39-openroad-globalrouting/wave_controller.odb'…
+Writing layout to '/workspace/librelane/runs/RUN_2026-08-10_00-21-44/39-openroad-globalrouting/wave_controller.def'…

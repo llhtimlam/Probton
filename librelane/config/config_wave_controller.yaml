@@ -1,0 +1,50 @@
+meta:
+  version: 3
+  flow: Classic
+
+DESIGN_NAME: wave_controller
+
+VERILOG_FILES:
+  - dir::../src/wave_controller.sv
+
+CLOCK_PORT: clk
+CLOCK_NET: clk
+CLOCK_PERIOD: 200   # 5 MHz
+
+# Let the tool size the core
+FP_SIZING: relative
+FP_CORE_UTIL: 30
+PL_TARGET_DENSITY_PCT: 55
+
+# Synthesis strategy
+SYNTH_STRATEGY: "AREA 0"
+
+# 3.3V Standard Cell
+DEFAULT_CORNER: nom_tt_025C_3v30
+STA_CORNERS:
+  - nom_tt_025C_3v30
+  - min_ff_n40C_3v60
+  - max_ss_125C_3v00
+
+LIB:
+  "*_tt_025C_3v30":
+    - /foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib
+  "*_ss_125C_3v00":
+    - /foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__ss_125C_3v00.lib
+  "*_ff_n40C_3v60":
+    - /foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__ff_n40C_3v60.lib
+
+# Route congestion
+GRT_ALLOW_CONGESTION: true
+
+# Optional: keep power nets (good practice)
+VDD_NETS:
+  - VDD
+GND_NETS:
+  - VSS
+
+# Pin allocation
+"IO_PIN_ORDER_CFG": "dir::pin_order_wave_controller.cfg"
+"ERRORS_ON_UNMATCHED_IO": "none"
+
+PDN_CFG: dir::pdn_cfg.tcl

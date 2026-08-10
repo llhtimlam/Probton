@@ -1,0 +1,9 @@
+%Warning-UNUSEDSIGNAL: /workspace/src/spi.sv:180:17: Bits of signal are not used: 'rx_shift'[7]
+                                                   : ... note: In instance 'spi_regs'
+  180 |     logic [7:0] rx_shift;
+      |                 ^~~~~~~~
+                       ... For warning description see https://verilator.org/warn/UNUSEDSIGNAL?v=5.050
+                       ... Use "/* verilator lint_off UNUSEDSIGNAL */" and lint_on around source to disable this message.
+- V e r i l a t i o n   R e p o r t: Verilator 5.050 2026-07-01 rev v5.050
+- Verilator: Built from 0.420 MB sources in 317 modules, into 0.068 MB in 3 C++ files needing 0.000 MB
+- Verilator: Walltime 0.083 s (elab=0.018, cvt=0.022, bld=0.000); cpu 0.042 s on 1 threads; allocated 38.688 MB

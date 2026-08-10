@@ -1,0 +1,1997 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.67 (git sha1 2d1509d1b, Release, GNU /usr/bin/c++ 13.3.0)
+
+1. Executing Liberty frontend: /foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib
+Imported 229 cell types from liberty file.
+[INFO] Using SDC file '/workspace/librelane/runs/RUN_2026-08-10_00-21-44/06-yosys-synthesis/synthesis.abc.sdc' for ABC…wtaf
+
+2. Executing Verilog-2005 frontend: /workspace/src/wave_controller.sv
+Parsing SystemVerilog input from `/workspace/src/wave_controller.sv' to AST representation.
+Storing AST representation for module `$abstract\sine_lut'.
+Storing AST representation for module `$abstract\wave_controller'.
+Successfully finished Verilog frontend.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+4. Executing AST frontend in derive mode using pre-parsed AST for module `\wave_controller'.
+Generating RTLIL representation for module `\wave_controller'.
+
+4.1. Analyzing design hierarchy..
+Top module:  \wave_controller
+
+4.2. Executing AST frontend in derive mode using pre-parsed AST for module `\sine_lut'.
+Generating RTLIL representation for module `\sine_lut'.
+
+4.3. Analyzing design hierarchy..
+Top module:  \wave_controller
+Used module:     \sine_lut
+
+4.4. Analyzing design hierarchy..
+Top module:  \wave_controller
+Used module:     \sine_lut
+Removing unused module `$abstract\wave_controller'.
+Removing unused module `$abstract\sine_lut'.
+Removed 2 unused modules.
+Renaming module wave_controller to wave_controller.
+
+5. Executing ATTRMAP pass (move or copy attributes).
+
+6. Executing HIERARCHY pass (managing design hierarchy).
+
+6.1. Analyzing design hierarchy..
+Top module:  \wave_controller
+Used module:     \sine_lut
+
+6.2. Analyzing design hierarchy..
+Top module:  \wave_controller
+Used module:     \sine_lut
+Removed 0 unused modules.
+
+7. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+8. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 5 switch rules as full_case in process $proc$/workspace/src/wave_controller.sv:374$63 in module wave_controller.
+Marked 2 switch rules as full_case in process $proc$/workspace/src/wave_controller.sv:360$61 in module wave_controller.
+Marked 1 switch rules as full_case in process $proc$/workspace/src/wave_controller.sv:341$57 in module wave_controller.
+Marked 5 switch rules as full_case in process $proc$/workspace/src/wave_controller.sv:281$47 in module wave_controller.
+Marked 5 switch rules as full_case in process $proc$/workspace/src/wave_controller.sv:154$24 in module wave_controller.
+Marked 2 switch rules as full_case in process $proc$/workspace/src/wave_controller.sv:104$7 in module wave_controller.
+Marked 2 switch rules as full_case in process $proc$/workspace/src/wave_controller.sv:89$4 in module wave_controller.
+Marked 1 switch rules as full_case in process $proc$/workspace/src/sine_lut.sv:71$70 in module sine_lut.
+Removed 1 dead cases from process $proc$/workspace/src/sine_lut.sv:32$69 in module sine_lut.
+Marked 1 switch rules as full_case in process $proc$/workspace/src/sine_lut.sv:32$69 in module sine_lut.
+Removed a total of 1 dead cases.
+
+9. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 8 redundant assignments.
+Promoted 3 assignments to connections.
+
+10. Executing PROC_INIT pass (extract init attributes).
+
+11. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `\wave_controller.$proc$/workspace/src/wave_controller.sv:374$63'.
+Found async reset \rst_n in `\wave_controller.$proc$/workspace/src/wave_controller.sv:341$57'.
+Found async reset \rst_n in `\wave_controller.$proc$/workspace/src/wave_controller.sv:281$47'.
+Found async reset \rst_n in `\wave_controller.$proc$/workspace/src/wave_controller.sv:154$24'.
+Found async reset \rst_n in `\wave_controller.$proc$/workspace/src/wave_controller.sv:104$7'.
+Found async reset \rst_n in `\wave_controller.$proc$/workspace/src/wave_controller.sv:89$4'.
+
+12. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 1 switch.
+<suppressed ~32 debug messages>
+
+13. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\wave_controller.$proc$/workspace/src/wave_controller.sv:374$63'.
+     1/5: $0\ref_wave[0:0]
+     2/5: $0\mems_drv[0:0]
+     3/5: $0\cal_burst_count[1:0]
+     4/5: $0\cal_burst_active[0:0]
+     5/5: $0\cal_burst_armed[0:0]
+Creating decoders for process `\wave_controller.$proc$/workspace/src/wave_controller.sv:360$61'.
+     1/2: $2\ds_code[7:0]
+     2/2: $1\ds_code[7:0]
+Creating decoders for process `\wave_controller.$proc$/workspace/src/wave_controller.sv:341$57'.
+     1/1: $0\ds_acc[8:0]
+Creating decoders for process `\wave_controller.$proc$/workspace/src/wave_controller.sv:281$47'.
+     1/3: $0\latch_error[0:0]
+     2/3: $0\latch_phase270[0:0]
+     3/3: $0\latch_phase90[0:0]
+Creating decoders for process `\wave_controller.$proc$/workspace/src/wave_controller.sv:154$24'.
+     1/10: $0\capture_step[1:0]
+     2/10: $0\capture_pending[0:0]
+     3/10: $0\wave_cycle_cnt[7:0]
+     4/10: $0\cal_dir[0:0]
+     5/10: $0\raw_edge3[20:0]
+     6/10: $0\raw_edge2[20:0]
+     7/10: $0\raw_edge1[20:0]
+     8/10: $0\delay_wave_cycle[7:0]
+     9/10: $0\cal_timeout[0:0]
+    10/10: $0\cal_done[0:0]
+Creating decoders for process `\wave_controller.$proc$/workspace/src/wave_controller.sv:104$7'.
+     1/5: $0\comp_sync4[0:0]
+     2/5: $0\comp_sync3[0:0]
+     3/5: $0\comp_sync2[0:0]
+     4/5: $0\comp_sync1[0:0]
+     5/5: $0\comp_sync0[0:0]
+Creating decoders for process `\wave_controller.$proc$/workspace/src/wave_controller.sv:89$4'.
+     1/1: $0\phase_acc[20:0]
+Creating decoders for process `\sine_lut.$proc$/workspace/src/sine_lut.sv:71$70'.
+     1/1: $1\amp[7:0]
+Creating decoders for process `\sine_lut.$proc$/workspace/src/sine_lut.sv:32$69'.
+     1/1: $1\q_val[6:0]
+
+14. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\wave_controller.\ds_code' from process `\wave_controller.$proc$/workspace/src/wave_controller.sv:360$61'.
+No latch inferred for signal `\sine_lut.\amp' from process `\sine_lut.$proc$/workspace/src/sine_lut.sv:71$70'.
+No latch inferred for signal `\sine_lut.\q_val' from process `\sine_lut.$proc$/workspace/src/sine_lut.sv:32$69'.
+
+15. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\wave_controller.\mems_drv' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:374$63'.
+  created $adff cell `$procdff$404' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\ref_wave' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:374$63'.
+  created $adff cell `$procdff$409' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\cal_burst_armed' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:374$63'.
+  created $adff cell `$procdff$414' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\cal_burst_active' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:374$63'.
+  created $adff cell `$procdff$419' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\cal_burst_count' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:374$63'.
+  created $adff cell `$procdff$424' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\ds_acc' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:341$57'.
+  created $adff cell `$procdff$429' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\latch_phase90' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:281$47'.
+  created $adff cell `$procdff$434' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\latch_phase270' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:281$47'.
+  created $adff cell `$procdff$439' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\latch_error' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:281$47'.
+  created $adff cell `$procdff$444' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\cal_done' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:154$24'.
+  created $adff cell `$procdff$449' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\cal_timeout' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:154$24'.
+  created $adff cell `$procdff$454' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\delay_wave_cycle' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:154$24'.
+  created $adff cell `$procdff$459' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\raw_edge1' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:154$24'.
+  created $adff cell `$procdff$464' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\raw_edge2' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:154$24'.
+  created $adff cell `$procdff$469' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\raw_edge3' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:154$24'.
+  created $adff cell `$procdff$474' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\cal_dir' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:154$24'.
+  created $adff cell `$procdff$479' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\wave_cycle_cnt' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:154$24'.
+  created $adff cell `$procdff$484' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\capture_pending' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:154$24'.
+  created $adff cell `$procdff$489' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\capture_step' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:154$24'.
+  created $adff cell `$procdff$494' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\comp_sync0' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:104$7'.
+  created $adff cell `$procdff$499' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\comp_sync1' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:104$7'.
+  created $adff cell `$procdff$504' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\comp_sync2' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:104$7'.
+  created $adff cell `$procdff$509' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\comp_sync3' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:104$7'.
+  created $adff cell `$procdff$514' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\comp_sync4' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:104$7'.
+  created $adff cell `$procdff$519' with positive edge clock and positive level reset.
+Creating register for signal `\wave_controller.\phase_acc' using process `\wave_controller.$proc$/workspace/src/wave_controller.sv:89$4'.
+  created $adff cell `$procdff$524' with positive edge clock and positive level reset.
+
+16. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+17. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 6 empty switches in `\wave_controller.$proc$/workspace/src/wave_controller.sv:374$63'.
+Removing empty process `wave_controller.$proc$/workspace/src/wave_controller.sv:374$63'.
+Found and cleaned up 2 empty switches in `\wave_controller.$proc$/workspace/src/wave_controller.sv:360$61'.
+Removing empty process `wave_controller.$proc$/workspace/src/wave_controller.sv:360$61'.
+Removing empty process `wave_controller.$proc$/workspace/src/wave_controller.sv:341$57'.
+Found and cleaned up 7 empty switches in `\wave_controller.$proc$/workspace/src/wave_controller.sv:281$47'.
+Removing empty process `wave_controller.$proc$/workspace/src/wave_controller.sv:281$47'.
+Found and cleaned up 13 empty switches in `\wave_controller.$proc$/workspace/src/wave_controller.sv:154$24'.
+Removing empty process `wave_controller.$proc$/workspace/src/wave_controller.sv:154$24'.
+Found and cleaned up 1 empty switch in `\wave_controller.$proc$/workspace/src/wave_controller.sv:104$7'.
+Removing empty process `wave_controller.$proc$/workspace/src/wave_controller.sv:104$7'.
+Found and cleaned up 2 empty switches in `\wave_controller.$proc$/workspace/src/wave_controller.sv:89$4'.
+Removing empty process `wave_controller.$proc$/workspace/src/wave_controller.sv:89$4'.
+Found and cleaned up 1 empty switch in `\sine_lut.$proc$/workspace/src/sine_lut.sv:71$70'.
+Removing empty process `sine_lut.$proc$/workspace/src/sine_lut.sv:71$70'.
+Found and cleaned up 1 empty switch in `\sine_lut.$proc$/workspace/src/sine_lut.sv:32$69'.
+Removing empty process `sine_lut.$proc$/workspace/src/sine_lut.sv:32$69'.
+Cleaned up 33 empty switches.
+
+18. Executing CHECK pass (checking for obvious problems).
+Checking module wave_controller...
+Checking module sine_lut...
+Found and reported 0 problems.
+
+19. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wave_controller.
+<suppressed ~88 debug messages>
+Optimizing module sine_lut.
+
+20. Executing FLATTEN pass (flatten design).
+Deleting now unused module sine_lut.
+<suppressed ~1 debug messages>
+
+21. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wave_controller.
+
+22. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wave_controller..
+Removed 36 unused cells and 231 unused wires.
+<suppressed ~37 debug messages>
+
+23. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wave_controller.
+
+24. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wave_controller'.
+Computing hashes of 214 cells of `\wave_controller'.
+Finding duplicate cells in `\wave_controller'.
+Computing hashes of 201 cells of `\wave_controller'.
+Finding duplicate cells in `\wave_controller'.
+<suppressed ~39 debug messages>
+Removed a total of 13 cells.
+
+25. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wave_controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port A of cell $procmux$122: \cal_burst_armed -> 1'0
+      Replacing known input bits on port A of cell $procmux$108: \cal_burst_active -> 1'0
+      Replacing known input bits on port A of cell $procmux$106: \cal_burst_active -> 1'1
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$134.
+Removed 1 multiplexer ports.
+<suppressed ~184 debug messages>
+
+26. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wave_controller.
+  Optimizing cells in module \wave_controller.
+Performed a total of 1 changes.
+
+27. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wave_controller'.
+Computing hashes of 199 cells of `\wave_controller'.
+Finding duplicate cells in `\wave_controller'.
+Computing hashes of 197 cells of `\wave_controller'.
+Finding duplicate cells in `\wave_controller'.
+Computing hashes of 195 cells of `\wave_controller'.
+Finding duplicate cells in `\wave_controller'.
+<suppressed ~12 debug messages>
+Removed a total of 4 cells.
+
+28. Executing OPT_DFF pass (perform DFF optimizations).
+
+29. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wave_controller..
+Removed 0 unused cells and 19 unused wires.
+<suppressed ~1 debug messages>
+
+30. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wave_controller.
+
+31. Rerunning OPT passes. (Maybe there is more to do…)
+
+32. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wave_controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~182 debug messages>
+
+33. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wave_controller.
+    New ctrl vector for $pmux cell $procmux$303: $auto$opt_reduce.cc:137:opt_pmux$527
+    New ctrl vector for $pmux cell $procmux$208: $auto$opt_reduce.cc:137:opt_pmux$529
+  Optimizing cells in module \wave_controller.
+Performed a total of 2 changes.
+
+34. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wave_controller'.
+Computing hashes of 197 cells of `\wave_controller'.
+Finding duplicate cells in `\wave_controller'.
+Computing hashes of 196 cells of `\wave_controller'.
+Finding duplicate cells in `\wave_controller'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+35. Executing OPT_DFF pass (perform DFF optimizations).
+
+36. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wave_controller..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+37. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wave_controller.
+
+38. Rerunning OPT passes. (Maybe there is more to do…)
+
+39. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wave_controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~174 debug messages>
+
+40. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wave_controller.
+Performed a total of 0 changes.
+
+41. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wave_controller'.
+Computing hashes of 196 cells of `\wave_controller'.
+Finding duplicate cells in `\wave_controller'.
+Removed a total of 0 cells.
+
+42. Executing OPT_DFF pass (perform DFF optimizations).
+
+43. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wave_controller..
+
+44. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wave_controller.
+
+45. Executing FSM pass (extract and optimize FSM).
+
+45.1. Executing FSM_DETECT pass (finding FSMs in design).
+Found FSM state register wave_controller.capture_step.
+
+45.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+Extracting FSM `\capture_step' from module `\wave_controller'.
+  found $adff cell for state register: $procdff$494
+  root of input selection tree: $0\capture_step[1:0]
+  found reset state: 2'00 (from async reset)
+  found ctrl input: \soft_rst_n
+  found ctrl input: \nco_en
+  found ctrl input: $logic_and$/workspace/src/wave_controller.sv:182$29_Y
+  found ctrl input: \capture_pending
+  found ctrl input: \window_open
+  found ctrl input: $procmux$182_CMP
+  found ctrl input: $eq$/workspace/src/wave_controller.sv:142$15_Y
+  found ctrl input: $logic_and$/workspace/src/wave_controller.sv:195$33_Y
+  found ctrl input: $logic_or$/workspace/src/wave_controller.sv:195$32_Y
+  found ctrl input: \wave_is_valid
+  found state code: 2'10
+  found state code: 2'01
+  found ctrl output: $eq$/workspace/src/wave_controller.sv:142$15_Y
+  found ctrl output: $procmux$182_CMP
+  ctrl inputs: { $logic_and$/workspace/src/wave_controller.sv:195$33_Y $logic_or$/workspace/src/wave_controller.sv:195$32_Y $logic_and$/workspace/src/wave_controller.sv:182$29_Y \wave_is_valid \window_open \capture_pending \nco_en \soft_rst_n }
+  ctrl outputs: { $procmux$182_CMP $0\capture_step[1:0] $eq$/workspace/src/wave_controller.sv:142$15_Y }
+  transition:       2'00 8'-------0 ->       2'00 4'0001
+  transition:       2'00 8'------01 ->       2'00 4'0001
+  transition:       2'00 8'--0---11 ->       2'00 4'0001
+  transition:       2'00 8'--1-0011 ->       2'00 4'0001
+  transition:       2'00 8'-01-1011 ->       2'00 4'0001
+  transition:       2'00 8'-1101011 ->       2'00 4'0001
+  transition:       2'00 8'-1111011 ->       2'01 4'0011
+  transition:       2'00 8'0-1--111 ->       2'00 4'0001
+  transition:       2'00 8'1-1--111 ->       2'00 4'0001
+  transition:       2'10 8'-------0 ->       2'00 4'0000
+  transition:       2'10 8'------01 ->       2'10 4'0100
+  transition:       2'10 8'--0---11 ->       2'10 4'0100
+  transition:       2'10 8'--1-0011 ->       2'00 4'0000
+  transition:       2'10 8'0-1-1011 ->       2'10 4'0100
+  transition:       2'10 8'1-1-1011 ->       2'00 4'0000
+  transition:       2'10 8'0-1--111 ->       2'10 4'0100
+  transition:       2'10 8'1-1--111 ->       2'00 4'0000
+  transition:       2'01 8'-------0 ->       2'00 4'1000
+  transition:       2'01 8'------01 ->       2'01 4'1010
+  transition:       2'01 8'--0---11 ->       2'01 4'1010
+  transition:       2'01 8'--1-0011 ->       2'00 4'1000
+  transition:       2'01 8'-01-1011 ->       2'01 4'1010
+  transition:       2'01 8'-1101011 ->       2'00 4'1000
+  transition:       2'01 8'-1111011 ->       2'10 4'1100
+  transition:       2'01 8'0-1--111 ->       2'01 4'1010
+  transition:       2'01 8'1-1--111 ->       2'00 4'1000
+
+45.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+Optimizing FSM `$fsm$\capture_step$530' from module `\wave_controller'.
+  Merging pattern 8'0-1--111 and 8'1-1--111 from group (0 0 4'0001).
+  Merging pattern 8'1-1--111 and 8'0-1--111 from group (0 0 4'0001).
+
+45.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wave_controller..
+Removed 14 unused cells and 14 unused wires.
+<suppressed ~15 debug messages>
+
+45.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+Optimizing FSM `$fsm$\capture_step$530' from module `\wave_controller'.
+  Removing unused output signal $0\capture_step[1:0] [0].
+  Removing unused output signal $0\capture_step[1:0] [1].
+
+45.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+Recoding FSM `$fsm$\capture_step$530' from module `\wave_controller' using `auto' encoding:
+  mapping auto encoding to `one-hot` for this FSM.
+  00 -> --1
+  10 -> -1-
+  01 -> 1--
+
+45.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+FSM `$fsm$\capture_step$530' from module `wave_controller':
+-------------------------------------
+
+  Information on FSM $fsm$\capture_step$530 (\capture_step):
+
+  Number of input signals:    8
+  Number of output signals:   2
+  Number of state bits:       3
+
+  Input signals:
+    0: \soft_rst_n
+    1: \nco_en
+    2: \capture_pending
+    3: \window_open
+    4: \wave_is_valid
+    5: $logic_and$/workspace/src/wave_controller.sv:182$29_Y
+    6: $logic_or$/workspace/src/wave_controller.sv:195$32_Y
+    7: $logic_and$/workspace/src/wave_controller.sv:195$33_Y
+
+  Output signals:
+    0: $eq$/workspace/src/wave_controller.sv:142$15_Y
+    1: $procmux$182_CMP
+
+  State encoding:
+    0:      3'--1  <RESET STATE>
+    1:      3'-1-
+    2:      3'1--
+
+  Transition Table (state_in, ctrl_in, state_out, ctrl_out):
+      0:     0 8'-------0   ->     0 2'01
+      1:     0 8'------01   ->     0 2'01
+      2:     0 8'--1-0011   ->     0 2'01
+      3:     0 8'-1101011   ->     0 2'01
+      4:     0 8'-01-1011   ->     0 2'01
+      5:     0 8'--1--111   ->     0 2'01
+      6:     0 8'--0---11   ->     0 2'01
+      7:     0 8'-1111011   ->     2 2'01
+      8:     1 8'-------0   ->     0 2'00
+      9:     1 8'--1-0011   ->     0 2'00
+     10:     1 8'1-1-1011   ->     0 2'00
+     11:     1 8'1-1--111   ->     0 2'00
+     12:     1 8'------01   ->     1 2'00
+     13:     1 8'0-1-1011   ->     1 2'00
+     14:     1 8'0-1--111   ->     1 2'00
+     15:     1 8'--0---11   ->     1 2'00
+     16:     2 8'-------0   ->     0 2'10
+     17:     2 8'--1-0011   ->     0 2'10
+     18:     2 8'-1101011   ->     0 2'10
+     19:     2 8'1-1--111   ->     0 2'10
+     20:     2 8'-1111011   ->     1 2'10
+     21:     2 8'------01   ->     2 2'10
+     22:     2 8'-01-1011   ->     2 2'10
+     23:     2 8'0-1--111   ->     2 2'10
+     24:     2 8'--0---11   ->     2 2'10
+
+-------------------------------------
+
+45.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+Mapping FSM `$fsm$\capture_step$530' from module `\wave_controller'.
+
+46. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wave_controller.
+<suppressed ~1 debug messages>
+
+47. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wave_controller'.
+Computing hashes of 222 cells of `\wave_controller'.
+Finding duplicate cells in `\wave_controller'.
+Computing hashes of 214 cells of `\wave_controller'.
+Finding duplicate cells in `\wave_controller'.
+<suppressed ~24 debug messages>
+Removed a total of 8 cells.
+
+48. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wave_controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~157 debug messages>
+
+49. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wave_controller.
+Performed a total of 0 changes.
+
+50. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wave_controller'.
+Computing hashes of 214 cells of `\wave_controller'.
+Finding duplicate cells in `\wave_controller'.
+Removed a total of 0 cells.
+
+51. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$524 ($adff) from module wave_controller (D = $0\phase_acc[20:0], Q = \phase_acc).
+Adding EN signal on $procdff$489 ($adff) from module wave_controller (D = $0\capture_pending[0:0], Q = \capture_pending).
+Adding EN signal on $procdff$484 ($adff) from module wave_controller (D = $0\wave_cycle_cnt[7:0], Q = \wave_cycle_cnt).
+Adding EN signal on $procdff$479 ($adff) from module wave_controller (D = $0\cal_dir[0:0], Q = \cal_dir).
+Adding EN signal on $procdff$474 ($adff) from module wave_controller (D = $0\raw_edge3[20:0], Q = \raw_edge3).
+Adding EN signal on $procdff$469 ($adff) from module wave_controller (D = $0\raw_edge2[20:0], Q = \raw_edge2).
+Adding EN signal on $procdff$464 ($adff) from module wave_controller (D = $0\raw_edge1[20:0], Q = \raw_edge1).
+Adding EN signal on $procdff$459 ($adff) from module wave_controller (D = $0\delay_wave_cycle[7:0], Q = \delay_wave_cycle).
+Adding EN signal on $procdff$454 ($adff) from module wave_controller (D = $0\cal_timeout[0:0], Q = \cal_timeout).
+Adding EN signal on $procdff$449 ($adff) from module wave_controller (D = $0\cal_done[0:0], Q = \cal_done).
+Adding EN signal on $procdff$444 ($adff) from module wave_controller (D = $0\latch_error[0:0], Q = \latch_error).
+Adding EN signal on $procdff$439 ($adff) from module wave_controller (D = $0\latch_phase270[0:0], Q = \latch_phase270).
+Adding EN signal on $procdff$434 ($adff) from module wave_controller (D = $0\latch_phase90[0:0], Q = \latch_phase90).
+Adding EN signal on $procdff$424 ($adff) from module wave_controller (D = $0\cal_burst_count[1:0], Q = \cal_burst_count).
+Adding EN signal on $procdff$419 ($adff) from module wave_controller (D = $0\cal_burst_active[0:0], Q = \cal_burst_active).
+Adding EN signal on $procdff$414 ($adff) from module wave_controller (D = $0\cal_burst_armed[0:0], Q = \cal_burst_armed).
+
+52. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wave_controller..
+Removed 0 unused cells and 13 unused wires.
+<suppressed ~1 debug messages>
+
+53. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wave_controller.
+
+54. Rerunning OPT passes. (Maybe there is more to do…)
+
+55. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wave_controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~157 debug messages>
+
+56. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wave_controller.
+Performed a total of 0 changes.
+
+57. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wave_controller'.
+Computing hashes of 275 cells of `\wave_controller'.
+Finding duplicate cells in `\wave_controller'.
+Computing hashes of 241 cells of `\wave_controller'.
+Finding duplicate cells in `\wave_controller'.
+Computing hashes of 236 cells of `\wave_controller'.
+Finding duplicate cells in `\wave_controller'.
+<suppressed ~117 debug messages>
+Removed a total of 39 cells.
+
+58. Executing OPT_DFF pass (perform DFF optimizations).
+
+59. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wave_controller..
+Removed 0 unused cells and 39 unused wires.
+<suppressed ~1 debug messages>
+
+60. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wave_controller.
+
+61. Rerunning OPT passes. (Maybe there is more to do…)
+
+62. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wave_controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~160 debug messages>
+
+63. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wave_controller.
+Performed a total of 0 changes.
+
+64. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wave_controller'.
+Computing hashes of 236 cells of `\wave_controller'.
+Finding duplicate cells in `\wave_controller'.
+Removed a total of 0 cells.
+
+65. Executing OPT_DFF pass (perform DFF optimizations).
+
+66. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wave_controller..
+
+67. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wave_controller.
+
+68. Executing WREDUCE pass (reducing word size of cells).
+Removed top 26 address bits (of 32) from memory init port wave_controller.$flatten\u_sine.$auto$mem.cc:351:emit$76 ($flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74).
+Removed top 1 bits (of 3) from port B of cell wave_controller.$auto$opt_dff.cc:320:make_patterns_logic$750 ($ne).
+Removed top 2 bits (of 4) from port B of cell wave_controller.$auto$opt_dff.cc:320:make_patterns_logic$740 ($ne).
+Removed top 2 bits (of 5) from port B of cell wave_controller.$auto$opt_dff.cc:320:make_patterns_logic$735 ($ne).
+Removed top 2 bits (of 5) from port B of cell wave_controller.$auto$opt_dff.cc:320:make_patterns_logic$732 ($ne).
+Removed top 1 bits (of 2) from port B of cell wave_controller.$auto$opt_dff.cc:320:make_patterns_logic$727 ($ne).
+Removed top 1 bits (of 2) from port B of cell wave_controller.$auto$opt_dff.cc:320:make_patterns_logic$725 ($ne).
+Removed top 1 bits (of 2) from port B of cell wave_controller.$auto$opt_dff.cc:320:make_patterns_logic$720 ($ne).
+Removed top 1 bits (of 2) from port B of cell wave_controller.$auto$opt_dff.cc:320:make_patterns_logic$718 ($ne).
+Removed top 1 bits (of 2) from port B of cell wave_controller.$auto$opt_dff.cc:320:make_patterns_logic$716 ($ne).
+Removed top 1 bits (of 2) from port B of cell wave_controller.$auto$opt_dff.cc:320:make_patterns_logic$714 ($ne).
+Removed top 1 bits (of 2) from port B of cell wave_controller.$auto$opt_dff.cc:320:make_patterns_logic$712 ($ne).
+Removed top 1 bits (of 2) from port B of cell wave_controller.$auto$opt_dff.cc:320:make_patterns_logic$708 ($ne).
+Removed top 1 bits (of 2) from port B of cell wave_controller.$auto$opt_dff.cc:320:make_patterns_logic$703 ($ne).
+Removed top 1 bits (of 2) from port B of cell wave_controller.$auto$opt_dff.cc:320:make_patterns_logic$672 ($ne).
+Removed top 1 bits (of 2) from port B of cell wave_controller.$auto$opt_dff.cc:320:make_patterns_logic$627 ($ne).
+Removed top 1 bits (of 3) from port B of cell wave_controller.$auto$fsm_map.cc:77:implement_pattern_cache$609 ($eq).
+Removed top 1 bits (of 5) from port B of cell wave_controller.$auto$fsm_map.cc:77:implement_pattern_cache$605 ($eq).
+Removed top 1 bits (of 6) from port B of cell wave_controller.$auto$fsm_map.cc:77:implement_pattern_cache$601 ($eq).
+Removed top 1 bits (of 2) from port B of cell wave_controller.$auto$fsm_map.cc:77:implement_pattern_cache$593 ($eq).
+Removed top 1 bits (of 6) from port B of cell wave_controller.$auto$fsm_map.cc:77:implement_pattern_cache$580 ($eq).
+Removed top 1 bits (of 22) from port A of cell wave_controller.$add$/workspace/src/wave_controller.sv:86$2 ($add).
+Removed top 6 bits (of 22) from port B of cell wave_controller.$add$/workspace/src/wave_controller.sv:86$2 ($add).
+Removed top 7 bits (of 8) from port B of cell wave_controller.$eq$/workspace/src/wave_controller.sv:146$18 ($eq).
+Removed top 1 bits (of 21) from port B of cell wave_controller.$add$/workspace/src/wave_controller.sv:263$39 ($add).
+Removed top 1 bits (of 21) from port B of cell wave_controller.$add$/workspace/src/wave_controller.sv:264$42 ($add).
+Removed top 3 bits (of 21) from port B of cell wave_controller.$sub$/workspace/src/wave_controller.sv:271$44 ($sub).
+Removed top 3 bits (of 21) from port B of cell wave_controller.$sub$/workspace/src/wave_controller.sv:272$45 ($sub).
+Removed top 3 bits (of 21) from port B of cell wave_controller.$sub$/workspace/src/wave_controller.sv:275$46 ($sub).
+Removed top 5 bits (of 21) from port B of cell wave_controller.$lt$/workspace/src/wave_controller.sv:295$53 ($lt).
+Removed top 5 bits (of 21) from port B of cell wave_controller.$lt$/workspace/src/wave_controller.sv:301$55 ($lt).
+Removed top 1 bits (of 9) from port A of cell wave_controller.$add$/workspace/src/wave_controller.sv:343$59 ($add).
+Removed top 1 bits (of 9) from port B of cell wave_controller.$add$/workspace/src/wave_controller.sv:343$59 ($add).
+Removed top 1 bits (of 2) from port B of cell wave_controller.$eq$/workspace/src/wave_controller.sv:393$65 ($eq).
+Removed top 1 bits (of 8) from port B of cell wave_controller.$flatten\u_sine.$add$/workspace/src/sine_lut.sv:73$72 ($add).
+Removed top 1 bits (of 8) from port B of cell wave_controller.$flatten\u_sine.$sub$/workspace/src/sine_lut.sv:72$71 ($sub).
+Removed top 1 bits (of 21) from wire wave_controller.$shr$/workspace/src/wave_controller.sv:263$38_Y.
+Removed top 1 bits (of 21) from wire wave_controller.$shr$/workspace/src/wave_controller.sv:264$41_Y.
+Removed top 3 bits (of 21) from wire wave_controller.sync_delay.
+
+69. Executing PEEPOPT pass (run peephole optimizers).
+
+70. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wave_controller..
+Removed 0 unused cells and 3 unused wires.
+<suppressed ~1 debug messages>
+
+71. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module wave_controller:
+  creating $macc model for $add$/workspace/src/wave_controller.sv:186$30 ($add).
+  creating $macc model for $add$/workspace/src/wave_controller.sv:263$39 ($add).
+  creating $macc model for $add$/workspace/src/wave_controller.sv:264$42 ($add).
+  creating $macc model for $add$/workspace/src/wave_controller.sv:343$59 ($add).
+  creating $macc model for $add$/workspace/src/wave_controller.sv:397$66 ($add).
+  creating $macc model for $add$/workspace/src/wave_controller.sv:86$2 ($add).
+  creating $macc model for $flatten\u_sine.$add$/workspace/src/sine_lut.sv:73$72 ($add).
+  creating $macc model for $flatten\u_sine.$sub$/workspace/src/sine_lut.sv:29$67 ($sub).
+  creating $macc model for $flatten\u_sine.$sub$/workspace/src/sine_lut.sv:72$71 ($sub).
+  creating $macc model for $sub$/workspace/src/wave_controller.sv:139$14 ($sub).
+  creating $macc model for $sub$/workspace/src/wave_controller.sv:149$22 ($sub).
+  creating $macc model for $sub$/workspace/src/wave_controller.sv:263$37 ($sub).
+  creating $macc model for $sub$/workspace/src/wave_controller.sv:264$40 ($sub).
+  creating $macc model for $sub$/workspace/src/wave_controller.sv:271$44 ($sub).
+  creating $macc model for $sub$/workspace/src/wave_controller.sv:272$45 ($sub).
+  creating $macc model for $sub$/workspace/src/wave_controller.sv:275$46 ($sub).
+  creating $macc model for $sub$/workspace/src/wave_controller.sv:295$52 ($sub).
+  creating $macc model for $sub$/workspace/src/wave_controller.sv:301$54 ($sub).
+  creating $macc model for $sub$/workspace/src/wave_controller.sv:350$60 ($sub).
+  merging $macc model for $add$/workspace/src/wave_controller.sv:264$42 into $sub$/workspace/src/wave_controller.sv:272$45.
+  merging $macc model for $add$/workspace/src/wave_controller.sv:263$39 into $sub$/workspace/src/wave_controller.sv:271$44.
+  creating $alu model for $macc $sub$/workspace/src/wave_controller.sv:295$52.
+  creating $alu model for $macc $sub$/workspace/src/wave_controller.sv:275$46.
+  creating $alu model for $macc $sub$/workspace/src/wave_controller.sv:264$40.
+  creating $alu model for $macc $sub$/workspace/src/wave_controller.sv:263$37.
+  creating $alu model for $macc $sub$/workspace/src/wave_controller.sv:149$22.
+  creating $alu model for $macc $sub$/workspace/src/wave_controller.sv:139$14.
+  creating $alu model for $macc $flatten\u_sine.$sub$/workspace/src/sine_lut.sv:72$71.
+  creating $alu model for $macc $flatten\u_sine.$sub$/workspace/src/sine_lut.sv:29$67.
+  creating $alu model for $macc $flatten\u_sine.$add$/workspace/src/sine_lut.sv:73$72.
+  creating $alu model for $macc $add$/workspace/src/wave_controller.sv:86$2.
+  creating $alu model for $macc $add$/workspace/src/wave_controller.sv:397$66.
+  creating $alu model for $macc $add$/workspace/src/wave_controller.sv:343$59.
+  creating $alu model for $macc $sub$/workspace/src/wave_controller.sv:301$54.
+  creating $alu model for $macc $sub$/workspace/src/wave_controller.sv:350$60.
+  creating $alu model for $macc $add$/workspace/src/wave_controller.sv:186$30.
+  creating $macc cell for $sub$/workspace/src/wave_controller.sv:271$44: $auto$alumacc.cc:382:replace_macc$754
+  creating $macc cell for $sub$/workspace/src/wave_controller.sv:272$45: $auto$alumacc.cc:382:replace_macc$755
+  creating $alu model for $lt$/workspace/src/wave_controller.sv:146$19 ($lt): merged with $sub$/workspace/src/wave_controller.sv:149$22.
+  creating $alu model for $lt$/workspace/src/wave_controller.sv:295$53 ($lt): new $alu
+  creating $alu model for $lt$/workspace/src/wave_controller.sv:301$55 ($lt): new $alu
+  creating $alu cell for $lt$/workspace/src/wave_controller.sv:301$55: $auto$alumacc.cc:512:replace_alu$758
+  creating $alu cell for $lt$/workspace/src/wave_controller.sv:295$53: $auto$alumacc.cc:512:replace_alu$763
+  creating $alu cell for $add$/workspace/src/wave_controller.sv:186$30: $auto$alumacc.cc:512:replace_alu$768
+  creating $alu cell for $sub$/workspace/src/wave_controller.sv:350$60: $auto$alumacc.cc:512:replace_alu$771
+  creating $alu cell for $sub$/workspace/src/wave_controller.sv:301$54: $auto$alumacc.cc:512:replace_alu$774
+  creating $alu cell for $add$/workspace/src/wave_controller.sv:343$59: $auto$alumacc.cc:512:replace_alu$777
+  creating $alu cell for $add$/workspace/src/wave_controller.sv:397$66: $auto$alumacc.cc:512:replace_alu$780
+  creating $alu cell for $add$/workspace/src/wave_controller.sv:86$2: $auto$alumacc.cc:512:replace_alu$783
+  creating $alu cell for $flatten\u_sine.$add$/workspace/src/sine_lut.sv:73$72: $auto$alumacc.cc:512:replace_alu$786
+  creating $alu cell for $flatten\u_sine.$sub$/workspace/src/sine_lut.sv:29$67: $auto$alumacc.cc:512:replace_alu$789
+  creating $alu cell for $flatten\u_sine.$sub$/workspace/src/sine_lut.sv:72$71: $auto$alumacc.cc:512:replace_alu$792
+  creating $alu cell for $sub$/workspace/src/wave_controller.sv:139$14: $auto$alumacc.cc:512:replace_alu$795
+  creating $alu cell for $sub$/workspace/src/wave_controller.sv:149$22, $lt$/workspace/src/wave_controller.sv:146$19: $auto$alumacc.cc:512:replace_alu$798
+  creating $alu cell for $sub$/workspace/src/wave_controller.sv:263$37: $auto$alumacc.cc:512:replace_alu$803
+  creating $alu cell for $sub$/workspace/src/wave_controller.sv:264$40: $auto$alumacc.cc:512:replace_alu$806
+  creating $alu cell for $sub$/workspace/src/wave_controller.sv:275$46: $auto$alumacc.cc:512:replace_alu$809
+  creating $alu cell for $sub$/workspace/src/wave_controller.sv:295$52: $auto$alumacc.cc:512:replace_alu$812
+  created 17 $alu and 2 $macc cells.
+
+72. Executing SHARE pass (SAT-based resource sharing).
+
+73. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wave_controller.
+<suppressed ~2 debug messages>
+
+74. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wave_controller'.
+Computing hashes of 238 cells of `\wave_controller'.
+Finding duplicate cells in `\wave_controller'.
+Removed a total of 0 cells.
+
+75. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wave_controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~160 debug messages>
+
+76. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wave_controller.
+Performed a total of 0 changes.
+
+77. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wave_controller'.
+Computing hashes of 238 cells of `\wave_controller'.
+Finding duplicate cells in `\wave_controller'.
+Removed a total of 0 cells.
+
+78. Executing OPT_DFF pass (perform DFF optimizations).
+
+79. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wave_controller..
+Removed 2 unused cells and 5 unused wires.
+<suppressed ~5 debug messages>
+
+80. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wave_controller.
+
+81. Rerunning OPT passes. (Maybe there is more to do…)
+
+82. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wave_controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~160 debug messages>
+
+83. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wave_controller.
+Performed a total of 0 changes.
+
+84. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wave_controller'.
+Computing hashes of 236 cells of `\wave_controller'.
+Finding duplicate cells in `\wave_controller'.
+Removed a total of 0 cells.
+
+85. Executing OPT_DFF pass (perform DFF optimizations).
+
+86. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wave_controller..
+
+87. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wave_controller.
+
+88. Executing MEMORY pass.
+
+88.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+88.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+88.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+88.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+88.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+Checking read port `$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74'[0] in module `\wave_controller': no output FF found.
+Checking read port address `$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74'[0] in module `\wave_controller': no address FF found.
+
+88.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wave_controller..
+
+88.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+88.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+88.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wave_controller..
+
+88.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+89. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wave_controller..
+
+90. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wave_controller.
+<suppressed ~79 debug messages>
+
+91. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wave_controller'.
+Computing hashes of 190 cells of `\wave_controller'.
+Finding duplicate cells in `\wave_controller'.
+Computing hashes of 189 cells of `\wave_controller'.
+Finding duplicate cells in `\wave_controller'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+92. Executing OPT_DFF pass (perform DFF optimizations).
+
+93. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wave_controller..
+Removed 2 unused cells and 61 unused wires.
+<suppressed ~3 debug messages>
+
+94. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+Mapping memory $flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74 in module \wave_controller:
+  created 64 $dff cells and 0 static cells of width 7.
+  read interface: 0 $dff and 63 $mux cells.
+  write interface: 0 write mux blocks.
+
+95. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wave_controller.
+<suppressed ~9 debug messages>
+
+96. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wave_controller'.
+Computing hashes of 243 cells of `\wave_controller'.
+Finding duplicate cells in `\wave_controller'.
+Computing hashes of 241 cells of `\wave_controller'.
+Finding duplicate cells in `\wave_controller'.
+<suppressed ~6 debug messages>
+Removed a total of 2 cells.
+
+97. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wave_controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~126 debug messages>
+
+98. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wave_controller.
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][5][22]$994:
+      Old ports: A=7'1110001, B=7'1110010, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][11]$a$914
+      New ports: A=2'01, B=2'10, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][11]$a$914 [1:0]
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][11]$a$914 [6:2] = 5'11100
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][5][21]$991:
+      Old ports: A=7'1101110, B=7'1101111, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][10]$b$912
+      New ports: A=1'0, B=1'1, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][10]$b$912 [0]
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][10]$b$912 [6:1] = 6'110111
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][5][20]$988:
+      Old ports: A=7'1101010, B=7'1101100, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][10]$a$911
+      New ports: A=2'01, B=2'10, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][10]$a$911 [2:1]
+      New connections: { $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][10]$a$911 [6:3] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][10]$a$911 [0] } = 5'11010
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][5][19]$985:
+      Old ports: A=7'1100111, B=7'1101001, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][9]$b$909
+      New ports: A=2'01, B=2'10, Y={ $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][9]$b$909 [3] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][9]$b$909 [1] }
+      New connections: { $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][9]$b$909 [6:4] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][9]$b$909 [2] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][9]$b$909 [0] } = { 3'110 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][9]$b$909 [1] 1'1 }
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][5][18]$982:
+      Old ports: A=7'1100011, B=7'1100101, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][9]$a$908
+      New ports: A=2'01, B=2'10, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][9]$a$908 [2:1]
+      New connections: { $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][9]$a$908 [6:3] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][9]$a$908 [0] } = 5'11001
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][5][17]$979:
+      Old ports: A=7'1011111, B=7'1100001, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][8]$b$906
+      New ports: A=2'01, B=2'10, Y={ $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][8]$b$906 [5] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][8]$b$906 [1] }
+      New connections: { $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][8]$b$906 [6] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][8]$b$906 [4:2] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][8]$b$906 [0] } = { 1'1 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][8]$b$906 [1] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][8]$b$906 [1] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][8]$b$906 [1] 1'1 }
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][5][16]$976:
+      Old ports: A=7'1011011, B=7'1011101, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][8]$a$905
+      New ports: A=2'01, B=2'10, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][8]$a$905 [2:1]
+      New connections: { $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][8]$a$905 [6:3] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][8]$a$905 [0] } = 5'10111
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][5][15]$973:
+      Old ports: A=7'1010110, B=7'1011001, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][7]$b$903
+      New ports: A=2'10, B=2'01, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][7]$b$903 [1:0]
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][7]$b$903 [6:2] = { 3'101 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][7]$b$903 [0] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][7]$b$903 [1] }
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][5][14]$970:
+      Old ports: A=7'1010010, B=7'1010100, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][7]$a$902
+      New ports: A=2'01, B=2'10, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][7]$a$902 [2:1]
+      New connections: { $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][7]$a$902 [6:3] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][7]$a$902 [0] } = 5'10100
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][5][13]$967:
+      Old ports: A=7'1001101, B=7'1001111, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][6]$b$900
+      New ports: A=1'0, B=1'1, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][6]$b$900 [1]
+      New connections: { $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][6]$b$900 [6:2] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][6]$b$900 [0] } = 6'100111
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][5][12]$964:
+      Old ports: A=7'1001000, B=7'1001010, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][6]$a$899
+      New ports: A=1'0, B=1'1, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][6]$a$899 [1]
+      New connections: { $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][6]$a$899 [6:2] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][6]$a$899 [0] } = 6'100100
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][5][11]$961:
+      Old ports: A=7'1000011, B=7'1000101, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][5]$b$897
+      New ports: A=2'01, B=2'10, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][5]$b$897 [2:1]
+      New connections: { $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][5]$b$897 [6:3] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][5]$b$897 [0] } = 5'10001
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][5][10]$958:
+      Old ports: A=7'0111101, B=7'1000000, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][5]$a$896
+      New ports: A=2'01, B=2'10, Y={ $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][5]$a$896 [6] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][5]$a$896 [0] }
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][5]$a$896 [5:1] = { $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][5]$a$896 [0] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][5]$a$896 [0] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][5]$a$896 [0] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][5]$a$896 [0] 1'0 }
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][5][9]$955:
+      Old ports: A=7'0111000, B=7'0111010, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][4]$b$894
+      New ports: A=1'0, B=1'1, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][4]$b$894 [1]
+      New connections: { $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][4]$b$894 [6:2] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][4]$b$894 [0] } = 6'011100
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][5][8]$952:
+      Old ports: A=7'0110010, B=7'0110101, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][4]$a$893
+      New ports: A=2'10, B=2'01, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][4]$a$893 [1:0]
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][4]$a$893 [6:2] = { 4'0110 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][4]$a$893 [0] }
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][5][7]$949:
+      Old ports: A=7'0101100, B=7'0101111, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][3]$b$891
+      New ports: A=1'0, B=1'1, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][3]$b$891 [0]
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][3]$b$891 [6:1] = { 5'01011 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][3]$b$891 [0] }
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][5][6]$946:
+      Old ports: A=7'0100110, B=7'0101001, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][3]$a$890
+      New ports: A=2'10, B=2'01, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][3]$a$890 [1:0]
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][3]$a$890 [6:2] = { 3'010 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][3]$a$890 [0] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][3]$a$890 [1] }
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][5][5]$943:
+      Old ports: A=7'0100000, B=7'0100011, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][2]$b$888
+      New ports: A=1'0, B=1'1, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][2]$b$888 [0]
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][2]$b$888 [6:1] = { 5'01000 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][2]$b$888 [0] }
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][5][4]$940:
+      Old ports: A=7'0011010, B=7'0011101, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][2]$a$887
+      New ports: A=2'10, B=2'01, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][2]$a$887 [1:0]
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][2]$a$887 [6:2] = { 4'0011 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][2]$a$887 [0] }
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][5][3]$937:
+      Old ports: A=7'0010100, B=7'0010111, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][1]$b$885
+      New ports: A=1'0, B=1'1, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][1]$b$885 [0]
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][1]$b$885 [6:1] = { 5'00101 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][1]$b$885 [0] }
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][5][2]$934:
+      Old ports: A=7'0001110, B=7'0010001, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][1]$a$884
+      New ports: A=2'10, B=2'01, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][1]$a$884 [1:0]
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][1]$a$884 [6:2] = { 2'00 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][1]$a$884 [0] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][1]$a$884 [1] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][1]$a$884 [1] }
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][5][1]$931:
+      Old ports: A=7'0001000, B=7'0001011, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][0]$b$882
+      New ports: A=1'0, B=1'1, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][0]$b$882 [0]
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][0]$b$882 [6:1] = { 5'00010 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][0]$b$882 [0] }
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][5][0]$928:
+      Old ports: A=7'0000010, B=7'0000101, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][0]$a$881
+      New ports: A=2'10, B=2'01, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][0]$a$881 [1:0]
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][0]$a$881 [6:2] = { 4'0000 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][0]$a$881 [0] }
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][5][26]$1006:
+      Old ports: A=7'1111010, B=7'1111011, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][13]$a$920
+      New ports: A=1'0, B=1'1, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][13]$a$920 [0]
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][13]$a$920 [6:1] = 6'111101
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][14]$922:
+      Old ports: A=7'1111101, B=7'1111110, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][7]$a$878
+      New ports: A=2'01, B=2'10, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][7]$a$878 [1:0]
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][7]$a$878 [6:2] = 5'11111
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][5][25]$1003:
+      Old ports: A=7'1111000, B=7'1111001, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][12]$b$918
+      New ports: A=1'0, B=1'1, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][12]$b$918 [0]
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][12]$b$918 [6:1] = 6'111100
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][5][24]$1000:
+      Old ports: A=7'1110110, B=7'1110111, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][12]$a$917
+      New ports: A=1'0, B=1'1, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][12]$a$917 [0]
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][12]$a$917 [6:1] = 6'111011
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][5][23]$997:
+      Old ports: A=7'1110011, B=7'1110101, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][11]$b$915
+      New ports: A=2'01, B=2'10, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][11]$b$915 [2:1]
+      New connections: { $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][11]$b$915 [6:3] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][11]$b$915 [0] } = 5'11101
+  Optimizing cells in module \wave_controller.
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][13]$919:
+      Old ports: A=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][13]$a$920, B=7'1111100, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][6]$b$876
+      New ports: A={ 2'01 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][13]$a$920 [0] }, B=3'100, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][6]$b$876 [2:0]
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][6]$b$876 [6:3] = 4'1111
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][12]$916:
+      Old ports: A=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][12]$a$917, B=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][12]$b$918, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][6]$a$875
+      New ports: A={ 2'01 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][12]$a$917 [0] }, B={ 2'10 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][12]$b$918 [0] }, Y={ $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][6]$a$875 [3] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][6]$a$875 [1:0] }
+      New connections: { $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][6]$a$875 [6:4] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][6]$a$875 [2] } = { 3'111 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][6]$a$875 [1] }
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][11]$913:
+      Old ports: A=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][11]$a$914, B=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][11]$b$915, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][5]$b$873
+      New ports: A={ 1'0 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][11]$a$914 [1:0] }, B={ $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][11]$b$915 [2:1] 1'1 }, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][5]$b$873 [2:0]
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][5]$b$873 [6:3] = 4'1110
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][10]$910:
+      Old ports: A=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][10]$a$911, B=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][10]$b$912, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][5]$a$872
+      New ports: A={ $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][10]$a$911 [2:1] 1'0 }, B={ 2'11 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][10]$b$912 [0] }, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][5]$a$872 [2:0]
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][5]$a$872 [6:3] = 4'1101
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][9]$907:
+      Old ports: A=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][9]$a$908, B=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][9]$b$909, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][4]$b$870
+      New ports: A={ 1'0 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][9]$a$908 [2:1] }, B={ $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][9]$b$909 [3] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][9]$b$909 [1] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][9]$b$909 [1] }, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][4]$b$870 [3:1]
+      New connections: { $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][4]$b$870 [6:4] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][4]$b$870 [0] } = 4'1101
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][8]$904:
+      Old ports: A=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][8]$a$905, B=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][8]$b$906, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][4]$a$869
+      New ports: A={ 2'01 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][8]$a$905 [2:1] }, B={ $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][8]$b$906 [5] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][8]$b$906 [1] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][8]$b$906 [1] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][8]$b$906 [1] }, Y={ $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][4]$a$869 [5] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][4]$a$869 [3:1] }
+      New connections: { $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][4]$a$869 [6] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][4]$a$869 [4] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][4]$a$869 [0] } = { 1'1 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][4]$a$869 [3] 1'1 }
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][7]$901:
+      Old ports: A=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][7]$a$902, B=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][7]$b$903, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][3]$b$867
+      New ports: A={ $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][7]$a$902 [2:1] 1'0 }, B={ $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][7]$b$903 [1] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][7]$b$903 [1:0] }, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][3]$b$867 [2:0]
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][3]$b$867 [6:3] = { 3'101 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][3]$b$867 [0] }
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][6]$898:
+      Old ports: A=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][6]$a$899, B=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][6]$b$900, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][3]$a$866
+      New ports: A={ $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][6]$a$899 [1] 1'0 }, B={ $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][6]$b$900 [1] 1'1 }, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][3]$a$866 [1:0]
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][3]$a$866 [6:2] = { 4'1001 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][3]$a$866 [0] }
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][5]$895:
+      Old ports: A=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][5]$a$896, B=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][5]$b$897, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][2]$b$864
+      New ports: A={ $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][5]$a$896 [6] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][5]$a$896 [0] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][5]$a$896 [0] 1'0 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][5]$a$896 [0] }, B={ 2'10 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][5]$b$897 [2:1] 1'1 }, Y={ $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][2]$b$864 [6] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][2]$b$864 [3:0] }
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][2]$b$864 [5:4] = { $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][2]$b$864 [3] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][2]$b$864 [3] }
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][4]$892:
+      Old ports: A=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][4]$a$893, B=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][4]$b$894, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][2]$a$863
+      New ports: A={ 1'0 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][4]$a$893 [1:0] }, B={ 1'1 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][4]$b$894 [1] 1'0 }, Y={ $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][2]$a$863 [3] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][2]$a$863 [1:0] }
+      New connections: { $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][2]$a$863 [6:4] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][2]$a$863 [2] } = { 3'011 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][2]$a$863 [0] }
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][3]$889:
+      Old ports: A=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][3]$a$890, B=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][3]$b$891, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][1]$b$861
+      New ports: A={ $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][3]$a$890 [0] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][3]$a$890 [1] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][3]$a$890 [1:0] }, B={ 2'11 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][3]$b$891 [0] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][3]$b$891 [0] }, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][1]$b$861 [3:0]
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][1]$b$861 [6:4] = 3'010
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][2]$886:
+      Old ports: A=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][2]$a$887, B=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][2]$b$888, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][1]$a$860
+      New ports: A={ 2'01 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][2]$a$887 [0] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][2]$a$887 [1:0] }, B={ 3'100 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][2]$b$888 [0] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][2]$b$888 [0] }, Y={ $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][1]$a$860 [5] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][1]$a$860 [3:0] }
+      New connections: { $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][1]$a$860 [6] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][1]$a$860 [4] } = { 1'0 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][1]$a$860 [3] }
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][1]$883:
+      Old ports: A=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][1]$a$884, B=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][1]$b$885, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][0]$b$858
+      New ports: A={ $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][1]$a$884 [0] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][1]$a$884 [1] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][1]$a$884 [1] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][1]$a$884 [1:0] }, B={ 3'101 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][1]$b$885 [0] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][1]$b$885 [0] }, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][0]$b$858 [4:0]
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][0]$b$858 [6:5] = 2'00
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][0]$880:
+      Old ports: A=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][0]$a$881, B=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][0]$b$882, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][0]$a$857
+      New ports: A={ 1'0 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][0]$a$881 [0] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][0]$a$881 [1:0] }, B={ 2'10 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][0]$b$882 [0] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][0]$b$882 [0] }, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][0]$a$857 [3:0]
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][0]$a$857 [6:4] = 3'000
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][7]$877:
+      Old ports: A=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][7]$a$878, B=7'1111111, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][3]$b$855
+      New ports: A=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][7]$a$878 [1:0], B=2'11, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][3]$b$855 [1:0]
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][3]$b$855 [6:2] = 5'11111
+  Optimizing cells in module \wave_controller.
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][6]$874:
+      Old ports: A=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][6]$a$875, B=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][6]$b$876, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][3]$a$854
+      New ports: A={ $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][6]$a$875 [3] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][6]$a$875 [1] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][6]$a$875 [1:0] }, B={ 1'1 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][6]$b$876 [2:0] }, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][3]$a$854 [3:0]
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][3]$a$854 [6:4] = 3'111
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][5]$871:
+      Old ports: A=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][5]$a$872, B=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][5]$b$873, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][2]$b$852
+      New ports: A={ 2'01 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][5]$a$872 [2:0] }, B={ 2'10 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][5]$b$873 [2:0] }, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][2]$b$852 [4:0]
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][2]$b$852 [6:5] = 2'11
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][4]$868:
+      Old ports: A=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][4]$a$869, B=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][4]$b$870, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][2]$a$851
+      New ports: A={ $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][4]$a$869 [5] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][4]$a$869 [3] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][4]$a$869 [3:1] }, B={ 2'10 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][4]$b$870 [3:1] }, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][2]$a$851 [5:1]
+      New connections: { $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][2]$a$851 [6] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][2]$a$851 [0] } = 2'11
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][3]$865:
+      Old ports: A=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][3]$a$866, B=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][3]$b$867, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][1]$b$849
+      New ports: A={ 2'01 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][3]$a$866 [0] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][3]$a$866 [1:0] }, B={ 1'1 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][3]$b$867 [0] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][3]$b$867 [2:0] }, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][1]$b$849 [4:0]
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][1]$b$849 [6:5] = 2'10
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][2]$862:
+      Old ports: A=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][2]$a$863, B=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][2]$b$864, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][1]$a$848
+      New ports: A={ 2'01 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][2]$a$863 [3] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][2]$a$863 [0] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][2]$a$863 [1:0] }, B={ $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][2]$b$864 [6] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][2]$b$864 [3] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][2]$b$864 [3:0] }, Y={ $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][1]$a$848 [6] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][1]$a$848 [4:0] }
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][1]$a$848 [5] = $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][1]$a$848 [4]
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][1]$859:
+      Old ports: A=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][1]$a$860, B=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][1]$b$861, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][0]$b$846
+      New ports: A={ $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][1]$a$860 [5] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][1]$a$860 [3] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][1]$a$860 [3:0] }, B={ 2'10 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][1]$b$861 [3:0] }, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][0]$b$846 [5:0]
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][0]$b$846 [6] = 1'0
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][0]$856:
+      Old ports: A=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][0]$a$857, B=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][0]$b$858, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][0]$a$845
+      New ports: A={ 1'0 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][0]$a$857 [3:0] }, B=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][0]$b$858 [4:0], Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][0]$a$845 [4:0]
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][0]$a$845 [6:5] = 2'00
+  Optimizing cells in module \wave_controller.
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][3]$853:
+      Old ports: A=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][3]$a$854, B=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][3]$b$855, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][1][1]$b$843
+      New ports: A=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][3]$a$854 [3:0], B={ 2'11 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][3]$b$855 [1:0] }, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][1][1]$b$843 [3:0]
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][1][1]$b$843 [6:4] = 3'111
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][2]$850:
+      Old ports: A=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][2]$a$851, B=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][2]$b$852, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][1][1]$a$842
+      New ports: A={ $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][2]$a$851 [5:1] 1'1 }, B={ 1'1 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][2]$b$852 [4:0] }, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][1][1]$a$842 [5:0]
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][1][1]$a$842 [6] = 1'1
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][0]$844:
+      Old ports: A=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][0]$a$845, B=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][0]$b$846, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][1][0]$a$839
+      New ports: A={ 1'0 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][0]$a$845 [4:0] }, B=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][0]$b$846 [5:0], Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][1][0]$a$839 [5:0]
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][1][0]$a$839 [6] = 1'0
+  Optimizing cells in module \wave_controller.
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][1][1]$841:
+      Old ports: A=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][1][1]$a$842, B=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][1][1]$b$843, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][0][0]$b$837
+      New ports: A=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][1][1]$a$842 [5:0], B={ 2'11 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][1][1]$b$843 [3:0] }, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][0][0]$b$837 [5:0]
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][0][0]$b$837 [6] = 1'1
+  Optimizing cells in module \wave_controller.
+Performed a total of 54 changes.
+
+99. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wave_controller'.
+Computing hashes of 241 cells of `\wave_controller'.
+Finding duplicate cells in `\wave_controller'.
+Computing hashes of 217 cells of `\wave_controller'.
+Finding duplicate cells in `\wave_controller'.
+<suppressed ~72 debug messages>
+Removed a total of 24 cells.
+
+100. Executing OPT_SHARE pass.
+
+101. Executing OPT_DFF pass (perform DFF optimizations).
+
+102. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wave_controller..
+Removed 0 unused cells and 96 unused wires.
+<suppressed ~1 debug messages>
+
+103. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wave_controller.
+<suppressed ~1 debug messages>
+
+104. Rerunning OPT passes. (Maybe there is more to do…)
+
+105. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wave_controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~119 debug messages>
+
+106. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wave_controller.
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][12]$916:
+      Old ports: A={ 2'01 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][0]$b$882 [0] }, B={ 2'10 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][0]$b$882 [0] }, Y={ $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][6]$a$875 [3] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][6]$a$875 [1:0] }
+      New ports: A=2'01, B=2'10, Y={ $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][6]$a$875 [3] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][6]$a$875 [1] }
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][6]$a$875 [0] = \u_sine.addr [0]
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][9]$907:
+      Old ports: A={ 1'0 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][10]$a$911 [2:1] }, B={ $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][10]$a$911 [2:1] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][10]$a$911 [1] }, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][4]$b$870 [3:1]
+      New ports: A={ 1'0 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][10]$a$911 [2] }, B=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][10]$a$911 [2:1], Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][4]$b$870 [3:2]
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][4]$b$870 [1] = $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][10]$a$911 [1]
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][8]$904:
+      Old ports: A={ 2'01 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][10]$a$911 [2:1] }, B={ $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][10]$a$911 [2:1] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][10]$a$911 [1] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][10]$a$911 [1] }, Y={ $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][4]$a$869 [5] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][4]$a$869 [3:1] }
+      New ports: A={ 2'01 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][10]$a$911 [2] }, B={ $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][10]$a$911 [2:1] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][10]$a$911 [1] }, Y={ $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][4]$a$869 [5] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][4]$a$869 [3:2] }
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][4]$a$869 [1] = $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][10]$a$911 [1]
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][6]$898:
+      Old ports: A={ $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][0]$b$882 [0] 1'0 }, B={ $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][0]$b$882 [0] 1'1 }, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][3]$a$866 [1:0]
+      New ports: A=1'0, B=1'1, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][3]$a$866 [0]
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][3]$a$866 [1] = \u_sine.addr [0]
+  Optimizing cells in module \wave_controller.
+    Consolidated identical input bits for $mux cell $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][4]$868:
+      Old ports: A={ $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][4]$a$869 [5] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][4]$a$869 [3] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][4]$a$869 [3:1] }, B={ 2'10 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][4]$b$870 [3:1] }, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][2]$a$851 [5:1]
+      New ports: A={ $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][4]$a$869 [5] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][4]$a$869 [3] $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][4]$a$869 [3:2] }, B={ 2'10 $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][3][4]$b$870 [3:2] }, Y=$memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][2]$a$851 [5:2]
+      New connections: $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][2][2]$a$851 [1] = $memory$flatten\u_sine.$auto$proc_rom.cc:155:do_switch$74$rdmux[0][4][10]$a$911 [1]
+  Optimizing cells in module \wave_controller.
+Performed a total of 5 changes.
+
+107. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wave_controller'.
+Computing hashes of 216 cells of `\wave_controller'.
+Finding duplicate cells in `\wave_controller'.
+Computing hashes of 215 cells of `\wave_controller'.
+Finding duplicate cells in `\wave_controller'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+108. Executing OPT_SHARE pass.
+
+109. Executing OPT_DFF pass (perform DFF optimizations).
+
+110. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wave_controller..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+111. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wave_controller.
+<suppressed ~1 debug messages>
+
+112. Rerunning OPT passes. (Maybe there is more to do…)
+
+113. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wave_controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~117 debug messages>
+
+114. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wave_controller.
+Performed a total of 0 changes.
+
+115. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wave_controller'.
+Computing hashes of 214 cells of `\wave_controller'.
+Finding duplicate cells in `\wave_controller'.
+Removed a total of 0 cells.
+
+116. Executing OPT_SHARE pass.
+
+117. Executing OPT_DFF pass (perform DFF optimizations).
+
+118. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wave_controller..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+119. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wave_controller.
+
+120. Rerunning OPT passes. (Maybe there is more to do…)
+
+121. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wave_controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~117 debug messages>
+
+122. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wave_controller.
+Performed a total of 0 changes.
+
+123. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wave_controller'.
+Computing hashes of 214 cells of `\wave_controller'.
+Finding duplicate cells in `\wave_controller'.
+Removed a total of 0 cells.
+
+124. Executing OPT_SHARE pass.
+
+125. Executing OPT_DFF pass (perform DFF optimizations).
+
+126. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wave_controller..
+
+127. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wave_controller.
+
+128. Executing TECHMAP pass (map to technology primitives).
+
+128.1. Executing Verilog-2005 frontend: /foss/tools/yosys/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/foss/tools/yosys/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+128.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $not.
+Using template $paramod$950cc9f9d9b07c09d0ee4a231126f2c8a3c4f78a\_90_alu for cells of type $alu.
+Using template $paramod$dba81db10099960a821f4957f4cb0d31e021af4f\_90_alu for cells of type $alu.
+Using template $paramod$a1bc51c02ce12ac21eb18988e83292af48ed7d72\_90_alu for cells of type $alu.
+Using template $paramod$befd47b1c77b68561d11d0cb61a0fae29b79f34c\_90_alu for cells of type $alu.
+Using template $paramod$5fb6b9fd94fd14bf0be6febfdd038aaac8fc4caf\_90_alu for cells of type $alu.
+Using template $paramod$175e67c02b86e96b1288b9dc100122520d7240d8\_90_alu for cells of type $alu.
+Using template $paramod$4ccbe221165818e15f326ddee3d1183c7924e12f\_90_alu for cells of type $alu.
+Using template $paramod$c3cd1564c35d873179656addd6052d7ea8b6d991\_90_alu for cells of type $alu.
+Using template $paramod$138d3607c8d07487e5ecf266c62ec3bbea8f6632\_90_alu for cells of type $alu.
+Using extmapper maccmap for cells of type $macc_v2.
+  add \raw_edge2 (21 bits, unsigned)
+  sub { \cfg_f_MEMS_fcw 2'00 } (18 bits, unsigned)
+  add $auto$wreduce.cc:514:run$752 [19:0] (20 bits, unsigned)
+  packed 1 (1) bits / 1 words into adder tree
+  add \raw_edge1 (21 bits, unsigned)
+  sub { \cfg_f_MEMS_fcw 2'00 } (18 bits, unsigned)
+  add $auto$wreduce.cc:514:run$751 [19:0] (20 bits, unsigned)
+  packed 1 (1) bits / 1 words into adder tree
+Using extmapper simplemap for cells of type $ne.
+Using extmapper simplemap for cells of type $adffe.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $adff.
+Using extmapper simplemap for cells of type $logic_or.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $pmux.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000010101 for cells of type $fa.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000001000 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000001000 for cells of type $lcu.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000010101 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000010011 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000010011 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000010110 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000010110 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000010 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000010 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000001001 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000001001 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~2591 debug messages>
+
+129. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wave_controller.
+<suppressed ~1537 debug messages>
+
+130. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wave_controller'.
+Computing hashes of 3202 cells of `\wave_controller'.
+Finding duplicate cells in `\wave_controller'.
+Computing hashes of 2990 cells of `\wave_controller'.
+Finding duplicate cells in `\wave_controller'.
+Computing hashes of 2963 cells of `\wave_controller'.
+Finding duplicate cells in `\wave_controller'.
+Computing hashes of 2955 cells of `\wave_controller'.
+Finding duplicate cells in `\wave_controller'.
+<suppressed ~741 debug messages>
+Removed a total of 247 cells.
+
+131. Executing OPT_DFF pass (perform DFF optimizations).
+
+132. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wave_controller..
+Removed 277 unused cells and 1004 unused wires.
+<suppressed ~278 debug messages>
+
+133. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wave_controller.
+<suppressed ~6 debug messages>
+
+134. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wave_controller'.
+Computing hashes of 2672 cells of `\wave_controller'.
+Finding duplicate cells in `\wave_controller'.
+Removed a total of 0 cells.
+
+135. Executing OPT_DFF pass (perform DFF optimizations).
+
+136. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wave_controller..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+137. Executing ABC pass (technology mapping using ABC).
+
+137.1. Extracting gate netlist of module `\wave_controller' to `<abc-temp-dir>/input.blif'..
+
+137.1.1. Executed ABC.
+Extracted 2541 gates and 2753 wires to a netlist network with 210 inputs and 177 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: UC Berkeley, ABC 1.01 (compiled Jul 27 2026 18:12:25)
+ABC: abc 01> empty
+ABC: abc 01> source <abc-temp-dir>/abc.script
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+ABC: 
+ABC: YOSYS_ABC_DONE 
+
+137.1.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:       54
+ABC RESULTS:            ANDNOT cells:      814
+ABC RESULTS:               MUX cells:      259
+ABC RESULTS:              NAND cells:       36
+ABC RESULTS:               NOR cells:      173
+ABC RESULTS:               NOT cells:      151
+ABC RESULTS:                OR cells:      300
+ABC RESULTS:             ORNOT cells:      152
+ABC RESULTS:              XNOR cells:      101
+ABC RESULTS:               XOR cells:      407
+ABC RESULTS:        internal signals:     2366
+ABC RESULTS:           input signals:      210
+ABC RESULTS:          output signals:      177
+Removing temp directory.
+Removing global temp directory.
+
+138. Executing OPT pass (performing simple optimizations).
+
+138.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wave_controller.
+<suppressed ~15 debug messages>
+
+138.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wave_controller'.
+Computing hashes of 2578 cells of `\wave_controller'.
+Finding duplicate cells in `\wave_controller'.
+Computing hashes of 2574 cells of `\wave_controller'.
+Finding duplicate cells in `\wave_controller'.
+<suppressed ~12 debug messages>
+Removed a total of 4 cells.
+
+138.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+138.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wave_controller..
+Removed 0 unused cells and 1374 unused wires.
+<suppressed ~17 debug messages>
+
+138.5. Finished fast OPT passes.
+
+139. Executing HIERARCHY pass (managing design hierarchy).
+
+139.1. Analyzing design hierarchy..
+Top module:  \wave_controller
+
+139.2. Analyzing design hierarchy..
+Top module:  \wave_controller
+Removed 0 unused modules.
+
+140. Executing CHECK pass (checking for obvious problems).
+Checking module wave_controller...
+Found and reported 0 problems.
+
+141. Printing statistics.
+
+=== wave_controller ===
+
+        +----------Local Count, excluding submodules.
+        | 
+     2347 wires
+     2735 wire bits
+       46 public wires
+      335 public wire bits
+       27 ports
+      229 port bits
+     2574 cells
+      813   $_ANDNOT_
+       52   $_AND_
+      109   $_DFFE_PN0P_
+        2   $_DFFE_PN1P_
+       18   $_DFF_PN0_
+        1   $_DFF_PN1_
+      259   $_MUX_
+       36   $_NAND_
+      172   $_NOR_
+      151   $_NOT_
+      152   $_ORNOT_
+      300   $_OR_
+      101   $_XNOR_
+      407   $_XOR_
+        1   $scopeinfo
+
+142. Executing OPT pass (performing simple optimizations).
+
+142.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wave_controller.
+
+142.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wave_controller'.
+Computing hashes of 2574 cells of `\wave_controller'.
+Finding duplicate cells in `\wave_controller'.
+Removed a total of 0 cells.
+
+142.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wave_controller..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+142.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wave_controller.
+Performed a total of 0 changes.
+
+142.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wave_controller'.
+Computing hashes of 2574 cells of `\wave_controller'.
+Finding duplicate cells in `\wave_controller'.
+Removed a total of 0 cells.
+
+142.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+142.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wave_controller..
+
+142.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wave_controller.
+
+142.9. Finished fast OPT passes. (There is nothing left to do.)
+
+143. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wave_controller..
+Removed 1 unused cells and 4 unused wires.
+<suppressed ~5 debug messages>
+{
+   "creator": "Yosys 0.67 (git sha1 2d1509d1b, Release, GNU /usr/bin/c++ 13.3.0)",
+   "invocation": "stat -json -liberty /workspace/librelane/runs/RUN_2026-08-10_00-21-44/tmp/09de7c620f934fe8ae5b0acbc869ed6f.lib ",
+   "modules": {
+      "\\wave_controller": {
+         "num_wires":         2343,
+         "num_wire_bits":     2682,
+         "num_pub_wires":     42,
+         "num_pub_wire_bits": 282,
+         "num_ports":         27,
+         "num_port_bits":     229,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         2573,
+         "num_submodules":       0,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 813,
+            "$_AND_": 52,
+            "$_DFFE_PN0P_": 109,
+            "$_DFFE_PN1P_": 2,
+            "$_DFF_PN0_": 18,
+            "$_DFF_PN1_": 1,
+            "$_MUX_": 259,
+            "$_NAND_": 36,
+            "$_NOR_": 172,
+            "$_NOT_": 151,
+            "$_ORNOT_": 152,
+            "$_OR_": 300,
+            "$_XNOR_": 101,
+            "$_XOR_": 407
+         }
+      }
+   },
+      "design": {
+         "num_wires":         2343,
+         "num_wire_bits":     2682,
+         "num_pub_wires":     42,
+         "num_pub_wire_bits": 282,
+         "num_ports":         27,
+         "num_port_bits":     229,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         2573,
+         "num_submodules":       0,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 813,
+            "$_AND_": 52,
+            "$_DFFE_PN0P_": 109,
+            "$_DFFE_PN1P_": 2,
+            "$_DFF_PN0_": 18,
+            "$_DFF_PN1_": 1,
+            "$_MUX_": 259,
+            "$_NAND_": 36,
+            "$_NOR_": 172,
+            "$_NOT_": 151,
+            "$_ORNOT_": 152,
+            "$_OR_": 300,
+            "$_XNOR_": 101,
+            "$_XOR_": 407
+         }
+      }
+}
+
+144. Printing statistics.
+
+=== wave_controller ===
+
+        +----------Local Count, excluding submodules.
+        | 
+     2343 wires
+     2682 wire bits
+       42 public wires
+      282 public wire bits
+       27 ports
+      229 port bits
+     2573 cells
+      813   $_ANDNOT_
+       52   $_AND_
+      109   $_DFFE_PN0P_
+        2   $_DFFE_PN1P_
+       18   $_DFF_PN0_
+        1   $_DFF_PN1_
+      259   $_MUX_
+       36   $_NAND_
+      172   $_NOR_
+      151   $_NOT_
+      152   $_ORNOT_
+      300   $_OR_
+      101   $_XNOR_
+      407   $_XOR_
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_DFFE_PN0P_ is unknown!
+   Area for cell type $_DFFE_PN1P_ is unknown!
+   Area for cell type $_DFF_PN0_ is unknown!
+   Area for cell type $_DFF_PN1_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+
+145. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell gf180mcu_fd_sc_mcu7t5v0__dffnq_1 (noninv, pins=3, area=65.86) is a direct match for cell type $_DFF_N_.
+  cell gf180mcu_fd_sc_mcu7t5v0__dffq_1 (noninv, pins=3, area=63.66) is a direct match for cell type $_DFF_P_.
+  cell gf180mcu_fd_sc_mcu7t5v0__dffnrnq_1 (noninv, pins=4, area=74.64) is a direct match for cell type $_DFF_NN0_.
+  cell gf180mcu_fd_sc_mcu7t5v0__dffnsnq_1 (noninv, pins=4, area=79.03) is a direct match for cell type $_DFF_NN1_.
+  cell gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 (noninv, pins=4, area=74.64) is a direct match for cell type $_DFF_PN0_.
+  cell gf180mcu_fd_sc_mcu7t5v0__dffsnq_1 (noninv, pins=4, area=79.03) is a direct match for cell type $_DFF_PN1_.
+  cell gf180mcu_fd_sc_mcu7t5v0__dffnrsnq_1 (noninv, pins=5, area=94.39) is a direct match for cell type $_DFFSR_NNN_.
+  cell gf180mcu_fd_sc_mcu7t5v0__dffrsnq_1 (noninv, pins=5, area=85.61) is a direct match for cell type $_DFFSR_PNN_.
+  final dff cell mappings:
+    \gf180mcu_fd_sc_mcu7t5v0__dffnq_1 _DFF_N_ (.CLKN( C), .D( D), .Q( Q));
+    \gf180mcu_fd_sc_mcu7t5v0__dffq_1 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+    \gf180mcu_fd_sc_mcu7t5v0__dffnrnq_1 _DFF_NN0_ (.CLKN( C), .D( D), .Q( Q), .RN( R));
+    \gf180mcu_fd_sc_mcu7t5v0__dffnsnq_1 _DFF_NN1_ (.CLKN( C), .D( D), .Q( Q), .SETN( R));
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RN( R));
+    \gf180mcu_fd_sc_mcu7t5v0__dffsnq_1 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SETN( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    unmapped dff cell: $_DFFE_NN_
+    unmapped dff cell: $_DFFE_NP_
+    unmapped dff cell: $_DFFE_PN_
+    unmapped dff cell: $_DFFE_PP_
+    \gf180mcu_fd_sc_mcu7t5v0__dffnrsnq_1 _DFFSR_NNN_ (.CLKN( C), .D( D), .Q( Q), .RN( R), .SETN( S));
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    \gf180mcu_fd_sc_mcu7t5v0__dffrsnq_1 _DFFSR_PNN_ (.CLK( C), .D( D), .Q( Q), .RN( R), .SETN( S));
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+145.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+Mapping DFF cells in module `\wave_controller':
+  mapped 127 $_DFF_PN0_ cells to \gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 cells.
+  mapped 3 $_DFF_PN1_ cells to \gf180mcu_fd_sc_mcu7t5v0__dffsnq_1 cells.
+{
+   "creator": "Yosys 0.67 (git sha1 2d1509d1b, Release, GNU /usr/bin/c++ 13.3.0)",
+   "invocation": "stat -json -liberty /workspace/librelane/runs/RUN_2026-08-10_00-21-44/tmp/09de7c620f934fe8ae5b0acbc869ed6f.lib ",
+   "modules": {
+      "\\wave_controller": {
+         "num_wires":         2454,
+         "num_wire_bits":     2793,
+         "num_pub_wires":     42,
+         "num_pub_wire_bits": 282,
+         "num_ports":         27,
+         "num_port_bits":     229,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         2684,
+         "num_submodules":       0,
+         "area":              9715.955200,
+         "sequential_area":    9715.955200,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 813,
+            "$_AND_": 52,
+            "$_MUX_": 370,
+            "$_NAND_": 36,
+            "$_NOR_": 172,
+            "$_NOT_": 151,
+            "$_ORNOT_": 152,
+            "$_OR_": 300,
+            "$_XNOR_": 101,
+            "$_XOR_": 407,
+            "gf180mcu_fd_sc_mcu7t5v0__dffrnq_1": 127,
+            "gf180mcu_fd_sc_mcu7t5v0__dffsnq_1": 3
+         }
+      }
+   },
+      "design": {
+         "num_wires":         2454,
+         "num_wire_bits":     2793,
+         "num_pub_wires":     42,
+         "num_pub_wire_bits": 282,
+         "num_ports":         27,
+         "num_port_bits":     229,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         2684,
+         "num_submodules":       0,
+         "area":              9715.955200,
+         "sequential_area":    9715.955200,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 813,
+            "$_AND_": 52,
+            "$_MUX_": 370,
+            "$_NAND_": 36,
+            "$_NOR_": 172,
+            "$_NOT_": 151,
+            "$_ORNOT_": 152,
+            "$_OR_": 300,
+            "$_XNOR_": 101,
+            "$_XOR_": 407,
+            "gf180mcu_fd_sc_mcu7t5v0__dffrnq_1": 127,
+            "gf180mcu_fd_sc_mcu7t5v0__dffsnq_1": 3
+         }
+      }
+}
+
+146. Printing statistics.
+
+=== wave_controller ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     2454        - wires
+     2793        - wire bits
+       42        - public wires
+      282        - public wire bits
+       27        - ports
+      229        - port bits
+     2684 9.72E+03 cells
+      813        -   $_ANDNOT_
+       52        -   $_AND_
+      370        -   $_MUX_
+       36        -   $_NAND_
+      172        -   $_NOR_
+      151        -   $_NOT_
+      152        -   $_ORNOT_
+      300        -   $_OR_
+      101        -   $_XNOR_
+      407        -   $_XOR_
+      127 9.48E+03   gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
+        3  237.082   gf180mcu_fd_sc_mcu7t5v0__dffsnq_1
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+
+   Chip area for module '\wave_controller': 9715.955200
+     of which used for sequential elements: 9715.955200 (100.00%)
+
+[INFO] Using generated ABC script '/workspace/librelane/runs/RUN_2026-08-10_00-21-44/06-yosys-synthesis/AREA_0.abc'…
+
+147. Executing ABC pass (technology mapping using ABC).
+
+147.1. Extracting gate netlist of module `\wave_controller' to `/tmp/yosys-abc-MfoYvW/input.blif'..
+
+147.1.1. Executed ABC.
+Extracted 2554 gates and 2766 wires to a netlist network with 212 inputs and 190 outputs.
+Running ABC script: /tmp/yosys-abc-MfoYvW/abc.script
+ABC: UC Berkeley, ABC 1.01 (compiled Jul 27 2026 18:12:25)
+ABC: abc 01> empty
+ABC: abc 01> source /tmp/yosys-abc-MfoYvW/abc.script
+ABC: + read_blif /tmp/yosys-abc-MfoYvW/input.blif 
+ABC: + read_scl /tmp/yosys-liberty-scl-cache/yosys_merged_3152feef.scl 
+ABC: Warning: Detected 6 multi-output cells (for example, "gf180mcu_fd_sc_mcu7t5v0__addf_1").
+ABC: + read_constr -v /workspace/librelane/runs/RUN_2026-08-10_00-21-44/06-yosys-synthesis/synthesis.abc.sdc 
+ABC: Setting driving cell to be "gf180mcu_fd_sc_mcu7t5v0__inv_1/ZN".
+ABC: Setting output load to be 72.910004.
+ABC: + source /workspace/librelane/runs/RUN_2026-08-10_00-21-44/06-yosys-synthesis/AREA_0.abc 
+ABC: Error: The network is combinational.
+ABC: Cannot find the default PI driving cell (gf180mcu_fd_sc_mcu7t5v0__inv_1/ZN) in the library.
+ABC: WireLoad = "none"  Gates =   1859 ( 10.1 %)   Cap = 17.2 ff ( 10.9 %)   Area =    33839.01 ( 82.0 %)   Delay = 13612.10 ps  (  6.7 %)               
+ABC: Path  0 --     149 : 0    6 pi                                A =   0.00  Df =   0.0   -0.0 ps  S =   0.0 ps  Cin =  0.0 ff  Cout =  27.0 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --     479 : 1    7 gf180mcu_fd_sc_mcu7t5v0__clkinv_1 A =   8.78  Df = 499.0  -45.4 ps  S = 862.2 ps  Cin =  4.1 ff  Cout =  33.6 ff  Cmax = 349.5 ff  G =  814  
+ABC: Path  2 --     855 : 5    1 gf180mcu_fd_sc_mcu7t5v0__aoi221_1 A =  24.15  Df =2360.4 -453.6 ps  S = 916.9 ps  Cin =  4.3 ff  Cout =   4.8 ff  Cmax = 144.9 ff  G =  112  
+ABC: Path  3 --     891 : 4    4 gf180mcu_fd_sc_mcu7t5v0__oai211_1 A =  21.95  Df =3031.0  -89.4 ps  S =1354.1 ps  Cin =  4.6 ff  Cout =  24.1 ff  Cmax = 180.3 ff  G =  519  
+ABC: Path  4 --     954 : 4    3 gf180mcu_fd_sc_mcu7t5v0__oai31_1  A =  24.15  Df =4249.9 -819.3 ps  S =1704.9 ps  Cin =  4.4 ff  Cout =  16.5 ff  Cmax = 107.3 ff  G =  372  
+ABC: Path  5 --     987 : 5    3 gf180mcu_fd_sc_mcu7t5v0__aoi221_1 A =  24.15  Df =5000.3 -326.1 ps  S =1714.2 ps  Cin =  4.3 ff  Cout =  16.8 ff  Cmax = 144.9 ff  G =  391  
+ABC: Path  6 --    1020 : 4    3 gf180mcu_fd_sc_mcu7t5v0__oai31_1  A =  24.15  Df =6222.0-1054.0 ps  S =1683.3 ps  Cin =  4.4 ff  Cout =  16.2 ff  Cmax = 107.3 ff  G =  366  
+ABC: Path  7 --    1048 : 5    2 gf180mcu_fd_sc_mcu7t5v0__aoi221_1 A =  24.15  Df =6693.7 -574.5 ps  S =1077.0 ps  Cin =  4.3 ff  Cout =   7.1 ff  Cmax = 144.9 ff  G =  166  
+ABC: Path  8 --    1049 : 2    1 gf180mcu_fd_sc_mcu7t5v0__or2_1    A =  17.56  Df =7445.3 -849.8 ps  S = 273.4 ps  Cin =  2.8 ff  Cout =   7.3 ff  Cmax = 359.9 ff  G =  261  
+ABC: Path  9 --    1050 : 2    3 gf180mcu_fd_sc_mcu7t5v0__xnor2_1  A =  28.54  Df =8187.9 -960.2 ps  S =1057.5 ps  Cin =  7.1 ff  Cout =  15.9 ff  Cmax = 161.9 ff  G =  222  
+ABC: Path 10 --    1053 : 3    3 gf180mcu_fd_sc_mcu7t5v0__xor3_1   A =  50.49  Df =9183.7-1059.2 ps  S =1021.4 ps  Cin =  5.8 ff  Cout =  16.0 ff  Cmax = 187.3 ff  G =  275  
+ABC: Path 11 --    1057 : 2    2 gf180mcu_fd_sc_mcu7t5v0__xnor2_1  A =  28.54  Df =9860.9 -877.9 ps  S = 812.4 ps  Cin =  7.1 ff  Cout =  10.9 ff  Cmax = 161.9 ff  G =  152  
+ABC: Path 12 --    1072 : 4    2 gf180mcu_fd_sc_mcu7t5v0__aoi211_1 A =  21.95  Df =10285.8 -154.2 ps  S = 999.3 ps  Cin =  4.2 ff  Cout =   7.6 ff  Cmax = 120.6 ff  G =  182  
+ABC: Path 13 --    1074 : 3    3 gf180mcu_fd_sc_mcu7t5v0__oai21_1  A =  17.56  Df =10901.1   -4.6 ps  S = 764.6 ps  Cin =  4.7 ff  Cout =  12.2 ff  Cmax = 181.9 ff  G =  256  
+ABC: Path 14 --    1084 : 3    1 gf180mcu_fd_sc_mcu7t5v0__oai21_1  A =  17.56  Df =11330.9 -108.7 ps  S = 557.2 ps  Cin =  4.7 ff  Cout =   7.3 ff  Cmax = 181.9 ff  G =  154  
+ABC: Path 15 --    1085 : 2    1 gf180mcu_fd_sc_mcu7t5v0__xnor2_1  A =  28.54  Df =13612.1 -888.0 ps  S =3913.4 ps  Cin =  7.1 ff  Cout =  72.9 ff  Cmax = 161.9 ff  G = 1020  
+ABC: Start-point = pi148 (\raw_edge2 [3]).  End-point = po50 (\cal_phase90_offset [19]).
+ABC: netlist                       : i/o =  212/  190  lat =    0  nd =  1859  edge =   4600  area =33839.03  delay =17.00  lev = 17
+ABC: + write_blif /tmp/yosys-abc-MfoYvW/output.blif 
+ABC:                                                                                
+ABC: YOSYS_ABC_DONE 
+
+147.1.2. Re-integrating ABC results.
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__and2_1 cells:       47
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__and3_1 cells:       29
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__and4_1 cells:        4
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__aoi211_1 cells:       26
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__aoi21_1 cells:      140
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__aoi221_1 cells:       28
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__aoi22_1 cells:       33
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__clkinv_1 cells:      188
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__mux2_2 cells:        8
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__nand2_1 cells:      348
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__nand3_1 cells:       50
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__nand4_1 cells:        7
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__nor2_1 cells:      214
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__nor3_1 cells:       24
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__nor4_1 cells:        2
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__oai211_1 cells:       31
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__oai21_1 cells:      197
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__oai221_1 cells:       15
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__oai22_1 cells:       55
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__oai31_1 cells:       23
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__oai32_1 cells:       12
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__oai33_1 cells:        2
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__or2_1 cells:       32
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__or3_1 cells:       17
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__or4_1 cells:        1
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__xnor2_1 cells:       54
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__xnor3_1 cells:        4
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__xor2_1 cells:      204
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__xor3_1 cells:       64
+ABC RESULTS:        internal signals:     2364
+ABC RESULTS:           input signals:      212
+ABC RESULTS:          output signals:      190
+Removing temp directory.
+Removing global temp directory.
+
+148. Executing SETUNDEF pass (replace undef values with defined constants).
+
+149. Executing HILOMAP pass (mapping to constant drivers).
+
+150. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+151. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wave_controller..
+Removed 6 unused cells and 2792 unused wires.
+<suppressed ~10 debug messages>
+
+152. Executing INSBUF pass (insert buffer cells for connected wires).
+Add wave_controller/$auto$insbuf.cc:97:execute$11179: \cal_phase0_offset [0] -> \raw_edge3 [0]
+Add wave_controller/$auto$insbuf.cc:97:execute$11180: \cal_phase0_offset [1] -> \raw_edge3 [1]
+
+153. Executing CHECK pass (checking for obvious problems).
+Checking module wave_controller...
+Found and reported 0 problems.
+{
+   "creator": "Yosys 0.67 (git sha1 2d1509d1b, Release, GNU /usr/bin/c++ 13.3.0)",
+   "invocation": "stat -json -liberty /workspace/librelane/runs/RUN_2026-08-10_00-21-44/tmp/09de7c620f934fe8ae5b0acbc869ed6f.lib ",
+   "modules": {
+      "\\wave_controller": {
+         "num_wires":         1872,
+         "num_wire_bits":     2074,
+         "num_pub_wires":     77,
+         "num_pub_wire_bits": 279,
+         "num_ports":         27,
+         "num_port_bits":     229,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         1987,
+         "num_submodules":       0,
+         "area":              43469.350400,
+         "sequential_area":    9641.318400,
+         "num_cells_by_type": {
+            "gf180mcu_fd_sc_mcu7t5v0__and2_1": 47,
+            "gf180mcu_fd_sc_mcu7t5v0__and3_1": 29,
+            "gf180mcu_fd_sc_mcu7t5v0__and4_1": 4,
+            "gf180mcu_fd_sc_mcu7t5v0__aoi211_1": 26,
+            "gf180mcu_fd_sc_mcu7t5v0__aoi21_1": 140,
+            "gf180mcu_fd_sc_mcu7t5v0__aoi221_1": 28,
+            "gf180mcu_fd_sc_mcu7t5v0__aoi22_1": 33,
+            "gf180mcu_fd_sc_mcu7t5v0__buf_1": 2,
+            "gf180mcu_fd_sc_mcu7t5v0__clkinv_1": 187,
+            "gf180mcu_fd_sc_mcu7t5v0__dffrnq_1": 126,
+            "gf180mcu_fd_sc_mcu7t5v0__dffsnq_1": 3,
+            "gf180mcu_fd_sc_mcu7t5v0__mux2_2": 8,
+            "gf180mcu_fd_sc_mcu7t5v0__nand2_1": 347,
+            "gf180mcu_fd_sc_mcu7t5v0__nand3_1": 50,
+            "gf180mcu_fd_sc_mcu7t5v0__nand4_1": 7,
+            "gf180mcu_fd_sc_mcu7t5v0__nor2_1": 214,
+            "gf180mcu_fd_sc_mcu7t5v0__nor3_1": 24,
+            "gf180mcu_fd_sc_mcu7t5v0__nor4_1": 2,
+            "gf180mcu_fd_sc_mcu7t5v0__oai211_1": 31,
+            "gf180mcu_fd_sc_mcu7t5v0__oai21_1": 196,
+            "gf180mcu_fd_sc_mcu7t5v0__oai221_1": 15,
+            "gf180mcu_fd_sc_mcu7t5v0__oai22_1": 55,
+            "gf180mcu_fd_sc_mcu7t5v0__oai31_1": 23,
+            "gf180mcu_fd_sc_mcu7t5v0__oai32_1": 12,
+            "gf180mcu_fd_sc_mcu7t5v0__oai33_1": 2,
+            "gf180mcu_fd_sc_mcu7t5v0__or2_1": 32,
+            "gf180mcu_fd_sc_mcu7t5v0__or3_1": 17,
+            "gf180mcu_fd_sc_mcu7t5v0__or4_1": 1,
+            "gf180mcu_fd_sc_mcu7t5v0__xnor2_1": 54,
+            "gf180mcu_fd_sc_mcu7t5v0__xnor3_1": 4,
+            "gf180mcu_fd_sc_mcu7t5v0__xor2_1": 204,
+            "gf180mcu_fd_sc_mcu7t5v0__xor3_1": 64
+         }
+      }
+   },
+      "design": {
+         "num_wires":         1872,
+         "num_wire_bits":     2074,
+         "num_pub_wires":     77,
+         "num_pub_wire_bits": 279,
+         "num_ports":         27,
+         "num_port_bits":     229,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         1987,
+         "num_submodules":       0,
+         "area":              43469.350400,
+         "sequential_area":    9641.318400,
+         "num_cells_by_type": {
+            "gf180mcu_fd_sc_mcu7t5v0__and2_1": 47,
+            "gf180mcu_fd_sc_mcu7t5v0__and3_1": 29,
+            "gf180mcu_fd_sc_mcu7t5v0__and4_1": 4,
+            "gf180mcu_fd_sc_mcu7t5v0__aoi211_1": 26,
+            "gf180mcu_fd_sc_mcu7t5v0__aoi21_1": 140,
+            "gf180mcu_fd_sc_mcu7t5v0__aoi221_1": 28,
+            "gf180mcu_fd_sc_mcu7t5v0__aoi22_1": 33,
+            "gf180mcu_fd_sc_mcu7t5v0__buf_1": 2,
+            "gf180mcu_fd_sc_mcu7t5v0__clkinv_1": 187,
+            "gf180mcu_fd_sc_mcu7t5v0__dffrnq_1": 126,
+            "gf180mcu_fd_sc_mcu7t5v0__dffsnq_1": 3,
+            "gf180mcu_fd_sc_mcu7t5v0__mux2_2": 8,
+            "gf180mcu_fd_sc_mcu7t5v0__nand2_1": 347,
+            "gf180mcu_fd_sc_mcu7t5v0__nand3_1": 50,
+            "gf180mcu_fd_sc_mcu7t5v0__nand4_1": 7,
+            "gf180mcu_fd_sc_mcu7t5v0__nor2_1": 214,
+            "gf180mcu_fd_sc_mcu7t5v0__nor3_1": 24,
+            "gf180mcu_fd_sc_mcu7t5v0__nor4_1": 2,
+            "gf180mcu_fd_sc_mcu7t5v0__oai211_1": 31,
+            "gf180mcu_fd_sc_mcu7t5v0__oai21_1": 196,
+            "gf180mcu_fd_sc_mcu7t5v0__oai221_1": 15,
+            "gf180mcu_fd_sc_mcu7t5v0__oai22_1": 55,
+            "gf180mcu_fd_sc_mcu7t5v0__oai31_1": 23,
+            "gf180mcu_fd_sc_mcu7t5v0__oai32_1": 12,
+            "gf180mcu_fd_sc_mcu7t5v0__oai33_1": 2,
+            "gf180mcu_fd_sc_mcu7t5v0__or2_1": 32,
+            "gf180mcu_fd_sc_mcu7t5v0__or3_1": 17,
+            "gf180mcu_fd_sc_mcu7t5v0__or4_1": 1,
+            "gf180mcu_fd_sc_mcu7t5v0__xnor2_1": 54,
+            "gf180mcu_fd_sc_mcu7t5v0__xnor3_1": 4,
+            "gf180mcu_fd_sc_mcu7t5v0__xor2_1": 204,
+            "gf180mcu_fd_sc_mcu7t5v0__xor3_1": 64
+         }
+      }
+}
+
+154. Printing statistics.
+
+=== wave_controller ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     1872        - wires
+     2074        - wire bits
+       77        - public wires
+      279        - public wire bits
+       27        - ports
+      229        - port bits
+     1987 4.35E+04 cells
+       47  825.395   gf180mcu_fd_sc_mcu7t5v0__and2_1
+       29  636.608   gf180mcu_fd_sc_mcu7t5v0__and3_1
+        4   96.589   gf180mcu_fd_sc_mcu7t5v0__and4_1
+       26  570.752   gf180mcu_fd_sc_mcu7t5v0__aoi211_1
+      140 2.46E+03   gf180mcu_fd_sc_mcu7t5v0__aoi21_1
+       28  676.122   gf180mcu_fd_sc_mcu7t5v0__aoi221_1
+       33  651.974   gf180mcu_fd_sc_mcu7t5v0__aoi22_1
+        2   26.342   gf180mcu_fd_sc_mcu7t5v0__buf_1
+      187  1642.01   gf180mcu_fd_sc_mcu7t5v0__clkinv_1
+      126  9.4E+03   gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
+        3  237.082   gf180mcu_fd_sc_mcu7t5v0__dffsnq_1
+        8  263.424   gf180mcu_fd_sc_mcu7t5v0__mux2_2
+      347 3.81E+03   gf180mcu_fd_sc_mcu7t5v0__nand2_1
+       50   768.32   gf180mcu_fd_sc_mcu7t5v0__nand3_1
+        7  138.298   gf180mcu_fd_sc_mcu7t5v0__nand4_1
+      214 2.82E+03   gf180mcu_fd_sc_mcu7t5v0__nor2_1
+       24  421.478   gf180mcu_fd_sc_mcu7t5v0__nor3_1
+        2   43.904   gf180mcu_fd_sc_mcu7t5v0__nor4_1
+       31  680.512   gf180mcu_fd_sc_mcu7t5v0__oai211_1
+      196 3.44E+03   gf180mcu_fd_sc_mcu7t5v0__oai21_1
+       15  395.136   gf180mcu_fd_sc_mcu7t5v0__oai221_1
+       55  1207.36   gf180mcu_fd_sc_mcu7t5v0__oai22_1
+       23  555.386   gf180mcu_fd_sc_mcu7t5v0__oai31_1
+       12  316.109   gf180mcu_fd_sc_mcu7t5v0__oai32_1
+        2   65.856   gf180mcu_fd_sc_mcu7t5v0__oai33_1
+       32  561.971   gf180mcu_fd_sc_mcu7t5v0__or2_1
+       17  373.184   gf180mcu_fd_sc_mcu7t5v0__or3_1
+        1   26.342   gf180mcu_fd_sc_mcu7t5v0__or4_1
+       54  1541.03   gf180mcu_fd_sc_mcu7t5v0__xnor2_1
+        4  210.739   gf180mcu_fd_sc_mcu7t5v0__xnor3_1
+      204  5373.85   gf180mcu_fd_sc_mcu7t5v0__xor2_1
+       64 3.23E+03   gf180mcu_fd_sc_mcu7t5v0__xor3_1
+
+   Chip area for module '\wave_controller': 43469.350400
+     of which used for sequential elements: 9641.318400 (22.18%)
+
+155. Executing Verilog backend.
+Dumping module `\wave_controller'.
+
+156. Executing JSON backend.

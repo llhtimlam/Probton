@@ -1,0 +1,9 @@
+`verilator_config
+lint_off -rule DECLFILENAME
+lint_off -rule EOFNEWLINE
+lint_off -rule UNDRIVEN -file "/workspace/librelane/runs/RUN_2026-08-09_21-37-48/tmp/96739fa91edb4f3eada306e5ea873ddc.bb.v"
+lint_off -rule UNUSEDSIGNAL -file "/workspace/librelane/runs/RUN_2026-08-09_21-37-48/tmp/96739fa91edb4f3eada306e5ea873ddc.bb.v"
+lint_off -rule UNDRIVEN -file "/workspace/librelane/runs/RUN_2026-08-09_21-37-48/tmp/2a9283fb843843fd8a7eb3115c6ce721.bb.v"
+lint_off -rule UNUSEDSIGNAL -file "/workspace/librelane/runs/RUN_2026-08-09_21-37-48/tmp/2a9283fb843843fd8a7eb3115c6ce721.bb.v"
+lint_off -rule UNDRIVEN -file "/workspace/src/analog_macro.sv"
+lint_off -rule UNUSEDSIGNAL -file "/workspace/src/analog_macro.sv"

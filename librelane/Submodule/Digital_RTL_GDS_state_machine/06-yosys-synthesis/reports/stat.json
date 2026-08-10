@@ -1,0 +1,63 @@
+{
+   "creator": "Yosys 0.67 (git sha1 2d1509d1b, Release, GNU /usr/bin/c++ 13.3.0)",
+   "invocation": "stat -json -liberty /workspace/librelane/runs/RUN_2026-08-09_23-45-37/tmp/195231513adf4336a0ae93044ef22894.lib ",
+   "modules": {
+      "\\state_machine": {
+         "num_wires":         29,
+         "num_wire_bits":     31,
+         "num_pub_wires":     11,
+         "num_pub_wire_bits": 13,
+         "num_ports":         11,
+         "num_port_bits":     13,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         23,
+         "num_submodules":       0,
+         "area":              544.409600,
+         "sequential_area":    223.910400,
+         "num_cells_by_type": {
+            "gf180mcu_fd_sc_mcu7t5v0__and2_1": 2,
+            "gf180mcu_fd_sc_mcu7t5v0__aoi211_1": 2,
+            "gf180mcu_fd_sc_mcu7t5v0__aoi21_1": 1,
+            "gf180mcu_fd_sc_mcu7t5v0__aoi22_1": 1,
+            "gf180mcu_fd_sc_mcu7t5v0__clkinv_1": 3,
+            "gf180mcu_fd_sc_mcu7t5v0__dffrnq_1": 3,
+            "gf180mcu_fd_sc_mcu7t5v0__nand2_1": 1,
+            "gf180mcu_fd_sc_mcu7t5v0__nor2_1": 4,
+            "gf180mcu_fd_sc_mcu7t5v0__nor3_1": 2,
+            "gf180mcu_fd_sc_mcu7t5v0__oai21_1": 3,
+            "gf180mcu_fd_sc_mcu7t5v0__or4_1": 1
+         }
+      }
+   },
+      "design": {
+         "num_wires":         29,
+         "num_wire_bits":     31,
+         "num_pub_wires":     11,
+         "num_pub_wire_bits": 13,
+         "num_ports":         11,
+         "num_port_bits":     13,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         23,
+         "num_submodules":       0,
+         "area":              544.409600,
+         "sequential_area":    223.910400,
+         "num_cells_by_type": {
+            "gf180mcu_fd_sc_mcu7t5v0__and2_1": 2,
+            "gf180mcu_fd_sc_mcu7t5v0__aoi211_1": 2,
+            "gf180mcu_fd_sc_mcu7t5v0__aoi21_1": 1,
+            "gf180mcu_fd_sc_mcu7t5v0__aoi22_1": 1,
+            "gf180mcu_fd_sc_mcu7t5v0__clkinv_1": 3,
+            "gf180mcu_fd_sc_mcu7t5v0__dffrnq_1": 3,
+            "gf180mcu_fd_sc_mcu7t5v0__nand2_1": 1,
+            "gf180mcu_fd_sc_mcu7t5v0__nor2_1": 4,
+            "gf180mcu_fd_sc_mcu7t5v0__nor3_1": 2,
+            "gf180mcu_fd_sc_mcu7t5v0__oai21_1": 3,
+            "gf180mcu_fd_sc_mcu7t5v0__or4_1": 1
+         }
+      }
+}
+

@@ -1,0 +1,171 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= max_ss_125C_3v00 Corner ===================================
+
+Startpoint: rst_n (input port clocked by clk)
+Endpoint: _38_ (recovery check against rising-edge clock clk)
+Path Group: asynchronous
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                 40.000000   40.000000 ^ input external delay
+     3    0.021699    1.087588    0.540886   40.540886 ^ rst_n (in)
+                                                         rst_n (net)
+                      1.087588    0.000000   40.540886 ^ _38_/RN (gf180mcu_fd_sc_mcu7t5v0__dffrnq_1)
+                                             40.540886   data arrival time
+
+                      0.150000  200.000000  200.000000   clock clk (rise edge)
+                                  0.000000  200.000000   clock network delay (ideal)
+                                 -0.250000  199.750000   clock uncertainty
+                                  0.000000  199.750000   clock reconvergence pessimism
+                                            199.750000 ^ _38_/CLK (gf180mcu_fd_sc_mcu7t5v0__dffrnq_1)
+                                  0.702576  200.452560   library recovery time
+                                            200.452560   data required time
+---------------------------------------------------------------------------------------------
+                                            200.452560   data required time
+                                            -40.540886   data arrival time
+---------------------------------------------------------------------------------------------
+                                            159.911682   slack (MET)
+
+
+Startpoint: _40_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: read_en (output port clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                      0.150000    0.000000    0.000000 ^ _40_/CLK (gf180mcu_fd_sc_mcu7t5v0__dffrnq_1)
+     6    0.091078    4.146500    4.811821    4.811821 ^ _40_/Q (gf180mcu_fd_sc_mcu7t5v0__dffrnq_1)
+                                                         state_o[2] (net)
+                      4.146500    0.000000    4.811821 ^ _23_/A2 (gf180mcu_fd_sc_mcu7t5v0__nor2_1)
+     3    0.011540    1.284668    0.906926    5.718747 v _23_/ZN (gf180mcu_fd_sc_mcu7t5v0__nor2_1)
+                                                         _07_ (net)
+                      1.284668    0.000000    5.718747 v _24_/A3 (gf180mcu_fd_sc_mcu7t5v0__nor3_1)
+     1    0.072910   10.118432    6.309979   12.028726 ^ _24_/ZN (gf180mcu_fd_sc_mcu7t5v0__nor3_1)
+                                                         read_en (net)
+                     10.118432    0.000000   12.028726 ^ read_en (out)
+                                             12.028726   data arrival time
+
+                      0.150000  200.000000  200.000000   clock clk (rise edge)
+                                  0.000000  200.000000   clock network delay (ideal)
+                                 -0.250000  199.750000   clock uncertainty
+                                  0.000000  199.750000   clock reconvergence pessimism
+                                -40.000000  159.749985   output external delay
+                                            159.749985   data required time
+---------------------------------------------------------------------------------------------
+                                            159.749985   data required time
+                                            -12.028726   data arrival time
+---------------------------------------------------------------------------------------------
+                                            147.721268   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= max_ss_125C_3v00 Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= max_ss_125C_3v00 Corner ===================================
+
+max slew
+
+Pin                                        Limit        Slew       Slack
+------------------------------------------------------------------------
+cal_start                               3.000000   10.759009   -7.759010 (VIOLATED)
+_21_/ZN                                 3.000000   10.759009   -7.759010 (VIOLATED)
+_34_/A1                                 3.000000   10.759009   -7.759010 (VIOLATED)
+read_en                                 3.000000   10.118432   -7.118432 (VIOLATED)
+_24_/ZN                                 3.000000   10.118432   -7.118432 (VIOLATED)
+state_o[0]                              3.000000    4.600031   -1.600031 (VIOLATED)
+_21_/A1                                 3.000000    4.600031   -1.600031 (VIOLATED)
+_24_/A1                                 3.000000    4.600031   -1.600031 (VIOLATED)
+_26_/A1                                 3.000000    4.600031   -1.600031 (VIOLATED)
+_27_/A1                                 3.000000    4.600031   -1.600031 (VIOLATED)
+_28_/A1                                 3.000000    4.600031   -1.600031 (VIOLATED)
+_30_/A1                                 3.000000    4.600031   -1.600031 (VIOLATED)
+_31_/A1                                 3.000000    4.600031   -1.600031 (VIOLATED)
+_38_/Q                                  3.000000    4.600031   -1.600031 (VIOLATED)
+state_o[2]                              3.000000    4.146500   -1.146500 (VIOLATED)
+_21_/A3                                 3.000000    4.146500   -1.146500 (VIOLATED)
+_22_/A2                                 3.000000    4.146500   -1.146500 (VIOLATED)
+_23_/A2                                 3.000000    4.146500   -1.146500 (VIOLATED)
+_26_/A3                                 3.000000    4.146500   -1.146500 (VIOLATED)
+_36_/A1                                 3.000000    4.146500   -1.146500 (VIOLATED)
+_40_/Q                                  3.000000    4.146500   -1.146500 (VIOLATED)
+state_o[1]                              3.000000    4.044124   -1.044124 (VIOLATED)
+_19_/I                                  3.000000    4.044124   -1.044124 (VIOLATED)
+_22_/A1                                 3.000000    4.044124   -1.044124 (VIOLATED)
+_23_/A1                                 3.000000    4.044124   -1.044124 (VIOLATED)
+_32_/A1                                 3.000000    4.044124   -1.044124 (VIOLATED)
+_39_/Q                                  3.000000    4.044124   -1.044124 (VIOLATED)
+_29_/ZN                                 3.000000    3.068534   -0.068534 (VIOLATED)
+_30_/A2                                 3.000000    3.068534   -0.068534 (VIOLATED)
+_31_/A2                                 3.000000    3.068534   -0.068534 (VIOLATED)
+_32_/A2                                 3.000000    3.068534   -0.068534 (VIOLATED)
+_35_/A1                                 3.000000    3.068534   -0.068534 (VIOLATED)
+_36_/A2                                 3.000000    3.068534   -0.068534 (VIOLATED)
+_37_/A1                                 3.000000    3.068534   -0.068534 (VIOLATED)
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 31 unannotated drivers.
+ boot_complete
+ cal_done
+ cal_timeout
+ cfg_done
+ clk
+ phase_offset_imported
+ rst_n
+ soft_rst
+ _18_/ZN
+ _19_/ZN
+ _20_/ZN
+ _21_/ZN
+ _22_/Z
+ _23_/ZN
+ _24_/ZN
+ _25_/ZN
+ _26_/Z
+ _27_/ZN
+ _28_/Z
+ _29_/ZN
+ _30_/ZN
+ _31_/ZN
+ _32_/ZN
+ _33_/ZN
+ _34_/ZN
+ _35_/ZN
+ _36_/ZN
+ _37_/ZN
+ _38_/Q
+ _39_/Q
+ _40_/Q
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 34
+max fanout violation count 0
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================

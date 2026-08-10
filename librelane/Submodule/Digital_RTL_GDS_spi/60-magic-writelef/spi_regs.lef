@@ -1,0 +1,4323 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO spi_regs
+  CLASS BLOCK ;
+  FOREIGN spi_regs ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 336.545 BY 354.465 ;
+  PIN VDD
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER Metal4 ;
+        RECT 22.240 15.380 23.840 337.420 ;
+    END
+    PORT
+      LAYER Metal4 ;
+        RECT 175.840 15.380 177.440 337.420 ;
+    END
+    PORT
+      LAYER Metal5 ;
+        RECT 6.720 31.530 329.280 33.130 ;
+    END
+    PORT
+      LAYER Metal5 ;
+        RECT 6.720 184.710 329.280 186.310 ;
+    END
+  END VDD
+  PIN VSS
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER Metal4 ;
+        RECT 25.540 15.380 27.140 337.420 ;
+    END
+    PORT
+      LAYER Metal4 ;
+        RECT 179.140 15.380 180.740 337.420 ;
+    END
+    PORT
+      LAYER Metal5 ;
+        RECT 6.720 34.830 329.280 36.430 ;
+    END
+    PORT
+      LAYER Metal5 ;
+        RECT 6.720 188.010 329.280 189.610 ;
+    END
+  END VSS
+  PIN boot_complete
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 155.680 353.905 156.240 354.465 ;
+    END
+  END boot_complete
+  PIN cal_dir_x
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 217.280 0.560 217.840 ;
+    END
+  END cal_dir_x
+  PIN cal_dir_y
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 217.280 336.545 217.840 ;
+    END
+  END cal_dir_y
+  PIN cal_done_x
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 290.080 0.560 290.640 ;
+    END
+  END cal_done_x
+  PIN cal_done_y
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 290.080 336.545 290.640 ;
+    END
+  END cal_done_y
+  PIN cal_phase0_offset_x[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 218.400 0.560 218.960 ;
+    END
+  END cal_phase0_offset_x[0]
+  PIN cal_phase0_offset_x[10]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 229.600 0.560 230.160 ;
+    END
+  END cal_phase0_offset_x[10]
+  PIN cal_phase0_offset_x[11]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 230.720 0.560 231.280 ;
+    END
+  END cal_phase0_offset_x[11]
+  PIN cal_phase0_offset_x[12]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 231.840 0.560 232.400 ;
+    END
+  END cal_phase0_offset_x[12]
+  PIN cal_phase0_offset_x[13]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 232.960 0.560 233.520 ;
+    END
+  END cal_phase0_offset_x[13]
+  PIN cal_phase0_offset_x[14]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 234.080 0.560 234.640 ;
+    END
+  END cal_phase0_offset_x[14]
+  PIN cal_phase0_offset_x[15]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 235.200 0.560 235.760 ;
+    END
+  END cal_phase0_offset_x[15]
+  PIN cal_phase0_offset_x[16]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 236.320 0.560 236.880 ;
+    END
+  END cal_phase0_offset_x[16]
+  PIN cal_phase0_offset_x[17]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 237.440 0.560 238.000 ;
+    END
+  END cal_phase0_offset_x[17]
+  PIN cal_phase0_offset_x[18]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 238.560 0.560 239.120 ;
+    END
+  END cal_phase0_offset_x[18]
+  PIN cal_phase0_offset_x[19]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 239.680 0.560 240.240 ;
+    END
+  END cal_phase0_offset_x[19]
+  PIN cal_phase0_offset_x[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 219.520 0.560 220.080 ;
+    END
+  END cal_phase0_offset_x[1]
+  PIN cal_phase0_offset_x[20]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 240.800 0.560 241.360 ;
+    END
+  END cal_phase0_offset_x[20]
+  PIN cal_phase0_offset_x[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 220.640 0.560 221.200 ;
+    END
+  END cal_phase0_offset_x[2]
+  PIN cal_phase0_offset_x[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 221.760 0.560 222.320 ;
+    END
+  END cal_phase0_offset_x[3]
+  PIN cal_phase0_offset_x[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 222.880 0.560 223.440 ;
+    END
+  END cal_phase0_offset_x[4]
+  PIN cal_phase0_offset_x[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 224.000 0.560 224.560 ;
+    END
+  END cal_phase0_offset_x[5]
+  PIN cal_phase0_offset_x[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 1.102000 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 225.120 0.560 225.680 ;
+    END
+  END cal_phase0_offset_x[6]
+  PIN cal_phase0_offset_x[7]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 226.240 0.560 226.800 ;
+    END
+  END cal_phase0_offset_x[7]
+  PIN cal_phase0_offset_x[8]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 227.360 0.560 227.920 ;
+    END
+  END cal_phase0_offset_x[8]
+  PIN cal_phase0_offset_x[9]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 228.480 0.560 229.040 ;
+    END
+  END cal_phase0_offset_x[9]
+  PIN cal_phase0_offset_y[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 218.400 336.545 218.960 ;
+    END
+  END cal_phase0_offset_y[0]
+  PIN cal_phase0_offset_y[10]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 229.600 336.545 230.160 ;
+    END
+  END cal_phase0_offset_y[10]
+  PIN cal_phase0_offset_y[11]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 230.720 336.545 231.280 ;
+    END
+  END cal_phase0_offset_y[11]
+  PIN cal_phase0_offset_y[12]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 231.840 336.545 232.400 ;
+    END
+  END cal_phase0_offset_y[12]
+  PIN cal_phase0_offset_y[13]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 232.960 336.545 233.520 ;
+    END
+  END cal_phase0_offset_y[13]
+  PIN cal_phase0_offset_y[14]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 1.102000 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 234.080 336.545 234.640 ;
+    END
+  END cal_phase0_offset_y[14]
+  PIN cal_phase0_offset_y[15]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 1.102000 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 235.200 336.545 235.760 ;
+    END
+  END cal_phase0_offset_y[15]
+  PIN cal_phase0_offset_y[16]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 236.320 336.545 236.880 ;
+    END
+  END cal_phase0_offset_y[16]
+  PIN cal_phase0_offset_y[17]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 237.440 336.545 238.000 ;
+    END
+  END cal_phase0_offset_y[17]
+  PIN cal_phase0_offset_y[18]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 238.560 336.545 239.120 ;
+    END
+  END cal_phase0_offset_y[18]
+  PIN cal_phase0_offset_y[19]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 239.680 336.545 240.240 ;
+    END
+  END cal_phase0_offset_y[19]
+  PIN cal_phase0_offset_y[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 219.520 336.545 220.080 ;
+    END
+  END cal_phase0_offset_y[1]
+  PIN cal_phase0_offset_y[20]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 240.800 336.545 241.360 ;
+    END
+  END cal_phase0_offset_y[20]
+  PIN cal_phase0_offset_y[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 220.640 336.545 221.200 ;
+    END
+  END cal_phase0_offset_y[2]
+  PIN cal_phase0_offset_y[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 221.760 336.545 222.320 ;
+    END
+  END cal_phase0_offset_y[3]
+  PIN cal_phase0_offset_y[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 222.880 336.545 223.440 ;
+    END
+  END cal_phase0_offset_y[4]
+  PIN cal_phase0_offset_y[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 224.000 336.545 224.560 ;
+    END
+  END cal_phase0_offset_y[5]
+  PIN cal_phase0_offset_y[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 225.120 336.545 225.680 ;
+    END
+  END cal_phase0_offset_y[6]
+  PIN cal_phase0_offset_y[7]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 226.240 336.545 226.800 ;
+    END
+  END cal_phase0_offset_y[7]
+  PIN cal_phase0_offset_y[8]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 227.360 336.545 227.920 ;
+    END
+  END cal_phase0_offset_y[8]
+  PIN cal_phase0_offset_y[9]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 228.480 336.545 229.040 ;
+    END
+  END cal_phase0_offset_y[9]
+  PIN cal_phase270_offset_x[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 265.440 0.560 266.000 ;
+    END
+  END cal_phase270_offset_x[0]
+  PIN cal_phase270_offset_x[10]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 276.640 0.560 277.200 ;
+    END
+  END cal_phase270_offset_x[10]
+  PIN cal_phase270_offset_x[11]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 277.760 0.560 278.320 ;
+    END
+  END cal_phase270_offset_x[11]
+  PIN cal_phase270_offset_x[12]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 278.880 0.560 279.440 ;
+    END
+  END cal_phase270_offset_x[12]
+  PIN cal_phase270_offset_x[13]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 280.000 0.560 280.560 ;
+    END
+  END cal_phase270_offset_x[13]
+  PIN cal_phase270_offset_x[14]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 281.120 0.560 281.680 ;
+    END
+  END cal_phase270_offset_x[14]
+  PIN cal_phase270_offset_x[15]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 1.102000 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 282.240 0.560 282.800 ;
+    END
+  END cal_phase270_offset_x[15]
+  PIN cal_phase270_offset_x[16]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 283.360 0.560 283.920 ;
+    END
+  END cal_phase270_offset_x[16]
+  PIN cal_phase270_offset_x[17]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 284.480 0.560 285.040 ;
+    END
+  END cal_phase270_offset_x[17]
+  PIN cal_phase270_offset_x[18]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 285.600 0.560 286.160 ;
+    END
+  END cal_phase270_offset_x[18]
+  PIN cal_phase270_offset_x[19]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 286.720 0.560 287.280 ;
+    END
+  END cal_phase270_offset_x[19]
+  PIN cal_phase270_offset_x[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 266.560 0.560 267.120 ;
+    END
+  END cal_phase270_offset_x[1]
+  PIN cal_phase270_offset_x[20]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 287.840 0.560 288.400 ;
+    END
+  END cal_phase270_offset_x[20]
+  PIN cal_phase270_offset_x[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 267.680 0.560 268.240 ;
+    END
+  END cal_phase270_offset_x[2]
+  PIN cal_phase270_offset_x[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 268.800 0.560 269.360 ;
+    END
+  END cal_phase270_offset_x[3]
+  PIN cal_phase270_offset_x[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 269.920 0.560 270.480 ;
+    END
+  END cal_phase270_offset_x[4]
+  PIN cal_phase270_offset_x[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 271.040 0.560 271.600 ;
+    END
+  END cal_phase270_offset_x[5]
+  PIN cal_phase270_offset_x[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 272.160 0.560 272.720 ;
+    END
+  END cal_phase270_offset_x[6]
+  PIN cal_phase270_offset_x[7]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 273.280 0.560 273.840 ;
+    END
+  END cal_phase270_offset_x[7]
+  PIN cal_phase270_offset_x[8]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 274.400 0.560 274.960 ;
+    END
+  END cal_phase270_offset_x[8]
+  PIN cal_phase270_offset_x[9]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 275.520 0.560 276.080 ;
+    END
+  END cal_phase270_offset_x[9]
+  PIN cal_phase270_offset_y[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 265.440 336.545 266.000 ;
+    END
+  END cal_phase270_offset_y[0]
+  PIN cal_phase270_offset_y[10]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 276.640 336.545 277.200 ;
+    END
+  END cal_phase270_offset_y[10]
+  PIN cal_phase270_offset_y[11]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 1.102000 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 277.760 336.545 278.320 ;
+    END
+  END cal_phase270_offset_y[11]
+  PIN cal_phase270_offset_y[12]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 278.880 336.545 279.440 ;
+    END
+  END cal_phase270_offset_y[12]
+  PIN cal_phase270_offset_y[13]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 280.000 336.545 280.560 ;
+    END
+  END cal_phase270_offset_y[13]
+  PIN cal_phase270_offset_y[14]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 281.120 336.545 281.680 ;
+    END
+  END cal_phase270_offset_y[14]
+  PIN cal_phase270_offset_y[15]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 282.240 336.545 282.800 ;
+    END
+  END cal_phase270_offset_y[15]
+  PIN cal_phase270_offset_y[16]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 283.360 336.545 283.920 ;
+    END
+  END cal_phase270_offset_y[16]
+  PIN cal_phase270_offset_y[17]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 284.480 336.545 285.040 ;
+    END
+  END cal_phase270_offset_y[17]
+  PIN cal_phase270_offset_y[18]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 285.600 336.545 286.160 ;
+    END
+  END cal_phase270_offset_y[18]
+  PIN cal_phase270_offset_y[19]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 286.720 336.545 287.280 ;
+    END
+  END cal_phase270_offset_y[19]
+  PIN cal_phase270_offset_y[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 266.560 336.545 267.120 ;
+    END
+  END cal_phase270_offset_y[1]
+  PIN cal_phase270_offset_y[20]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 1.102000 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 287.840 336.545 288.400 ;
+    END
+  END cal_phase270_offset_y[20]
+  PIN cal_phase270_offset_y[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 267.680 336.545 268.240 ;
+    END
+  END cal_phase270_offset_y[2]
+  PIN cal_phase270_offset_y[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 268.800 336.545 269.360 ;
+    END
+  END cal_phase270_offset_y[3]
+  PIN cal_phase270_offset_y[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 269.920 336.545 270.480 ;
+    END
+  END cal_phase270_offset_y[4]
+  PIN cal_phase270_offset_y[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 271.040 336.545 271.600 ;
+    END
+  END cal_phase270_offset_y[5]
+  PIN cal_phase270_offset_y[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 272.160 336.545 272.720 ;
+    END
+  END cal_phase270_offset_y[6]
+  PIN cal_phase270_offset_y[7]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 273.280 336.545 273.840 ;
+    END
+  END cal_phase270_offset_y[7]
+  PIN cal_phase270_offset_y[8]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 274.400 336.545 274.960 ;
+    END
+  END cal_phase270_offset_y[8]
+  PIN cal_phase270_offset_y[9]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 275.520 336.545 276.080 ;
+    END
+  END cal_phase270_offset_y[9]
+  PIN cal_phase90_offset_x[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 241.920 0.560 242.480 ;
+    END
+  END cal_phase90_offset_x[0]
+  PIN cal_phase90_offset_x[10]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 253.120 0.560 253.680 ;
+    END
+  END cal_phase90_offset_x[10]
+  PIN cal_phase90_offset_x[11]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 254.240 0.560 254.800 ;
+    END
+  END cal_phase90_offset_x[11]
+  PIN cal_phase90_offset_x[12]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 255.360 0.560 255.920 ;
+    END
+  END cal_phase90_offset_x[12]
+  PIN cal_phase90_offset_x[13]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 256.480 0.560 257.040 ;
+    END
+  END cal_phase90_offset_x[13]
+  PIN cal_phase90_offset_x[14]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 257.600 0.560 258.160 ;
+    END
+  END cal_phase90_offset_x[14]
+  PIN cal_phase90_offset_x[15]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 258.720 0.560 259.280 ;
+    END
+  END cal_phase90_offset_x[15]
+  PIN cal_phase90_offset_x[16]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 259.840 0.560 260.400 ;
+    END
+  END cal_phase90_offset_x[16]
+  PIN cal_phase90_offset_x[17]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 260.960 0.560 261.520 ;
+    END
+  END cal_phase90_offset_x[17]
+  PIN cal_phase90_offset_x[18]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 262.080 0.560 262.640 ;
+    END
+  END cal_phase90_offset_x[18]
+  PIN cal_phase90_offset_x[19]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 263.200 0.560 263.760 ;
+    END
+  END cal_phase90_offset_x[19]
+  PIN cal_phase90_offset_x[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 243.040 0.560 243.600 ;
+    END
+  END cal_phase90_offset_x[1]
+  PIN cal_phase90_offset_x[20]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 264.320 0.560 264.880 ;
+    END
+  END cal_phase90_offset_x[20]
+  PIN cal_phase90_offset_x[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 244.160 0.560 244.720 ;
+    END
+  END cal_phase90_offset_x[2]
+  PIN cal_phase90_offset_x[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 245.280 0.560 245.840 ;
+    END
+  END cal_phase90_offset_x[3]
+  PIN cal_phase90_offset_x[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 246.400 0.560 246.960 ;
+    END
+  END cal_phase90_offset_x[4]
+  PIN cal_phase90_offset_x[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 247.520 0.560 248.080 ;
+    END
+  END cal_phase90_offset_x[5]
+  PIN cal_phase90_offset_x[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 248.640 0.560 249.200 ;
+    END
+  END cal_phase90_offset_x[6]
+  PIN cal_phase90_offset_x[7]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 1.102000 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 249.760 0.560 250.320 ;
+    END
+  END cal_phase90_offset_x[7]
+  PIN cal_phase90_offset_x[8]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 250.880 0.560 251.440 ;
+    END
+  END cal_phase90_offset_x[8]
+  PIN cal_phase90_offset_x[9]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 1.102000 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 252.000 0.560 252.560 ;
+    END
+  END cal_phase90_offset_x[9]
+  PIN cal_phase90_offset_y[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 241.920 336.545 242.480 ;
+    END
+  END cal_phase90_offset_y[0]
+  PIN cal_phase90_offset_y[10]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 253.120 336.545 253.680 ;
+    END
+  END cal_phase90_offset_y[10]
+  PIN cal_phase90_offset_y[11]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 254.240 336.545 254.800 ;
+    END
+  END cal_phase90_offset_y[11]
+  PIN cal_phase90_offset_y[12]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 255.360 336.545 255.920 ;
+    END
+  END cal_phase90_offset_y[12]
+  PIN cal_phase90_offset_y[13]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 1.102000 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 256.480 336.545 257.040 ;
+    END
+  END cal_phase90_offset_y[13]
+  PIN cal_phase90_offset_y[14]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 257.600 336.545 258.160 ;
+    END
+  END cal_phase90_offset_y[14]
+  PIN cal_phase90_offset_y[15]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 258.720 336.545 259.280 ;
+    END
+  END cal_phase90_offset_y[15]
+  PIN cal_phase90_offset_y[16]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 259.840 336.545 260.400 ;
+    END
+  END cal_phase90_offset_y[16]
+  PIN cal_phase90_offset_y[17]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 260.960 336.545 261.520 ;
+    END
+  END cal_phase90_offset_y[17]
+  PIN cal_phase90_offset_y[18]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 262.080 336.545 262.640 ;
+    END
+  END cal_phase90_offset_y[18]
+  PIN cal_phase90_offset_y[19]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 263.200 336.545 263.760 ;
+    END
+  END cal_phase90_offset_y[19]
+  PIN cal_phase90_offset_y[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 243.040 336.545 243.600 ;
+    END
+  END cal_phase90_offset_y[1]
+  PIN cal_phase90_offset_y[20]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 264.320 336.545 264.880 ;
+    END
+  END cal_phase90_offset_y[20]
+  PIN cal_phase90_offset_y[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 244.160 336.545 244.720 ;
+    END
+  END cal_phase90_offset_y[2]
+  PIN cal_phase90_offset_y[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 245.280 336.545 245.840 ;
+    END
+  END cal_phase90_offset_y[3]
+  PIN cal_phase90_offset_y[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 246.400 336.545 246.960 ;
+    END
+  END cal_phase90_offset_y[4]
+  PIN cal_phase90_offset_y[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 247.520 336.545 248.080 ;
+    END
+  END cal_phase90_offset_y[5]
+  PIN cal_phase90_offset_y[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 1.102000 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 248.640 336.545 249.200 ;
+    END
+  END cal_phase90_offset_y[6]
+  PIN cal_phase90_offset_y[7]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 249.760 336.545 250.320 ;
+    END
+  END cal_phase90_offset_y[7]
+  PIN cal_phase90_offset_y[8]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 250.880 336.545 251.440 ;
+    END
+  END cal_phase90_offset_y[8]
+  PIN cal_phase90_offset_y[9]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 252.000 336.545 252.560 ;
+    END
+  END cal_phase90_offset_y[9]
+  PIN cal_timeout_x
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 291.200 0.560 291.760 ;
+    END
+  END cal_timeout_x
+  PIN cal_timeout_y
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 291.200 336.545 291.760 ;
+    END
+  END cal_timeout_y
+  PIN cfg_done
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 132.160 353.905 132.720 354.465 ;
+    END
+  END cfg_done
+  PIN cfg_f_MEMS_fcw_x[0]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 49.280 0.560 49.840 ;
+    END
+  END cfg_f_MEMS_fcw_x[0]
+  PIN cfg_f_MEMS_fcw_x[10]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 60.480 0.560 61.040 ;
+    END
+  END cfg_f_MEMS_fcw_x[10]
+  PIN cfg_f_MEMS_fcw_x[11]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 61.600 0.560 62.160 ;
+    END
+  END cfg_f_MEMS_fcw_x[11]
+  PIN cfg_f_MEMS_fcw_x[12]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 62.720 0.560 63.280 ;
+    END
+  END cfg_f_MEMS_fcw_x[12]
+  PIN cfg_f_MEMS_fcw_x[13]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 63.840 0.560 64.400 ;
+    END
+  END cfg_f_MEMS_fcw_x[13]
+  PIN cfg_f_MEMS_fcw_x[14]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 64.960 0.560 65.520 ;
+    END
+  END cfg_f_MEMS_fcw_x[14]
+  PIN cfg_f_MEMS_fcw_x[15]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 66.080 0.560 66.640 ;
+    END
+  END cfg_f_MEMS_fcw_x[15]
+  PIN cfg_f_MEMS_fcw_x[1]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 50.400 0.560 50.960 ;
+    END
+  END cfg_f_MEMS_fcw_x[1]
+  PIN cfg_f_MEMS_fcw_x[2]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 51.520 0.560 52.080 ;
+    END
+  END cfg_f_MEMS_fcw_x[2]
+  PIN cfg_f_MEMS_fcw_x[3]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 52.640 0.560 53.200 ;
+    END
+  END cfg_f_MEMS_fcw_x[3]
+  PIN cfg_f_MEMS_fcw_x[4]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 53.760 0.560 54.320 ;
+    END
+  END cfg_f_MEMS_fcw_x[4]
+  PIN cfg_f_MEMS_fcw_x[5]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 54.880 0.560 55.440 ;
+    END
+  END cfg_f_MEMS_fcw_x[5]
+  PIN cfg_f_MEMS_fcw_x[6]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 56.000 0.560 56.560 ;
+    END
+  END cfg_f_MEMS_fcw_x[6]
+  PIN cfg_f_MEMS_fcw_x[7]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 57.120 0.560 57.680 ;
+    END
+  END cfg_f_MEMS_fcw_x[7]
+  PIN cfg_f_MEMS_fcw_x[8]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 58.240 0.560 58.800 ;
+    END
+  END cfg_f_MEMS_fcw_x[8]
+  PIN cfg_f_MEMS_fcw_x[9]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 59.360 0.560 59.920 ;
+    END
+  END cfg_f_MEMS_fcw_x[9]
+  PIN cfg_f_MEMS_fcw_y[0]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 49.280 336.545 49.840 ;
+    END
+  END cfg_f_MEMS_fcw_y[0]
+  PIN cfg_f_MEMS_fcw_y[10]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 60.480 336.545 61.040 ;
+    END
+  END cfg_f_MEMS_fcw_y[10]
+  PIN cfg_f_MEMS_fcw_y[11]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 61.600 336.545 62.160 ;
+    END
+  END cfg_f_MEMS_fcw_y[11]
+  PIN cfg_f_MEMS_fcw_y[12]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 62.720 336.545 63.280 ;
+    END
+  END cfg_f_MEMS_fcw_y[12]
+  PIN cfg_f_MEMS_fcw_y[13]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 63.840 336.545 64.400 ;
+    END
+  END cfg_f_MEMS_fcw_y[13]
+  PIN cfg_f_MEMS_fcw_y[14]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 64.960 336.545 65.520 ;
+    END
+  END cfg_f_MEMS_fcw_y[14]
+  PIN cfg_f_MEMS_fcw_y[15]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 66.080 336.545 66.640 ;
+    END
+  END cfg_f_MEMS_fcw_y[15]
+  PIN cfg_f_MEMS_fcw_y[1]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 50.400 336.545 50.960 ;
+    END
+  END cfg_f_MEMS_fcw_y[1]
+  PIN cfg_f_MEMS_fcw_y[2]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 51.520 336.545 52.080 ;
+    END
+  END cfg_f_MEMS_fcw_y[2]
+  PIN cfg_f_MEMS_fcw_y[3]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 52.640 336.545 53.200 ;
+    END
+  END cfg_f_MEMS_fcw_y[3]
+  PIN cfg_f_MEMS_fcw_y[4]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 53.760 336.545 54.320 ;
+    END
+  END cfg_f_MEMS_fcw_y[4]
+  PIN cfg_f_MEMS_fcw_y[5]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 54.880 336.545 55.440 ;
+    END
+  END cfg_f_MEMS_fcw_y[5]
+  PIN cfg_f_MEMS_fcw_y[6]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 56.000 336.545 56.560 ;
+    END
+  END cfg_f_MEMS_fcw_y[6]
+  PIN cfg_f_MEMS_fcw_y[7]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 57.120 336.545 57.680 ;
+    END
+  END cfg_f_MEMS_fcw_y[7]
+  PIN cfg_f_MEMS_fcw_y[8]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 58.240 336.545 58.800 ;
+    END
+  END cfg_f_MEMS_fcw_y[8]
+  PIN cfg_f_MEMS_fcw_y[9]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 59.360 336.545 59.920 ;
+    END
+  END cfg_f_MEMS_fcw_y[9]
+  PIN cfg_phase0_offset_x[0]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 67.200 0.560 67.760 ;
+    END
+  END cfg_phase0_offset_x[0]
+  PIN cfg_phase0_offset_x[10]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 78.400 0.560 78.960 ;
+    END
+  END cfg_phase0_offset_x[10]
+  PIN cfg_phase0_offset_x[11]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 79.520 0.560 80.080 ;
+    END
+  END cfg_phase0_offset_x[11]
+  PIN cfg_phase0_offset_x[12]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 80.640 0.560 81.200 ;
+    END
+  END cfg_phase0_offset_x[12]
+  PIN cfg_phase0_offset_x[13]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 81.760 0.560 82.320 ;
+    END
+  END cfg_phase0_offset_x[13]
+  PIN cfg_phase0_offset_x[14]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 82.880 0.560 83.440 ;
+    END
+  END cfg_phase0_offset_x[14]
+  PIN cfg_phase0_offset_x[15]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 84.000 0.560 84.560 ;
+    END
+  END cfg_phase0_offset_x[15]
+  PIN cfg_phase0_offset_x[16]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 85.120 0.560 85.680 ;
+    END
+  END cfg_phase0_offset_x[16]
+  PIN cfg_phase0_offset_x[17]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 86.240 0.560 86.800 ;
+    END
+  END cfg_phase0_offset_x[17]
+  PIN cfg_phase0_offset_x[18]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 87.360 0.560 87.920 ;
+    END
+  END cfg_phase0_offset_x[18]
+  PIN cfg_phase0_offset_x[19]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 88.480 0.560 89.040 ;
+    END
+  END cfg_phase0_offset_x[19]
+  PIN cfg_phase0_offset_x[1]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 68.320 0.560 68.880 ;
+    END
+  END cfg_phase0_offset_x[1]
+  PIN cfg_phase0_offset_x[20]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 89.600 0.560 90.160 ;
+    END
+  END cfg_phase0_offset_x[20]
+  PIN cfg_phase0_offset_x[2]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 69.440 0.560 70.000 ;
+    END
+  END cfg_phase0_offset_x[2]
+  PIN cfg_phase0_offset_x[3]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 70.560 0.560 71.120 ;
+    END
+  END cfg_phase0_offset_x[3]
+  PIN cfg_phase0_offset_x[4]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 71.680 0.560 72.240 ;
+    END
+  END cfg_phase0_offset_x[4]
+  PIN cfg_phase0_offset_x[5]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 72.800 0.560 73.360 ;
+    END
+  END cfg_phase0_offset_x[5]
+  PIN cfg_phase0_offset_x[6]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 73.920 0.560 74.480 ;
+    END
+  END cfg_phase0_offset_x[6]
+  PIN cfg_phase0_offset_x[7]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 75.040 0.560 75.600 ;
+    END
+  END cfg_phase0_offset_x[7]
+  PIN cfg_phase0_offset_x[8]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 76.160 0.560 76.720 ;
+    END
+  END cfg_phase0_offset_x[8]
+  PIN cfg_phase0_offset_x[9]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 77.280 0.560 77.840 ;
+    END
+  END cfg_phase0_offset_x[9]
+  PIN cfg_phase0_offset_y[0]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 67.200 336.545 67.760 ;
+    END
+  END cfg_phase0_offset_y[0]
+  PIN cfg_phase0_offset_y[10]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 78.400 336.545 78.960 ;
+    END
+  END cfg_phase0_offset_y[10]
+  PIN cfg_phase0_offset_y[11]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 79.520 336.545 80.080 ;
+    END
+  END cfg_phase0_offset_y[11]
+  PIN cfg_phase0_offset_y[12]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 80.640 336.545 81.200 ;
+    END
+  END cfg_phase0_offset_y[12]
+  PIN cfg_phase0_offset_y[13]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 81.760 336.545 82.320 ;
+    END
+  END cfg_phase0_offset_y[13]
+  PIN cfg_phase0_offset_y[14]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 82.880 336.545 83.440 ;
+    END
+  END cfg_phase0_offset_y[14]
+  PIN cfg_phase0_offset_y[15]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 84.000 336.545 84.560 ;
+    END
+  END cfg_phase0_offset_y[15]
+  PIN cfg_phase0_offset_y[16]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 85.120 336.545 85.680 ;
+    END
+  END cfg_phase0_offset_y[16]
+  PIN cfg_phase0_offset_y[17]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 86.240 336.545 86.800 ;
+    END
+  END cfg_phase0_offset_y[17]
+  PIN cfg_phase0_offset_y[18]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 87.360 336.545 87.920 ;
+    END
+  END cfg_phase0_offset_y[18]
+  PIN cfg_phase0_offset_y[19]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 88.480 336.545 89.040 ;
+    END
+  END cfg_phase0_offset_y[19]
+  PIN cfg_phase0_offset_y[1]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 68.320 336.545 68.880 ;
+    END
+  END cfg_phase0_offset_y[1]
+  PIN cfg_phase0_offset_y[20]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 89.600 336.545 90.160 ;
+    END
+  END cfg_phase0_offset_y[20]
+  PIN cfg_phase0_offset_y[2]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 69.440 336.545 70.000 ;
+    END
+  END cfg_phase0_offset_y[2]
+  PIN cfg_phase0_offset_y[3]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 70.560 336.545 71.120 ;
+    END
+  END cfg_phase0_offset_y[3]
+  PIN cfg_phase0_offset_y[4]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 71.680 336.545 72.240 ;
+    END
+  END cfg_phase0_offset_y[4]
+  PIN cfg_phase0_offset_y[5]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 72.800 336.545 73.360 ;
+    END
+  END cfg_phase0_offset_y[5]
+  PIN cfg_phase0_offset_y[6]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 73.920 336.545 74.480 ;
+    END
+  END cfg_phase0_offset_y[6]
+  PIN cfg_phase0_offset_y[7]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 75.040 336.545 75.600 ;
+    END
+  END cfg_phase0_offset_y[7]
+  PIN cfg_phase0_offset_y[8]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 76.160 336.545 76.720 ;
+    END
+  END cfg_phase0_offset_y[8]
+  PIN cfg_phase0_offset_y[9]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 77.280 336.545 77.840 ;
+    END
+  END cfg_phase0_offset_y[9]
+  PIN cfg_phase270_offset_x[0]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 114.240 0.560 114.800 ;
+    END
+  END cfg_phase270_offset_x[0]
+  PIN cfg_phase270_offset_x[10]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 125.440 0.560 126.000 ;
+    END
+  END cfg_phase270_offset_x[10]
+  PIN cfg_phase270_offset_x[11]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 126.560 0.560 127.120 ;
+    END
+  END cfg_phase270_offset_x[11]
+  PIN cfg_phase270_offset_x[12]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 127.680 0.560 128.240 ;
+    END
+  END cfg_phase270_offset_x[12]
+  PIN cfg_phase270_offset_x[13]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 128.800 0.560 129.360 ;
+    END
+  END cfg_phase270_offset_x[13]
+  PIN cfg_phase270_offset_x[14]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 129.920 0.560 130.480 ;
+    END
+  END cfg_phase270_offset_x[14]
+  PIN cfg_phase270_offset_x[15]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 131.040 0.560 131.600 ;
+    END
+  END cfg_phase270_offset_x[15]
+  PIN cfg_phase270_offset_x[16]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 132.160 0.560 132.720 ;
+    END
+  END cfg_phase270_offset_x[16]
+  PIN cfg_phase270_offset_x[17]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 133.280 0.560 133.840 ;
+    END
+  END cfg_phase270_offset_x[17]
+  PIN cfg_phase270_offset_x[18]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 134.400 0.560 134.960 ;
+    END
+  END cfg_phase270_offset_x[18]
+  PIN cfg_phase270_offset_x[19]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 135.520 0.560 136.080 ;
+    END
+  END cfg_phase270_offset_x[19]
+  PIN cfg_phase270_offset_x[1]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 115.360 0.560 115.920 ;
+    END
+  END cfg_phase270_offset_x[1]
+  PIN cfg_phase270_offset_x[20]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 136.640 0.560 137.200 ;
+    END
+  END cfg_phase270_offset_x[20]
+  PIN cfg_phase270_offset_x[2]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 116.480 0.560 117.040 ;
+    END
+  END cfg_phase270_offset_x[2]
+  PIN cfg_phase270_offset_x[3]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 117.600 0.560 118.160 ;
+    END
+  END cfg_phase270_offset_x[3]
+  PIN cfg_phase270_offset_x[4]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 118.720 0.560 119.280 ;
+    END
+  END cfg_phase270_offset_x[4]
+  PIN cfg_phase270_offset_x[5]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 119.840 0.560 120.400 ;
+    END
+  END cfg_phase270_offset_x[5]
+  PIN cfg_phase270_offset_x[6]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 120.960 0.560 121.520 ;
+    END
+  END cfg_phase270_offset_x[6]
+  PIN cfg_phase270_offset_x[7]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 122.080 0.560 122.640 ;
+    END
+  END cfg_phase270_offset_x[7]
+  PIN cfg_phase270_offset_x[8]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 123.200 0.560 123.760 ;
+    END
+  END cfg_phase270_offset_x[8]
+  PIN cfg_phase270_offset_x[9]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 124.320 0.560 124.880 ;
+    END
+  END cfg_phase270_offset_x[9]
+  PIN cfg_phase270_offset_y[0]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 114.240 336.545 114.800 ;
+    END
+  END cfg_phase270_offset_y[0]
+  PIN cfg_phase270_offset_y[10]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 125.440 336.545 126.000 ;
+    END
+  END cfg_phase270_offset_y[10]
+  PIN cfg_phase270_offset_y[11]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 126.560 336.545 127.120 ;
+    END
+  END cfg_phase270_offset_y[11]
+  PIN cfg_phase270_offset_y[12]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 127.680 336.545 128.240 ;
+    END
+  END cfg_phase270_offset_y[12]
+  PIN cfg_phase270_offset_y[13]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 128.800 336.545 129.360 ;
+    END
+  END cfg_phase270_offset_y[13]
+  PIN cfg_phase270_offset_y[14]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 129.920 336.545 130.480 ;
+    END
+  END cfg_phase270_offset_y[14]
+  PIN cfg_phase270_offset_y[15]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 131.040 336.545 131.600 ;
+    END
+  END cfg_phase270_offset_y[15]
+  PIN cfg_phase270_offset_y[16]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 132.160 336.545 132.720 ;
+    END
+  END cfg_phase270_offset_y[16]
+  PIN cfg_phase270_offset_y[17]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 133.280 336.545 133.840 ;
+    END
+  END cfg_phase270_offset_y[17]
+  PIN cfg_phase270_offset_y[18]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 134.400 336.545 134.960 ;
+    END
+  END cfg_phase270_offset_y[18]
+  PIN cfg_phase270_offset_y[19]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 135.520 336.545 136.080 ;
+    END
+  END cfg_phase270_offset_y[19]
+  PIN cfg_phase270_offset_y[1]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 115.360 336.545 115.920 ;
+    END
+  END cfg_phase270_offset_y[1]
+  PIN cfg_phase270_offset_y[20]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 136.640 336.545 137.200 ;
+    END
+  END cfg_phase270_offset_y[20]
+  PIN cfg_phase270_offset_y[2]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 116.480 336.545 117.040 ;
+    END
+  END cfg_phase270_offset_y[2]
+  PIN cfg_phase270_offset_y[3]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 117.600 336.545 118.160 ;
+    END
+  END cfg_phase270_offset_y[3]
+  PIN cfg_phase270_offset_y[4]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 118.720 336.545 119.280 ;
+    END
+  END cfg_phase270_offset_y[4]
+  PIN cfg_phase270_offset_y[5]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 119.840 336.545 120.400 ;
+    END
+  END cfg_phase270_offset_y[5]
+  PIN cfg_phase270_offset_y[6]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 120.960 336.545 121.520 ;
+    END
+  END cfg_phase270_offset_y[6]
+  PIN cfg_phase270_offset_y[7]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 122.080 336.545 122.640 ;
+    END
+  END cfg_phase270_offset_y[7]
+  PIN cfg_phase270_offset_y[8]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 123.200 336.545 123.760 ;
+    END
+  END cfg_phase270_offset_y[8]
+  PIN cfg_phase270_offset_y[9]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 124.320 336.545 124.880 ;
+    END
+  END cfg_phase270_offset_y[9]
+  PIN cfg_phase90_offset_x[0]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 90.720 0.560 91.280 ;
+    END
+  END cfg_phase90_offset_x[0]
+  PIN cfg_phase90_offset_x[10]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 101.920 0.560 102.480 ;
+    END
+  END cfg_phase90_offset_x[10]
+  PIN cfg_phase90_offset_x[11]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 103.040 0.560 103.600 ;
+    END
+  END cfg_phase90_offset_x[11]
+  PIN cfg_phase90_offset_x[12]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 104.160 0.560 104.720 ;
+    END
+  END cfg_phase90_offset_x[12]
+  PIN cfg_phase90_offset_x[13]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 105.280 0.560 105.840 ;
+    END
+  END cfg_phase90_offset_x[13]
+  PIN cfg_phase90_offset_x[14]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 106.400 0.560 106.960 ;
+    END
+  END cfg_phase90_offset_x[14]
+  PIN cfg_phase90_offset_x[15]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 107.520 0.560 108.080 ;
+    END
+  END cfg_phase90_offset_x[15]
+  PIN cfg_phase90_offset_x[16]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 108.640 0.560 109.200 ;
+    END
+  END cfg_phase90_offset_x[16]
+  PIN cfg_phase90_offset_x[17]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 109.760 0.560 110.320 ;
+    END
+  END cfg_phase90_offset_x[17]
+  PIN cfg_phase90_offset_x[18]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 110.880 0.560 111.440 ;
+    END
+  END cfg_phase90_offset_x[18]
+  PIN cfg_phase90_offset_x[19]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 112.000 0.560 112.560 ;
+    END
+  END cfg_phase90_offset_x[19]
+  PIN cfg_phase90_offset_x[1]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 91.840 0.560 92.400 ;
+    END
+  END cfg_phase90_offset_x[1]
+  PIN cfg_phase90_offset_x[20]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 113.120 0.560 113.680 ;
+    END
+  END cfg_phase90_offset_x[20]
+  PIN cfg_phase90_offset_x[2]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 92.960 0.560 93.520 ;
+    END
+  END cfg_phase90_offset_x[2]
+  PIN cfg_phase90_offset_x[3]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 94.080 0.560 94.640 ;
+    END
+  END cfg_phase90_offset_x[3]
+  PIN cfg_phase90_offset_x[4]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 95.200 0.560 95.760 ;
+    END
+  END cfg_phase90_offset_x[4]
+  PIN cfg_phase90_offset_x[5]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 96.320 0.560 96.880 ;
+    END
+  END cfg_phase90_offset_x[5]
+  PIN cfg_phase90_offset_x[6]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 97.440 0.560 98.000 ;
+    END
+  END cfg_phase90_offset_x[6]
+  PIN cfg_phase90_offset_x[7]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 98.560 0.560 99.120 ;
+    END
+  END cfg_phase90_offset_x[7]
+  PIN cfg_phase90_offset_x[8]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 99.680 0.560 100.240 ;
+    END
+  END cfg_phase90_offset_x[8]
+  PIN cfg_phase90_offset_x[9]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 100.800 0.560 101.360 ;
+    END
+  END cfg_phase90_offset_x[9]
+  PIN cfg_phase90_offset_y[0]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 90.720 336.545 91.280 ;
+    END
+  END cfg_phase90_offset_y[0]
+  PIN cfg_phase90_offset_y[10]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 101.920 336.545 102.480 ;
+    END
+  END cfg_phase90_offset_y[10]
+  PIN cfg_phase90_offset_y[11]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 103.040 336.545 103.600 ;
+    END
+  END cfg_phase90_offset_y[11]
+  PIN cfg_phase90_offset_y[12]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 104.160 336.545 104.720 ;
+    END
+  END cfg_phase90_offset_y[12]
+  PIN cfg_phase90_offset_y[13]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 105.280 336.545 105.840 ;
+    END
+  END cfg_phase90_offset_y[13]
+  PIN cfg_phase90_offset_y[14]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 106.400 336.545 106.960 ;
+    END
+  END cfg_phase90_offset_y[14]
+  PIN cfg_phase90_offset_y[15]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 107.520 336.545 108.080 ;
+    END
+  END cfg_phase90_offset_y[15]
+  PIN cfg_phase90_offset_y[16]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 108.640 336.545 109.200 ;
+    END
+  END cfg_phase90_offset_y[16]
+  PIN cfg_phase90_offset_y[17]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 109.760 336.545 110.320 ;
+    END
+  END cfg_phase90_offset_y[17]
+  PIN cfg_phase90_offset_y[18]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 110.880 336.545 111.440 ;
+    END
+  END cfg_phase90_offset_y[18]
+  PIN cfg_phase90_offset_y[19]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 112.000 336.545 112.560 ;
+    END
+  END cfg_phase90_offset_y[19]
+  PIN cfg_phase90_offset_y[1]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 91.840 336.545 92.400 ;
+    END
+  END cfg_phase90_offset_y[1]
+  PIN cfg_phase90_offset_y[20]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 113.120 336.545 113.680 ;
+    END
+  END cfg_phase90_offset_y[20]
+  PIN cfg_phase90_offset_y[2]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 92.960 336.545 93.520 ;
+    END
+  END cfg_phase90_offset_y[2]
+  PIN cfg_phase90_offset_y[3]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 94.080 336.545 94.640 ;
+    END
+  END cfg_phase90_offset_y[3]
+  PIN cfg_phase90_offset_y[4]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 95.200 336.545 95.760 ;
+    END
+  END cfg_phase90_offset_y[4]
+  PIN cfg_phase90_offset_y[5]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 96.320 336.545 96.880 ;
+    END
+  END cfg_phase90_offset_y[5]
+  PIN cfg_phase90_offset_y[6]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 97.440 336.545 98.000 ;
+    END
+  END cfg_phase90_offset_y[6]
+  PIN cfg_phase90_offset_y[7]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 98.560 336.545 99.120 ;
+    END
+  END cfg_phase90_offset_y[7]
+  PIN cfg_phase90_offset_y[8]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 99.680 336.545 100.240 ;
+    END
+  END cfg_phase90_offset_y[8]
+  PIN cfg_phase90_offset_y[9]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 100.800 336.545 101.360 ;
+    END
+  END cfg_phase90_offset_y[9]
+  PIN clk
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 4.738000 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 202.720 353.905 203.280 354.465 ;
+    END
+  END clk
+  PIN delay_wave_cycle_x[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 1.102000 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 137.760 0.560 138.320 ;
+    END
+  END delay_wave_cycle_x[0]
+  PIN delay_wave_cycle_x[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 138.880 0.560 139.440 ;
+    END
+  END delay_wave_cycle_x[1]
+  PIN delay_wave_cycle_x[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 140.000 0.560 140.560 ;
+    END
+  END delay_wave_cycle_x[2]
+  PIN delay_wave_cycle_x[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 141.120 0.560 141.680 ;
+    END
+  END delay_wave_cycle_x[3]
+  PIN delay_wave_cycle_x[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 142.240 0.560 142.800 ;
+    END
+  END delay_wave_cycle_x[4]
+  PIN delay_wave_cycle_x[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 143.360 0.560 143.920 ;
+    END
+  END delay_wave_cycle_x[5]
+  PIN delay_wave_cycle_x[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 144.480 0.560 145.040 ;
+    END
+  END delay_wave_cycle_x[6]
+  PIN delay_wave_cycle_x[7]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 145.600 0.560 146.160 ;
+    END
+  END delay_wave_cycle_x[7]
+  PIN delay_wave_cycle_y[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 137.760 336.545 138.320 ;
+    END
+  END delay_wave_cycle_y[0]
+  PIN delay_wave_cycle_y[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 138.880 336.545 139.440 ;
+    END
+  END delay_wave_cycle_y[1]
+  PIN delay_wave_cycle_y[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 1.102000 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 140.000 336.545 140.560 ;
+    END
+  END delay_wave_cycle_y[2]
+  PIN delay_wave_cycle_y[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 141.120 336.545 141.680 ;
+    END
+  END delay_wave_cycle_y[3]
+  PIN delay_wave_cycle_y[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 1.102000 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 142.240 336.545 142.800 ;
+    END
+  END delay_wave_cycle_y[4]
+  PIN delay_wave_cycle_y[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 143.360 336.545 143.920 ;
+    END
+  END delay_wave_cycle_y[5]
+  PIN delay_wave_cycle_y[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 144.480 336.545 145.040 ;
+    END
+  END delay_wave_cycle_y[6]
+  PIN delay_wave_cycle_y[7]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 145.600 336.545 146.160 ;
+    END
+  END delay_wave_cycle_y[7]
+  PIN jitter_flag_x
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 292.320 0.560 292.880 ;
+    END
+  END jitter_flag_x
+  PIN jitter_flag_y
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 292.320 336.545 292.880 ;
+    END
+  END jitter_flag_y
+  PIN latch_error_x
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 288.960 0.560 289.520 ;
+    END
+  END latch_error_x
+  PIN latch_error_y
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 288.960 336.545 289.520 ;
+    END
+  END latch_error_y
+  PIN phase_offset_imported
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 108.640 353.905 109.200 354.465 ;
+    END
+  END phase_offset_imported
+  PIN phase_state_x[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 293.440 0.560 294.000 ;
+    END
+  END phase_state_x[0]
+  PIN phase_state_x[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 294.560 0.560 295.120 ;
+    END
+  END phase_state_x[1]
+  PIN phase_state_y[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 293.440 336.545 294.000 ;
+    END
+  END phase_state_y[0]
+  PIN phase_state_y[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 294.560 336.545 295.120 ;
+    END
+  END phase_state_y[1]
+  PIN raw_edge1_x[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 146.720 0.560 147.280 ;
+    END
+  END raw_edge1_x[0]
+  PIN raw_edge1_x[10]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 157.920 0.560 158.480 ;
+    END
+  END raw_edge1_x[10]
+  PIN raw_edge1_x[11]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 159.040 0.560 159.600 ;
+    END
+  END raw_edge1_x[11]
+  PIN raw_edge1_x[12]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 160.160 0.560 160.720 ;
+    END
+  END raw_edge1_x[12]
+  PIN raw_edge1_x[13]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 161.280 0.560 161.840 ;
+    END
+  END raw_edge1_x[13]
+  PIN raw_edge1_x[14]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 162.400 0.560 162.960 ;
+    END
+  END raw_edge1_x[14]
+  PIN raw_edge1_x[15]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 163.520 0.560 164.080 ;
+    END
+  END raw_edge1_x[15]
+  PIN raw_edge1_x[16]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 164.640 0.560 165.200 ;
+    END
+  END raw_edge1_x[16]
+  PIN raw_edge1_x[17]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 165.760 0.560 166.320 ;
+    END
+  END raw_edge1_x[17]
+  PIN raw_edge1_x[18]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 166.880 0.560 167.440 ;
+    END
+  END raw_edge1_x[18]
+  PIN raw_edge1_x[19]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 168.000 0.560 168.560 ;
+    END
+  END raw_edge1_x[19]
+  PIN raw_edge1_x[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 147.840 0.560 148.400 ;
+    END
+  END raw_edge1_x[1]
+  PIN raw_edge1_x[20]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 169.120 0.560 169.680 ;
+    END
+  END raw_edge1_x[20]
+  PIN raw_edge1_x[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 148.960 0.560 149.520 ;
+    END
+  END raw_edge1_x[2]
+  PIN raw_edge1_x[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 150.080 0.560 150.640 ;
+    END
+  END raw_edge1_x[3]
+  PIN raw_edge1_x[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 151.200 0.560 151.760 ;
+    END
+  END raw_edge1_x[4]
+  PIN raw_edge1_x[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 152.320 0.560 152.880 ;
+    END
+  END raw_edge1_x[5]
+  PIN raw_edge1_x[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 153.440 0.560 154.000 ;
+    END
+  END raw_edge1_x[6]
+  PIN raw_edge1_x[7]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 154.560 0.560 155.120 ;
+    END
+  END raw_edge1_x[7]
+  PIN raw_edge1_x[8]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 155.680 0.560 156.240 ;
+    END
+  END raw_edge1_x[8]
+  PIN raw_edge1_x[9]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 156.800 0.560 157.360 ;
+    END
+  END raw_edge1_x[9]
+  PIN raw_edge1_y[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 146.720 336.545 147.280 ;
+    END
+  END raw_edge1_y[0]
+  PIN raw_edge1_y[10]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 157.920 336.545 158.480 ;
+    END
+  END raw_edge1_y[10]
+  PIN raw_edge1_y[11]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 159.040 336.545 159.600 ;
+    END
+  END raw_edge1_y[11]
+  PIN raw_edge1_y[12]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 160.160 336.545 160.720 ;
+    END
+  END raw_edge1_y[12]
+  PIN raw_edge1_y[13]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 161.280 336.545 161.840 ;
+    END
+  END raw_edge1_y[13]
+  PIN raw_edge1_y[14]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 162.400 336.545 162.960 ;
+    END
+  END raw_edge1_y[14]
+  PIN raw_edge1_y[15]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 163.520 336.545 164.080 ;
+    END
+  END raw_edge1_y[15]
+  PIN raw_edge1_y[16]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 164.640 336.545 165.200 ;
+    END
+  END raw_edge1_y[16]
+  PIN raw_edge1_y[17]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 165.760 336.545 166.320 ;
+    END
+  END raw_edge1_y[17]
+  PIN raw_edge1_y[18]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 166.880 336.545 167.440 ;
+    END
+  END raw_edge1_y[18]
+  PIN raw_edge1_y[19]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 168.000 336.545 168.560 ;
+    END
+  END raw_edge1_y[19]
+  PIN raw_edge1_y[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 147.840 336.545 148.400 ;
+    END
+  END raw_edge1_y[1]
+  PIN raw_edge1_y[20]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 169.120 336.545 169.680 ;
+    END
+  END raw_edge1_y[20]
+  PIN raw_edge1_y[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 148.960 336.545 149.520 ;
+    END
+  END raw_edge1_y[2]
+  PIN raw_edge1_y[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 150.080 336.545 150.640 ;
+    END
+  END raw_edge1_y[3]
+  PIN raw_edge1_y[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 151.200 336.545 151.760 ;
+    END
+  END raw_edge1_y[4]
+  PIN raw_edge1_y[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 152.320 336.545 152.880 ;
+    END
+  END raw_edge1_y[5]
+  PIN raw_edge1_y[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 153.440 336.545 154.000 ;
+    END
+  END raw_edge1_y[6]
+  PIN raw_edge1_y[7]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 154.560 336.545 155.120 ;
+    END
+  END raw_edge1_y[7]
+  PIN raw_edge1_y[8]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 155.680 336.545 156.240 ;
+    END
+  END raw_edge1_y[8]
+  PIN raw_edge1_y[9]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 156.800 336.545 157.360 ;
+    END
+  END raw_edge1_y[9]
+  PIN raw_edge2_x[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 170.240 0.560 170.800 ;
+    END
+  END raw_edge2_x[0]
+  PIN raw_edge2_x[10]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 181.440 0.560 182.000 ;
+    END
+  END raw_edge2_x[10]
+  PIN raw_edge2_x[11]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 182.560 0.560 183.120 ;
+    END
+  END raw_edge2_x[11]
+  PIN raw_edge2_x[12]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 183.680 0.560 184.240 ;
+    END
+  END raw_edge2_x[12]
+  PIN raw_edge2_x[13]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 184.800 0.560 185.360 ;
+    END
+  END raw_edge2_x[13]
+  PIN raw_edge2_x[14]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 185.920 0.560 186.480 ;
+    END
+  END raw_edge2_x[14]
+  PIN raw_edge2_x[15]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 187.040 0.560 187.600 ;
+    END
+  END raw_edge2_x[15]
+  PIN raw_edge2_x[16]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 188.160 0.560 188.720 ;
+    END
+  END raw_edge2_x[16]
+  PIN raw_edge2_x[17]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 189.280 0.560 189.840 ;
+    END
+  END raw_edge2_x[17]
+  PIN raw_edge2_x[18]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 190.400 0.560 190.960 ;
+    END
+  END raw_edge2_x[18]
+  PIN raw_edge2_x[19]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 191.520 0.560 192.080 ;
+    END
+  END raw_edge2_x[19]
+  PIN raw_edge2_x[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 171.360 0.560 171.920 ;
+    END
+  END raw_edge2_x[1]
+  PIN raw_edge2_x[20]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 192.640 0.560 193.200 ;
+    END
+  END raw_edge2_x[20]
+  PIN raw_edge2_x[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 172.480 0.560 173.040 ;
+    END
+  END raw_edge2_x[2]
+  PIN raw_edge2_x[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 173.600 0.560 174.160 ;
+    END
+  END raw_edge2_x[3]
+  PIN raw_edge2_x[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 174.720 0.560 175.280 ;
+    END
+  END raw_edge2_x[4]
+  PIN raw_edge2_x[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 175.840 0.560 176.400 ;
+    END
+  END raw_edge2_x[5]
+  PIN raw_edge2_x[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 176.960 0.560 177.520 ;
+    END
+  END raw_edge2_x[6]
+  PIN raw_edge2_x[7]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 178.080 0.560 178.640 ;
+    END
+  END raw_edge2_x[7]
+  PIN raw_edge2_x[8]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 179.200 0.560 179.760 ;
+    END
+  END raw_edge2_x[8]
+  PIN raw_edge2_x[9]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 180.320 0.560 180.880 ;
+    END
+  END raw_edge2_x[9]
+  PIN raw_edge2_y[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 170.240 336.545 170.800 ;
+    END
+  END raw_edge2_y[0]
+  PIN raw_edge2_y[10]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 181.440 336.545 182.000 ;
+    END
+  END raw_edge2_y[10]
+  PIN raw_edge2_y[11]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 182.560 336.545 183.120 ;
+    END
+  END raw_edge2_y[11]
+  PIN raw_edge2_y[12]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 183.680 336.545 184.240 ;
+    END
+  END raw_edge2_y[12]
+  PIN raw_edge2_y[13]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 184.800 336.545 185.360 ;
+    END
+  END raw_edge2_y[13]
+  PIN raw_edge2_y[14]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 185.920 336.545 186.480 ;
+    END
+  END raw_edge2_y[14]
+  PIN raw_edge2_y[15]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 187.040 336.545 187.600 ;
+    END
+  END raw_edge2_y[15]
+  PIN raw_edge2_y[16]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 188.160 336.545 188.720 ;
+    END
+  END raw_edge2_y[16]
+  PIN raw_edge2_y[17]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 189.280 336.545 189.840 ;
+    END
+  END raw_edge2_y[17]
+  PIN raw_edge2_y[18]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 190.400 336.545 190.960 ;
+    END
+  END raw_edge2_y[18]
+  PIN raw_edge2_y[19]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 191.520 336.545 192.080 ;
+    END
+  END raw_edge2_y[19]
+  PIN raw_edge2_y[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 171.360 336.545 171.920 ;
+    END
+  END raw_edge2_y[1]
+  PIN raw_edge2_y[20]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 192.640 336.545 193.200 ;
+    END
+  END raw_edge2_y[20]
+  PIN raw_edge2_y[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 172.480 336.545 173.040 ;
+    END
+  END raw_edge2_y[2]
+  PIN raw_edge2_y[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 173.600 336.545 174.160 ;
+    END
+  END raw_edge2_y[3]
+  PIN raw_edge2_y[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 174.720 336.545 175.280 ;
+    END
+  END raw_edge2_y[4]
+  PIN raw_edge2_y[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 175.840 336.545 176.400 ;
+    END
+  END raw_edge2_y[5]
+  PIN raw_edge2_y[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 176.960 336.545 177.520 ;
+    END
+  END raw_edge2_y[6]
+  PIN raw_edge2_y[7]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 178.080 336.545 178.640 ;
+    END
+  END raw_edge2_y[7]
+  PIN raw_edge2_y[8]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 1.102000 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 179.200 336.545 179.760 ;
+    END
+  END raw_edge2_y[8]
+  PIN raw_edge2_y[9]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 180.320 336.545 180.880 ;
+    END
+  END raw_edge2_y[9]
+  PIN raw_edge3_x[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 193.760 0.560 194.320 ;
+    END
+  END raw_edge3_x[0]
+  PIN raw_edge3_x[10]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 204.960 0.560 205.520 ;
+    END
+  END raw_edge3_x[10]
+  PIN raw_edge3_x[11]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 206.080 0.560 206.640 ;
+    END
+  END raw_edge3_x[11]
+  PIN raw_edge3_x[12]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 207.200 0.560 207.760 ;
+    END
+  END raw_edge3_x[12]
+  PIN raw_edge3_x[13]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 208.320 0.560 208.880 ;
+    END
+  END raw_edge3_x[13]
+  PIN raw_edge3_x[14]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 209.440 0.560 210.000 ;
+    END
+  END raw_edge3_x[14]
+  PIN raw_edge3_x[15]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 210.560 0.560 211.120 ;
+    END
+  END raw_edge3_x[15]
+  PIN raw_edge3_x[16]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 211.680 0.560 212.240 ;
+    END
+  END raw_edge3_x[16]
+  PIN raw_edge3_x[17]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 212.800 0.560 213.360 ;
+    END
+  END raw_edge3_x[17]
+  PIN raw_edge3_x[18]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 213.920 0.560 214.480 ;
+    END
+  END raw_edge3_x[18]
+  PIN raw_edge3_x[19]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 215.040 0.560 215.600 ;
+    END
+  END raw_edge3_x[19]
+  PIN raw_edge3_x[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 194.880 0.560 195.440 ;
+    END
+  END raw_edge3_x[1]
+  PIN raw_edge3_x[20]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 216.160 0.560 216.720 ;
+    END
+  END raw_edge3_x[20]
+  PIN raw_edge3_x[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 196.000 0.560 196.560 ;
+    END
+  END raw_edge3_x[2]
+  PIN raw_edge3_x[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 197.120 0.560 197.680 ;
+    END
+  END raw_edge3_x[3]
+  PIN raw_edge3_x[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 198.240 0.560 198.800 ;
+    END
+  END raw_edge3_x[4]
+  PIN raw_edge3_x[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 199.360 0.560 199.920 ;
+    END
+  END raw_edge3_x[5]
+  PIN raw_edge3_x[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 1.102000 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 200.480 0.560 201.040 ;
+    END
+  END raw_edge3_x[6]
+  PIN raw_edge3_x[7]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 201.600 0.560 202.160 ;
+    END
+  END raw_edge3_x[7]
+  PIN raw_edge3_x[8]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 202.720 0.560 203.280 ;
+    END
+  END raw_edge3_x[8]
+  PIN raw_edge3_x[9]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 203.840 0.560 204.400 ;
+    END
+  END raw_edge3_x[9]
+  PIN raw_edge3_y[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 193.760 336.545 194.320 ;
+    END
+  END raw_edge3_y[0]
+  PIN raw_edge3_y[10]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 204.960 336.545 205.520 ;
+    END
+  END raw_edge3_y[10]
+  PIN raw_edge3_y[11]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 206.080 336.545 206.640 ;
+    END
+  END raw_edge3_y[11]
+  PIN raw_edge3_y[12]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 207.200 336.545 207.760 ;
+    END
+  END raw_edge3_y[12]
+  PIN raw_edge3_y[13]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 208.320 336.545 208.880 ;
+    END
+  END raw_edge3_y[13]
+  PIN raw_edge3_y[14]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 209.440 336.545 210.000 ;
+    END
+  END raw_edge3_y[14]
+  PIN raw_edge3_y[15]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 210.560 336.545 211.120 ;
+    END
+  END raw_edge3_y[15]
+  PIN raw_edge3_y[16]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 211.680 336.545 212.240 ;
+    END
+  END raw_edge3_y[16]
+  PIN raw_edge3_y[17]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 212.800 336.545 213.360 ;
+    END
+  END raw_edge3_y[17]
+  PIN raw_edge3_y[18]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 213.920 336.545 214.480 ;
+    END
+  END raw_edge3_y[18]
+  PIN raw_edge3_y[19]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 215.040 336.545 215.600 ;
+    END
+  END raw_edge3_y[19]
+  PIN raw_edge3_y[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 194.880 336.545 195.440 ;
+    END
+  END raw_edge3_y[1]
+  PIN raw_edge3_y[20]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 216.160 336.545 216.720 ;
+    END
+  END raw_edge3_y[20]
+  PIN raw_edge3_y[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 196.000 336.545 196.560 ;
+    END
+  END raw_edge3_y[2]
+  PIN raw_edge3_y[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 197.120 336.545 197.680 ;
+    END
+  END raw_edge3_y[3]
+  PIN raw_edge3_y[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 198.240 336.545 198.800 ;
+    END
+  END raw_edge3_y[4]
+  PIN raw_edge3_y[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 199.360 336.545 199.920 ;
+    END
+  END raw_edge3_y[5]
+  PIN raw_edge3_y[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 200.480 336.545 201.040 ;
+    END
+  END raw_edge3_y[6]
+  PIN raw_edge3_y[7]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 201.600 336.545 202.160 ;
+    END
+  END raw_edge3_y[7]
+  PIN raw_edge3_y[8]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 202.720 336.545 203.280 ;
+    END
+  END raw_edge3_y[8]
+  PIN raw_edge3_y[9]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 203.840 336.545 204.400 ;
+    END
+  END raw_edge3_y[9]
+  PIN rst_n
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 179.200 353.905 179.760 354.465 ;
+    END
+  END rst_n
+  PIN soft_rst
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 14.560 353.905 15.120 354.465 ;
+    END
+  END soft_rst
+  PIN spi_cs_n
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 226.240 353.905 226.800 354.465 ;
+    END
+  END spi_cs_n
+  PIN spi_miso
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 296.800 353.905 297.360 354.465 ;
+    END
+  END spi_miso
+  PIN spi_miso_oe
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 320.320 353.905 320.880 354.465 ;
+    END
+  END spi_miso_oe
+  PIN spi_mosi
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 273.280 353.905 273.840 354.465 ;
+    END
+  END spi_mosi
+  PIN spi_sclk
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 249.760 353.905 250.320 354.465 ;
+    END
+  END spi_sclk
+  PIN state_o[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 38.080 353.905 38.640 354.465 ;
+    END
+  END state_o[0]
+  PIN state_o[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 61.600 353.905 62.160 354.465 ;
+    END
+  END state_o[1]
+  PIN state_o[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 85.120 353.905 85.680 354.465 ;
+    END
+  END state_o[2]
+  PIN votes_in_phase_x[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 295.680 0.560 296.240 ;
+    END
+  END votes_in_phase_x[0]
+  PIN votes_in_phase_x[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 296.800 0.560 297.360 ;
+    END
+  END votes_in_phase_x[1]
+  PIN votes_in_phase_x[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 297.920 0.560 298.480 ;
+    END
+  END votes_in_phase_x[2]
+  PIN votes_in_phase_x[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 299.040 0.560 299.600 ;
+    END
+  END votes_in_phase_x[3]
+  PIN votes_in_phase_y[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 295.680 336.545 296.240 ;
+    END
+  END votes_in_phase_y[0]
+  PIN votes_in_phase_y[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 296.800 336.545 297.360 ;
+    END
+  END votes_in_phase_y[1]
+  PIN votes_in_phase_y[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 297.920 336.545 298.480 ;
+    END
+  END votes_in_phase_y[2]
+  PIN votes_in_phase_y[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 299.040 336.545 299.600 ;
+    END
+  END votes_in_phase_y[3]
+  PIN votes_out_phase_x[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 1.102000 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 300.160 0.560 300.720 ;
+    END
+  END votes_out_phase_x[0]
+  PIN votes_out_phase_x[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 301.280 0.560 301.840 ;
+    END
+  END votes_out_phase_x[1]
+  PIN votes_out_phase_x[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 302.400 0.560 302.960 ;
+    END
+  END votes_out_phase_x[2]
+  PIN votes_out_phase_x[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 303.520 0.560 304.080 ;
+    END
+  END votes_out_phase_x[3]
+  PIN votes_out_phase_y[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 300.160 336.545 300.720 ;
+    END
+  END votes_out_phase_y[0]
+  PIN votes_out_phase_y[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 301.280 336.545 301.840 ;
+    END
+  END votes_out_phase_y[1]
+  PIN votes_out_phase_y[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 302.400 336.545 302.960 ;
+    END
+  END votes_out_phase_y[2]
+  PIN votes_out_phase_y[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 335.985 303.520 336.545 304.080 ;
+    END
+  END votes_out_phase_y[3]
+  OBS
+      LAYER Nwell ;
+        RECT 6.290 15.250 329.710 337.550 ;
+      LAYER Metal1 ;
+        RECT 6.720 15.380 329.280 337.420 ;
+      LAYER Metal2 ;
+        RECT 2.940 353.605 14.260 354.340 ;
+        RECT 15.420 353.605 37.780 354.340 ;
+        RECT 38.940 353.605 61.300 354.340 ;
+        RECT 62.460 353.605 84.820 354.340 ;
+        RECT 85.980 353.605 108.340 354.340 ;
+        RECT 109.500 353.605 131.860 354.340 ;
+        RECT 133.020 353.605 155.380 354.340 ;
+        RECT 156.540 353.605 178.900 354.340 ;
+        RECT 180.060 353.605 202.420 354.340 ;
+        RECT 203.580 353.605 225.940 354.340 ;
+        RECT 227.100 353.605 249.460 354.340 ;
+        RECT 250.620 353.605 272.980 354.340 ;
+        RECT 274.140 353.605 296.500 354.340 ;
+        RECT 297.660 353.605 320.020 354.340 ;
+        RECT 321.180 353.605 335.300 354.340 ;
+        RECT 2.940 15.490 335.300 353.605 ;
+      LAYER Metal3 ;
+        RECT 0.560 304.380 336.420 345.380 ;
+        RECT 0.860 48.980 335.685 304.380 ;
+        RECT 0.560 15.540 336.420 48.980 ;
+      LAYER Metal4 ;
+        RECT 1.260 18.010 21.940 312.390 ;
+        RECT 24.140 18.010 25.240 312.390 ;
+        RECT 27.440 18.010 175.540 312.390 ;
+        RECT 177.740 18.010 178.840 312.390 ;
+        RECT 181.040 18.010 335.860 312.390 ;
+      LAYER Metal5 ;
+        RECT 4.540 190.210 330.900 292.270 ;
+        RECT 4.540 187.410 6.120 190.210 ;
+        RECT 329.880 187.410 330.900 190.210 ;
+        RECT 4.540 186.910 330.900 187.410 ;
+        RECT 4.540 184.110 6.120 186.910 ;
+        RECT 329.880 184.110 330.900 186.910 ;
+        RECT 4.540 49.730 330.900 184.110 ;
+  END
+END spi_regs
+END LIBRARY
+

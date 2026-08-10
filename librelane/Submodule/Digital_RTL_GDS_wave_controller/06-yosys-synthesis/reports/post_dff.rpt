@@ -1,0 +1,41 @@
+146. Printing statistics.
+
+=== wave_controller ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     2454        - wires
+     2793        - wire bits
+       42        - public wires
+      282        - public wire bits
+       27        - ports
+      229        - port bits
+     2684 9.72E+03 cells
+      813        -   $_ANDNOT_
+       52        -   $_AND_
+      370        -   $_MUX_
+       36        -   $_NAND_
+      172        -   $_NOR_
+      151        -   $_NOT_
+      152        -   $_ORNOT_
+      300        -   $_OR_
+      101        -   $_XNOR_
+      407        -   $_XOR_
+      127 9.48E+03   gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
+        3  237.082   gf180mcu_fd_sc_mcu7t5v0__dffsnq_1
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+
+   Chip area for module '\wave_controller': 9715.955200
+     of which used for sequential elements: 9715.955200 (100.00%)
+

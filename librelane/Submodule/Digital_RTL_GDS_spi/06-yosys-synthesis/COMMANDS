@@ -1,0 +1,1 @@
+yosys -y /usr/local/lib/python3.12/dist-packages/librelane/scripts/pyosys/synthesize.py -- --config-in /workspace/librelane/runs/RUN_2026-08-10_00-37-52/06-yosys-synthesis/config.json --extra-in /workspace/librelane/runs/RUN_2026-08-10_00-37-52/06-yosys-synthesis/extra.json --output /workspace/librelane/runs/RUN_2026-08-10_00-37-52/06-yosys-synthesis/spi_regs.nl.v

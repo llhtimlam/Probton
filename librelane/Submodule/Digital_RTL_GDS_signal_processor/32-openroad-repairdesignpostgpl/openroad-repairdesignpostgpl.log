@@ -1,0 +1,78 @@
+Reading timing models for corner max_ss_125C_3v00…
+Reading timing library for the 'max_ss_125C_3v00' corner at '/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__ss_125C_3v00.lib'…
+Reading timing models for corner min_ff_n40C_3v60…
+Reading timing library for the 'min_ff_n40C_3v60' corner at '/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__ff_n40C_3v60.lib'…
+Reading timing models for corner nom_tt_025C_3v30…
+Reading timing library for the 'nom_tt_025C_3v30' corner at '/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib'…
+Reading OpenROAD database at '/workspace/librelane/runs/RUN_2026-08-10_00-05-58/28-openroad-globalplacement/signal_processor.odb'…
+Reading design constraints file at '/usr/local/lib/python3.12/dist-packages/librelane/scripts/base.sdc'…
+[INFO] Using clock clk…
+[INFO] Setting output delay to: 40
+[INFO] Setting input delay to: 40
+[INFO] Setting load to: 0.07291
+[INFO] Setting clock uncertainty to: 0.25
+[INFO] Setting clock transition to: 0.15
+[INFO] Setting timing derate to: 5%
+[INFO RSZ-0027] Inserted 5 gf180mcu_fd_sc_mcu7t5v0__buf_1 input buffers.
+[INFO RSZ-0028] Inserted 15 gf180mcu_fd_sc_mcu7t5v0__buf_1 output buffers.
++ repair_design -verbose -max_wire_length 0 -slew_margin 20 -cap_margin 20
+Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------------------
+        0 |     +0.0% |       0 |       0 |             0 |       175
+       10 |     +0.0% |       0 |       0 |             0 |       165
+       20 |     +0.0% |       0 |       0 |             0 |       155
+       30 |     +0.0% |       0 |       0 |             0 |       145
+       40 |     +0.0% |       0 |       0 |             0 |       135
+       50 |     +2.5% |       1 |       5 |             2 |       125
+       60 |     +2.5% |       1 |       5 |             2 |       115
+       70 |     +3.0% |       2 |       6 |             3 |       105
+       80 |     +5.5% |       5 |       6 |             5 |        95
+       90 |     +5.7% |       6 |       6 |             5 |        85
+      100 |     +5.7% |       6 |       6 |             5 |        75
+      110 |     +6.1% |      11 |       6 |             5 |        65
+      120 |     +7.0% |      21 |       6 |             5 |        55
+      130 |     +7.0% |      21 |       6 |             5 |        45
+      140 |     +7.0% |      21 |       6 |             5 |        35
+      150 |     +7.0% |      21 |       6 |             5 |        25
+      160 |     +7.0% |      21 |       6 |             5 |        15
+      170 |    +17.5% |      21 |      31 |             7 |         5
+    final |    +17.5% |      21 |      31 |             7 |         0
+---------------------------------------------------------------------
+[INFO RSZ-0034] Found 24 slew violations.
+[INFO RSZ-0035] Found 3 fanout violations.
+[INFO RSZ-0039] Resized 21 instances.
+[INFO RSZ-0038] Inserted 31 buffers in 7 nets.
+[WARNING RSZ-0020] found 2 floating nets.
+ VDD
+ VSS
++ detailed_placement -max_displacement  500 100 
+Placement Analysis
+---------------------------------
+total displacement       1322.8 u
+average displacement        3.6 u
+max displacement           27.9 u
+original HPWL            4431.8 u
+legalized HPWL           5265.5 u
+delta HPWL                   19 %
+
+[INFO DPL-0020] Mirrored 72 instances
+[INFO DPL-0021] HPWL before            5265.5 u
+[INFO DPL-0022] HPWL after             5105.2 u
+[INFO DPL-0023] HPWL delta               -3.0 %
+Setting global connections for newly added cells…
+[INFO] Setting global connections...
+[INFO ODB-0403] 204 connections made, 0 conflicts skipped.
+Updating metrics…
+Cell type report:                       Count       Area
+  Endcap cell                              64     280.99
+  Tap cell                                102     447.82
+  Timing Repair Buffer                     51    1005.40
+  Inverter                                  9      79.03
+  Sequential cell                          41    3060.11
+  Multi-Input combinational cell           99    1898.85
+  Total                                   366    6772.19
+Writing OpenROAD database to '/workspace/librelane/runs/RUN_2026-08-10_00-05-58/32-openroad-repairdesignpostgpl/signal_processor.odb'…
+Writing netlist to '/workspace/librelane/runs/RUN_2026-08-10_00-05-58/32-openroad-repairdesignpostgpl/signal_processor.nl.v'…
+Writing powered netlist to '/workspace/librelane/runs/RUN_2026-08-10_00-05-58/32-openroad-repairdesignpostgpl/signal_processor.pnl.v'…
+Writing layout to '/workspace/librelane/runs/RUN_2026-08-10_00-05-58/32-openroad-repairdesignpostgpl/signal_processor.def'…
+Writing timing constraints to '/workspace/librelane/runs/RUN_2026-08-10_00-05-58/32-openroad-repairdesignpostgpl/signal_processor.sdc'…

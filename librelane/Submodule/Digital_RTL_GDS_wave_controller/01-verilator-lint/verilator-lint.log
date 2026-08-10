@@ -1,0 +1,13 @@
+%Warning-UNUSEDSIGNAL: /workspace/src/wave_controller.sv:148:18: Bits of signal are not used: 'raw_delta'[18:0]
+                                                               : ... note: In instance 'wave_controller'
+  148 |     logic [20:0] raw_delta;
+      |                  ^~~~~~~~~
+                       ... For warning description see https://verilator.org/warn/UNUSEDSIGNAL?v=5.050
+                       ... Use "/* verilator lint_off UNUSEDSIGNAL */" and lint_on around source to disable this message.
+%Warning-UNUSEDSIGNAL: /workspace/src/wave_controller.sv:349:27: Bits of signal are not used: 'ref_phase'[19:0]
+                                                               : ... note: In instance 'wave_controller'
+  349 |     logic unsigned [20:0] ref_phase;
+      |                           ^~~~~~~~~
+- V e r i l a t i o n   R e p o r t: Verilator 5.050 2026-07-01 rev v5.050
+- Verilator: Built from 0.419 MB sources in 318 modules, into 0.052 MB in 3 C++ files needing 0.000 MB
+- Verilator: Walltime 0.094 s (elab=0.012, cvt=0.019, bld=0.000); cpu 0.041 s on 1 threads; allocated 37.684 MB

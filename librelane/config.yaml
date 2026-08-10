@@ -2,10 +2,10 @@ meta:
   version: 3
   flow: Classic
 
-DESIGN_NAME: chip_core
+DESIGN_NAME: digital_domain
 
 VERILOG_FILES:
-  - dir::../src/chip_core.sv
+  - dir::../src/digital_domain.sv
 
 CLOCK_PORT: clk
 CLOCK_NET: clk
@@ -37,47 +37,16 @@ LIB:
 # Route congestion
 GRT_ALLOW_CONGESTION: true
 
-DIE_AREA: [0, 0.0, 1117.5, 558.75]
-
 # Optional: keep power nets (good practice)
 VDD_NETS:
   - VDD
 GND_NETS:
   - VSS
 
+DIE_AREA: [0, 0.0, 1117.5, 318.75]
+
 # Pin allocation
 "IO_PIN_ORDER_CFG": "dir::pin_order.cfg"
 "ERRORS_ON_UNMATCHED_IO": "none"
-"DPL_CELL_PADDING": 2
-IGNORE_DISCONNECTED_MODULES:
-  - "analog_block"
-
-# Area reserve for Analog
-PDN_HORIZONTAL_HALO: 10
-PDN_VERTICAL_HALO:   10
-
-FP_MACRO_HORIZONTAL_HALO: 10
-FP_MACRO_VERTICAL_HALO: 10
-
-# Manual Placement for Analog
-MACROS:
-  analog_block:
-    gds:
-      - dir::analog_block.gds
-    lef:
-      - dir::analog_block.lef
-    vh:
-      - dir::../src/analog_macro.sv
-    instances:
-      "analog_block_inst":
-        location: [318.75, 10.0]
-        orientation: N
-
-# Ignore Macro
-LVS_IGNORE_CELLS:
-  - "analog_block"
-
-PDN_MACRO_CONNECTIONS:
-- "analog_block_inst VDD VSS VDD VSS"
 
 PDN_CFG: dir::pdn_cfg.tcl

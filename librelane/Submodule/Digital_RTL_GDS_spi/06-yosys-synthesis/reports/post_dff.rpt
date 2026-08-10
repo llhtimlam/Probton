@@ -1,0 +1,41 @@
+116. Printing statistics.
+
+=== spi_regs ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     1497        - wires
+     1956        - wire bits
+       66        - public wires
+      523        - public wire bits
+       50        - ports
+      470        - port bits
+     1646 1.59E+04 cells
+      539        -   $_ANDNOT_
+        6        -   $_AND_
+      217        -   $_MUX_
+       43        -   $_NAND_
+        1        -   $_NOR_
+        4        -   $_NOT_
+       26        -   $_ORNOT_
+      590        -   $_OR_
+        2        -   $_XNOR_
+        5        -   $_XOR_
+      211 1.57E+04   gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
+        2  158.054   gf180mcu_fd_sc_mcu7t5v0__dffsnq_1
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+
+   Chip area for module '\spi_regs': 15906.419200
+     of which used for sequential elements: 15906.419200 (100.00%)
+

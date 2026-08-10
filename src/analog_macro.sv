@@ -5,8 +5,8 @@
 module analog_block (
     input  wire       clk,
     input  wire       read_en,
-    input  wire       mems_drv_x,
-    input  wire       mems_drv_y,
+    input  wire       ref_wave_x,
+    input  wire       ref_wave_y,
     output wire       comp_x,
     output wire       comp_y,
     
@@ -35,7 +35,7 @@ module analog_block (
     (* keep_hierarchy *)
     analog_wave_mixer analog_wave_mixer_x_inst (
         .ain (analog_readout_output),
-        .aref(mems_drv_x),
+        .aref(ref_wave_x),
         .aout(analog_error_x_output),
         .vdd (VDD),
         .vss (VSS)
@@ -44,7 +44,7 @@ module analog_block (
     (* keep_hierarchy *)
     analog_wave_mixer analog_wave_mixer_y_inst (
         .ain (analog_readout_output),
-        .aref(mems_drv_y),
+        .aref(ref_wave_y),
         .aout(analog_error_y_output),
         .vdd (VDD),
         .vss (VSS)

@@ -1,0 +1,1385 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.67 (git sha1 2d1509d1b, Release, GNU /usr/bin/c++ 13.3.0)
+
+1. Executing Liberty frontend: /foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib
+Imported 229 cell types from liberty file.
+[INFO] Using SDC file '/workspace/librelane/runs/RUN_2026-08-10_00-37-52/06-yosys-synthesis/synthesis.abc.sdc' for ABC…wtaf
+
+2. Executing Verilog-2005 frontend: /workspace/src/spi.sv
+Parsing SystemVerilog input from `/workspace/src/spi.sv' to AST representation.
+Storing AST representation for module `$abstract\spi_regs'.
+Successfully finished Verilog frontend.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+4. Executing AST frontend in derive mode using pre-parsed AST for module `\spi_regs'.
+Generating RTLIL representation for module `\spi_regs'.
+
+4.1. Analyzing design hierarchy..
+Top module:  \spi_regs
+
+4.2. Analyzing design hierarchy..
+Top module:  \spi_regs
+Removing unused module `$abstract\spi_regs'.
+Removed 1 unused modules.
+Renaming module spi_regs to spi_regs.
+
+5. Executing ATTRMAP pass (move or copy attributes).
+
+6. Executing HIERARCHY pass (managing design hierarchy).
+
+6.1. Analyzing design hierarchy..
+Top module:  \spi_regs
+
+6.2. Analyzing design hierarchy..
+Top module:  \spi_regs
+Removed 0 unused modules.
+
+7. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+8. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/workspace/src/spi.sv:246$18 in module spi_regs.
+Removed 1 dead cases from process $proc$/workspace/src/spi.sv:191$9 in module spi_regs.
+Marked 4 switch rules as full_case in process $proc$/workspace/src/spi.sv:191$9 in module spi_regs.
+Marked 1 switch rules as full_case in process $proc$/workspace/src/spi.sv:166$3 in module spi_regs.
+Marked 1 switch rules as full_case in process $proc$/workspace/src/spi.sv:150$1 in module spi_regs.
+Removed a total of 1 dead cases.
+
+9. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 7 redundant assignments.
+Promoted 1 assignment to connection.
+
+10. Executing PROC_INIT pass (extract init attributes).
+
+11. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `\spi_regs.$proc$/workspace/src/spi.sv:246$18'.
+Found async reset \rst_n in `\spi_regs.$proc$/workspace/src/spi.sv:191$9'.
+Found async reset \rst_n in `\spi_regs.$proc$/workspace/src/spi.sv:166$3'.
+Found async reset \rst_n in `\spi_regs.$proc$/workspace/src/spi.sv:150$1'.
+
+12. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~10 debug messages>
+
+13. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\spi_regs.$proc$/workspace/src/spi.sv:311$20'.
+     1/1: $1\reg_rd_data[7:0]
+Creating decoders for process `\spi_regs.$proc$/workspace/src/spi.sv:246$18'.
+     1/26: $0\cfg_phase270_offset_y[20:0] [20:16]
+     2/26: $0\cfg_phase270_offset_y[20:0] [15:8]
+     3/26: $0\cfg_phase270_offset_y[20:0] [7:0]
+     4/26: $0\cfg_phase90_offset_y[20:0] [15:8]
+     5/26: $0\cfg_phase90_offset_y[20:0] [7:0]
+     6/26: $0\cfg_phase0_offset_y[20:0] [15:8]
+     7/26: $0\cfg_phase0_offset_y[20:0] [7:0]
+     8/26: $0\cfg_phase270_offset_x[20:0] [15:8]
+     9/26: $0\cfg_phase270_offset_x[20:0] [7:0]
+    10/26: $0\cfg_phase90_offset_x[20:0] [15:8]
+    11/26: $0\cfg_phase90_offset_x[20:0] [7:0]
+    12/26: $0\cfg_phase0_offset_x[20:0] [15:8]
+    13/26: $0\cfg_phase0_offset_x[20:0] [7:0]
+    14/26: $0\cfg_f_MEMS_fcw_y[15:0] [7:0]
+    15/26: $0\cfg_f_MEMS_fcw_x[15:0] [7:0]
+    16/26: $0\phase_offset_imported[0:0]
+    17/26: $0\cfg_done[0:0]
+    18/26: $0\boot_complete[0:0]
+    19/26: $0\cfg_phase90_offset_y[20:0] [20:16]
+    20/26: $0\cfg_phase0_offset_y[20:0] [20:16]
+    21/26: $0\cfg_phase270_offset_x[20:0] [20:16]
+    22/26: $0\cfg_phase90_offset_x[20:0] [20:16]
+    23/26: $0\cfg_phase0_offset_x[20:0] [20:16]
+    24/26: $0\cfg_f_MEMS_fcw_y[15:0] [15:8]
+    25/26: $0\cfg_f_MEMS_fcw_x[15:0] [15:8]
+    26/26: $0\soft_rst[0:0]
+Creating decoders for process `\spi_regs.$proc$/workspace/src/spi.sv:191$9'.
+     1/10: $0\spi_miso_oe[0:0]
+     2/10: $0\reg_wr_en[0:0]
+     3/10: $0\reg_wr_data[7:0]
+     4/10: $0\reg_wr_addr[6:0]
+     5/10: $0\tx_shift[7:0]
+     6/10: $0\rx_shift[7:0]
+     7/10: $0\spi_addr[6:0]
+     8/10: $0\rw_n[0:0]
+     9/10: $0\bit_cnt[2:0]
+    10/10: $0\spi_state[0:0]
+Creating decoders for process `\spi_regs.$proc$/workspace/src/spi.sv:166$3'.
+     1/1: $0\sclk_d[0:0]
+Creating decoders for process `\spi_regs.$proc$/workspace/src/spi.sv:150$1'.
+     1/3: $0\mosi_sync[1:0]
+     2/3: $0\sclk_sync[1:0]
+     3/3: $0\cs_sync[1:0]
+
+14. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\spi_regs.\reg_rd_data' from process `\spi_regs.$proc$/workspace/src/spi.sv:311$20'.
+
+15. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\spi_regs.\cfg_f_MEMS_fcw_x' using process `\spi_regs.$proc$/workspace/src/spi.sv:246$18'.
+  created $adff cell `$procdff$569' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\cfg_f_MEMS_fcw_y' using process `\spi_regs.$proc$/workspace/src/spi.sv:246$18'.
+  created $adff cell `$procdff$574' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\cfg_phase0_offset_x' using process `\spi_regs.$proc$/workspace/src/spi.sv:246$18'.
+  created $adff cell `$procdff$579' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\cfg_phase90_offset_x' using process `\spi_regs.$proc$/workspace/src/spi.sv:246$18'.
+  created $adff cell `$procdff$584' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\cfg_phase270_offset_x' using process `\spi_regs.$proc$/workspace/src/spi.sv:246$18'.
+  created $adff cell `$procdff$589' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\cfg_phase0_offset_y' using process `\spi_regs.$proc$/workspace/src/spi.sv:246$18'.
+  created $adff cell `$procdff$594' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\cfg_phase90_offset_y' using process `\spi_regs.$proc$/workspace/src/spi.sv:246$18'.
+  created $adff cell `$procdff$599' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\cfg_phase270_offset_y' using process `\spi_regs.$proc$/workspace/src/spi.sv:246$18'.
+  created $adff cell `$procdff$604' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\boot_complete' using process `\spi_regs.$proc$/workspace/src/spi.sv:246$18'.
+  created $adff cell `$procdff$609' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\cfg_done' using process `\spi_regs.$proc$/workspace/src/spi.sv:246$18'.
+  created $adff cell `$procdff$614' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\phase_offset_imported' using process `\spi_regs.$proc$/workspace/src/spi.sv:246$18'.
+  created $adff cell `$procdff$619' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\soft_rst' using process `\spi_regs.$proc$/workspace/src/spi.sv:246$18'.
+  created $adff cell `$procdff$624' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\spi_miso_oe' using process `\spi_regs.$proc$/workspace/src/spi.sv:191$9'.
+  created $adff cell `$procdff$629' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\spi_state' using process `\spi_regs.$proc$/workspace/src/spi.sv:191$9'.
+  created $adff cell `$procdff$634' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\bit_cnt' using process `\spi_regs.$proc$/workspace/src/spi.sv:191$9'.
+  created $adff cell `$procdff$639' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\rw_n' using process `\spi_regs.$proc$/workspace/src/spi.sv:191$9'.
+  created $adff cell `$procdff$644' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\spi_addr' using process `\spi_regs.$proc$/workspace/src/spi.sv:191$9'.
+  created $adff cell `$procdff$649' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\rx_shift' using process `\spi_regs.$proc$/workspace/src/spi.sv:191$9'.
+  created $adff cell `$procdff$654' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\tx_shift' using process `\spi_regs.$proc$/workspace/src/spi.sv:191$9'.
+  created $adff cell `$procdff$659' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\reg_wr_en' using process `\spi_regs.$proc$/workspace/src/spi.sv:191$9'.
+  created $adff cell `$procdff$664' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\reg_wr_addr' using process `\spi_regs.$proc$/workspace/src/spi.sv:191$9'.
+  created $adff cell `$procdff$669' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\reg_wr_data' using process `\spi_regs.$proc$/workspace/src/spi.sv:191$9'.
+  created $adff cell `$procdff$674' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\sclk_d' using process `\spi_regs.$proc$/workspace/src/spi.sv:166$3'.
+  created $adff cell `$procdff$679' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\cs_sync' using process `\spi_regs.$proc$/workspace/src/spi.sv:150$1'.
+  created $adff cell `$procdff$684' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\sclk_sync' using process `\spi_regs.$proc$/workspace/src/spi.sv:150$1'.
+  created $adff cell `$procdff$689' with positive edge clock and positive level reset.
+Creating register for signal `\spi_regs.\mosi_sync' using process `\spi_regs.$proc$/workspace/src/spi.sv:150$1'.
+  created $adff cell `$procdff$694' with positive edge clock and positive level reset.
+
+16. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+17. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\spi_regs.$proc$/workspace/src/spi.sv:311$20'.
+Removing empty process `spi_regs.$proc$/workspace/src/spi.sv:311$20'.
+Found and cleaned up 2 empty switches in `\spi_regs.$proc$/workspace/src/spi.sv:246$18'.
+Removing empty process `spi_regs.$proc$/workspace/src/spi.sv:246$18'.
+Found and cleaned up 7 empty switches in `\spi_regs.$proc$/workspace/src/spi.sv:191$9'.
+Removing empty process `spi_regs.$proc$/workspace/src/spi.sv:191$9'.
+Removing empty process `spi_regs.$proc$/workspace/src/spi.sv:166$3'.
+Removing empty process `spi_regs.$proc$/workspace/src/spi.sv:150$1'.
+Cleaned up 10 empty switches.
+
+18. Executing CHECK pass (checking for obvious problems).
+Checking module spi_regs...
+Found and reported 0 problems.
+
+19. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_regs.
+<suppressed ~63 debug messages>
+
+20. Executing FLATTEN pass (flatten design).
+
+21. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_regs.
+
+22. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_regs..
+Removed 32 unused cells and 163 unused wires.
+<suppressed ~33 debug messages>
+
+23. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_regs.
+
+24. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_regs'.
+Computing hashes of 220 cells of `\spi_regs'.
+Finding duplicate cells in `\spi_regs'.
+Computing hashes of 217 cells of `\spi_regs'.
+Finding duplicate cells in `\spi_regs'.
+<suppressed ~9 debug messages>
+Removed a total of 3 cells.
+
+25. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_regs..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port B of cell $procmux$556: \spi_state -> 1'1
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~123 debug messages>
+
+26. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_regs.
+  Optimizing cells in module \spi_regs.
+Performed a total of 1 changes.
+
+27. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_regs'.
+Computing hashes of 216 cells of `\spi_regs'.
+Finding duplicate cells in `\spi_regs'.
+Removed a total of 0 cells.
+
+28. Executing OPT_DFF pass (perform DFF optimizations).
+
+29. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_regs..
+Removed 0 unused cells and 4 unused wires.
+<suppressed ~1 debug messages>
+
+30. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_regs.
+
+31. Rerunning OPT passes. (Maybe there is more to do…)
+
+32. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_regs..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~122 debug messages>
+
+33. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_regs.
+Performed a total of 0 changes.
+
+34. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_regs'.
+Computing hashes of 216 cells of `\spi_regs'.
+Finding duplicate cells in `\spi_regs'.
+Removed a total of 0 cells.
+
+35. Executing OPT_DFF pass (perform DFF optimizations).
+
+36. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_regs..
+
+37. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_regs.
+
+38. Executing FSM pass (extract and optimize FSM).
+
+38.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+38.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+38.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+38.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_regs..
+
+38.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+38.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+38.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+38.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+39. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_regs.
+
+40. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_regs'.
+Computing hashes of 216 cells of `\spi_regs'.
+Finding duplicate cells in `\spi_regs'.
+Removed a total of 0 cells.
+
+41. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_regs..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~122 debug messages>
+
+42. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_regs.
+Performed a total of 0 changes.
+
+43. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_regs'.
+Computing hashes of 216 cells of `\spi_regs'.
+Finding duplicate cells in `\spi_regs'.
+Removed a total of 0 cells.
+
+44. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$674 ($adff) from module spi_regs (D = { \rx_shift [6:0] \mosi_sync [1] }, Q = \reg_wr_data).
+Adding EN signal on $procdff$669 ($adff) from module spi_regs (D = \spi_addr, Q = \reg_wr_addr).
+Adding EN signal on $procdff$659 ($adff) from module spi_regs (D = $procmux$512_Y, Q = \tx_shift).
+Adding EN signal on $procdff$654 ($adff) from module spi_regs (D = { \rx_shift [6:0] \mosi_sync [1] }, Q = \rx_shift).
+Adding EN signal on $procdff$649 ($adff) from module spi_regs (D = $procmux$525_Y, Q = \spi_addr).
+Adding EN signal on $procdff$644 ($adff) from module spi_regs (D = \rx_shift [6], Q = \rw_n).
+Adding EN signal on $procdff$639 ($adff) from module spi_regs (D = $0\bit_cnt[2:0], Q = \bit_cnt).
+Adding EN signal on $procdff$634 ($adff) from module spi_regs (D = $0\spi_state[0:0], Q = \spi_state).
+Adding EN signal on $procdff$619 ($adff) from module spi_regs (D = \reg_wr_data [2], Q = \phase_offset_imported).
+Adding EN signal on $procdff$614 ($adff) from module spi_regs (D = \reg_wr_data [1], Q = \cfg_done).
+Adding EN signal on $procdff$609 ($adff) from module spi_regs (D = \reg_wr_data [0], Q = \boot_complete).
+Adding EN signal on $procdff$604 ($adff) from module spi_regs (D = \reg_wr_data [4:0], Q = \cfg_phase270_offset_y [20:16]).
+Adding EN signal on $procdff$604 ($adff) from module spi_regs (D = \reg_wr_data, Q = \cfg_phase270_offset_y [15:8]).
+Adding EN signal on $procdff$604 ($adff) from module spi_regs (D = \reg_wr_data, Q = \cfg_phase270_offset_y [7:0]).
+Adding EN signal on $procdff$599 ($adff) from module spi_regs (D = \reg_wr_data, Q = \cfg_phase90_offset_y [15:8]).
+Adding EN signal on $procdff$599 ($adff) from module spi_regs (D = \reg_wr_data, Q = \cfg_phase90_offset_y [7:0]).
+Adding EN signal on $procdff$599 ($adff) from module spi_regs (D = \reg_wr_data [4:0], Q = \cfg_phase90_offset_y [20:16]).
+Adding EN signal on $procdff$594 ($adff) from module spi_regs (D = \reg_wr_data, Q = \cfg_phase0_offset_y [15:8]).
+Adding EN signal on $procdff$594 ($adff) from module spi_regs (D = \reg_wr_data, Q = \cfg_phase0_offset_y [7:0]).
+Adding EN signal on $procdff$594 ($adff) from module spi_regs (D = \reg_wr_data [4:0], Q = \cfg_phase0_offset_y [20:16]).
+Adding EN signal on $procdff$589 ($adff) from module spi_regs (D = \reg_wr_data, Q = \cfg_phase270_offset_x [15:8]).
+Adding EN signal on $procdff$589 ($adff) from module spi_regs (D = \reg_wr_data, Q = \cfg_phase270_offset_x [7:0]).
+Adding EN signal on $procdff$589 ($adff) from module spi_regs (D = \reg_wr_data [4:0], Q = \cfg_phase270_offset_x [20:16]).
+Adding EN signal on $procdff$584 ($adff) from module spi_regs (D = \reg_wr_data, Q = \cfg_phase90_offset_x [15:8]).
+Adding EN signal on $procdff$584 ($adff) from module spi_regs (D = \reg_wr_data, Q = \cfg_phase90_offset_x [7:0]).
+Adding EN signal on $procdff$584 ($adff) from module spi_regs (D = \reg_wr_data [4:0], Q = \cfg_phase90_offset_x [20:16]).
+Adding EN signal on $procdff$579 ($adff) from module spi_regs (D = \reg_wr_data, Q = \cfg_phase0_offset_x [15:8]).
+Adding EN signal on $procdff$579 ($adff) from module spi_regs (D = \reg_wr_data, Q = \cfg_phase0_offset_x [7:0]).
+Adding EN signal on $procdff$579 ($adff) from module spi_regs (D = \reg_wr_data [4:0], Q = \cfg_phase0_offset_x [20:16]).
+Adding EN signal on $procdff$574 ($adff) from module spi_regs (D = \reg_wr_data, Q = \cfg_f_MEMS_fcw_y [7:0]).
+Adding EN signal on $procdff$574 ($adff) from module spi_regs (D = \reg_wr_data, Q = \cfg_f_MEMS_fcw_y [15:8]).
+Adding EN signal on $procdff$569 ($adff) from module spi_regs (D = \reg_wr_data, Q = \cfg_f_MEMS_fcw_x [7:0]).
+Adding EN signal on $procdff$569 ($adff) from module spi_regs (D = \reg_wr_data, Q = \cfg_f_MEMS_fcw_x [15:8]).
+
+45. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_regs..
+Removed 71 unused cells and 57 unused wires.
+<suppressed ~72 debug messages>
+
+46. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_regs.
+<suppressed ~3 debug messages>
+
+47. Rerunning OPT passes. (Maybe there is more to do…)
+
+48. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_regs..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~22 debug messages>
+
+49. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_regs.
+Performed a total of 0 changes.
+
+50. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_regs'.
+Computing hashes of 201 cells of `\spi_regs'.
+Finding duplicate cells in `\spi_regs'.
+Computing hashes of 191 cells of `\spi_regs'.
+Finding duplicate cells in `\spi_regs'.
+Computing hashes of 190 cells of `\spi_regs'.
+Finding duplicate cells in `\spi_regs'.
+<suppressed ~33 debug messages>
+Removed a total of 11 cells.
+
+51. Executing OPT_DFF pass (perform DFF optimizations).
+
+52. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_regs..
+Removed 0 unused cells and 11 unused wires.
+<suppressed ~1 debug messages>
+
+53. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_regs.
+
+54. Rerunning OPT passes. (Maybe there is more to do…)
+
+55. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_regs..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~22 debug messages>
+
+56. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_regs.
+Performed a total of 0 changes.
+
+57. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_regs'.
+Computing hashes of 190 cells of `\spi_regs'.
+Finding duplicate cells in `\spi_regs'.
+Removed a total of 0 cells.
+
+58. Executing OPT_DFF pass (perform DFF optimizations).
+
+59. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_regs..
+
+60. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_regs.
+
+61. Executing WREDUCE pass (reducing word size of cells).
+Removed top 1 bits (of 8) from FF cell spi_regs.$auto$ff.cc:337:slice$710 ($adffe).
+Removed top 1 bits (of 7) from port B of cell spi_regs.$procmux$37_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell spi_regs.$procmux$38_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell spi_regs.$procmux$39_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell spi_regs.$procmux$40_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell spi_regs.$procmux$41_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell spi_regs.$procmux$42_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell spi_regs.$procmux$43_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell spi_regs.$procmux$44_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell spi_regs.$procmux$45_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell spi_regs.$procmux$46_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell spi_regs.$procmux$47_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell spi_regs.$procmux$48_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell spi_regs.$procmux$49_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell spi_regs.$procmux$50_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell spi_regs.$procmux$51_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell spi_regs.$procmux$52_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell spi_regs.$procmux$53_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell spi_regs.$procmux$54_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell spi_regs.$procmux$55_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell spi_regs.$procmux$56_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell spi_regs.$procmux$57_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell spi_regs.$procmux$58_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell spi_regs.$procmux$59_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell spi_regs.$procmux$60_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell spi_regs.$procmux$61_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell spi_regs.$procmux$62_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell spi_regs.$procmux$63_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell spi_regs.$procmux$64_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell spi_regs.$procmux$65_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell spi_regs.$procmux$66_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell spi_regs.$procmux$67_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell spi_regs.$procmux$68_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell spi_regs.$procmux$69_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell spi_regs.$procmux$70_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell spi_regs.$procmux$71_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell spi_regs.$procmux$72_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell spi_regs.$procmux$73_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell spi_regs.$procmux$74_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell spi_regs.$procmux$75_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell spi_regs.$procmux$76_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell spi_regs.$procmux$77_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell spi_regs.$procmux$78_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell spi_regs.$procmux$79_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell spi_regs.$procmux$80_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell spi_regs.$procmux$81_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell spi_regs.$procmux$82_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell spi_regs.$procmux$83_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell spi_regs.$procmux$84_CMP0 ($eq).
+Removed top 4 bits (of 7) from port B of cell spi_regs.$procmux$85_CMP0 ($eq).
+Removed top 4 bits (of 7) from port B of cell spi_regs.$procmux$86_CMP0 ($eq).
+Removed top 4 bits (of 7) from port B of cell spi_regs.$procmux$87_CMP0 ($eq).
+Removed top 4 bits (of 7) from port B of cell spi_regs.$procmux$88_CMP0 ($eq).
+Removed top 5 bits (of 7) from port B of cell spi_regs.$procmux$89_CMP0 ($eq).
+Removed top 5 bits (of 7) from port B of cell spi_regs.$procmux$90_CMP0 ($eq).
+Removed top 6 bits (of 7) from port B of cell spi_regs.$procmux$91_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell spi_regs.$procmux$95_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell spi_regs.$procmux$102_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell spi_regs.$procmux$110_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell spi_regs.$procmux$120_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell spi_regs.$procmux$131_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell spi_regs.$procmux$144_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell spi_regs.$procmux$158_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell spi_regs.$procmux$174_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell spi_regs.$procmux$191_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell spi_regs.$procmux$210_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell spi_regs.$procmux$230_CMP0 ($eq).
+Removed top 4 bits (of 7) from port B of cell spi_regs.$procmux$252_CMP0 ($eq).
+Removed top 4 bits (of 7) from port B of cell spi_regs.$procmux$275_CMP0 ($eq).
+Removed top 5 bits (of 7) from port B of cell spi_regs.$procmux$300_CMP0 ($eq).
+Removed top 6 bits (of 7) from port B of cell spi_regs.$procmux$327_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell spi_regs.$procmux$351_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell spi_regs.$procmux$363_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell spi_regs.$procmux$378_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell spi_regs.$procmux$396_CMP0 ($eq).
+Removed top 4 bits (of 7) from port B of cell spi_regs.$procmux$417_CMP0 ($eq).
+Removed top 4 bits (of 7) from port B of cell spi_regs.$procmux$441_CMP0 ($eq).
+Removed top 5 bits (of 7) from port B of cell spi_regs.$procmux$467_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell spi_regs.$procmux$472_CMP0 ($eq).
+Removed top 1 bits (of 8) from wire spi_regs.rx_shift.
+
+62. Executing PEEPOPT pass (run peephole optimizers).
+
+63. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_regs..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+64. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module spi_regs:
+  creating $macc model for $add$/workspace/src/spi.sv:227$13 ($add).
+  creating $macc model for $add$/workspace/src/spi.sv:231$14 ($add).
+  creating $alu model for $macc $add$/workspace/src/spi.sv:231$14.
+  creating $alu model for $macc $add$/workspace/src/spi.sv:227$13.
+  creating $alu cell for $add$/workspace/src/spi.sv:227$13: $auto$alumacc.cc:512:replace_alu$813
+  creating $alu cell for $add$/workspace/src/spi.sv:231$14: $auto$alumacc.cc:512:replace_alu$816
+  created 2 $alu and 0 $macc cells.
+
+65. Executing SHARE pass (SAT-based resource sharing).
+
+66. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_regs.
+
+67. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_regs'.
+Computing hashes of 190 cells of `\spi_regs'.
+Finding duplicate cells in `\spi_regs'.
+Removed a total of 0 cells.
+
+68. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_regs..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~22 debug messages>
+
+69. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_regs.
+Performed a total of 0 changes.
+
+70. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_regs'.
+Computing hashes of 190 cells of `\spi_regs'.
+Finding duplicate cells in `\spi_regs'.
+Removed a total of 0 cells.
+
+71. Executing OPT_DFF pass (perform DFF optimizations).
+
+72. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_regs..
+
+73. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_regs.
+
+74. Executing MEMORY pass.
+
+74.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+74.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+74.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+74.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+74.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+74.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_regs..
+
+74.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+74.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+74.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_regs..
+
+74.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+75. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_regs..
+
+76. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_regs.
+<suppressed ~10 debug messages>
+
+77. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_regs'.
+Computing hashes of 186 cells of `\spi_regs'.
+Finding duplicate cells in `\spi_regs'.
+Removed a total of 0 cells.
+
+78. Executing OPT_DFF pass (perform DFF optimizations).
+
+79. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_regs..
+Removed 0 unused cells and 4 unused wires.
+<suppressed ~1 debug messages>
+
+80. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+81. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_regs.
+<suppressed ~1 debug messages>
+
+82. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_regs'.
+Computing hashes of 186 cells of `\spi_regs'.
+Finding duplicate cells in `\spi_regs'.
+Computing hashes of 185 cells of `\spi_regs'.
+Finding duplicate cells in `\spi_regs'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+83. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_regs..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~10 debug messages>
+
+84. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_regs.
+Performed a total of 0 changes.
+
+85. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_regs'.
+Computing hashes of 185 cells of `\spi_regs'.
+Finding duplicate cells in `\spi_regs'.
+Removed a total of 0 cells.
+
+86. Executing OPT_SHARE pass.
+
+87. Executing OPT_DFF pass (perform DFF optimizations).
+
+88. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_regs..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+89. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_regs.
+
+90. Rerunning OPT passes. (Maybe there is more to do…)
+
+91. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_regs..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~10 debug messages>
+
+92. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_regs.
+Performed a total of 0 changes.
+
+93. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_regs'.
+Computing hashes of 185 cells of `\spi_regs'.
+Finding duplicate cells in `\spi_regs'.
+Removed a total of 0 cells.
+
+94. Executing OPT_SHARE pass.
+
+95. Executing OPT_DFF pass (perform DFF optimizations).
+
+96. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_regs..
+
+97. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_regs.
+
+98. Executing TECHMAP pass (map to technology primitives).
+
+98.1. Executing Verilog-2005 frontend: /foss/tools/yosys/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/foss/tools/yosys/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+98.2. Continuing TECHMAP pass.
+Using template $paramod$3ef7d3dd227da7627a99c5e5a6a4deb817573e39\_90_alu for cells of type $alu.
+Using template $paramod$103b4016182df467cceab67bcf3e18e6361ec0fd\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $adffe.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $pmux.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $adff.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000111 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000111 for cells of type $lcu.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000011 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000011 for cells of type $lcu.
+Using extmapper simplemap for cells of type $or.
+No more expansions possible.
+<suppressed ~596 debug messages>
+
+99. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_regs.
+<suppressed ~908 debug messages>
+
+100. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_regs'.
+Computing hashes of 2216 cells of `\spi_regs'.
+Finding duplicate cells in `\spi_regs'.
+Computing hashes of 1874 cells of `\spi_regs'.
+Finding duplicate cells in `\spi_regs'.
+Computing hashes of 1662 cells of `\spi_regs'.
+Finding duplicate cells in `\spi_regs'.
+Computing hashes of 1561 cells of `\spi_regs'.
+Finding duplicate cells in `\spi_regs'.
+<suppressed ~1965 debug messages>
+Removed a total of 655 cells.
+
+101. Executing OPT_DFF pass (perform DFF optimizations).
+
+102. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_regs..
+Removed 2 unused cells and 839 unused wires.
+<suppressed ~3 debug messages>
+
+103. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_regs.
+
+104. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_regs'.
+Computing hashes of 1559 cells of `\spi_regs'.
+Finding duplicate cells in `\spi_regs'.
+Removed a total of 0 cells.
+
+105. Executing OPT_DFF pass (perform DFF optimizations).
+
+106. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_regs..
+
+107. Executing ABC pass (technology mapping using ABC).
+
+107.1. Extracting gate netlist of module `\spi_regs' to `<abc-temp-dir>/input.blif'..
+
+107.1.1. Executed ABC.
+Extracted 1346 gates and 1848 wires to a netlist network with 501 inputs and 51 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: UC Berkeley, ABC 1.01 (compiled Jul 27 2026 18:12:25)
+ABC: abc 01> empty
+ABC: abc 01> source <abc-temp-dir>/abc.script
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+ABC: 
+ABC: YOSYS_ABC_DONE 
+
+107.1.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        6
+ABC RESULTS:            ANDNOT cells:      539
+ABC RESULTS:               MUX cells:       14
+ABC RESULTS:              NAND cells:       43
+ABC RESULTS:               NOR cells:        1
+ABC RESULTS:               NOT cells:        4
+ABC RESULTS:                OR cells:      590
+ABC RESULTS:             ORNOT cells:       26
+ABC RESULTS:              XNOR cells:        2
+ABC RESULTS:               XOR cells:        5
+ABC RESULTS:        internal signals:     1296
+ABC RESULTS:           input signals:      501
+ABC RESULTS:          output signals:       51
+Removing temp directory.
+Removing global temp directory.
+
+108. Executing OPT pass (performing simple optimizations).
+
+108.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_regs.
+<suppressed ~6 debug messages>
+
+108.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_regs'.
+Computing hashes of 1443 cells of `\spi_regs'.
+Finding duplicate cells in `\spi_regs'.
+Removed a total of 0 cells.
+
+108.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+108.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_regs..
+Removed 0 unused cells and 1283 unused wires.
+<suppressed ~4 debug messages>
+
+108.5. Finished fast OPT passes.
+
+109. Executing HIERARCHY pass (managing design hierarchy).
+
+109.1. Analyzing design hierarchy..
+Top module:  \spi_regs
+
+109.2. Analyzing design hierarchy..
+Top module:  \spi_regs
+Removed 0 unused modules.
+
+110. Executing CHECK pass (checking for obvious problems).
+Checking module spi_regs...
+Found and reported 0 problems.
+
+111. Printing statistics.
+
+=== spi_regs ===
+
+        +----------Local Count, excluding submodules.
+        | 
+     1295 wires
+     1761 wire bits
+       67 public wires
+      531 public wire bits
+       50 ports
+      470 port bits
+     1443 cells
+      539   $_ANDNOT_
+        6   $_AND_
+      203   $_DFFE_PN0P_
+        8   $_DFF_PN0_
+        2   $_DFF_PN1_
+       14   $_MUX_
+       43   $_NAND_
+        1   $_NOR_
+        4   $_NOT_
+       26   $_ORNOT_
+      590   $_OR_
+        2   $_XNOR_
+        5   $_XOR_
+
+112. Executing OPT pass (performing simple optimizations).
+
+112.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_regs.
+
+112.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_regs'.
+Computing hashes of 1443 cells of `\spi_regs'.
+Finding duplicate cells in `\spi_regs'.
+Removed a total of 0 cells.
+
+112.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_regs..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+112.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_regs.
+Performed a total of 0 changes.
+
+112.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_regs'.
+Computing hashes of 1443 cells of `\spi_regs'.
+Finding duplicate cells in `\spi_regs'.
+Removed a total of 0 cells.
+
+112.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+112.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_regs..
+
+112.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_regs.
+
+112.9. Finished fast OPT passes. (There is nothing left to do.)
+
+113. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_regs..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+{
+   "creator": "Yosys 0.67 (git sha1 2d1509d1b, Release, GNU /usr/bin/c++ 13.3.0)",
+   "invocation": "stat -json -liberty /workspace/librelane/runs/RUN_2026-08-10_00-37-52/tmp/867dbd473f4048f894a9f1af376fea55.lib ",
+   "modules": {
+      "\\spi_regs": {
+         "num_wires":         1294,
+         "num_wire_bits":     1753,
+         "num_pub_wires":     66,
+         "num_pub_wire_bits": 523,
+         "num_ports":         50,
+         "num_port_bits":     470,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         1443,
+         "num_submodules":       0,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 539,
+            "$_AND_": 6,
+            "$_DFFE_PN0P_": 203,
+            "$_DFF_PN0_": 8,
+            "$_DFF_PN1_": 2,
+            "$_MUX_": 14,
+            "$_NAND_": 43,
+            "$_NOR_": 1,
+            "$_NOT_": 4,
+            "$_ORNOT_": 26,
+            "$_OR_": 590,
+            "$_XNOR_": 2,
+            "$_XOR_": 5
+         }
+      }
+   },
+      "design": {
+         "num_wires":         1294,
+         "num_wire_bits":     1753,
+         "num_pub_wires":     66,
+         "num_pub_wire_bits": 523,
+         "num_ports":         50,
+         "num_port_bits":     470,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         1443,
+         "num_submodules":       0,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 539,
+            "$_AND_": 6,
+            "$_DFFE_PN0P_": 203,
+            "$_DFF_PN0_": 8,
+            "$_DFF_PN1_": 2,
+            "$_MUX_": 14,
+            "$_NAND_": 43,
+            "$_NOR_": 1,
+            "$_NOT_": 4,
+            "$_ORNOT_": 26,
+            "$_OR_": 590,
+            "$_XNOR_": 2,
+            "$_XOR_": 5
+         }
+      }
+}
+
+114. Printing statistics.
+
+=== spi_regs ===
+
+        +----------Local Count, excluding submodules.
+        | 
+     1294 wires
+     1753 wire bits
+       66 public wires
+      523 public wire bits
+       50 ports
+      470 port bits
+     1443 cells
+      539   $_ANDNOT_
+        6   $_AND_
+      203   $_DFFE_PN0P_
+        8   $_DFF_PN0_
+        2   $_DFF_PN1_
+       14   $_MUX_
+       43   $_NAND_
+        1   $_NOR_
+        4   $_NOT_
+       26   $_ORNOT_
+      590   $_OR_
+        2   $_XNOR_
+        5   $_XOR_
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_DFFE_PN0P_ is unknown!
+   Area for cell type $_DFF_PN0_ is unknown!
+   Area for cell type $_DFF_PN1_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+
+115. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell gf180mcu_fd_sc_mcu7t5v0__dffnq_1 (noninv, pins=3, area=65.86) is a direct match for cell type $_DFF_N_.
+  cell gf180mcu_fd_sc_mcu7t5v0__dffq_1 (noninv, pins=3, area=63.66) is a direct match for cell type $_DFF_P_.
+  cell gf180mcu_fd_sc_mcu7t5v0__dffnrnq_1 (noninv, pins=4, area=74.64) is a direct match for cell type $_DFF_NN0_.
+  cell gf180mcu_fd_sc_mcu7t5v0__dffnsnq_1 (noninv, pins=4, area=79.03) is a direct match for cell type $_DFF_NN1_.
+  cell gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 (noninv, pins=4, area=74.64) is a direct match for cell type $_DFF_PN0_.
+  cell gf180mcu_fd_sc_mcu7t5v0__dffsnq_1 (noninv, pins=4, area=79.03) is a direct match for cell type $_DFF_PN1_.
+  cell gf180mcu_fd_sc_mcu7t5v0__dffnrsnq_1 (noninv, pins=5, area=94.39) is a direct match for cell type $_DFFSR_NNN_.
+  cell gf180mcu_fd_sc_mcu7t5v0__dffrsnq_1 (noninv, pins=5, area=85.61) is a direct match for cell type $_DFFSR_PNN_.
+  final dff cell mappings:
+    \gf180mcu_fd_sc_mcu7t5v0__dffnq_1 _DFF_N_ (.CLKN( C), .D( D), .Q( Q));
+    \gf180mcu_fd_sc_mcu7t5v0__dffq_1 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+    \gf180mcu_fd_sc_mcu7t5v0__dffnrnq_1 _DFF_NN0_ (.CLKN( C), .D( D), .Q( Q), .RN( R));
+    \gf180mcu_fd_sc_mcu7t5v0__dffnsnq_1 _DFF_NN1_ (.CLKN( C), .D( D), .Q( Q), .SETN( R));
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RN( R));
+    \gf180mcu_fd_sc_mcu7t5v0__dffsnq_1 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SETN( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    unmapped dff cell: $_DFFE_NN_
+    unmapped dff cell: $_DFFE_NP_
+    unmapped dff cell: $_DFFE_PN_
+    unmapped dff cell: $_DFFE_PP_
+    \gf180mcu_fd_sc_mcu7t5v0__dffnrsnq_1 _DFFSR_NNN_ (.CLKN( C), .D( D), .Q( Q), .RN( R), .SETN( S));
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    \gf180mcu_fd_sc_mcu7t5v0__dffrsnq_1 _DFFSR_PNN_ (.CLK( C), .D( D), .Q( Q), .RN( R), .SETN( S));
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+115.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+Mapping DFF cells in module `\spi_regs':
+  mapped 211 $_DFF_PN0_ cells to \gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 cells.
+  mapped 2 $_DFF_PN1_ cells to \gf180mcu_fd_sc_mcu7t5v0__dffsnq_1 cells.
+{
+   "creator": "Yosys 0.67 (git sha1 2d1509d1b, Release, GNU /usr/bin/c++ 13.3.0)",
+   "invocation": "stat -json -liberty /workspace/librelane/runs/RUN_2026-08-10_00-37-52/tmp/867dbd473f4048f894a9f1af376fea55.lib ",
+   "modules": {
+      "\\spi_regs": {
+         "num_wires":         1497,
+         "num_wire_bits":     1956,
+         "num_pub_wires":     66,
+         "num_pub_wire_bits": 523,
+         "num_ports":         50,
+         "num_port_bits":     470,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         1646,
+         "num_submodules":       0,
+         "area":              15906.419200,
+         "sequential_area":    15906.419200,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 539,
+            "$_AND_": 6,
+            "$_MUX_": 217,
+            "$_NAND_": 43,
+            "$_NOR_": 1,
+            "$_NOT_": 4,
+            "$_ORNOT_": 26,
+            "$_OR_": 590,
+            "$_XNOR_": 2,
+            "$_XOR_": 5,
+            "gf180mcu_fd_sc_mcu7t5v0__dffrnq_1": 211,
+            "gf180mcu_fd_sc_mcu7t5v0__dffsnq_1": 2
+         }
+      }
+   },
+      "design": {
+         "num_wires":         1497,
+         "num_wire_bits":     1956,
+         "num_pub_wires":     66,
+         "num_pub_wire_bits": 523,
+         "num_ports":         50,
+         "num_port_bits":     470,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         1646,
+         "num_submodules":       0,
+         "area":              15906.419200,
+         "sequential_area":    15906.419200,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 539,
+            "$_AND_": 6,
+            "$_MUX_": 217,
+            "$_NAND_": 43,
+            "$_NOR_": 1,
+            "$_NOT_": 4,
+            "$_ORNOT_": 26,
+            "$_OR_": 590,
+            "$_XNOR_": 2,
+            "$_XOR_": 5,
+            "gf180mcu_fd_sc_mcu7t5v0__dffrnq_1": 211,
+            "gf180mcu_fd_sc_mcu7t5v0__dffsnq_1": 2
+         }
+      }
+}
+
+116. Printing statistics.
+
+=== spi_regs ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     1497        - wires
+     1956        - wire bits
+       66        - public wires
+      523        - public wire bits
+       50        - ports
+      470        - port bits
+     1646 1.59E+04 cells
+      539        -   $_ANDNOT_
+        6        -   $_AND_
+      217        -   $_MUX_
+       43        -   $_NAND_
+        1        -   $_NOR_
+        4        -   $_NOT_
+       26        -   $_ORNOT_
+      590        -   $_OR_
+        2        -   $_XNOR_
+        5        -   $_XOR_
+      211 1.57E+04   gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
+        2  158.054   gf180mcu_fd_sc_mcu7t5v0__dffsnq_1
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+
+   Chip area for module '\spi_regs': 15906.419200
+     of which used for sequential elements: 15906.419200 (100.00%)
+
+[INFO] Using generated ABC script '/workspace/librelane/runs/RUN_2026-08-10_00-37-52/06-yosys-synthesis/AREA_0.abc'…
+
+117. Executing ABC pass (technology mapping using ABC).
+
+117.1. Extracting gate netlist of module `\spi_regs' to `/tmp/yosys-abc-QyBuAK/input.blif'..
+
+117.1.1. Executed ABC.
+Extracted 1433 gates and 1943 wires to a netlist network with 510 inputs and 206 outputs.
+Running ABC script: /tmp/yosys-abc-QyBuAK/abc.script
+ABC: UC Berkeley, ABC 1.01 (compiled Jul 27 2026 18:12:25)
+ABC: abc 01> empty
+ABC: abc 01> source /tmp/yosys-abc-QyBuAK/abc.script
+ABC: + read_blif /tmp/yosys-abc-QyBuAK/input.blif 
+ABC: + read_scl /tmp/yosys-liberty-scl-cache/yosys_merged_52c3f2ae.scl 
+ABC: Warning: Detected 6 multi-output cells (for example, "gf180mcu_fd_sc_mcu7t5v0__addf_1").
+ABC: + read_constr -v /workspace/librelane/runs/RUN_2026-08-10_00-37-52/06-yosys-synthesis/synthesis.abc.sdc 
+ABC: Setting driving cell to be "gf180mcu_fd_sc_mcu7t5v0__inv_1/ZN".
+ABC: Setting output load to be 72.910004.
+ABC: + source /workspace/librelane/runs/RUN_2026-08-10_00-37-52/06-yosys-synthesis/AREA_0.abc 
+ABC: Error: The network is combinational.
+ABC: Cannot find the default PI driving cell (gf180mcu_fd_sc_mcu7t5v0__inv_1/ZN) in the library.
+ABC: WireLoad = "none"  Gates =    734 (  3.0 %)   Cap = 21.1 ff ( 10.9 %)   Area =    15412.50 ( 78.3 %)   Delay = 10893.30 ps  (  1.1 %)               
+ABC: Path  0 --      10 : 0    1 pi                                A =   0.00  Df =   0.0   -0.0 ps  S =   0.0 ps  Cin =  0.0 ff  Cout =   4.1 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --     720 : 1    3 gf180mcu_fd_sc_mcu7t5v0__clkinv_1 A =   8.78  Df = 226.2  -15.1 ps  S = 381.5 ps  Cin =  4.1 ff  Cout =  13.3 ff  Cmax = 349.5 ff  G =  322  
+ABC: Path  2 --     739 : 3   11 gf180mcu_fd_sc_mcu7t5v0__nor3_1   A =  17.56  Df =3694.4-2243.4 ps  S =5996.0 ps  Cin =  4.0 ff  Cout =  86.2 ff  Cmax = 122.2 ff  G = 2155  
+ABC: Path  3 --     740 : 4    8 gf180mcu_fd_sc_mcu7t5v0__nand4_1  A =  19.76  Df =4592.0-1572.0 ps  S =1992.8 ps  Cin =  3.9 ff  Cout =  34.8 ff  Cmax = 222.9 ff  G =  890  
+ABC: Path  4 --     742 : 2    3 gf180mcu_fd_sc_mcu7t5v0__nor2_1   A =  13.17  Df =5465.5-1988.2 ps  S = 946.0 ps  Cin =  4.3 ff  Cout =  13.4 ff  Cmax = 182.9 ff  G =  312  
+ABC: Path  5 --     744 : 2   21 gf180mcu_fd_sc_mcu7t5v0__nand2_1  A =  10.98  Df =7293.2-1508.4 ps  S =3680.0 ps  Cin =  4.6 ff  Cout = 138.2 ff  Cmax = 322.3 ff  G = 3033  
+ABC: Path  6 --     745 : 1    3 gf180mcu_fd_sc_mcu7t5v0__clkinv_1 A =   8.78  Df =9354.0-1717.3 ps  S =2289.8 ps  Cin =  4.1 ff  Cout =  82.0 ff  Cmax = 349.5 ff  G = 1989  
+ABC: Path  7 --    1246 : 2    1 gf180mcu_fd_sc_mcu7t5v0__nand2_1  A =  10.98  Df =9510.8-1171.4 ps  S = 570.4 ps  Cin =  4.6 ff  Cout =   4.7 ff  Cmax = 322.3 ff  G =  102  
+ABC: Path  8 --    1247 : 3    1 gf180mcu_fd_sc_mcu7t5v0__oai21_1  A =  17.56  Df =10893.3 -103.5 ps  S =3487.4 ps  Cin =  4.7 ff  Cout =  72.9 ff  Cmax = 181.9 ff  G = 1536  
+ABC: Start-point = pi9 (\sclk_sync_q).  End-point = po53 ($auto$rtlil.cc:3510:MuxGate$7050).
+ABC: netlist                       : i/o =  510/  206  lat =    0  nd =   734  edge =   2353  area =15413.52  delay = 8.00  lev = 8
+ABC: + write_blif /tmp/yosys-abc-QyBuAK/output.blif 
+ABC:                                                                                
+ABC: YOSYS_ABC_DONE 
+
+117.1.2. Re-integrating ABC results.
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__and2_1 cells:        4
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__and3_1 cells:        9
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__and4_1 cells:        6
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__aoi21_1 cells:       19
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__aoi221_1 cells:        6
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__aoi222_1 cells:       37
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__aoi22_1 cells:      170
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__clkinv_1 cells:       22
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__mux2_2 cells:      157
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__nand2_1 cells:       58
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__nand3_1 cells:       31
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__nand4_1 cells:       50
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__nor2_1 cells:      110
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__nor3_1 cells:        6
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__nor4_1 cells:        9
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__oai211_1 cells:        1
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__oai21_1 cells:       23
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__oai221_1 cells:        1
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__oai31_1 cells:        7
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__or2_1 cells:        1
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__or3_1 cells:        3
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__or4_1 cells:        2
+ABC RESULTS:   gf180mcu_fd_sc_mcu7t5v0__xor2_1 cells:        2
+ABC RESULTS:        internal signals:     1227
+ABC RESULTS:           input signals:      510
+ABC RESULTS:          output signals:      206
+Removing temp directory.
+Removing global temp directory.
+
+118. Executing SETUNDEF pass (replace undef values with defined constants).
+
+119. Executing HILOMAP pass (mapping to constant drivers).
+
+120. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+121. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_regs..
+Removed 0 unused cells and 1947 unused wires.
+<suppressed ~5 debug messages>
+
+122. Executing INSBUF pass (insert buffer cells for connected wires).
+
+123. Executing CHECK pass (checking for obvious problems).
+Checking module spi_regs...
+Found and reported 0 problems.
+{
+   "creator": "Yosys 0.67 (git sha1 2d1509d1b, Release, GNU /usr/bin/c++ 13.3.0)",
+   "invocation": "stat -json -liberty /workspace/librelane/runs/RUN_2026-08-10_00-37-52/tmp/867dbd473f4048f894a9f1af376fea55.lib ",
+   "modules": {
+      "\\spi_regs": {
+         "num_wires":         833,
+         "num_wire_bits":     1253,
+         "num_pub_wires":     99,
+         "num_pub_wire_bits": 519,
+         "num_ports":         50,
+         "num_port_bits":     470,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         947,
+         "num_submodules":       0,
+         "area":              31318.918400,
+         "sequential_area":    15906.419200,
+         "num_cells_by_type": {
+            "gf180mcu_fd_sc_mcu7t5v0__and2_1": 4,
+            "gf180mcu_fd_sc_mcu7t5v0__and3_1": 9,
+            "gf180mcu_fd_sc_mcu7t5v0__and4_1": 6,
+            "gf180mcu_fd_sc_mcu7t5v0__aoi21_1": 19,
+            "gf180mcu_fd_sc_mcu7t5v0__aoi221_1": 6,
+            "gf180mcu_fd_sc_mcu7t5v0__aoi222_1": 37,
+            "gf180mcu_fd_sc_mcu7t5v0__aoi22_1": 170,
+            "gf180mcu_fd_sc_mcu7t5v0__clkinv_1": 22,
+            "gf180mcu_fd_sc_mcu7t5v0__dffrnq_1": 211,
+            "gf180mcu_fd_sc_mcu7t5v0__dffsnq_1": 2,
+            "gf180mcu_fd_sc_mcu7t5v0__mux2_2": 157,
+            "gf180mcu_fd_sc_mcu7t5v0__nand2_1": 58,
+            "gf180mcu_fd_sc_mcu7t5v0__nand3_1": 31,
+            "gf180mcu_fd_sc_mcu7t5v0__nand4_1": 50,
+            "gf180mcu_fd_sc_mcu7t5v0__nor2_1": 110,
+            "gf180mcu_fd_sc_mcu7t5v0__nor3_1": 6,
+            "gf180mcu_fd_sc_mcu7t5v0__nor4_1": 9,
+            "gf180mcu_fd_sc_mcu7t5v0__oai211_1": 1,
+            "gf180mcu_fd_sc_mcu7t5v0__oai21_1": 23,
+            "gf180mcu_fd_sc_mcu7t5v0__oai221_1": 1,
+            "gf180mcu_fd_sc_mcu7t5v0__oai31_1": 7,
+            "gf180mcu_fd_sc_mcu7t5v0__or2_1": 1,
+            "gf180mcu_fd_sc_mcu7t5v0__or3_1": 3,
+            "gf180mcu_fd_sc_mcu7t5v0__or4_1": 2,
+            "gf180mcu_fd_sc_mcu7t5v0__xor2_1": 2
+         }
+      }
+   },
+      "design": {
+         "num_wires":         833,
+         "num_wire_bits":     1253,
+         "num_pub_wires":     99,
+         "num_pub_wire_bits": 519,
+         "num_ports":         50,
+         "num_port_bits":     470,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         947,
+         "num_submodules":       0,
+         "area":              31318.918400,
+         "sequential_area":    15906.419200,
+         "num_cells_by_type": {
+            "gf180mcu_fd_sc_mcu7t5v0__and2_1": 4,
+            "gf180mcu_fd_sc_mcu7t5v0__and3_1": 9,
+            "gf180mcu_fd_sc_mcu7t5v0__and4_1": 6,
+            "gf180mcu_fd_sc_mcu7t5v0__aoi21_1": 19,
+            "gf180mcu_fd_sc_mcu7t5v0__aoi221_1": 6,
+            "gf180mcu_fd_sc_mcu7t5v0__aoi222_1": 37,
+            "gf180mcu_fd_sc_mcu7t5v0__aoi22_1": 170,
+            "gf180mcu_fd_sc_mcu7t5v0__clkinv_1": 22,
+            "gf180mcu_fd_sc_mcu7t5v0__dffrnq_1": 211,
+            "gf180mcu_fd_sc_mcu7t5v0__dffsnq_1": 2,
+            "gf180mcu_fd_sc_mcu7t5v0__mux2_2": 157,
+            "gf180mcu_fd_sc_mcu7t5v0__nand2_1": 58,
+            "gf180mcu_fd_sc_mcu7t5v0__nand3_1": 31,
+            "gf180mcu_fd_sc_mcu7t5v0__nand4_1": 50,
+            "gf180mcu_fd_sc_mcu7t5v0__nor2_1": 110,
+            "gf180mcu_fd_sc_mcu7t5v0__nor3_1": 6,
+            "gf180mcu_fd_sc_mcu7t5v0__nor4_1": 9,
+            "gf180mcu_fd_sc_mcu7t5v0__oai211_1": 1,
+            "gf180mcu_fd_sc_mcu7t5v0__oai21_1": 23,
+            "gf180mcu_fd_sc_mcu7t5v0__oai221_1": 1,
+            "gf180mcu_fd_sc_mcu7t5v0__oai31_1": 7,
+            "gf180mcu_fd_sc_mcu7t5v0__or2_1": 1,
+            "gf180mcu_fd_sc_mcu7t5v0__or3_1": 3,
+            "gf180mcu_fd_sc_mcu7t5v0__or4_1": 2,
+            "gf180mcu_fd_sc_mcu7t5v0__xor2_1": 2
+         }
+      }
+}
+
+124. Printing statistics.
+
+=== spi_regs ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      833        - wires
+     1253        - wire bits
+       99        - public wires
+      519        - public wire bits
+       50        - ports
+      470        - port bits
+      947 3.13E+04 cells
+        4   70.246   gf180mcu_fd_sc_mcu7t5v0__and2_1
+        9  197.568   gf180mcu_fd_sc_mcu7t5v0__and3_1
+        6  144.883   gf180mcu_fd_sc_mcu7t5v0__and4_1
+       19   333.67   gf180mcu_fd_sc_mcu7t5v0__aoi21_1
+        6  144.883   gf180mcu_fd_sc_mcu7t5v0__aoi221_1
+       37 1.14E+03   gf180mcu_fd_sc_mcu7t5v0__aoi222_1
+      170 3.36E+03   gf180mcu_fd_sc_mcu7t5v0__aoi22_1
+       22  193.178   gf180mcu_fd_sc_mcu7t5v0__clkinv_1
+      211 1.57E+04   gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
+        2  158.054   gf180mcu_fd_sc_mcu7t5v0__dffsnq_1
+      157 5.17E+03   gf180mcu_fd_sc_mcu7t5v0__mux2_2
+       58  636.608   gf180mcu_fd_sc_mcu7t5v0__nand2_1
+       31  476.358   gf180mcu_fd_sc_mcu7t5v0__nand3_1
+       50   987.84   gf180mcu_fd_sc_mcu7t5v0__nand4_1
+      110 1.45E+03   gf180mcu_fd_sc_mcu7t5v0__nor2_1
+        6   105.37   gf180mcu_fd_sc_mcu7t5v0__nor3_1
+        9  197.568   gf180mcu_fd_sc_mcu7t5v0__nor4_1
+        1   21.952   gf180mcu_fd_sc_mcu7t5v0__oai211_1
+       23  403.917   gf180mcu_fd_sc_mcu7t5v0__oai21_1
+        1   26.342   gf180mcu_fd_sc_mcu7t5v0__oai221_1
+        7   169.03   gf180mcu_fd_sc_mcu7t5v0__oai31_1
+        1   17.562   gf180mcu_fd_sc_mcu7t5v0__or2_1
+        3   65.856   gf180mcu_fd_sc_mcu7t5v0__or3_1
+        2   52.685   gf180mcu_fd_sc_mcu7t5v0__or4_1
+        2   52.685   gf180mcu_fd_sc_mcu7t5v0__xor2_1
+
+   Chip area for module '\spi_regs': 31318.918400
+     of which used for sequential elements: 15906.419200 (50.79%)
+
+125. Executing Verilog backend.
+Dumping module `\spi_regs'.
+
+126. Executing JSON backend.

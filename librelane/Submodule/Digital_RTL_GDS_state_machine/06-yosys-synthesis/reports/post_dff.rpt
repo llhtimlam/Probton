@@ -1,0 +1,34 @@
+109. Printing statistics.
+
+=== state_machine ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+       46        - wires
+       50        - wire bits
+       12        - public wires
+       16        - public wire bits
+       11        - ports
+       13        - port bits
+       42   223.91 cells
+       14        -   $_ANDNOT_
+        4        -   $_MUX_
+        1        -   $_NAND_
+        2        -   $_NOR_
+        5        -   $_NOT_
+        2        -   $_ORNOT_
+       11        -   $_OR_
+        3   223.91   gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+
+   Chip area for module '\state_machine': 223.910400
+     of which used for sequential elements: 223.910400 (100.00%)
+

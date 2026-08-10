@@ -1,0 +1,73 @@
+Reading timing models for corner max_ss_125C_3v00…
+Reading timing library for the 'max_ss_125C_3v00' corner at '/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__ss_125C_3v00.lib'…
+Reading timing models for corner min_ff_n40C_3v60…
+Reading timing library for the 'min_ff_n40C_3v60' corner at '/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__ff_n40C_3v60.lib'…
+Reading timing models for corner nom_tt_025C_3v30…
+Reading timing library for the 'nom_tt_025C_3v30' corner at '/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib'…
+Reading OpenROAD database at '/workspace/librelane/runs/RUN_2026-08-09_21-37-48/28-openroad-globalplacement/chip_core.odb'…
+Reading design constraints file at '/usr/local/lib/python3.12/dist-packages/librelane/scripts/base.sdc'…
+[INFO] Using clock clk…
+[INFO] Setting output delay to: 40
+[INFO] Setting input delay to: 40
+[INFO] Setting load to: 0.07291
+[INFO] Setting clock uncertainty to: 0.25
+[INFO] Setting clock transition to: 0.15
+[INFO] Setting timing derate to: 5%
+[INFO RSZ-0027] Inserted 5 gf180mcu_fd_sc_mcu7t5v0__buf_1 input buffers.
+[INFO RSZ-0028] Inserted 11 gf180mcu_fd_sc_mcu7t5v0__buf_1 output buffers.
++ repair_design -verbose -max_wire_length 0 -slew_margin 20 -cap_margin 20
+Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------------------
+        0 |     +0.0% |       0 |       0 |             0 |      5275
+     1000 |     +2.5% |     131 |     140 |            69 |      4275
+     2000 |     +4.9% |     323 |     185 |           131 |      3275
+     3000 |     +7.7% |     469 |     333 |           199 |      2275
+     4000 |    +11.4% |     663 |     560 |           307 |      1275
+     5000 |    +16.8% |    1013 |    1102 |           507 |       275
+    final |    +20.6% |    1059 |    1545 |           549 |         0
+---------------------------------------------------------------------
+[INFO RSZ-0034] Found 1157 slew violations.
+[INFO RSZ-0035] Found 111 fanout violations.
+[INFO RSZ-0036] Found 1 capacitance violations.
+[INFO RSZ-0039] Resized 1059 instances.
+[INFO RSZ-0038] Inserted 1545 buffers in 549 nets.
+[INFO RSZ-0042] Inserted 47 tie gf180mcu_fd_sc_mcu7t5v0__tiel instances.
+[INFO RSZ-0042] Inserted 14 tie gf180mcu_fd_sc_mcu7t5v0__tieh instances.
+[WARNING RSZ-0020] found 2 floating nets.
+ VDD
+ VSS
++ detailed_placement -max_displacement  500 100 
+Placement Analysis
+---------------------------------
+total displacement      54692.5 u
+average displacement        4.6 u
+max displacement          252.6 u
+original HPWL          294702.5 u
+legalized HPWL         348993.6 u
+delta HPWL                   18 %
+
+[INFO DPL-0020] Mirrored 2918 instances
+[INFO DPL-0021] HPWL before          348993.6 u
+[INFO DPL-0022] HPWL after           341652.1 u
+[INFO DPL-0023] HPWL delta               -2.1 %
+Setting global connections for newly added cells…
+[INFO] Setting global connections...
+analog_block_inst matched with analog_block_inst
+[INFO ODB-0403] 6488 connections made, 0 conflicts skipped.
+Updating metrics…
+Cell type report:                       Count       Area
+  Macro                                     1  115200.00
+  Endcap cell                             586    2572.77
+  Tap cell                               4529   19884.12
+  Tie cell                                 61     535.63
+  Buffer                                   16     228.30
+  Timing Repair Buffer                   1561   31000.61
+  Inverter                                416    3911.85
+  Sequential cell                         559   42927.14
+  Multi-Input combinational cell         4185  101912.16
+  Total                                 11914  318172.58
+Writing OpenROAD database to '/workspace/librelane/runs/RUN_2026-08-09_21-37-48/32-openroad-repairdesignpostgpl/chip_core.odb'…
+Writing netlist to '/workspace/librelane/runs/RUN_2026-08-09_21-37-48/32-openroad-repairdesignpostgpl/chip_core.nl.v'…
+Writing powered netlist to '/workspace/librelane/runs/RUN_2026-08-09_21-37-48/32-openroad-repairdesignpostgpl/chip_core.pnl.v'…
+Writing layout to '/workspace/librelane/runs/RUN_2026-08-09_21-37-48/32-openroad-repairdesignpostgpl/chip_core.def'…
+Writing timing constraints to '/workspace/librelane/runs/RUN_2026-08-09_21-37-48/32-openroad-repairdesignpostgpl/chip_core.sdc'…

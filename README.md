@@ -30,7 +30,7 @@ This offers a low-cost, integrable alternative to proprietary alignment hardware
 
 ## Chip Architect
 
-Size: 800um x 1000um (estimate) - Block type A (not finalized, optimizing for Block type B)
+Size: 880um x 660um - Block type A
 
 Required pins: 14 or 18 (under consideration)
 
@@ -73,6 +73,8 @@ Output: (7)
 > Check /Media/ChipArchitect for detailed chip architect diagram
 
 > Check /src and /Analog/schematics for digital and analog circuit design files respectively
+
+> Check /librelane/Digital_RTL_GDS and /Analog/schematics/*/layout for digital and analog layout files respectively
 
 > For detail on navigating the chip design file, follow the README.md in /scripts folder
 

@@ -1,0 +1,1622 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= min_ff_n40C_3v60 Corner ===================================
+
+Startpoint: rst_n (input port clocked by clk)
+Endpoint: _1468_ (recovery check against rising-edge clock clk)
+Path Group: asynchronous
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                 40.000000   40.000000 ^ input external delay
+   213    1.540123   22.378298   12.807039   52.807041 ^ rst_n (in)
+                                                         rst_n (net)
+                     22.378298    0.000000   52.807041 ^ _1468_/RN (gf180mcu_fd_sc_mcu7t5v0__dffrnq_1)
+                                             52.807041   data arrival time
+
+                      0.150000  200.000000  200.000000   clock clk (rise edge)
+                                  0.000000  200.000000   clock network delay (ideal)
+                                 -0.250000  199.750000   clock uncertainty
+                                  0.000000  199.750000   clock reconvergence pessimism
+                                            199.750000 ^ _1468_/CLK (gf180mcu_fd_sc_mcu7t5v0__dffrnq_1)
+                                 -8.655066  191.094925   library recovery time
+                                            191.094925   data required time
+---------------------------------------------------------------------------------------------
+                                            191.094925   data required time
+                                            -52.807041   data arrival time
+---------------------------------------------------------------------------------------------
+                                            138.287888   slack (MET)
+
+
+Startpoint: cal_phase90_offset_y[10] (input port clocked by clk)
+Endpoint: _1570_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                 40.000000   40.000000 v input external delay
+     1    0.004547    0.057378    0.021714   40.021713 v cal_phase90_offset_y[10] (in)
+                                                         cal_phase90_offset_y[10] (net)
+                      0.057378    0.000000   40.021713 v _1046_/C2 (gf180mcu_fd_sc_mcu7t5v0__aoi222_1)
+     1    0.004325    0.685542    0.530580   40.552296 ^ _1046_/ZN (gf180mcu_fd_sc_mcu7t5v0__aoi222_1)
+                                                         _0235_ (net)
+                      0.685542    0.000000   40.552296 ^ _1049_/A1 (gf180mcu_fd_sc_mcu7t5v0__nand3_1)
+     1    0.002824    0.229411    0.139398   40.691692 v _1049_/ZN (gf180mcu_fd_sc_mcu7t5v0__nand3_1)
+                                                         _0238_ (net)
+                      0.229411    0.000000   40.691692 v _1059_/A2 (gf180mcu_fd_sc_mcu7t5v0__or4_1)
+     1    0.003814    0.204234    0.618932   41.310627 v _1059_/Z (gf180mcu_fd_sc_mcu7t5v0__or4_1)
+                                                         _0248_ (net)
+                      0.204234    0.000000   41.310627 v _1060_/A4 (gf180mcu_fd_sc_mcu7t5v0__nor4_1)
+     1    0.004276    0.468882    0.379913   41.690540 ^ _1060_/ZN (gf180mcu_fd_sc_mcu7t5v0__nor4_1)
+                                                         _0249_ (net)
+                      0.468882    0.000000   41.690540 ^ _1062_/A2 (gf180mcu_fd_sc_mcu7t5v0__oai31_1)
+     1    0.003020    0.349075    0.147551   41.838089 v _1062_/ZN (gf180mcu_fd_sc_mcu7t5v0__oai31_1)
+                                                         _0037_ (net)
+                      0.349075    0.000000   41.838089 v _1570_/D (gf180mcu_fd_sc_mcu7t5v0__dffrnq_1)
+                                             41.838089   data arrival time
+
+                      0.150000  200.000000  200.000000   clock clk (rise edge)
+                                  0.000000  200.000000   clock network delay (ideal)
+                                 -0.250000  199.750000   clock uncertainty
+                                  0.000000  199.750000   clock reconvergence pessimism
+                                            199.750000 ^ _1570_/CLK (gf180mcu_fd_sc_mcu7t5v0__dffrnq_1)
+                                 -0.179873  199.570129   library setup time
+                                            199.570129   data required time
+---------------------------------------------------------------------------------------------
+                                            199.570129   data required time
+                                            -41.838089   data arrival time
+---------------------------------------------------------------------------------------------
+                                            157.732040   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= min_ff_n40C_3v60 Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= min_ff_n40C_3v60 Corner ===================================
+
+max slew
+
+Pin                                        Limit        Slew       Slack
+------------------------------------------------------------------------
+rst_n                                   3.000000   22.378298  -19.378296 (VIOLATED)
+_1468_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1469_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1470_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1471_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1472_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1473_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1474_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1475_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1476_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1477_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1478_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1479_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1480_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1481_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1482_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1483_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1484_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1485_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1486_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1487_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1488_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1489_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1490_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1491_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1492_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1493_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1494_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1495_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1496_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1497_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1498_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1499_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1500_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1501_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1502_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1503_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1504_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1505_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1506_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1507_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1508_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1509_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1510_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1511_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1512_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1513_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1514_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1515_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1516_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1517_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1518_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1519_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1520_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1521_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1522_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1523_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1524_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1525_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1526_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1527_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1528_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1529_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1530_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1531_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1532_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1533_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1534_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1535_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1536_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1537_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1538_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1539_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1540_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1541_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1542_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1543_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1544_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1545_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1546_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1547_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1548_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1549_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1550_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1551_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1552_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1553_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1554_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1555_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1556_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1557_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1558_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1559_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1560_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1561_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1562_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1563_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1564_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1565_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1566_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1567_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1568_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1569_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1570_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1571_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1572_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1573_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1574_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1575_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1576_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1577_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1578_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1579_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1580_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1581_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1582_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1583_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1584_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1585_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1586_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1587_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1588_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1589_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1590_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1591_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1592_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1593_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1594_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1595_/SETN                             3.000000   22.378298  -19.378296 (VIOLATED)
+_1596_/SETN                             3.000000   22.378298  -19.378296 (VIOLATED)
+_1597_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1598_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1599_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1600_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1601_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1602_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1603_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1604_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1605_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1606_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1607_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1608_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1609_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1610_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1611_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1612_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1613_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1614_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1615_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1616_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1617_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1618_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1619_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1620_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1621_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1622_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1623_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1624_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1625_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1626_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1627_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1628_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1629_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1630_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1631_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1632_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1633_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1634_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1635_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1636_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1637_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1638_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1639_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1640_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1641_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1642_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1643_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1644_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1645_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1646_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1647_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1648_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1649_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1650_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1651_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1652_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1653_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1654_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1655_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1656_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1657_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1658_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1659_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1660_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1661_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1662_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1663_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1664_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1665_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1666_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1667_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1668_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1669_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1670_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1671_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1672_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1673_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1674_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1675_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1676_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1677_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1678_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1679_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_1680_/RN                               3.000000   22.378298  -19.378296 (VIOLATED)
+_0756_/ZN                               3.000000    3.363352   -0.363352 (VIOLATED)
+_0757_/A4                               3.000000    3.363352   -0.363352 (VIOLATED)
+_0785_/A2                               3.000000    3.363352   -0.363352 (VIOLATED)
+_0788_/B2                               3.000000    3.363352   -0.363352 (VIOLATED)
+_0792_/A2                               3.000000    3.363352   -0.363352 (VIOLATED)
+_0827_/S                                3.000000    3.363352   -0.363352 (VIOLATED)
+_0828_/S                                3.000000    3.363352   -0.363352 (VIOLATED)
+_0829_/S                                3.000000    3.363352   -0.363352 (VIOLATED)
+_0830_/S                                3.000000    3.363352   -0.363352 (VIOLATED)
+_0831_/S                                3.000000    3.363352   -0.363352 (VIOLATED)
+_0832_/S                                3.000000    3.363352   -0.363352 (VIOLATED)
+_0833_/S                                3.000000    3.363352   -0.363352 (VIOLATED)
+
+max fanout
+
+Pin                                   Limit Fanout  Slack
+---------------------------------------------------------
+rst_n                                    10    213   -203 (VIOLATED)
+_1583_/Q                                 10     24    -14 (VIOLATED)
+_1584_/Q                                 10     24    -14 (VIOLATED)
+_1585_/Q                                 10     24    -14 (VIOLATED)
+_0736_/ZN                                10     23    -13 (VIOLATED)
+_1587_/Q                                 10     23    -13 (VIOLATED)
+_0761_/ZN                                10     21    -11 (VIOLATED)
+_1588_/Q                                 10     17     -7 (VIOLATED)
+_1589_/Q                                 10     17     -7 (VIOLATED)
+_1590_/Q                                 10     17     -7 (VIOLATED)
+_0823_/ZN                                10     16     -6 (VIOLATED)
+_0843_/Z                                 10     16     -6 (VIOLATED)
+_0834_/ZN                                10     15     -5 (VIOLATED)
+_0838_/Z                                 10     15     -5 (VIOLATED)
+_0840_/Z                                 10     14     -4 (VIOLATED)
+_0756_/ZN                                10     11        (VIOLATED)
+
+max capacitance
+
+Pin                                        Limit         Cap       Slack
+------------------------------------------------------------------------
+rst_n                                   0.200000    1.540123   -1.340123 (VIOLATED)
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 1253 unannotated drivers.
+ cal_dir_x
+ cal_dir_y
+ cal_done_x
+ cal_done_y
+ cal_phase0_offset_x[0]
+ cal_phase0_offset_x[10]
+ cal_phase0_offset_x[11]
+ cal_phase0_offset_x[12]
+ cal_phase0_offset_x[13]
+ cal_phase0_offset_x[14]
+ cal_phase0_offset_x[15]
+ cal_phase0_offset_x[16]
+ cal_phase0_offset_x[17]
+ cal_phase0_offset_x[18]
+ cal_phase0_offset_x[19]
+ cal_phase0_offset_x[1]
+ cal_phase0_offset_x[20]
+ cal_phase0_offset_x[2]
+ cal_phase0_offset_x[3]
+ cal_phase0_offset_x[4]
+ cal_phase0_offset_x[5]
+ cal_phase0_offset_x[6]
+ cal_phase0_offset_x[7]
+ cal_phase0_offset_x[8]
+ cal_phase0_offset_x[9]
+ cal_phase0_offset_y[0]
+ cal_phase0_offset_y[10]
+ cal_phase0_offset_y[11]
+ cal_phase0_offset_y[12]
+ cal_phase0_offset_y[13]
+ cal_phase0_offset_y[14]
+ cal_phase0_offset_y[15]
+ cal_phase0_offset_y[16]
+ cal_phase0_offset_y[17]
+ cal_phase0_offset_y[18]
+ cal_phase0_offset_y[19]
+ cal_phase0_offset_y[1]
+ cal_phase0_offset_y[20]
+ cal_phase0_offset_y[2]
+ cal_phase0_offset_y[3]
+ cal_phase0_offset_y[4]
+ cal_phase0_offset_y[5]
+ cal_phase0_offset_y[6]
+ cal_phase0_offset_y[7]
+ cal_phase0_offset_y[8]
+ cal_phase0_offset_y[9]
+ cal_phase270_offset_x[0]
+ cal_phase270_offset_x[10]
+ cal_phase270_offset_x[11]
+ cal_phase270_offset_x[12]
+ cal_phase270_offset_x[13]
+ cal_phase270_offset_x[14]
+ cal_phase270_offset_x[15]
+ cal_phase270_offset_x[16]
+ cal_phase270_offset_x[17]
+ cal_phase270_offset_x[18]
+ cal_phase270_offset_x[19]
+ cal_phase270_offset_x[1]
+ cal_phase270_offset_x[20]
+ cal_phase270_offset_x[2]
+ cal_phase270_offset_x[3]
+ cal_phase270_offset_x[4]
+ cal_phase270_offset_x[5]
+ cal_phase270_offset_x[6]
+ cal_phase270_offset_x[7]
+ cal_phase270_offset_x[8]
+ cal_phase270_offset_x[9]
+ cal_phase270_offset_y[0]
+ cal_phase270_offset_y[10]
+ cal_phase270_offset_y[11]
+ cal_phase270_offset_y[12]
+ cal_phase270_offset_y[13]
+ cal_phase270_offset_y[14]
+ cal_phase270_offset_y[15]
+ cal_phase270_offset_y[16]
+ cal_phase270_offset_y[17]
+ cal_phase270_offset_y[18]
+ cal_phase270_offset_y[19]
+ cal_phase270_offset_y[1]
+ cal_phase270_offset_y[20]
+ cal_phase270_offset_y[2]
+ cal_phase270_offset_y[3]
+ cal_phase270_offset_y[4]
+ cal_phase270_offset_y[5]
+ cal_phase270_offset_y[6]
+ cal_phase270_offset_y[7]
+ cal_phase270_offset_y[8]
+ cal_phase270_offset_y[9]
+ cal_phase90_offset_x[0]
+ cal_phase90_offset_x[10]
+ cal_phase90_offset_x[11]
+ cal_phase90_offset_x[12]
+ cal_phase90_offset_x[13]
+ cal_phase90_offset_x[14]
+ cal_phase90_offset_x[15]
+ cal_phase90_offset_x[16]
+ cal_phase90_offset_x[17]
+ cal_phase90_offset_x[18]
+ cal_phase90_offset_x[19]
+ cal_phase90_offset_x[1]
+ cal_phase90_offset_x[20]
+ cal_phase90_offset_x[2]
+ cal_phase90_offset_x[3]
+ cal_phase90_offset_x[4]
+ cal_phase90_offset_x[5]
+ cal_phase90_offset_x[6]
+ cal_phase90_offset_x[7]
+ cal_phase90_offset_x[8]
+ cal_phase90_offset_x[9]
+ cal_phase90_offset_y[0]
+ cal_phase90_offset_y[10]
+ cal_phase90_offset_y[11]
+ cal_phase90_offset_y[12]
+ cal_phase90_offset_y[13]
+ cal_phase90_offset_y[14]
+ cal_phase90_offset_y[15]
+ cal_phase90_offset_y[16]
+ cal_phase90_offset_y[17]
+ cal_phase90_offset_y[18]
+ cal_phase90_offset_y[19]
+ cal_phase90_offset_y[1]
+ cal_phase90_offset_y[20]
+ cal_phase90_offset_y[2]
+ cal_phase90_offset_y[3]
+ cal_phase90_offset_y[4]
+ cal_phase90_offset_y[5]
+ cal_phase90_offset_y[6]
+ cal_phase90_offset_y[7]
+ cal_phase90_offset_y[8]
+ cal_phase90_offset_y[9]
+ cal_timeout_x
+ cal_timeout_y
+ clk
+ delay_wave_cycle_x[0]
+ delay_wave_cycle_x[1]
+ delay_wave_cycle_x[2]
+ delay_wave_cycle_x[3]
+ delay_wave_cycle_x[4]
+ delay_wave_cycle_x[5]
+ delay_wave_cycle_x[6]
+ delay_wave_cycle_x[7]
+ delay_wave_cycle_y[0]
+ delay_wave_cycle_y[1]
+ delay_wave_cycle_y[2]
+ delay_wave_cycle_y[3]
+ delay_wave_cycle_y[4]
+ delay_wave_cycle_y[5]
+ delay_wave_cycle_y[6]
+ delay_wave_cycle_y[7]
+ jitter_flag_x
+ jitter_flag_y
+ latch_error_x
+ latch_error_y
+ phase_state_x[0]
+ phase_state_x[1]
+ phase_state_y[0]
+ phase_state_y[1]
+ raw_edge1_x[0]
+ raw_edge1_x[10]
+ raw_edge1_x[11]
+ raw_edge1_x[12]
+ raw_edge1_x[13]
+ raw_edge1_x[14]
+ raw_edge1_x[15]
+ raw_edge1_x[16]
+ raw_edge1_x[17]
+ raw_edge1_x[18]
+ raw_edge1_x[19]
+ raw_edge1_x[1]
+ raw_edge1_x[20]
+ raw_edge1_x[2]
+ raw_edge1_x[3]
+ raw_edge1_x[4]
+ raw_edge1_x[5]
+ raw_edge1_x[6]
+ raw_edge1_x[7]
+ raw_edge1_x[8]
+ raw_edge1_x[9]
+ raw_edge1_y[0]
+ raw_edge1_y[10]
+ raw_edge1_y[11]
+ raw_edge1_y[12]
+ raw_edge1_y[13]
+ raw_edge1_y[14]
+ raw_edge1_y[15]
+ raw_edge1_y[16]
+ raw_edge1_y[17]
+ raw_edge1_y[18]
+ raw_edge1_y[19]
+ raw_edge1_y[1]
+ raw_edge1_y[20]
+ raw_edge1_y[2]
+ raw_edge1_y[3]
+ raw_edge1_y[4]
+ raw_edge1_y[5]
+ raw_edge1_y[6]
+ raw_edge1_y[7]
+ raw_edge1_y[8]
+ raw_edge1_y[9]
+ raw_edge2_x[0]
+ raw_edge2_x[10]
+ raw_edge2_x[11]
+ raw_edge2_x[12]
+ raw_edge2_x[13]
+ raw_edge2_x[14]
+ raw_edge2_x[15]
+ raw_edge2_x[16]
+ raw_edge2_x[17]
+ raw_edge2_x[18]
+ raw_edge2_x[19]
+ raw_edge2_x[1]
+ raw_edge2_x[20]
+ raw_edge2_x[2]
+ raw_edge2_x[3]
+ raw_edge2_x[4]
+ raw_edge2_x[5]
+ raw_edge2_x[6]
+ raw_edge2_x[7]
+ raw_edge2_x[8]
+ raw_edge2_x[9]
+ raw_edge2_y[0]
+ raw_edge2_y[10]
+ raw_edge2_y[11]
+ raw_edge2_y[12]
+ raw_edge2_y[13]
+ raw_edge2_y[14]
+ raw_edge2_y[15]
+ raw_edge2_y[16]
+ raw_edge2_y[17]
+ raw_edge2_y[18]
+ raw_edge2_y[19]
+ raw_edge2_y[1]
+ raw_edge2_y[20]
+ raw_edge2_y[2]
+ raw_edge2_y[3]
+ raw_edge2_y[4]
+ raw_edge2_y[5]
+ raw_edge2_y[6]
+ raw_edge2_y[7]
+ raw_edge2_y[8]
+ raw_edge2_y[9]
+ raw_edge3_x[0]
+ raw_edge3_x[10]
+ raw_edge3_x[11]
+ raw_edge3_x[12]
+ raw_edge3_x[13]
+ raw_edge3_x[14]
+ raw_edge3_x[15]
+ raw_edge3_x[16]
+ raw_edge3_x[17]
+ raw_edge3_x[18]
+ raw_edge3_x[19]
+ raw_edge3_x[1]
+ raw_edge3_x[20]
+ raw_edge3_x[2]
+ raw_edge3_x[3]
+ raw_edge3_x[4]
+ raw_edge3_x[5]
+ raw_edge3_x[6]
+ raw_edge3_x[7]
+ raw_edge3_x[8]
+ raw_edge3_x[9]
+ raw_edge3_y[0]
+ raw_edge3_y[10]
+ raw_edge3_y[11]
+ raw_edge3_y[12]
+ raw_edge3_y[13]
+ raw_edge3_y[14]
+ raw_edge3_y[15]
+ raw_edge3_y[16]
+ raw_edge3_y[17]
+ raw_edge3_y[18]
+ raw_edge3_y[19]
+ raw_edge3_y[1]
+ raw_edge3_y[20]
+ raw_edge3_y[2]
+ raw_edge3_y[3]
+ raw_edge3_y[4]
+ raw_edge3_y[5]
+ raw_edge3_y[6]
+ raw_edge3_y[7]
+ raw_edge3_y[8]
+ raw_edge3_y[9]
+ rst_n
+ spi_cs_n
+ spi_mosi
+ spi_sclk
+ state_o[0]
+ state_o[1]
+ state_o[2]
+ votes_in_phase_x[0]
+ votes_in_phase_x[1]
+ votes_in_phase_x[2]
+ votes_in_phase_x[3]
+ votes_in_phase_y[0]
+ votes_in_phase_y[1]
+ votes_in_phase_y[2]
+ votes_in_phase_y[3]
+ votes_out_phase_x[0]
+ votes_out_phase_x[1]
+ votes_out_phase_x[2]
+ votes_out_phase_x[3]
+ votes_out_phase_y[0]
+ votes_out_phase_y[1]
+ votes_out_phase_y[2]
+ votes_out_phase_y[3]
+ _0734_/ZN
+ _0735_/ZN
+ _0736_/ZN
+ _0737_/ZN
+ _0738_/ZN
+ _0739_/ZN
+ _0740_/ZN
+ _0741_/ZN
+ _0742_/ZN
+ _0743_/ZN
+ _0744_/ZN
+ _0745_/ZN
+ _0746_/ZN
+ _0747_/ZN
+ _0748_/ZN
+ _0749_/Z
+ _0750_/ZN
+ _0751_/ZN
+ _0752_/ZN
+ _0753_/ZN
+ _0754_/ZN
+ _0755_/ZN
+ _0756_/ZN
+ _0757_/ZN
+ _0758_/ZN
+ _0759_/ZN
+ _0760_/ZN
+ _0761_/ZN
+ _0762_/ZN
+ _0763_/ZN
+ _0764_/ZN
+ _0765_/ZN
+ _0766_/ZN
+ _0767_/Z
+ _0768_/Z
+ _0769_/Z
+ _0770_/Z
+ _0771_/Z
+ _0772_/ZN
+ _0773_/Z
+ _0774_/Z
+ _0775_/Z
+ _0776_/ZN
+ _0777_/ZN
+ _0778_/Z
+ _0779_/Z
+ _0780_/Z
+ _0781_/Z
+ _0782_/ZN
+ _0783_/ZN
+ _0784_/ZN
+ _0785_/ZN
+ _0786_/ZN
+ _0787_/Z
+ _0788_/ZN
+ _0789_/ZN
+ _0790_/ZN
+ _0791_/ZN
+ _0792_/ZN
+ _0793_/ZN
+ _0794_/ZN
+ _0795_/ZN
+ _0796_/Z
+ _0797_/ZN
+ _0798_/ZN
+ _0799_/Z
+ _0800_/ZN
+ _0801_/ZN
+ _0802_/ZN
+ _0803_/Z
+ _0804_/ZN
+ _0805_/ZN
+ _0806_/ZN
+ _0807_/ZN
+ _0808_/ZN
+ _0809_/ZN
+ _0810_/ZN
+ _0811_/ZN
+ _0812_/Z
+ _0813_/ZN
+ _0814_/ZN
+ _0815_/ZN
+ _0816_/ZN
+ _0817_/ZN
+ _0818_/ZN
+ _0819_/ZN
+ _0820_/ZN
+ _0821_/ZN
+ _0822_/ZN
+ _0823_/ZN
+ _0824_/ZN
+ _0825_/ZN
+ _0826_/ZN
+ _0827_/Z
+ _0828_/Z
+ _0829_/Z
+ _0830_/Z
+ _0831_/Z
+ _0832_/Z
+ _0833_/Z
+ _0834_/ZN
+ _0835_/ZN
+ _0836_/ZN
+ _0837_/ZN
+ _0838_/Z
+ _0839_/ZN
+ _0840_/Z
+ _0841_/ZN
+ _0842_/ZN
+ _0843_/Z
+ _0844_/ZN
+ _0845_/ZN
+ _0846_/ZN
+ _0847_/ZN
+ _0848_/ZN
+ _0849_/ZN
+ _0850_/ZN
+ _0851_/ZN
+ _0852_/ZN
+ _0853_/ZN
+ _0854_/ZN
+ _0855_/ZN
+ _0856_/ZN
+ _0857_/ZN
+ _0858_/ZN
+ _0859_/ZN
+ _0860_/ZN
+ _0861_/ZN
+ _0862_/ZN
+ _0863_/ZN
+ _0864_/ZN
+ _0865_/ZN
+ _0866_/ZN
+ _0867_/ZN
+ _0868_/ZN
+ _0869_/ZN
+ _0870_/ZN
+ _0871_/ZN
+ _0872_/ZN
+ _0873_/ZN
+ _0874_/ZN
+ _0875_/ZN
+ _0876_/ZN
+ _0877_/ZN
+ _0878_/ZN
+ _0879_/ZN
+ _0880_/ZN
+ _0881_/ZN
+ _0882_/ZN
+ _0883_/ZN
+ _0884_/ZN
+ _0885_/ZN
+ _0886_/ZN
+ _0887_/ZN
+ _0888_/ZN
+ _0889_/ZN
+ _0890_/ZN
+ _0891_/ZN
+ _0892_/ZN
+ _0893_/ZN
+ _0894_/ZN
+ _0895_/ZN
+ _0896_/ZN
+ _0897_/ZN
+ _0898_/ZN
+ _0899_/ZN
+ _0900_/ZN
+ _0901_/ZN
+ _0902_/ZN
+ _0903_/ZN
+ _0904_/ZN
+ _0905_/ZN
+ _0906_/ZN
+ _0907_/ZN
+ _0908_/ZN
+ _0909_/ZN
+ _0910_/ZN
+ _0911_/ZN
+ _0912_/ZN
+ _0913_/ZN
+ _0914_/ZN
+ _0915_/ZN
+ _0916_/ZN
+ _0917_/ZN
+ _0918_/ZN
+ _0919_/ZN
+ _0920_/ZN
+ _0921_/ZN
+ _0922_/ZN
+ _0923_/ZN
+ _0924_/ZN
+ _0925_/ZN
+ _0926_/ZN
+ _0927_/ZN
+ _0928_/ZN
+ _0929_/ZN
+ _0930_/ZN
+ _0931_/ZN
+ _0932_/ZN
+ _0933_/ZN
+ _0934_/ZN
+ _0935_/ZN
+ _0936_/ZN
+ _0937_/Z
+ _0938_/ZN
+ _0939_/ZN
+ _0940_/ZN
+ _0941_/ZN
+ _0942_/ZN
+ _0943_/ZN
+ _0944_/ZN
+ _0945_/ZN
+ _0946_/ZN
+ _0947_/ZN
+ _0948_/ZN
+ _0949_/ZN
+ _0950_/ZN
+ _0951_/ZN
+ _0952_/ZN
+ _0953_/ZN
+ _0954_/ZN
+ _0955_/ZN
+ _0956_/ZN
+ _0957_/ZN
+ _0958_/ZN
+ _0959_/ZN
+ _0960_/ZN
+ _0961_/ZN
+ _0962_/ZN
+ _0963_/ZN
+ _0964_/Z
+ _0965_/ZN
+ _0966_/ZN
+ _0967_/Z
+ _0968_/ZN
+ _0969_/ZN
+ _0970_/ZN
+ _0971_/ZN
+ _0972_/ZN
+ _0973_/ZN
+ _0974_/ZN
+ _0975_/ZN
+ _0976_/ZN
+ _0977_/ZN
+ _0978_/ZN
+ _0979_/ZN
+ _0980_/ZN
+ _0981_/ZN
+ _0982_/ZN
+ _0983_/ZN
+ _0984_/ZN
+ _0985_/ZN
+ _0986_/ZN
+ _0987_/ZN
+ _0988_/ZN
+ _0989_/ZN
+ _0990_/ZN
+ _0991_/ZN
+ _0992_/ZN
+ _0993_/ZN
+ _0994_/ZN
+ _0995_/ZN
+ _0996_/ZN
+ _0997_/ZN
+ _0998_/ZN
+ _0999_/ZN
+ _1000_/ZN
+ _1001_/ZN
+ _1002_/ZN
+ _1003_/ZN
+ _1004_/ZN
+ _1005_/ZN
+ _1006_/ZN
+ _1007_/ZN
+ _1008_/ZN
+ _1009_/ZN
+ _1010_/ZN
+ _1011_/ZN
+ _1012_/Z
+ _1013_/ZN
+ _1014_/ZN
+ _1015_/ZN
+ _1016_/ZN
+ _1017_/ZN
+ _1018_/ZN
+ _1019_/ZN
+ _1020_/ZN
+ _1021_/ZN
+ _1022_/ZN
+ _1023_/ZN
+ _1024_/ZN
+ _1025_/ZN
+ _1026_/ZN
+ _1027_/ZN
+ _1028_/ZN
+ _1029_/ZN
+ _1030_/Z
+ _1031_/ZN
+ _1032_/ZN
+ _1033_/ZN
+ _1034_/ZN
+ _1035_/Z
+ _1036_/ZN
+ _1037_/ZN
+ _1038_/ZN
+ _1039_/ZN
+ _1040_/Z
+ _1041_/ZN
+ _1042_/ZN
+ _1043_/ZN
+ _1044_/ZN
+ _1045_/ZN
+ _1046_/ZN
+ _1047_/ZN
+ _1048_/ZN
+ _1049_/ZN
+ _1050_/ZN
+ _1051_/ZN
+ _1052_/ZN
+ _1053_/ZN
+ _1054_/ZN
+ _1055_/ZN
+ _1056_/ZN
+ _1057_/ZN
+ _1058_/ZN
+ _1059_/Z
+ _1060_/ZN
+ _1061_/ZN
+ _1062_/ZN
+ _1063_/ZN
+ _1064_/ZN
+ _1065_/ZN
+ _1066_/ZN
+ _1067_/ZN
+ _1068_/ZN
+ _1069_/ZN
+ _1070_/ZN
+ _1071_/ZN
+ _1072_/ZN
+ _1073_/ZN
+ _1074_/ZN
+ _1075_/ZN
+ _1076_/ZN
+ _1077_/ZN
+ _1078_/ZN
+ _1079_/ZN
+ _1080_/ZN
+ _1081_/ZN
+ _1082_/ZN
+ _1083_/ZN
+ _1084_/ZN
+ _1085_/ZN
+ _1086_/ZN
+ _1087_/ZN
+ _1088_/ZN
+ _1089_/ZN
+ _1090_/ZN
+ _1091_/ZN
+ _1092_/ZN
+ _1093_/ZN
+ _1094_/ZN
+ _1095_/ZN
+ _1096_/ZN
+ _1097_/ZN
+ _1098_/ZN
+ _1099_/ZN
+ _1100_/ZN
+ _1101_/ZN
+ _1102_/ZN
+ _1103_/ZN
+ _1104_/ZN
+ _1105_/ZN
+ _1106_/ZN
+ _1107_/ZN
+ _1108_/ZN
+ _1109_/Z
+ _1110_/ZN
+ _1111_/ZN
+ _1112_/ZN
+ _1113_/ZN
+ _1114_/ZN
+ _1115_/ZN
+ _1116_/ZN
+ _1117_/ZN
+ _1118_/ZN
+ _1119_/ZN
+ _1120_/ZN
+ _1121_/ZN
+ _1122_/ZN
+ _1123_/ZN
+ _1124_/ZN
+ _1125_/ZN
+ _1126_/ZN
+ _1127_/ZN
+ _1128_/ZN
+ _1129_/ZN
+ _1130_/ZN
+ _1131_/ZN
+ _1132_/ZN
+ _1133_/ZN
+ _1134_/ZN
+ _1135_/ZN
+ _1136_/ZN
+ _1137_/ZN
+ _1138_/ZN
+ _1139_/ZN
+ _1140_/ZN
+ _1141_/ZN
+ _1142_/ZN
+ _1143_/ZN
+ _1144_/ZN
+ _1145_/ZN
+ _1146_/ZN
+ _1147_/ZN
+ _1148_/ZN
+ _1149_/ZN
+ _1150_/ZN
+ _1151_/ZN
+ _1152_/Z
+ _1153_/ZN
+ _1154_/ZN
+ _1155_/ZN
+ _1156_/ZN
+ _1157_/ZN
+ _1158_/ZN
+ _1159_/ZN
+ _1160_/ZN
+ _1161_/ZN
+ _1162_/ZN
+ _1163_/ZN
+ _1164_/ZN
+ _1165_/ZN
+ _1166_/ZN
+ _1167_/ZN
+ _1168_/ZN
+ _1169_/ZN
+ _1170_/ZN
+ _1171_/ZN
+ _1172_/ZN
+ _1173_/ZN
+ _1174_/ZN
+ _1175_/ZN
+ _1176_/ZN
+ _1177_/ZN
+ _1178_/ZN
+ _1179_/ZN
+ _1180_/Z
+ _1181_/ZN
+ _1182_/ZN
+ _1183_/ZN
+ _1184_/ZN
+ _1185_/ZN
+ _1186_/ZN
+ _1187_/ZN
+ _1188_/ZN
+ _1189_/ZN
+ _1190_/ZN
+ _1191_/ZN
+ _1192_/ZN
+ _1193_/ZN
+ _1194_/ZN
+ _1195_/ZN
+ _1196_/ZN
+ _1197_/ZN
+ _1198_/ZN
+ _1199_/ZN
+ _1200_/ZN
+ _1201_/ZN
+ _1202_/ZN
+ _1203_/ZN
+ _1204_/ZN
+ _1205_/ZN
+ _1206_/ZN
+ _1207_/ZN
+ _1208_/ZN
+ _1209_/ZN
+ _1210_/ZN
+ _1211_/ZN
+ _1212_/Z
+ _1213_/ZN
+ _1214_/ZN
+ _1215_/ZN
+ _1216_/ZN
+ _1217_/ZN
+ _1218_/ZN
+ _1219_/ZN
+ _1220_/ZN
+ _1221_/ZN
+ _1222_/ZN
+ _1223_/ZN
+ _1224_/ZN
+ _1225_/ZN
+ _1226_/ZN
+ _1227_/ZN
+ _1228_/ZN
+ _1229_/ZN
+ _1230_/ZN
+ _1231_/ZN
+ _1232_/ZN
+ _1233_/ZN
+ _1234_/ZN
+ _1235_/ZN
+ _1236_/ZN
+ _1237_/ZN
+ _1238_/ZN
+ _1239_/ZN
+ _1240_/ZN
+ _1241_/ZN
+ _1242_/ZN
+ _1243_/ZN
+ _1244_/Z
+ _1245_/ZN
+ _1246_/ZN
+ _1247_/ZN
+ _1248_/ZN
+ _1249_/ZN
+ _1250_/ZN
+ _1251_/ZN
+ _1252_/ZN
+ _1253_/ZN
+ _1254_/ZN
+ _1255_/Z
+ _1256_/ZN
+ _1257_/ZN
+ _1258_/ZN
+ _1259_/ZN
+ _1260_/Z
+ _1261_/Z
+ _1262_/Z
+ _1263_/ZN
+ _1264_/ZN
+ _1265_/Z
+ _1266_/Z
+ _1267_/Z
+ _1268_/Z
+ _1269_/ZN
+ _1270_/ZN
+ _1271_/ZN
+ _1272_/ZN
+ _1273_/Z
+ _1274_/Z
+ _1275_/Z
+ _1276_/Z
+ _1277_/ZN
+ _1278_/ZN
+ _1279_/Z
+ _1280_/Z
+ _1281_/Z
+ _1282_/Z
+ _1283_/Z
+ _1284_/Z
+ _1285_/Z
+ _1286_/Z
+ _1287_/ZN
+ _1288_/ZN
+ _1289_/Z
+ _1290_/Z
+ _1291_/Z
+ _1292_/Z
+ _1293_/ZN
+ _1294_/Z
+ _1295_/Z
+ _1296_/Z
+ _1297_/Z
+ _1298_/ZN
+ _1299_/ZN
+ _1300_/Z
+ _1301_/Z
+ _1302_/Z
+ _1303_/Z
+ _1304_/ZN
+ _1305_/Z
+ _1306_/Z
+ _1307_/Z
+ _1308_/ZN
+ _1309_/ZN
+ _1310_/Z
+ _1311_/Z
+ _1312_/Z
+ _1313_/Z
+ _1314_/ZN
+ _1315_/Z
+ _1316_/Z
+ _1317_/Z
+ _1318_/ZN
+ _1319_/ZN
+ _1320_/Z
+ _1321_/Z
+ _1322_/Z
+ _1323_/Z
+ _1324_/Z
+ _1325_/ZN
+ _1326_/ZN
+ _1327_/Z
+ _1328_/Z
+ _1329_/Z
+ _1330_/Z
+ _1331_/Z
+ _1332_/Z
+ _1333_/Z
+ _1334_/Z
+ _1335_/ZN
+ _1336_/ZN
+ _1337_/Z
+ _1338_/Z
+ _1339_/Z
+ _1340_/Z
+ _1341_/ZN
+ _1342_/ZN
+ _1343_/ZN
+ _1344_/ZN
+ _1345_/Z
+ _1346_/Z
+ _1347_/Z
+ _1348_/ZN
+ _1349_/ZN
+ _1350_/Z
+ _1351_/ZN
+ _1352_/ZN
+ _1353_/Z
+ _1354_/Z
+ _1355_/Z
+ _1356_/ZN
+ _1357_/ZN
+ _1358_/Z
+ _1359_/Z
+ _1360_/Z
+ _1361_/Z
+ _1362_/ZN
+ _1363_/ZN
+ _1364_/Z
+ _1365_/Z
+ _1366_/Z
+ _1367_/ZN
+ _1368_/ZN
+ _1369_/Z
+ _1370_/Z
+ _1371_/Z
+ _1372_/Z
+ _1373_/ZN
+ _1374_/ZN
+ _1375_/ZN
+ _1376_/Z
+ _1377_/Z
+ _1378_/Z
+ _1379_/ZN
+ _1380_/ZN
+ _1381_/Z
+ _1382_/ZN
+ _1383_/Z
+ _1384_/Z
+ _1385_/Z
+ _1386_/ZN
+ _1387_/ZN
+ _1388_/Z
+ _1389_/Z
+ _1390_/Z
+ _1391_/Z
+ _1392_/ZN
+ _1393_/Z
+ _1394_/Z
+ _1395_/Z
+ _1396_/ZN
+ _1397_/ZN
+ _1398_/Z
+ _1399_/Z
+ _1400_/Z
+ _1401_/Z
+ _1402_/ZN
+ _1403_/Z
+ _1404_/Z
+ _1405_/Z
+ _1406_/Z
+ _1407_/Z
+ _1408_/ZN
+ _1409_/Z
+ _1410_/Z
+ _1411_/Z
+ _1412_/ZN
+ _1413_/ZN
+ _1414_/Z
+ _1415_/Z
+ _1416_/Z
+ _1417_/Z
+ _1418_/ZN
+ _1419_/Z
+ _1420_/Z
+ _1421_/Z
+ _1422_/ZN
+ _1423_/ZN
+ _1424_/Z
+ _1425_/Z
+ _1426_/Z
+ _1427_/Z
+ _1428_/Z
+ _1429_/Z
+ _1430_/Z
+ _1431_/Z
+ _1432_/ZN
+ _1433_/ZN
+ _1434_/Z
+ _1435_/ZN
+ _1436_/Z
+ _1437_/Z
+ _1438_/Z
+ _1439_/ZN
+ _1440_/ZN
+ _1441_/Z
+ _1442_/Z
+ _1443_/Z
+ _1444_/Z
+ _1445_/ZN
+ _1446_/Z
+ _1447_/Z
+ _1448_/Z
+ _1449_/ZN
+ _1450_/ZN
+ _1451_/Z
+ _1452_/Z
+ _1453_/Z
+ _1454_/Z
+ _1455_/ZN
+ _1456_/Z
+ _1457_/Z
+ _1458_/Z
+ _1459_/ZN
+ _1460_/ZN
+ _1461_/Z
+ _1462_/Z
+ _1463_/Z
+ _1464_/Z
+ _1465_/Z
+ _1466_/Z
+ _1467_/Z
+ _1468_/Q
+ _1469_/Q
+ _1470_/Q
+ _1471_/Q
+ _1472_/Q
+ _1473_/Q
+ _1474_/Q
+ _1475_/Q
+ _1476_/Q
+ _1477_/Q
+ _1478_/Q
+ _1479_/Q
+ _1480_/Q
+ _1481_/Q
+ _1482_/Q
+ _1483_/Q
+ _1484_/Q
+ _1485_/Q
+ _1486_/Q
+ _1487_/Q
+ _1488_/Q
+ _1489_/Q
+ _1490_/Q
+ _1491_/Q
+ _1492_/Q
+ _1493_/Q
+ _1494_/Q
+ _1495_/Q
+ _1496_/Q
+ _1497_/Q
+ _1498_/Q
+ _1499_/Q
+ _1500_/Q
+ _1501_/Q
+ _1502_/Q
+ _1503_/Q
+ _1504_/Q
+ _1505_/Q
+ _1506_/Q
+ _1507_/Q
+ _1508_/Q
+ _1509_/Q
+ _1510_/Q
+ _1511_/Q
+ _1512_/Q
+ _1513_/Q
+ _1514_/Q
+ _1515_/Q
+ _1516_/Q
+ _1517_/Q
+ _1518_/Q
+ _1519_/Q
+ _1520_/Q
+ _1521_/Q
+ _1522_/Q
+ _1523_/Q
+ _1524_/Q
+ _1525_/Q
+ _1526_/Q
+ _1527_/Q
+ _1528_/Q
+ _1529_/Q
+ _1530_/Q
+ _1531_/Q
+ _1532_/Q
+ _1533_/Q
+ _1534_/Q
+ _1535_/Q
+ _1536_/Q
+ _1537_/Q
+ _1538_/Q
+ _1539_/Q
+ _1540_/Q
+ _1541_/Q
+ _1542_/Q
+ _1543_/Q
+ _1544_/Q
+ _1545_/Q
+ _1546_/Q
+ _1547_/Q
+ _1548_/Q
+ _1549_/Q
+ _1550_/Q
+ _1551_/Q
+ _1552_/Q
+ _1553_/Q
+ _1554_/Q
+ _1555_/Q
+ _1556_/Q
+ _1557_/Q
+ _1558_/Q
+ _1559_/Q
+ _1560_/Q
+ _1561_/Q
+ _1562_/Q
+ _1563_/Q
+ _1564_/Q
+ _1565_/Q
+ _1566_/Q
+ _1567_/Q
+ _1568_/Q
+ _1569_/Q
+ _1570_/Q
+ _1571_/Q
+ _1572_/Q
+ _1573_/Q
+ _1574_/Q
+ _1575_/Q
+ _1576_/Q
+ _1577_/Q
+ _1578_/Q
+ _1579_/Q
+ _1580_/Q
+ _1581_/Q
+ _1582_/Q
+ _1583_/Q
+ _1584_/Q
+ _1585_/Q
+ _1586_/Q
+ _1587_/Q
+ _1588_/Q
+ _1589_/Q
+ _1590_/Q
+ _1591_/Q
+ _1592_/Q
+ _1593_/Q
+ _1594_/Q
+ _1595_/Q
+ _1596_/Q
+ _1597_/Q
+ _1598_/Q
+ _1599_/Q
+ _1600_/Q
+ _1601_/Q
+ _1602_/Q
+ _1603_/Q
+ _1604_/Q
+ _1605_/Q
+ _1606_/Q
+ _1607_/Q
+ _1608_/Q
+ _1609_/Q
+ _1610_/Q
+ _1611_/Q
+ _1612_/Q
+ _1613_/Q
+ _1614_/Q
+ _1615_/Q
+ _1616_/Q
+ _1617_/Q
+ _1618_/Q
+ _1619_/Q
+ _1620_/Q
+ _1621_/Q
+ _1622_/Q
+ _1623_/Q
+ _1624_/Q
+ _1625_/Q
+ _1626_/Q
+ _1627_/Q
+ _1628_/Q
+ _1629_/Q
+ _1630_/Q
+ _1631_/Q
+ _1632_/Q
+ _1633_/Q
+ _1634_/Q
+ _1635_/Q
+ _1636_/Q
+ _1637_/Q
+ _1638_/Q
+ _1639_/Q
+ _1640_/Q
+ _1641_/Q
+ _1642_/Q
+ _1643_/Q
+ _1644_/Q
+ _1645_/Q
+ _1646_/Q
+ _1647_/Q
+ _1648_/Q
+ _1649_/Q
+ _1650_/Q
+ _1651_/Q
+ _1652_/Q
+ _1653_/Q
+ _1654_/Q
+ _1655_/Q
+ _1656_/Q
+ _1657_/Q
+ _1658_/Q
+ _1659_/Q
+ _1660_/Q
+ _1661_/Q
+ _1662_/Q
+ _1663_/Q
+ _1664_/Q
+ _1665_/Q
+ _1666_/Q
+ _1667_/Q
+ _1668_/Q
+ _1669_/Q
+ _1670_/Q
+ _1671_/Q
+ _1672_/Q
+ _1673_/Q
+ _1674_/Q
+ _1675_/Q
+ _1676_/Q
+ _1677_/Q
+ _1678_/Q
+ _1679_/Q
+ _1680_/Q
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 226
+max fanout violation count 16
+max cap violation count 1
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================

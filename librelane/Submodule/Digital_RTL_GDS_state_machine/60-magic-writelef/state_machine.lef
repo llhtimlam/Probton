@@ -1,0 +1,209 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO state_machine
+  CLASS BLOCK ;
+  FOREIGN state_machine ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 56.040 BY 73.960 ;
+  PIN VDD
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER Metal4 ;
+        RECT 22.240 15.380 23.840 55.180 ;
+    END
+    PORT
+      LAYER Metal5 ;
+        RECT 6.720 31.530 49.280 33.130 ;
+    END
+  END VDD
+  PIN VSS
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER Metal4 ;
+        RECT 25.540 15.380 27.140 55.180 ;
+    END
+    PORT
+      LAYER Metal5 ;
+        RECT 6.720 34.830 49.280 36.430 ;
+    END
+  END VSS
+  PIN boot_complete
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 55.480 20.160 56.040 20.720 ;
+    END
+  END boot_complete
+  PIN cal_done
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 6.720 0.000 7.280 0.560 ;
+    END
+  END cal_done
+  PIN cal_start
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 47.040 0.000 47.600 0.560 ;
+    END
+  END cal_start
+  PIN cal_timeout
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 20.160 0.000 20.720 0.560 ;
+    END
+  END cal_timeout
+  PIN cfg_done
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 55.480 28.000 56.040 28.560 ;
+    END
+  END cfg_done
+  PIN clk
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 4.738000 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 55.480 4.480 56.040 5.040 ;
+    END
+  END clk
+  PIN phase_offset_imported
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 55.480 35.840 56.040 36.400 ;
+    END
+  END phase_offset_imported
+  PIN read_en
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 33.600 0.000 34.160 0.560 ;
+    END
+  END read_en
+  PIN rst_n
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 55.480 12.320 56.040 12.880 ;
+    END
+  END rst_n
+  PIN soft_rst
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.498500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 55.480 67.200 56.040 67.760 ;
+    END
+  END soft_rst
+  PIN state_o[0]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 55.480 43.680 56.040 44.240 ;
+    END
+  END state_o[0]
+  PIN state_o[1]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 55.480 51.520 56.040 52.080 ;
+    END
+  END state_o[1]
+  PIN state_o[2]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 1.182800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 55.480 59.360 56.040 59.920 ;
+    END
+  END state_o[2]
+  OBS
+      LAYER Pwell ;
+        RECT 6.290 53.120 49.710 55.310 ;
+      LAYER Nwell ;
+        RECT 6.290 48.800 49.710 53.120 ;
+      LAYER Pwell ;
+        RECT 6.290 45.280 49.710 48.800 ;
+      LAYER Nwell ;
+        RECT 6.290 40.960 49.710 45.280 ;
+      LAYER Pwell ;
+        RECT 6.290 37.440 49.710 40.960 ;
+      LAYER Nwell ;
+        RECT 6.290 33.120 49.710 37.440 ;
+      LAYER Pwell ;
+        RECT 6.290 29.600 49.710 33.120 ;
+      LAYER Nwell ;
+        RECT 6.290 25.280 49.710 29.600 ;
+      LAYER Pwell ;
+        RECT 6.290 21.760 49.710 25.280 ;
+      LAYER Nwell ;
+        RECT 6.290 17.440 49.710 21.760 ;
+      LAYER Pwell ;
+        RECT 6.290 15.250 49.710 17.440 ;
+      LAYER Metal1 ;
+        RECT 6.720 15.380 49.280 55.180 ;
+      LAYER Metal2 ;
+        RECT 6.860 0.860 51.380 67.670 ;
+        RECT 7.580 0.560 19.860 0.860 ;
+        RECT 21.020 0.560 33.300 0.860 ;
+        RECT 34.460 0.560 46.740 0.860 ;
+        RECT 47.900 0.560 51.380 0.860 ;
+      LAYER Metal3 ;
+        RECT 6.810 66.900 55.180 67.620 ;
+        RECT 6.810 60.220 55.480 66.900 ;
+        RECT 6.810 59.060 55.180 60.220 ;
+        RECT 6.810 52.380 55.480 59.060 ;
+        RECT 6.810 51.220 55.180 52.380 ;
+        RECT 6.810 44.540 55.480 51.220 ;
+        RECT 6.810 43.380 55.180 44.540 ;
+        RECT 6.810 36.700 55.480 43.380 ;
+        RECT 6.810 35.540 55.180 36.700 ;
+        RECT 6.810 28.860 55.480 35.540 ;
+        RECT 6.810 27.700 55.180 28.860 ;
+        RECT 6.810 21.020 55.480 27.700 ;
+        RECT 6.810 19.860 55.180 21.020 ;
+        RECT 6.810 13.180 55.480 19.860 ;
+        RECT 6.810 12.020 55.180 13.180 ;
+        RECT 6.810 5.340 55.480 12.020 ;
+        RECT 6.810 4.180 55.180 5.340 ;
+        RECT 6.810 0.700 55.480 4.180 ;
+      LAYER Metal4 ;
+        RECT 24.220 20.250 25.240 25.840 ;
+        RECT 27.440 20.250 52.500 25.840 ;
+      LAYER Metal5 ;
+        RECT 24.140 25.430 52.580 25.870 ;
+  END
+END state_machine
+END LIBRARY
+

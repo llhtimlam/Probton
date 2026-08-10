@@ -1,0 +1,123 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= nom_tt_025C_3v30 Corner ===================================
+
+Startpoint: rst_n (input port clocked by clk)
+Endpoint: _38_ (recovery check against rising-edge clock clk)
+Path Group: asynchronous
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                                  0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (propagated)
+                                 40.000000   40.000000 ^ input external delay
+     3    0.030778    0.803172    0.418098   40.418098 ^ rst_n (in)
+                                                         rst_n (net)
+                      0.803172    0.000000   40.418098 ^ _38_/RN (gf180mcu_fd_sc_mcu7t5v0__dffrnq_1)
+                                             40.418098   data arrival time
+
+                                200.000000  200.000000   clock clk (rise edge)
+                                  0.000000  200.000000   clock source latency
+     3    0.022803    0.182226    0.080547  200.080536 ^ clk (in)
+                                                         clk (net)
+                      0.182226    0.000000  200.080536 ^ _38_/CLK (gf180mcu_fd_sc_mcu7t5v0__dffrnq_1)
+                                 -0.250000  199.830551   clock uncertainty
+                                  0.000000  199.830551   clock reconvergence pessimism
+                                  0.328475  200.159012   library recovery time
+                                            200.159012   data required time
+---------------------------------------------------------------------------------------------
+                                            200.159012   data required time
+                                            -40.418098   data arrival time
+---------------------------------------------------------------------------------------------
+                                            159.740906   slack (MET)
+
+
+Startpoint: _40_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: read_en (output port clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                                  0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock source latency
+     3    0.022803    0.182226    0.080547    0.080547 ^ clk (in)
+                                                         clk (net)
+                      0.182226    0.000000    0.080547 ^ _40_/CLK (gf180mcu_fd_sc_mcu7t5v0__dffrnq_1)
+     6    0.090964    2.243685    2.471463    2.552011 ^ _40_/Q (gf180mcu_fd_sc_mcu7t5v0__dffrnq_1)
+                                                         state_o[2] (net)
+                      2.243685    0.000000    2.552011 ^ _23_/A2 (gf180mcu_fd_sc_mcu7t5v0__nor2_1)
+     3    0.013475    0.734399    0.487757    3.039768 v _23_/ZN (gf180mcu_fd_sc_mcu7t5v0__nor2_1)
+                                                         _07_ (net)
+                      0.734399    0.000294    3.040062 v _24_/A3 (gf180mcu_fd_sc_mcu7t5v0__nor3_1)
+     1    0.072910    5.119506    3.140603    6.180665 ^ _24_/ZN (gf180mcu_fd_sc_mcu7t5v0__nor3_1)
+                                                         read_en (net)
+                      5.119506    0.000000    6.180665 ^ read_en (out)
+                                              6.180665   data arrival time
+
+                                200.000000  200.000000   clock clk (rise edge)
+                                  0.000000  200.000000   clock network delay (propagated)
+                                 -0.250000  199.750000   clock uncertainty
+                                  0.000000  199.750000   clock reconvergence pessimism
+                                -40.000000  159.749985   output external delay
+                                            159.749985   data required time
+---------------------------------------------------------------------------------------------
+                                            159.749985   data required time
+                                             -6.180665   data arrival time
+---------------------------------------------------------------------------------------------
+                                            153.569321   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= nom_tt_025C_3v30 Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= nom_tt_025C_3v30 Corner ===================================
+
+max slew
+
+Pin                                        Limit        Slew       Slack
+------------------------------------------------------------------------
+cal_start                               3.000000    5.439332   -2.439332 (VIOLATED)
+_21_/ZN                                 3.000000    5.439332   -2.439332 (VIOLATED)
+_34_/A1                                 3.000000    5.439332   -2.439332 (VIOLATED)
+read_en                                 3.000000    5.119506   -2.119506 (VIOLATED)
+_24_/ZN                                 3.000000    5.119506   -2.119506 (VIOLATED)
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 0 unannotated drivers.
+Found 5 partially unannotated drivers.
+ _21_/ZN
+ _24_/ZN
+ _38_/Q
+ _39_/Q
+ _40_/Q
+
+===========================================================================
+max slew violation count 5
+Writing metric design__max_slew_violation__count__corner:nom_tt_025C_3v30: 5
+max fanout violation count 0
+Writing metric design__max_fanout_violation__count__corner:nom_tt_025C_3v30: 0
+max cap violation count 0
+Writing metric design__max_cap_violation__count__corner:nom_tt_025C_3v30: 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
