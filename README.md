@@ -103,14 +103,16 @@ Presentation Deck for Schematic/Simulation Review : [Google Slides](https://docs
 
 <img src="Media\Layout\pre-integration.png" width="100%" alt="Proposed Layout Floorplan">
 
-DRC Clean except Density Rule and external ESD Protection Circuit
+Presentation Deck for Layout Review : [Google Slides](https://docs.google.com/presentation/d/1-wRJ25tOpLcIwcqMKb84TJG7cVurhM7Yr_dMmYaoczU/edit?slide=id.g3f0ce36bc21_4_376#slide=id.g3f0ce36bc21_4_376)
+
+DRC Clean except Density Rule for M2 - MTop
 
 LVS in progress
 
 Only Missing Analog Readout Layout
 
 
-### Simulation result
+## Simulation result
 
 Alignment Sensitivity = ±10.95 μm @ -3dB
 
@@ -181,7 +183,6 @@ We have created a [GitHub Organization for our team here](https://github.com/llh
 | ----------------- | -------------- | ------------- | ------------- | ------------- |
 | Tim Lam | @llhtimlam | timlam0531 | llhtimlam@gmail.com | Team Lead |
 | Abraar | @abraaralam | abraaaar | a9raar@gmail.com | Analog Design |
-| Belkacem Benadda | @bekaben | belkaem | belkacem.benadda@ieee.org | Digital & Analog Design |
 | Nitin Indukuri | @nitin-indukuri | nitin_i | indukuri.nitin@gmail.com | Analog Design |
 | Reza Setiabekti | @rtsetiabekti | rezasetiabekti8375 | rtsetiabekti@gmail.com | Interfacing |
 | Ashmita Saha | @ashmita1509 | ash_1509 | ashmita03saha@gmail.com | Interfacing |

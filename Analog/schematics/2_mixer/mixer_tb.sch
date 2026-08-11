@@ -11,8 +11,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=-240000
-x2=160000
+x1=0
+x2=400000
 divx=4
 subdivx=5
 xlabmag=1.0
@@ -21,8 +21,8 @@ dataset=-1
 unitx=1
 logx=0
 logy=0
-y1=148
-y2=-172
+y1=20
+y2=-300
 autoload=1
 rawfile=/workspace/Analog/schematics/2_mixer/simulation_files/mixer_tb.raw
 sim_type=sp
@@ -240,12 +240,6 @@ C {isource.sym} 1690 -730 0 0 {name=I3 value=30u}
 C {gnd.sym} 1690 -700 0 0 {name=l9 lab=GND}
 C {lab_wire.sym} 1770 -800 3 0 {name=p16 sig_type=std_logic lab=VSS}
 C {vdd.sym} 1770 -930 0 0 {name=l14 lab=VDD}
-C {symbols/cap_mim_analog.sym} 2050 -700 0 0 {name=C1
-W=42.74u
-L=42.74u
-model=cap_mim_2f0_m3m4_noshield
-spiceprefix=X
-m=1}
 C {gnd.sym} 2050 -650 0 0 {name=l15 lab=GND}
 C {symbols/ppolyf_u_3k.sym} 1990 -850 1 0 {name=R1
 W=1e-6
@@ -255,6 +249,12 @@ spiceprefix=X
 m=1}
 C {lab_wire.sym} 2080 -850 0 1 {name=p20 sig_type=std_logic lab=mixer_out}
 C {lab_wire.sym} 1990 -890 3 1 {name=p19 sig_type=std_logic lab=VSS}
-C {/workspace/2_mixer/gilbert_mixer.sym} 900 -880 0 0 {name=x4}
-C {/workspace/2_mixer/ota_5t.sym} 1250 -820 0 0 {name=x1}
-C {/workspace/2_mixer/ota_5t.sym} 1710 -800 0 0 {name=x2}
+C {Analog/schematics/2_mixer/gilbert_mixer.sym} 900 -880 0 0 {name=mixer_gilbert_mixer_xy}
+C {Analog/schematics/2_mixer/ota_5t.sym} 1250 -820 0 0 {name=mixer_1st_ota_xy}
+C {Analog/schematics/2_mixer/ota_5t.sym} 1710 -800 0 0 {name=mixer_2nd_ota_xy}
+C {symbols/cap_mim_2f0fF.sym} 2050 -700 0 0 {name=C1
+W=42.74u
+L=42.74u
+model=cap_mim_2f0fF
+spiceprefix=X
+m=1}
