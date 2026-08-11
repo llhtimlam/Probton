@@ -222,9 +222,6 @@ C {devices/lab_wire.sym} 3000 230 0 0 {name=p19 sig_type=std_logic lab=Vcm_bp
 value=1.65}
 C {devices/lab_wire.sym} 2780 310 0 0 {name=p23 sig_type=std_logic lab=Vcm_bp
 value=1.65}
-C {devices/lab_wire.sym} 3080 320 2 1 {name=p25 sig_type=std_logic lab=VSS}
-C {devices/lab_wire.sym} 2860 320 2 1 {name=p29 sig_type=std_logic lab=VSS}
-C {devices/lab_wire.sym} 2610 330 2 1 {name=p30 sig_type=std_logic lab=VSS}
 C {symbols/ppolyf_u_3k.sym} 2220 120 3 0 {name=R1
 W=1e-6
 L=10e-6
@@ -244,7 +241,7 @@ L=70.71e-6
 model=cap_mim_2f0fF
 spiceprefix=X
 m=1}
-C {Analog/schematics/1_readout/bpf/B18_BPF_OTA.sym} 2530 340 0 0 {name=x1}
-C {Analog/schematics/1_readout/bpf/B18_BPF_OTA.sym} 2780 330 0 0 {name=x2}
-C {Analog/schematics/1_readout/bpf/B18_BPF_OTA.sym} 3000 330 0 0 {name=x3}
-C {Analog/schematics/1_readout/tia/B18_TIA_OTA.sym} 2160 300 0 0 {name=x4}
+C {bpf/B18_BPF_OTA.sym} 2530 340 0 0 {name=x1}
+C {bpf/B18_BPF_OTA.sym} 2780 330 0 0 {name=x2}
+C {bpf/B18_BPF_OTA.sym} 3000 330 0 0 {name=x3}
+C {tia/B18_TIA_OTA.sym} 2160 300 0 0 {name=x4}

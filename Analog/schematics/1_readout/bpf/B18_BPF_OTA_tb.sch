@@ -107,7 +107,6 @@ N 190 410 230 410 {
 lab=GND}
 N 190 370 230 370 {
 lab=#net1}
-N 470 180 470 190 {lab=VSS}
 C {devices/isource.sym} 210 140 0 0 {name=I0 value=1.63u}
 C {devices/lab_wire.sym} 450 70 0 0 {name=p2 sig_type=std_logic lab=VDD}
 C {devices/capa.sym} 560 180 0 0 {name=C1
@@ -186,8 +185,4 @@ value="
 .include $::180MCU_MODELS/design.ngspice
 .lib $::180MCU_MODELS/sm141064.ngspice typical
 "}
-C {devices/lab_wire.sym} 470 190 2 0 {name=p10 sig_type=std_logic lab=VSS}
-C {code_shown.sym} 1660 160 0 0 {name=s1 only_toplevel=false value="
-*ICMR is 3.3v to 1.24v, tested op with vcm = 2.2v
-"}
-C {Analog/schematics/1_readout/bpf/B18_BPF_OTA.sym} 390 190 0 0 {name=x1}
+C {bpf/B18_BPF_OTA.sym} 390 190 0 0 {name=x1}
