@@ -70,23 +70,68 @@ Output: (7)
 
 <img src="Media\ChipArchitect\Optical Probe Station Chip Architect.png" width="100%" alt="Proposed Chip Architect">
 
-> Check /Media/ChipArchitect for detailed chip architect diagram
+```
+📁 Project Root
+├── 📁 Media/                           # Presentation & graphics for this project
+│   └── 📁 Presentation                 # Chipathon presentation for each checkpoint (Proposal → Schematic → Simulation → Layout* → Final Submission)
+│   └── 📁 ChipArchitect                # Chip architecture diagram
+│   └── 📁 Setup                        # Hardware setup diagram for optical probe station and verification of this project
+│   └── 📁 Simulation                   # Python simulation diagram for the concept idea and proposed algorithm (not implemented in ASIC)
+│   └── 📁 Schematic                    # Schematic diagram for analog domain
+│   └── 📁 Layout                       # Layout graphics for entire mixed signal system 
+├── 📁 src/                             # Digital circuit design source files (SystemVerilog)
+│   └── 📄 slot_defines.svh             # Chipathon template for slot setting
+│   └── 📄 chip_top.sv                  # Chipathon template for top level
+│   └── 📄 chip_core.sv                 # Chipathon template for core level, compiled with digital domain (not used for layout generation flow)
+│   └── 📄 analog_macro.sv              # Analog Domaain wrapper (not used for layout generation)
+|   # Layout Review
+│   └── 📄 wrapper.sv                   # chip_core.sv replacement wrapper for the layout generation
+│   └── 📄 analog_block.sv              # 480μm x 240μm Analog Domaain wrapper blackbox
+│   └── 📄 digital_domain.sv            # 1117.5μm x 558.75μm Digital Domaain wrapper (carved out 480μm x 240μm analog domain)
+│   └── 📄 state_machine.sv             # Finite State Machine controller
+│   └── 📄 spi.sv                       # SPI controller
+│   └── 📄 wave_controller.sv           # Handle timing, calibration, timing for readout, MEMS signal generation in ΔΣ Modulated Digital Waveform
+│   └── 📄 signal_processor.sv          # Parsing dithering signal and report movement and report back to user
+│   └── 📄 sine_lut.sv                  # Helper for generating ΔΣ Modulated Digital Waveform in sine wave for MEMS & referecne wave to wave mixer analog module
+├── 📁 cocotb/                          # Digital SystemVerilog cocotb simulation results & verification
+│   └── 📄 README.md                    # Instructions for setting up cocotb & GTKWave simulation environment
+│   └── 📁 sim_build                    # GTKWave waveform simulation result
+├── 📁 Analog/
+│   └── 📁 schematics/                  # Analog circuit design files
+│       └── 📄 B18_Probton.sch          # Integrated Schematic for whole system
+|       # Analog submodule folder
+│       └── 📁 1_readout                # Analog Front End (Switch → TIA → BFP)
+│           └── 📁 tia                  # Transimpedance Amplifier
+│               └── 📁 second stage     # (Not implemented)
+│           └── 📁 bpf                  # Band pass Filter
+│       └── 📁 2_mixer                  # Wave Mixer (Gilbert cell → 1st 5T OTA → Low Pass Filter)
+│       └── 📁 3_comparator             # Comparator (StrongArm Comparator → Inverter x2 → RS Latch → 2x Inverter)
+|       # Analog submodule schematic and layout file (inside submodule folder)
+|       # 📄 *_tb.sch                   # Testbench schematic
+|       # 📄 *.sym                      # Symbol for schematic
+│       # 📁 */simulation_files         # Schematic Simmulation Raw file
+│       # 📁 */layout                   # Analog layout files
+├── 📁 librelane/
+│   └── 📁 slots                        # Chipathon template for slots setting
+│   └── 📄 chip_top.sdc                 # Chipathon template
+│   └── 📄 pdn_cfg.tcl                  # Chipathon template
+|   # Digital Domain Layout Generation
+│   └── 📄 config.yaml                  # Layout generation setting
+│   └── 📄 pin_order.cfg                # Pin placement for Odb.CustomIOPlacement IO_PIN_ORDER_CFG
+│   └── 📄 analog_block.*               # Macro for analog blackbox
+│   └── 📁 Digital_Domain               # Digital domain layout report
+|   # Digital Domain submodule (not used)
+│   └── 📁 Config                       # .yaml setting and Odb.CustomIOPlacement IO_PIN_ORDER_CFG .cfg setting for all module
+│   └── 📁 Submodule                    # Digital domain submodule layout report
+└── 📁 gds/
+│   └── 📄 B18_Probton.gds              # DRC dry run gds file for layout review*
+│   └── 📄 B18_Probton.lyrdb            # DRC check report for B18_Probton.gds
+│   └── 📁 analog_domain
+│   └── 📁 digital_domain
+├── 📁 scripts/
+│   └── 📄 README.md                    # Instructions for setting up IIC-OSIC-TOOLS docker used for this project
 
-> Check /src and /Analog/schematics for digital and analog circuit design files respectively
-
-> Check /librelane/Digital_RTL_GDS and /Analog/schematics/*/layout for digital and analog layout files respectively
-
-> For detail on navigating the chip design file, follow the README.md in /scripts folder
-
-> For Digital Verilog Cocotb Simulation Result, follow the README.md in /cocotb folder
-
-> For the final tapeout gds file, go to /gds folder
-
-## SPI Interface 
-
-The SPI peripheral ('src/spi.sv') implements a slave/peripheral register interface and the ASIC responds to an external hose over CS_N/SCLK/MOSI/MISO.
-
-> Full register map and address table documented at the top of 'src/spi.sv'
+```
 
 ## Schematic Review
 
@@ -103,6 +148,8 @@ Presentation Deck for Schematic/Simulation Review : [Google Slides](https://docs
 
 <img src="Media\Layout\pre-integration.png" width="100%" alt="Proposed Layout Floorplan">
 
+Video for Layout Review: [Youtube](https://youtu.be/rO0A9EQpW5c)
+
 Presentation Deck for Layout Review : [Google Slides](https://docs.google.com/presentation/d/1-wRJ25tOpLcIwcqMKb84TJG7cVurhM7Yr_dMmYaoczU/edit?slide=id.g3f0ce36bc21_4_376#slide=id.g3f0ce36bc21_4_376)
 
 DRC Clean except Density Rule for M2 - MTop
@@ -112,7 +159,7 @@ LVS in progress
 Only Missing Analog Readout Layout
 
 
-## Simulation result
+## Simulation result for core concept
 
 Alignment Sensitivity = ±10.95 μm @ -3dB
 
@@ -150,7 +197,40 @@ MEMS Span = ±5 µm @ 300/400Hz
 
 </details>
 
+## Links
 
+
+[Progress tracker](https://docs.google.com/spreadsheets/d/1hN5MHLxyh5gYtU_8X9257t1sGRkRGrkGu-Tv-lXbI_Q/edit?usp=sharing) (Not Updated)
+
+
+[Proposal Slide Link](https://docs.google.com/presentation/d/1q4hdv7IWDyOom2BOauEokjyfa9oZNoGCGBChGqaYRIs/edit?slide=id.g3ed01995daf_2_93#slide=id.g3ed01995daf_2_93)
+
+[Proposal Video Link](https://drive.google.com/file/d/186RtQrj5eBq5YQaNelR__m42KvpKolv7/view) 2.5min Video (Timestamp: 43:50 - 46:10)
+
+
+[Schematic and Simulation Review Slide Link](https://docs.google.com/presentation/d/1yArg9eURDTD4U1TzQWk_HXc--uBOyANuxjhyyxrrQCk/edit?slide=id.g3f0ce36bc21_4_376#slide=id.g3f0ce36bc21_4_376)
+
+[Schematic Review Video Link](https://youtu.be/nWU8KJn_Hf8)
+
+
+[Layout Review Slide Link](https://docs.google.com/presentation/d/1-wRJ25tOpLcIwcqMKb84TJG7cVurhM7Yr_dMmYaoczU/edit?slide=id.g3f0ce36bc21_4_376#slide=id.g3f0ce36bc21_4_376)
+
+[Layout Review Video Link](https://youtu.be/rO0A9EQpW5c)
+
+## Team Members
+
+We have created a [GitHub Organization for our team here](https://github.com/llhtimlam/Probton). Team members are also listed below for convenience.
+
+| Name              | GitHub         | Discord       | Email       | Role |
+| ----------------- | -------------- | ------------- | ------------- | ------------- |
+| Tim Lam | @llhtimlam | timlam0531 | llhtimlam@gmail.com | Team Lead |
+| Abraar | @abraaralam | abraaaar | a9raar@gmail.com | Analog Design |
+| Nitin Indukuri | @nitin-indukuri | nitin_i | indukuri.nitin@gmail.com | Analog Design |
+| Reza Setiabekti | @rtsetiabekti | rezasetiabekti8375 | rtsetiabekti@gmail.com | Interfacing |
+| Ashmita Saha | @ashmita1509 | ash_1509 | ashmita03saha@gmail.com | Interfacing |
+| Victoria Evelyn Tjhin | @victoriatjhin | vik_lyn_ | tjhinevelyn28@gmail.com | Digital & Analog Design |
+| Annika Vednere | @anna-vee | anna_b75_06065 | annikav0985@gmail.com | Analog Design |
+| KALAM, Tayeeb Bin | @tayeeb02 | CadMiuM#9906 | tayeebkalam@gmail.com | Analog Design |
 
 ## Pitch deck
 
@@ -168,27 +248,6 @@ MEMS Span = ±5 µm @ 300/400Hz
 <img src="Media\Presentation\Slide12.PNG" width="100%" alt="Slide12">
 <img src="Media\Presentation\Slide13.PNG" width="100%" alt="Slide13">
 <img src="Media\Presentation\Slide14.PNG" width="100%" alt="Slide14">
-
-## Links
-
-- [Project Repository](https://github.com/llhtimlam/Probton)
-- [Proposal](https://docs.google.com/presentation/d/1my20nb1kIsFqFrcN5mZosZAiVzRqFzaXHJhg6WDKTtg/edit?slide=id.g3ea99befb0f_0_14#slide=id.g3ea99befb0f_0_14)
-- [Progress Tracker](https://app.notion.com/p/abraaralam/Probton-Home-377a16d0b43280fa8b21c942e25e7d73)
-
-## Team Members
-
-We have created a [GitHub Organization for our team here](https://github.com/llhtimlam/Probton). Team members are also listed below for convenience.
-
-| Name              | GitHub         | Discord       | Email       | Role |
-| ----------------- | -------------- | ------------- | ------------- | ------------- |
-| Tim Lam | @llhtimlam | timlam0531 | llhtimlam@gmail.com | Team Lead |
-| Abraar | @abraaralam | abraaaar | a9raar@gmail.com | Analog Design |
-| Nitin Indukuri | @nitin-indukuri | nitin_i | indukuri.nitin@gmail.com | Analog Design |
-| Reza Setiabekti | @rtsetiabekti | rezasetiabekti8375 | rtsetiabekti@gmail.com | Interfacing |
-| Ashmita Saha | @ashmita1509 | ash_1509 | ashmita03saha@gmail.com | Interfacing |
-| Victoria Evelyn Tjhin | @victoriatjhin | vik_lyn_ | tjhinevelyn28@gmail.com | Digital & Analog Design |
-| Annika Vednere | @anna-vee | anna_b75_06065 | annikav0985@gmail.com | Analog Design |
-| KALAM, Tayeeb Bin | @tayeeb02 | CadMiuM#9906 | tayeebkalam@gmail.com | Analog Design |
 
 ### References
 
