@@ -90,9 +90,7 @@ The SPI peripheral ('src/spi.sv') implements a slave/peripheral register interfa
 
 ## Schematic Review
 
-<img src="Media\Schematic\Mixer&comp.png" width="100%" alt="Mixer and Comparator">
-
-<img src="Media\Schematic\Mixer&comp_xy.png" width="100%" alt="Mixer and Comparator Component">
+<img src="Media\Schematic\analog_schematic.png" width="100%" alt="Analog Schematic">
 
 Video for Schematic Review: [Youtube](https://youtu.be/nWU8KJn_Hf8)
 
