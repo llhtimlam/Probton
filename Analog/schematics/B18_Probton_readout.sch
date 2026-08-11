@@ -19,7 +19,6 @@ T {VDD_3v3} -600 -580 1 0 0.4 0.4 {}
 T {VDD_3v3} -290 -580 1 0 0.4 0.4 {}
 T {read_en} -920 140 1 0 0.4 0.4 {}
 T {read_en} -280 140 1 0 0.4 0.4 {}
-T {analog_readout_output} -210 -10 1 0 0.4 0.4 {}
 T {Vbp} -870 -220 0 0 0.4 0.4 {}
 T {Vbp} -440 -90 0 0 0.4 0.4 {}
 T {Vbp} -850 180 1 0 0.4 0.4 {}
@@ -29,7 +28,7 @@ T {read_en} -1190 140 1 0 0.4 0.4 {}
 T {analog_readout_output} -1000 70 1 0 0.4 0.4 {}
 T {analog_readout_output} -360 350 2 0 0.4 0.4 {}
 T {VSS} -850 540 1 0 0.4 0.4 {}
-T {VSS} -1350 -460 1 0 0.4 0.4 {}
+T {VSS} -1330 -460 1 0 0.4 0.4 {}
 T {VSS} -1350 540 1 0 0.4 0.4 {}
 N -310 30 -310 230 {lab=#net1}
 N -950 30 -950 230 {lab=#net1}
@@ -43,9 +42,7 @@ N -1240 -590 -1240 -120 {lab=VDD_3v3}
 N -1220 -10 -1220 230 {lab=#net1}
 N -1220 230 -310 230 {lab=#net1}
 N -1340 -60 -1300 -60 {lab=Ibias_tia_105uA}
-N -1340 -160 -1340 -60 {lab=Ibias_tia_105uA}
-N -1300 -160 -1300 -100 {lab=Vcm_tia_1v5}
-N -1420 -20 -1300 -20 {lab=VDD_3v3}
+N -1420 -20 -1300 -20 {lab=analog_readout_input}
 N -1240 -0 -1240 590 {lab=VSS}
 N -970 40 -970 590 {lab=VSS}
 N -330 40 -330 590 {lab=VSS}
@@ -60,10 +57,10 @@ N -720 -310 -720 40 {lab=Vcm_bp_2v2}
 N -880 -230 -700 -230 {lab=#net3}
 N -880 -60 -390 -60 {lab=#net3}
 N -620 -220 -620 230 {lab=#net1}
-N -1030 320 -240 320 {lab=analog_readout_output}
-N -240 -20 -240 320 {lab=analog_readout_output}
-N -1030 20 -1030 320 {lab=analog_readout_output}
-N -240 320 -240 380 {lab=analog_readout_output}
+N -1030 320 -240 320 {lab=#net4}
+N -240 -20 -240 320 {lab=#net4}
+N -1030 20 -1030 320 {lab=#net4}
+N -240 320 -240 380 {lab=#net4}
 N -240 440 -240 590 {lab=VSS}
 N -640 -210 -640 590 {lab=VSS}
 N -640 -590 -640 -330 {lab=VDD_3v3}
@@ -71,9 +68,12 @@ N -880 -230 -880 380 {lab=#net3}
 N -880 440 -880 590 {lab=VSS}
 N -1420 -590 -330 -590 {lab=VDD_3v3}
 N -1420 590 -240 590 {lab=VSS}
-N -1380 -470 -1150 -470 {lab=VSS}
-N -1380 -470 -1380 590 {lab=VSS}
-N -240 -20 -160 -20 {lab=analog_readout_output}
+N -1360 -470 -1360 590 {lab=VSS}
+N -1320 -100 -1300 -100 {lab=Vcm_tia_1v5}
+N -1380 -220 -1180 -220 {lab=analog_readout_input}
+N -1380 -220 -1380 -20 {lab=analog_readout_input}
+N -1360 -470 -1150 -470 {lab=VSS}
+N -240 -20 -200 -20 {lab=#net4}
 C {lab_pin.sym} -1420 590 2 1 {name=p2 sig_type=std_logic lab=VSS}
 C {Analog/schematics/1_readout/tia/B18_TIA_OTA.sym} -1290 0 0 0 {name=readout_tia_ota}
 C {Analog/schematics/1_readout/bpf/B18_BPF_OTA.sym} -1030 40 0 0 {name=readout_bpf_1st_ota}
@@ -98,11 +98,11 @@ spiceprefix=X
 m=1}
 C {lab_pin.sym} -420 -20 2 1 {name=p22 sig_type=std_logic lab=Ibias_bp_4u89A}
 C {lab_pin.sym} -720 40 1 1 {name=p24 sig_type=std_logic lab=Vcm_bp_2v2}
-C {lab_pin.sym} -1300 -160 1 0 {name=p20 sig_type=std_logic lab=Vcm_tia_1v5}
-C {lab_pin.sym} -1340 -160 1 0 {name=p25 sig_type=std_logic lab=Ibias_tia_105uA}
+C {lab_pin.sym} -1320 -100 1 0 {name=p20 sig_type=std_logic lab=Vcm_tia_1v5}
+C {lab_pin.sym} -1340 -60 1 0 {name=p25 sig_type=std_logic lab=Ibias_tia_105uA}
 C {lab_pin.sym} -1420 -20 2 1 {name=p26 sig_type=std_logic lab=analog_readout_input}
 C {lab_pin.sym} -1420 -590 2 1 {name=p27 sig_type=std_logic lab=VDD_3v3}
 C {Analog/schematics/1_readout/bpf/B18_BPF_OTA.sym} -700 -210 0 0 {name=readout_bpf_2nd_ota_}
 C {lab_pin.sym} -740 -270 2 1 {name=p1 sig_type=std_logic lab=Ibias_bp_4u89A}
 C {lab_pin.sym} -1070 -20 1 1 {name=p23 sig_type=std_logic lab=Ibias_bp_4u89A}
-C {lab_pin.sym} -160 -20 2 0 {name=p10 sig_type=std_logic lab=analog_readout_output}
+C {lab_pin.sym} -210 -20 2 0 {name=p10 sig_type=std_logic lab=analog_readout_output}
