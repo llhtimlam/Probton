@@ -107,10 +107,10 @@ Output: (7)
 │       └── 📁 2_mixer                  # Wave Mixer (Gilbert cell → 1st 5T OTA → Low Pass Filter)
 │       └── 📁 3_comparator             # Comparator (StrongArm Comparator → Inverter x2 → RS Latch → 2x Inverter)
 |       # Analog submodule schematic and layout file (inside submodule folder)
-|       # 📄 *_tb.sch                   # Testbench schematic
-|       # 📄 *.sym                      # Symbol for schematic
-│       # 📁 */simulation_files         # Schematic Simmulation Raw file
-│       # 📁 */layout                   # Analog layout files
+|       # 📄 /**/*_tb.sch                   # Testbench schematic
+|       # 📄 /**/*.sym                      # Symbol for schematic
+│       # 📁 /**/*/simulation_files         # Schematic Simmulation Raw file
+│       # 📁 /**/*/layout                   # Analog layout files
 ├── 📁 librelane/
 │   └── 📁 slots                        # Chipathon template for slots setting
 │   └── 📄 chip_top.sdc                 # Chipathon template
