@@ -1,0 +1,12 @@
+** sch_path: /workspace/Analog/schematics/3_comparator/rslatch.sch
+.subckt rslatch VDD Vout1 Vout2 Vin1 Vin2 VSS
+*.PININFO VDD:B VSS:B Vin1:B Vin2:B Vout1:B Vout2:B
+M1 Vout1 Vin1 VSS VSS nfet_03v3 L=0.4u W=1u nf=1
+M2 Vout2 Vin2 VSS VSS nfet_03v3 L=0.4u W=1u nf=1
+M3 Vout1 Vout2 VDD VDD pfet_03v3 L=0.4u W=1u nf=1
+M4 Vout2 Vout1 VDD VDD pfet_03v3 L=0.4u W=1u nf=1
+M6 Vout1 vdd vdd vdd pfet_03v3 L=0.4u W=1u nf=1
+M5 Vout2 vdd vdd vdd pfet_03v3 L=0.4u W=1u nf=1
+M7 Vout1 vss vss vss nfet_03v3 L=0.4u W=1u nf=1
+M8 Vout2 vss vss vss nfet_03v3 L=0.4u W=1u nf=1
+.ends

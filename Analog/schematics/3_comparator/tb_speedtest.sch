@@ -94,59 +94,129 @@ Input Capacitance from Digital Blocks: ~5p
 Potential Test for Max Robustness: ~10p} 1480 -130 0 0 0.4 0.4 {}
 N 450 -570 510 -570 {lab=#net1
 spice_ignore=true}
-N 160 -420 210 -420 {lab=#net2}
-N 160 -280 210 -280 {lab=#net3}
-N 160 -170 210 -170 {lab=#net4}
-N 570 -300 590 -300 {lab=IN_P}
-N 570 -270 590 -270 {lab=CLK}
-N 530 -240 550 -240 {lab=IN_N}
-N 820 -260 840 -260 {lab=OUT2}
-N 820 -280 840 -280 {lab=OUT1}
-N 840 -260 860 -260 {lab=OUT2}
-N 840 -280 860 -280 {lab=OUT1}
-N 890 -370 940 -370 {lab=OUT1}
-N 890 -370 890 -280 {lab=OUT1}
-N 860 -280 890 -280 {lab=OUT1}
-N 890 -180 940 -180 {lab=OUT2}
-N 890 -260 890 -180 {lab=OUT2}
-N 860 -260 890 -260 {lab=OUT2}
-N 1090 -370 1110 -370 {lab=INV1}
-N 1090 -180 1110 -180 {lab=INV2}
-N 1020 -270 1020 -260 {lab=VDD_3V3}
-N 1020 -290 1020 -280 {lab=GND}
-N 1000 -470 1020 -470 {lab=VDD_3V3}
-N 1020 -470 1020 -450 {lab=VDD_3V3}
-N 1000 -270 1020 -270 {lab=VDD_3V3}
-N 1020 -100 1020 -80 {lab=GND}
-N 1120 -370 1170 -370 {lab=INV1}
-N 1180 -370 1180 -280 {lab=INV1}
-N 1300 -390 1300 -340 {lab=VDD_3V3}
-N 1300 -200 1300 -150 {lab=GND}
-N 1420 -280 1510 -280 {lab=VOUT1}
-N 1420 -260 1480 -260 {lab=VOUT2}
-N 1170 -370 1180 -370 {lab=INV1}
-N 1180 -260 1180 -180 {lab=INV2}
-N 1150 -180 1180 -180 {lab=INV2}
-N 1980 -260 2040 -260 {lab=Comp_Out}
-N 1110 -180 1150 -180 {lab=INV2}
-N 1110 -370 1120 -370 {lab=INV1}
-N 1180 -280 1240 -280 {lab=INV1}
-N 1180 -260 1240 -260 {lab=INV2}
-N 1900 -260 1920 -260 {lab=Comp_Out}
-N 1830 -180 1830 -170 {lab=GND}
-N 1810 -360 1830 -360 {lab=VDD_3V3}
-N 1830 -360 1830 -340 {lab=VDD_3V3}
-N 1930 -260 1980 -260 {lab=Comp_Out}
-N 1920 -260 1930 -260 {lab=Comp_Out}
-N 550 -240 590 -240 {lab=IN_N}
-N 530 -300 570 -300 {lab=IN_P}
-N 540 -320 540 -300 {lab=IN_P}
-N 540 -240 540 -220 {lab=IN_N}
-N 1730 -260 1750 -260 {lab=#net5}
-N 1660 -180 1660 -170 {lab=GND}
-N 1640 -360 1660 -360 {lab=VDD_3V3}
-N 1660 -360 1660 -340 {lab=VDD_3V3}
-N 1480 -260 1580 -260 {lab=VOUT2}
+N 160 -420 210 -420 {lab=#net1}
+N 160 -280 210 -280 {lab=#net2}
+N 160 -170 210 -170 {lab=#net3}
+N 570 -300 590 -300 {lab=IN_P
+spice_ignore=true}
+N 570 -270 590 -270 {lab=CLK
+spice_ignore=true}
+N 530 -240 550 -240 {lab=IN_N
+spice_ignore=true}
+N 820 -260 840 -260 {lab=OUT2
+spice_ignore=true}
+N 820 -280 840 -280 {lab=OUT1
+spice_ignore=true}
+N 840 -260 860 -260 {lab=OUT2
+spice_ignore=true}
+N 840 -280 860 -280 {lab=OUT1
+spice_ignore=true}
+N 890 -370 940 -370 {lab=OUT1
+spice_ignore=true}
+N 890 -370 890 -280 {lab=OUT1
+spice_ignore=true}
+N 860 -280 890 -280 {lab=OUT1
+spice_ignore=true}
+N 890 -180 940 -180 {lab=OUT2
+spice_ignore=true}
+N 890 -260 890 -180 {lab=OUT2
+spice_ignore=true}
+N 860 -260 890 -260 {lab=OUT2
+spice_ignore=true}
+N 1090 -370 1110 -370 {lab=INV1
+spice_ignore=true}
+N 1090 -180 1110 -180 {lab=INV2
+spice_ignore=true}
+N 1020 -270 1020 -260 {lab=VDD_3V3
+spice_ignore=true}
+N 1020 -290 1020 -280 {lab=GND
+spice_ignore=true}
+N 1000 -470 1020 -470 {lab=VDD_3V3
+spice_ignore=true}
+N 1020 -470 1020 -450 {lab=VDD_3V3
+spice_ignore=true}
+N 1000 -270 1020 -270 {lab=VDD_3V3
+spice_ignore=true}
+N 1020 -100 1020 -80 {lab=GND
+spice_ignore=true}
+N 1120 -370 1170 -370 {lab=INV1
+spice_ignore=true}
+N 1180 -370 1180 -280 {lab=INV1
+spice_ignore=true}
+N 1300 -390 1300 -340 {lab=VDD_3V3
+spice_ignore=true}
+N 1300 -200 1300 -150 {lab=GND
+spice_ignore=true}
+N 1420 -280 1510 -280 {lab=VOUT1
+spice_ignore=true}
+N 1420 -260 1480 -260 {lab=VOUT2
+spice_ignore=true}
+N 1170 -370 1180 -370 {lab=INV1
+spice_ignore=true}
+N 1180 -260 1180 -180 {lab=INV2
+spice_ignore=true}
+N 1150 -180 1180 -180 {lab=INV2
+spice_ignore=true}
+N 1980 -260 2040 -260 {lab=Comp_Out
+spice_ignore=true}
+N 1110 -180 1150 -180 {lab=INV2
+spice_ignore=true}
+N 1110 -370 1120 -370 {lab=INV1
+spice_ignore=true}
+N 1180 -280 1240 -280 {lab=INV1
+spice_ignore=true}
+N 1180 -260 1240 -260 {lab=INV2
+spice_ignore=true}
+N 1900 -260 1920 -260 {lab=Comp_Out
+spice_ignore=true}
+N 1830 -180 1830 -170 {lab=GND
+spice_ignore=true}
+N 1810 -360 1830 -360 {lab=VDD_3V3
+spice_ignore=true}
+N 1830 -360 1830 -340 {lab=VDD_3V3
+spice_ignore=true}
+N 1930 -260 1980 -260 {lab=Comp_Out
+spice_ignore=true}
+N 1920 -260 1930 -260 {lab=Comp_Out
+spice_ignore=true}
+N 550 -240 590 -240 {lab=IN_N
+spice_ignore=true}
+N 530 -300 570 -300 {lab=IN_P
+spice_ignore=true}
+N 540 -320 540 -300 {lab=IN_P
+spice_ignore=true}
+N 540 -240 540 -220 {lab=IN_N
+spice_ignore=true}
+N 1730 -260 1750 -260 {lab=#net5
+spice_ignore=true}
+N 1660 -180 1660 -170 {lab=GND
+spice_ignore=true}
+N 1640 -360 1660 -360 {lab=VDD_3V3
+spice_ignore=true}
+N 1660 -360 1660 -340 {lab=VDD_3V3
+spice_ignore=true}
+N 1480 -260 1580 -260 {lab=VOUT2
+spice_ignore=true}
+N 660 120 680 120 {lab=IN_P
+}
+N 660 160 680 160 {lab=CLK
+}
+N 620 200 640 200 {lab=IN_N
+}
+N 640 200 680 200 {lab=IN_N
+}
+N 620 120 660 120 {lab=IN_P
+}
+N 630 100 630 120 {lab=IN_P
+}
+N 630 200 630 220 {lab=IN_N
+}
+N 760 230 760 260 {lab=GND}
+N 760 60 760 90 {lab=VDD_3V3}
+N 930 160 990 160 {lab=Comp_Out
+}
+N 880 160 930 160 {lab=Comp_Out
+}
 C {code_shown.sym} 130 -760 0 0 {name=NGSPICE only_toplevel=true value=
 ".save all
 .save @m.x1.xm11.m0[id]
@@ -210,56 +280,90 @@ value=50
 footprint=1206
 device=resistor
 m=1}
-C {lab_pin.sym} 530 -240 0 0 {name=p1 sig_type=std_logic lab=IN_N}
-C {lab_pin.sym} 530 -300 0 0 {name=p2 sig_type=std_logic lab=IN_P}
-C {lab_pin.sym} 570 -270 0 0 {name=p3 sig_type=std_logic lab=CLK}
-C {lab_pin.sym} 650 -330 0 0 {name=p13 sig_type=std_logic lab=VDD_3V3}
-C {lab_pin.sym} 1180 -370 3 1 {name=p14 sig_type=std_logic lab=INV1}
-C {lab_pin.sym} 1180 -180 1 1 {name=p15 sig_type=std_logic lab=INV2}
+C {lab_pin.sym} 530 -240 0 0 {name=p1 sig_type=std_logic lab=IN_N
+spice_ignore=true}
+C {lab_pin.sym} 530 -300 0 0 {name=p2 sig_type=std_logic lab=IN_P
+spice_ignore=true}
+C {lab_pin.sym} 570 -270 0 0 {name=p3 sig_type=std_logic lab=CLK
+spice_ignore=true}
+C {lab_pin.sym} 650 -330 0 0 {name=p13 sig_type=std_logic lab=VDD_3V3
+spice_ignore=true}
+C {lab_pin.sym} 1180 -370 3 1 {name=p14 sig_type=std_logic lab=INV1
+spice_ignore=true}
+C {lab_pin.sym} 1180 -180 1 1 {name=p15 sig_type=std_logic lab=INV2
+spice_ignore=true}
 C {capa.sym} 1970 -230 0 0 {name=C1
 m=1
 value=5p
 footprint=1206
-device="ceramic capacitor"}
-C {gnd.sym} 650 -210 0 0 {name=l6 lab=GND}
-C {gnd.sym} 1970 -200 0 0 {name=l8 lab=GND}
-C {lab_pin.sym} 1000 -270 0 0 {name=p5 sig_type=std_logic lab=VDD_3V3}
-C {lab_pin.sym} 1000 -470 0 0 {name=p9 sig_type=std_logic lab=VDD_3V3}
-C {gnd.sym} 1020 -280 3 0 {name=l9 lab=GND}
-C {gnd.sym} 1020 -80 0 0 {name=l12 lab=GND}
+device="ceramic capacitor"
+spice_ignore=true}
+C {gnd.sym} 650 -210 0 0 {name=l6 lab=GND
+spice_ignore=true}
+C {gnd.sym} 1970 -200 0 0 {name=l8 lab=GND
+spice_ignore=true}
+C {lab_pin.sym} 1000 -270 0 0 {name=p5 sig_type=std_logic lab=VDD_3V3
+spice_ignore=true}
+C {lab_pin.sym} 1000 -470 0 0 {name=p9 sig_type=std_logic lab=VDD_3V3
+spice_ignore=true}
+C {gnd.sym} 1020 -280 3 0 {name=l9 lab=GND
+spice_ignore=true}
+C {gnd.sym} 1020 -80 0 0 {name=l12 lab=GND
+spice_ignore=true}
 C {lab_pin.sym} 890 -310 2 1 {name=p16 sig_type=std_logic lab=OUT1
-}
-C {lab_pin.sym} 890 -230 2 1 {name=p17 sig_type=std_logic lab=OUT2}
-C {gnd.sym} 1300 -150 0 0 {name=l10 lab=GND}
-C {lab_pin.sym} 1300 -390 0 0 {name=p6 sig_type=std_logic lab=VDD_3V3}
-C {lab_pin.sym} 1460 -280 3 1 {name=p12 sig_type=std_logic lab=VOUT1}
-C {lab_pin.sym} 1460 -260 1 1 {name=p18 sig_type=std_logic lab=VOUT2}
-C {lab_pin.sym} 2040 -260 0 1 {name=p19 sig_type=std_logic lab=Comp_Out}
-C {lab_pin.sym} 1810 -360 0 0 {name=p22 sig_type=std_logic lab=VDD_3V3}
-C {gnd.sym} 1830 -170 3 0 {name=l11 lab=GND}
-C {noconn.sym} 1510 -280 2 0 {name=l15}
+spice_ignore=true}
+C {lab_pin.sym} 890 -230 2 1 {name=p17 sig_type=std_logic lab=OUT2
+spice_ignore=true}
+C {gnd.sym} 1300 -150 0 0 {name=l10 lab=GND
+spice_ignore=true}
+C {lab_pin.sym} 1300 -390 0 0 {name=p6 sig_type=std_logic lab=VDD_3V3
+spice_ignore=true}
+C {lab_pin.sym} 1460 -280 3 1 {name=p12 sig_type=std_logic lab=VOUT1
+spice_ignore=true}
+C {lab_pin.sym} 1460 -260 1 1 {name=p18 sig_type=std_logic lab=VOUT2
+spice_ignore=true}
+C {lab_pin.sym} 2040 -260 0 1 {name=p19 sig_type=std_logic lab=Comp_Out
+spice_ignore=true}
+C {lab_pin.sym} 1810 -360 0 0 {name=p22 sig_type=std_logic lab=VDD_3V3
+spice_ignore=true}
+C {gnd.sym} 1830 -170 3 0 {name=l11 lab=GND
+spice_ignore=true}
+C {noconn.sym} 1510 -280 2 0 {name=l15
+spice_ignore=true}
 C {capa.sym} 540 -350 2 0 {name=C3
 m=1
 value=2p
 footprint=1206
-device="ceramic capacitor"}
-C {gnd.sym} 540 -380 2 0 {name=l7 lab=GND}
+device="ceramic capacitor"
+spice_ignore=true}
+C {gnd.sym} 540 -380 2 0 {name=l7 lab=GND
+spice_ignore=true}
 C {capa.sym} 540 -190 0 0 {name=C2
 m=1
 value=2p
 footprint=1206
-device="ceramic capacitor"}
-C {gnd.sym} 540 -160 0 0 {name=l1 lab=GND}
-C {Analog/schematics/3_comparator/strongArmLatch.sym} 730 -280 0 0 {name=x1}
-C {Analog/schematics/3_comparator/inv.sym} 940 -450 0 0 {name=xinv1}
-C {Analog/schematics/3_comparator/inv.sym} 940 -260 0 0 {name=xinv2}
-C {Analog/schematics/3_comparator/rslatch.sym} 1340 -260 0 0 {name=x2}
+device="ceramic capacitor"
+spice_ignore=true}
+C {gnd.sym} 540 -160 0 0 {name=l1 lab=GND
+spice_ignore=true}
+C {Analog/schematics/3_comparator/strongArmLatch.sym} 730 -280 0 0 {name=x1
+spice_ignore=true}
+C {Analog/schematics/3_comparator/inv.sym} 940 -450 0 0 {name=xinv1
+spice_ignore=true}
+C {Analog/schematics/3_comparator/inv.sym} 940 -260 0 0 {name=xinv2
+spice_ignore=true}
+C {Analog/schematics/3_comparator/rslatch.sym} 1340 -260 0 0 {name=x2
+spice_ignore=true}
 C {gnd.sym} 450 -510 0 0 {name=l5 lab=GND
 spice_ignore=true}
-C {Analog/schematics/3_comparator/inv.sym} 1580 -340 0 0 {name=xinv3}
-C {Analog/schematics/3_comparator/inv.sym} 1750 -340 0 0 {name=xinv4}
-C {lab_pin.sym} 1640 -360 0 0 {name=p11 sig_type=std_logic lab=VDD_3V3}
-C {gnd.sym} 1660 -170 3 0 {name=l13 lab=GND}
+C {Analog/schematics/3_comparator/inv.sym} 1580 -340 0 0 {name=xinv3
+spice_ignore=true}
+C {Analog/schematics/3_comparator/inv.sym} 1750 -340 0 0 {name=xinv4
+spice_ignore=true}
+C {lab_pin.sym} 1640 -360 0 0 {name=p11 sig_type=std_logic lab=VDD_3V3
+spice_ignore=true}
+C {gnd.sym} 1660 -170 3 0 {name=l13 lab=GND
+spice_ignore=true}
 C {code.sym} 1990 -740 0 0 {name=MODELS only_toplevel=true
 format="tcleval( @value )"
 value="
@@ -270,4 +374,40 @@ value="
 .lib $::180MCU_MODELS/sm141064.ngspice res_typical
 
 "
+}
+C {lab_pin.sym} 620 200 0 0 {name=p21 sig_type=std_logic lab=IN_N
+}
+C {lab_pin.sym} 620 120 0 0 {name=p23 sig_type=std_logic lab=IN_P
+}
+C {lab_pin.sym} 660 160 0 0 {name=p24 sig_type=std_logic lab=CLK
+}
+C {capa.sym} 630 70 2 0 {name=C4
+m=1
+value=2p
+footprint=1206
+device="ceramic capacitor"
+}
+C {gnd.sym} 630 40 2 0 {name=l16 lab=GND
+}
+C {capa.sym} 630 250 0 0 {name=C5
+m=1
+value=2p
+footprint=1206
+device="ceramic capacitor"
+}
+C {gnd.sym} 630 280 0 0 {name=l17 lab=GND
+}
+C {Analog/schematics/3_comparator/comparator.sym} 640 360 0 0 {name=x3}
+C {gnd.sym} 760 260 0 0 {name=l18 lab=GND
+}
+C {lab_pin.sym} 760 60 1 0 {name=p25 sig_type=std_logic lab=VDD_3V3}
+C {capa.sym} 920 190 0 0 {name=C6
+m=1
+value=5p
+footprint=1206
+device="ceramic capacitor"
+}
+C {gnd.sym} 920 220 0 0 {name=l19 lab=GND
+}
+C {lab_pin.sym} 990 160 0 1 {name=p26 sig_type=std_logic lab=Comp_Out
 }

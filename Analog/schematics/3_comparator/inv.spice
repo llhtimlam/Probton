@@ -1,0 +1,18 @@
+** sch_path: /workspace/Analog/schematics/3_comparator/inv.sch
+.subckt inv vdd vi vo vss
+*.PININFO vdd:B vss:B vi:I vo:O
+M1 vo vi vss vss nfet_03v3 L=0.28u W=0.4u nf=1
+M2 vo vi vdd vdd pfet_03v3 L=0.28u W=1u nf=1
+M3 net8 net1 vdd vdd pfet_03v3 L=0.28u W=1u nf=1
+M4 vo net2 net7 vdd pfet_03v3 L=0.28u W=1u nf=1
+M5 net5 net3 vss vss nfet_03v3 L=0.28u W=0.4u nf=1
+M6 vo net4 net6 vss nfet_03v3 L=0.28u W=0.4u nf=1
+* noconn #net1
+* noconn #net2
+* noconn #net3
+* noconn #net4
+* noconn #net5
+* noconn #net6
+* noconn #net7
+* noconn #net8
+.ends
