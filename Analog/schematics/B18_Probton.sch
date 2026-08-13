@@ -8,8 +8,6 @@ E {}
 T {VDD_3v3} 1310 570 0 0 0.4 0.4 {}
 T {VSS} 800 10 1 0 0.4 0.4 {}
 T {VSS} -20 600 0 0 0.4 0.4 {}
-T {Ibias_30uA_nmos} 280 -70 1 0 0.4 0.4 {}
-T {Ibias_30uA_nmos} 510 -70 1 0 0.4 0.4 {}
 T {VSS} 850 10 1 0 0.4 0.4 {}
 T {VSS} 900 10 1 0 0.4 0.4 {}
 T {Vbias_1v65_midrail} 980 10 1 0 0.4 0.4 {}
@@ -69,6 +67,7 @@ T {analog_readout_output} 80 -30 2 0 0.4 0.4 {}
 T {ref_y_dig_sq} -80 500 2 0 0.4 0.4 {}
 T {ref_x_dig_sq} -90 -330 2 0 0.4 0.4 {}
 T {clk} -90 -390 2 0 0.4 0.4 {}
+T {VDD_3v3} 630 450 1 0 0.4 0.4 {}
 N 200 -250 250 -250 {lab=#net1}
 N 200 -270 250 -270 {lab=#net2}
 N 430 -250 520 -250 {lab=#net3}
@@ -80,37 +79,35 @@ N 460 -320 460 -230 {lab=#net4}
 N 460 -320 700 -320 {lab=#net4}
 N 700 -320 700 -230 {lab=#net4}
 N 700 -230 740 -230 {lab=#net4}
-N 250 -220 250 -130 {lab=Ibias_30uA_nmos}
-N 520 -200 520 -130 {lab=Ibias_30uA_nmos}
 N 330 -200 330 -150 {lab=VSS}
-N 800 -320 800 -230 {lab=#net5}
+N 800 -320 800 -230 {lab=analog_error_x_output}
 N 910 -290 950 -290 {lab=clk}
-N 1180 -280 1180 -190 {lab=#net6}
-N 1180 -190 1230 -190 {lab=#net6}
-N 1180 -390 1180 -300 {lab=#net7}
-N 1180 -390 1230 -390 {lab=#net7}
+N 1180 -280 1180 -190 {lab=#net5}
+N 1180 -190 1230 -190 {lab=#net5}
+N 1180 -390 1180 -300 {lab=#net6}
+N 1180 -390 1230 -390 {lab=#net6}
 N 1310 -280 1310 -270 {lab=VDD_3v3}
 N 1210 -280 1310 -280 {lab=VDD_3v3}
 N 1310 -310 1310 -300 {lab=VSS}
 N 1310 -300 1430 -300 {lab=VSS}
-N 1380 -190 1470 -190 {lab=#net8}
-N 1470 -290 1470 -190 {lab=#net8}
-N 1380 -390 1470 -390 {lab=#net9}
-N 1470 -390 1470 -310 {lab=#net9}
+N 1380 -190 1470 -190 {lab=#net7}
+N 1470 -290 1470 -190 {lab=#net7}
+N 1380 -390 1470 -390 {lab=#net8}
+N 1470 -390 1470 -310 {lab=#net8}
 N 1530 -590 1530 -370 {lab=VDD_3v3}
 N 1210 -590 1210 -280 {lab=VDD_3v3}
 N 1310 -590 1310 -470 {lab=VDD_3v3}
-N 1650 -290 1670 -290 {lab=#net10}
-N 1650 -310 1710 -310 {lab=#net11}
+N 1650 -290 1670 -290 {lab=#net9}
+N 1650 -310 1710 -310 {lab=#net10}
 N 1790 -590 1790 -390 {lab=VDD_3v3}
 N 1960 -590 1960 -390 {lab=VDD_3v3}
 N 330 -150 600 -150 {lab=VSS}
-N 800 -320 950 -320 {lab=#net5}
+N 800 -320 950 -320 {lab=analog_error_x_output}
 N 910 -380 910 -290 {lab=clk}
 N 120 -420 120 -360 {lab=Ibias_n_50uA}
 N 140 -420 140 -360 {lab=Ibias_p_50uA}
-N 800 -230 820 -230 {lab=#net5}
-N 820 -230 820 -210 {lab=#net5}
+N 800 -230 820 -230 {lab=analog_error_x_output}
+N 820 -230 820 -210 {lab=analog_error_x_output}
 N 1530 -230 1530 230 {lab=VSS}
 N 1790 -230 1790 230 {lab=VSS}
 N 1960 -230 1960 230 {lab=VSS}
@@ -118,48 +115,44 @@ N 1310 -110 1310 110 {lab=VSS}
 N 1310 300 1310 310 {lab=VSS}
 N 1310 270 1310 280 {lab=VDD_3v3}
 N 1200 280 1310 280 {lab=VDD_3v3}
-N 1180 190 1180 280 {lab=#net12}
-N 1180 190 1230 190 {lab=#net12}
-N 1180 300 1180 390 {lab=#net13}
-N 1180 390 1230 390 {lab=#net13}
-N 1380 190 1470 190 {lab=#net14}
-N 1470 190 1470 290 {lab=#net14}
-N 1380 390 1470 390 {lab=#net15}
-N 1470 310 1470 390 {lab=#net15}
-N 1650 290 1670 290 {lab=#net16}
-N 1650 310 1710 310 {lab=#net17}
-N 1860 310 1880 310 {lab=#net18}
+N 1180 190 1180 280 {lab=#net11}
+N 1180 190 1230 190 {lab=#net11}
+N 1180 300 1180 390 {lab=#net12}
+N 1180 390 1230 390 {lab=#net12}
+N 1380 190 1470 190 {lab=#net13}
+N 1470 190 1470 290 {lab=#net13}
+N 1380 390 1470 390 {lab=#net14}
+N 1470 310 1470 390 {lab=#net14}
+N 1650 290 1670 290 {lab=#net15}
+N 1650 310 1710 310 {lab=#net16}
+N 1860 310 1880 310 {lab=#net17}
 N 1010 -230 1010 230 {lab=VSS}
 N 820 -150 820 150 {lab=VSS}
 N 770 -210 770 210 {lab=VSS}
 N 600 -180 600 180 {lab=VSS}
-N 430 250 520 250 {lab=#net19}
-N 460 230 520 230 {lab=#net20}
-N 460 230 460 320 {lab=#net20}
-N 460 320 700 320 {lab=#net20}
-N 700 230 700 320 {lab=#net20}
-N 700 230 740 230 {lab=#net20}
-N 800 230 800 320 {lab=#net21}
-N 800 320 950 320 {lab=#net21}
-N 800 230 820 230 {lab=#net21}
-N 820 210 820 230 {lab=#net21}
+N 430 250 520 250 {lab=#net18}
+N 460 230 520 230 {lab=#net19}
+N 460 230 460 320 {lab=#net19}
+N 460 320 700 320 {lab=#net19}
+N 700 230 700 320 {lab=#net19}
+N 700 230 740 230 {lab=#net19}
+N 800 230 800 320 {lab=analog_error_y_output}
+N 800 320 950 320 {lab=analog_error_y_output}
+N 800 230 820 230 {lab=analog_error_y_output}
+N 820 210 820 230 {lab=analog_error_y_output}
 N 330 140 330 200 {lab=VSS}
 N 330 140 600 140 {lab=VSS}
-N 250 -130 250 220 {lab=Ibias_30uA_nmos}
-N 520 -130 520 200 {lab=Ibias_30uA_nmos}
 N 910 -290 910 290 {lab=clk}
 N 910 290 950 290 {lab=clk}
 N 950 -260 950 260 {lab=Vbias_1v65_midrail}
-N 380 -80 380 -50 {lab=Ibias_30uA_nmos}
 N 930 -80 930 -50 {lab=Vbias_1v65_midrail}
 N 930 -80 950 -80 {lab=Vbias_1v65_midrail}
-N 250 -80 520 -80 {lab=Ibias_30uA_nmos}
-N 90 -160 90 160 {lab=#net22}
+N 90 -160 90 160 {lab=analog_readout_output}
 N 110 -160 110 160 {lab=readout_b}
 N 120 360 120 420 {lab=Ibias_p_50uA}
 N 140 360 140 420 {lab=Ibias_n_50uA}
-N 200 250 250 250 {lab=#net23}
-N 200 270 250 270 {lab=#net24}
+N 200 250 250 250 {lab=#net20}
+N 200 270 250 270 {lab=#net21}
 N 600 0 770 0 {lab=VSS}
 N 770 0 820 0 {lab=VSS}
 N 820 -0 870 0 {lab=VSS}
@@ -189,21 +182,21 @@ N -30 -470 -30 590 {lab=VSS}
 N -80 250 -0 250 {lab=ref_y_dig_sq_b}
 N -80 270 -0 270 {lab=ref_y_dig_sq}
 N -80 20 110 20 {lab=readout_b}
-N -80 -20 90 -20 {lab=#net22}
+N -80 -20 90 -20 {lab=analog_readout_output}
 N -80 -250 -0 -250 {lab=ref_x_dig_sq_b}
 N -80 -270 -0 -270 {lab=ref_x_dig_sq}
 N 1010 350 1010 560 {lab=VDD_3v3}
 N 1010 -590 1010 -350 {lab=VDD_3v3}
-N 800 320 800 500 {lab=#net21}
-N 800 500 2080 500 {lab=#net21}
-N 800 -530 800 -320 {lab=#net5}
-N 800 -530 2080 -530 {lab=#net5}
+N 800 320 800 500 {lab=analog_error_y_output}
+N 800 500 2080 500 {lab=analog_error_y_output}
+N 800 -530 800 -320 {lab=analog_error_x_output}
+N 800 -530 2080 -530 {lab=analog_error_x_output}
 N 80 360 80 590 {lab=VSS}
-N -240 -20 -80 -20 {lab=#net22}
-N 90 -20 2080 -20 {lab=#net22}
-N -1150 -60 -1030 -60 {lab=#net25}
-N -1100 -220 -1100 -60 {lab=#net25}
-N -1120 -220 -1100 -220 {lab=#net25}
+N -240 -20 -80 -20 {lab=analog_readout_output}
+N 90 -20 2080 -20 {lab=analog_readout_output}
+N -1150 -60 -1030 -60 {lab=#net22}
+N -1100 -220 -1100 -60 {lab=#net22}
+N -1120 -220 -1100 -220 {lab=#net22}
 N -1150 -470 -1150 -240 {lab=VSS}
 N -1150 -470 -30 -470 {lab=VSS}
 N -330 -590 -330 -80 {lab=VDD_3v3}
@@ -223,16 +216,16 @@ N -1070 -20 -1030 -20 {lab=Ibias_bp_4u89A}
 N -720 -310 -700 -310 {lab=Vcm_bp_2v2}
 N -720 20 -390 20 {lab=Vcm_bp_2v2}
 N -720 -310 -720 40 {lab=Vcm_bp_2v2}
-N -880 -230 -700 -230 {lab=#net26}
-N -880 -60 -390 -60 {lab=#net26}
-N -1030 320 -240 320 {lab=#net22}
-N -240 -20 -240 320 {lab=#net22}
-N -1030 20 -1030 320 {lab=#net22}
-N -240 320 -240 380 {lab=#net22}
+N -880 -230 -700 -230 {lab=#net23}
+N -880 -60 -390 -60 {lab=#net23}
+N -1030 320 -240 320 {lab=analog_readout_output}
+N -240 -20 -240 320 {lab=analog_readout_output}
+N -1030 20 -1030 320 {lab=analog_readout_output}
+N -240 320 -240 380 {lab=analog_readout_output}
 N -240 440 -240 590 {lab=VSS}
 N -640 -210 -640 590 {lab=VSS}
 N -640 -590 -640 -330 {lab=VDD_3v3}
-N -880 -230 -880 380 {lab=#net26}
+N -880 -230 -880 380 {lab=#net23}
 N -880 440 -880 590 {lab=VSS}
 N -80 270 -80 470 {lab=ref_y_dig_sq}
 N -1420 -380 910 -380 {lab=clk}
@@ -242,10 +235,16 @@ N -1380 -220 -1180 -220 {lab=analog_readout_input}
 N -1320 -100 -1300 -100 {lab=Vcm_tia_1v5}
 N -1420 470 -80 470 {lab=ref_y_dig_sq}
 N -1380 -220 -1380 -20 {lab=analog_readout_input}
-N -550 -270 -550 -60 {lab=#net26}
+N -550 -270 -550 -60 {lab=#net23}
 N -1410 230 -1220 230 {lab=read_en}
-N 2030 -310 2080 -310 {lab=#net27}
-N 2030 310 2080 310 {lab=#net28}
+N 2030 -310 2080 -310 {lab=comp_x}
+N 2030 310 2080 310 {lab=comp_y}
+N 1860 -310 1880 -310 {lab=#net24}
+N 600 280 600 560 {lab=VDD_3v3}
+N 520 180 520 200 {lab=Ibias_30uA_nmos}
+N 250 200 250 220 {lab=Ibias_30uA_nmos}
+N 250 -220 250 -200 {lab=Ibias_30uA_nmos}
+N 520 -200 520 -180 {lab=Ibias_30uA_nmos}
 C {Analog/schematics/2_mixer/gilbert_mixer.sym} 100 -260 0 0 {name=mixer_x}
 C {Analog/schematics/2_mixer/ota_5t.sym} 270 -200 0 0 {name=mixer_1st_5t_ota_x}
 C {Analog/schematics/2_mixer/ota_5t.sym} 540 -180 0 0 {name=mixer_2nd_5t_ota_x}
@@ -258,7 +257,7 @@ C {Analog/schematics/3_comparator/inv.sym} 1880 -390 0 0 {name=comp_inv_drv_x}
 C {lab_pin.sym} 120 -420 1 0 {name=p3 sig_type=std_logic lab=Ibias_n_50uA}
 C {lab_pin.sym} 140 -420 1 0 {name=p4 sig_type=std_logic lab=Ibias_p_50uA}
 C {lab_pin.sym} -80 -250 2 1 {name=p6 sig_type=std_logic lab=ref_x_dig_sq_b}
-C {lab_pin.sym} 380 -50 1 1 {name=p7 sig_type=std_logic lab=Ibias_30uA_nmos}
+C {lab_pin.sym} 250 -200 1 1 {name=p7 sig_type=std_logic lab=Ibias_30uA_nmos}
 C {symbols/ppolyf_u_3k.sym} 770 -230 3 0 {name="=144kΩ"
 W=1u
 L=48u
@@ -343,3 +342,6 @@ C {opin.sym} 2080 -310 0 0 {name=p5 lab=comp_x}
 C {opin.sym} 2080 -20 0 0 {name=p30 lab=analog_readout_output}
 C {opin.sym} 2080 -530 0 0 {name=p31 lab=analog_error_x_output}
 C {opin.sym} 2080 500 0 0 {name=p32 lab=analog_error_y_output}
+C {lab_pin.sym} 520 -180 1 1 {name=p8 sig_type=std_logic lab=Ibias_30uA_nmos}
+C {lab_pin.sym} 250 200 3 1 {name=p10 sig_type=std_logic lab=Ibias_30uA_nmos}
+C {lab_pin.sym} 520 180 3 1 {name=p12 sig_type=std_logic lab=Ibias_30uA_nmos}

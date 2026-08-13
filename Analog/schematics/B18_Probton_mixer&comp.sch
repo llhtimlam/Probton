@@ -46,6 +46,7 @@ T {VDD_3v3} 1040 -580 1 0 0.4 0.4 {}
 T {analog_error_y_output} 810 510 0 0 0.4 0.4 {}
 T {analog_error_x_output} 810 -520 0 0 0.4 0.4 {}
 T {VSS} 0 -460 1 0 0.4 0.4 {}
+T {VDD_3v3} 630 450 1 0 0.4 0.4 {}
 N 200 -250 250 -250 {lab=#net1}
 N 200 -270 250 -270 {lab=#net2}
 N 430 -250 520 -250 {lab=#net3}
@@ -181,6 +182,8 @@ N 800 500 2080 500 {lab=analog_error_y_output}
 N 800 -530 800 -320 {lab=analog_error_x_output}
 N 800 -530 2080 -530 {lab=analog_error_x_output}
 N 80 360 80 590 {lab=VSS}
+N 1860 -310 1880 -310 {lab=#net22}
+N 600 280 600 560 {lab=VDD_3v3}
 C {Analog/schematics/2_mixer/gilbert_mixer.sym} 100 -260 0 0 {name=mixer_x}
 C {Analog/schematics/2_mixer/ota_5t.sym} 270 -200 0 0 {name=mixer_1st_5t_ota_x}
 C {Analog/schematics/2_mixer/ota_5t.sym} 540 -180 0 0 {name=mixer_2nd_5t_ota_x}

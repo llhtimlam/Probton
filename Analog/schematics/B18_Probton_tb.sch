@@ -8,8 +8,6 @@ E {}
 T {VDD_3v3} 1310 570 0 0 0.4 0.4 {}
 T {VSS} 800 10 1 0 0.4 0.4 {}
 T {VSS} -20 600 0 0 0.4 0.4 {}
-T {Ibias_30uA_nmos} 280 -70 1 0 0.4 0.4 {}
-T {Ibias_30uA_nmos} 510 -70 1 0 0.4 0.4 {}
 T {VSS} 850 10 1 0 0.4 0.4 {}
 T {VSS} 900 10 1 0 0.4 0.4 {}
 T {Vbias_1v65_midrail} 980 10 1 0 0.4 0.4 {}
@@ -80,8 +78,6 @@ N 460 -320 460 -230 {lab=#net4}
 N 460 -320 700 -320 {lab=#net4}
 N 700 -320 700 -230 {lab=#net4}
 N 700 -230 740 -230 {lab=#net4}
-N 250 -220 250 -130 {lab=Ibias_30uA_nmos}
-N 520 -200 520 -130 {lab=Ibias_30uA_nmos}
 N 330 -200 330 -150 {lab=VSS}
 N 800 -320 800 -230 {lab=analog_error_x_output}
 N 910 -290 950 -290 {lab=clk}
@@ -145,15 +141,11 @@ N 800 230 820 230 {lab=analog_error_y_output}
 N 820 210 820 230 {lab=analog_error_y_output}
 N 330 140 330 200 {lab=VSS}
 N 330 140 600 140 {lab=VSS}
-N 250 -130 250 220 {lab=Ibias_30uA_nmos}
-N 520 -130 520 200 {lab=Ibias_30uA_nmos}
 N 910 -290 910 290 {lab=clk}
 N 910 290 950 290 {lab=clk}
 N 950 -260 950 260 {lab=Vbias_1v65_midrail}
-N 380 -80 380 -50 {lab=Ibias_30uA_nmos}
 N 930 -80 930 -50 {lab=Vbias_1v65_midrail}
 N 930 -80 950 -80 {lab=Vbias_1v65_midrail}
-N 250 -80 520 -80 {lab=Ibias_30uA_nmos}
 N 90 -160 90 160 {lab=analog_readout_output}
 N 110 -160 110 160 {lab=readout_b}
 N 120 360 120 420 {lab=Ibias_p_50uA}
@@ -217,8 +209,6 @@ N -1240 -0 -1240 590 {lab=VSS}
 N -970 40 -970 590 {lab=VSS}
 N -330 40 -330 590 {lab=VSS}
 N -1420 590 870 590 {lab=VSS}
-N -550 -270 -550 -120 {lab=#net23}
-N -550 -120 -550 -60 {lab=#net23}
 N -740 -270 -700 -270 {lab=Ibias_bp_4u89A_2nd_OTA_}
 N -420 -20 -390 -20 {lab=Ibias_bp_4u89A_2nd_OTA}
 N -1070 -20 -1030 -20 {lab=Ibias_bp_4u89A_1st_OTA}
@@ -247,6 +237,9 @@ N -1420 470 -80 470 {lab=ref_y_dig_sq}
 N 2030 310 2080 310 {lab=comp_y}
 N 2030 -310 2080 -310 {lab=comp_x}
 N -1420 230 -1220 230 {lab=read_en}
+N -550 -270 -550 -60 {lab=#net23}
+N 1860 -310 1880 -310 {lab=#net24}
+N 600 280 600 560 {lab=VDD_3v3}
 C {Analog/schematics/2_mixer/gilbert_mixer.sym} 100 -260 0 0 {name=mixer_x}
 C {Analog/schematics/2_mixer/ota_5t.sym} 270 -200 0 0 {name=mixer_1st_5t_ota_x}
 C {Analog/schematics/2_mixer/ota_5t.sym} 540 -180 0 0 {name=mixer_2nd_5t_ota_x}
@@ -258,8 +251,8 @@ C {Analog/schematics/3_comparator/inv.sym} 1710 -390 0 0 {name=comp_inv_buf_x}
 C {Analog/schematics/3_comparator/inv.sym} 1880 -390 0 0 {name=comp_inv_drv_x}
 C {lab_pin.sym} 120 -420 1 0 {name=p3 sig_type=std_logic lab=Ibias_n_50uA}
 C {lab_pin.sym} 140 -420 1 0 {name=p4 sig_type=std_logic lab=Ibias_p_50uA}
-C {lab_pin.sym} -80 -250 2 1 {name=p6 sig_type=std_logic lab=ref_x_dig_sq_b}
-C {lab_pin.sym} 380 -50 1 1 {name=p7 sig_type=std_logic lab=Ibias_30uA_nmos}
+C {lab_pin.sym} -80 -250 2 1 {name=ref_x_dig_sq_b sig_type=std_logic lab=ref_x_dig_sq_b}
+C {lab_pin.sym} 250 -220 1 1 {name=Ibias_30uA_nmos_1st_ota_x sig_type=std_logic lab=Ibias_30uA_nmos_1st_ota_x}
 C {symbols/ppolyf_u_3k.sym} 770 -230 3 0 {name=3
 W=1u
 L=48u
@@ -275,7 +268,7 @@ _m3m4_noshield"
 spiceprefix=c
 m=1}
 C {noconn.sym} 1670 -290 2 0 {name=l15}
-C {lab_pin.sym} -80 20 2 1 {name=p11 sig_type=std_logic lab=readout_b}
+C {lab_pin.sym} -80 20 2 1 {name=readout_b sig_type=std_logic lab=readout_b}
 C {Analog/schematics/2_mixer/gilbert_mixer.sym} 100 260 2 1 {name=mixer_y}
 C {Analog/schematics/2_mixer/ota_5t.sym} 270 200 2 1 {name=mixer_1st_5t_ota_y}
 C {Analog/schematics/2_mixer/ota_5t.sym} 540 180 2 1 {name=mixer_2nd_5t_ota_y}
@@ -300,8 +293,8 @@ _m3m4_noshield"
 spiceprefix=c
 m=1}
 C {noconn.sym} 1670 290 2 0 {name=l1}
-C {lab_pin.sym} 930 -50 1 1 {name=p13 sig_type=std_logic lab=Vbias_1v65_midrail}
-C {lab_pin.sym} -80 250 2 1 {name=p15 sig_type=std_logic lab=ref_y_dig_sq_b}
+C {lab_pin.sym} 930 -50 1 1 {name=Vbias_1v65_midrail sig_type=std_logic lab=Vbias_1v65_midrail}
+C {lab_pin.sym} -80 250 2 1 {name=ref_y_dig_sq_b sig_type=std_logic lab=ref_y_dig_sq_b}
 C {lab_pin.sym} 140 420 1 1 {name=p16 sig_type=std_logic lab=Ibias_n_50uA}
 C {lab_pin.sym} 120 420 1 1 {name=p17 sig_type=std_logic lab=Ibias_p_50uA}
 C {Analog/schematics/1_readout/tia/B18_TIA_OTA.sym} -1290 0 0 0 {name=readout_tia_ota}
@@ -325,22 +318,25 @@ L=10u
 model=ppolyf_u_3k
 spiceprefix=X
 m=1}
-C {lab_pin.sym} -420 -20 2 1 {name=p22 sig_type=std_logic lab=Ibias_bp_4u89A_2nd_OTA}
-C {lab_pin.sym} -720 40 1 1 {name=p24 sig_type=std_logic lab=Vcm_bp_2v2}
-C {lab_pin.sym} -1320 -100 1 0 {name=p20 sig_type=std_logic lab=Vcm_tia_1v5}
-C {lab_pin.sym} -1340 -60 1 0 {name=p25 sig_type=std_logic lab=Ibias_tia_105uA}
+C {lab_pin.sym} -420 -20 2 1 {name=Ibias_bp_4u89A_2nd_OTA sig_type=std_logic lab=Ibias_bp_4u89A_2nd_OTA}
+C {lab_pin.sym} -720 40 1 1 {name=Vcm_bp_2v2 sig_type=std_logic lab=Vcm_bp_2v2}
+C {lab_pin.sym} -1320 -100 1 0 {name=Vcm_tia_1v5 sig_type=std_logic lab=Vcm_tia_1v5}
+C {lab_pin.sym} -1340 -60 1 0 {name=Ibias_tia_105uA sig_type=std_logic lab=Ibias_tia_105uA}
 C {Analog/schematics/1_readout/bpf/B18_BPF_OTA.sym} -700 -210 0 0 {name=readout_bpf_2nd_ota_}
-C {lab_pin.sym} -740 -270 2 1 {name=p1 sig_type=std_logic lab=Ibias_bp_4u89A_2nd_OTA_}
-C {lab_pin.sym} -1070 -20 1 1 {name=p23 sig_type=std_logic lab=Ibias_bp_4u89A_1st_OTA}
-C {ipin.sym} -1420 -590 0 0 {name=p28 lab=VDD_3v3}
-C {ipin.sym} -1420 -380 0 0 {name=p27 lab=clk}
-C {ipin.sym} -1420 -360 0 0 {name=p9 lab=ref_x_dig_sq}
-C {ipin.sym} -1420 -20 0 0 {name=p5 lab=analog_readout_input}
-C {ipin.sym} -1420 230 0 0 {name=p26 lab=read_en}
-C {ipin.sym} -1420 470 0 0 {name=p14 lab=ref_y_dig_sq}
-C {ipin.sym} -1420 590 0 0 {name=p21 lab=VSS}
-C {opin.sym} 2080 310 0 0 {name=p2 lab=comp_y}
-C {opin.sym} 2080 -310 0 0 {name=p12 lab=comp_x}
-C {opin.sym} 2080 -20 0 0 {name=p8 lab=analog_readout_output}
-C {opin.sym} 2080 -530 0 0 {name=p10 lab=analog_error_x_output}
-C {opin.sym} 2080 500 0 0 {name=p18 lab=analog_error_y_output}
+C {lab_pin.sym} -740 -270 2 1 {name=Ibias_bp_4u89A_2nd_OTA_ sig_type=std_logic lab=Ibias_bp_4u89A_2nd_OTA_}
+C {lab_pin.sym} -1070 -20 1 1 {name=Ibias_bp_4u89A_1st_OTA sig_type=std_logic lab=Ibias_bp_4u89A_1st_OTA}
+C {ipin.sym} -1420 -590 0 0 {name=VDD_3v3 lab=VDD_3v3}
+C {ipin.sym} -1420 -380 0 0 {name=clk lab=clk}
+C {ipin.sym} -1420 -360 0 0 {name=ref_x_dig_sq lab=ref_x_dig_sq}
+C {ipin.sym} -1420 -20 0 0 {name=analog_readout_input lab=analog_readout_input}
+C {ipin.sym} -1420 230 0 0 {name=read_en lab=read_en}
+C {ipin.sym} -1420 470 0 0 {name=ref_y_dig_sq lab=ref_y_dig_sq}
+C {ipin.sym} -1420 590 0 0 {name=VSS lab=VSS}
+C {opin.sym} 2080 310 0 0 {name=comp_y lab=comp_y}
+C {opin.sym} 2080 -310 0 0 {name=comp_x lab=comp_x}
+C {opin.sym} 2080 -20 0 0 {name=analog_readout_output lab=analog_readout_output}
+C {opin.sym} 2080 -530 0 0 {name=analog_error_x_output lab=analog_error_x_output}
+C {opin.sym} 2080 500 0 0 {name=analog_error_y_output lab=analog_error_y_output}
+C {lab_pin.sym} 520 -200 1 1 {name=Ibias_30uA_nmos_2nd_ota_x sig_type=std_logic lab=Ibias_30uA_nmos_2nd_ota_x}
+C {lab_pin.sym} 250 220 3 1 {name=Ibias_30uA_nmos_1st_ota_y sig_type=std_logic lab=Ibias_30uA_nmos_1st_ota_y}
+C {lab_pin.sym} 520 200 3 1 {name=Ibias_30uA_nmos_2nd_ota_y sig_type=std_logic lab=Ibias_30uA_nmos_2nd_ota_y}
