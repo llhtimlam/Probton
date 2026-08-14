@@ -1,0 +1,18 @@
+** sch_path: /workspace/Analog/schematics/2_mixer/gilbert_mixer.sch
+.subckt gilbert_mixer Vout_n Vout_p vlo vlo_b vrf vrf_b Ibias_n_50uA Ibias_p_50uA VSS VDD_3v3
+*.PININFO vlo:I vlo_b:I vrf:I vrf_b:I Vout_p:O Vout_n:O Ibias_n_50uA:B Ibias_p_50uA:B VSS:B VDD_3v3:B
+M_dp_lo_pos Vout_p vlo net1 VSS nfet_03v3 L=0.28u W=20u nf=1
+M_dp_lo_neg Vout_n vlo_b net1 VSS nfet_03v3 L=0.28u W=20u nf=1
+M_dp_lo_b_pos Vout_p vlo_b net2 VSS nfet_03v3 L=0.28u W=20u nf=1
+M_dp_lo_b_neg Vout_n vlo net2 VSS nfet_03v3 L=0.28u W=20u nf=1
+M_rf_pos net1 vrf Ibias_p_50uA VSS nfet_03v3 L=0.28u W=10u nf=1
+M_rf_neg net2 vrf_b Ibias_n_50uA VSS nfet_03v3 L=0.28u W=10u nf=1
+XR_load_2 Vout_p VDD_3v3 VSS ppolyf_u_1k r_width=1e-6 r_length=20e-6
+XR_load_1 Vout_n VDD_3v3 VSS ppolyf_u_1k r_width=1e-6 r_length=20e-6
+M_rf_pos1 net1 VSS VSS VSS nfet_03v3 L=0.28u W=2u nf=1
+M_dp_lo_b_pos1 Vout_p VSS VSS VSS nfet_03v3 L=0.28u W=8u nf=1
+M_dp_lo_b_pos2 Vout_n VSS VSS VSS nfet_03v3 L=0.28u W=8u nf=1
+M_rf_pos2 net2 VSS VSS VSS nfet_03v3 L=0.28u W=2u nf=1
+M_rf_pos3 VSS VSS Ibias_p_50uA VSS nfet_03v3 L=0.28u W=2u nf=1
+M_rf_pos4 VSS VSS Ibias_n_50uA VSS nfet_03v3 L=0.28u W=2u nf=1
+.ends

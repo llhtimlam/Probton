@@ -1,0 +1,51 @@
+* Extracted by KLayout with GF180MCU LVS runset on : 15/08/2026 01:34
+
+* cell gilbert_mixer
+* pin Ibias_n_50uA
+* pin Ibias_p_50uA
+* pin VDD_3V3
+* pin VSS
+* pin Vout_n
+* pin Vout_p
+* pin vlo
+* pin vlo_b
+* pin vrf
+* pin vrf_b
+.SUBCKT gilbert_mixer Ibias_n_50uA Ibias_p_50uA VDD_3V3 VSS Vout_n Vout_p vlo
++ vlo_b vrf vrf_b
+* device instance $1 r270 *1 14.45,3.33 ppolyf_u_1k
+R$1 Vout_p VDD_3V3 VSS 20000 ppolyf_u_1k L=20U W=1U
+* device instance $2 r270 *1 52.15,3.33 ppolyf_u_1k
+R$2 Vout_n VDD_3V3 VSS 20000 ppolyf_u_1k L=20U W=1U
+* device instance $3 m90 *1 29.47,7.51 nfet_03v3
+M$3 Vout_n VSS VSS VSS nfet_03v3 L=0.28U W=8U AS=2.8P AD=2.8P PS=13.4U PD=13.4U
+* device instance $4 m90 *1 28.67,7.51 nfet_03v3
+M$4 \$7 vlo_b Vout_n VSS nfet_03v3 L=0.28U W=20U AS=5.2P AD=5.2P PS=22.6U
++ PD=22.6U
+* device instance $5 m90 *1 27.87,7.51 nfet_03v3
+M$5 Vout_p vlo \$7 VSS nfet_03v3 L=0.28U W=20U AS=5.2P AD=5.2P PS=22.6U PD=22.6U
+* device instance $14 m90 *1 20.67,7.51 nfet_03v3
+M$14 VSS VSS Vout_p VSS nfet_03v3 L=0.28U W=8U AS=2.8P AD=2.8P PS=13.4U PD=13.4U
+* device instance $16 r0 *1 37.93,7.51 nfet_03v3
+M$16 \$8 vlo_b Vout_p VSS nfet_03v3 L=0.28U W=20U AS=5.2P AD=5.2P PS=22.6U
++ PD=22.6U
+* device instance $17 r0 *1 38.73,7.51 nfet_03v3
+M$17 Vout_n vlo \$8 VSS nfet_03v3 L=0.28U W=20U AS=5.2P AD=5.2P PS=22.6U
++ PD=22.6U
+* device instance $27 r0 *1 28.1,-4.61 nfet_03v3
+M$27 \$7 VSS VSS VSS nfet_03v3 L=0.28U W=2U AS=0.88P AD=0.52P PS=4.88U PD=2.52U
+* device instance $28 r0 *1 28.9,-4.61 nfet_03v3
+M$28 Ibias_p_50uA vrf \$7 VSS nfet_03v3 L=0.28U W=10U AS=2.6P AD=2.6P PS=12.6U
++ PD=12.6U
+* device instance $33 r0 *1 32.9,-4.61 nfet_03v3
+M$33 VSS VSS Ibias_p_50uA VSS nfet_03v3 L=0.28U W=2U AS=0.52P AD=0.52P PS=2.52U
++ PD=2.52U
+* device instance $34 r0 *1 33.7,-4.61 nfet_03v3
+M$34 Ibias_n_50uA VSS VSS VSS nfet_03v3 L=0.28U W=2U AS=0.52P AD=0.52P PS=2.52U
++ PD=2.52U
+* device instance $35 r0 *1 34.5,-4.61 nfet_03v3
+M$35 \$8 vrf_b Ibias_n_50uA VSS nfet_03v3 L=0.28U W=10U AS=2.6P AD=2.6P
++ PS=12.6U PD=12.6U
+* device instance $40 r0 *1 38.5,-4.61 nfet_03v3
+M$40 VSS VSS \$8 VSS nfet_03v3 L=0.28U W=2U AS=0.52P AD=0.88P PS=2.52U PD=4.88U
+.ENDS gilbert_mixer
