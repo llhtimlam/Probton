@@ -12,7 +12,6 @@ divy=5
 subdivy=1
 unity=1
 x1=0
-x2=400000
 divx=4
 subdivx=5
 xlabmag=1.0
@@ -21,17 +20,17 @@ dataset=-1
 unitx=1
 logx=0
 logy=0
-y1=20
-y2=-300
+y1=-300
+y2=20
 autoload=1
 rawfile=/workspace/Analog/schematics/2_mixer/simulation_files/mixer_tb.raw
 sim_type=sp
 color="4 10 6 7"
-node="
-final_vif_db; final_vif_db -1 *
+node="final_vif_db; final_vif_db -1 *
 final_lpf_db; final_lpf_db -1 *
 final_vlo_db; final_vlo_db -1 *
-final_vrf_db; final_vrf_db -1 *"}
+final_vrf_db; final_vrf_db -1 *"
+x2=400k}
 N 700 -870 800 -870 {
 lab=V_RF_b}
 N 700 -890 800 -890 {
@@ -249,9 +248,9 @@ spiceprefix=X
 m=1}
 C {lab_wire.sym} 2080 -850 0 1 {name=p20 sig_type=std_logic lab=mixer_out}
 C {lab_wire.sym} 1990 -890 3 1 {name=p19 sig_type=std_logic lab=VSS}
-C {Analog/schematics/2_mixer/gilbert_mixer.sym} 900 -880 0 0 {name=mixer_gilbert_mixer_xy}
-C {Analog/schematics/2_mixer/ota_5t.sym} 1250 -820 0 0 {name=mixer_1st_ota_xy}
-C {Analog/schematics/2_mixer/ota_5t.sym} 1710 -800 0 0 {name=mixer_2nd_ota_xy}
+C {Analog/schematics/2_mixer/gilbert_mixer.sym} 900 -880 0 0 {name=X_mixer_gilbert_mixer_xy}
+C {Analog/schematics/2_mixer/ota_5t.sym} 1250 -820 0 0 {name=X_mixer_1st_ota_xy}
+C {Analog/schematics/2_mixer/ota_5t.sym} 1710 -800 0 0 {name=X_mixer_2nd_ota_xy}
 C {symbols/cap_mim_2f0fF.sym} 2050 -700 0 0 {name=C1
 W=42.74u
 L=42.74u

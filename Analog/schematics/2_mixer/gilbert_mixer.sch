@@ -5,6 +5,9 @@ V {}
 S {}
 F {}
 E {}
+T {Multiply Widths by x5 if fails tb
+} 350 -1060 0 0 0.4 0.4 {}
+T {DUMMIES} 1230 -510 0 0 0.4 0.4 {}
 N 120 -290 240 -290 {
 lab=vrf}
 N 440 -470 530 -470 {
@@ -21,9 +24,7 @@ lab=#net1}
 N 290 -400 290 -350 {
 lab=#net1}
 N 610 -350 710 -350 {
-lab=rf_diff_pair_neg_input}
-N 710 -400 710 -350 {
-lab=rf_diff_pair_neg_input}
+lab=#net2}
 N 120 -185 570 -185 {
 lab=vrf_b}
 N 710 -290 710 -200 {
@@ -51,9 +52,9 @@ lab=Vout_n}
 N 380 -530 550 -610 {
 lab=Vout_n}
 N 610 -350 610 -320 {
-lab=rf_diff_pair_neg_input}
+lab=#net2}
 N 630 -440 710 -440 {
-lab=rf_diff_pair_neg_input}
+lab=#net2}
 N 590 -530 590 -500 {
 lab=Vout_p}
 N 800 -530 800 -500 {
@@ -69,7 +70,7 @@ lab=vlo_b}
 N 840 -470 860 -470 {
 lab=vlo}
 N 710 -440 710 -400 {
-lab=rf_diff_pair_neg_input}
+lab=#net2}
 N 250 -440 330 -440 {
 lab=#net1}
 N 290 -440 290 -400 {
@@ -96,8 +97,8 @@ N 330 -440 380 -440 {lab=#net1}
 N 180 -440 250 -440 {lab=#net1}
 N 180 -610 340 -610 {lab=Vout_p}
 N 340 -610 420 -610 {lab=Vout_p}
-N 710 -440 800 -440 {lab=rf_diff_pair_neg_input}
-N 590 -440 630 -440 {lab=rf_diff_pair_neg_input}
+N 710 -440 800 -440 {lab=#net2}
+N 590 -440 630 -440 {lab=#net2}
 N 710 -470 800 -470 {lab=VSS}
 N 590 -470 630 -470 {lab=VSS}
 N 670 -610 800 -610 {lab=Vout_n}
@@ -125,6 +126,34 @@ N 380 -930 800 -930 {lab=VDD_3v3}
 N 360 -830 780 -830 {lab=VSS}
 N 800 -720 840 -720 {lab=Vout_n}
 N 180 -720 240 -720 {lab=Vout_p}
+N 920 -270 940 -270 {lab=VSS}
+N 980 -270 1010 -270 {lab=VSS}
+N 980 -240 980 -220 {lab=VSS}
+N 1010 -270 1010 -230 {lab=VSS}
+N 980 -230 1010 -230 {lab=VSS}
+N 710 -400 710 -350 {lab=#net2}
+N 290 -370 980 -370 {lab=#net1}
+N 980 -370 980 -300 {lab=#net1}
+N 1120 -270 1140 -270 {lab=VSS}
+N 1180 -270 1210 -270 {lab=VSS}
+N 1180 -240 1180 -220 {lab=VSS}
+N 1210 -270 1210 -230 {lab=VSS}
+N 1180 -230 1210 -230 {lab=VSS}
+N 1180 -370 1180 -300 {lab=#net2}
+N 710 -400 1180 -400 {lab=#net2}
+N 1180 -400 1180 -370 {lab=#net2}
+N 1340 -270 1360 -270 {lab=VSS}
+N 1400 -270 1430 -270 {lab=VSS}
+N 1400 -330 1400 -300 {lab=VSS}
+N 1430 -310 1430 -270 {lab=VSS}
+N 1400 -310 1430 -310 {lab=VSS}
+N 1400 -240 1400 -200 {lab=Ibias_p_50uA}
+N 1540 -270 1560 -270 {lab=VSS}
+N 1600 -270 1630 -270 {lab=VSS}
+N 1600 -330 1600 -300 {lab=VSS}
+N 1630 -310 1630 -270 {lab=VSS}
+N 1600 -310 1630 -310 {lab=VSS}
+N 1600 -240 1600 -200 {lab=Ibias_p_50uA}
 C {ipin.sym} 110 -470 0 0 {name=p1 lab=vlo}
 C {ipin.sym} 110 -380 0 0 {name=p2 lab=vlo_b
 }
@@ -137,7 +166,7 @@ C {lab_wire.sym} 930 -470 0 1 {name=p6 sig_type=std_logic lab=vlo}
 C {symbols/nfet_03v3.sym} 160 -470 0 0 {name=M_dp_lo_pos
 L=0.28u
 W=20u
-nf=5
+nf=1
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
 pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
@@ -151,7 +180,7 @@ spiceprefix=X
 C {symbols/nfet_03v3.sym} 400 -470 0 1 {name=M_dp_lo_neg
 L=0.28u
 W=20u
-nf=5
+nf=1
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
 pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
@@ -165,7 +194,7 @@ spiceprefix=X
 C {symbols/nfet_03v3.sym} 570 -470 0 0 {name=M_dp_lo_b_pos
 L=0.28u
 W=20u
-nf=5
+nf=1
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
 pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
@@ -179,7 +208,7 @@ spiceprefix=X
 C {symbols/nfet_03v3.sym} 820 -470 0 1 {name=M_dp_lo_b_neg
 L=0.28u
 W=20u
-nf=5
+nf=1
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
 pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
@@ -193,7 +222,7 @@ spiceprefix=X
 C {symbols/nfet_03v3.sym} 380 -290 0 0 {name=M_rf_pos
 L=0.28u
 W=10u
-nf=5
+nf=1
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
 pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
@@ -207,7 +236,7 @@ spiceprefix=X
 C {symbols/nfet_03v3.sym} 630 -290 0 1 {name=M_rf_neg
 L=0.28u
 W=10u
-nf=5
+nf=1
 m=1
 hide_texts=false
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
@@ -225,8 +254,6 @@ C {lab_wire.sym} 700 -470 0 0 {name=p14 sig_type=std_logic lab=VSS}
 C {iopin.sym} 610 -110 1 0 {name=p8 lab=Ibias_n_50uA}
 C {iopin.sym} 400 -110 1 0 {name=p9 lab=Ibias_p_50uA}
 C {iopin.sym} 200 -90 2 0 {name=p11 lab=VSS}
-C {lab_wire.sym} 710 -370 0 0 {name=p15 sig_type=std_logic lab=rf_diff_pair_neg_input hide_texts=true
-}
 C {iopin.sym} 200 -50 2 0 {name=p16 lab=VDD_3v3}
 C {symbols/ppolyf_u_1k.sym} 180 -830 0 1 {name=R_load_2
 W=1e-6
@@ -246,3 +273,69 @@ C {lab_wire.sym} 500 -810 3 0 {name=p17 sig_type=std_logic lab=VSS
 }
 C {lab_wire.sym} 500 -950 0 0 {name=p10 sig_type=std_logic lab=VDD_3v3
 }
+C {symbols/nfet_03v3.sym} 960 -270 0 0 {name=M_rf_pos1
+L=0.28u
+W=10u
+nf=1
+m=1
+ad="'int((nf+1)/2) * W/nf * 0.18u'"
+pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
+as="'int((nf+2)/2) * W/nf * 0.18u'"
+ps="'2*int((nf+2)/2) * (W/nf + 0.18u)'"
+nrd="'0.18u / W'" nrs="'0.18u / W'"
+sa=0 sb=0 sd=0
+model=nfet_03v3
+spiceprefix=X
+}
+C {lab_pin.sym} 920 -270 0 0 {name=p70 sig_type=std_logic lab=VSS}
+C {lab_pin.sym} 980 -220 0 0 {name=p72 sig_type=std_logic lab=VSS}
+C {symbols/nfet_03v3.sym} 1160 -270 0 0 {name=M_rf_pos2
+L=0.28u
+W=10u
+nf=1
+m=1
+ad="'int((nf+1)/2) * W/nf * 0.18u'"
+pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
+as="'int((nf+2)/2) * W/nf * 0.18u'"
+ps="'2*int((nf+2)/2) * (W/nf + 0.18u)'"
+nrd="'0.18u / W'" nrs="'0.18u / W'"
+sa=0 sb=0 sd=0
+model=nfet_03v3
+spiceprefix=X
+}
+C {lab_pin.sym} 1120 -270 0 0 {name=p15 sig_type=std_logic lab=VSS}
+C {lab_pin.sym} 1180 -220 0 0 {name=p18 sig_type=std_logic lab=VSS}
+C {symbols/nfet_03v3.sym} 1380 -270 0 0 {name=M_rf_pos3
+L=0.28u
+W=10u
+nf=1
+m=1
+ad="'int((nf+1)/2) * W/nf * 0.18u'"
+pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
+as="'int((nf+2)/2) * W/nf * 0.18u'"
+ps="'2*int((nf+2)/2) * (W/nf + 0.18u)'"
+nrd="'0.18u / W'" nrs="'0.18u / W'"
+sa=0 sb=0 sd=0
+model=nfet_03v3
+spiceprefix=X
+}
+C {lab_pin.sym} 1340 -270 0 0 {name=p19 sig_type=std_logic lab=VSS}
+C {lab_pin.sym} 1400 -330 0 0 {name=p21 sig_type=std_logic lab=VSS}
+C {lab_pin.sym} 1400 -200 0 0 {name=p20 sig_type=std_logic lab=Ibias_p_50uA}
+C {symbols/nfet_03v3.sym} 1580 -270 0 0 {name=M_rf_pos4
+L=0.28u
+W=10u
+nf=1
+m=1
+ad="'int((nf+1)/2) * W/nf * 0.18u'"
+pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
+as="'int((nf+2)/2) * W/nf * 0.18u'"
+ps="'2*int((nf+2)/2) * (W/nf + 0.18u)'"
+nrd="'0.18u / W'" nrs="'0.18u / W'"
+sa=0 sb=0 sd=0
+model=nfet_03v3
+spiceprefix=X
+}
+C {lab_pin.sym} 1540 -270 0 0 {name=p22 sig_type=std_logic lab=VSS}
+C {lab_pin.sym} 1600 -330 0 0 {name=p23 sig_type=std_logic lab=VSS}
+C {lab_pin.sym} 1600 -200 0 0 {name=p24 sig_type=std_logic lab=Ibias_n_50uA}
