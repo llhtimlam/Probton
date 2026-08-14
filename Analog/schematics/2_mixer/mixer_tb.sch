@@ -11,9 +11,9 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=0
-divx=4
-subdivx=5
+x1=-2706535.1
+divx=5
+subdivx=4
 xlabmag=1.0
 ylabmag=1.0
 dataset=-1
@@ -21,16 +21,15 @@ unitx=1
 logx=0
 logy=0
 y1=-300
-y2=20
 autoload=1
 rawfile=/workspace/Analog/schematics/2_mixer/simulation_files/mixer_tb.raw
 sim_type=sp
-color="4 10 6 7"
-node="final_vif_db; final_vif_db -1 *
-final_lpf_db; final_lpf_db -1 *
-final_vlo_db; final_vlo_db -1 *
-final_vrf_db; final_vrf_db -1 *"
-x2=400k}
+color="4 5 6"
+node="vif_db; vif_db -1 *
+vlo_db; vlo_db -1 *
+vrf_db; vrf_db -1 *"
+x2=-2306535.1
+y2=20}
 N 700 -870 800 -870 {
 lab=V_RF_b}
 N 700 -890 800 -890 {
@@ -90,18 +89,6 @@ N 1120 -870 1230 -870 {lab=V_out_n}
 N 1310 -950 1310 -920 {lab=VDD}
 N 1000 -890 1120 -890 {lab=V_out_p}
 N 1000 -870 1120 -870 {lab=V_out_n}
-N 1510 -870 1690 -870 {lab=Vif}
-N 1600 -850 1690 -850 {lab=#net2}
-N 1690 -820 1690 -760 {lab=#net3}
-N 1770 -930 1770 -900 {lab=VDD}
-N 1870 -850 1960 -850 {lab=#net2}
-N 1600 -850 1600 -660 {lab=#net2}
-N 1600 -660 1920 -660 {lab=#net2}
-N 1920 -850 1920 -660 {lab=#net2}
-N 2020 -850 2080 -850 {lab=mixer_out}
-N 2050 -850 2050 -730 {lab=mixer_out}
-N 2050 -670 2050 -650 {lab=GND}
-N 1990 -890 1990 -870 {lab=VSS}
 C {code.sym} 520 -740 0 0 {name=MODELS only_toplevel=true
 format="tcleval( @value )"
 value="
@@ -201,27 +188,23 @@ value="
 
     save all
     
-    tran 10n 2m
+    tran 400p 2m
 
-    * 1. Define base differential vectors
     let if_out = v(v_out_p) - v(v_out_n)
-    let vlo    = v(v_lo) - v(v_lo_b)
-    let vrf    = v(v_rf) - v(v_rf_b)
+    let vlo = v(v_lo) - v(v_lo_b)
+    let vrf = v(v_rf) - v(v_rf_b)
 
-    * 2. Linearize all signals onto a clean frequency grid
-    linearize v(mixer_out) v(vif) vlo vrf
+    plot vlo vrf v(if_out) v(vif) ylimit -1 3.3
 
-    * 3. Run the FFT across all active nodes at once
-    fft v(mixer_out) v(vif) vlo vrf
+    linearize v(vif) vlo vrf
 
-    * 4. Compute unique, non-overlapping decibel variables
-    let final_vlo_db  = db(mag(vlo))
-    let final_vrf_db  = db(mag(vrf))
-    let final_vif_db  = db(mag(v(vif)))
-    let final_lpf_db  = db(mag(v(mixer_out)))
+    fft v(vif) vlo vrf
+
+    let vlo_db = db(mag(vlo))
+    let vrf_db = db(mag(vrf))
+    let vif_db = db(mag(v(vif)))
     
-    * 5. SINGLE PLOT EXPRESSION: Plot the true, clean spectrum
-    plot final_vlo_db final_vrf_db final_vif_db final_lpf_db xlimit 0 400k
+    plot vlo_db vrf_db vif_db xlimit 0 400k
 
     write /workspace/Analog/schematics/2_mixer/simulation_files/mixer_tb.raw
 
@@ -235,25 +218,5 @@ C {devices/launcher.sym} 380 -1420 0 0 {name=h1
 descr="Load ngSpice waveforms (ctrl+left-click)" 
 tclcommand="xschem raw_read /workspace/Analog/schematics/2_mixer/simulation_files/mixer_tb.raw tran"
 }
-C {isource.sym} 1690 -730 0 0 {name=I3 value=30u}
-C {gnd.sym} 1690 -700 0 0 {name=l9 lab=GND}
-C {lab_wire.sym} 1770 -800 3 0 {name=p16 sig_type=std_logic lab=VSS}
-C {vdd.sym} 1770 -930 0 0 {name=l14 lab=VDD}
-C {gnd.sym} 2050 -650 0 0 {name=l15 lab=GND}
-C {symbols/ppolyf_u_3k.sym} 1990 -850 1 0 {name=R1
-W=1e-6
-L=48u
-model=ppolyf_u_3k
-spiceprefix=X
-m=1}
-C {lab_wire.sym} 2080 -850 0 1 {name=p20 sig_type=std_logic lab=mixer_out}
-C {lab_wire.sym} 1990 -890 3 1 {name=p19 sig_type=std_logic lab=VSS}
-C {Analog/schematics/2_mixer/gilbert_mixer.sym} 900 -880 0 0 {name=X_mixer_gilbert_mixer_xy}
-C {Analog/schematics/2_mixer/ota_5t.sym} 1250 -820 0 0 {name=X_mixer_1st_ota_xy}
-C {Analog/schematics/2_mixer/ota_5t.sym} 1710 -800 0 0 {name=X_mixer_2nd_ota_xy}
-C {symbols/cap_mim_2f0fF.sym} 2050 -700 0 0 {name=C1
-W=42.74u
-L=42.74u
-model=cap_mim_2f0fF
-spiceprefix=X
-m=1}
+C {Analog/schematics/2_mixer/gilbert_mixer.sym} 900 -880 0 0 {name=x1}
+C {Analog/schematics/2_mixer/ota_5t.sym} 1250 -820 0 0 {name=x2}
