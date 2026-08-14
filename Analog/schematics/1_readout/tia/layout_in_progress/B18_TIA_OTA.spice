@@ -1,0 +1,44 @@
+** sch_path: /workspace/Probton/Analog/schematics/1_readout/tia/B18_TIA_OTA.sch
+.subckt B18_TIA_OTA Vp Vn Vout VDD VSS Ib en_b
+*.PININFO Vp:I Vn:I Vout:O VDD:B VSS:B Ib:I en_b:I
+MP_MIR_NEG Vout net1 VDD VDD pfet_03v3 L=0.5u W=64u nf=8
+MP_MIR_POS net1 net1 VDD VDD pfet_03v3 L=0.5u W=64u nf=8
+MN_IN_POS net1 Vp net2 VSS nfet_03v3 L=0.5u W=20u nf=4
+MN_IN_NEG Vout Vn net2 VSS nfet_03v3 L=0.5u W=20u nf=4
+MN_TAIL net2 Ib VSS VSS nfet_03v3 L=0.5u W=40u nf=8
+MN_TAILMIR Ib Ib VSS VSS nfet_03v3 L=0.5u W=40u nf=8
+MN_SWITCH Ib en_b VSS VSS nfet_03v3 L=0.5u W=1u nf=1
+MP_MIR_dummy net1 VDD VDD VDD pfet_03v3 L=0.5u W=8u nf=1 m=2
+MN_TAILdummy Ib VSS VSS VSS nfet_03v3 L=0.5u W=5u nf=1 m=2
+MN_IN_dummy net1 VSS VSS VSS nfet_03v3 L=0.5u W=5u nf=1 m=2
+MN_SWITCH_Ldummy Ib VSS VSS VSS nfet_03v3 L=0.5u W=1u nf=1
+MN_SWITCH_Rdummy VSS VSS VSS VSS nfet_03v3 L=0.5u W=1u nf=1
+**** begin user architecture code
+
+
+* B18_TIA_OTA
+
+* Original Design Specifications:
+  * gm_id for all transistors is 12 V^-1 (moderate inversion)
+  * C_L = 2pF
+  * GBW = 50MHz
+  * L = 0.5um
+
+* Results using pygmid:
+
+*             MN_TAIL  MN_IN   MP_MIR
+
+*  W(um)      38.5     19.25   66.52
+*  nf@W=5um   8        4       14
+*  Id(uA)     105      52.4    52.4
+
+
+
+* The enable signal is a simple NMOS gate pulldown transistor
+* placed at the tail current mirror. Assuming a digital signal
+* of 3.3V is present, the active-low switch will turn off the
+* current mirror
+
+
+**** end user architecture code
+.ends
