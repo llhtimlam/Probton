@@ -1,0 +1,76 @@
+** sch_path: /workspace/Analog/schematics/3_comparator/comparator.sch
+.subckt comparator Clk VDD_3V3 VSS IN_P IN_N Comp_Out
+*.PININFO Clk:I VDD_3V3:B VSS:B IN_P:I IN_N:I Comp_Out:O
+* noconn VOUT1
+x1 Clk IN_P IN_N VDD_3V3 VSS OUT1 OUT2 strongArmLatch
+xinv1 VDD_3V3 OUT1 INV1 VSS inv
+xinv2 VDD_3V3 OUT2 INV2 VSS inv
+x2 VDD_3V3 VOUT1 VOUT2 INV1 INV2 VSS rslatch
+xinv3 VDD_3V3 VOUT2 net1 VSS inv
+xinv4 VDD_3V3 net1 Comp_Out VSS inv
+.ends
+
+* expanding   symbol:  Analog/schematics/3_comparator/strongArmLatch.sym # of pins=7
+** sym_path: /workspace/Analog/schematics/3_comparator/strongArmLatch.sym
+** sch_path: /workspace/Analog/schematics/3_comparator/strongArmLatch.sch
+.subckt strongArmLatch Clk Vin1 Vin2 VDD VSS Vout1 Vout2
+*.PININFO Clk:I Vin1:I Vin2:I VDD:B VSS:B Vout1:O Vout2:O
+M1 net3 Clk VDD VDD pfet_03v3 L=0.28u W=0.40u nf=1
+M2 Vout1 Clk VDD VDD pfet_03v3 L=0.28u W=0.40u nf=1
+M3 Vout1 Vout2 VDD VDD pfet_03v3 L=1u W=3u nf=1
+M4 Vout2 Vout1 VDD VDD pfet_03v3 L=1u W=3u nf=1
+M5 Vout2 Clk VDD VDD pfet_03v3 L=0.28u W=0.40u nf=1
+M6 net2 Clk VDD VDD pfet_03v3 L=0.28u W=0.40u nf=1
+M7 Vout1 Vout2 net3 VSS nfet_03v3 L=1u W=5u nf=1
+M8 Vout2 Vout1 net2 VSS nfet_03v3 L=1u W=5u nf=1
+M9 net3 Vin1 net1 VSS nfet_03v3 L=1u W=15u nf=1
+M10 net2 Vin2 net1 VSS nfet_03v3 L=1u W=15u nf=1
+M11 net1 Clk VSS VSS nfet_03v3 L=0.28u W=0.40u nf=1
+M12 net3 VDD VDD VDD pfet_03v3 L=0.28u W=0.40u nf=1
+M13 VDD VDD VDD VDD pfet_03v3 L=0.28u W=1.6u nf=1
+M14 Vout1 VDD VDD VDD pfet_03v3 L=0.28u W=0.40u nf=1
+M16 VDD VDD VDD VDD pfet_03v3 L=1u W=2u nf=1
+M17 Vout1 VDD VDD VDD pfet_03v3 L=1u W=1u nf=1
+M18 Vout2 VDD VDD VDD pfet_03v3 L=1u W=1u nf=1
+M20 net2 VDD VDD VDD pfet_03v3 L=0.28u W=0.40u nf=1
+M22 Vout2 VDD VDD VDD pfet_03v3 L=0.28u W=0.40u nf=1
+M24 VSS VSS net3 VSS nfet_03v3 L=1u W=1u nf=1
+M25 Vout1 VSS VSS VSS nfet_03v3 L=1u W=1u nf=1
+M26 Vout2 VSS VSS VSS nfet_03v3 L=1u W=1u nf=1
+M27 VSS VSS net2 VSS nfet_03v3 L=1u W=1u nf=1
+M28 net3 VSS VSS VSS nfet_03v3 L=1u W=3u nf=1
+M29 net2 VSS VSS VSS nfet_03v3 L=1u W=3u nf=1
+M30 net1 VSS VSS VSS nfet_03v3 L=0.28u W=0.4u nf=1
+M31 VSS VSS VSS VSS nfet_03v3 L=0.28u W=0.4u nf=1
+.ends
+
+
+* expanding   symbol:  Analog/schematics/3_comparator/inv.sym # of pins=4
+** sym_path: /workspace/Analog/schematics/3_comparator/inv.sym
+** sch_path: /workspace/Analog/schematics/3_comparator/inv.sch
+.subckt inv vdd vi vo vss
+*.PININFO vdd:B vss:B vi:I vo:O
+M1 vo vi vss vss nfet_03v3 L=0.28u W=0.4u nf=1
+M2 vo vi vdd vdd pfet_03v3 L=0.28u W=1u nf=1
+M3 vdd vdd vdd vdd pfet_03v3 L=0.28u W=1u nf=1
+M4 vo vdd vdd vdd pfet_03v3 L=0.28u W=1u nf=1
+M5 vss vss vss vss nfet_03v3 L=0.28u W=0.4u nf=1
+M6 vo vss vss vss nfet_03v3 L=0.28u W=0.4u nf=1
+.ends
+
+
+* expanding   symbol:  Analog/schematics/3_comparator/rslatch.sym # of pins=6
+** sym_path: /workspace/Analog/schematics/3_comparator/rslatch.sym
+** sch_path: /workspace/Analog/schematics/3_comparator/rslatch.sch
+.subckt rslatch VDD Vout1 Vout2 Vin1 Vin2 VSS
+*.PININFO VDD:B VSS:B Vin1:B Vin2:B Vout1:B Vout2:B
+M1 Vout1 Vin1 VSS VSS nfet_03v3 L=0.4u W=1u nf=1
+M2 Vout2 Vin2 VSS VSS nfet_03v3 L=0.4u W=1u nf=1
+M3 Vout1 Vout2 VDD VDD pfet_03v3 L=0.4u W=1u nf=1
+M4 Vout2 Vout1 VDD VDD pfet_03v3 L=0.4u W=1u nf=1
+M6 Vout1 vdd vdd vdd pfet_03v3 L=0.4u W=1u nf=1
+M5 Vout2 vdd vdd vdd pfet_03v3 L=0.4u W=1u nf=1
+M7 Vout1 vss vss vss nfet_03v3 L=0.4u W=1u nf=1
+M8 Vout2 vss vss vss nfet_03v3 L=0.4u W=1u nf=1
+.ends
+

@@ -6,7 +6,7 @@ S {}
 F {}
 E {}
 N 110 -270 130 -270 {lab=IN_P}
-N 110 -240 130 -240 {lab=CLK}
+N 110 -240 130 -240 {lab=Clk}
 N 70 -210 90 -210 {lab=IN_N}
 N 360 -230 380 -230 {lab=OUT2}
 N 360 -250 380 -250 {lab=OUT1}
@@ -59,10 +59,10 @@ N 190 -180 190 -140 {lab=VSS}
 N 560 -70 560 -30 {lab=VSS}
 N 1200 -150 1200 -110 {lab=VSS}
 N 1370 -150 1370 -110 {lab=VSS}
-N -170 -100 -150 -100 {lab=Vout}
+N -170 -100 -150 -100 {lab=Comp_Out}
 C {lab_pin.sym} 70 -210 0 0 {name=p1 sig_type=std_logic lab=IN_N}
 C {lab_pin.sym} 70 -270 0 0 {name=p2 sig_type=std_logic lab=IN_P}
-C {lab_pin.sym} 110 -240 0 0 {name=p3 sig_type=std_logic lab=CLK}
+C {lab_pin.sym} 110 -240 0 0 {name=p3 sig_type=std_logic lab=Clk}
 C {lab_pin.sym} 190 -300 0 0 {name=p13 sig_type=std_logic lab=VDD_3V3}
 C {lab_pin.sym} 720 -340 3 1 {name=p14 sig_type=std_logic lab=INV1}
 C {lab_pin.sym} 720 -150 1 1 {name=p15 sig_type=std_logic lab=INV2}
