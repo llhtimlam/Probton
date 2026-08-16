@@ -30,9 +30,9 @@ This offers a low-cost, integrable alternative to proprietary alignment hardware
 
 ## Chip Architect
 
-Size: 1117.5um x 558.75um - Block type B
+Size: 1117.5um x 1117.5um - Block type B
 
-Required pins: 14 or 18 (under consideration)
+Required pins: 19 or 21 (under consideration)
 
 Analog pin: (4)
 
@@ -47,7 +47,7 @@ Output: (3)
 2. Wave mixer (x) error
 3. Wave mixer (y) error
 
-Digital pin: (10)
+Digital pin: (12)
 
 Input: (3)
 
@@ -55,7 +55,7 @@ Input: (3)
 2. SPI: sclk
 3. SPI: mosi
 
-Output: (7)
+Output: (9)
 
 1. SPI: miso
 2. Motion command: move_en_x (x)
@@ -64,9 +64,13 @@ Output: (7)
 5. Motion command: dir_y (y)
 6. MEMS driver (PWM waveform): mems_drv_x (x)
 7. MEMS driver (PWM waveform): mems_drv_y (y)
-(Optional, under consideration)
 8. Reference wave output (PWM waveform): ref_wave_x (x)
 9. Reference wave output (PWM waveform): ref_wave_y (y)
+
+Setup pin: (3)
+1. clk
+2. rst_n
+3. Power Pin: VDD (3.3V)
 
 <img src="Media\ChipArchitect\Optical Probe Station Chip Architect.png" width="100%" alt="Proposed Chip Architect">
 

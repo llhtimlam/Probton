@@ -27,7 +27,11 @@ module wrapper (
 
     // MEMS Driver
     output logic mems_drv_x, // bidir_out_8
-    output logic mems_drv_y // bidir_out_9
+    output logic mems_drv_y, // bidir_out_9
+
+    // Reference Wave
+    output logic ref_wave_x, // bidir_out_10
+    output logic ref_wave_y  // bidir_out_11
 
     // Analog Module
     //input  wire analog_readout_input,
@@ -36,7 +40,7 @@ module wrapper (
     //output wire analog_error_y_output
 );
 
-    wire read_en, comp_x, comp_y, ref_wave_x, ref_wave_y;
+    wire read_en, comp_x, comp_y;
 
     digital_domain digital_domain_inst (
         `ifdef USE_POWER_PINS
