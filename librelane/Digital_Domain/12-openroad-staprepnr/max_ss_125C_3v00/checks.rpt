@@ -3464,10 +3464,16 @@ _10293_/A1                              3.000000    3.362350   -0.362351 (VIOLAT
 _10353_/A2                              3.000000    3.362350   -0.362351 (VIOLATED)
 mems_drv_x                              3.000000    3.355631   -0.355631 (VIOLATED)
 mems_drv_y                              3.000000    3.355631   -0.355631 (VIOLATED)
+ref_wave_x                              3.000000    3.355631   -0.355631 (VIOLATED)
+ref_wave_y                              3.000000    3.355631   -0.355631 (VIOLATED)
 spi_miso_oe                             3.000000    3.355631   -0.355631 (VIOLATED)
 _12042_/Q                               3.000000    3.355631   -0.355631 (VIOLATED)
 _12055_/Q                               3.000000    3.355631   -0.355631 (VIOLATED)
+_12056_/Q                               3.000000    3.355631   -0.355631 (VIOLATED)
 _12067_/Q                               3.000000    3.355631   -0.355631 (VIOLATED)
+_12068_/Q                               3.000000    3.355631   -0.355631 (VIOLATED)
+analog_block_inst/ref_wave_x            3.000000    3.355631   -0.355631 (VIOLATED)
+analog_block_inst/ref_wave_y            3.000000    3.355631   -0.355631 (VIOLATED)
 _06229_/Z                               3.000000    3.338280   -0.338281 (VIOLATED)
 _06231_/B                               3.000000    3.338280   -0.338281 (VIOLATED)
 _06238_/A2                              3.000000    3.338280   -0.338281 (VIOLATED)
@@ -10434,7 +10440,7 @@ Found 6328 unannotated drivers.
 Found 0 partially unannotated drivers.
 
 ===========================================================================
-max slew violation count 3793
+max slew violation count 3799
 max fanout violation count 177
 max cap violation count 8
 ============================================================================

@@ -16092,6 +16092,62 @@ Fanout         Cap        Slew       Delay        Time   Description
                                             157.529846   slack (MET)
 
 
+Startpoint: _12056_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: ref_wave_x (output port clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                      0.150000    0.000000    0.000000 ^ _12056_/CLK (gf180mcu_fd_sc_mcu7t5v0__dffrnq_1)
+     2    0.072910    1.815601    2.220151    2.220151 ^ _12056_/Q (gf180mcu_fd_sc_mcu7t5v0__dffrnq_1)
+                                                         ref_wave_x (net)
+                      1.815601    0.000000    2.220151 ^ ref_wave_x (out)
+                                              2.220151   data arrival time
+
+                      0.150000  200.000000  200.000000   clock clk (rise edge)
+                                  0.000000  200.000000   clock network delay (ideal)
+                                 -0.250000  199.750000   clock uncertainty
+                                  0.000000  199.750000   clock reconvergence pessimism
+                                -40.000000  159.749985   output external delay
+                                            159.749985   data required time
+---------------------------------------------------------------------------------------------
+                                            159.749985   data required time
+                                             -2.220151   data arrival time
+---------------------------------------------------------------------------------------------
+                                            157.529846   slack (MET)
+
+
+Startpoint: _12068_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: ref_wave_y (output port clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                      0.150000    0.000000    0.000000 ^ _12068_/CLK (gf180mcu_fd_sc_mcu7t5v0__dffrnq_1)
+     2    0.072910    1.815601    2.220151    2.220151 ^ _12068_/Q (gf180mcu_fd_sc_mcu7t5v0__dffrnq_1)
+                                                         ref_wave_y (net)
+                      1.815601    0.000000    2.220151 ^ ref_wave_y (out)
+                                              2.220151   data arrival time
+
+                      0.150000  200.000000  200.000000   clock clk (rise edge)
+                                  0.000000  200.000000   clock network delay (ideal)
+                                 -0.250000  199.750000   clock uncertainty
+                                  0.000000  199.750000   clock reconvergence pessimism
+                                -40.000000  159.749985   output external delay
+                                            159.749985   data required time
+---------------------------------------------------------------------------------------------
+                                            159.749985   data required time
+                                             -2.220151   data arrival time
+---------------------------------------------------------------------------------------------
+                                            157.529846   slack (MET)
+
+
 Startpoint: _12042_ (rising edge-triggered flip-flop clocked by clk)
 Endpoint: spi_miso_oe (output port clocked by clk)
 Path Group: clk

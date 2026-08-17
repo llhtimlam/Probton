@@ -99,7 +99,9 @@ pins:
     secondary_esd: false
 
   # 16 (5)
-  # Virtual Pin
+  - name: VSS
+    io_type: ground
+    secondary_esd: false
 
   # ===== Analog =====
 

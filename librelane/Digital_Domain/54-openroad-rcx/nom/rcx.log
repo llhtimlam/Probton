@@ -102,25 +102,25 @@ Reading gpio pad LEF file at '/workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd
 The NOWIREEXTENSIONATPIN statement will be ignored. See file /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_ws_io__dvss.lef at line 2.
 
 [INFO ODB-0227] LEF file: /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_ws_io__dvss.lef, created 1 library cells
-[INFO ODB-0127] Reading DEF file: /workspace/librelane/runs/RUN_2026-08-10_11-38-06/53-odb-cellfrequencytables/wrapper.def
+[INFO ODB-0127] Reading DEF file: /workspace/librelane/runs/RUN_2026-08-17_01-19-22/53-odb-cellfrequencytables/wrapper.def
 [INFO ODB-0128] Design: wrapper
-[INFO ODB-0130]     Created 15 pins.
-[INFO ODB-0131]     Created 31891 components and 149484 component-terminals.
-[INFO ODB-0132]     Created 2 special nets and 120434 connections.
-[INFO ODB-0133]     Created 8681 nets and 29008 connections.
-[INFO ODB-0134] Finished DEF file: /workspace/librelane/runs/RUN_2026-08-10_11-38-06/53-odb-cellfrequencytables/wrapper.def
+[INFO ODB-0130]     Created 17 pins.
+[INFO ODB-0131]     Created 43461 components and 187600 component-terminals.
+[INFO ODB-0132]     Created 2 special nets and 158790 connections.
+[INFO ODB-0133]     Created 8558 nets and 28765 connections.
+[INFO ODB-0134] Finished DEF file: /workspace/librelane/runs/RUN_2026-08-17_01-19-22/53-odb-cellfrequencytables/wrapper.def
 Using RCX ruleset '/workspace/gf180mcu/gf180mcuD/libs.tech/librelane/rules.openrcx.gf180mcuD.nom'…
 [INFO RCX-0431] Defined process_corner CURRENT_CORNER with ext_model_index 0
 [INFO RCX-0029] Defined extraction corner CURRENT_CORNER
 + extract_parasitics  -ext_model_file /workspace/gf180mcu/gf180mcuD/libs.tech/librelane/rules.openrcx.gf180mcuD.nom -lef_res
 [INFO RCX-0435] Reading extraction model file /workspace/gf180mcu/gf180mcuD/libs.tech/librelane/rules.openrcx.gf180mcuD.nom ...
 [INFO RCX-0436] RC segment generation wrapper (max_merge_res 50.0) ...
-[INFO RCX-0040] Final 33154 rc segments
+[INFO RCX-0040] Final 32910 rc segments
 [INFO RCX-0439] Coupling Cap extraction wrapper ...
 [INFO RCX-0440] Coupling threshhold is 0.1000 fF, coupling capacitance less than 0.1000 fF will be grounded.
-[INFO RCX-0442] 46% of 65529 wires extracted
-[INFO RCX-0442] 100% of 65529 wires extracted
-[INFO RCX-0045] Extract 8681 nets, 41835 rsegs, 41835 caps, 103106 ccs
+[INFO RCX-0442] 46% of 66538 wires extracted
+[INFO RCX-0442] 100% of 66538 wires extracted
+[INFO RCX-0045] Extract 8558 nets, 41468 rsegs, 41468 caps, 103668 ccs
 Setting global connections for newly added cells…
 [INFO] Setting global connections...
 analog_block_inst matched with analog_block_inst
@@ -128,11 +128,11 @@ analog_block_inst matched with analog_block_inst
 Updating metrics…
 Cell type report:                       Count       Area
   Macro                                     1  115200.00
-  Endcap cell                             402    1764.94
-  Fill cell                             19601  245809.72
-  Tap cell                               3161   13878.05
+  Endcap cell                             570    2502.53
+  Fill cell                             27329  818480.32
+  Tap cell                               6955   30535.23
   Antenna cell                             10      43.90
-  Standard cell                          8716  220211.49
-  Total                                 31891  596908.10
-Writing extracted parasitics to '/workspace/librelane/runs/RUN_2026-08-10_11-38-06/54-openroad-rcx/nom/wrapper.nom.spef'…
-[INFO RCX-0443] 8681 nets finished
+  Standard cell                          8596  215937.43
+  Total                                 43461 1182699.42
+Writing extracted parasitics to '/workspace/librelane/runs/RUN_2026-08-17_01-19-22/54-openroad-rcx/nom/wrapper.nom.spef'…
+[INFO RCX-0443] 8558 nets finished

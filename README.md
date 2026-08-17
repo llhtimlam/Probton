@@ -32,7 +32,7 @@ This offers a low-cost, integrable alternative to proprietary alignment hardware
 
 Size: 1117.5um x 1117.5um - Block type B
 
-Required pins: 19 or 21 (under consideration)
+Required pins: 20 or 22 (under consideration)
 
 Analog pin: (4)
 
@@ -67,10 +67,11 @@ Output: (9)
 8. Reference wave output (PWM waveform): ref_wave_x (x)
 9. Reference wave output (PWM waveform): ref_wave_y (y)
 
-Setup pin: (3)
+Setup pin: (4)
 1. clk
 2. rst_n
 3. Power Pin: VDD (3.3V)
+3. Power Pin: Common Ground
 
 <img src="Media\ChipArchitect\Optical Probe Station Chip Architect.png" width="100%" alt="Proposed Chip Architect">
 

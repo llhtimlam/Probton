@@ -5,6 +5,8 @@ module wrapper (clk,
     mems_drv_y,
     move_en_x,
     move_en_y,
+    ref_wave_x,
+    ref_wave_y,
     rst_n,
     spi_cs_n,
     spi_miso,
@@ -18,6 +20,8 @@ module wrapper (clk,
  output mems_drv_y;
  output move_en_x;
  output move_en_y;
+ output ref_wave_x;
+ output ref_wave_y;
  input rst_n;
  input spi_cs_n;
  output spi_miso;
@@ -6127,8 +6131,6 @@ module wrapper (clk,
  wire \digital_domain_inst.raw_edge3_y[8] ;
  wire \digital_domain_inst.raw_edge3_y[9] ;
  wire \digital_domain_inst.read_en ;
- wire \digital_domain_inst.ref_wave_x ;
- wire \digital_domain_inst.ref_wave_y ;
  wire \digital_domain_inst.signal_processor_x_inst.cnt_in[0] ;
  wire \digital_domain_inst.signal_processor_x_inst.cnt_in[1] ;
  wire \digital_domain_inst.signal_processor_x_inst.cnt_in[2] ;
@@ -55559,7 +55561,7 @@ module wrapper (clk,
  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _12056_ (.D(_00037_),
     .RN(rst_n),
     .CLK(clk),
-    .Q(\digital_domain_inst.ref_wave_x ),
+    .Q(ref_wave_x),
     .VDD(VDD),
     .VNW(VDD),
     .VPW(VSS),
@@ -55655,7 +55657,7 @@ module wrapper (clk,
  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _12068_ (.D(_00038_),
     .RN(rst_n),
     .CLK(clk),
-    .Q(\digital_domain_inst.ref_wave_y ),
+    .Q(ref_wave_y),
     .VDD(VDD),
     .VNW(VDD),
     .VPW(VSS),
@@ -55884,11 +55886,11 @@ module wrapper (clk,
     .VNW(VDD),
     .VPW(VSS),
     .VSS(VSS));
- analog_block analog_block_inst (.clk(clk),
-    .ref_wave_x(\digital_domain_inst.ref_wave_x ),
+ analog_block analog_block_inst (.comp_x(comp_x),
+    .clk(clk),
+    .ref_wave_x(ref_wave_x),
     .read_en(\digital_domain_inst.read_en ),
-    .ref_wave_y(\digital_domain_inst.ref_wave_y ),
+    .ref_wave_y(ref_wave_y),
     .clk1(clk),
-    .comp_x(comp_x),
     .comp_y(comp_y));
 endmodule

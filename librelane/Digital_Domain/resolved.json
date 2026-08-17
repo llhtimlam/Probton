@@ -17,7 +17,7 @@
         "max_ss_125C_3v00"
     ],
     "RT_MIN_LAYER": "Metal2",
-    "RT_MAX_LAYER": "Metal5",
+    "RT_MAX_LAYER": "Metal4",
     "SCL_GROUND_PINS": [
         "VSS",
         "VPW"
@@ -103,7 +103,7 @@
         0,
         0,
         1117.5,
-        558.75
+        1117.5
     ],
     "EXTRA_EXCLUDED_CELLS": null,
     "MACROS": {
@@ -117,10 +117,10 @@
             "instances": {
                 "analog_block_inst": {
                     "location": [
-                        267.64,
-                        2
+                        572.57,
+                        867.5
                     ],
-                    "orientation": "N"
+                    "orientation": "FS"
                 }
             },
             "vh": [
@@ -389,13 +389,13 @@
     "FP_TRACKS_INFO": "/workspace/gf180mcu/gf180mcuD/libs.tech/librelane/gf180mcu_fd_sc_mcu7t5v0/tracks.info",
     "FP_SIZING": "absolute",
     "FP_ASPECT_RATIO": 1,
-    "FP_CORE_UTIL": 30,
+    "FP_CORE_UTIL": 10,
     "FP_OBSTRUCTIONS": [
         [
-            267.64,
-            2,
-            727.64,
-            242
+            507.64,
+            867.5,
+            1117.5,
+            1117.5
         ]
     ],
     "PL_SOFT_OBSTRUCTIONS": null,
@@ -403,7 +403,7 @@
         0,
         10,
         1107.5,
-        558.75
+        1117.5
     ],
     "BOTTOM_MARGIN_MULT": 4,
     "TOP_MARGIN_MULT": 4,
@@ -452,24 +452,31 @@
     "ROUTING_OBSTRUCTIONS": [
         [
             "Metal1",
-            268.14,
-            3,
-            727.14,
-            241
+            507.64,
+            867.5,
+            1117.5,
+            1107.5
         ],
         [
             "Metal2",
-            268.14,
-            3,
-            727.14,
-            241
+            507.64,
+            867.5,
+            1117.5,
+            1107.5
         ],
         [
             "Metal3",
-            268.14,
-            3,
-            727.14,
-            241
+            507.64,
+            867.5,
+            1117.5,
+            1107.5
+        ],
+        [
+            "Metal4",
+            507.64,
+            867.5,
+            1117.5,
+            1107.5
         ]
     ],
     "RT_CLOCK_MIN_LAYER": null,

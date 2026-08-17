@@ -104,13 +104,13 @@ Reading gpio pad LEF file at '/workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd
 The NOWIREEXTENSIONATPIN statement will be ignored. See file /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_ws_io__dvss.lef at line 2.
 
 [INFO ODB-0227] LEF file: /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_ws_io__dvss.lef, created 1 library cells
-[INFO ODB-0127] Reading DEF file: /workspace/librelane/runs/RUN_2026-08-10_11-38-06/13-openroad-floorplan/wrapper.def
+[INFO ODB-0127] Reading DEF file: /workspace/librelane/runs/RUN_2026-08-17_01-19-22/13-openroad-floorplan/wrapper.def
 [INFO ODB-0128] Design: wrapper
-[INFO ODB-0130]     Created 13 pins.
+[INFO ODB-0130]     Created 15 pins.
 [INFO ODB-0131]     Created 6324 components and 49546 component-terminals.
 [INFO ODB-0132]     Created 2 special nets and 25292 connections.
 [INFO ODB-0133]     Created 6330 nets and 24254 connections.
-[INFO ODB-0134] Finished DEF file: /workspace/librelane/runs/RUN_2026-08-10_11-38-06/13-openroad-floorplan/wrapper.def
+[INFO ODB-0134] Finished DEF file: /workspace/librelane/runs/RUN_2026-08-17_01-19-22/13-openroad-floorplan/wrapper.def
 %OL_CREATE_REPORT tlef_values.rpt
  time 1ns
  capacitance 1pF
@@ -126,14 +126,12 @@ Metal1              HORIZONTAL          3.913043e-01        9.200000e-05
 Metal2              VERTICAL            3.214286e-01        8.400000e-05        
 Metal3              HORIZONTAL          3.214286e-01        7.840000e-05        
 Metal4              VERTICAL            3.214286e-01        7.756000e-05        
-Metal5              HORIZONTAL          1.363636e-01        1.733600e-05        
 === Vias ===
 Name                Cut Resistance      
 CON                 0.000000e+00        
 Via1                4.500000e+00        
 Via2                4.500000e+00        
 Via3                4.500000e+00        
-Via4                4.500000e+00        
 %OL_END_REPORT
 %OL_CREATE_REPORT layer_values_after.rpt
  time 1ns
@@ -150,14 +148,12 @@ Metal1              HORIZONTAL          3.913043e-01        9.200000e-05
 Metal2              VERTICAL            3.214286e-01        8.400000e-05        
 Metal3              HORIZONTAL          3.214286e-01        7.840000e-05        
 Metal4              VERTICAL            3.214286e-01        7.756000e-05        
-Metal5              HORIZONTAL          1.363636e-01        1.733600e-05        
 === Vias ===
 Name                Cut Resistance      
 CON                 0.000000e+00        
 Via1                4.500000e+00        
 Via2                4.500000e+00        
 Via3                4.500000e+00        
-Via4                4.500000e+00        
 %OL_END_REPORT
 %OL_CREATE_REPORT resizer_values_after.rpt
  time 1ns
@@ -179,12 +175,10 @@ Metal1              HORIZONTAL          0.000000e+00        0.000000e+00
 Metal2              VERTICAL            3.858610e-04        1.353570e-04        
 Metal3              HORIZONTAL          2.066730e-04        1.461410e-04        
 Metal4              VERTICAL            1.686090e-04        1.506880e-04        
-Metal5              HORIZONTAL          7.927780e-05        1.555950e-04        
 ==== Via R Values ====
 Name                Res/Unit Distance   
 CON                 0.000000e+00        
 Via1                1.684500e+01        
 Via2                1.684500e+01        
 Via3                1.684500e+01        
-Via4                1.684500e+01        
 %OL_END_REPORT

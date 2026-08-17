@@ -5,6 +5,8 @@ module wrapper(
   inout VSS,
 `endif
   input clk,
+  output ref_wave_x,
+  output ref_wave_y,
   input rst_n,
   input spi_cs_n,
   input spi_sclk,

@@ -1,9 +1,9 @@
 + define_corners min_ff_n40C_3v60
 Reading timing models for corner min_ff_n40C_3v60…
 Reading cell library for the 'min_ff_n40C_3v60' corner at '/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__ff_n40C_3v60.lib'…
-Reading top-level netlist at '/workspace/librelane/runs/RUN_2026-08-10_11-38-06/06-yosys-synthesis/wrapper.nl.v'…
+Reading top-level netlist at '/workspace/librelane/runs/RUN_2026-08-17_01-19-22/06-yosys-synthesis/wrapper.nl.v'…
 Linking design 'wrapper' from netlist…
-Warning: /workspace/librelane/runs/RUN_2026-08-10_11-38-06/06-yosys-synthesis/wrapper.nl.v line 43240, module analog_block not found. Creating black box for analog_block_inst.
+Warning: /workspace/librelane/runs/RUN_2026-08-17_01-19-22/06-yosys-synthesis/wrapper.nl.v line 43242, module analog_block not found. Creating black box for analog_block_inst.
 Reading design constraints file at '/usr/local/lib/python3.12/dist-packages/librelane/scripts/base.sdc'…
 [INFO] Using clock clk…
 [INFO] Setting output delay to: 40
@@ -18658,6 +18658,62 @@ Fanout         Cap        Slew       Delay        Time   Description
      1    0.072910    0.607115    0.929460    0.929460 v _12067_/Q (gf180mcu_fd_sc_mcu7t5v0__dffrnq_1)
                                                          mems_drv_y (net)
                       0.607115    0.000000    0.929460 v mems_drv_y (out)
+                                              0.929460   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.250000    0.250000   clock uncertainty
+                                  0.000000    0.250000   clock reconvergence pessimism
+                                -40.000000  -39.750000   output external delay
+                                            -39.750000   data required time
+---------------------------------------------------------------------------------------------
+                                            -39.750000   data required time
+                                             -0.929460   data arrival time
+---------------------------------------------------------------------------------------------
+                                             40.679462   slack (MET)
+
+
+Startpoint: _12056_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: ref_wave_x (output port clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                      0.150000    0.000000    0.000000 ^ _12056_/CLK (gf180mcu_fd_sc_mcu7t5v0__dffrnq_1)
+     2    0.072910    0.607115    0.929460    0.929460 v _12056_/Q (gf180mcu_fd_sc_mcu7t5v0__dffrnq_1)
+                                                         ref_wave_x (net)
+                      0.607115    0.000000    0.929460 v ref_wave_x (out)
+                                              0.929460   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  0.250000    0.250000   clock uncertainty
+                                  0.000000    0.250000   clock reconvergence pessimism
+                                -40.000000  -39.750000   output external delay
+                                            -39.750000   data required time
+---------------------------------------------------------------------------------------------
+                                            -39.750000   data required time
+                                             -0.929460   data arrival time
+---------------------------------------------------------------------------------------------
+                                             40.679462   slack (MET)
+
+
+Startpoint: _12068_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: ref_wave_y (output port clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                      0.150000    0.000000    0.000000 ^ _12068_/CLK (gf180mcu_fd_sc_mcu7t5v0__dffrnq_1)
+     2    0.072910    0.607115    0.929460    0.929460 v _12068_/Q (gf180mcu_fd_sc_mcu7t5v0__dffrnq_1)
+                                                         ref_wave_y (net)
+                      0.607115    0.000000    0.929460 v ref_wave_y (out)
                                               0.929460   data arrival time
 
                       0.150000    0.000000    0.000000   clock clk (rise edge)
@@ -50815,6 +50871,62 @@ Fanout         Cap        Slew       Delay        Time   Description
      1    0.072910    1.106574    1.304342    1.304342 ^ _12067_/Q (gf180mcu_fd_sc_mcu7t5v0__dffrnq_1)
                                                          mems_drv_y (net)
                       1.106574    0.000000    1.304342 ^ mems_drv_y (out)
+                                              1.304342   data arrival time
+
+                      0.150000  200.000000  200.000000   clock clk (rise edge)
+                                  0.000000  200.000000   clock network delay (ideal)
+                                 -0.250000  199.750000   clock uncertainty
+                                  0.000000  199.750000   clock reconvergence pessimism
+                                -40.000000  159.749985   output external delay
+                                            159.749985   data required time
+---------------------------------------------------------------------------------------------
+                                            159.749985   data required time
+                                             -1.304342   data arrival time
+---------------------------------------------------------------------------------------------
+                                            158.445648   slack (MET)
+
+
+Startpoint: _12056_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: ref_wave_x (output port clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                      0.150000    0.000000    0.000000 ^ _12056_/CLK (gf180mcu_fd_sc_mcu7t5v0__dffrnq_1)
+     2    0.072910    1.106574    1.304342    1.304342 ^ _12056_/Q (gf180mcu_fd_sc_mcu7t5v0__dffrnq_1)
+                                                         ref_wave_x (net)
+                      1.106574    0.000000    1.304342 ^ ref_wave_x (out)
+                                              1.304342   data arrival time
+
+                      0.150000  200.000000  200.000000   clock clk (rise edge)
+                                  0.000000  200.000000   clock network delay (ideal)
+                                 -0.250000  199.750000   clock uncertainty
+                                  0.000000  199.750000   clock reconvergence pessimism
+                                -40.000000  159.749985   output external delay
+                                            159.749985   data required time
+---------------------------------------------------------------------------------------------
+                                            159.749985   data required time
+                                             -1.304342   data arrival time
+---------------------------------------------------------------------------------------------
+                                            158.445648   slack (MET)
+
+
+Startpoint: _12068_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: ref_wave_y (output port clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                      0.150000    0.000000    0.000000 ^ _12068_/CLK (gf180mcu_fd_sc_mcu7t5v0__dffrnq_1)
+     2    0.072910    1.106574    1.304342    1.304342 ^ _12068_/Q (gf180mcu_fd_sc_mcu7t5v0__dffrnq_1)
+                                                         ref_wave_y (net)
+                      1.106574    0.000000    1.304342 ^ ref_wave_y (out)
                                               1.304342   data arrival time
 
                       0.150000  200.000000  200.000000   clock clk (rise edge)

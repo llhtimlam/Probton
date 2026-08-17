@@ -17,7 +17,7 @@
         "max_ss_125C_3v00"
     ],
     "RT_MIN_LAYER": "Metal2",
-    "RT_MAX_LAYER": "Metal5",
+    "RT_MAX_LAYER": "Metal4",
     "SCL_GROUND_PINS": [
         "VSS",
         "VPW"
@@ -103,7 +103,7 @@
         0,
         0,
         1117.5,
-        558.75
+        1117.5
     ],
     "EXTRA_EXCLUDED_CELLS": null,
     "MACROS": {
@@ -117,10 +117,10 @@
             "instances": {
                 "analog_block_inst": {
                     "location": [
-                        267.64,
-                        2
+                        572.57,
+                        867.5
                     ],
-                    "orientation": "N"
+                    "orientation": "FS"
                 }
             },
             "vh": [
@@ -313,7 +313,7 @@
     "PL_WIRE_LENGTH_COEF": 0.25,
     "PL_MIN_PHI_COEFFICIENT": null,
     "PL_MAX_PHI_COEFFICIENT": null,
-    "FP_CORE_UTIL": 30,
+    "FP_CORE_UTIL": 10,
     "GPL_CELL_PADDING": 2,
     "PL_KEEP_RESIZE_BELOW_OVERFLOW": null,
     "IO_PIN_PLACEMENT_MODE": "matching",

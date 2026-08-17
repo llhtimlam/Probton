@@ -2244,20 +2244,20 @@ Warning:  cell gf180mcu_fd_io__dvss already existed before reading GDS!
 Cell (REFRESHLAYOUT?) couldn't be read
 No such file or directory
 Creating new cell
-> def read /workspace/librelane/runs/RUN_2026-08-10_11-38-06/53-odb-cellfrequencytables/wrapper.def -noblockage
-Reading DEF data from file /workspace/librelane/runs/RUN_2026-08-10_11-38-06/53-odb-cellfrequencytables/wrapper.def.
+> def read /workspace/librelane/runs/RUN_2026-08-17_01-19-22/53-odb-cellfrequencytables/wrapper.def -noblockage
+Reading DEF data from file /workspace/librelane/runs/RUN_2026-08-17_01-19-22/53-odb-cellfrequencytables/wrapper.def.
 This action cannot be undone.
   Processed 4 vias total.
   Processed 2 non-default rules total.
-  Processed 31891 subcell instances total.
-  Processed 15 pins total.
+  Processed 43461 subcell instances total.
+  Processed 17 pins total.
   Processed 2 special nets total.
-  Processed 8681 nets total.
-DEF read: Processed 182353 lines.
+  Processed 8558 nets total.
+DEF read: Processed 197628 lines.
 [INFO] Ignoring 'VDD VSS'
 [INFO] Writing abstract LEF…
 [INFO] Not specifiying -pinonly (nets connected to pins on the same layer are declared as part of the pin)…
-Generating LEF output /workspace/librelane/runs/RUN_2026-08-10_11-38-06/60-magic-writelef/wrapper.lef for cell wrapper:
+Generating LEF output /workspace/librelane/runs/RUN_2026-08-17_01-19-22/60-magic-writelef/wrapper.lef for cell wrapper:
 Diagnostic:  Write LEF header for cell wrapper
 Diagnostic:  Writing LEF output for cell wrapper
 Diagnostic:  Scale value is 0.005000
