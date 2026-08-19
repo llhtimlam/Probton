@@ -11,7 +11,7 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=-2706535.1
+x1=-1927451.3
 divx=5
 subdivx=4
 xlabmag=1.0
@@ -28,8 +28,63 @@ color="4 5 6"
 node="vif_db; vif_db -1 *
 vlo_db; vlo_db -1 *
 vrf_db; vrf_db -1 *"
-x2=-2306535.1
+x2=1.4573959e+08
 y2=20}
+B 2 1700 -1590 2500 -1190 {flags=graph
+y1=-1
+y2=4
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=0.00059122292
+x2=0.00059157572
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+legendmag=1.0
+dataset=-1
+unitx=1
+logx=0
+logy=0
+rawfile=/workspace/Analog/schematics/2_mixer/simulation_files/mixer_tb_tran.raw
+color="4 5 6 10 8"
+node="vrf
+vlo
+vif
+if_out
+dc_val"
+sim_type=tran
+hilight_wave=-1}
+B 2 1700 -1160 2500 -760 {flags=graph
+y1=2.0432093
+y2=2.5424544
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=0.00059122292
+x2=0.00059157572
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+legendmag=1.0
+dataset=-1
+unitx=1
+logx=0
+logy=0
+rawfile=/workspace/Analog/schematics/2_mixer/simulation_files/mixer_tb_tran.raw
+color="4 5 6 8"
+node="vif
+v_out_p
+v_out_n
+dc_val"
+sim_type=tran
+hilight_wave=-1}
 N 700 -870 800 -870 {
 lab=V_RF_b}
 N 700 -890 800 -890 {
@@ -169,14 +224,14 @@ value="
     * alter @V_LO[sin] = [ $cm_lo $amp_lo $freq_lo 0 ]
     * alter @V_LO_b[sin] = [ $cm_lo $amp_lo $freq_lo 0 0 180 ]
 
-    set freq_lo = 156k
+    set freq_lo = 100Meg
     set cm_lo = 1.8
     set amp_lo = 0.4
 
     set cm_rf  = 1.2
-    set freq_rf = 156k
+    set freq_rf = 87Meg
     * set freq_rf = 10.7Meg
-    set amp_rf  = 0.1
+    set amp_rf  = 0.05
 
     * set the parameters to the voltage sources
     * alter @V_LO[pulse] = [ 2 2.5 0 0.5p 0.5p 5n 10n ]
@@ -187,14 +242,18 @@ value="
     alter @V_RF_b[sin] = [ $cm_rf $amp_rf $freq_rf 0 0 180 ]
 
     save all
+    op
     
-    tran 400p 2m
+    tran 1n 2m
 
     let if_out = v(v_out_p) - v(v_out_n)
+    let dc_val = mean(if_out)
     let vlo = v(v_lo) - v(v_lo_b)
     let vrf = v(v_rf) - v(v_rf_b)
 
-    plot vlo vrf v(if_out) v(vif) ylimit -1 3.3
+    * plot vlo vrf v(if_out) v(vif) ylimit -1 3.3
+
+    write /workspace/Analog/schematics/2_mixer/simulation_files/mixer_tb_tran.raw
 
     linearize v(vif) vlo vrf
 
@@ -204,7 +263,7 @@ value="
     let vrf_db = db(mag(vrf))
     let vif_db = db(mag(v(vif)))
     
-    plot vlo_db vrf_db vif_db xlimit 0 400k
+    plot vlo_db vrf_db vif_db xlimit 0 300Meg
 
     write /workspace/Analog/schematics/2_mixer/simulation_files/mixer_tb.raw
 
@@ -216,7 +275,8 @@ tclcommand="xschem save; xschem netlist; xschem simulate"
 }
 C {devices/launcher.sym} 380 -1420 0 0 {name=h1
 descr="Load ngSpice waveforms (ctrl+left-click)" 
-tclcommand="xschem raw_read /workspace/Analog/schematics/2_mixer/simulation_files/mixer_tb.raw tran"
+tclcommand="xschem raw_read /workspace/Analog/schematics/2_mixer/simulation_files/mixer_tb.raw
+xschem raw_read /workspace/Analog/schematics/2_mixer/simulation_files/mixer_tb_tran.raw"
 }
 C {Analog/schematics/2_mixer/gilbert_mixer.sym} 900 -880 0 0 {name=x1}
 C {Analog/schematics/2_mixer/ota_5t.sym} 1250 -820 0 0 {name=x2}
