@@ -95,13 +95,13 @@ N 1120 -870 1120 -820 {
 lab=V_out_n}
 N 1230 -840 1230 -760 {lab=#net1}
 N 1410 -870 1510 -870 {lab=Vif}
-N 480 -1180 480 -1160 {
+N 470 -100 470 -80 {
 lab=GND}
-N 480 -1260 480 -1240 {
+N 470 -180 470 -160 {
 lab=V_RF}
-N 550 -1180 550 -1160 {
+N 470 60 470 80 {
 lab=GND}
-N 550 -1260 550 -1240 {
+N 470 -20 470 0 {
 lab=V_RF_b}
 N 330 -1010 330 -990 {
 lab=GND}
@@ -169,13 +169,13 @@ C {lab_wire.sym} 1310 -820 3 0 {name=p17 sig_type=std_logic lab=VSS}
 C {isource.sym} 1230 -730 0 0 {name=I2 value=30u}
 C {gnd.sym} 1230 -700 0 0 {name=l13 lab=GND}
 C {lab_wire.sym} 1510 -870 0 1 {name=p18 sig_type=std_logic lab=Vif}
-C {lab_wire.sym} 480 -1260 0 0 {name=p10 sig_type=std_logic lab=V_RF}
-C {lab_wire.sym} 550 -1260 0 0 {name=p11 sig_type=std_logic lab=V_RF_b}
+C {lab_wire.sym} 470 -180 0 0 {name=p10 sig_type=std_logic lab=V_RF}
+C {lab_wire.sym} 470 -20 0 0 {name=p11 sig_type=std_logic lab=V_RF_b}
 C {vdd.sym} 330 -1080 0 0 {name=l8 lab=VDD}
 C {vsource.sym} 330 -1040 0 0 {name=V_PWR value=3.3 savecurrent=true}
 C {gnd.sym} 330 -990 0 0 {name=l7 lab=GND}
-C {gnd.sym} 480 -1160 0 0 {name=l3 lab=GND}
-C {gnd.sym} 550 -1160 0 0 {name=l4 lab=GND}
+C {gnd.sym} 470 -80 0 0 {name=l3 lab=GND}
+C {gnd.sym} 470 80 0 0 {name=l4 lab=GND}
 C {isource.sym} 330 -750 0 0 {name=I0 value=50u}
 C {isource.sym} 430 -750 0 0 {name=I1 value=50u}
 C {gnd.sym} 380 -650 0 0 {name=l6 lab=GND}
@@ -191,10 +191,10 @@ value="
     op
     
     tran 1n 2m
-    plot v(v_lo)
-    * plot v(v_lo_b)
-    plot v(v_rf)
-    * plot v(v_rf_b)
+    plot v(v_lo) xlimit 0 100u
+    plot v(v_lo_b) xlimit 0 100u
+    * plot v(v_rf) xlimit 0 100u
+    * plot v(v_rf_b) xlimit 0 100u
 
     let if_out = v(v_out_p) - v(v_out_n)
     let dc_val = mean(if_out)
@@ -202,8 +202,9 @@ value="
     let vrf = v(v_rf) - v(v_rf_b)
 
     plot vlo vrf v(if_out) v(vif) ylimit -1 3.3
-
+    plot vlo vrf v(if_out) v(vif) xlimit 0 100u ylimit -1 3.3
     plot v(if_out) v(vif) ylimit -1 3.3
+    plot v(if_out) v(vif) xlimit 0 100u ylimit -1 3.3
 
     write /workspace/Analog/schematics/2_mixer/simulation_files/1_tb_tran.raw
 
@@ -232,15 +233,15 @@ xschem raw_read /workspace/Analog/schematics/2_mixer/simulation_files/mixer_tb_t
 }
 C {Analog/schematics/2_mixer/gilbert_mixer.sym} 900 -880 0 0 {name=x1}
 C {Analog/schematics/2_mixer/ota_5t.sym} 1250 -820 0 0 {name=x2}
-C {bsource.sym} 480 -1210 0 0 {name=B1 VAR=V FUNC="\{(((time / 200n) - floor(time / 200n)) < ((128 + floor(127 * sin(2 * pi * 156k * (floor(time / 200n) * 200n)) + 0.5)) / 255.0)) ? 3.3 : 0\}" m=1}
-C {bsource.sym} 550 -1210 0 0 {name=B2 VAR=V FUNC="3.3 - V(v_rf)" m=1
+C {bsource.sym} 470 -130 0 0 {name=B1 VAR=V FUNC="\{(((time / 200n) - floor(time / 200n)) < ((128 + floor(127 * sin(2 * pi * 156k * (floor(time / 200n) * 200n)) + 0.5)) / 255.0)) ? 3.3 : 0\}" m=1}
+C {bsource.sym} 470 30 0 0 {name=B2 VAR=V FUNC="3.3 - V(V_RF)" m=1
 lab=v_rf_b}
 C {lab_wire.sym} 470 -500 0 0 {name=p1 sig_type=std_logic lab=V_lo}
 C {lab_wire.sym} 470 -350 0 0 {name=p2 sig_type=std_logic lab=V_lo_b}
 C {gnd.sym} 470 -400 0 0 {name=l1 lab=GND}
 C {gnd.sym} 470 -250 0 0 {name=l2 lab=GND}
-C {bsource.sym} 470 -450 0 0 {name=B3 VAR=V FUNC="\{1.8 + 450u * exp(-(((1u*sin(2*pi*156k*time)-0)**2 + (1u*sin(2*pi*108k*time)-0)**2)/(2*9.319812u*9.319812u)))\}" m=1}
-C {bsource.sym} 470 -300 0 0 {name=B4 VAR=V FUNC="3.3 - V(v_lo)" m=1
+C {bsource.sym} 470 -450 0 0 {name=B3 VAR=V FUNC="\{1.8 + 200m * exp(-(((1u*sin(2*pi*156k*time)-0)**2 + (1u*sin(2*pi*108k*time)-0)**2)/(2*9.319812u*9.319812u)))\}" m=1}
+C {bsource.sym} 470 -300 0 0 {name=B4 VAR=V FUNC="\{1.8 + 200m * exp(-(((1u*sin(2*pi*156k*time+0.5*pi)-0)**2 + (1u*sin(2*pi*108k*time+0.5*pi)-0)**2)/(2*9.319812u*9.319812u)))\}" m=1
 lab=v_lo_b}
 C {lab_wire.sym} 890 -720 3 0 {name=p8 sig_type=std_logic lab=V_lo}
 C {lab_wire.sym} 910 -720 3 0 {name=p9 sig_type=std_logic lab=V_lo_b}
