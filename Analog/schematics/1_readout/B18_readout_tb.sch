@@ -98,7 +98,7 @@ value="
 
 Bipd net1 0 I = \{Idc_setpoint * exp(-(((Ax*sin(2*pi*fx*time)-X0)**2 + (Ay*sin(2*pi*fy*time)-Y0)**2)/(2*w*w)))\}
 
-.tran 10u 20m
+.tran 10n 20m
 
 .control
 
@@ -241,7 +241,7 @@ L=70.71e-6
 model=cap_mim_2f0fF
 spiceprefix=X
 m=1}
-C {bpf/B18_BPF_OTA.sym} 2530 340 0 0 {name=x1}
-C {bpf/B18_BPF_OTA.sym} 2780 330 0 0 {name=x2}
-C {bpf/B18_BPF_OTA.sym} 3000 330 0 0 {name=x3}
-C {tia/B18_TIA_OTA.sym} 2160 300 0 0 {name=x4}
+C {Analog/schematics/1_readout/bpf/B18_BPF_OTA.sym} 2530 340 0 0 {name=x1}
+C {Analog/schematics/1_readout/bpf/B18_BPF_OTA.sym} 2780 330 0 0 {name=x2}
+C {Analog/schematics/1_readout/bpf/B18_BPF_OTA.sym} 3000 330 0 0 {name=x3}
+C {Analog/schematics/1_readout/tia/B18_TIA_OTA.sym} 2160 300 0 0 {name=x4}
