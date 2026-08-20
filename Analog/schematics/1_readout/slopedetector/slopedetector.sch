@@ -5,33 +5,30 @@ V {}
 S {}
 F {}
 E {}
-B 2 200 -1270 1000 -870 {flags=graph
-y2=3.5
+B 2 3230 80 4030 480 {flags=graph
+y2=2
 ypos1=0
 ypos2=2
 divy=5
 subdivy=1
 unity=1
 x1=0
-x2=1e-05
+x2=1.5e-05
 divx=5
 subdivx=1
 xlabmag=1.0
 ylabmag=1.0
-node="comp_out
-vout1
-vout2
-clk
-in_p
-in_n"
-color="4 6 5 8 17 21"
+node="in_p
+in_n
+diff_out"
+color="4 5 6"
 dataset=-1
 unitx=1
 logx=0
 logy=0
 autoload=1
-hilight_wave=0
-y1=-0.1}
+hilight_wave=-1
+y1=7e-08}
 B 2 1010 -1270 1810 -870 {flags=graph
 y1=-0.1
 y2=3.5
@@ -41,7 +38,7 @@ divy=5
 subdivy=1
 unity=1
 x1=0
-x2=1e-05
+x2=1.5e-05
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -65,7 +62,7 @@ divy=5
 subdivy=1
 unity=1
 x1=0
-x2=1e-05
+x2=1.5e-05
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -90,7 +87,7 @@ divy=5
 subdivy=1
 unity=1
 x1=0
-x2=1e-05
+x2=1.5e-05
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -117,7 +114,7 @@ divy=5
 subdivy=1
 unity=1
 x1=0
-x2=1e-05
+x2=1.5e-05
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -141,7 +138,7 @@ divy=5
 subdivy=1
 unity=1
 x1=0
-x2=1e-05
+x2=1.5e-05
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -160,6 +157,7 @@ logy=0
 autoload=1
 hilight_wave=2
 rawfile=/workspace/Analog/schematics/1_readout/slopedetector/slopedetector.raw}
+P 4 1 2910 720 {}
 N 1880 -220 1900 -220 {lab=IN_P
 }
 N 1880 -180 1900 -180 {lab=CLK
@@ -257,6 +255,48 @@ N 2260 190 2320 190 {lab=Comp_Out
 }
 N 2210 190 2260 190 {lab=Comp_Out
 }
+N 2770 380 2770 460 {lab=#net4
+spice_ignore=true}
+N 2660 330 2770 330 {lab=GND
+spice_ignore=true}
+N 2660 350 2770 350 {lab=#net5
+spice_ignore=true}
+N 2850 270 2850 300 {lab=VDD
+spice_ignore=true}
+N 2600 350 2660 350 {lab=#net5
+spice_ignore=true}
+N 2700 170 2700 350 {lab=#net5
+spice_ignore=true}
+N 2700 170 2800 170 {lab=#net5
+spice_ignore=true}
+N 2860 170 3010 170 {lab=Diff_Out
+spice_ignore=true}
+N 3010 170 3010 350 {lab=Diff_Out
+spice_ignore=true}
+N 2950 350 3010 350 {lab=Diff_Out
+spice_ignore=true}
+N 3010 350 3040 350 {lab=Diff_Out
+spice_ignore=true}
+N 2480 350 2540 350 {lab=IN_P
+spice_ignore=true}
+N 2990 350 2990 390 {lab=Diff_Out
+spice_ignore=true}
+N 3140 810 3200 810 {lab=Diff_Out}
+N 2720 890 2830 890 {lab=#net4}
+N 3100 810 3140 810 {lab=Diff_Out}
+N 3080 810 3100 810 {lab=Diff_Out}
+N 2790 790 2830 790 {lab=#net5}
+N 2790 700 2790 790 {lab=#net5}
+N 2790 640 2790 700 {lab=#net5}
+N 2790 640 2900 640 {lab=#net5}
+N 2900 640 2910 640 {lab=#net5}
+N 2970 640 3140 640 {lab=Diff_Out}
+N 3140 640 3140 810 {lab=Diff_Out}
+N 2730 790 2790 790 {lab=#net5}
+N 2610 790 2670 790 {lab=IN_P}
+N 2770 830 2830 830 {lab=IN_N}
+N 2610 890 2660 890 {lab=GND}
+N 2780 930 2830 930 {lab=GND}
 C {code.sym} 170 -50 0 0 {name=MODELS only_toplevel=true
 format="tcleval( @value )"
 value="
@@ -305,7 +345,7 @@ C {lab_pin.sym} 2320 190 0 1 {name=p26 sig_type=std_logic lab=Comp_Out
 C {code_shown.sym} 180 -820 0 0 {name=NGSPICE only_toplevel=true value=
 "
 .control
-tran 1n 10u
+tran 1n 15u
 save all
 save @m.x1.xm11.m0[id]
 probe v(x1.Vp) v(x1.Vq)
@@ -315,7 +355,7 @@ quit
 .endc"}
 C {vsource.sym} 210 -430 0 0 {name=V1 value=1.65 savecurrent=false}
 C {vsource.sym} 210 -570 0 0 {name=V2 value=
-"SIN(1.65 1.65 156k 0.5n)"
+"SIN(1 1 200k 0n)"
 savecurrent=false
 }
 C {lab_pin.sym} 210 -600 0 0 {name=p16 sig_type=std_logic lab=IN_P
@@ -400,7 +440,7 @@ C {gnd.sym} 3000 -190 0 1 {name=l5 lab=GND
 C {lab_pin.sym} 3110 -280 0 1 {name=p11 sig_type=std_logic lab=Slope2
 }
 C {vsource.sym} 520 -570 0 0 {name=V4 value=
-"SIN(1.65 1.65 156k 0.5u)"
+"SIN(1.65 1.65 200k 2u)"
 savecurrent=false
 }
 C {lab_pin.sym} 520 -600 0 0 {name=p12 sig_type=std_logic lab=IN_P2
@@ -443,3 +483,74 @@ C {lab_pin.sym} 2670 -80 3 1 {name=p30 sig_type=std_logic lab=VDD_3V3
 }
 C {gnd.sym} 2670 80 0 0 {name=l10 lab=GND
 }
+C {vdd.sym} 2850 270 0 0 {name=l11 lab=VDD
+spice_ignore=true}
+C {isource.sym} 2770 490 0 0 {name=I2 value=30u
+spice_ignore=true}
+C {gnd.sym} 2770 520 0 0 {name=l13 lab=GND
+spice_ignore=true}
+C {Analog/schematics/2_mixer/ota_5t.sym} 2790 400 0 0 {name=x6
+spice_ignore=true}
+C {capa.sym} 2570 350 3 0 {name=C5
+m=1
+value=2p
+footprint=1206
+device="ceramic capacitor"
+spice_ignore=true}
+C {res.sym} 2830 170 1 0 {name=R1
+value=50k
+footprint=1206
+device=resistor
+m=1
+spice_ignore=true}
+C {gnd.sym} 2660 330 2 0 {name=l12 lab=GND
+spice_ignore=true}
+C {lab_pin.sym} 2480 350 1 0 {name=p32 sig_type=std_logic lab=IN_P
+spice_ignore=true}
+C {lab_pin.sym} 3040 350 0 1 {name=p33 sig_type=std_logic lab=Diff_Out
+spice_ignore=true}
+C {gnd.sym} 2850 400 0 0 {name=l17 lab=GND
+spice_ignore=true}
+C {capa.sym} 2990 420 0 0 {name=C7
+m=1
+value=5p
+footprint=1206
+device="ceramic capacitor"
+spice_ignore=true}
+C {gnd.sym} 2990 450 0 0 {name=l21 lab=GND
+spice_ignore=true}
+C {devices/isource.sym} 2690 890 1 0 {name=I1 value=10u}
+C {res.sym} 3220 600 1 0 {name=R6
+value=10k
+footprint=1206
+device=resistor
+m=1}
+C {Analog/schematics/1_readout/slopedetector/2stage_OTA/opamp_n_input.sym} 2850 720 0 0 {name=x7}
+C {capa.sym} 2310 650 3 0 {name=C8
+m=1
+value=10p
+footprint=1206
+device="ceramic capacitor"
+}
+C {lab_pin.sym} 2610 790 1 0 {name=p36 sig_type=std_logic lab=IN_P
+}
+C {lab_pin.sym} 3200 810 0 1 {name=p35 sig_type=std_logic lab=Diff_Out
+}
+C {gnd.sym} 2610 890 0 0 {name=l23 lab=GND}
+C {lab_pin.sym} 2830 910 2 1 {name=p31 sig_type=std_logic lab=VDD_3V3
+}
+C {gnd.sym} 2780 930 0 0 {name=l24 lab=GND}
+C {lab_pin.sym} 2770 830 0 0 {name=p34 sig_type=std_logic lab=IN_N}
+C {symbols/cap_mim_2f0fF.sym} 2700 790 3 0 {name=C9
+W=50e-6
+L=50e-6
+model=cap_mim_2f0fF
+spiceprefix=X
+m=1}
+C {symbols/ppolyf_u_1k.sym} 2940 640 3 0 {name=R7
+W=1e-6
+L=50e-6
+model=ppolyf_u_1k
+spiceprefix=X
+m=1}
+C {gnd.sym} 2940 660 0 1 {name=l22 lab=GND}

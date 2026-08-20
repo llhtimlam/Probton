@@ -65,8 +65,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=0
-x2=0.0003
+x1=4.1868121e-05
+x2=5.031237e-05
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -81,7 +81,8 @@ logx=0
 logy=0
 rawfile=/workspace/Analog/schematics/2_mixer/simulation_files/5tota_tb_tran.raw
 sim_type=tran
-autoload=1}
+autoload=1
+hilight_wave=-1}
 B 2 1850 -900 2650 -500 {flags=graph
 y1=-200
 y2=0
@@ -128,6 +129,31 @@ sim_type=dc
 rawfile=/workspace/Analog/schematics/2_mixer/simulation_files/5tota_tb_dc.raw
 color=4
 node=ota_dc_gain}
+B 2 1570 -440 2370 -40 {flags=graph
+y1=-0.1
+y2=3.5
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=4.1868121e-05
+x2=5.031237e-05
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+node="in_p
+gain"
+color="4 5"
+dataset=-1
+unitx=1
+logx=0
+logy=0
+rawfile=/workspace/Analog/schematics/2_mixer/simulation_files/5tota_tb_tran.raw
+sim_type=tran
+autoload=1
+hilight_wave=1}
 T {DC Analysis} 340 -1510 0 0 0.8 0.8 {}
 T {AC Analysis} 2140 -1390 0 0 0.8 0.8 {}
 T {Common Mode Rejection Ratio AC Analysis} 850 -1510 0 0 0.8 0.8 {}
@@ -159,6 +185,64 @@ N 100 -430 100 -370 {
 lab=GND}
 N 530 -650 530 -610 {
 lab=GND}
+N 1150 -220 1150 -160 {
+lab=Ibias_30u
+}
+N 1230 -350 1230 -300 {
+lab=VDD
+}
+N 1040 -250 1150 -250 {
+lab=#net1
+}
+N 1040 -270 1150 -270 {
+lab=GND
+}
+N 1330 -250 1440 -250 {
+lab=Gain
+}
+N 1230 -200 1230 -160 {
+lab=GND
+}
+N 870 -250 920 -250 {lab=IN_P
+}
+N 980 -250 1040 -250 {lab=#net1
+}
+N 1010 -420 1010 -250 {lab=#net1
+}
+N 1010 -420 1290 -420 {lab=#net1
+}
+N 1350 -420 1370 -420 {lab=Gain
+}
+N 1370 -420 1370 -250 {lab=Gain
+}
+N 900 110 900 150 {
+lab=VDD}
+N 900 210 900 230 {
+lab=Ib}
+N 900 230 900 250 {
+lab=Ib}
+N 1180 170 1260 170 {lab=#net1
+spice_ignore=true}
+N 1230 170 1230 300 {lab=#net1
+spice_ignore=true}
+N 1230 300 1300 300 {lab=#net1
+spice_ignore=true}
+N 1360 300 1460 300 {lab=Gain
+spice_ignore=true}
+N 1460 130 1460 300 {lab=Gain
+spice_ignore=true}
+N 1410 130 1460 130 {lab=Gain
+spice_ignore=true}
+N 1460 130 1520 130 {lab=Gain
+spice_ignore=true}
+N 1080 170 1120 170 {lab=IN_P
+spice_ignore=true}
+N 1230 90 1260 90 {lab=GND
+spice_ignore=true}
+N 1510 130 1510 200 {lab=Gain
+spice_ignore=true}
+N 1390 -250 1390 -180 {lab=Gain
+}
 C {code.sym} 490 -450 0 0 {name=MODELS only_toplevel=true
 format="tcleval( @value )"
 value="
@@ -201,7 +285,7 @@ hide_texts=true}
 C {gnd.sym} 190 -350 0 0 {name=l7 lab=GND}
 C {gnd.sym} 190 -520 0 0 {name=l1 lab=GND}
 C {gnd.sym} 270 -520 0 0 {name=l2 lab=GND}
-C {isource.sym} 100 -460 0 0 {name=I0 value=10u}
+C {isource.sym} 100 -460 0 0 {name=I0 value=30u}
 C {vdd.sym} 530 -800 0 0 {name=l10 lab=VDD}
 C {gnd.sym} 100 -370 0 0 {name=l6 lab=GND}
 C {lab_pin.sym} 450 -610 3 0 {name=p6 sig_type=std_logic lab=Ibias_30u}
@@ -212,7 +296,6 @@ C {lab_pin.sym} 340 -700 0 0 {name=p2 sig_type=std_logic lab=Vif_b
 }
 C {opin.sym} 740 -700 0 0 {name=p3 lab=Vout}
 C {gnd.sym} 530 -610 0 0 {name=l3 lab=GND}
-C {Analog/schematics/2_mixer/5tota.sym} 470 -650 0 0 {name=x1}
 C {code.sym} 625 -445 0 0 {name=SPICE1 only_toplevel=true 
 value="
 * Complete 5T OTA Verification Testbench for Gilbert Cell Interface
@@ -337,3 +420,81 @@ value="
     
 .endc
 "}
+C {Analog/schematics/2_mixer/ota_5t.sym} 470 -650 0 0 {name=x1}
+C {vdd.sym} 1230 -350 0 0 {name=l4 lab=VDD
+}
+C {lab_pin.sym} 1150 -160 3 0 {name=p4 sig_type=std_logic lab=Ibias_30u
+}
+C {gnd.sym} 1230 -160 0 0 {name=l5 lab=GND
+}
+C {Analog/schematics/2_mixer/ota_5t.sym} 1170 -200 0 0 {name=x2
+}
+C {gnd.sym} 1040 -270 2 0 {name=l9 lab=GND
+}
+C {lab_pin.sym} 1440 -250 0 1 {name=p5 sig_type=std_logic lab=Gain
+}
+C {res.sym} 950 -250 1 0 {name=R1
+value=10k
+footprint=1206
+device=resistor
+m=1
+}
+C {res.sym} 1320 -420 1 0 {name=R2
+value=10k
+footprint=1206
+device=resistor
+m=1
+}
+C {vsource.sym} 640 -160 0 0 {name=V2 value=
+"SIN(1.65 1.65 200k 0n)"
+savecurrent=false
+}
+C {lab_pin.sym} 640 -190 0 0 {name=p16 sig_type=std_logic lab=IN_P
+}
+C {gnd.sym} 640 -130 0 0 {name=l14 lab=GND
+}
+C {lab_pin.sym} 870 -250 0 0 {name=p7 sig_type=std_logic lab=IN_P
+}
+C {Analog/schematics/1_readout/tia/B18_TIA_OTA.sym} 1270 190 0 0 {name=x3
+spice_ignore=true}
+C {devices/isource.sym} 900 180 0 0 {name=I1 value=100u}
+C {devices/lab_wire.sym} 900 250 2 0 {name=p10 sig_type=std_logic lab=Ib}
+C {devices/lab_wire.sym} 900 110 0 0 {name=p11 sig_type=std_logic lab=VDD}
+C {devices/lab_wire.sym} 1260 130 2 1 {name=p12 sig_type=std_logic lab=Ib
+spice_ignore=true}
+C {gnd.sym} 1320 190 0 0 {name=l11 lab=GND
+spice_ignore=true}
+C {gnd.sym} 1340 180 0 0 {name=l12 lab=GND
+spice_ignore=true}
+C {vdd.sym} 1320 70 0 0 {name=l13 lab=VDD
+spice_ignore=true}
+C {res.sym} 1150 170 1 0 {name=R3
+value=50k
+footprint=1206
+device=resistor
+m=1
+spice_ignore=true}
+C {res.sym} 1330 300 1 0 {name=R4
+value=50k
+footprint=1206
+device=resistor
+m=1
+spice_ignore=true}
+C {gnd.sym} 1230 90 2 0 {name=l15 lab=GND
+spice_ignore=true}
+C {lab_pin.sym} 1080 170 0 0 {name=p14 sig_type=std_logic lab=IN_P
+spice_ignore=true}
+C {lab_pin.sym} 1520 130 0 1 {name=p15 sig_type=std_logic lab=Gain
+spice_ignore=true}
+C {devices/capa.sym} 1510 230 0 0 {name=C1
+m=1
+value=2p
+spice_ignore=true}
+C {devices/gnd.sym} 1510 260 0 0 {name=l16 lab=GND
+spice_ignore=true}
+C {devices/capa.sym} 1390 -150 0 0 {name=C2
+m=1
+value=2p
+}
+C {devices/gnd.sym} 1390 -120 0 0 {name=l17 lab=GND
+}

@@ -11,7 +11,7 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=-1927451.3
+x1=0
 divx=5
 subdivx=4
 xlabmag=1.0
@@ -28,8 +28,9 @@ color="4 5 6"
 node="vif_db; vif_db -1 *
 vlo_db; vlo_db -1 *
 vrf_db; vrf_db -1 *"
-x2=1.4573959e+08
-y2=20}
+x2=400k
+y2=20
+hilight_wave=0}
 B 2 1700 -1590 2500 -1190 {flags=graph
 y1=-1
 y2=4
@@ -38,8 +39,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=0.00059122292
-x2=0.00059157572
+x1=0
+x2=0.0016524173
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -66,8 +67,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=0.00059122292
-x2=0.00059157572
+x1=0
+x2=0.0016524173
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -224,22 +225,24 @@ value="
     * alter @V_LO[sin] = [ $cm_lo $amp_lo $freq_lo 0 ]
     * alter @V_LO_b[sin] = [ $cm_lo $amp_lo $freq_lo 0 0 180 ]
 
-    set freq_lo = 100Meg
+    set freq_lo = 156k
     set cm_lo = 1.8
     set amp_lo = 0.4
 
     set cm_rf  = 1.2
-    set freq_rf = 87Meg
+    set freq_rf = 156k
     * set freq_rf = 10.7Meg
-    set amp_rf  = 0.05
+    set amp_rf  = 0.1
+    set rf_phase = 90
+    set rf_phase_b = $rf_phase + 180
 
     * set the parameters to the voltage sources
     * alter @V_LO[pulse] = [ 2 2.5 0 0.5p 0.5p 5n 10n ]
     * alter @V_LO_b[pulse] = [ 2 2.5 5n 0.5p 0.5p 5n 10n]
     alter @V_LO[sin] = [ $cm_lo $amp_lo $freq_lo 0 ]
     alter @V_LO_b[sin] = [ $cm_lo $amp_lo $freq_lo 0 0 180 ]
-    alter @V_RF[sin] = [ $cm_rf $amp_rf $freq_rf 0 ]
-    alter @V_RF_b[sin] = [ $cm_rf $amp_rf $freq_rf 0 0 180 ]
+    alter @V_RF[sin] = [ $cm_rf $amp_rf $freq_rf $rf_phase ]
+    alter @V_RF_b[sin] = [ $cm_rf $amp_rf $freq_rf 0 0 $rf_phase_b ]
 
     save all
     op
@@ -263,7 +266,7 @@ value="
     let vrf_db = db(mag(vrf))
     let vif_db = db(mag(v(vif)))
     
-    plot vlo_db vrf_db vif_db xlimit 0 300Meg
+    * plot vlo_db vrf_db vif_db xlimit 0 300Meg
 
     write /workspace/Analog/schematics/2_mixer/simulation_files/mixer_tb.raw
 
