@@ -177,7 +177,13 @@ module wave_controller (
             raw_edge3        <= 21'b0;
 
         // Calibration State
-        end else if (nco_en) begin
+        // Gated on cal_start (not nco_en): the calibration MEASUREMENT must only
+        // run when THIS axis is actively calibrating. Otherwise, because
+        // nco_en = cfg_done || cal_start, an axis whose cal_start is gated off
+        // (e.g. Y waiting on cal_done_x for sequential cal) would still capture
+        // edges from comp and complete out of order. The NCO/phase_acc keeps
+        // running on nco_en separately, so only edge-capture is gated here.
+        end else if (cal_start) begin
             // Stop loop after timeout and finish calibration
             if (!cal_timeout && !cal_done) begin
 
