@@ -349,6 +349,32 @@ module wave_controller (
     logic unsigned [20:0] ref_phase;
     assign ref_phase = phase_acc - cfg_phase0_offset;
 
+    // --- Reference sine-PWM path (ref_wave = sine-PWM at the delayed phase) ---
+    // Tim: ref_wave should be the same sine-PWM format as mems_drv, but phase-
+    // delayed by cfg_phase0_offset; mid-rail during calibration.
+    logic unsigned [7:0] ref_sine_amp;
+    sine_lut u_ref_sine (
+        .phase (ref_phase[20:13]),     // delayed-phase top 8 bits
+        .amp   (ref_sine_amp)
+    );
+
+    logic unsigned [8:0] ref_ds_acc;
+    logic unsigned [7:0] ref_ds_code;
+    logic                ref_ds_bit;
+
+    always_ff @(posedge clk or negedge rst_n) begin
+        if (!rst_n) ref_ds_acc <= 9'b0;
+        else        ref_ds_acc <= {1'b0, ref_ds_acc[7:0]} + {1'b0, ref_ds_code};
+    end
+    assign ref_ds_bit = ref_ds_acc[8];
+
+    // Cal: hold mid-rail (DS_MID -> 50% density -> ~1.65V). Main run: delayed sine.
+    always_comb begin
+        ref_ds_code = DS_MID;
+        if (cfg_done && !cal_start)
+            ref_ds_code = ref_sine_amp;
+    end
+
     // --- Calibration burst control ---
     logic cal_burst_armed;
     logic cal_burst_active;
@@ -399,12 +425,12 @@ module wave_controller (
                 end
 
                 mems_drv <= ds_bit;                 // sine burst / mid-rail via DSM
-                ref_wave <= 1'b0;                   // mixer reference unused in cal
+                ref_wave <= ref_ds_bit;             // mid-rail (DS_MID) during cal
 
             // ---------------- Main Run ----------------
             end else begin
                 mems_drv         <= ds_bit;                 // continuous sine via DSM
-                ref_wave         <= ref_phase[20];          // square LO, phase-corrected
+                ref_wave         <= ref_ds_bit;             // sine-PWM ref, phase-delayed
                 cal_burst_armed  <= 1'b1;                   // re-arm for next calibration
                 cal_burst_active <= 1'b0;
                 cal_burst_count  <= '0;
