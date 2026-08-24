@@ -157,7 +157,7 @@ module digital_domain (
         .cfg_f_MEMS_fcw(cfg_f_MEMS_fcw_y),
         .cfg_phase0_offset(cfg_phase0_offset_y), .cfg_phase90_offset(cfg_phase90_offset_y), .cfg_phase270_offset(cfg_phase270_offset_y),
         .cfg_done(cfg_done), .cal_done(cal_done_y), .cal_timeout(cal_timeout_y),
-        .cal_start(cal_start),
+        .cal_start(cal_start & cal_done_x),   // sequential cal: Y starts only after X's cal_done
         .comp(comp_y),
         .latch_phase90(latch_phase90_y), .latch_phase270(latch_phase270_y),
         .latch_phase90_ack(latch_phase90_ack_y), .latch_phase270_ack(latch_phase270_ack_y),

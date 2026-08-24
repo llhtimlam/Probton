@@ -369,7 +369,14 @@ async def test_comparator_x_y(dut):
     duty_x = []
     duty_y = []
 
-    run = PERIOD_X * 4
+    # Sequential calibration (Y.cal_start = cal_start & cal_done_x): X calibrates
+    # first, then Y. So the run must cover BOTH axes back-to-back (~2x a single
+    # axis), and we track WHEN cal_done_x fires vs. WHEN Y's burst starts to
+    # verify the ordering -- that is the whole point of the sequential change.
+    cal_done_x_clk = None         # clk index where cal_done_x first went high
+    cal_done_y_clk = None         # clk index where cal_done_y first went high
+
+    run = PERIOD_X * 10           # long enough for X then Y to both calibrate
     for i in range(run):
         await RisingEdge(dut.clk)
 
@@ -382,6 +389,12 @@ async def test_comparator_x_y(dut):
         drv_y = get_pin(dut, "bidir_out", PIN_MEMS_DRV_Y)
         assert drv_x is not None, "mems_drv_x went X during calibration"
         assert drv_y is not None, "mems_drv_y went X during calibration"
+
+        # Record when each axis finishes calibrating (cal_done first high).
+        if cal_done_x_clk is None and int(dut.cal_done_x.value) == 1:
+            cal_done_x_clk = i
+        if cal_done_y_clk is None and int(dut.cal_done_y.value) == 1:
+            cal_done_y_clk = i
 
         ones_x += drv_x
         ones_y += drv_y
@@ -411,6 +424,17 @@ async def test_comparator_x_y(dut):
     logger.info(f"raw_edge y = {int(dut.raw_edge1_y.value)}/"
                 f"{int(dut.raw_edge2_y.value)}/{int(dut.raw_edge3_y.value)}")
     logger.info(f"cal_dir x/y = {int(dut.cal_dir_x.value)}/{int(dut.cal_dir_y.value)}")
+
+    # Sequential-cal ordering: Y calibration must COMPLETE after X's, because Y's
+    # cal_start is gated on cal_done_x. If cal_done_y fired before (or with)
+    # cal_done_x, the gating is not holding Y off and the axes overlap.
+    assert cal_done_x_clk is not None, "cal_done_x never asserted -- X did not finish"
+    assert cal_done_y_clk is not None, "cal_done_y never asserted -- Y did not finish (window too short?)"
+    assert cal_done_x_clk < cal_done_y_clk, (
+        f"ordering violated: cal_done_y fired at clk {cal_done_y_clk} but "
+        f"cal_done_x at clk {cal_done_x_clk} -- Y did not wait for X (gating not holding)")
+    logger.info(f"sequential OK: cal_done_x at clk {cal_done_x_clk}, "
+                f"cal_done_y at clk {cal_done_y_clk} (Y after X)")
 
     assert int(dut.cal_done_x.value) == 1, "X calibration never completed"
     assert int(dut.cal_done_y.value) == 1, "Y calibration never completed"
