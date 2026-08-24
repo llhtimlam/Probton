@@ -178,6 +178,18 @@ async def sample_drive(dut, n_clks):
     return bits
 
 
+async def sample_ref(dut, n_clks):
+    """Sample ref_wave for n_clks, one value per rising edge.
+
+    ref_wave is now a phase-delayed sine-PWM (delta-sigma) stream in the same
+    format as mems_drv, so it is sampled and averaged the same way."""
+    bits = []
+    for _ in range(n_clks):
+        await RisingEdge(dut.clk)
+        bits.append(int(dut.ref_wave.value))
+    return bits
+
+
 async def wait_phase_wrap(dut, timeout_clks=None):
     """Wait until the NCO wraps (RTL-only: needs internal phase_acc)."""
     limit = timeout_clks or (PERIOD_CLKS * 2)
@@ -188,17 +200,30 @@ async def wait_phase_wrap(dut, timeout_clks=None):
     return False
 
 
-async def capture_ref_edge(dut, rising=True, timeout_clks=None):
-    """Return phase_acc at the next ref_wave edge (RTL-only)."""
-    limit = timeout_clks or (PERIOD_CLKS * 2)
-    prev = int(dut.ref_wave.value)
+async def capture_ref_sine_zero(dut, timeout_clks=None):
+    """Return phase_acc where the ref_wave sine-PWM crosses mid going up.
+
+    ref_wave is now a delta-sigma sine-PWM, so it has no single clean edge per
+    period like the old square LO. Instead we find the rising mid-crossing of
+    its *density*: slide a short averaging window and return the phase_acc at
+    the point the local duty rises through 50%. That point tracks the reference
+    sine's zero-crossing, so a cfg_phase0_offset shift moves it by the same
+    amount -- which is what this lets test_phase_offset_shift verify."""
+    limit = timeout_clks or (PERIOD_CLKS * 3)
+    win = max(8, PWM_MOD // 4)           # short averaging window
+    buf = []
+    prev_duty = None
     for _ in range(limit):
         await RisingEdge(dut.clk)
-        cur = int(dut.ref_wave.value)
-        hit = (cur == 1 and prev == 0) if rising else (cur == 0 and prev == 1)
-        if hit:
-            return int(dut.phase_acc.value)
-        prev = cur
+        buf.append(int(dut.ref_wave.value))
+        if len(buf) > win:
+            buf.pop(0)
+        if len(buf) == win:
+            duty = sum(buf) / win
+            if prev_duty is not None and prev_duty < 0.5 <= duty:
+                # mid-crossing (rising): report phase at the window centre
+                return int(dut.phase_acc.value)
+            prev_duty = duty
     return None
 
 
@@ -411,34 +436,84 @@ async def test_high_frequency_headroom(dut):
 
 
 @cocotb.test()
-async def test_reference_lo_rate(dut):
-    """Reference LO is a square wave at the dither frequency"""
+async def test_reference_is_sine_pwm(dut):
+    """Reference wave is a sine-PWM (delta-sigma), same format as mems_drv.
+
+    Tim's spec: ref_wave is no longer a square LO -- it is the sine delivered as
+    a delta-sigma stream, phase-delayed by cfg_phase0_offset. So its density
+    must trace a sine over the dither period (positive half above mid-rail,
+    negative half below), exactly like mems_drv, not toggle ~4x like a square.
+    """
 
     logger = logging.getLogger("wave_controller")
 
     logger.info("Startup sequence...")
     await start_up(dut)
 
-    logger.info("Counting reference LO toggles...")
+    logger.info("Checking ref_wave is a sine-PWM...")
 
-    await enter_readout(dut, fcw=FCW_FAST)
+    # Zero phase offset so ref_wave and mems_drv line up for this test.
+    await enter_readout(dut, fcw=FCW_FAST, phase0=0)
 
-    toggles = 0
-    prev = int(dut.ref_wave.value)
-    for _ in range(PERIOD_CLKS * 2):
-        await RisingEdge(dut.clk)
-        cur = int(dut.ref_wave.value)
-        if cur != prev:
-            toggles += 1
-        prev = cur
+    if not gl:
+        assert await wait_phase_wrap(dut), "NCO never wrapped -- is it running?"
 
-    logger.info("ref_wave toggled %d times over 2 dither periods", toggles)
+    bits = await sample_ref(dut, PERIOD_CLKS)
 
-    # A square at f_MEMS toggles twice per period: 4 over two periods,
-    # +/-1 depending on where sampling starts and stops.
-    assert 3 <= toggles <= 5, (
-        f"ref_wave toggled {toggles} times over 2 dither periods -- expected "
-        f"~4 for a square LO at f_MEMS")
+    # Density must trace a sine: positive half-cycle above mid, negative below.
+    q = PERIOD_CLKS // 4
+    duties = [sum(bits[i * q:(i + 1) * q]) / q for i in range(4)]
+    logger.info("ref_wave quarter duties: Q0=%.3f Q1=%.3f Q2=%.3f Q3=%.3f",
+                *duties)
+
+    assert (duties[0] + duties[1]) / 2 > 0.55, (
+        "ref_wave positive half-cycle should sit above mid-rail -- it is not "
+        "tracing a sine (is it still a square LO?)")
+    assert (duties[2] + duties[3]) / 2 < 0.45, (
+        "ref_wave negative half-cycle should sit below mid-rail")
+
+    # A square LO would give ~4 toggles over a period; a delta-sigma stream
+    # toggles at the clock rate. Guard against a regression to square.
+    toggles = sum(1 for a, b in zip(bits, bits[1:]) if a != b)
+    logger.info("ref_wave toggled %d times over one dither period", toggles)
+    assert toggles > 20, (
+        f"ref_wave only toggled {toggles} times -- looks like a square wave, "
+        f"not a sine-PWM/delta-sigma stream")
+
+    logger.info("Done!")
+
+
+@cocotb.test()
+async def test_ref_wave_midrail_during_cal(dut):
+    """During calibration ref_wave holds mid-rail (~1.65V), not a rail.
+
+    Tim's spec: when cal_start is asserted, ref_wave is driven from DS_MID
+    (50% density), so after the RC it sits at mid-rail and the mixer sees a
+    neutral reference during calibration."""
+
+    logger = logging.getLogger("wave_controller")
+
+    logger.info("Startup sequence...")
+    await start_up(dut)
+
+    logger.info("Measuring ref_wave duty during calibration...")
+
+    # Configure, then assert calibration.  Hold comparators idle so calibration
+    # does not complete and freeze (same pattern as test_calibration_burst).
+    dut.cfg_f_MEMS_fcw.value = FCW_FAST
+    dut.cfg_phase0_offset.value = 0
+    dut.cfg_done.value = 1
+    dut.cal_start.value = 1
+    await ClockCycles(dut.clk, 10)
+
+    bits = await sample_ref(dut, PWM_MOD * 8)
+    duty = sum(bits) / len(bits)
+    logger.info("cal ref_wave duty = %.4f", duty)
+
+    # 50% duty -> mid-rail out of the RC -> neutral mixer reference.
+    assert 0.48 < duty < 0.52, (
+        f"cal ref_wave duty {duty:.4f} is not mid-rail -- during calibration "
+        f"the mixer reference should rest at ~1.65V, not a rail")
 
     logger.info("Done!")
 
@@ -526,15 +601,15 @@ async def test_phase_offset_shift(dut):
     # Baseline: no correction applied
     await enter_readout(dut, fcw=FCW_FAST, phase0=0)
     await ClockCycles(dut.clk, 10)
-    edge_0 = await capture_ref_edge(dut, rising=True)
-    assert edge_0 is not None, "no ref_wave edge with offset = 0"
+    edge_0 = await capture_ref_sine_zero(dut)
+    assert edge_0 is not None, "no ref_wave sine mid-crossing with offset = 0"
     logger.info("offset = 0        -> ref edge at phase_acc = %d", edge_0)
 
     # Quarter-period correction
     dut.cfg_phase0_offset.value = QUARTER_OFFSET
     await ClockCycles(dut.clk, 10)
-    edge_q = await capture_ref_edge(dut, rising=True)
-    assert edge_q is not None, "no ref_wave edge with offset = 2^19"
+    edge_q = await capture_ref_sine_zero(dut)
+    assert edge_q is not None, "no ref_wave sine mid-crossing with offset = 2^19"
     logger.info("offset = %d   -> ref edge at phase_acc = %d",
                 QUARTER_OFFSET, edge_q)
 
@@ -1621,7 +1696,8 @@ def wave_controller_runner():
 
         defines = {"FUNCTIONAL": True, "USE_POWER_PINS": True}
     else:
-        sources.append(proj_path / "../src/sine_lut.sv")
+        # sine_lut.sv is `include`d by wave_controller.sv -- do not list separately
+        # sources.append(proj_path / "../src/sine_lut.sv")
         sources.append(proj_path / "../src/wave_controller.sv")
 
     build_args = []
