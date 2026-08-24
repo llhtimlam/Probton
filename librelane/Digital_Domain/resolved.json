@@ -106,35 +106,7 @@
         1117.5
     ],
     "EXTRA_EXCLUDED_CELLS": null,
-    "MACROS": {
-        "analog_block": {
-            "gds": [
-                "/workspace/librelane/analog_block.gds"
-            ],
-            "lef": [
-                "/workspace/librelane/analog_block.lef"
-            ],
-            "instances": {
-                "analog_block_inst": {
-                    "location": [
-                        572.57,
-                        867.5
-                    ],
-                    "orientation": "FS"
-                }
-            },
-            "vh": [
-                "/workspace/src/analog_macro.sv"
-            ],
-            "nl": [],
-            "pnl": [],
-            "spef": {},
-            "lib": {},
-            "spice": [],
-            "sdf": {},
-            "json_h": null
-        }
-    },
+    "MACROS": null,
     "EXTRA_LEFS": null,
     "EXTRA_VERILOG_MODELS": null,
     "EXTRA_SPICE_MODELS": null,
@@ -375,9 +347,7 @@
         "Metal4"
     ],
     "PDN_CONNECT_MACROS_TO_GRID": true,
-    "PDN_MACRO_CONNECTIONS": [
-        "analog_block_inst VDD VSS VDD VSS"
-    ],
+    "PDN_MACRO_CONNECTIONS": null,
     "PDN_ENABLE_GLOBAL_CONNECTIONS": true,
     "STA_EXTRA_CORNER_TCL_FILE": null,
     "DEDUPLICATE_CORNERS": false,
@@ -390,14 +360,7 @@
     "FP_SIZING": "absolute",
     "FP_ASPECT_RATIO": 1,
     "FP_CORE_UTIL": 10,
-    "FP_OBSTRUCTIONS": [
-        [
-            507.64,
-            867.5,
-            1117.5,
-            1117.5
-        ]
-    ],
+    "FP_OBSTRUCTIONS": null,
     "PL_SOFT_OBSTRUCTIONS": null,
     "CORE_AREA": [
         0,
@@ -449,36 +412,7 @@
     "PDN_EXTEND_TO": "core_ring",
     "PDN_ENABLE_PINS": true,
     "PDN_CFG": "/workspace/librelane/pdn_cfg.tcl",
-    "ROUTING_OBSTRUCTIONS": [
-        [
-            "Metal1",
-            507.64,
-            867.5,
-            1117.5,
-            1107.5
-        ],
-        [
-            "Metal2",
-            507.64,
-            867.5,
-            1117.5,
-            1107.5
-        ],
-        [
-            "Metal3",
-            507.64,
-            867.5,
-            1117.5,
-            1107.5
-        ],
-        [
-            "Metal4",
-            507.64,
-            867.5,
-            1117.5,
-            1107.5
-        ]
-    ],
+    "ROUTING_OBSTRUCTIONS": null,
     "RT_CLOCK_MIN_LAYER": null,
     "RT_CLOCK_MAX_LAYER": null,
     "GRT_ADJUSTMENT": 0.3,
@@ -608,9 +542,7 @@
     "NON_DEFAULT_RULES": null,
     "DRT_ASSIGN_NDR": null,
     "ERROR_ON_TR_DRC": true,
-    "IGNORE_DISCONNECTED_MODULES": [
-        "analog_block"
-    ],
+    "IGNORE_DISCONNECTED_MODULES": null,
     "ERROR_ON_DISCONNECTED_PINS": true,
     "ERROR_ON_LONG_WIRE": true,
     "WIRE_LENGTH_THRESHOLD": null,
@@ -1170,9 +1102,7 @@
     "NETGEN_SETUP": "/workspace/gf180mcu/gf180mcuD/libs.tech/netgen/gf180mcuD_setup.tcl",
     "LVS_INCLUDE_MARCO_NETLISTS": false,
     "LVS_FLATTEN_CELLS": null,
-    "LVS_IGNORE_CELLS": [
-        "analog_block"
-    ],
+    "LVS_IGNORE_CELLS": null,
     "ERROR_ON_LVS_ERROR": true,
     "EQY_SCRIPT": null,
     "EQY_FORCE_ACCEPT_PDK": false,

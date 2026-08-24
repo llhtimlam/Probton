@@ -292,11 +292,6 @@ Reading "gf180mcu_fd_sc_mcu7t5v0__bufz_16".
 Reading "gf180mcu_fd_sc_mcu7t5v0__clkbuf_1".
 Reading "gf180mcu_fd_sc_mcu7t5v0__clkbuf_2".
 Reading "gf180mcu_fd_sc_mcu7t5v0__clkbuf_3".
-> gds read /workspace/librelane/analog_block.gds
-Warning: Calma reading is not undoable!  I hope that's OK.
-Library written using GDS-II Release 6.0
-Library name: LIB
-Reading "analog_block".
 > gds read /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/gds/gf180mcu_fd_io.gds
 Warning: Calma reading is not undoable!  I hope that's OK.
 Library written using GDS-II Release 6.0
@@ -2244,20 +2239,20 @@ Warning:  cell gf180mcu_fd_io__dvss already existed before reading GDS!
 Cell (REFRESHLAYOUT?) couldn't be read
 No such file or directory
 Creating new cell
-> def read /workspace/librelane/runs/RUN_2026-08-17_01-19-22/53-odb-cellfrequencytables/wrapper.def -noblockage
-Reading DEF data from file /workspace/librelane/runs/RUN_2026-08-17_01-19-22/53-odb-cellfrequencytables/wrapper.def.
+> def read /workspace/librelane/runs/RUN_2026-08-24_23-47-44/53-odb-cellfrequencytables/wrapper.def -noblockage
+Reading DEF data from file /workspace/librelane/runs/RUN_2026-08-24_23-47-44/53-odb-cellfrequencytables/wrapper.def.
 This action cannot be undone.
   Processed 4 vias total.
-  Processed 2 non-default rules total.
-  Processed 43461 subcell instances total.
-  Processed 17 pins total.
+  Processed 1 non-default rules total.
+  Processed 47014 subcell instances total.
+  Processed 20 pins total.
   Processed 2 special nets total.
-  Processed 8558 nets total.
-DEF read: Processed 197628 lines.
+  Processed 8765 nets total.
+DEF read: Processed 193653 lines.
 [INFO] Ignoring 'VDD VSS'
 [INFO] Writing abstract LEF…
 [INFO] Not specifiying -pinonly (nets connected to pins on the same layer are declared as part of the pin)…
-Generating LEF output /workspace/librelane/runs/RUN_2026-08-17_01-19-22/60-magic-writelef/wrapper.lef for cell wrapper:
+Generating LEF output /workspace/librelane/runs/RUN_2026-08-24_23-47-44/60-magic-writelef/wrapper.lef for cell wrapper:
 Diagnostic:  Write LEF header for cell wrapper
 Diagnostic:  Writing LEF output for cell wrapper
 Diagnostic:  Scale value is 0.005000

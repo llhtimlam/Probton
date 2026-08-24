@@ -106,35 +106,7 @@
         1117.5
     ],
     "EXTRA_EXCLUDED_CELLS": null,
-    "MACROS": {
-        "analog_block": {
-            "gds": [
-                "/workspace/librelane/analog_block.gds"
-            ],
-            "lef": [
-                "/workspace/librelane/analog_block.lef"
-            ],
-            "instances": {
-                "analog_block_inst": {
-                    "location": [
-                        572.57,
-                        867.5
-                    ],
-                    "orientation": "FS"
-                }
-            },
-            "vh": [
-                "/workspace/src/analog_macro.sv"
-            ],
-            "nl": [],
-            "pnl": [],
-            "spef": {},
-            "lib": {},
-            "spice": [],
-            "sdf": {},
-            "json_h": null
-        }
-    },
+    "MACROS": null,
     "EXTRA_LEFS": null,
     "EXTRA_VERILOG_MODELS": null,
     "EXTRA_SPICE_MODELS": null,
@@ -224,9 +196,7 @@
     "NETGEN_SETUP": "/workspace/gf180mcu/gf180mcuD/libs.tech/netgen/gf180mcuD_setup.tcl",
     "LVS_INCLUDE_MARCO_NETLISTS": false,
     "LVS_FLATTEN_CELLS": null,
-    "LVS_IGNORE_CELLS": [
-        "analog_block"
-    ],
+    "LVS_IGNORE_CELLS": null,
     "meta": {
         "librelane_version": "3.1.0.dev2",
         "step": "Netgen.LVS"

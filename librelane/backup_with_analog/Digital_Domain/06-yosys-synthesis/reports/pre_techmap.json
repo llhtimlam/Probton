@@ -1,0 +1,67 @@
+{
+   "creator": "Yosys 0.67 (git sha1 2d1509d1b, Release, GNU /usr/bin/c++ 13.3.0)",
+   "invocation": "stat -json -liberty /workspace/librelane/runs/RUN_2026-08-17_01-19-22/tmp/591af4df83434fe7a7a128f9ca9d12c5.lib ",
+   "modules": {
+      "\\wrapper": {
+         "num_wires":         6478,
+         "num_wire_bits":     7012,
+         "num_pub_wires":     130,
+         "num_pub_wire_bits": 616,
+         "num_ports":         15,
+         "num_port_bits":     15,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         6915,
+         "num_submodules":       0,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 2337,
+            "$_AND_": 217,
+            "$_DFFE_PN0P_": 478,
+            "$_DFFE_PN1P_": 4,
+            "$_DFF_PN0_": 64,
+            "$_DFF_PN1_": 4,
+            "$_MUX_": 561,
+            "$_NAND_": 111,
+            "$_NOR_": 350,
+            "$_NOT_": 324,
+            "$_ORNOT_": 407,
+            "$_OR_": 1012,
+            "$_XNOR_": 214,
+            "$_XOR_": 831,
+            "analog_block": 1
+         }
+      }
+   },
+      "design": {
+         "num_wires":         6478,
+         "num_wire_bits":     7012,
+         "num_pub_wires":     130,
+         "num_pub_wire_bits": 616,
+         "num_ports":         15,
+         "num_port_bits":     15,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         6915,
+         "num_submodules":       0,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 2337,
+            "$_AND_": 217,
+            "$_DFFE_PN0P_": 478,
+            "$_DFFE_PN1P_": 4,
+            "$_DFF_PN0_": 64,
+            "$_DFF_PN1_": 4,
+            "$_MUX_": 561,
+            "$_NAND_": 111,
+            "$_NOR_": 350,
+            "$_NOT_": 324,
+            "$_ORNOT_": 407,
+            "$_OR_": 1012,
+            "$_XNOR_": 214,
+            "$_XOR_": 831,
+            "analog_block": 1
+         }
+      }
+}
+

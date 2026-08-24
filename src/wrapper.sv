@@ -31,7 +31,12 @@ module wrapper (
 
     // Reference Wave
     output logic ref_wave_x, // bidir_out_10
-    output logic ref_wave_y  // bidir_out_11
+    output logic ref_wave_y,  // bidir_out_11
+
+    // Digital/Analog Interface
+    output logic read_en,    // bidir_out_12
+    input  logic comp_x,     // bidir_out_13
+    input  logic comp_y      // bidir_out_14
 
     // Analog Module
     //input  wire analog_readout_input,
@@ -39,8 +44,6 @@ module wrapper (
     //output wire analog_error_x_output,
     //output wire analog_error_y_output
 );
-
-    wire read_en, comp_x, comp_y;
 
     digital_domain digital_domain_inst (
         `ifdef USE_POWER_PINS
@@ -65,17 +68,6 @@ module wrapper (
         .comp_y      (comp_y),
         .ref_wave_x  (ref_wave_x),
         .ref_wave_y  (ref_wave_y)
-    );
-
-    (* keep_hierarchy *)
-     analog_block analog_block_inst (
-        .clk                   (clk),
-        .read_en               (read_en),
-        .comp_x                (comp_x),
-        .comp_y                (comp_y),
-        .clk1                  (clk),
-        .ref_wave_x            (ref_wave_x),
-        .ref_wave_y            (ref_wave_y)
     );
 
 endmodule

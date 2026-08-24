@@ -1,6 +1,6 @@
 Reading timing models for corner nom_tt_025C_3v30…
 Reading timing library for the 'nom_tt_025C_3v30' corner at '/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib'…
-Reading OpenROAD database at '/workspace/librelane/runs/RUN_2026-08-17_01-19-22/37-openroad-resizertimingpostcts/wrapper.odb'…
+Reading OpenROAD database at '/workspace/librelane/runs/RUN_2026-08-24_23-47-44/37-openroad-resizertimingpostcts/wrapper.odb'…
 Reading design constraints file at '/usr/local/lib/python3.12/dist-packages/librelane/scripts/base.sdc'…
 [INFO] Using clock clk…
 [INFO] Setting output delay to: 40
@@ -20,20 +20,20 @@ Reading design constraints file at '/usr/local/lib/python3.12/dist-packages/libr
 [INFO GRT-0088] Layer Metal2  Track-Pitch = 0.5600  line-2-Via Pitch: 0.5600
 [INFO GRT-0088] Layer Metal3  Track-Pitch = 0.5600  line-2-Via Pitch: 0.5600
 [INFO GRT-0088] Layer Metal4  Track-Pitch = 0.5600  line-2-Via Pitch: 0.5600
-[INFO GRT-0003] Macros: 1
-[INFO GRT-0004] Blockages: 3
-[INFO GRT-0019] Found 79 clock nets.
+[INFO GRT-0003] Macros: 0
+[INFO GRT-0004] Blockages: 0
+[INFO GRT-0019] Found 73 clock nets.
 [INFO GRT-0001] Minimum degree: 2
-[INFO GRT-0002] Maximum degree: 14
+[INFO GRT-0002] Maximum degree: 13
 
 [INFO GRT-0053] Routing resources analysis:
           Routing      Original      Derated      Resource
 Layer     Direction    Resources     Resources    Reduction (%)
 ---------------------------------------------------------------
 Metal1     Horizontal          0             0          0.00%
-Metal2     Vertical       227041        151283          33.37%
-Metal3     Horizontal     230325        153446          33.38%
-Metal4     Vertical       226661        150917          33.42%
+Metal2     Vertical       256790        171106          33.37%
+Metal3     Horizontal     260932        173923          33.35%
+Metal4     Vertical       256397        170713          33.42%
 ---------------------------------------------------------------
 
 [INFO GRT-0101] Running extra iterations to remove overflow.
@@ -43,40 +43,39 @@ Metal4     Vertical       226661        150917          33.42%
 [INFO GRT-0102] Start extra iteration 4/50
 [INFO GRT-0102] Start extra iteration 5/50
 [INFO GRT-0102] Start extra iteration 6/50
-[INFO GRT-0197] Via related to pin nodes: 52725
-[INFO GRT-0198] Via related Steiner nodes: 1155
+[INFO GRT-0102] Start extra iteration 7/50
+[INFO GRT-0197] Via related to pin nodes: 53221
+[INFO GRT-0198] Via related Steiner nodes: 1111
 [INFO GRT-0199] Via filling finished.
-[INFO GRT-0111] Final number of vias: 68003
-[INFO GRT-0112] Final usage 3D: 270106
+[INFO GRT-0111] Final number of vias: 68027
+[INFO GRT-0112] Final usage 3D: 266062
 
 [INFO GRT-0096] Final congestion report:
 Layer         Resource        Demand        Usage (%)    Max H / Max V / Total Overflow
 ---------------------------------------------------------------------------------------
 Metal1               0             0            0.00%             0 /  0 /  0
-Metal2          151283         29314           19.38%             0 /  0 /  0
-Metal3          153446         30101           19.62%             0 /  0 /  0
-Metal4          150917          6682            4.43%             0 /  0 /  0
+Metal2          171106         28840           16.86%             0 /  0 /  0
+Metal3          173923         28640           16.47%             0 /  0 /  0
+Metal4          170713          4501            2.64%             0 /  0 /  0
 ---------------------------------------------------------------------------------------
-Total           455646         66097           14.51%             0 /  0 /  0
+Total           515742         61981           12.02%             0 /  0 /  0
 
-[INFO GRT-0018] Total wirelength: 770019 um
-[INFO GRT-0014] Routed nets: 8558
-[INFO GRT-0303] Global routing runtime = 00:00:01
+[INFO GRT-0018] Total wirelength: 735529 um
+[INFO GRT-0014] Routed nets: 8765
+[INFO GRT-0303] Global routing runtime = 00:00:02
 Setting global connections for newly added cells…
 [INFO] Setting global connections...
-analog_block_inst matched with analog_block_inst
 [INFO ODB-0403] 0 connections made, 0 conflicts skipped.
 Updating metrics…
 Cell type report:                       Count       Area
-  Macro                                     1  115200.00
-  Endcap cell                             570    2502.53
-  Tap cell                               6955   30535.23
-  Clock buffer                             98    6080.70
-  Timing Repair Buffer                   2150   45910.41
-  Inverter                                452    4342.11
-  Clock inverter                           25     522.46
-  Sequential cell                         548   42229.06
-  Multi-Input combinational cell         5323  116852.69
-  Total                                 16122  364175.19
-Writing OpenROAD database to '/workspace/librelane/runs/RUN_2026-08-17_01-19-22/39-openroad-globalrouting/wrapper.odb'…
-Writing layout to '/workspace/librelane/runs/RUN_2026-08-17_01-19-22/39-openroad-globalrouting/wrapper.def'…
+  Endcap cell                             564    2476.19
+  Tap cell                               7956   34930.02
+  Clock buffer                             84    5031.40
+  Timing Repair Buffer                   2259   47771.94
+  Inverter                                393    3766.96
+  Clock inverter                           28     548.80
+  Sequential cell                         566   43460.57
+  Multi-Input combinational cell         5468  124720.29
+  Total                                 17318  262706.17
+Writing OpenROAD database to '/workspace/librelane/runs/RUN_2026-08-24_23-47-44/39-openroad-globalrouting/wrapper.odb'…
+Writing layout to '/workspace/librelane/runs/RUN_2026-08-24_23-47-44/39-openroad-globalrouting/wrapper.def'…

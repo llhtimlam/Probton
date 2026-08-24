@@ -103,30 +103,28 @@ pins:
     io_type: ground
     secondary_esd: false
 
-  # ===== Analog =====
+  # ===== Digital/Analog Interface =====
 
   # 17 (6)
-  # Virtual Pin
+  - name: comp_x
+    io_type: input_cmos
+    secondary_esd: false
 
   # 18 (7)
-  - name: analog_error_x_output
-    io_type: analog
-    secondary_esd: true
+  # Virtual Pin
 
   # 19 (8)
-  - name: analog_readout_input
-    io_type: analog
-    secondary_esd: true
+  - name: read_en
+    io_type: bidirectional_24ma
+    secondary_esd: false
 
   # 20 (9)
-  - name: analog_readout_output
-    io_type: analog
-    secondary_esd: true
+  # Virtual Pin
 
   # 21 (10)
-  - name: analog_error_y_output
-    io_type: analog
-    secondary_esd: true
+  - name: comp_y
+    io_type: input_cmos
+    secondary_esd: false
 
   # 22 (11)
   # Virtual Pin

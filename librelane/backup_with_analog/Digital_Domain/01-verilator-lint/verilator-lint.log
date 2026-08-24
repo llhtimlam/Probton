@@ -1,0 +1,96 @@
+%Warning-MODDUP: /workspace/src/analog_block.sv:5:8: Duplicate declaration of module: 'analog_block'
+    5 | module analog_block (
+      |        ^~~~~~~~~~~~
+                 /workspace/src/wrapper.sv:5:1: ... note: In file included from 'wrapper.sv'
+                 /workspace/src/analog_macro.sv:5:8: ... Location of original declaration
+    5 | module analog_block (
+      |        ^~~~~~~~~~~~
+                 ... For warning description see https://verilator.org/warn/MODDUP?v=5.050
+                 ... Use "/* verilator lint_off MODDUP */" and lint_on around source to disable this message.
+%Warning-PINMISSING: /workspace/src/wrapper.sv:71:19: Instance has missing pin: 'analog_readout_input'
+   71 |      analog_block analog_block_inst (
+      |                   ^~~~~~~~~~~~~~~~~
+                     /workspace/src/analog_macro.sv:14:17: ... Location of port declaration
+   14 |     input  wire analog_readout_input,
+      |                 ^~~~~~~~~~~~~~~~~~~~
+                     ... For warning description see https://verilator.org/warn/PINMISSING?v=5.050
+                     ... Use "/* verilator lint_off PINMISSING */" and lint_on around source to disable this message.
+%Warning-PINMISSING: /workspace/src/wrapper.sv:71:19: Instance has missing pin: 'analog_readout_output'
+   71 |      analog_block analog_block_inst (
+      |                   ^~~~~~~~~~~~~~~~~
+                     /workspace/src/analog_macro.sv:15:17: ... Location of port declaration
+   15 |     output wire analog_readout_output,
+      |                 ^~~~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /workspace/src/wrapper.sv:71:19: Instance has missing pin: 'analog_error_x_output'
+   71 |      analog_block analog_block_inst (
+      |                   ^~~~~~~~~~~~~~~~~
+                     /workspace/src/analog_macro.sv:16:17: ... Location of port declaration
+   16 |     output wire analog_error_x_output,
+      |                 ^~~~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /workspace/src/wrapper.sv:71:19: Instance has missing pin: 'analog_error_y_output'
+   71 |      analog_block analog_block_inst (
+      |                   ^~~~~~~~~~~~~~~~~
+                     /workspace/src/analog_macro.sv:17:17: ... Location of port declaration
+   17 |     output wire analog_error_y_output
+      |                 ^~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: /workspace/src/analog_macro.sv:79:17: Signal is not used: 'read_en'
+                                                           : ... note: In instance 'wrapper.analog_block_inst.analog_readout_inst'
+   79 |     input  wire read_en,
+      |                 ^~~~~~~
+                       ... For warning description see https://verilator.org/warn/UNUSEDSIGNAL?v=5.050
+                       ... Use "/* verilator lint_off UNUSEDSIGNAL */" and lint_on around source to disable this message.
+%Warning-UNUSEDSIGNAL: /workspace/src/analog_macro.sv:80:17: Signal is not used: 'ain'
+                                                           : ... note: In instance 'wrapper.analog_block_inst.analog_readout_inst'
+   80 |     input  wire ain,
+      |                 ^~~
+%Warning-UNDRIVEN: /workspace/src/analog_macro.sv:81:17: Signal is not driven: 'aout'
+                                                       : ... note: In instance 'wrapper.analog_block_inst.analog_readout_inst'
+   81 |     output wire aout,
+      |                 ^~~~
+                   ... For warning description see https://verilator.org/warn/UNDRIVEN?v=5.050
+                   ... Use "/* verilator lint_off UNDRIVEN */" and lint_on around source to disable this message.
+%Warning-UNUSEDSIGNAL: /workspace/src/analog_macro.sv:91:17: Signal is not used: 'ain'
+                                                           : ... note: In instance 'wrapper.analog_block_inst.analog_wave_mixer_y_inst'
+   91 |     input  wire ain,
+      |                 ^~~
+%Warning-UNUSEDSIGNAL: /workspace/src/analog_macro.sv:92:17: Signal is not used: 'aref'
+                                                           : ... note: In instance 'wrapper.analog_block_inst.analog_wave_mixer_y_inst'
+   92 |     input  wire aref,
+      |                 ^~~~
+%Warning-UNDRIVEN: /workspace/src/analog_macro.sv:93:17: Signal is not driven: 'aout'
+                                                       : ... note: In instance 'wrapper.analog_block_inst.analog_wave_mixer_y_inst'
+   93 |     output wire aout,
+      |                 ^~~~
+%Warning-UNUSEDSIGNAL: /workspace/src/analog_macro.sv:103:17: Signal is not used: 'clk'
+                                                            : ... note: In instance 'wrapper.analog_block_inst.analog_comp_y_inst'
+  103 |     input  wire clk,
+      |                 ^~~
+%Warning-UNUSEDSIGNAL: /workspace/src/analog_macro.sv:104:17: Signal is not used: 'ain'
+                                                            : ... note: In instance 'wrapper.analog_block_inst.analog_comp_y_inst'
+  104 |     input  wire ain,
+      |                 ^~~
+%Warning-UNDRIVEN: /workspace/src/analog_macro.sv:105:17: Signal is not driven: 'aout'
+                                                        : ... note: In instance 'wrapper.analog_block_inst.analog_comp_y_inst'
+  105 |     output wire aout,
+      |                 ^~~~
+%Warning-UNUSEDSIGNAL: /workspace/src/spi.sv:180:17: Bits of signal are not used: 'rx_shift'[7]
+                                                   : ... note: In instance 'wrapper.digital_domain_inst.spi_regs_inst'
+  180 |     logic [7:0] rx_shift;
+      |                 ^~~~~~~~
+                       /workspace/src/digital_domain.sv:15:1: ... note: In file included from 'digital_domain.sv'
+                       /workspace/src/wrapper.sv:4:1: ... note: In file included from 'wrapper.sv'
+%Warning-UNUSEDSIGNAL: /workspace/src/wave_controller.sv:148:18: Bits of signal are not used: 'raw_delta'[18:0]
+                                                               : ... note: In instance 'wrapper.digital_domain_inst.wave_controller_y_inst'
+  148 |     logic [20:0] raw_delta;
+      |                  ^~~~~~~~~
+                       /workspace/src/digital_domain.sv:17:1: ... note: In file included from 'digital_domain.sv'
+                       /workspace/src/wrapper.sv:4:1: ... note: In file included from 'wrapper.sv'
+%Warning-UNUSEDSIGNAL: /workspace/src/wave_controller.sv:349:27: Bits of signal are not used: 'ref_phase'[19:0]
+                                                               : ... note: In instance 'wrapper.digital_domain_inst.wave_controller_y_inst'
+  349 |     logic unsigned [20:0] ref_phase;
+      |                           ^~~~~~~~~
+                       /workspace/src/digital_domain.sv:17:1: ... note: In file included from 'digital_domain.sv'
+                       /workspace/src/wrapper.sv:4:1: ... note: In file included from 'wrapper.sv'
+- V e r i l a t i o n   R e p o r t: Verilator 5.050 2026-07-01 rev v5.050
+- Verilator: Built from 0.594 MB sources in 327 modules, into 0.197 MB in 3 C++ files needing 0.000 MB
+- Verilator: Walltime 0.166 s (elab=0.016, cvt=0.037, bld=0.000); cpu 0.075 s on 1 threads; allocated 39.684 MB

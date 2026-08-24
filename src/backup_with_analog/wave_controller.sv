@@ -1,0 +1,456 @@
+// ============================================================================
+// wave_controller.sv
+//
+// NCO-based dither wave controller for the optical alignment ASIC.
+//
+//   - 21-bit phase accumulator (NCO) clocked at f_clk = 5 MHz
+//   - Calibration mode: emits a burst of dither drive and captures comparator
+//     edges to measure the mechanical phase lag of the buzzer-scanner
+//   - Readout mode:     emits continuous sine-PWM drive to the MEMS actuator
+//                       and a phase-corrected reference LO to the wave mixer
+//
+// MEMS drive is a single-ended 8-bit sine PWM (1 pin per axis) intended to
+// feed an external op-amp / RC reconstruction filter, then the piezo buzzer.
+// ============================================================================
+
+`default_nettype none
+
+`include "sine_lut.sv"
+
+module wave_controller (
+    input  wire clk,
+    input  wire rst_n,
+    input  wire soft_rst_n,
+
+    // Config Setting
+    // 16-bit: Frequency Control Word (Max MEMS Frequency: 156.24716KHz)
+    input logic unsigned [15:0]     cfg_f_MEMS_fcw, // (f_MEMS * 2^k) / f_clk, k = 21, f_clk = 5MHz
+
+    // 21-bit: MEMS phase offset in phase accumulator space
+    input logic unsigned [20:0]     cfg_phase0_offset,
+    input logic unsigned [20:0]     cfg_phase90_offset,
+    input logic unsigned [20:0]     cfg_phase270_offset,
+
+    // State Machine
+    input  logic                    cfg_done,
+    output logic                    cal_done,
+    output logic                    cal_timeout,
+
+    // Calibration
+    input  logic                    cal_start,
+
+    // Interface from Analog Comparator Output
+    input  logic                    comp,         // Comparator raw async wire
+
+    // Latch Strobe
+    output logic                    latch_phase90,
+    output logic                    latch_phase270,
+
+    // Latch Handshake
+    input  logic                    latch_phase90_ack,
+    input  logic                    latch_phase270_ack,
+
+    // MEMS Drive / Mixer Reference
+    output logic                    mems_drv,       // sine PWM -> ext. op-amp/LPF -> buzzer
+    output logic                    ref_wave,       // reference LO -> wave mixer
+
+    // SPI Report
+    output logic unsigned [7:0]     delay_wave_cycle,
+    output logic unsigned [20:0]    raw_edge1, raw_edge2, raw_edge3,
+    output logic                    cal_dir,
+    output logic unsigned [20:0]    cal_phase0_offset, cal_phase90_offset, cal_phase270_offset,
+
+    output logic                    latch_error
+);
+
+    // ------------------------------------------------------------------------
+    // NCO Phase Accumulator
+    // ------------------------------------------------------------------------
+
+    logic unsigned [20:0] phase_acc;
+
+    // Concatenate to fit 16-bit FCW in 21-bit Phase Accumulator
+    logic unsigned [20:0] delta_N;
+    assign delta_N = {5'h00, cfg_f_MEMS_fcw};
+
+    // Single enable term so the accumulator and every cycle counter that
+    // tracks it advance on exactly the same condition.
+    logic nco_en;
+    assign nco_en = (cfg_done || cal_start);
+
+    // Overflow (= one full MEMS period elapsed) computed in 22-bit space so the
+    // carry is visible rather than lost to 21-bit wraparound.
+    logic unsigned [21:0] phase_next;
+    logic                 phase_overflow;
+
+    assign phase_next     = {1'b0, phase_acc} + {1'b0, delta_N};
+    assign phase_overflow = nco_en && phase_next[21];
+
+    always_ff @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            phase_acc <= 21'b0;
+        end else if (!soft_rst_n) begin
+            phase_acc <= 21'b0;
+        end else if (nco_en) begin
+            phase_acc <= phase_next[20:0];
+        end
+    end
+
+    // Comparator Sampling
+    // Metastability Synchronization (4-tick) and Edge Detection
+    logic comp_sync0, comp_sync1, comp_sync2, comp_sync3, comp_sync4;
+    logic comp_posedge, comp_negedge;
+
+    always_ff @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            comp_sync0 <= 1'b0;
+            comp_sync1 <= 1'b0;
+            comp_sync2 <= 1'b0;
+            comp_sync3 <= 1'b0;
+            comp_sync4 <= 1'b0;
+        end else if (!soft_rst_n) begin
+            comp_sync0 <= 1'b0;
+            comp_sync1 <= 1'b0;
+            comp_sync2 <= 1'b0;
+            comp_sync3 <= 1'b0;
+            comp_sync4 <= 1'b0;
+        end else begin
+            comp_sync0 <= comp;
+            comp_sync1 <= comp_sync0;
+            comp_sync2 <= comp_sync1;
+            comp_sync3 <= comp_sync2;
+            comp_sync4 <= comp_sync3;
+        end
+    end
+
+    assign comp_posedge = (comp_sync3 && !comp_sync4);
+    assign comp_negedge = (!comp_sync3 && comp_sync4);
+
+    // ------------------------------------------------------------------------
+    // Calibration Run
+    // ------------------------------------------------------------------------
+
+    logic unsigned [7:0] wave_cycle_cnt;
+
+    logic capture_pending;
+    logic unsigned [1:0] capture_step;
+
+    logic [7:0] cycle_delta;
+    assign cycle_delta = wave_cycle_cnt - delay_wave_cycle;
+
+    logic [20:0] step_baseline; // raw_edge1 in capture_step 0, raw_edge2 in capture_step 1
+    assign step_baseline = (capture_step == 2'd0) ? raw_edge1 : raw_edge2;
+
+    logic window_open;
+    assign window_open = (cycle_delta == 8'd0) || 
+                         ((cycle_delta == 8'd1) && (phase_acc < step_baseline));
+
+    logic [20:0] raw_delta;
+    assign raw_delta = phase_acc - step_baseline;
+    
+    logic wave_is_valid; // High only when raw_delta is between 90 and 270 degrees of phase travel
+    assign wave_is_valid = raw_delta[20] || raw_delta[19]; // 90-360° phase shift constant Check: Bit (MSB..MSB-1) != 0, [1/4 to 1 wave cycle]
+
+    always_ff @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            wave_cycle_cnt   <= 8'b0;
+            cal_dir          <= 1'b0;
+            delay_wave_cycle <= 8'b0;
+            capture_pending  <= 1'b1;
+            capture_step     <= 2'd0;
+            cal_timeout      <= 1'b0;
+            cal_done         <= 1'b0;
+            raw_edge1        <= 21'b0;
+            raw_edge2        <= 21'b0;
+            raw_edge3        <= 21'b0;
+
+        end else if (!soft_rst_n) begin
+            wave_cycle_cnt   <= 8'b0;
+            cal_dir          <= 1'b0;
+            delay_wave_cycle <= 8'b0;
+            capture_pending  <= 1'b1;
+            capture_step     <= 2'd0;
+            cal_timeout      <= 1'b0;
+            cal_done         <= 1'b0;
+            raw_edge1        <= 21'b0;
+            raw_edge2        <= 21'b0;
+            raw_edge3        <= 21'b0;
+
+        // Calibration State
+        // Gated on cal_start (not nco_en): the calibration MEASUREMENT must only
+        // run when THIS axis is actively calibrating. Otherwise, because
+        // nco_en = cfg_done || cal_start, an axis whose cal_start is gated off
+        // (e.g. Y waiting on cal_done_x for sequential cal) would still capture
+        // edges from comp and complete out of order. The NCO/phase_acc keeps
+        // running on nco_en separately, so only edge-capture is gated here.
+        end else if (cal_start) begin
+            // Stop loop after timeout and finish calibration
+            if (!cal_timeout && !cal_done) begin
+
+                // Track for waveform cycle count
+                if (phase_overflow) begin
+                    wave_cycle_cnt <= wave_cycle_cnt + 1'b1;
+                end
+
+                // Calibration Timeout
+                if (wave_cycle_cnt == 8'hFF) begin
+                    cal_timeout <= 1'b1;
+                end
+
+                // 1st edge detection
+                if ((comp_posedge || comp_negedge) && capture_pending) begin
+                    raw_edge1        <= phase_acc;
+                    delay_wave_cycle <= wave_cycle_cnt;
+                    capture_pending  <= 1'b0;
+                    capture_step     <= 2'd0;
+                end
+
+                // Capture consecutive edge detection
+                if (!capture_pending) begin
+                    // Condition: within 1 MEMS cycle from edge detection
+                    if (window_open) begin
+
+                        case (capture_step)
+                            // 2nd edge detection
+                            2'd0: if (comp_negedge || comp_posedge) begin
+                                    // Condition: Comparator Hold longer than 90 degree phase
+                                    if (wave_is_valid) begin
+                                        raw_edge2    <= phase_acc;
+                                        capture_step <= 2'd1;
+                                        delay_wave_cycle <= wave_cycle_cnt;
+                                        
+                                        cal_dir      <= comp_negedge; // Set cal_dir: 1 for falling Edge 2 (In-Phase), 0 for rising Edge 2 (Out-of-Phase)
+                                    // Condition: Comparator jitter during the 90 degree phase
+                                    end else begin
+                                        // Reset from false edge detection and capture
+                                        raw_edge1        <= phase_acc;
+                                        delay_wave_cycle <= wave_cycle_cnt;
+                                        capture_pending  <= 1'b0;
+                                        capture_step     <= 2'd0;
+                                    end
+                                end
+
+                            // 3rd edge detection
+                            2'd1: if (comp_posedge || comp_negedge) begin
+                                    // Condition: Comparator Hold longer than 90 degree phase
+                                    if (wave_is_valid) begin
+                                        raw_edge3    <= phase_acc;
+                                        capture_step <= 2'd2; // Exit the Calibration Loop
+                                        cal_done     <= 1'b1;
+                                    // Condition: Comparator jitter during the 90 degree phase
+                                    end else begin
+                                        // Reset from false edge detection and capture
+                                        raw_edge1        <= phase_acc;
+                                        delay_wave_cycle <= wave_cycle_cnt;
+                                        capture_pending  <= 1'b0;
+                                        capture_step     <= 2'd0;
+                                    end
+                                end
+                            default: ;
+                        endcase
+
+                    // False Signal Reset (edges did not arrive within the window)
+                    end else begin
+                        capture_step    <= 2'd0;   // Invalid
+                        capture_pending <= 1'b1;   // Retry
+                    end
+                end
+
+            end // Freeze after timeout and calibration complete
+        end // Freeze if NOT Condition: cal_start:1, cfg_done:1
+    end
+
+    // ------------------------------------------------------------------------
+    // Phase Offset Computation
+    // ------------------------------------------------------------------------
+    logic unsigned [20:0] raw_phase90_offset, raw_phase270_offset;
+
+    // Midpoint Determination for most stable latch (Handle Circular Wrapping)
+    assign raw_phase90_offset = raw_edge1 + ((raw_edge2 - raw_edge1) >> 1);
+    assign raw_phase270_offset = raw_edge2 + ((raw_edge3 - raw_edge2) >> 1);
+
+    // Latency Correction (4-cycle synchronization pipeline delay)
+    logic unsigned [20:0] sync_delay;
+    assign sync_delay = (delta_N << 2);   // 4 * delta_N
+
+    // Latch point (stable midpoint)
+    assign cal_phase90_offset  = raw_phase90_offset  - sync_delay;
+    assign cal_phase270_offset = raw_phase270_offset - sync_delay;
+
+    // Wave mixer reference wave delay
+    assign cal_phase0_offset = raw_edge3 - sync_delay;
+
+    // ------------------------------------------------------------------------
+    // Main Readout Loop - Comparator Latch Strobes
+    // ------------------------------------------------------------------------
+
+    always_ff @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            latch_phase90  <= 1'b0;
+            latch_phase270 <= 1'b0;
+            latch_error    <= 1'b0;
+
+        end else if (!soft_rst_n) begin
+            latch_phase90  <= 1'b0;
+            latch_phase270 <= 1'b0;
+            latch_error    <= 1'b0;
+
+        // Readout State
+        end else if (cfg_done && !cal_start) begin  // Condition: cal_start:0, cfg_done:1
+            // Latch pulse
+            if ((cfg_phase90_offset - phase_acc) < delta_N) begin
+                latch_phase90 <= 1'b1;
+            end else if (latch_phase90_ack) begin
+                latch_phase90 <= 1'b0;  // Handshake to signal processor module
+            end
+
+            if ((cfg_phase270_offset - phase_acc) < delta_N) begin
+                latch_phase270 <= 1'b1;
+            end else if (latch_phase270_ack) begin
+                latch_phase270 <= 1'b0; // Handshake to signal processor module
+            end
+            // Latch fallout
+            if (latch_phase90 && latch_phase270) begin
+                latch_error    <= 1'b1;
+                latch_phase90  <= 1'b0;
+                latch_phase270 <= 1'b0;
+            end
+
+        end else begin
+            latch_phase90  <= 1'b0;
+            latch_phase270 <= 1'b0;
+        end
+    end
+
+    // ========================================================================
+    // MEMS Wave Generator
+    // ========================================================================
+
+    // --- Sine amplitude from NCO phase ---
+    logic unsigned [7:0] sine_amp;
+
+    sine_lut u_sine (
+        .phase (phase_acc[20:13]),   // top 8 bits: quadrant[1:0] + index[5:0]
+        .amp   (sine_amp)
+    );
+
+    // --- Delta-sigma modulator (first order) ---
+    logic unsigned [8:0] ds_acc;      // [8] = carry (this cycle's output bit)
+
+    // Mid-scale code: 50% density -> mid-rail -> zero displacement
+    localparam logic unsigned [7:0] DS_MID = 8'd128;
+
+    // The amplitude presented to the modulator this cycle (selected below).
+    logic unsigned [7:0] ds_code;
+    logic                ds_bit;
+
+    always_ff @(posedge clk or negedge rst_n) begin
+        if (!rst_n) ds_acc <= 9'b0;
+        else        ds_acc <= {1'b0, ds_acc[7:0]} + {1'b0, ds_code};
+    end
+
+    assign ds_bit = ds_acc[8];
+
+    // --- Mixer reference phase, compensated for measured mechanical lag ---
+    logic unsigned [20:0] ref_phase;
+    assign ref_phase = phase_acc - cfg_phase0_offset;
+
+    // --- Reference sine-PWM path (ref_wave = sine-PWM at the delayed phase) ---
+    // Tim: ref_wave should be the same sine-PWM format as mems_drv, but phase-
+    // delayed by cfg_phase0_offset; mid-rail during calibration.
+    logic unsigned [7:0] ref_sine_amp;
+    sine_lut u_ref_sine (
+        .phase (ref_phase[20:13]),     // delayed-phase top 8 bits
+        .amp   (ref_sine_amp)
+    );
+
+    logic unsigned [8:0] ref_ds_acc;
+    logic unsigned [7:0] ref_ds_code;
+    logic                ref_ds_bit;
+
+    always_ff @(posedge clk or negedge rst_n) begin
+        if (!rst_n) ref_ds_acc <= 9'b0;
+        else        ref_ds_acc <= {1'b0, ref_ds_acc[7:0]} + {1'b0, ref_ds_code};
+    end
+    assign ref_ds_bit = ref_ds_acc[8];
+
+    // Cal: hold mid-rail (DS_MID -> 50% density -> ~1.65V). Main run: delayed sine.
+    always_comb begin
+        ref_ds_code = DS_MID;
+        if (cfg_done && !cal_start)
+            ref_ds_code = ref_sine_amp;
+    end
+
+    // --- Calibration burst control ---
+    logic cal_burst_armed;
+    logic cal_burst_active;
+
+    localparam int unsigned CAL_BURST_PERIODS = 2;
+    logic [$clog2(CAL_BURST_PERIODS+1)-1:0] cal_burst_count;
+
+    // --- MEMS drive code selection ---
+    always_comb begin
+        ds_code = DS_MID;
+
+        if (cfg_done) begin
+            if (cal_start) begin
+                // Calibration: drive the sine only during the burst; otherwise hold mid-rail
+                ds_code = cal_burst_active ? sine_amp : DS_MID;
+            end else begin
+                // Main run: continuous sine.
+                ds_code = sine_amp;
+            end
+        end
+    end
+
+    always_ff @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            mems_drv         <= 1'b0;
+            ref_wave         <= 1'b0;
+            cal_burst_armed  <= 1'b1;
+            cal_burst_active <= 1'b0;
+            cal_burst_count  <= '0;
+
+        end else if (cfg_done) begin
+
+            // ---------------- Calibration Run ----------------
+            if (cal_start) begin
+                if (phase_overflow) begin
+                    if (cal_burst_armed) begin
+                        cal_burst_armed  <= 1'b0;
+                        cal_burst_active <= 1'b1;   // burst opens at phase 0
+                        cal_burst_count  <= '0;
+                    end else if (cal_burst_active) begin
+                        // Close after CAL_BURST_PERIODS wraps (rise-fall-rise).
+                        if (cal_burst_count ==
+                                CAL_BURST_PERIODS[$bits(cal_burst_count)-1:0] - 1'b1)
+                            cal_burst_active <= 1'b0;
+                        else
+                            cal_burst_count <= cal_burst_count + 1'b1;
+                    end
+                end
+
+                mems_drv <= ds_bit;                 // sine burst / mid-rail via DSM
+                ref_wave <= ref_ds_bit;             // mid-rail (DS_MID) during cal
+
+            // ---------------- Main Run ----------------
+            end else begin
+                mems_drv         <= ds_bit;                 // continuous sine via DSM
+                ref_wave         <= ref_ds_bit;             // sine-PWM ref, phase-delayed
+                cal_burst_armed  <= 1'b1;                   // re-arm for next calibration
+                cal_burst_active <= 1'b0;
+                cal_burst_count  <= '0;
+            end
+
+        end else begin
+            mems_drv         <= ds_bit;
+            ref_wave         <= 1'b0;
+            cal_burst_armed  <= 1'b1;
+            cal_burst_active <= 1'b0;
+            cal_burst_count  <= '0;
+        end
+    end
+
+endmodule
+
+`default_nettype wire

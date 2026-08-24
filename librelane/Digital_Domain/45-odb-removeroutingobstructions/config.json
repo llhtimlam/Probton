@@ -106,35 +106,7 @@
         1117.5
     ],
     "EXTRA_EXCLUDED_CELLS": null,
-    "MACROS": {
-        "analog_block": {
-            "gds": [
-                "/workspace/librelane/analog_block.gds"
-            ],
-            "lef": [
-                "/workspace/librelane/analog_block.lef"
-            ],
-            "instances": {
-                "analog_block_inst": {
-                    "location": [
-                        572.57,
-                        867.5
-                    ],
-                    "orientation": "FS"
-                }
-            },
-            "vh": [
-                "/workspace/src/analog_macro.sv"
-            ],
-            "nl": [],
-            "pnl": [],
-            "spef": {},
-            "lib": {},
-            "spice": [],
-            "sdf": {},
-            "json_h": null
-        }
-    },
+    "MACROS": null,
     "EXTRA_LEFS": null,
     "EXTRA_VERILOG_MODELS": null,
     "EXTRA_SPICE_MODELS": null,
@@ -220,36 +192,7 @@
     "PAD_ROTATION_HORIZONTAL": "R0",
     "PAD_ROTATION_VERTICAL": "R0",
     "PAD_ROTATION_CORNER": "R0",
-    "ROUTING_OBSTRUCTIONS": [
-        [
-            "Metal1",
-            507.64,
-            867.5,
-            1117.5,
-            1107.5
-        ],
-        [
-            "Metal2",
-            507.64,
-            867.5,
-            1117.5,
-            1107.5
-        ],
-        [
-            "Metal3",
-            507.64,
-            867.5,
-            1117.5,
-            1107.5
-        ],
-        [
-            "Metal4",
-            507.64,
-            867.5,
-            1117.5,
-            1107.5
-        ]
-    ],
+    "ROUTING_OBSTRUCTIONS": null,
     "meta": {
         "librelane_version": "3.1.0.dev2",
         "step": "Odb.RemoveRoutingObstructions"

@@ -1,6 +1,6 @@
 set ::env(STEP_ID) Netgen.LVS
 set ::env(TECH_LEF) /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/techlef/gf180mcu_fd_sc_mcu7t5v0__nom.tlef
-set ::env(MACRO_LEFS) /workspace/librelane/analog_block.lef
+set ::env(MACRO_LEFS) ""
 set ::env(PAD_CELL_LIBRARY) gf180mcu_fd_io
 set ::env(VDD_PIN) VDD
 set ::env(GND_PIN) VSS
@@ -48,7 +48,6 @@ set ::env(CLOCK_NET) clk
 set ::env(VDD_NETS) VDD
 set ::env(GND_NETS) VSS
 set ::env(DIE_AREA) "0 0.0 1117.5 1117.5"
-set ::env(MACROS) "analog_block \"gds /workspace/librelane/analog_block.gds lef /workspace/librelane/analog_block.lef instances \\\"analog_block_inst \\\\\\\"location \\\\\\\\\\\\\\\"572.57 867.5\\\\\\\\\\\\\\\" orientation FS\\\\\\\"\\\" vh /workspace/src/analog_macro.sv nl \\\"\\\" pnl \\\"\\\" spef \\\"\\\" lib \\\"\\\" spice \\\"\\\" sdf \\\"\\\" json_h None\""
 set ::env(FALLBACK_SDC) /usr/local/lib/python3.12/dist-packages/librelane/scripts/base.sdc
 set ::env(PAD_LIBS) ""
 set ::env(PAD_LEFS) "/workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_ef_io__bi_t.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__asig_5p0.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__bi_24t.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__bi_t.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__brk2.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__brk5.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__cor.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__dvdd.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__dvss.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__fill1.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__fill10.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__fill5.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__fillnc.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__in_c.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__in_s.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_ws_io__dvdd.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_ws_io__dvss.lef"
@@ -69,6 +68,5 @@ set ::env(PAD_ROTATION_CORNER) R0
 set ::env(MAGIC_EXT_USE_GDS) 0
 set ::env(NETGEN_SETUP) /workspace/gf180mcu/gf180mcuD/libs.tech/netgen/gf180mcuD_setup.tcl
 set ::env(LVS_INCLUDE_MARCO_NETLISTS) 0
-set ::env(LVS_IGNORE_CELLS) analog_block
-set ::env(CURRENT_SPICE) /workspace/librelane/runs/RUN_2026-08-17_01-19-22/68-magic-spiceextraction/wrapper.spice
-set ::env(CURRENT_PNL) /workspace/librelane/runs/RUN_2026-08-17_01-19-22/52-openroad-fillinsertion/wrapper.pnl.v
+set ::env(CURRENT_SPICE) /workspace/librelane/runs/RUN_2026-08-24_23-47-44/68-magic-spiceextraction/wrapper.spice
+set ::env(CURRENT_PNL) /workspace/librelane/runs/RUN_2026-08-24_23-47-44/52-openroad-fillinsertion/wrapper.pnl.v

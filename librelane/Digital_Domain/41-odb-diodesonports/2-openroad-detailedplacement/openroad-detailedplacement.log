@@ -1,6 +1,6 @@
 Reading timing models for corner nom_tt_025C_3v30…
 Reading timing library for the 'nom_tt_025C_3v30' corner at '/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib'…
-Reading OpenROAD database at '/workspace/librelane/runs/RUN_2026-08-17_01-19-22/41-odb-diodesonports/1-odb-portdiodeplacement/wrapper.odb'…
+Reading OpenROAD database at '/workspace/librelane/runs/RUN_2026-08-24_23-47-44/41-odb-diodesonports/1-odb-portdiodeplacement/wrapper.odb'…
 Reading design constraints file at '/usr/local/lib/python3.12/dist-packages/librelane/scripts/base.sdc'…
 [INFO] Using clock clk…
 [INFO] Setting output delay to: 40
@@ -12,36 +12,34 @@ Reading design constraints file at '/usr/local/lib/python3.12/dist-packages/libr
 + detailed_placement -max_displacement  800 500 
 Placement Analysis
 ---------------------------------
-total displacement         39.2 u
+total displacement         29.1 u
 average displacement        0.0 u
-max displacement           13.4 u
-original HPWL          492394.2 u
-legalized HPWL         501871.0 u
+max displacement            6.7 u
+original HPWL          474093.5 u
+legalized HPWL         483939.2 u
 delta HPWL                    2 %
 
-[INFO DPL-0020] Mirrored 3662 instances
-[INFO DPL-0021] HPWL before          501871.0 u
-[INFO DPL-0022] HPWL after           492413.6 u
-[INFO DPL-0023] HPWL delta               -1.9 %
+[INFO DPL-0020] Mirrored 3663 instances
+[INFO DPL-0021] HPWL before          483939.2 u
+[INFO DPL-0022] HPWL after           474102.4 u
+[INFO DPL-0023] HPWL delta               -2.0 %
 Setting global connections for newly added cells…
 [INFO] Setting global connections...
-analog_block_inst matched with analog_block_inst
-[INFO ODB-0403] 24 connections made, 0 conflicts skipped.
+[INFO ODB-0403] 28 connections made, 0 conflicts skipped.
 Updating metrics…
 Cell type report:                       Count       Area
-  Macro                                     1  115200.00
-  Endcap cell                             570    2502.53
-  Tap cell                               6955   30535.23
-  Antenna cell                              6      26.34
-  Clock buffer                             98    6080.70
-  Timing Repair Buffer                   2150   45910.41
-  Inverter                                452    4342.11
-  Clock inverter                           25     522.46
-  Sequential cell                         548   42229.06
-  Multi-Input combinational cell         5323  116852.69
-  Total                                 16128  364201.54
-Writing OpenROAD database to '/workspace/librelane/runs/RUN_2026-08-17_01-19-22/41-odb-diodesonports/2-openroad-detailedplacement/wrapper.odb'…
-Writing netlist to '/workspace/librelane/runs/RUN_2026-08-17_01-19-22/41-odb-diodesonports/2-openroad-detailedplacement/wrapper.nl.v'…
-Writing powered netlist to '/workspace/librelane/runs/RUN_2026-08-17_01-19-22/41-odb-diodesonports/2-openroad-detailedplacement/wrapper.pnl.v'…
-Writing layout to '/workspace/librelane/runs/RUN_2026-08-17_01-19-22/41-odb-diodesonports/2-openroad-detailedplacement/wrapper.def'…
-Writing timing constraints to '/workspace/librelane/runs/RUN_2026-08-17_01-19-22/41-odb-diodesonports/2-openroad-detailedplacement/wrapper.sdc'…
+  Endcap cell                             564    2476.19
+  Tap cell                               7956   34930.02
+  Antenna cell                              7      30.73
+  Clock buffer                             84    5031.40
+  Timing Repair Buffer                   2259   47771.94
+  Inverter                                393    3766.96
+  Clock inverter                           28     548.80
+  Sequential cell                         566   43460.57
+  Multi-Input combinational cell         5468  124720.29
+  Total                                 17325  262736.90
+Writing OpenROAD database to '/workspace/librelane/runs/RUN_2026-08-24_23-47-44/41-odb-diodesonports/2-openroad-detailedplacement/wrapper.odb'…
+Writing netlist to '/workspace/librelane/runs/RUN_2026-08-24_23-47-44/41-odb-diodesonports/2-openroad-detailedplacement/wrapper.nl.v'…
+Writing powered netlist to '/workspace/librelane/runs/RUN_2026-08-24_23-47-44/41-odb-diodesonports/2-openroad-detailedplacement/wrapper.pnl.v'…
+Writing layout to '/workspace/librelane/runs/RUN_2026-08-24_23-47-44/41-odb-diodesonports/2-openroad-detailedplacement/wrapper.def'…
+Writing timing constraints to '/workspace/librelane/runs/RUN_2026-08-24_23-47-44/41-odb-diodesonports/2-openroad-detailedplacement/wrapper.sdc'…

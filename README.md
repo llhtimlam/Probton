@@ -32,30 +32,19 @@ This offers a low-cost, integrable alternative to proprietary alignment hardware
 
 Size: 1117.5um x 1117.5um - Block type B
 
-Required pins: 20 or 22 (under consideration)
+Required pins: 19
 
-Analog pin: (4)
+Digital pin: (19)
 
-Input: (1)
-1. Readout
-(Optional, under consideration)
-2. Reference wave input (x) (0 ~ 3.3V analog waveform)
-3. Reference wave input (y) (0 ~ 3.3V analog waveform)
-
-Output: (3)
-1. Filtered Amp Readout
-2. Wave mixer (x) error
-3. Wave mixer (y) error
-
-Digital pin: (12)
-
-Input: (3)
+Input: (5)
 
 1. SPI: nCS
 2. SPI: sclk
 3. SPI: mosi
+4. External analog domain: comp_x
+5. External analog domain: comp_y
 
-Output: (9)
+Output: (10)
 
 1. SPI: miso
 2. Motion command: move_en_x (x)
@@ -66,6 +55,7 @@ Output: (9)
 7. MEMS driver (PWM waveform): mems_drv_y (y)
 8. Reference wave output (PWM waveform): ref_wave_x (x)
 9. Reference wave output (PWM waveform): ref_wave_y (y)
+10. External analog domain: read_en
 
 Setup pin: (4)
 1. clk

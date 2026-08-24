@@ -106,35 +106,7 @@
         1117.5
     ],
     "EXTRA_EXCLUDED_CELLS": null,
-    "MACROS": {
-        "analog_block": {
-            "gds": [
-                "/workspace/librelane/analog_block.gds"
-            ],
-            "lef": [
-                "/workspace/librelane/analog_block.lef"
-            ],
-            "instances": {
-                "analog_block_inst": {
-                    "location": [
-                        572.57,
-                        867.5
-                    ],
-                    "orientation": "FS"
-                }
-            },
-            "vh": [
-                "/workspace/src/analog_macro.sv"
-            ],
-            "nl": [],
-            "pnl": [],
-            "spef": {},
-            "lib": {},
-            "spice": [],
-            "sdf": {},
-            "json_h": null
-        }
-    },
+    "MACROS": null,
     "EXTRA_LEFS": null,
     "EXTRA_VERILOG_MODELS": null,
     "EXTRA_SPICE_MODELS": null,
@@ -285,9 +257,7 @@
         "Metal4"
     ],
     "PDN_CONNECT_MACROS_TO_GRID": true,
-    "PDN_MACRO_CONNECTIONS": [
-        "analog_block_inst VDD VSS VDD VSS"
-    ],
+    "PDN_MACRO_CONNECTIONS": null,
     "PDN_ENABLE_GLOBAL_CONNECTIONS": true,
     "PNR_SDC_FILE": null,
     "STA_EXTRA_CORNER_TCL_FILE": null,

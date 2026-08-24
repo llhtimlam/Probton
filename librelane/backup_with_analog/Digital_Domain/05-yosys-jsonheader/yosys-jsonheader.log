@@ -1,0 +1,1000 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.67 (git sha1 2d1509d1b, Release, GNU /usr/bin/c++ 13.3.0)
+
+1. Executing Verilog-2005 frontend: /workspace/librelane/runs/RUN_2026-08-17_01-19-22/tmp/b065e071eec34cee9a1509e7a519154d.bb.v
+Parsing SystemVerilog input from `/workspace/librelane/runs/RUN_2026-08-17_01-19-22/tmp/b065e071eec34cee9a1509e7a519154d.bb.v' to AST representation.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__addf_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__addf_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__addf_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__addf_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__addh_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__addh_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__addh_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__addh_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__and2_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__and2_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__and2_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__and2_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__and3_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__and3_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__and3_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__and3_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__and4_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__and4_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__and4_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__and4_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__antenna'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__antenna_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi211_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi211_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi211_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi211_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi21_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi21_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi21_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi21_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi221_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi221_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi221_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi221_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi222_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi222_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi222_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi222_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi22_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi22_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi22_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__aoi22_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__buf_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__buf_12'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__buf_16'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__buf_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__buf_20'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__buf_3'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__buf_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__buf_8'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__buf_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__bufz_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__bufz_12'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__bufz_16'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__bufz_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__bufz_3'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__bufz_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__bufz_8'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__bufz_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__clkbuf_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__clkbuf_12'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__clkbuf_16'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__clkbuf_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__clkbuf_20'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__clkbuf_3'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__clkbuf_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__clkbuf_8'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__clkbuf_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__clkinv_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__clkinv_12'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__clkinv_16'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__clkinv_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__clkinv_20'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__clkinv_3'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__clkinv_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__clkinv_8'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__clkinv_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffnq_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffnq_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffnq_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffnq_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffnrnq_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffnrnq_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffnrnq_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffnrnq_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffnrsnq_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffnrsnq_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffnrsnq_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffnrsnq_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffnsnq_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffnsnq_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffnsnq_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffnsnq_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffq_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffq_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffq_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffq_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffrnq_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffrnq_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffrnq_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffrnq_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffrsnq_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffrsnq_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffrsnq_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffrsnq_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffsnq_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffsnq_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffsnq_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dffsnq_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dlya_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dlya_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dlya_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dlya_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dlyb_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dlyb_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dlyb_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dlyb_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dlyc_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dlyc_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dlyc_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dlyc_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dlyd_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dlyd_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dlyd_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dlyd_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__endcap'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__endcap_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__fill_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__fill_16'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__fill_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__fill_32'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__fill_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__fill_64'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__fill_8'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__fill_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__fillcap_16'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__fillcap_32'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__fillcap_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__fillcap_64'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__fillcap_8'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__fillcap_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__filltie'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__filltie_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__hold'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__hold_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__icgtn_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__icgtn_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__icgtn_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__icgtn_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__icgtp_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__icgtp_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__icgtp_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__icgtp_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__inv_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__inv_12'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__inv_16'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__inv_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__inv_20'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__inv_3'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__inv_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__inv_8'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__inv_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__invz_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__invz_12'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__invz_16'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__invz_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__invz_3'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__invz_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__invz_8'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__invz_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__latq_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__latq_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__latq_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__latq_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__latrnq_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__latrnq_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__latrnq_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__latrnq_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__latrsnq_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__latrsnq_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__latrsnq_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__latrsnq_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__latsnq_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__latsnq_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__latsnq_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__latsnq_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__mux2_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__mux2_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__mux2_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__mux2_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__mux4_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__mux4_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__mux4_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__mux4_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nand2_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nand2_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nand2_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nand2_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nand3_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nand3_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nand3_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nand3_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nand4_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nand4_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nand4_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nand4_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nor2_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nor2_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nor2_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nor2_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nor3_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nor3_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nor3_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nor3_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nor4_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nor4_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nor4_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__nor4_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai211_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai211_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai211_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai211_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai21_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai21_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai21_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai21_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai221_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai221_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai221_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai221_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai222_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai222_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai222_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai222_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai22_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai22_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai22_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai22_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai31_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai31_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai31_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai31_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai32_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai32_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai32_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai32_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai33_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai33_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai33_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__oai33_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__or2_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__or2_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__or2_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__or2_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__or3_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__or3_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__or3_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__or3_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__or4_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__or4_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__or4_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__or4_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__sdffq_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__sdffq_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__sdffq_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__sdffq_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__sdffrnq_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__sdffrnq_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__sdffrnq_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__sdffrnq_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__sdffrsnq_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__sdffrsnq_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__sdffrsnq_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__sdffrsnq_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__sdffsnq_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__sdffsnq_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__sdffsnq_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__sdffsnq_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__tieh'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__tieh_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__tiel'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__tiel_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__xnor2_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__xnor2_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__xnor2_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__xnor2_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__xnor3_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__xnor3_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__xnor3_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__xnor3_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__xor2_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__xor2_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__xor2_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__xor2_func'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__xor3_1'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__xor3_2'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__xor3_4'.
+Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__xor3_func'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /workspace/librelane/runs/RUN_2026-08-17_01-19-22/tmp/12e4f259ec6e4cd39c392403d044c91e.bb.v
+Parsing SystemVerilog input from `/workspace/librelane/runs/RUN_2026-08-17_01-19-22/tmp/12e4f259ec6e4cd39c392403d044c91e.bb.v' to AST representation.
+Generating RTLIL representation for module `\gf180mcu_ef_io__bi_t'.
+Generating RTLIL representation for module `\gf180mcu_fd_io__asig_5p0'.
+Generating RTLIL representation for module `\gf180mcu_fd_io__bi_24t'.
+Generating RTLIL representation for module `\gf180mcu_fd_io__bi_t'.
+Generating RTLIL representation for module `\gf180mcu_fd_io__brk2'.
+Generating RTLIL representation for module `\gf180mcu_fd_io__brk5'.
+Generating RTLIL representation for module `\gf180mcu_fd_io__cor'.
+Generating RTLIL representation for module `\gf180mcu_fd_io__dvdd'.
+Generating RTLIL representation for module `\gf180mcu_fd_io__dvss'.
+Generating RTLIL representation for module `\gf180mcu_fd_io__fill1'.
+Generating RTLIL representation for module `\gf180mcu_fd_io__fill10'.
+Generating RTLIL representation for module `\gf180mcu_fd_io__fill5'.
+Generating RTLIL representation for module `\gf180mcu_fd_io__fillnc'.
+Generating RTLIL representation for module `\gf180mcu_fd_io__in_c'.
+Generating RTLIL representation for module `\gf180mcu_fd_io__in_s'.
+Generating RTLIL representation for module `\gf180mcu_ws_io__dvdd'.
+Generating RTLIL representation for module `\gf180mcu_ws_io__dvss'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: /workspace/src/analog_macro.sv
+Parsing SystemVerilog input from `/workspace/src/analog_macro.sv' to AST representation.
+Generating RTLIL representation for module `\analog_block'.
+Generating RTLIL representation for module `\analog_readout'.
+Generating RTLIL representation for module `\analog_wave_mixer'.
+Generating RTLIL representation for module `\analog_comp'.
+Successfully finished Verilog frontend.
+use_slang
+
+4. Executing SLANG frontend.
+Top level design units:
+    wrapper
+
+
+Build succeeded: 0 errors, 0 warnings
+
+4.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\digital_domain$wrapper.digital_domain_inst.$804'.
+Found and cleaned up 1 empty switch in `\digital_domain$wrapper.digital_domain_inst.$793'.
+Found and cleaned up 1 empty switch in `\digital_domain$wrapper.digital_domain_inst.$780'.
+Found and cleaned up 1 empty switch in `\digital_domain$wrapper.digital_domain_inst.$720'.
+Found and cleaned up 1 empty switch in `\digital_domain$wrapper.digital_domain_inst.$709'.
+Found and cleaned up 1 empty switch in `\digital_domain$wrapper.digital_domain_inst.$696'.
+Found and cleaned up 1 empty switch in `\digital_domain$wrapper.digital_domain_inst.$644'.
+Found and cleaned up 1 empty switch in `\digital_domain$wrapper.digital_domain_inst.$639'.
+Removing empty process `digital_domain$wrapper.digital_domain_inst.$632'.
+Found and cleaned up 1 empty switch in `\digital_domain$wrapper.digital_domain_inst.$625'.
+Found and cleaned up 1 empty switch in `\digital_domain$wrapper.digital_domain_inst.$622'.
+Found and cleaned up 1 empty switch in `\digital_domain$wrapper.digital_domain_inst.$593'.
+Found and cleaned up 1 empty switch in `\digital_domain$wrapper.digital_domain_inst.$479'.
+Found and cleaned up 1 empty switch in `\digital_domain$wrapper.digital_domain_inst.$449'.
+Found and cleaned up 1 empty switch in `\digital_domain$wrapper.digital_domain_inst.$443'.
+Found and cleaned up 1 empty switch in `\digital_domain$wrapper.digital_domain_inst.$384'.
+Found and cleaned up 1 empty switch in `\digital_domain$wrapper.digital_domain_inst.$379'.
+Removing empty process `digital_domain$wrapper.digital_domain_inst.$372'.
+Found and cleaned up 1 empty switch in `\digital_domain$wrapper.digital_domain_inst.$365'.
+Found and cleaned up 1 empty switch in `\digital_domain$wrapper.digital_domain_inst.$362'.
+Found and cleaned up 1 empty switch in `\digital_domain$wrapper.digital_domain_inst.$333'.
+Found and cleaned up 1 empty switch in `\digital_domain$wrapper.digital_domain_inst.$219'.
+Found and cleaned up 1 empty switch in `\digital_domain$wrapper.digital_domain_inst.$189'.
+Found and cleaned up 1 empty switch in `\digital_domain$wrapper.digital_domain_inst.$183'.
+Found and cleaned up 1 empty switch in `\digital_domain$wrapper.digital_domain_inst.$160'.
+Removing empty process `digital_domain$wrapper.digital_domain_inst.$157'.
+Found and cleaned up 1 empty switch in `\digital_domain$wrapper.digital_domain_inst.$148'.
+Found and cleaned up 1 empty switch in `\digital_domain$wrapper.digital_domain_inst.$95'.
+Found and cleaned up 1 empty switch in `\digital_domain$wrapper.digital_domain_inst.$68'.
+Found and cleaned up 1 empty switch in `\digital_domain$wrapper.digital_domain_inst.$23'.
+Removing empty process `digital_domain$wrapper.digital_domain_inst.$12'.
+Removing empty process `digital_domain$wrapper.digital_domain_inst.$6'.
+Cleaned up 27 empty switches.
+
+4.2. Executing TRIBUF pass.
+
+4.3. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $696 in module digital_domain$wrapper.digital_domain_inst.
+Marked 9 switch rules as full_case in process $644 in module digital_domain$wrapper.digital_domain_inst.
+Marked 2 switch rules as full_case in process $639 in module digital_domain$wrapper.digital_domain_inst.
+Marked 9 switch rules as full_case in process $804 in module digital_domain$wrapper.digital_domain_inst.
+Marked 1 switch rules as full_case in process $625 in module digital_domain$wrapper.digital_domain_inst.
+Removed 1 dead cases from process $622 in module digital_domain$wrapper.digital_domain_inst.
+Marked 1 switch rules as full_case in process $622 in module digital_domain$wrapper.digital_domain_inst.
+Marked 10 switch rules as full_case in process $593 in module digital_domain$wrapper.digital_domain_inst.
+Marked 16 switch rules as full_case in process $479 in module digital_domain$wrapper.digital_domain_inst.
+Marked 1 switch rules as full_case in process $449 in module digital_domain$wrapper.digital_domain_inst.
+Marked 2 switch rules as full_case in process $443 in module digital_domain$wrapper.digital_domain_inst.
+Marked 9 switch rules as full_case in process $384 in module digital_domain$wrapper.digital_domain_inst.
+Marked 2 switch rules as full_case in process $379 in module digital_domain$wrapper.digital_domain_inst.
+Marked 1 switch rules as full_case in process $793 in module digital_domain$wrapper.digital_domain_inst.
+Marked 1 switch rules as full_case in process $365 in module digital_domain$wrapper.digital_domain_inst.
+Removed 1 dead cases from process $362 in module digital_domain$wrapper.digital_domain_inst.
+Marked 1 switch rules as full_case in process $362 in module digital_domain$wrapper.digital_domain_inst.
+Marked 10 switch rules as full_case in process $333 in module digital_domain$wrapper.digital_domain_inst.
+Marked 16 switch rules as full_case in process $219 in module digital_domain$wrapper.digital_domain_inst.
+Marked 1 switch rules as full_case in process $189 in module digital_domain$wrapper.digital_domain_inst.
+Marked 2 switch rules as full_case in process $183 in module digital_domain$wrapper.digital_domain_inst.
+Marked 1 switch rules as full_case in process $780 in module digital_domain$wrapper.digital_domain_inst.
+Marked 9 switch rules as full_case in process $148 in module digital_domain$wrapper.digital_domain_inst.
+Marked 1 switch rules as full_case in process $68 in module digital_domain$wrapper.digital_domain_inst.
+Marked 9 switch rules as full_case in process $23 in module digital_domain$wrapper.digital_domain_inst.
+Marked 9 switch rules as full_case in process $720 in module digital_domain$wrapper.digital_domain_inst.
+Marked 1 switch rules as full_case in process $709 in module digital_domain$wrapper.digital_domain_inst.
+Removed a total of 2 dead cases.
+
+4.4. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 143 redundant assignments.
+Promoted 0 assignments to connections.
+
+4.5. Executing PROC_INIT pass (extract init attributes).
+
+4.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 2 switches.
+<suppressed ~175 debug messages>
+
+4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\digital_domain$wrapper.digital_domain_inst.$696'.
+     1/3: $signal_processor_x_inst.s270_pipe$702
+     2/3: $signal_processor_x_inst.s90_pipe$701
+     3/3: $signal_processor_x_inst.comp_pipe$700
+Creating decoders for process `\digital_domain$wrapper.digital_domain_inst.$644'.
+     1/20: $wave_controller_y_inst.cal_burst_count$668
+     2/20: $wave_controller_y_inst.cal_burst_active$667
+     3/20: $wave_controller_y_inst.cal_burst_armed$666
+     4/20: $wave_controller_y_inst.ref_wave$665
+     5/20: $wave_controller_y_inst.mems_drv$664
+     6/20: $wave_controller_y_inst.cal_burst_count$663
+     7/20: $wave_controller_y_inst.cal_burst_active$662
+     8/20: $wave_controller_y_inst.cal_burst_armed$661
+     9/20: $wave_controller_y_inst.ref_wave$660
+    10/20: $wave_controller_y_inst.mems_drv$659
+    11/20: $wave_controller_y_inst.cal_burst_count$650
+    12/20: $wave_controller_y_inst.cal_burst_active$649
+    13/20: $wave_controller_y_inst.cal_burst_count$652
+    14/20: $wave_controller_y_inst.cal_burst_active$651
+    15/20: $wave_controller_y_inst.cal_burst_count$655
+    16/20: $wave_controller_y_inst.cal_burst_active$654
+    17/20: $wave_controller_y_inst.cal_burst_armed$653
+    18/20: $wave_controller_y_inst.cal_burst_count$658
+    19/20: $wave_controller_y_inst.cal_burst_active$657
+    20/20: $wave_controller_y_inst.cal_burst_armed$656
+Creating decoders for process `\digital_domain$wrapper.digital_domain_inst.$639'.
+     1/2: $wave_controller_y_inst.ds_code$641
+     2/2: $wave_controller_y_inst.ds_code$642
+Creating decoders for process `\digital_domain$wrapper.digital_domain_inst.$804'.
+     1/39: $signal_processor_y_inst.cycle_count$826
+     2/39: $signal_processor_y_inst.cnt_out$825
+     3/39: $signal_processor_y_inst.cnt_in$824
+     4/39: $signal_processor_y_inst.jitter_flag$814
+     5/39: $signal_processor_y_inst.move_en$813
+     6/39: $signal_processor_y_inst.dir$812
+     7/39: $signal_processor_y_inst.jitter_flag$817
+     8/39: $signal_processor_y_inst.move_en$816
+     9/39: $signal_processor_y_inst.dir$815
+    10/39: $signal_processor_y_inst.votes_out_phase$823
+    11/39: $signal_processor_y_inst.votes_in_phase$822
+    12/39: $signal_processor_y_inst.jitter_flag$821
+    13/39: $signal_processor_y_inst.move_en$820
+    14/39: $signal_processor_y_inst.dir$819
+    15/39: $signal_processor_y_inst.cycle_count$836
+    16/39: $signal_processor_y_inst.cnt_out$835
+    17/39: $signal_processor_y_inst.cnt_in$834
+    18/39: $signal_processor_y_inst.s90_valid$833
+    19/39: $signal_processor_y_inst.votes_out_phase$832
+    20/39: $signal_processor_y_inst.votes_in_phase$831
+    21/39: $signal_processor_y_inst.phase_state$830
+    22/39: $signal_processor_y_inst.jitter_flag$829
+    23/39: $signal_processor_y_inst.move_en$828
+    24/39: $signal_processor_y_inst.dir$827
+    25/39: $signal_processor_y_inst.s90_valid$809
+    26/39: $signal_processor_y_inst.s90$808
+    27/39: $signal_processor_y_inst.cycle_count$849
+    28/39: $signal_processor_y_inst.cnt_out$848
+    29/39: $signal_processor_y_inst.cnt_in$847
+    30/39: $signal_processor_y_inst.s90_valid$846
+    31/39: $signal_processor_y_inst.s90$845
+    32/39: $signal_processor_y_inst.votes_out_phase$844
+    33/39: $signal_processor_y_inst.votes_in_phase$843
+    34/39: $signal_processor_y_inst.phase_state$842
+    35/39: $signal_processor_y_inst.jitter_flag$841
+    36/39: $signal_processor_y_inst.move_en$840
+    37/39: $signal_processor_y_inst.dir$839
+    38/39: $signal_processor_y_inst.latch_phase270_ack$838
+    39/39: $signal_processor_y_inst.latch_phase90_ack$837
+Creating decoders for process `\digital_domain$wrapper.digital_domain_inst.$625'.
+     1/1: $wave_controller_y_inst.u_sine.amp$628
+Creating decoders for process `\digital_domain$wrapper.digital_domain_inst.$622'.
+     1/1: $wave_controller_y_inst.u_sine.q_val$623
+Creating decoders for process `\digital_domain$wrapper.digital_domain_inst.$593'.
+     1/13: $wave_controller_y_inst.latch_phase270$612
+     2/13: $wave_controller_y_inst.latch_phase90$611
+     3/13: $wave_controller_y_inst.latch_error$610
+     4/13: $wave_controller_y_inst.latch_phase270$609
+     5/13: $wave_controller_y_inst.latch_phase90$608
+     6/13: $wave_controller_y_inst.latch_phase270$605
+     7/13: $wave_controller_y_inst.latch_phase270$606
+     8/13: $wave_controller_y_inst.latch_phase90$601
+     9/13: $wave_controller_y_inst.latch_phase90$602
+    10/13: $wave_controller_y_inst.latch_error$613
+    11/13: $wave_controller_y_inst.latch_error$616
+    12/13: $wave_controller_y_inst.latch_phase270$615
+    13/13: $wave_controller_y_inst.latch_phase90$614
+Creating decoders for process `\digital_domain$wrapper.digital_domain_inst.$479'.
+     1/84: $wave_controller_y_inst.capture_step$538
+     2/84: $wave_controller_y_inst.capture_pending$537
+     3/84: $wave_controller_y_inst.capture_step$516
+     4/84: $wave_controller_y_inst.capture_pending$515
+     5/84: $wave_controller_y_inst.raw_edge3$514
+     6/84: $wave_controller_y_inst.raw_edge1$513
+     7/84: $wave_controller_y_inst.delay_wave_cycle$512
+     8/84: $wave_controller_y_inst.cal_done$511
+     9/84: $wave_controller_y_inst.capture_step$522
+    10/84: $wave_controller_y_inst.capture_pending$521
+    11/84: $wave_controller_y_inst.raw_edge3$520
+    12/84: $wave_controller_y_inst.raw_edge1$519
+    13/84: $wave_controller_y_inst.delay_wave_cycle$518
+    14/84: $wave_controller_y_inst.cal_done$517
+    15/84: $wave_controller_y_inst.capture_step$503
+    16/84: $wave_controller_y_inst.delay_wave_cycle$498
+    17/84: $wave_controller_y_inst.capture_pending$502
+    18/84: $wave_controller_y_inst.cal_dir$501
+    19/84: $wave_controller_y_inst.raw_edge2$500
+    20/84: $wave_controller_y_inst.raw_edge1$499
+    21/84: $wave_controller_y_inst.capture_step$509
+    22/84: $wave_controller_y_inst.capture_pending$508
+    23/84: $wave_controller_y_inst.cal_dir$507
+    24/84: $wave_controller_y_inst.raw_edge2$506
+    25/84: $wave_controller_y_inst.raw_edge1$505
+    26/84: $wave_controller_y_inst.delay_wave_cycle$504
+    27/84: $wave_controller_y_inst.capture_step$530
+    28/84: $wave_controller_y_inst.capture_pending$529
+    29/84: $wave_controller_y_inst.cal_dir$528
+    30/84: $wave_controller_y_inst.raw_edge3$527
+    31/84: $wave_controller_y_inst.raw_edge2$526
+    32/84: $wave_controller_y_inst.raw_edge1$525
+    33/84: $wave_controller_y_inst.delay_wave_cycle$524
+    34/84: $wave_controller_y_inst.cal_done$523
+    35/84: $wave_controller_y_inst.cal_dir$536
+    36/84: $wave_controller_y_inst.raw_edge3$535
+    37/84: $wave_controller_y_inst.raw_edge2$534
+    38/84: $wave_controller_y_inst.raw_edge1$533
+    39/84: $wave_controller_y_inst.delay_wave_cycle$532
+    40/84: $wave_controller_y_inst.cal_done$531
+    41/84: $wave_controller_y_inst.capture_step$546
+    42/84: $wave_controller_y_inst.capture_pending$545
+    43/84: $wave_controller_y_inst.cal_dir$544
+    44/84: $wave_controller_y_inst.raw_edge3$543
+    45/84: $wave_controller_y_inst.raw_edge2$542
+    46/84: $wave_controller_y_inst.raw_edge1$541
+    47/84: $wave_controller_y_inst.delay_wave_cycle$540
+    48/84: $wave_controller_y_inst.cal_done$539
+    49/84: $wave_controller_y_inst.capture_step$495
+    50/84: $wave_controller_y_inst.capture_pending$494
+    51/84: $wave_controller_y_inst.raw_edge1$493
+    52/84: $wave_controller_y_inst.delay_wave_cycle$492
+    53/84: $wave_controller_y_inst.cal_timeout$489
+    54/84: $wave_controller_y_inst.wave_cycle_cnt$487
+    55/84: $wave_controller_y_inst.capture_step$556
+    56/84: $wave_controller_y_inst.capture_pending$555
+    57/84: $wave_controller_y_inst.wave_cycle_cnt$554
+    58/84: $wave_controller_y_inst.cal_dir$553
+    59/84: $wave_controller_y_inst.raw_edge3$552
+    60/84: $wave_controller_y_inst.raw_edge2$551
+    61/84: $wave_controller_y_inst.raw_edge1$550
+    62/84: $wave_controller_y_inst.delay_wave_cycle$549
+    63/84: $wave_controller_y_inst.cal_timeout$548
+    64/84: $wave_controller_y_inst.cal_done$547
+    65/84: $wave_controller_y_inst.capture_step$566
+    66/84: $wave_controller_y_inst.capture_pending$565
+    67/84: $wave_controller_y_inst.wave_cycle_cnt$564
+    68/84: $wave_controller_y_inst.cal_dir$563
+    69/84: $wave_controller_y_inst.raw_edge3$562
+    70/84: $wave_controller_y_inst.raw_edge2$561
+    71/84: $wave_controller_y_inst.raw_edge1$560
+    72/84: $wave_controller_y_inst.delay_wave_cycle$559
+    73/84: $wave_controller_y_inst.cal_timeout$558
+    74/84: $wave_controller_y_inst.cal_done$557
+    75/84: $wave_controller_y_inst.capture_step$576
+    76/84: $wave_controller_y_inst.capture_pending$575
+    77/84: $wave_controller_y_inst.wave_cycle_cnt$574
+    78/84: $wave_controller_y_inst.cal_dir$573
+    79/84: $wave_controller_y_inst.raw_edge3$572
+    80/84: $wave_controller_y_inst.raw_edge2$571
+    81/84: $wave_controller_y_inst.raw_edge1$570
+    82/84: $wave_controller_y_inst.delay_wave_cycle$569
+    83/84: $wave_controller_y_inst.cal_timeout$568
+    84/84: $wave_controller_y_inst.cal_done$567
+Creating decoders for process `\digital_domain$wrapper.digital_domain_inst.$449'.
+     1/5: $wave_controller_y_inst.comp_sync4$457
+     2/5: $wave_controller_y_inst.comp_sync3$456
+     3/5: $wave_controller_y_inst.comp_sync2$455
+     4/5: $wave_controller_y_inst.comp_sync1$454
+     5/5: $wave_controller_y_inst.comp_sync0$453
+Creating decoders for process `\digital_domain$wrapper.digital_domain_inst.$443'.
+     1/2: $wave_controller_y_inst.phase_acc$447
+     2/2: $wave_controller_y_inst.phase_acc$448
+Creating decoders for process `\digital_domain$wrapper.digital_domain_inst.$384'.
+     1/20: $wave_controller_x_inst.cal_burst_count$408
+     2/20: $wave_controller_x_inst.cal_burst_active$407
+     3/20: $wave_controller_x_inst.cal_burst_armed$406
+     4/20: $wave_controller_x_inst.ref_wave$405
+     5/20: $wave_controller_x_inst.mems_drv$404
+     6/20: $wave_controller_x_inst.cal_burst_count$403
+     7/20: $wave_controller_x_inst.cal_burst_active$402
+     8/20: $wave_controller_x_inst.cal_burst_armed$401
+     9/20: $wave_controller_x_inst.ref_wave$400
+    10/20: $wave_controller_x_inst.mems_drv$399
+    11/20: $wave_controller_x_inst.cal_burst_count$390
+    12/20: $wave_controller_x_inst.cal_burst_active$389
+    13/20: $wave_controller_x_inst.cal_burst_count$392
+    14/20: $wave_controller_x_inst.cal_burst_active$391
+    15/20: $wave_controller_x_inst.cal_burst_count$395
+    16/20: $wave_controller_x_inst.cal_burst_active$394
+    17/20: $wave_controller_x_inst.cal_burst_armed$393
+    18/20: $wave_controller_x_inst.cal_burst_count$398
+    19/20: $wave_controller_x_inst.cal_burst_active$397
+    20/20: $wave_controller_x_inst.cal_burst_armed$396
+Creating decoders for process `\digital_domain$wrapper.digital_domain_inst.$379'.
+     1/2: $wave_controller_x_inst.ds_code$381
+     2/2: $wave_controller_x_inst.ds_code$382
+Creating decoders for process `\digital_domain$wrapper.digital_domain_inst.$793'.
+     1/4: $signal_processor_y_inst.next_out$797
+     2/4: $signal_processor_y_inst.next_in$796
+     3/4: $signal_processor_y_inst.next_out$799
+     4/4: $signal_processor_y_inst.next_in$798
+Creating decoders for process `\digital_domain$wrapper.digital_domain_inst.$365'.
+     1/1: $wave_controller_x_inst.u_sine.amp$368
+Creating decoders for process `\digital_domain$wrapper.digital_domain_inst.$362'.
+     1/1: $wave_controller_x_inst.u_sine.q_val$363
+Creating decoders for process `\digital_domain$wrapper.digital_domain_inst.$333'.
+     1/13: $wave_controller_x_inst.latch_phase270$352
+     2/13: $wave_controller_x_inst.latch_phase90$351
+     3/13: $wave_controller_x_inst.latch_error$350
+     4/13: $wave_controller_x_inst.latch_phase270$349
+     5/13: $wave_controller_x_inst.latch_phase90$348
+     6/13: $wave_controller_x_inst.latch_phase270$345
+     7/13: $wave_controller_x_inst.latch_phase270$346
+     8/13: $wave_controller_x_inst.latch_phase90$341
+     9/13: $wave_controller_x_inst.latch_phase90$342
+    10/13: $wave_controller_x_inst.latch_error$353
+    11/13: $wave_controller_x_inst.latch_error$356
+    12/13: $wave_controller_x_inst.latch_phase270$355
+    13/13: $wave_controller_x_inst.latch_phase90$354
+Creating decoders for process `\digital_domain$wrapper.digital_domain_inst.$219'.
+     1/84: $wave_controller_x_inst.capture_step$278
+     2/84: $wave_controller_x_inst.capture_pending$277
+     3/84: $wave_controller_x_inst.capture_step$256
+     4/84: $wave_controller_x_inst.capture_pending$255
+     5/84: $wave_controller_x_inst.raw_edge3$254
+     6/84: $wave_controller_x_inst.raw_edge1$253
+     7/84: $wave_controller_x_inst.delay_wave_cycle$252
+     8/84: $wave_controller_x_inst.cal_done$251
+     9/84: $wave_controller_x_inst.capture_step$262
+    10/84: $wave_controller_x_inst.capture_pending$261
+    11/84: $wave_controller_x_inst.raw_edge3$260
+    12/84: $wave_controller_x_inst.raw_edge1$259
+    13/84: $wave_controller_x_inst.delay_wave_cycle$258
+    14/84: $wave_controller_x_inst.cal_done$257
+    15/84: $wave_controller_x_inst.capture_step$243
+    16/84: $wave_controller_x_inst.delay_wave_cycle$238
+    17/84: $wave_controller_x_inst.capture_pending$242
+    18/84: $wave_controller_x_inst.cal_dir$241
+    19/84: $wave_controller_x_inst.raw_edge2$240
+    20/84: $wave_controller_x_inst.raw_edge1$239
+    21/84: $wave_controller_x_inst.capture_step$249
+    22/84: $wave_controller_x_inst.capture_pending$248
+    23/84: $wave_controller_x_inst.cal_dir$247
+    24/84: $wave_controller_x_inst.raw_edge2$246
+    25/84: $wave_controller_x_inst.raw_edge1$245
+    26/84: $wave_controller_x_inst.delay_wave_cycle$244
+    27/84: $wave_controller_x_inst.capture_step$270
+    28/84: $wave_controller_x_inst.capture_pending$269
+    29/84: $wave_controller_x_inst.cal_dir$268
+    30/84: $wave_controller_x_inst.raw_edge3$267
+    31/84: $wave_controller_x_inst.raw_edge2$266
+    32/84: $wave_controller_x_inst.raw_edge1$265
+    33/84: $wave_controller_x_inst.delay_wave_cycle$264
+    34/84: $wave_controller_x_inst.cal_done$263
+    35/84: $wave_controller_x_inst.cal_dir$276
+    36/84: $wave_controller_x_inst.raw_edge3$275
+    37/84: $wave_controller_x_inst.raw_edge2$274
+    38/84: $wave_controller_x_inst.raw_edge1$273
+    39/84: $wave_controller_x_inst.delay_wave_cycle$272
+    40/84: $wave_controller_x_inst.cal_done$271
+    41/84: $wave_controller_x_inst.capture_step$286
+    42/84: $wave_controller_x_inst.capture_pending$285
+    43/84: $wave_controller_x_inst.cal_dir$284
+    44/84: $wave_controller_x_inst.raw_edge3$283
+    45/84: $wave_controller_x_inst.raw_edge2$282
+    46/84: $wave_controller_x_inst.raw_edge1$281
+    47/84: $wave_controller_x_inst.delay_wave_cycle$280
+    48/84: $wave_controller_x_inst.cal_done$279
+    49/84: $wave_controller_x_inst.capture_step$235
+    50/84: $wave_controller_x_inst.capture_pending$234
+    51/84: $wave_controller_x_inst.raw_edge1$233
+    52/84: $wave_controller_x_inst.delay_wave_cycle$232
+    53/84: $wave_controller_x_inst.cal_timeout$229
+    54/84: $wave_controller_x_inst.wave_cycle_cnt$227
+    55/84: $wave_controller_x_inst.capture_step$296
+    56/84: $wave_controller_x_inst.capture_pending$295
+    57/84: $wave_controller_x_inst.wave_cycle_cnt$294
+    58/84: $wave_controller_x_inst.cal_dir$293
+    59/84: $wave_controller_x_inst.raw_edge3$292
+    60/84: $wave_controller_x_inst.raw_edge2$291
+    61/84: $wave_controller_x_inst.raw_edge1$290
+    62/84: $wave_controller_x_inst.delay_wave_cycle$289
+    63/84: $wave_controller_x_inst.cal_timeout$288
+    64/84: $wave_controller_x_inst.cal_done$287
+    65/84: $wave_controller_x_inst.capture_step$306
+    66/84: $wave_controller_x_inst.capture_pending$305
+    67/84: $wave_controller_x_inst.wave_cycle_cnt$304
+    68/84: $wave_controller_x_inst.cal_dir$303
+    69/84: $wave_controller_x_inst.raw_edge3$302
+    70/84: $wave_controller_x_inst.raw_edge2$301
+    71/84: $wave_controller_x_inst.raw_edge1$300
+    72/84: $wave_controller_x_inst.delay_wave_cycle$299
+    73/84: $wave_controller_x_inst.cal_timeout$298
+    74/84: $wave_controller_x_inst.cal_done$297
+    75/84: $wave_controller_x_inst.capture_step$316
+    76/84: $wave_controller_x_inst.capture_pending$315
+    77/84: $wave_controller_x_inst.wave_cycle_cnt$314
+    78/84: $wave_controller_x_inst.cal_dir$313
+    79/84: $wave_controller_x_inst.raw_edge3$312
+    80/84: $wave_controller_x_inst.raw_edge2$311
+    81/84: $wave_controller_x_inst.raw_edge1$310
+    82/84: $wave_controller_x_inst.delay_wave_cycle$309
+    83/84: $wave_controller_x_inst.cal_timeout$308
+    84/84: $wave_controller_x_inst.cal_done$307
+Creating decoders for process `\digital_domain$wrapper.digital_domain_inst.$189'.
+     1/5: $wave_controller_x_inst.comp_sync4$197
+     2/5: $wave_controller_x_inst.comp_sync3$196
+     3/5: $wave_controller_x_inst.comp_sync2$195
+     4/5: $wave_controller_x_inst.comp_sync1$194
+     5/5: $wave_controller_x_inst.comp_sync0$193
+Creating decoders for process `\digital_domain$wrapper.digital_domain_inst.$183'.
+     1/2: $wave_controller_x_inst.phase_acc$187
+     2/2: $wave_controller_x_inst.phase_acc$188
+Creating decoders for process `\digital_domain$wrapper.digital_domain_inst.$160'.
+     1/2: $state_machine_inst.read_en$162
+     2/2: $state_machine_inst.cal_start$161
+Creating decoders for process `\digital_domain$wrapper.digital_domain_inst.$780'.
+     1/3: $signal_processor_y_inst.s270_pipe$786
+     2/3: $signal_processor_y_inst.s90_pipe$785
+     3/3: $signal_processor_y_inst.comp_pipe$784
+Creating decoders for process `\digital_domain$wrapper.digital_domain_inst.$148'.
+     1/7: $state_machine_inst.state_d$152
+     2/7: $state_machine_inst.state_d$153
+     3/7: $state_machine_inst.state_d$150
+     4/7: $state_machine_inst.state_d$151
+     5/7: $state_machine_inst.state_d$149
+     6/7: $state_machine_inst.state_d$154
+     7/7: $state_machine_inst.state_d$155
+Creating decoders for process `\digital_domain$wrapper.digital_domain_inst.$95'.
+     1/1: $spi_regs_inst.reg_rd_data$96
+Creating decoders for process `\digital_domain$wrapper.digital_domain_inst.$68'.
+     1/38: $spi_regs_inst.cfg_phase270_offset_y$78 [20:16]
+     2/38: $spi_regs_inst.cfg_phase270_offset_y$78 [15:8]
+     3/38: $spi_regs_inst.cfg_phase270_offset_y$78 [7:0]
+     4/38: $spi_regs_inst.cfg_phase90_offset_y$77 [15:8]
+     5/38: $spi_regs_inst.cfg_phase90_offset_y$77 [7:0]
+     6/38: $spi_regs_inst.cfg_phase0_offset_y$76 [15:8]
+     7/38: $spi_regs_inst.cfg_phase0_offset_y$76 [7:0]
+     8/38: $spi_regs_inst.cfg_phase270_offset_x$75 [15:8]
+     9/38: $spi_regs_inst.cfg_phase270_offset_x$75 [7:0]
+    10/38: $spi_regs_inst.cfg_phase90_offset_x$74 [15:8]
+    11/38: $spi_regs_inst.cfg_phase90_offset_x$74 [7:0]
+    12/38: $spi_regs_inst.cfg_phase0_offset_x$73 [15:8]
+    13/38: $spi_regs_inst.cfg_phase0_offset_x$73 [7:0]
+    14/38: $spi_regs_inst.cfg_f_MEMS_fcw_y$72 [7:0]
+    15/38: $spi_regs_inst.cfg_f_MEMS_fcw_x$71 [7:0]
+    16/38: $spi_regs_inst.phase_offset_imported$81
+    17/38: $spi_regs_inst.cfg_done$80
+    18/38: $spi_regs_inst.boot_complete$79
+    19/38: $spi_regs_inst.cfg_phase90_offset_y$77 [20:16]
+    20/38: $spi_regs_inst.cfg_phase0_offset_y$76 [20:16]
+    21/38: $spi_regs_inst.cfg_phase270_offset_x$75 [20:16]
+    22/38: $spi_regs_inst.cfg_phase90_offset_x$74 [20:16]
+    23/38: $spi_regs_inst.cfg_phase0_offset_x$73 [20:16]
+    24/38: $spi_regs_inst.cfg_f_MEMS_fcw_y$72 [15:8]
+    25/38: $spi_regs_inst.cfg_f_MEMS_fcw_x$71 [15:8]
+    26/38: $spi_regs_inst.soft_rst$82
+    27/38: $spi_regs_inst.soft_rst$94
+    28/38: $spi_regs_inst.phase_offset_imported$93
+    29/38: $spi_regs_inst.cfg_done$92
+    30/38: $spi_regs_inst.boot_complete$91
+    31/38: $spi_regs_inst.cfg_phase270_offset_y$90
+    32/38: $spi_regs_inst.cfg_phase90_offset_y$89
+    33/38: $spi_regs_inst.cfg_phase0_offset_y$88
+    34/38: $spi_regs_inst.cfg_phase270_offset_x$87
+    35/38: $spi_regs_inst.cfg_phase90_offset_x$86
+    36/38: $spi_regs_inst.cfg_phase0_offset_x$85
+    37/38: $spi_regs_inst.cfg_f_MEMS_fcw_y$84
+    38/38: $spi_regs_inst.cfg_f_MEMS_fcw_x$83
+Creating decoders for process `\digital_domain$wrapper.digital_domain_inst.$23'.
+     1/35: $spi_regs_inst.tx_shift$57
+     2/35: $spi_regs_inst.tx_shift$58
+     3/35: $spi_regs_inst.bit_cnt$40
+     4/35: $spi_regs_inst.reg_wr_data$30
+     5/35: $spi_regs_inst.reg_wr_addr$29
+     6/35: $spi_regs_inst.reg_wr_en$28
+     7/35: $spi_regs_inst.spi_addr$34
+     8/35: $spi_regs_inst.reg_wr_data$37
+     9/35: $spi_regs_inst.reg_wr_addr$36
+    10/35: $spi_regs_inst.reg_wr_en$35
+    11/35: $spi_regs_inst.rw_n$33
+    12/35: $spi_regs_inst.spi_state$32
+    13/35: $spi_regs_inst.reg_wr_data$45
+    14/35: $spi_regs_inst.reg_wr_addr$44
+    15/35: $spi_regs_inst.reg_wr_en$43
+    16/35: $spi_regs_inst.spi_addr$42
+    17/35: $spi_regs_inst.rw_n$41
+    18/35: $spi_regs_inst.spi_state$39
+    19/35: $spi_regs_inst.reg_wr_data$53
+    20/35: $spi_regs_inst.reg_wr_addr$52
+    21/35: $spi_regs_inst.reg_wr_en$51
+    22/35: $spi_regs_inst.rx_shift$50
+    23/35: $spi_regs_inst.spi_addr$49
+    24/35: $spi_regs_inst.rw_n$48
+    25/35: $spi_regs_inst.bit_cnt$47
+    26/35: $spi_regs_inst.spi_state$46
+    27/35: $spi_regs_inst.bit_cnt$60
+    28/35: $spi_regs_inst.spi_state$59
+    29/35: $spi_regs_inst.reg_wr_data$67
+    30/35: $spi_regs_inst.reg_wr_addr$66
+    31/35: $spi_regs_inst.reg_wr_en$65
+    32/35: $spi_regs_inst.tx_shift$64
+    33/35: $spi_regs_inst.rx_shift$63
+    34/35: $spi_regs_inst.spi_addr$62
+    35/35: $spi_regs_inst.rw_n$61
+Creating decoders for process `\digital_domain$wrapper.digital_domain_inst.$720'.
+     1/39: $signal_processor_x_inst.cycle_count$742
+     2/39: $signal_processor_x_inst.cnt_out$741
+     3/39: $signal_processor_x_inst.cnt_in$740
+     4/39: $signal_processor_x_inst.jitter_flag$730
+     5/39: $signal_processor_x_inst.move_en$729
+     6/39: $signal_processor_x_inst.dir$728
+     7/39: $signal_processor_x_inst.jitter_flag$733
+     8/39: $signal_processor_x_inst.move_en$732
+     9/39: $signal_processor_x_inst.dir$731
+    10/39: $signal_processor_x_inst.votes_out_phase$739
+    11/39: $signal_processor_x_inst.votes_in_phase$738
+    12/39: $signal_processor_x_inst.jitter_flag$737
+    13/39: $signal_processor_x_inst.move_en$736
+    14/39: $signal_processor_x_inst.dir$735
+    15/39: $signal_processor_x_inst.cycle_count$752
+    16/39: $signal_processor_x_inst.cnt_out$751
+    17/39: $signal_processor_x_inst.cnt_in$750
+    18/39: $signal_processor_x_inst.s90_valid$749
+    19/39: $signal_processor_x_inst.votes_out_phase$748
+    20/39: $signal_processor_x_inst.votes_in_phase$747
+    21/39: $signal_processor_x_inst.phase_state$746
+    22/39: $signal_processor_x_inst.jitter_flag$745
+    23/39: $signal_processor_x_inst.move_en$744
+    24/39: $signal_processor_x_inst.dir$743
+    25/39: $signal_processor_x_inst.s90_valid$725
+    26/39: $signal_processor_x_inst.s90$724
+    27/39: $signal_processor_x_inst.cycle_count$765
+    28/39: $signal_processor_x_inst.cnt_out$764
+    29/39: $signal_processor_x_inst.cnt_in$763
+    30/39: $signal_processor_x_inst.s90_valid$762
+    31/39: $signal_processor_x_inst.s90$761
+    32/39: $signal_processor_x_inst.votes_out_phase$760
+    33/39: $signal_processor_x_inst.votes_in_phase$759
+    34/39: $signal_processor_x_inst.phase_state$758
+    35/39: $signal_processor_x_inst.jitter_flag$757
+    36/39: $signal_processor_x_inst.move_en$756
+    37/39: $signal_processor_x_inst.dir$755
+    38/39: $signal_processor_x_inst.latch_phase270_ack$754
+    39/39: $signal_processor_x_inst.latch_phase90_ack$753
+Creating decoders for process `\digital_domain$wrapper.digital_domain_inst.$709'.
+     1/4: $signal_processor_x_inst.next_out$713
+     2/4: $signal_processor_x_inst.next_in$712
+     3/4: $signal_processor_x_inst.next_out$715
+     4/4: $signal_processor_x_inst.next_in$714
+
+4.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\digital_domain$wrapper.digital_domain_inst.$696'.
+Removing empty process `digital_domain$wrapper.digital_domain_inst.$696'.
+Found and cleaned up 11 empty switches in `\digital_domain$wrapper.digital_domain_inst.$644'.
+Removing empty process `digital_domain$wrapper.digital_domain_inst.$644'.
+Found and cleaned up 3 empty switches in `\digital_domain$wrapper.digital_domain_inst.$639'.
+Removing empty process `digital_domain$wrapper.digital_domain_inst.$639'.
+Found and cleaned up 11 empty switches in `\digital_domain$wrapper.digital_domain_inst.$804'.
+Removing empty process `digital_domain$wrapper.digital_domain_inst.$804'.
+Found and cleaned up 1 empty switch in `\digital_domain$wrapper.digital_domain_inst.$625'.
+Removing empty process `digital_domain$wrapper.digital_domain_inst.$625'.
+Found and cleaned up 1 empty switch in `\digital_domain$wrapper.digital_domain_inst.$622'.
+Removing empty process `digital_domain$wrapper.digital_domain_inst.$622'.
+Found and cleaned up 13 empty switches in `\digital_domain$wrapper.digital_domain_inst.$593'.
+Removing empty process `digital_domain$wrapper.digital_domain_inst.$593'.
+Found and cleaned up 25 empty switches in `\digital_domain$wrapper.digital_domain_inst.$479'.
+Removing empty process `digital_domain$wrapper.digital_domain_inst.$479'.
+Found and cleaned up 1 empty switch in `\digital_domain$wrapper.digital_domain_inst.$449'.
+Removing empty process `digital_domain$wrapper.digital_domain_inst.$449'.
+Found and cleaned up 3 empty switches in `\digital_domain$wrapper.digital_domain_inst.$443'.
+Removing empty process `digital_domain$wrapper.digital_domain_inst.$443'.
+Found and cleaned up 11 empty switches in `\digital_domain$wrapper.digital_domain_inst.$384'.
+Removing empty process `digital_domain$wrapper.digital_domain_inst.$384'.
+Found and cleaned up 3 empty switches in `\digital_domain$wrapper.digital_domain_inst.$379'.
+Removing empty process `digital_domain$wrapper.digital_domain_inst.$379'.
+Found and cleaned up 3 empty switches in `\digital_domain$wrapper.digital_domain_inst.$793'.
+Removing empty process `digital_domain$wrapper.digital_domain_inst.$793'.
+Found and cleaned up 1 empty switch in `\digital_domain$wrapper.digital_domain_inst.$365'.
+Removing empty process `digital_domain$wrapper.digital_domain_inst.$365'.
+Found and cleaned up 1 empty switch in `\digital_domain$wrapper.digital_domain_inst.$362'.
+Removing empty process `digital_domain$wrapper.digital_domain_inst.$362'.
+Found and cleaned up 13 empty switches in `\digital_domain$wrapper.digital_domain_inst.$333'.
+Removing empty process `digital_domain$wrapper.digital_domain_inst.$333'.
+Found and cleaned up 25 empty switches in `\digital_domain$wrapper.digital_domain_inst.$219'.
+Removing empty process `digital_domain$wrapper.digital_domain_inst.$219'.
+Found and cleaned up 1 empty switch in `\digital_domain$wrapper.digital_domain_inst.$189'.
+Removing empty process `digital_domain$wrapper.digital_domain_inst.$189'.
+Found and cleaned up 3 empty switches in `\digital_domain$wrapper.digital_domain_inst.$183'.
+Removing empty process `digital_domain$wrapper.digital_domain_inst.$183'.
+Found and cleaned up 1 empty switch in `\digital_domain$wrapper.digital_domain_inst.$160'.
+Removing empty process `digital_domain$wrapper.digital_domain_inst.$160'.
+Found and cleaned up 1 empty switch in `\digital_domain$wrapper.digital_domain_inst.$780'.
+Removing empty process `digital_domain$wrapper.digital_domain_inst.$780'.
+Found and cleaned up 13 empty switches in `\digital_domain$wrapper.digital_domain_inst.$148'.
+Removing empty process `digital_domain$wrapper.digital_domain_inst.$148'.
+Found and cleaned up 1 empty switch in `\digital_domain$wrapper.digital_domain_inst.$95'.
+Removing empty process `digital_domain$wrapper.digital_domain_inst.$95'.
+Found and cleaned up 3 empty switches in `\digital_domain$wrapper.digital_domain_inst.$68'.
+Removing empty process `digital_domain$wrapper.digital_domain_inst.$68'.
+Found and cleaned up 13 empty switches in `\digital_domain$wrapper.digital_domain_inst.$23'.
+Removing empty process `digital_domain$wrapper.digital_domain_inst.$23'.
+Found and cleaned up 11 empty switches in `\digital_domain$wrapper.digital_domain_inst.$720'.
+Removing empty process `digital_domain$wrapper.digital_domain_inst.$720'.
+Found and cleaned up 3 empty switches in `\digital_domain$wrapper.digital_domain_inst.$709'.
+Removing empty process `digital_domain$wrapper.digital_domain_inst.$709'.
+Cleaned up 177 empty switches.
+
+4.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module digital_domain$wrapper.digital_domain_inst.
+<suppressed ~464 debug messages>
+Optimizing module wrapper.
+
+5. Executing HIERARCHY pass (managing design hierarchy).
+
+5.1. Analyzing design hierarchy..
+Top module:  \wrapper
+Used module:     \digital_domain$wrapper.digital_domain_inst
+
+5.2. Analyzing design hierarchy..
+Top module:  \wrapper
+Used module:     \digital_domain$wrapper.digital_domain_inst
+Removed 0 unused modules.
+Renaming module wrapper to wrapper.
+
+6. Executing PROC pass (convert processes to netlists).
+
+6.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+6.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+6.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+6.4. Executing PROC_INIT pass (extract init attributes).
+
+6.5. Executing PROC_ARST pass (detect async resets in processes).
+
+6.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+6.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+6.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+6.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+6.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+6.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+6.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wrapper.
+Optimizing module digital_domain$wrapper.digital_domain_inst.
+
+7. Executing FLATTEN pass (flatten design).
+Deleting now unused module digital_domain$wrapper.digital_domain_inst.
+<suppressed ~1 debug messages>
+
+8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wrapper..
+Removed 38 unused cells and 1963 unused wires.
+<suppressed ~454 debug messages>

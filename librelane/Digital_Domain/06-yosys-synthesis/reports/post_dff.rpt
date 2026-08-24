@@ -1,29 +1,28 @@
-145. Printing statistics.
+144. Printing statistics.
 
 === wrapper ===
 
         +----------Local Count, excluding submodules.
         |        +-Local Area, excluding submodules.
         |        | 
-     6960        - wires
-     7494        - wire bits
-      130        - public wires
-      616        - public wire bits
-       15        - ports
-       15        - port bits
-     7397 4.11E+04 cells
-     2337        -   $_ANDNOT_
-      217        -   $_AND_
-     1043        -   $_MUX_
-      111        -   $_NAND_
-      350        -   $_NOR_
-      324        -   $_NOT_
-      407        -   $_ORNOT_
-     1012        -   $_OR_
-      214        -   $_XNOR_
-      831        -   $_XOR_
-        1        -   analog_block
-      542 4.05E+04   gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
+     7344        - wires
+     7942        - wire bits
+      134        - public wires
+      636        - public wire bits
+       18        - ports
+       18        - port bits
+     7806 4.24E+04 cells
+     2395        -   $_ANDNOT_
+      228        -   $_AND_
+     1131        -   $_MUX_
+      133        -   $_NAND_
+      389        -   $_NOR_
+      348        -   $_NOT_
+      437        -   $_ORNOT_
+     1056        -   $_OR_
+      232        -   $_XNOR_
+      889        -   $_XOR_
+      560 4.18E+04   gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
         8  632.218   gf180mcu_fd_sc_mcu7t5v0__dffsnq_1
 
    Area for cell type $_ANDNOT_ is unknown!
@@ -36,8 +35,7 @@
    Area for cell type $_OR_ is unknown!
    Area for cell type $_XNOR_ is unknown!
    Area for cell type $_XOR_ is unknown!
-   Area for cell type \analog_block is unknown!
 
-   Chip area for module '\wrapper': 41085.363200
-     of which used for sequential elements: 41085.363200 (100.00%)
+   Chip area for module '\wrapper': 42428.825600
+     of which used for sequential elements: 42428.825600 (100.00%)
 

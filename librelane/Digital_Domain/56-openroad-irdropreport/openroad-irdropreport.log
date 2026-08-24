@@ -1,6 +1,6 @@
 Reading timing models for corner nom_tt_025C_3v30…
 Reading timing library for the 'nom_tt_025C_3v30' corner at '/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib'…
-Reading OpenROAD database at '/workspace/librelane/runs/RUN_2026-08-17_01-19-22/53-odb-cellfrequencytables/wrapper.odb'…
+Reading OpenROAD database at '/workspace/librelane/runs/RUN_2026-08-24_23-47-44/53-odb-cellfrequencytables/wrapper.odb'…
 Reading design constraints file at '/usr/local/lib/python3.12/dist-packages/librelane/scripts/base.sdc'…
 [INFO] Using clock clk…
 [INFO] Setting output delay to: 40
@@ -11,30 +11,30 @@ Reading design constraints file at '/usr/local/lib/python3.12/dist-packages/libr
 [INFO] Setting timing derate to: 5%
 [INFO] Using voltage extracted from lib (3.3V) for power nets and 0V for ground nets…
 %OL_CREATE_REPORT irdrop.rpt
-+ analyze_power_grid -net VDD -voltage_file /workspace/librelane/runs/RUN_2026-08-17_01-19-22/56-openroad-irdropreport/net-VDD.csv
++ analyze_power_grid -net VDD -voltage_file /workspace/librelane/runs/RUN_2026-08-24_23-47-44/56-openroad-irdropreport/net-VDD.csv
 [INFO PSM-0040] All shapes on net VDD are connected.
 ########## IR report #################
 Net              : VDD
 Corner           : nom_tt_025C_3v30
-Total power      : 1.42e-03 W
+Total power      : 1.36e-03 W
 Supply voltage   : 3.30e+00 V
 Worstcase voltage: 3.30e+00 V
 Average voltage  : 3.30e+00 V
-Average IR drop  : 6.66e-06 V
-Worstcase IR drop: 8.27e-05 V
+Average IR drop  : 5.72e-06 V
+Worstcase IR drop: 6.15e-05 V
 Percentage drop  : 0.00 %
 ######################################
-+ analyze_power_grid -net VSS -voltage_file /workspace/librelane/runs/RUN_2026-08-17_01-19-22/56-openroad-irdropreport/net-VSS.csv
++ analyze_power_grid -net VSS -voltage_file /workspace/librelane/runs/RUN_2026-08-24_23-47-44/56-openroad-irdropreport/net-VSS.csv
 [INFO PSM-0040] All shapes on net VSS are connected.
 ########## IR report #################
 Net              : VSS
 Corner           : nom_tt_025C_3v30
-Total power      : 1.42e-03 W
+Total power      : 1.36e-03 W
 Supply voltage   : 0.00e+00 V
-Worstcase voltage: 7.53e-05 V
-Average voltage  : 6.44e-06 V
-Average IR drop  : 6.44e-06 V
-Worstcase IR drop: 7.53e-05 V
+Worstcase voltage: 5.69e-05 V
+Average voltage  : 5.57e-06 V
+Average IR drop  : 5.57e-06 V
+Worstcase IR drop: 5.69e-05 V
 Percentage drop  : 0.00 %
 ######################################
 %OL_END_REPORT

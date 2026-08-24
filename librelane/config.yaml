@@ -113,45 +113,11 @@ CORE_AREA: [0, 10.0, 1107.5, 1117.5]
 "IO_PIN_ORDER_CFG": "dir::pin_order.cfg"
 "ERRORS_ON_UNMATCHED_IO": "both"
 
-IGNORE_DISCONNECTED_MODULES:
-  - "analog_block"
-
 # Area reserve for Analog
 PDN_HORIZONTAL_HALO: 10
 PDN_VERTICAL_HALO:   10
 
 FP_MACRO_HORIZONTAL_HALO: 10
 FP_MACRO_VERTICAL_HALO: 10
-
-# Area reserve for Analog
-FP_OBSTRUCTIONS:
-  - [507.64, 867.5, 1117.5, 1117.5]
-
-ROUTING_OBSTRUCTIONS:
-  - ["Metal1", 507.64, 867.5, 1117.5, 1107.5]
-  - ["Metal2", 507.64, 867.5, 1117.5, 1107.5]
-  - ["Metal3", 507.64, 867.5, 1117.5, 1107.5]
-  - ["Metal4", 507.64, 867.5, 1117.5, 1107.5]
-
-# Manual Placement for Analog
-MACROS:
-  analog_block:
-    gds:
-      - dir::analog_block.gds
-    lef:
-      - dir::analog_block.lef
-    vh:
-      - dir::../src/analog_macro.sv
-    instances:
-      "analog_block_inst":
-        location: [572.57, 867.5]
-        orientation: FS 
-
-# Ignore Macro
-LVS_IGNORE_CELLS:
-  - "analog_block"
-
-PDN_MACRO_CONNECTIONS:
-- "analog_block_inst VDD VSS VDD VSS"
 
 PDN_CFG: dir::pdn_cfg.tcl

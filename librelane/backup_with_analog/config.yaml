@@ -1,0 +1,157 @@
+meta:
+  version: 3
+  flow: Classic
+
+DESIGN_NAME: wrapper
+
+VERILOG_FILES:
+  - dir::../src/wrapper.sv
+
+CLOCK_PORT: clk
+CLOCK_NET: clk
+CLOCK_PERIOD: 200   # 5 MHz
+
+# Routing / ESD
+DIODE_ON_PORTS: in
+
+# Let the tool size the core
+FP_SIZING: absolute
+FP_CORE_UTIL: 10
+PL_TARGET_DENSITY_PCT: 55
+
+DESIGN_REPAIR_MAX_SLEW_PCT: 10
+DESIGN_REPAIR_MAX_CAP_PCT: 10
+
+# Synthesis strategy
+SYNTH_STRATEGY: "DELAY 2"
+SYNTH_HIERARCHY_MODE: keep
+USE_SLANG: true
+ERROR_ON_XOR_ERROR: false
+
+# Due to OpenROAD bug
+# https://github.com/The-OpenROAD-Project/OpenROAD/issues/8229
+PL_TIME_DRIVEN: False
+PL_ROUTABILITY_DRIVEN: False
+
+# Prevent false positive DRC errors in I/O cells
+MAGIC_GDS_FLATGLOB:
+# For contacts
+- "*_CDNS_*"
+# Foundry provided SRAMs
+- "*$$*"
+- "M1_N*"
+- "M1_P*"
+- "M2_M1*"
+- "M3_M2*"
+- "nmos_5p0*"
+- "nmos_1p2*"
+- "pmos_5p0*"
+- "pmos_1p2*"
+- "via1_*"
+- "ypass_gate*"
+- "G_ring_*"
+# These additional cells must be flattened to get rid of 3.3V devices
+# (DUALGATE drawn into high-level cells)
+- "dcap_103*"
+- "din_*"
+- "mux821_*"
+- "rdummy_*"
+- "pmoscap_*"
+- "xdec_*"
+- "ypredec*"
+- "xpredec*"
+- "prexdec_*"
+- "xdec8_*"
+- "xdec16_*"
+- "xdec32_*"
+- "sa_*"
+- "analog_block"
+
+KLAYOUT_XOR_IGNORE_LAYERS:
+  - "0/0"
+
+# 3.3V Standard Cell
+DEFAULT_CORNER: nom_tt_025C_3v30
+STA_CORNERS:
+  - nom_tt_025C_3v30
+  - min_ff_n40C_3v60
+  - max_ss_125C_3v00
+
+LIB:
+  "*_tt_025C_3v30":
+    - /foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib
+  "*_ss_125C_3v00":
+    - /foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__ss_125C_3v00.lib
+  "*_ff_n40C_3v60":
+    - /foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__ff_n40C_3v60.lib
+
+# Route congestion
+GRT_ALLOW_CONGESTION: false
+RT_MAX_LAYER: Metal4
+
+# Placement
+MAX_FANOUT_CONSTRAINT: 10
+GPL_CELL_PADDING: 2
+DPL_CELL_PADDING: 2
+
+# Fix antenna violations after DRT
+DRT_ANTENNA_REPAIR_ITERS: 10
+DRT_ANTENNA_REPAIR_MARGIN: 10 # %
+PL_MAX_DISPLACEMENT_X: 800
+PL_MAX_DISPLACEMENT_Y: 500
+
+# Optional: keep power nets (good practice)
+VDD_NETS:
+  - VDD
+GND_NETS:
+  - VSS
+
+DIE_AREA: [0, 0.0, 1117.5, 1117.5]
+CORE_AREA: [0, 10.0, 1107.5, 1117.5]
+
+# Pin allocation
+"IO_PIN_ORDER_CFG": "dir::pin_order.cfg"
+"ERRORS_ON_UNMATCHED_IO": "both"
+
+IGNORE_DISCONNECTED_MODULES:
+  - "analog_block"
+
+# Area reserve for Analog
+PDN_HORIZONTAL_HALO: 10
+PDN_VERTICAL_HALO:   10
+
+FP_MACRO_HORIZONTAL_HALO: 10
+FP_MACRO_VERTICAL_HALO: 10
+
+# Area reserve for Analog
+FP_OBSTRUCTIONS:
+  - [507.64, 867.5, 1117.5, 1117.5]
+
+ROUTING_OBSTRUCTIONS:
+  - ["Metal1", 507.64, 867.5, 1117.5, 1107.5]
+  - ["Metal2", 507.64, 867.5, 1117.5, 1107.5]
+  - ["Metal3", 507.64, 867.5, 1117.5, 1107.5]
+  - ["Metal4", 507.64, 867.5, 1117.5, 1107.5]
+
+# Manual Placement for Analog
+MACROS:
+  analog_block:
+    gds:
+      - dir::analog_block.gds
+    lef:
+      - dir::analog_block.lef
+    vh:
+      - dir::../src/analog_macro.sv
+    instances:
+      "analog_block_inst":
+        location: [572.57, 867.5]
+        orientation: FS 
+
+# Ignore Macro
+LVS_IGNORE_CELLS:
+  - "analog_block"
+
+PDN_MACRO_CONNECTIONS:
+- "analog_block_inst VDD VSS VDD VSS"
+
+PDN_CFG: dir::pdn_cfg.tcl
