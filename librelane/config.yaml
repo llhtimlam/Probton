@@ -106,8 +106,8 @@ VDD_NETS:
 GND_NETS:
   - VSS
 
-DIE_AREA: [0, 0.0, 1117.5, 1117.5]
-CORE_AREA: [0, 10.0, 1107.5, 1117.5]
+DIE_AREA: [0, 0.0, 1110, 1110]
+CORE_AREA: [0, 10.0, 1100, 1110]
 
 # Pin allocation
 "IO_PIN_ORDER_CFG": "dir::pin_order.cfg"

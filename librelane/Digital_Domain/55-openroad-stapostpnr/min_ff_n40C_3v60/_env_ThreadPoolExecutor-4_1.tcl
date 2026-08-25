@@ -47,7 +47,7 @@ set ::env(CLOCK_PORT) clk
 set ::env(CLOCK_NET) clk
 set ::env(VDD_NETS) VDD
 set ::env(GND_NETS) VSS
-set ::env(DIE_AREA) "0 0.0 1117.5 1117.5"
+set ::env(DIE_AREA) "0 0.0 1110 1110"
 set ::env(FALLBACK_SDC) /usr/local/lib/python3.12/dist-packages/librelane/scripts/base.sdc
 set ::env(PAD_LIBS) ""
 set ::env(PAD_LEFS) "/workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_ef_io__bi_t.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__asig_5p0.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__bi_24t.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__bi_t.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__brk2.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__brk5.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__cor.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__dvdd.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__dvss.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__fill1.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__fill10.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__fill5.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__fillnc.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__in_c.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__in_s.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_ws_io__dvdd.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_ws_io__dvss.lef"
@@ -74,8 +74,8 @@ set ::env(PDN_CONNECT_MACROS_TO_GRID) 1
 set ::env(PDN_ENABLE_GLOBAL_CONNECTIONS) 1
 set ::env(DEDUPLICATE_CORNERS) 0
 set ::env(STA_MACRO_PRIORITIZE_NL) 1
-set ::env(CURRENT_NL) /workspace/librelane/runs/RUN_2026-08-24_23-47-44/52-openroad-fillinsertion/wrapper.nl.v
-set ::env(CURRENT_SPEF) "\"nom_*\" /workspace/librelane/runs/RUN_2026-08-24_23-47-44/54-openroad-rcx/nom/wrapper.nom.spef \"min_*\" /workspace/librelane/runs/RUN_2026-08-24_23-47-44/54-openroad-rcx/min/wrapper.min.spef \"max_*\" /workspace/librelane/runs/RUN_2026-08-24_23-47-44/54-openroad-rcx/max/wrapper.max.spef"
-set ::env(CURRENT_ODB) /workspace/librelane/runs/RUN_2026-08-24_23-47-44/53-odb-cellfrequencytables/wrapper.odb
-set ::env(SAVE_SDC) /workspace/librelane/runs/RUN_2026-08-24_23-47-44/55-openroad-stapostpnr/wrapper.sdc
+set ::env(CURRENT_NL) /workspace/librelane/runs/RUN_2026-08-25_04-55-34/52-openroad-fillinsertion/wrapper.nl.v
+set ::env(CURRENT_SPEF) "\"nom_*\" /workspace/librelane/runs/RUN_2026-08-25_04-55-34/54-openroad-rcx/nom/wrapper.nom.spef \"min_*\" /workspace/librelane/runs/RUN_2026-08-25_04-55-34/54-openroad-rcx/min/wrapper.min.spef \"max_*\" /workspace/librelane/runs/RUN_2026-08-25_04-55-34/54-openroad-rcx/max/wrapper.max.spef"
+set ::env(CURRENT_ODB) /workspace/librelane/runs/RUN_2026-08-25_04-55-34/53-odb-cellfrequencytables/wrapper.odb
+set ::env(SAVE_SDC) /workspace/librelane/runs/RUN_2026-08-25_04-55-34/55-openroad-stapostpnr/wrapper.sdc
 set ::env(OPENLANE_SDC_IDEAL_CLOCKS) 0

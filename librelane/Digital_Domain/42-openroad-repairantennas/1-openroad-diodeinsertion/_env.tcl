@@ -47,7 +47,7 @@ set ::env(CLOCK_PORT) clk
 set ::env(CLOCK_NET) clk
 set ::env(VDD_NETS) VDD
 set ::env(GND_NETS) VSS
-set ::env(DIE_AREA) "0 0.0 1117.5 1117.5"
+set ::env(DIE_AREA) "0 0.0 1110 1110"
 set ::env(FALLBACK_SDC) /usr/local/lib/python3.12/dist-packages/librelane/scripts/base.sdc
 set ::env(PAD_LIBS) ""
 set ::env(PAD_LEFS) "/workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_ef_io__bi_t.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__asig_5p0.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__bi_24t.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__bi_t.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__brk2.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__brk5.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__cor.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__dvdd.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__dvss.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__fill1.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__fill10.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__fill5.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__fillnc.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__in_c.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__in_s.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_ws_io__dvdd.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_ws_io__dvss.lef"
@@ -86,6 +86,6 @@ set ::env(PL_OPTIMIZE_MIRRORING) 1
 set ::env(PL_MAX_DISPLACEMENT_X) 800
 set ::env(PL_MAX_DISPLACEMENT_Y) 500
 set ::env(DPL_CELL_PADDING) 2
-set ::env(CURRENT_ODB) /workspace/librelane/runs/RUN_2026-08-24_23-47-44/41-odb-diodesonports/3-openroad-globalrouting/wrapper.odb
-set ::env(SAVE_ODB) /workspace/librelane/runs/RUN_2026-08-24_23-47-44/42-openroad-repairantennas/1-openroad-diodeinsertion/wrapper.odb
-set ::env(SAVE_DEF) /workspace/librelane/runs/RUN_2026-08-24_23-47-44/42-openroad-repairantennas/1-openroad-diodeinsertion/wrapper.def
+set ::env(CURRENT_ODB) /workspace/librelane/runs/RUN_2026-08-25_04-55-34/41-odb-diodesonports/3-openroad-globalrouting/wrapper.odb
+set ::env(SAVE_ODB) /workspace/librelane/runs/RUN_2026-08-25_04-55-34/42-openroad-repairantennas/1-openroad-diodeinsertion/wrapper.odb
+set ::env(SAVE_DEF) /workspace/librelane/runs/RUN_2026-08-25_04-55-34/42-openroad-repairantennas/1-openroad-diodeinsertion/wrapper.def

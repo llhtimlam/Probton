@@ -1,26 +1,26 @@
-+ analyze_power_grid -net VDD -voltage_file /workspace/librelane/runs/RUN_2026-08-24_23-47-44/56-openroad-irdropreport/net-VDD.csv
++ analyze_power_grid -net VDD -voltage_file /workspace/librelane/runs/RUN_2026-08-25_04-55-34/56-openroad-irdropreport/net-VDD.csv
 [INFO PSM-0040] All shapes on net VDD are connected.
 ########## IR report #################
 Net              : VDD
 Corner           : nom_tt_025C_3v30
-Total power      : 1.36e-03 W
+Total power      : 1.37e-03 W
 Supply voltage   : 3.30e+00 V
 Worstcase voltage: 3.30e+00 V
 Average voltage  : 3.30e+00 V
-Average IR drop  : 5.72e-06 V
-Worstcase IR drop: 6.15e-05 V
+Average IR drop  : 5.80e-06 V
+Worstcase IR drop: 5.20e-05 V
 Percentage drop  : 0.00 %
 ######################################
-+ analyze_power_grid -net VSS -voltage_file /workspace/librelane/runs/RUN_2026-08-24_23-47-44/56-openroad-irdropreport/net-VSS.csv
++ analyze_power_grid -net VSS -voltage_file /workspace/librelane/runs/RUN_2026-08-25_04-55-34/56-openroad-irdropreport/net-VSS.csv
 [INFO PSM-0040] All shapes on net VSS are connected.
 ########## IR report #################
 Net              : VSS
 Corner           : nom_tt_025C_3v30
-Total power      : 1.36e-03 W
+Total power      : 1.37e-03 W
 Supply voltage   : 0.00e+00 V
-Worstcase voltage: 5.69e-05 V
-Average voltage  : 5.57e-06 V
-Average IR drop  : 5.57e-06 V
-Worstcase IR drop: 5.69e-05 V
+Worstcase voltage: 5.52e-05 V
+Average voltage  : 5.68e-06 V
+Average IR drop  : 5.68e-06 V
+Worstcase IR drop: 5.52e-05 V
 Percentage drop  : 0.00 %
 ######################################

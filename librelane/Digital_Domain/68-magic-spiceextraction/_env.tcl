@@ -48,7 +48,7 @@ set ::env(CLOCK_PORT) clk
 set ::env(CLOCK_NET) clk
 set ::env(VDD_NETS) VDD
 set ::env(GND_NETS) VSS
-set ::env(DIE_AREA) "0 0.0 1117.5 1117.5"
+set ::env(DIE_AREA) "0 0.0 1110 1110"
 set ::env(FALLBACK_SDC) /usr/local/lib/python3.12/dist-packages/librelane/scripts/base.sdc
 set ::env(PAD_LIBS) ""
 set ::env(PAD_LEFS) "/workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_ef_io__bi_t.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__asig_5p0.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__bi_24t.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__bi_t.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__brk2.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__brk5.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__cor.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__dvdd.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__dvss.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__fill1.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__fill10.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__fill5.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__fillnc.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__in_c.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__in_s.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_ws_io__dvdd.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_ws_io__dvss.lef"
@@ -82,7 +82,7 @@ set ::env(MAGIC_EXT_UNIQUE) all
 set ::env(MAGIC_EXT_SHORT_RESISTOR) 0
 set ::env(MAGIC_EXT_ABSTRACT) 0
 set ::env(MAGIC_FEEDBACK_CONVERSION_THRESHOLD) 10000
-set ::env(CURRENT_GDS) /workspace/librelane/runs/RUN_2026-08-24_23-47-44/57-magic-streamout/wrapper.gds
-set ::env(CURRENT_DEF) /workspace/librelane/runs/RUN_2026-08-24_23-47-44/53-odb-cellfrequencytables/wrapper.def
-set ::env(SAVE_SPICE) /workspace/librelane/runs/RUN_2026-08-24_23-47-44/68-magic-spiceextraction/wrapper.spice
+set ::env(CURRENT_GDS) /workspace/librelane/runs/RUN_2026-08-25_04-55-34/57-magic-streamout/wrapper.gds
+set ::env(CURRENT_DEF) /workspace/librelane/runs/RUN_2026-08-25_04-55-34/53-odb-cellfrequencytables/wrapper.def
+set ::env(SAVE_SPICE) /workspace/librelane/runs/RUN_2026-08-25_04-55-34/68-magic-spiceextraction/wrapper.spice
 set ::env(MACRO_GDS_FILES) ""

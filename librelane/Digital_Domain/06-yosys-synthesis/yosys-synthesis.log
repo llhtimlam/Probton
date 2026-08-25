@@ -8,7 +8,7 @@
 
 1. Executing Liberty frontend: /foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib
 Imported 229 cell types from liberty file.
-[INFO] Using SDC file '/workspace/librelane/runs/RUN_2026-08-24_23-47-44/06-yosys-synthesis/synthesis.abc.sdc' for ABC…use_slang
+[INFO] Using SDC file '/workspace/librelane/runs/RUN_2026-08-25_04-55-34/06-yosys-synthesis/synthesis.abc.sdc' for ABC…use_slang
 
 2. Executing SLANG frontend.
 Top level design units:
@@ -4203,7 +4203,7 @@ Removed 0 unused cells and 160 unused wires.
 <suppressed ~160 debug messages>
 {
    "creator": "Yosys 0.67 (git sha1 2d1509d1b, Release, GNU /usr/bin/c++ 13.3.0)",
-   "invocation": "stat -json -liberty /workspace/librelane/runs/RUN_2026-08-24_23-47-44/tmp/dab944968da44f9c8d48bf46587c4f84.lib ",
+   "invocation": "stat -json -liberty /workspace/librelane/runs/RUN_2026-08-25_04-55-34/tmp/eb51f9aa6ad5477a939081b66c5e689f.lib ",
    "modules": {
       "\\wrapper": {
          "num_wires":         6862,
@@ -4348,7 +4348,7 @@ Mapping DFF cells in module `\wrapper':
   mapped 8 $_DFF_PN1_ cells to \gf180mcu_fd_sc_mcu7t5v0__dffsnq_1 cells.
 {
    "creator": "Yosys 0.67 (git sha1 2d1509d1b, Release, GNU /usr/bin/c++ 13.3.0)",
-   "invocation": "stat -json -liberty /workspace/librelane/runs/RUN_2026-08-24_23-47-44/tmp/dab944968da44f9c8d48bf46587c4f84.lib ",
+   "invocation": "stat -json -liberty /workspace/librelane/runs/RUN_2026-08-25_04-55-34/tmp/eb51f9aa6ad5477a939081b66c5e689f.lib ",
    "modules": {
       "\\wrapper": {
          "num_wires":         7344,
@@ -4452,25 +4452,25 @@ Mapping DFF cells in module `\wrapper':
    Chip area for module '\wrapper': 42428.825600
      of which used for sequential elements: 42428.825600 (100.00%)
 
-[INFO] Using generated ABC script '/workspace/librelane/runs/RUN_2026-08-24_23-47-44/06-yosys-synthesis/DELAY_2.abc'…
+[INFO] Using generated ABC script '/workspace/librelane/runs/RUN_2026-08-25_04-55-34/06-yosys-synthesis/DELAY_2.abc'…
 
 145. Executing ABC pass (technology mapping using ABC).
 
-145.1. Extracting gate netlist of module `\wrapper' to `/tmp/yosys-abc-iVW9aM/input.blif'..
+145.1. Extracting gate netlist of module `\wrapper' to `/tmp/yosys-abc-JcNfkj/input.blif'..
 
 145.1.1. Executed ABC.
 Extracted 7238 gates and 7798 wires to a netlist network with 560 inputs and 560 outputs.
-Running ABC script: /tmp/yosys-abc-iVW9aM/abc.script
+Running ABC script: /tmp/yosys-abc-JcNfkj/abc.script
 ABC: UC Berkeley, ABC 1.01 (compiled Jul 27 2026 18:12:25)
 ABC: abc 01> empty
-ABC: abc 01> source /tmp/yosys-abc-iVW9aM/abc.script
-ABC: + read_blif /tmp/yosys-abc-iVW9aM/input.blif 
-ABC: + read_scl /tmp/yosys-liberty-scl-cache/yosys_merged_a13bc219.scl 
+ABC: abc 01> source /tmp/yosys-abc-JcNfkj/abc.script
+ABC: + read_blif /tmp/yosys-abc-JcNfkj/input.blif 
+ABC: + read_scl /tmp/yosys-liberty-scl-cache/yosys_merged_c45c7ebf.scl 
 ABC: Warning: Detected 6 multi-output cells (for example, "gf180mcu_fd_sc_mcu7t5v0__addf_1").
-ABC: + read_constr -v /workspace/librelane/runs/RUN_2026-08-24_23-47-44/06-yosys-synthesis/synthesis.abc.sdc 
+ABC: + read_constr -v /workspace/librelane/runs/RUN_2026-08-25_04-55-34/06-yosys-synthesis/synthesis.abc.sdc 
 ABC: Setting driving cell to be "gf180mcu_fd_sc_mcu7t5v0__inv_1/ZN".
 ABC: Setting output load to be 72.910004.
-ABC: + source /workspace/librelane/runs/RUN_2026-08-24_23-47-44/06-yosys-synthesis/DELAY_2.abc 
+ABC: + source /workspace/librelane/runs/RUN_2026-08-25_04-55-34/06-yosys-synthesis/DELAY_2.abc 
 ABC: Error: The network is combinational.
 ABC: The cell areas are multiplied by the factor: <num_fanins> ^ (0.90).
 ABC: The cell delays are multiplied by the factor: <num_fanins> ^ (0.20).
@@ -4500,7 +4500,7 @@ ABC: Path 20 --    1949 : 3    2 gf180mcu_fd_sc_mcu7t5v0__aoi21_1  A =  17.56  D
 ABC: Path 21 --    1950 : 2    1 gf180mcu_fd_sc_mcu7t5v0__xor2_1   A =  26.34  Df =17530.8-1219.6 ps  S =3554.1 ps  Cin =  7.3 ff  Cout =  72.9 ff  Cmax = 181.9 ff  G =  992  
 ABC: Start-point = pi5 (\digital_domain_inst.wave_controller_y_inst.phase_acc [14]).  End-point = po12 ($auto$alumacc.cc:512:replace_alu$5002.Y [6]).
 ABC: netlist                       : i/o =  560/  560  lat =    0  nd =  5866  edge =  16531  area =43347.86  delay =10650.54  lev = 27
-ABC: + write_blif /tmp/yosys-abc-iVW9aM/output.blif 
+ABC: + write_blif /tmp/yosys-abc-JcNfkj/output.blif 
 ABC:                                                                                
 ABC: YOSYS_ABC_DONE 
 
@@ -4559,7 +4559,7 @@ Checking module wrapper...
 Found and reported 0 problems.
 {
    "creator": "Yosys 0.67 (git sha1 2d1509d1b, Release, GNU /usr/bin/c++ 13.3.0)",
-   "invocation": "stat -json -liberty /workspace/librelane/runs/RUN_2026-08-24_23-47-44/tmp/dab944968da44f9c8d48bf46587c4f84.lib ",
+   "invocation": "stat -json -liberty /workspace/librelane/runs/RUN_2026-08-25_04-55-34/tmp/eb51f9aa6ad5477a939081b66c5e689f.lib ",
    "modules": {
       "\\wrapper": {
          "num_wires":         6434,

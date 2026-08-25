@@ -1,4 +1,4 @@
-set ::env(TRACKS_INFO_FILE_PROCESSED) /workspace/librelane/runs/RUN_2026-08-24_23-47-44/13-openroad-floorplan/config.tracks
+set ::env(TRACKS_INFO_FILE_PROCESSED) /workspace/librelane/runs/RUN_2026-08-25_04-55-34/13-openroad-floorplan/config.tracks
 set ::env(STEP_ID) OpenROAD.Floorplan
 set ::env(TECH_LEF) /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/techlef/gf180mcu_fd_sc_mcu7t5v0__nom.tlef
 set ::env(MACRO_LEFS) ""
@@ -48,7 +48,7 @@ set ::env(CLOCK_PORT) clk
 set ::env(CLOCK_NET) clk
 set ::env(VDD_NETS) VDD
 set ::env(GND_NETS) VSS
-set ::env(DIE_AREA) "0 0.0 1117.5 1117.5"
+set ::env(DIE_AREA) "0 0.0 1110 1110"
 set ::env(FALLBACK_SDC) /usr/local/lib/python3.12/dist-packages/librelane/scripts/base.sdc
 set ::env(PAD_LIBS) ""
 set ::env(PAD_LEFS) "/workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_ef_io__bi_t.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__asig_5p0.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__bi_24t.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__bi_t.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__brk2.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__brk5.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__cor.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__dvdd.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__dvss.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__fill1.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__fill10.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__fill5.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__fillnc.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__in_c.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_fd_io__in_s.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_ws_io__dvdd.lef /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_ws_io__dvss.lef"
@@ -78,14 +78,14 @@ set ::env(FP_TRACKS_INFO) /workspace/gf180mcu/gf180mcuD/libs.tech/librelane/gf18
 set ::env(FP_SIZING) absolute
 set ::env(FP_ASPECT_RATIO) 1
 set ::env(FP_CORE_UTIL) 10
-set ::env(CORE_AREA) "0 10.0 1107.5 1117.5"
+set ::env(CORE_AREA) "0 10.0 1100 1110"
 set ::env(BOTTOM_MARGIN_MULT) 4
 set ::env(TOP_MARGIN_MULT) 4
 set ::env(LEFT_MARGIN_MULT) 12
 set ::env(RIGHT_MARGIN_MULT) 12
-set ::env(CURRENT_NL) /workspace/librelane/runs/RUN_2026-08-24_23-47-44/06-yosys-synthesis/wrapper.nl.v
-set ::env(SAVE_ODB) /workspace/librelane/runs/RUN_2026-08-24_23-47-44/13-openroad-floorplan/wrapper.odb
-set ::env(SAVE_DEF) /workspace/librelane/runs/RUN_2026-08-24_23-47-44/13-openroad-floorplan/wrapper.def
-set ::env(SAVE_SDC) /workspace/librelane/runs/RUN_2026-08-24_23-47-44/13-openroad-floorplan/wrapper.sdc
-set ::env(SAVE_NL) /workspace/librelane/runs/RUN_2026-08-24_23-47-44/13-openroad-floorplan/wrapper.nl.v
-set ::env(SAVE_PNL) /workspace/librelane/runs/RUN_2026-08-24_23-47-44/13-openroad-floorplan/wrapper.pnl.v
+set ::env(CURRENT_NL) /workspace/librelane/runs/RUN_2026-08-25_04-55-34/06-yosys-synthesis/wrapper.nl.v
+set ::env(SAVE_ODB) /workspace/librelane/runs/RUN_2026-08-25_04-55-34/13-openroad-floorplan/wrapper.odb
+set ::env(SAVE_DEF) /workspace/librelane/runs/RUN_2026-08-25_04-55-34/13-openroad-floorplan/wrapper.def
+set ::env(SAVE_SDC) /workspace/librelane/runs/RUN_2026-08-25_04-55-34/13-openroad-floorplan/wrapper.sdc
+set ::env(SAVE_NL) /workspace/librelane/runs/RUN_2026-08-25_04-55-34/13-openroad-floorplan/wrapper.nl.v
+set ::env(SAVE_PNL) /workspace/librelane/runs/RUN_2026-08-25_04-55-34/13-openroad-floorplan/wrapper.pnl.v
