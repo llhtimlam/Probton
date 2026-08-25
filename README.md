@@ -30,7 +30,7 @@ This offers a low-cost, integrable alternative to proprietary alignment hardware
 
 ## Chip Architect
 
-Size: 1117.5um x 1117.5um - Block type B
+Size: 1110um x 1110um - Block type A
 
 Required pins: 19
 
