@@ -24,7 +24,7 @@ set ::env(CELL_CDLS) /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t
 set ::env(SYNTH_EXCLUDED_CELL_FILE) /workspace/gf180mcu/gf180mcuD/libs.tech/librelane/gf180mcu_fd_sc_mcu7t5v0/synth_exclude.cells
 set ::env(PNR_EXCLUDED_CELL_FILE) /workspace/gf180mcu/gf180mcuD/libs.tech/librelane/gf180mcu_fd_sc_mcu7t5v0/pnr_exclude.cells
 set ::env(OUTPUT_CAP_LOAD) 72.91
-set ::env(MAX_FANOUT_CONSTRAINT) 10
+set ::env(MAX_FANOUT_CONSTRAINT) 8
 set ::env(MAX_TRANSITION_CONSTRAINT) 3
 set ::env(MAX_CAPACITANCE_CONSTRAINT) 0.2
 set ::env(CLOCK_UNCERTAINTY_CONSTRAINT) 0.25
@@ -78,6 +78,6 @@ set ::env(CELL_MAGLEFS) "/workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_sc_m
 set ::env(MAGIC_CAPTURE_ERRORS) 1
 set ::env(MAGIC_DRC_USE_GDS) 1
 set ::env(MAGIC_GDS_FLATGLOB) "\"*_CDNS_*\" \"*\\\$\\\$*\" \"M1_N*\" \"M1_P*\" \"M2_M1*\" \"M3_M2*\" \"nmos_5p0*\" \"nmos_1p2*\" \"pmos_5p0*\" \"pmos_1p2*\" \"via1_*\" \"ypass_gate*\" \"G_ring_*\" \"dcap_103*\" \"din_*\" \"mux821_*\" \"rdummy_*\" \"pmoscap_*\" \"xdec_*\" \"ypredec*\" \"xpredec*\" \"prexdec_*\" \"xdec8_*\" \"xdec16_*\" \"xdec32_*\" \"sa_*\" analog_block"
-set ::env(CURRENT_DEF) /workspace/librelane/runs/RUN_2026-08-25_04-55-34/53-odb-cellfrequencytables/wrapper.def
-set ::env(CURRENT_GDS) /workspace/librelane/runs/RUN_2026-08-25_04-55-34/57-magic-streamout/wrapper.gds
+set ::env(CURRENT_DEF) /workspace/librelane/runs/RUN_2026-08-25_20-00-22/53-odb-cellfrequencytables/wrapper.def
+set ::env(CURRENT_GDS) /workspace/librelane/runs/RUN_2026-08-25_20-00-22/57-magic-streamout/wrapper.gds
 set ::env(MACRO_GDS_FILES) ""

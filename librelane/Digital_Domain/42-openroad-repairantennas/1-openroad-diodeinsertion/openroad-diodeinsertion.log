@@ -1,6 +1,6 @@
 Reading timing models for corner nom_tt_025C_3v30…
 Reading timing library for the 'nom_tt_025C_3v30' corner at '/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib'…
-Reading OpenROAD database at '/workspace/librelane/runs/RUN_2026-08-25_04-55-34/41-odb-diodesonports/3-openroad-globalrouting/wrapper.odb'…
+Reading OpenROAD database at '/workspace/librelane/runs/RUN_2026-08-25_20-00-22/41-odb-diodesonports/3-openroad-globalrouting/wrapper.odb'…
 Reading design constraints file at '/usr/local/lib/python3.12/dist-packages/librelane/scripts/base.sdc'…
 [INFO] Using clock clk…
 [INFO] Setting output delay to: 40
@@ -10,12 +10,12 @@ Reading design constraints file at '/usr/local/lib/python3.12/dist-packages/libr
 [INFO] Setting clock transition to: 0.15
 [INFO] Setting timing derate to: 5%
 + repair_antennas gf180mcu_fd_sc_mcu7t5v0__antenna -iterations 3 -ratio_margin 10
-[INFO GRT-0012] Found 7 antenna violations.
-[INFO GRT-0302] Inserted 7 jumpers for 7 nets.
-[INFO GRT-0012] Found 1 antenna violations.
+[INFO GRT-0012] Found 5 antenna violations.
+[INFO GRT-0302] Inserted 4 jumpers for 4 nets.
+[INFO GRT-0012] Found 2 antenna violations.
 [INFO GRT-0015] Inserted 2 diodes.
-[INFO GRT-0012] Found 6 antenna violations.
-[INFO GRT-0302] Inserted 6 jumpers for 6 nets.
+[INFO GRT-0012] Found 5 antenna violations.
+[INFO GRT-0302] Inserted 7 jumpers for 5 nets.
 [INFO GRT-0012] Found 0 antenna violations.
 Setting global connections for newly added cells…
 [INFO] Setting global connections...
@@ -25,12 +25,12 @@ Cell type report:                       Count       Area
   Endcap cell                             560    2458.62
   Tap cell                               7898   34675.38
   Antenna cell                              9      39.51
-  Clock buffer                             96    5479.22
-  Timing Repair Buffer                   2264   48061.71
-  Inverter                                393    3766.96
-  Clock inverter                           15     285.38
-  Sequential cell                         566   43522.04
-  Multi-Input combinational cell         5468  124661.02
-  Total                                 17269  262949.84
-Writing OpenROAD database to '/workspace/librelane/runs/RUN_2026-08-25_04-55-34/42-openroad-repairantennas/1-openroad-diodeinsertion/wrapper.odb'…
-Writing layout to '/workspace/librelane/runs/RUN_2026-08-25_04-55-34/42-openroad-repairantennas/1-openroad-diodeinsertion/wrapper.def'…
+  Clock buffer                             97    5035.79
+  Timing Repair Buffer                   2687   60126.53
+  Inverter                                427    3973.31
+  Clock inverter                           20     311.72
+  Sequential cell                         566   43157.63
+  Multi-Input combinational cell         5670  128019.67
+  Total                                 17934  277798.17
+Writing OpenROAD database to '/workspace/librelane/runs/RUN_2026-08-25_20-00-22/42-openroad-repairantennas/1-openroad-diodeinsertion/wrapper.odb'…
+Writing layout to '/workspace/librelane/runs/RUN_2026-08-25_20-00-22/42-openroad-repairantennas/1-openroad-diodeinsertion/wrapper.def'…

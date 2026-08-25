@@ -24,7 +24,7 @@ set ::env(CELL_CDLS) /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t
 set ::env(SYNTH_EXCLUDED_CELL_FILE) /workspace/gf180mcu/gf180mcuD/libs.tech/librelane/gf180mcu_fd_sc_mcu7t5v0/synth_exclude.cells
 set ::env(PNR_EXCLUDED_CELL_FILE) /workspace/gf180mcu/gf180mcuD/libs.tech/librelane/gf180mcu_fd_sc_mcu7t5v0/pnr_exclude.cells
 set ::env(OUTPUT_CAP_LOAD) 72.91
-set ::env(MAX_FANOUT_CONSTRAINT) 10
+set ::env(MAX_FANOUT_CONSTRAINT) 8
 set ::env(MAX_TRANSITION_CONSTRAINT) 3
 set ::env(MAX_CAPACITANCE_CONSTRAINT) 0.2
 set ::env(CLOCK_UNCERTAINTY_CONSTRAINT) 0.25
@@ -79,9 +79,9 @@ set ::env(MAGIC_CAPTURE_ERRORS) 1
 set ::env(MAGIC_ZEROIZE_ORIGIN) 0
 set ::env(MAGIC_DISABLE_CIF_INFO) 1
 set ::env(MAGIC_MACRO_STD_CELL_SOURCE) macro
-set ::env(CURRENT_DEF) /workspace/librelane/runs/RUN_2026-08-25_04-55-34/53-odb-cellfrequencytables/wrapper.def
-set ::env(SAVE_GDS) /workspace/librelane/runs/RUN_2026-08-25_04-55-34/57-magic-streamout/wrapper.gds
-set ::env(SAVE_MAG_GDS) /workspace/librelane/runs/RUN_2026-08-25_04-55-34/57-magic-streamout/wrapper.magic.gds
-set ::env(SAVE_MAG) /workspace/librelane/runs/RUN_2026-08-25_04-55-34/57-magic-streamout/wrapper.mag
+set ::env(CURRENT_DEF) /workspace/librelane/runs/RUN_2026-08-25_20-00-22/53-odb-cellfrequencytables/wrapper.def
+set ::env(SAVE_GDS) /workspace/librelane/runs/RUN_2026-08-25_20-00-22/57-magic-streamout/wrapper.gds
+set ::env(SAVE_MAG_GDS) /workspace/librelane/runs/RUN_2026-08-25_20-00-22/57-magic-streamout/wrapper.magic.gds
+set ::env(SAVE_MAG) /workspace/librelane/runs/RUN_2026-08-25_20-00-22/57-magic-streamout/wrapper.mag
 set ::env(MACRO_GDS_FILES) ""
 set ::env(MAGTYPE) mag

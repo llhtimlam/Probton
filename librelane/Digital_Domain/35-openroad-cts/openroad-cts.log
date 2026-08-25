@@ -4,7 +4,7 @@ Reading timing models for corner min_ff_n40C_3v60…
 Reading timing library for the 'min_ff_n40C_3v60' corner at '/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__ff_n40C_3v60.lib'…
 Reading timing models for corner nom_tt_025C_3v30…
 Reading timing library for the 'nom_tt_025C_3v30' corner at '/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib'…
-Reading OpenROAD database at '/workspace/librelane/runs/RUN_2026-08-25_04-55-34/34-openroad-detailedplacement/wrapper.odb'…
+Reading OpenROAD database at '/workspace/librelane/runs/RUN_2026-08-25_20-00-22/34-openroad-detailedplacement/wrapper.odb'…
 Reading design constraints file at '/usr/local/lib/python3.12/dist-packages/librelane/scripts/base.sdc'…
 [INFO] Using clock clk…
 [INFO] Setting output delay to: 40
@@ -36,76 +36,81 @@ Reading design constraints file at '/usr/local/lib/python3.12/dist-packages/libr
 [INFO CTS-0090]  Sinks will be clustered based on buffer max cap.
 [INFO CTS-0030]  Number of static layers: 0.
 [INFO CTS-0020]  Wire segment unit: 39200  dbu (19 um).
-[INFO CTS-0206] Best clustering solution was found from clustering size of 10 and clustering diameter of 50.
-[INFO CTS-0019]  Total number of sinks after clustering: 61.
-[INFO CTS-0024]  Normalized sink region: [(1.57003, 18.94), (32.8865, 52.74)].
-[INFO CTS-0025]     Width:  31.3165.
-[INFO CTS-0026]     Height: 33.8000.
+[INFO CTS-0206] Best clustering solution was found from clustering size of 8 and clustering diameter of 50.
+[INFO CTS-0019]  Total number of sinks after clustering: 64.
+[INFO CTS-0024]  Normalized sink region: [(0.576888, 23.2333), (30.6901, 56.02)].
+[INFO CTS-0025]     Width:  30.1132.
+[INFO CTS-0026]     Height: 32.7867.
  Level 1
     Direction: Vertical
-    Sinks per sub-region: 31
-    Sub-region size: 31.3165 X 16.9000
+    Sinks per sub-region: 32
+    Sub-region size: 30.1132 X 16.3933
 [INFO CTS-0034]     Segment length (rounded): 8.
  Level 2
     Direction: Horizontal
     Sinks per sub-region: 16
-    Sub-region size: 15.6582 X 16.9000
+    Sub-region size: 15.0566 X 16.3933
 [INFO CTS-0034]     Segment length (rounded): 8.
  Level 3
     Direction: Vertical
     Sinks per sub-region: 8
-    Sub-region size: 15.6582 X 8.4500
+    Sub-region size: 15.0566 X 8.1967
 [INFO CTS-0034]     Segment length (rounded): 4.
-[INFO CTS-0032]  Stop criterion found. Max number of sinks is 10.
-[INFO CTS-0035]  Number of sinks covered: 61.
-[INFO CTS-0018]     Created 70 clock buffers.
+ Level 4
+    Direction: Horizontal
+    Sinks per sub-region: 4
+    Sub-region size: 7.5283 X 8.1967
+[INFO CTS-0034]     Segment length (rounded): 4.
+[INFO CTS-0032]  Stop criterion found. Max number of sinks is 8.
+[INFO CTS-0035]  Number of sinks covered: 64.
+[INFO CTS-0018]     Created 81 clock buffers.
 [INFO CTS-0012]     Minimum number of buffers in the clock path: 3.
 [INFO CTS-0013]     Maximum number of buffers in the clock path: 3.
-[INFO CTS-0015]     Created 70 clock nets.
-[INFO CTS-0016]     Fanout distribution for the current clock = 4:1, 5:2, 6:2, 7:8, 8:13, 9:11, 10:17, 11:9, 12:5, 13:1..
-[INFO CTS-0017]     Max level of the clock tree: 3.
+[INFO CTS-0015]     Created 81 clock nets.
+[INFO CTS-0016]     Fanout distribution for the current clock = 4:17, 5:3, 6:3, 7:8, 8:12, 9:12, 10:10, 11:11, 12:4..
+[INFO CTS-0017]     Max level of the clock tree: 4.
 [INFO CTS-0098] Clock net "clk"
-[INFO CTS-0099]  Sinks 607
-[INFO CTS-0100]  Leaf buffers 61
-[INFO CTS-0101]  Average sink wire length 826.65 um
-[INFO CTS-0102]  Path depth 2 - 3
-[INFO CTS-0207]  Dummy loads inserted 41
+[INFO CTS-0099]  Sinks 602
+[INFO CTS-0100]  Leaf buffers 64
+[INFO CTS-0101]  Average sink wire length 841.13 um
+[INFO CTS-0102]  Path depth 3 - 3
+[INFO CTS-0207]  Dummy loads inserted 36
 [INFO] Repairing long wires on clock nets…
 [INFO RSZ-0058] Using max wire length 334316um.
 Setting global connections for newly added cells…
 [INFO] Setting global connections...
-[INFO ODB-0403] 444 connections made, 0 conflicts skipped.
+[INFO ODB-0403] 468 connections made, 0 conflicts skipped.
 Updating metrics…
 Cell type report:                       Count       Area
   Endcap cell                             560    2458.62
   Tap cell                               7898   34675.38
-  Clock buffer                             96    5479.22
-  Timing Repair Buffer                   2264   48061.71
-  Inverter                                393    3766.96
-  Clock inverter                           15     285.38
-  Sequential cell                         566   43522.04
-  Multi-Input combinational cell         5468  124661.02
-  Total                                 17260  262910.32
-Writing OpenROAD database to '/workspace/librelane/runs/RUN_2026-08-25_04-55-34/35-openroad-cts/wrapper.odb'…
-Writing netlist to '/workspace/librelane/runs/RUN_2026-08-25_04-55-34/35-openroad-cts/wrapper.nl.v'…
-Writing powered netlist to '/workspace/librelane/runs/RUN_2026-08-25_04-55-34/35-openroad-cts/wrapper.pnl.v'…
-Writing layout to '/workspace/librelane/runs/RUN_2026-08-25_04-55-34/35-openroad-cts/wrapper.def'…
-Writing timing constraints to '/workspace/librelane/runs/RUN_2026-08-25_04-55-34/35-openroad-cts/wrapper.sdc'…
+  Clock buffer                             97    5035.79
+  Timing Repair Buffer                   2687   60126.53
+  Inverter                                427    3973.31
+  Clock inverter                           20     311.72
+  Sequential cell                         566   43157.63
+  Multi-Input combinational cell         5670  128019.67
+  Total                                 17925  277758.66
+Writing OpenROAD database to '/workspace/librelane/runs/RUN_2026-08-25_20-00-22/35-openroad-cts/wrapper.odb'…
+Writing netlist to '/workspace/librelane/runs/RUN_2026-08-25_20-00-22/35-openroad-cts/wrapper.nl.v'…
+Writing powered netlist to '/workspace/librelane/runs/RUN_2026-08-25_20-00-22/35-openroad-cts/wrapper.pnl.v'…
+Writing layout to '/workspace/librelane/runs/RUN_2026-08-25_20-00-22/35-openroad-cts/wrapper.def'…
+Writing timing constraints to '/workspace/librelane/runs/RUN_2026-08-25_20-00-22/35-openroad-cts/wrapper.sdc'…
 [INFO] Legalizing…
 + detailed_placement -max_displacement  800 500 
 Placement Analysis
 ---------------------------------
-total displacement       9942.0 u
-average displacement        0.6 u
-max displacement           42.0 u
-original HPWL          471271.5 u
-legalized HPWL         489035.5 u
-delta HPWL                    4 %
+total displacement      16772.1 u
+average displacement        0.9 u
+max displacement           62.7 u
+original HPWL          540492.1 u
+legalized HPWL         568186.1 u
+delta HPWL                    5 %
 
-[INFO DPL-0020] Mirrored 3678 instances
-[INFO DPL-0021] HPWL before          489035.5 u
-[INFO DPL-0022] HPWL after           479117.0 u
-[INFO DPL-0023] HPWL delta               -2.0 %
+[INFO DPL-0020] Mirrored 4006 instances
+[INFO DPL-0021] HPWL before          568186.1 u
+[INFO DPL-0022] HPWL after           557200.2 u
+[INFO DPL-0023] HPWL delta               -1.9 %
 Setting global connections for newly added cells…
 [INFO] Setting global connections...
 [INFO ODB-0403] 0 connections made, 0 conflicts skipped.
@@ -113,31 +118,31 @@ Updating metrics…
 Cell type report:                       Count       Area
   Endcap cell                             560    2458.62
   Tap cell                               7898   34675.38
-  Clock buffer                             96    5479.22
-  Timing Repair Buffer                   2264   48061.71
-  Inverter                                393    3766.96
-  Clock inverter                           15     285.38
-  Sequential cell                         566   43522.04
-  Multi-Input combinational cell         5468  124661.02
-  Total                                 17260  262910.32
-Writing OpenROAD database to '/workspace/librelane/runs/RUN_2026-08-25_04-55-34/35-openroad-cts/wrapper.odb'…
-Writing netlist to '/workspace/librelane/runs/RUN_2026-08-25_04-55-34/35-openroad-cts/wrapper.nl.v'…
-Writing powered netlist to '/workspace/librelane/runs/RUN_2026-08-25_04-55-34/35-openroad-cts/wrapper.pnl.v'…
-Writing layout to '/workspace/librelane/runs/RUN_2026-08-25_04-55-34/35-openroad-cts/wrapper.def'…
-Writing timing constraints to '/workspace/librelane/runs/RUN_2026-08-25_04-55-34/35-openroad-cts/wrapper.sdc'…
+  Clock buffer                             97    5035.79
+  Timing Repair Buffer                   2687   60126.53
+  Inverter                                427    3973.31
+  Clock inverter                           20     311.72
+  Sequential cell                         566   43157.63
+  Multi-Input combinational cell         5670  128019.67
+  Total                                 17925  277758.66
+Writing OpenROAD database to '/workspace/librelane/runs/RUN_2026-08-25_20-00-22/35-openroad-cts/wrapper.odb'…
+Writing netlist to '/workspace/librelane/runs/RUN_2026-08-25_20-00-22/35-openroad-cts/wrapper.nl.v'…
+Writing powered netlist to '/workspace/librelane/runs/RUN_2026-08-25_20-00-22/35-openroad-cts/wrapper.pnl.v'…
+Writing layout to '/workspace/librelane/runs/RUN_2026-08-25_20-00-22/35-openroad-cts/wrapper.def'…
+Writing timing constraints to '/workspace/librelane/runs/RUN_2026-08-25_20-00-22/35-openroad-cts/wrapper.sdc'…
 %OL_CREATE_REPORT cts.rpt
 Total number of Clock Roots: 1.
-Total number of Buffers Inserted: 70.
-Total number of Clock Subnets: 70.
+Total number of Buffers Inserted: 81.
+Total number of Clock Subnets: 81.
 Total number of Sinks: 566.
 Cells used:
-  gf180mcu_fd_sc_mcu7t5v0__clkbuf_8: 61
-  gf180mcu_fd_sc_mcu7t5v0__clkbuf_16: 9
+  gf180mcu_fd_sc_mcu7t5v0__clkbuf_8: 80
+  gf180mcu_fd_sc_mcu7t5v0__clkbuf_16: 1
 Dummys used:
-  gf180mcu_fd_sc_mcu7t5v0__clkbuf_2: 12
-  gf180mcu_fd_sc_mcu7t5v0__clkbuf_8: 14
-  gf180mcu_fd_sc_mcu7t5v0__clkinv_2: 6
-  gf180mcu_fd_sc_mcu7t5v0__clkinv_8: 1
-  gf180mcu_fd_sc_mcu7t5v0__inv_3: 2
-  gf180mcu_fd_sc_mcu7t5v0__inv_4: 6
+  gf180mcu_fd_sc_mcu7t5v0__clkbuf_2: 14
+  gf180mcu_fd_sc_mcu7t5v0__clkbuf_8: 2
+  gf180mcu_fd_sc_mcu7t5v0__clkinv_2: 11
+  gf180mcu_fd_sc_mcu7t5v0__inv_2: 1
+  gf180mcu_fd_sc_mcu7t5v0__inv_3: 5
+  gf180mcu_fd_sc_mcu7t5v0__inv_4: 3
 %OL_END_REPORT

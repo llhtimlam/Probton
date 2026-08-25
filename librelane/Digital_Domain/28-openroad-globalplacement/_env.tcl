@@ -24,7 +24,7 @@ set ::env(CELL_CDLS) /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t
 set ::env(SYNTH_EXCLUDED_CELL_FILE) /workspace/gf180mcu/gf180mcuD/libs.tech/librelane/gf180mcu_fd_sc_mcu7t5v0/synth_exclude.cells
 set ::env(PNR_EXCLUDED_CELL_FILE) /workspace/gf180mcu/gf180mcuD/libs.tech/librelane/gf180mcu_fd_sc_mcu7t5v0/pnr_exclude.cells
 set ::env(OUTPUT_CAP_LOAD) 72.91
-set ::env(MAX_FANOUT_CONSTRAINT) 10
+set ::env(MAX_FANOUT_CONSTRAINT) 8
 set ::env(MAX_TRANSITION_CONSTRAINT) 3
 set ::env(MAX_CAPACITANCE_CONSTRAINT) 0.2
 set ::env(CLOCK_UNCERTAINTY_CONSTRAINT) 0.25
@@ -88,9 +88,9 @@ set ::env(FP_CORE_UTIL) 10
 set ::env(GPL_CELL_PADDING) 2
 set ::env(PL_TIMING_DRIVEN) 0
 set ::env(PL_ROUTABILITY_DRIVEN) 0
-set ::env(CURRENT_ODB) /workspace/librelane/runs/RUN_2026-08-25_04-55-34/26-odb-customioplacement/wrapper.odb
-set ::env(SAVE_ODB) /workspace/librelane/runs/RUN_2026-08-25_04-55-34/28-openroad-globalplacement/wrapper.odb
-set ::env(SAVE_DEF) /workspace/librelane/runs/RUN_2026-08-25_04-55-34/28-openroad-globalplacement/wrapper.def
-set ::env(SAVE_SDC) /workspace/librelane/runs/RUN_2026-08-25_04-55-34/28-openroad-globalplacement/wrapper.sdc
-set ::env(SAVE_NL) /workspace/librelane/runs/RUN_2026-08-25_04-55-34/28-openroad-globalplacement/wrapper.nl.v
-set ::env(SAVE_PNL) /workspace/librelane/runs/RUN_2026-08-25_04-55-34/28-openroad-globalplacement/wrapper.pnl.v
+set ::env(CURRENT_ODB) /workspace/librelane/runs/RUN_2026-08-25_20-00-22/26-odb-customioplacement/wrapper.odb
+set ::env(SAVE_ODB) /workspace/librelane/runs/RUN_2026-08-25_20-00-22/28-openroad-globalplacement/wrapper.odb
+set ::env(SAVE_DEF) /workspace/librelane/runs/RUN_2026-08-25_20-00-22/28-openroad-globalplacement/wrapper.def
+set ::env(SAVE_SDC) /workspace/librelane/runs/RUN_2026-08-25_20-00-22/28-openroad-globalplacement/wrapper.sdc
+set ::env(SAVE_NL) /workspace/librelane/runs/RUN_2026-08-25_20-00-22/28-openroad-globalplacement/wrapper.nl.v
+set ::env(SAVE_PNL) /workspace/librelane/runs/RUN_2026-08-25_20-00-22/28-openroad-globalplacement/wrapper.pnl.v

@@ -8,14 +8,14 @@
 
 -- Running command `
                     verilog_defines -DUSE_POWER_PINS;
-read_verilog -sv -lib /workspace/librelane/runs/RUN_2026-08-25_04-55-34/tmp/95a50f3a0a534911adf65e4003fdab06.bb.v;
+read_verilog -sv -lib /workspace/librelane/runs/RUN_2026-08-25_20-00-22/tmp/a27be526bc554c559278344204b3622c.bb.v;
 
                     blackbox;
-                    write_verilog -noattr -noexpr -nohex -nodec -defparam -blackboxes /workspace/librelane/runs/RUN_2026-08-25_04-55-34/tmp/95a50f3a0a534911adf65e4003fdab06.bb.v;
+                    write_verilog -noattr -noexpr -nohex -nodec -defparam -blackboxes /workspace/librelane/runs/RUN_2026-08-25_20-00-22/tmp/a27be526bc554c559278344204b3622c.bb.v;
                     ' --
 
-1. Executing Verilog-2005 frontend: /workspace/librelane/runs/RUN_2026-08-25_04-55-34/tmp/95a50f3a0a534911adf65e4003fdab06.bb.v
-Parsing SystemVerilog input from `/workspace/librelane/runs/RUN_2026-08-25_04-55-34/tmp/95a50f3a0a534911adf65e4003fdab06.bb.v' to AST representation.
+1. Executing Verilog-2005 frontend: /workspace/librelane/runs/RUN_2026-08-25_20-00-22/tmp/a27be526bc554c559278344204b3622c.bb.v
+Parsing SystemVerilog input from `/workspace/librelane/runs/RUN_2026-08-25_20-00-22/tmp/a27be526bc554c559278344204b3622c.bb.v' to AST representation.
 Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__addf_1'.
 Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__addf_2'.
 Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__addf_4'.
@@ -616,6 +616,6 @@ Dumping module `\gf180mcu_fd_sc_mcu7t5v0__xor3_2'.
 Dumping module `\gf180mcu_fd_sc_mcu7t5v0__xor3_4'.
 Dumping module `\gf180mcu_fd_sc_mcu7t5v0__xor3_func'.
 
-End of script. Logfile hash: fdeb16cd6c, time: 0.27s, user: 0.09s, system: 0.08s, MEM: 47.88 MB peak
+End of script. Logfile hash: 97eecdb684, time: 0.14s, user: 0.11s, system: 0.03s, MEM: 48.20 MB peak
 Yosys 0.67 (git sha1 2d1509d1b, Release, GNU /usr/bin/c++ 13.3.0)
-Time spent: 97% 2x read_verilog (0 sec), 1% 2x write_verilog (0 sec), ...
+Time spent: 96% 2x read_verilog (0 sec), 2% 2x write_verilog (0 sec), ...

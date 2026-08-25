@@ -49,7 +49,7 @@ pins:
 
   # 6
   - name: spi_miso
-    io_type: bidirectional_24ma
+    io_type: bidirectional
     secondary_esd: false
 
   # 7
@@ -59,43 +59,43 @@ pins:
 
   # 8
   - name: move_en_x
-    io_type: bidirectional_24ma
+    io_type: bidirectional
     secondary_esd: false
 
   # 9
   - name: dir_x
-    io_type: bidirectional_24ma
+    io_type: bidirectional
     secondary_esd: false
 
   # 10
   - name: ref_wave_x
-    io_type: bidirectional_24ma
+    io_type: bidirectional
     secondary_esd: false
 
   # 11
   - name: mems_drv_x
-    io_type: bidirectional_24ma
+    io_type: bidirectional
     secondary_esd: false
 
   # === North ===
   # 12 (1)
   - name: mems_drv_y
-    io_type: bidirectional_24ma
+    io_type: bidirectional
     secondary_esd: false
 
   # 13 (2)
   - name: ref_wave_y
-    io_type: bidirectional_24ma
+    io_type: bidirectional
     secondary_esd: false
 
   # 14 (3)
   - name: dir_y
-    io_type: bidirectional_24ma
+    io_type: bidirectional
     secondary_esd: false
 
   # 15 (4)
   - name: move_en_y
-    io_type: bidirectional_24ma
+    io_type: bidirectional
     secondary_esd: false
 
   # 16 (5)
@@ -114,7 +114,7 @@ pins:
 
   # 19 (8)
   - name: read_en
-    io_type: bidirectional_24ma
+    io_type: bidirectional
     secondary_esd: false
 
   # 20 (9)

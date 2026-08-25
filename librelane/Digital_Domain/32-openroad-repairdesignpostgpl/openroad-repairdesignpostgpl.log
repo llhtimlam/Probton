@@ -4,7 +4,7 @@ Reading timing models for corner min_ff_n40C_3v60…
 Reading timing library for the 'min_ff_n40C_3v60' corner at '/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__ff_n40C_3v60.lib'…
 Reading timing models for corner nom_tt_025C_3v30…
 Reading timing library for the 'nom_tt_025C_3v30' corner at '/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib'…
-Reading OpenROAD database at '/workspace/librelane/runs/RUN_2026-08-25_04-55-34/28-openroad-globalplacement/wrapper.odb'…
+Reading OpenROAD database at '/workspace/librelane/runs/RUN_2026-08-25_20-00-22/28-openroad-globalplacement/wrapper.odb'…
 Reading design constraints file at '/usr/local/lib/python3.12/dist-packages/librelane/scripts/base.sdc'…
 [INFO] Using clock clk…
 [INFO] Setting output delay to: 40
@@ -18,50 +18,50 @@ Reading design constraints file at '/usr/local/lib/python3.12/dist-packages/libr
 + repair_design -verbose -max_wire_length 0 -slew_margin 10 -cap_margin 10
 Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
 ---------------------------------------------------------------------
-        0 |     +0.0% |       0 |       0 |             0 |      6451
-     1000 |     +3.0% |      81 |     117 |            57 |      5451
-     2000 |     +6.1% |     213 |     180 |           130 |      4451
-     3000 |    +11.0% |     428 |     266 |           235 |      3451
-     4000 |    +16.3% |     573 |     413 |           337 |      2451
-     5000 |    +22.7% |     709 |     678 |           434 |      1451
-     6000 |    +32.2% |     901 |    1226 |           584 |       451
-    final |    +47.8% |    1094 |    2247 |           789 |         0
+        0 |     +0.0% |       0 |       0 |             0 |      6687
+     1000 |     +3.9% |      98 |     144 |            75 |      5687
+     2000 |     +6.9% |     234 |     200 |           146 |      4687
+     3000 |    +11.2% |     402 |     326 |           246 |      3687
+     4000 |    +14.3% |     510 |     394 |           316 |      2687
+     5000 |    +22.1% |     693 |     662 |           453 |      1687
+     6000 |    +31.0% |     822 |    1196 |           567 |       687
+    final |    +53.8% |    1026 |    2670 |           854 |         0
 ---------------------------------------------------------------------
-[INFO RSZ-0034] Found 1217 slew violations.
-[INFO RSZ-0035] Found 175 fanout violations.
-[INFO RSZ-0039] Resized 1094 instances.
-[INFO RSZ-0038] Inserted 2247 buffers in 789 nets.
+[INFO RSZ-0034] Found 1242 slew violations.
+[INFO RSZ-0035] Found 283 fanout violations.
+[INFO RSZ-0039] Resized 1026 instances.
+[INFO RSZ-0038] Inserted 2670 buffers in 854 nets.
 [WARNING RSZ-0020] found 2 floating nets.
  VDD
  VSS
 + detailed_placement -max_displacement  800 500 
 Placement Analysis
 ---------------------------------
-total displacement      59152.6 u
-average displacement        3.4 u
-max displacement           82.9 u
-original HPWL          414979.5 u
-legalized HPWL         469493.4 u
-delta HPWL                   13 %
+total displacement      79109.5 u
+average displacement        4.4 u
+max displacement          105.5 u
+original HPWL          461085.6 u
+legalized HPWL         538835.6 u
+delta HPWL                   17 %
 
-[INFO DPL-0020] Mirrored 3618 instances
-[INFO DPL-0021] HPWL before          469493.4 u
-[INFO DPL-0022] HPWL after           459959.1 u
-[INFO DPL-0023] HPWL delta               -2.0 %
+[INFO DPL-0020] Mirrored 3953 instances
+[INFO DPL-0021] HPWL before          538835.6 u
+[INFO DPL-0022] HPWL after           528384.5 u
+[INFO DPL-0023] HPWL delta               -1.9 %
 Setting global connections for newly added cells…
 [INFO] Setting global connections...
-[INFO ODB-0403] 9056 connections made, 0 conflicts skipped.
+[INFO ODB-0403] 10748 connections made, 0 conflicts skipped.
 Updating metrics…
 Cell type report:                       Count       Area
   Endcap cell                             560    2458.62
   Tap cell                               7898   34675.38
-  Timing Repair Buffer                   2264   48061.71
-  Inverter                                393    3766.96
-  Sequential cell                         566   43522.04
-  Multi-Input combinational cell         5468  124661.02
-  Total                                 17149  257145.73
-Writing OpenROAD database to '/workspace/librelane/runs/RUN_2026-08-25_04-55-34/32-openroad-repairdesignpostgpl/wrapper.odb'…
-Writing netlist to '/workspace/librelane/runs/RUN_2026-08-25_04-55-34/32-openroad-repairdesignpostgpl/wrapper.nl.v'…
-Writing powered netlist to '/workspace/librelane/runs/RUN_2026-08-25_04-55-34/32-openroad-repairdesignpostgpl/wrapper.pnl.v'…
-Writing layout to '/workspace/librelane/runs/RUN_2026-08-25_04-55-34/32-openroad-repairdesignpostgpl/wrapper.def'…
-Writing timing constraints to '/workspace/librelane/runs/RUN_2026-08-25_04-55-34/32-openroad-repairdesignpostgpl/wrapper.sdc'…
+  Timing Repair Buffer                   2687   60126.53
+  Inverter                                427    3973.31
+  Sequential cell                         566   43157.63
+  Multi-Input combinational cell         5670  128019.67
+  Total                                 17808  272411.15
+Writing OpenROAD database to '/workspace/librelane/runs/RUN_2026-08-25_20-00-22/32-openroad-repairdesignpostgpl/wrapper.odb'…
+Writing netlist to '/workspace/librelane/runs/RUN_2026-08-25_20-00-22/32-openroad-repairdesignpostgpl/wrapper.nl.v'…
+Writing powered netlist to '/workspace/librelane/runs/RUN_2026-08-25_20-00-22/32-openroad-repairdesignpostgpl/wrapper.pnl.v'…
+Writing layout to '/workspace/librelane/runs/RUN_2026-08-25_20-00-22/32-openroad-repairdesignpostgpl/wrapper.def'…
+Writing timing constraints to '/workspace/librelane/runs/RUN_2026-08-25_20-00-22/32-openroad-repairdesignpostgpl/wrapper.sdc'…

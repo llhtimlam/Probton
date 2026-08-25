@@ -1,5 +1,5 @@
 set ::env(LIB_VOLTAGE) 3.3
-set ::env(CURRENT_SPEF_DEFAULT_CORNER) /workspace/librelane/runs/RUN_2026-08-25_04-55-34/54-openroad-rcx/nom/wrapper.nom.spef
+set ::env(CURRENT_SPEF_DEFAULT_CORNER) /workspace/librelane/runs/RUN_2026-08-25_20-00-22/54-openroad-rcx/nom/wrapper.nom.spef
 set ::env(STEP_ID) OpenROAD.IRDropReport
 set ::env(TECH_LEF) /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/techlef/gf180mcu_fd_sc_mcu7t5v0__nom.tlef
 set ::env(MACRO_LEFS) ""
@@ -26,7 +26,7 @@ set ::env(CELL_CDLS) /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t
 set ::env(SYNTH_EXCLUDED_CELL_FILE) /workspace/gf180mcu/gf180mcuD/libs.tech/librelane/gf180mcu_fd_sc_mcu7t5v0/synth_exclude.cells
 set ::env(PNR_EXCLUDED_CELL_FILE) /workspace/gf180mcu/gf180mcuD/libs.tech/librelane/gf180mcu_fd_sc_mcu7t5v0/pnr_exclude.cells
 set ::env(OUTPUT_CAP_LOAD) 72.91
-set ::env(MAX_FANOUT_CONSTRAINT) 10
+set ::env(MAX_FANOUT_CONSTRAINT) 8
 set ::env(MAX_TRANSITION_CONSTRAINT) 3
 set ::env(MAX_CAPACITANCE_CONSTRAINT) 0.2
 set ::env(CLOCK_UNCERTAINTY_CONSTRAINT) 0.25
@@ -75,5 +75,5 @@ set ::env(CLOCK_WIRE_RC_LAYERS) "Metal2 Metal3 Metal4"
 set ::env(PDN_CONNECT_MACROS_TO_GRID) 1
 set ::env(PDN_ENABLE_GLOBAL_CONNECTIONS) 1
 set ::env(DEDUPLICATE_CORNERS) 0
-set ::env(CURRENT_ODB) /workspace/librelane/runs/RUN_2026-08-25_04-55-34/53-odb-cellfrequencytables/wrapper.odb
-set ::env(CURRENT_SPEF) "\"nom_*\" /workspace/librelane/runs/RUN_2026-08-25_04-55-34/54-openroad-rcx/nom/wrapper.nom.spef \"min_*\" /workspace/librelane/runs/RUN_2026-08-25_04-55-34/54-openroad-rcx/min/wrapper.min.spef \"max_*\" /workspace/librelane/runs/RUN_2026-08-25_04-55-34/54-openroad-rcx/max/wrapper.max.spef"
+set ::env(CURRENT_ODB) /workspace/librelane/runs/RUN_2026-08-25_20-00-22/53-odb-cellfrequencytables/wrapper.odb
+set ::env(CURRENT_SPEF) "\"nom_*\" /workspace/librelane/runs/RUN_2026-08-25_20-00-22/54-openroad-rcx/nom/wrapper.nom.spef \"min_*\" /workspace/librelane/runs/RUN_2026-08-25_20-00-22/54-openroad-rcx/min/wrapper.min.spef \"max_*\" /workspace/librelane/runs/RUN_2026-08-25_20-00-22/54-openroad-rcx/max/wrapper.max.spef"

@@ -51,4 +51,4 @@ set_driving_cell -lib_cell gf180mcu_fd_sc_mcu7t5v0__inv_1 -pin {ZN} -input_trans
 ###############################################################################
 set_max_transition 3.0000 [current_design]
 set_max_capacitance 0.2000 [current_design]
-set_max_fanout 10.0000 [current_design]
+set_max_fanout 8.0000 [current_design]

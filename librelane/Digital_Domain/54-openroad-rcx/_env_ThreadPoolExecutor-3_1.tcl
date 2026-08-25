@@ -24,7 +24,7 @@ set ::env(CELL_CDLS) /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t
 set ::env(SYNTH_EXCLUDED_CELL_FILE) /workspace/gf180mcu/gf180mcuD/libs.tech/librelane/gf180mcu_fd_sc_mcu7t5v0/synth_exclude.cells
 set ::env(PNR_EXCLUDED_CELL_FILE) /workspace/gf180mcu/gf180mcuD/libs.tech/librelane/gf180mcu_fd_sc_mcu7t5v0/pnr_exclude.cells
 set ::env(OUTPUT_CAP_LOAD) 72.91
-set ::env(MAX_FANOUT_CONSTRAINT) 10
+set ::env(MAX_FANOUT_CONSTRAINT) 8
 set ::env(MAX_TRANSITION_CONSTRAINT) 3
 set ::env(MAX_CAPACITANCE_CONSTRAINT) 0.2
 set ::env(CLOCK_UNCERTAINTY_CONSTRAINT) 0.25
@@ -75,7 +75,7 @@ set ::env(PDN_ENABLE_GLOBAL_CONNECTIONS) 1
 set ::env(DEDUPLICATE_CORNERS) 0
 set ::env(RCX_MERGE_VIA_WIRE_RES) 1
 set ::env(RCX_RULESETS) "\"nom_*\" /workspace/gf180mcu/gf180mcuD/libs.tech/librelane/rules.openrcx.gf180mcuD.nom \"min_*\" /workspace/gf180mcu/gf180mcuD/libs.tech/librelane/rules.openrcx.gf180mcuD.min \"max_*\" /workspace/gf180mcu/gf180mcuD/libs.tech/librelane/rules.openrcx.gf180mcuD.max"
-set ::env(CURRENT_DEF) /workspace/librelane/runs/RUN_2026-08-25_04-55-34/53-odb-cellfrequencytables/wrapper.def
+set ::env(CURRENT_DEF) /workspace/librelane/runs/RUN_2026-08-25_20-00-22/53-odb-cellfrequencytables/wrapper.def
 set ::env(RCX_LEF) /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/techlef/gf180mcu_fd_sc_mcu7t5v0__min.tlef
 set ::env(RCX_RULESET) /workspace/gf180mcu/gf180mcuD/libs.tech/librelane/rules.openrcx.gf180mcuD.min
-set ::env(SAVE_SPEF) /workspace/librelane/runs/RUN_2026-08-25_04-55-34/54-openroad-rcx/min/wrapper.min.spef
+set ::env(SAVE_SPEF) /workspace/librelane/runs/RUN_2026-08-25_20-00-22/54-openroad-rcx/min/wrapper.min.spef

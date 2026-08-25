@@ -289,6 +289,11 @@ module chip_core #(
     // ----- State Machine Status → SPI -----
     wire [2:0]  state_o;
 
+    // ----- Signal Processor → Control Signal -----
+    wire        move_en_x_internal, move_en_y_internal;
+    assign move_en_x = move_en_x_internal && (state_o == 3'd4);
+    assign move_en_y = move_en_y_internal && (state_o == 3'd4);
+
     // ----- Control Signal → State Machine -----
     wire        cal_done_x, cal_done_y;
     wire        cal_timeout_x, cal_timeout_y;
@@ -413,7 +418,7 @@ module chip_core #(
         .comp_raw(comp_x),
         .latch_phase90(latch_phase90_x), .latch_phase270(latch_phase270_x),
         .latch_phase90_ack(latch_phase90_ack_x), .latch_phase270_ack(latch_phase270_ack_x),
-        .dir(dir_x), .move_en(move_en_x),
+        .dir(dir_x), .move_en(move_en_x_internal),
         .jitter_flag(jitter_flag_x),
         .phase_state(phase_state_x),
         .votes_in_phase(votes_in_phase_x), .votes_out_phase(votes_out_phase_x)    
@@ -425,7 +430,7 @@ module chip_core #(
         .comp_raw(comp_y),
         .latch_phase90(latch_phase90_y), .latch_phase270(latch_phase270_y),
         .latch_phase90_ack(latch_phase90_ack_y), .latch_phase270_ack(latch_phase270_ack_y),
-        .dir(dir_y), .move_en(move_en_y),
+        .dir(dir_y), .move_en(move_en_y_internal),
         .jitter_flag(jitter_flag_y),
         .phase_state(phase_state_y),
         .votes_in_phase(votes_in_phase_y), .votes_out_phase(votes_out_phase_y)  
