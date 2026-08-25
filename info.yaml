@@ -25,78 +25,63 @@ pins:
   # 1
   - name: VSS
     io_type: ground
-    secondary_esd: false
 
   # 2
   - name: rst_n
     io_type: input_schmitt
-    secondary_esd: false
 
   # 3
   - name: spi_cs_n
     io_type: input_schmitt
-    secondary_esd: false
 
   # 4
   - name: spi_sclk
     io_type: input_cmos
-    secondary_esd: false
 
   # 5
   - name: spi_mosi
     io_type: input_schmitt
-    secondary_esd: false
 
   # 6
   - name: spi_miso
     io_type: bidirectional
-    secondary_esd: false
 
   # 7
   - name: clk
     io_type: input_cmos
-    secondary_esd: false
 
   # 8
   - name: move_en_x
     io_type: bidirectional
-    secondary_esd: false
 
   # 9
   - name: dir_x
     io_type: bidirectional
-    secondary_esd: false
 
   # 10
   - name: ref_wave_x
     io_type: bidirectional
-    secondary_esd: false
 
   # 11
   - name: mems_drv_x
     io_type: bidirectional
-    secondary_esd: false
 
   # === North ===
   # 12 (1)
   - name: mems_drv_y
     io_type: bidirectional
-    secondary_esd: false
 
   # 13 (2)
   - name: ref_wave_y
     io_type: bidirectional
-    secondary_esd: false
 
   # 14 (3)
   - name: dir_y
     io_type: bidirectional
-    secondary_esd: false
 
   # 15 (4)
   - name: move_en_y
     io_type: bidirectional
-    secondary_esd: false
 
   # 16 (5)
   # Virtual Pin
@@ -107,7 +92,6 @@ pins:
   # 17 (6)
   - name: comp_x
     io_type: input_cmos
-    secondary_esd: false
 
   # 18 (7)
   # Virtual Pin
@@ -115,7 +99,6 @@ pins:
   # 19 (8)
   - name: read_en
     io_type: bidirectional
-    secondary_esd: false
 
   # 20 (9)
   # Virtual Pin
@@ -123,9 +106,7 @@ pins:
   # 21 (10)
   - name: comp_y
     io_type: input_cmos
-    secondary_esd: false
   
   # 22
   - name: VDD
     io_type: power
-    secondary_esd: false
