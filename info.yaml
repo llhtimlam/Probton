@@ -23,8 +23,8 @@ pins:
   # ===== Digital =====
   # === West ===
   # 1
-  - name: VDD
-    io_type: power
+  - name: VSS
+    io_type: ground
     secondary_esd: false
 
   # 2
@@ -99,9 +99,8 @@ pins:
     secondary_esd: false
 
   # 16 (5)
-  - name: VSS
-    io_type: ground
-    secondary_esd: false
+  # Virtual Pin
+
 
   # ===== Digital/Analog Interface =====
 
@@ -125,6 +124,8 @@ pins:
   - name: comp_y
     io_type: input_cmos
     secondary_esd: false
-
-  # 22 (11)
-  # Virtual Pin
+  
+  # 22
+  - name: VDD
+    io_type: power
+    secondary_esd: false
