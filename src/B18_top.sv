@@ -320,11 +320,10 @@ module wrapper_top (
         .mems_drv_x  (mems_drv_x_OUT),
         .mems_drv_y  (mems_drv_y_OUT),
         .ref_wave_x  (ref_wave_x_OUT),
-        .ref_wave_y  (ref_wave_y_OUT)
+        .ref_wave_y  (ref_wave_y_OUT),
         .read_en     (read_en_OUT),
         .comp_x      (comp_x),
-        .comp_y      (comp_y),
-
+        .comp_y      (comp_y)
     );
 
 endmodule
