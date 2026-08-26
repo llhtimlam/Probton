@@ -1,0 +1,88 @@
+Reading timing models for corner nom_tt_025C_3v30…
+Reading timing library for the 'nom_tt_025C_3v30' corner at '/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib'…
+Reading OpenROAD database at '/workspace/librelane/runs/RUN_2026-08-26_23-49-04/38-openroad-resizertimingpostcts/wrapper_top.odb'…
+Reading design constraints file at '/usr/local/lib/python3.12/dist-packages/librelane/scripts/base.sdc'…
+[INFO] Using clock clk…
+[INFO] Setting output delay to: 40
+[INFO] Setting input delay to: 40
+[INFO] Setting load to: 0.07291
+[INFO] Setting clock uncertainty to: 0.25
+[INFO] Setting clock transition to: 0.15
+[INFO] Setting timing derate to: 5%
+[INFO] Setting signal min routing layer to: Metal2 and clock min routing layer to Metal2. 
+[INFO] Setting signal max routing layer to: Metal4 and clock max routing layer to Metal4. 
++ global_route -congestion_iterations 50 -verbose
+[INFO GRT-0020] Min routing layer: Metal2
+[INFO GRT-0021] Max routing layer: Metal4
+[INFO GRT-0022] Global adjustment: 30%
+[INFO GRT-0023] Grid origin: (0, 0)
+[INFO GRT-0088] Layer Metal1  Track-Pitch = 0.5600  line-2-Via Pitch: 0.4750
+[INFO GRT-0088] Layer Metal2  Track-Pitch = 0.5600  line-2-Via Pitch: 0.5600
+[INFO GRT-0088] Layer Metal3  Track-Pitch = 0.5600  line-2-Via Pitch: 0.5600
+[INFO GRT-0088] Layer Metal4  Track-Pitch = 0.5600  line-2-Via Pitch: 0.5600
+[INFO GRT-0003] Macros: 0
+[INFO GRT-0004] Blockages: 0
+[INFO GRT-0019] Found 83 clock nets.
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 17
+
+[INFO GRT-0053] Routing resources analysis:
+          Routing      Original      Derated      Resource
+Layer     Direction    Resources     Resources    Reduction (%)
+---------------------------------------------------------------
+Metal1     Horizontal          0             0          0.00%
+Metal2     Vertical       215245        142661          33.72%
+Metal3     Horizontal     233685        155260          33.56%
+Metal4     Vertical       229672        152735          33.50%
+---------------------------------------------------------------
+
+[INFO GRT-0101] Running extra iterations to remove overflow.
+[INFO GRT-0102] Start extra iteration 1/50
+[INFO GRT-0102] Start extra iteration 2/50
+[INFO GRT-0102] Start extra iteration 3/50
+[INFO GRT-0102] Start extra iteration 4/50
+[INFO GRT-0102] Start extra iteration 5/50
+[INFO GRT-0102] Start extra iteration 6/50
+[INFO GRT-0102] Start extra iteration 7/50
+[INFO GRT-0102] Start extra iteration 8/50
+[INFO GRT-0102] Start extra iteration 9/50
+[INFO GRT-0102] Start extra iteration 10/50
+[INFO GRT-0102] Start extra iteration 11/50
+[INFO GRT-0102] Start extra iteration 12/50
+[INFO GRT-0102] Start extra iteration 13/50
+[INFO GRT-0197] Via related to pin nodes: 59728
+[INFO GRT-0198] Via related Steiner nodes: 1414
+[INFO GRT-0199] Via filling finished.
+[INFO GRT-0111] Final number of vias: 78815
+[INFO GRT-0112] Final usage 3D: 316766
+
+[INFO GRT-0096] Final congestion report:
+Layer         Resource        Demand        Usage (%)    Max H / Max V / Total Overflow
+---------------------------------------------------------------------------------------
+Metal1               0             0            0.00%             0 /  0 /  0
+Metal2          142661         31605           22.15%             0 /  0 /  0
+Metal3          155260         35372           22.78%             0 /  0 /  0
+Metal4          152735         13344            8.74%             0 /  0 /  0
+---------------------------------------------------------------------------------------
+Total           450656         80321           17.82%             0 /  0 /  0
+
+[INFO GRT-0018] Total wirelength: 927393 um
+[INFO GRT-0014] Routed nets: 9496
+[INFO GRT-0303] Global routing runtime = 00:00:04
+Setting global connections for newly added cells…
+[INFO] Setting global connections...
+[INFO ODB-0403] 0 connections made, 0 conflicts skipped.
+Updating metrics…
+Cell type report:                       Count       Area
+  Endcap cell                             462    2028.36
+  Tap cell                               5361   23536.93
+  Tie cell                                 93     816.61
+  Clock buffer                            111    6190.46
+  Timing Repair Buffer                   2651   59283.57
+  Inverter                                427    3929.41
+  Clock inverter                           20     324.89
+  Sequential cell                         566   43065.43
+  Multi-Input combinational cell         5670  128987.76
+  Total                                 15361  268163.44
+Writing OpenROAD database to '/workspace/librelane/runs/RUN_2026-08-26_23-49-04/40-openroad-globalrouting/wrapper_top.odb'…
+Writing layout to '/workspace/librelane/runs/RUN_2026-08-26_23-49-04/40-openroad-globalrouting/wrapper_top.def'…

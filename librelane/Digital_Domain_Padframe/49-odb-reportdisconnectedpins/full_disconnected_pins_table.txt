@@ -1,0 +1,115 @@
+┏━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓
+┃ Macro/Instance ┃ Power Pins ┃ Disconnected ┃ Signal Pins      ┃ Disconnected  ┃
+┡━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━┩
+│ wrapper_top    │ VDD        │              │ clk              │ dir_x_IN      │
+│                │ VSS        │              │ clk_PD           │ dir_y_IN      │
+│                │            │              │ clk_PU           │ mems_drv_x_IN │
+│                │            │              │ comp_x           │ mems_drv_y_IN │
+│                │            │              │ comp_x_PD        │ move_en_x_IN  │
+│                │            │              │ comp_x_PU        │ move_en_y_IN  │
+│                │            │              │ comp_y           │ read_en_IN    │
+│                │            │              │ comp_y_PD        │ ref_wave_x_IN │
+│                │            │              │ comp_y_PU        │ ref_wave_y_IN │
+│                │            │              │ dir_x_CS         │ spi_miso_IN   │
+│                │            │              │ dir_x_IE         │               │
+│                │            │              │ dir_x_OE         │               │
+│                │            │              │ dir_x_OUT        │               │
+│                │            │              │ dir_x_PD         │               │
+│                │            │              │ dir_x_PDRV0      │               │
+│                │            │              │ dir_x_PDRV1      │               │
+│                │            │              │ dir_x_PU         │               │
+│                │            │              │ dir_x_SL         │               │
+│                │            │              │ dir_y_CS         │               │
+│                │            │              │ dir_y_IE         │               │
+│                │            │              │ dir_y_OE         │               │
+│                │            │              │ dir_y_OUT        │               │
+│                │            │              │ dir_y_PD         │               │
+│                │            │              │ dir_y_PDRV0      │               │
+│                │            │              │ dir_y_PDRV1      │               │
+│                │            │              │ dir_y_PU         │               │
+│                │            │              │ dir_y_SL         │               │
+│                │            │              │ mems_drv_x_CS    │               │
+│                │            │              │ mems_drv_x_IE    │               │
+│                │            │              │ mems_drv_x_OE    │               │
+│                │            │              │ mems_drv_x_OUT   │               │
+│                │            │              │ mems_drv_x_PD    │               │
+│                │            │              │ mems_drv_x_PDRV0 │               │
+│                │            │              │ mems_drv_x_PDRV1 │               │
+│                │            │              │ mems_drv_x_PU    │               │
+│                │            │              │ mems_drv_x_SL    │               │
+│                │            │              │ mems_drv_y_CS    │               │
+│                │            │              │ mems_drv_y_IE    │               │
+│                │            │              │ mems_drv_y_OE    │               │
+│                │            │              │ mems_drv_y_OUT   │               │
+│                │            │              │ mems_drv_y_PD    │               │
+│                │            │              │ mems_drv_y_PDRV0 │               │
+│                │            │              │ mems_drv_y_PDRV1 │               │
+│                │            │              │ mems_drv_y_PU    │               │
+│                │            │              │ mems_drv_y_SL    │               │
+│                │            │              │ move_en_x_CS     │               │
+│                │            │              │ move_en_x_IE     │               │
+│                │            │              │ move_en_x_OE     │               │
+│                │            │              │ move_en_x_OUT    │               │
+│                │            │              │ move_en_x_PD     │               │
+│                │            │              │ move_en_x_PDRV0  │               │
+│                │            │              │ move_en_x_PDRV1  │               │
+│                │            │              │ move_en_x_PU     │               │
+│                │            │              │ move_en_x_SL     │               │
+│                │            │              │ move_en_y_CS     │               │
+│                │            │              │ move_en_y_IE     │               │
+│                │            │              │ move_en_y_OE     │               │
+│                │            │              │ move_en_y_OUT    │               │
+│                │            │              │ move_en_y_PD     │               │
+│                │            │              │ move_en_y_PDRV0  │               │
+│                │            │              │ move_en_y_PDRV1  │               │
+│                │            │              │ move_en_y_PU     │               │
+│                │            │              │ move_en_y_SL     │               │
+│                │            │              │ read_en_CS       │               │
+│                │            │              │ read_en_IE       │               │
+│                │            │              │ read_en_OE       │               │
+│                │            │              │ read_en_OUT      │               │
+│                │            │              │ read_en_PD       │               │
+│                │            │              │ read_en_PDRV0    │               │
+│                │            │              │ read_en_PDRV1    │               │
+│                │            │              │ read_en_PU       │               │
+│                │            │              │ read_en_SL       │               │
+│                │            │              │ ref_wave_x_CS    │               │
+│                │            │              │ ref_wave_x_IE    │               │
+│                │            │              │ ref_wave_x_OE    │               │
+│                │            │              │ ref_wave_x_OUT   │               │
+│                │            │              │ ref_wave_x_PD    │               │
+│                │            │              │ ref_wave_x_PDRV0 │               │
+│                │            │              │ ref_wave_x_PDRV1 │               │
+│                │            │              │ ref_wave_x_PU    │               │
+│                │            │              │ ref_wave_x_SL    │               │
+│                │            │              │ ref_wave_y_CS    │               │
+│                │            │              │ ref_wave_y_IE    │               │
+│                │            │              │ ref_wave_y_OE    │               │
+│                │            │              │ ref_wave_y_OUT   │               │
+│                │            │              │ ref_wave_y_PD    │               │
+│                │            │              │ ref_wave_y_PDRV0 │               │
+│                │            │              │ ref_wave_y_PDRV1 │               │
+│                │            │              │ ref_wave_y_PU    │               │
+│                │            │              │ ref_wave_y_SL    │               │
+│                │            │              │ rst_n            │               │
+│                │            │              │ rst_n_PD         │               │
+│                │            │              │ rst_n_PU         │               │
+│                │            │              │ spi_cs_n         │               │
+│                │            │              │ spi_cs_n_PD      │               │
+│                │            │              │ spi_cs_n_PU      │               │
+│                │            │              │ spi_miso_CS      │               │
+│                │            │              │ spi_miso_IE      │               │
+│                │            │              │ spi_miso_OUT     │               │
+│                │            │              │ spi_miso_PD      │               │
+│                │            │              │ spi_miso_PDRV0   │               │
+│                │            │              │ spi_miso_PDRV1   │               │
+│                │            │              │ spi_miso_PU      │               │
+│                │            │              │ spi_miso_SL      │               │
+│                │            │              │ spi_miso_oe      │               │
+│                │            │              │ spi_mosi         │               │
+│                │            │              │ spi_mosi_PD      │               │
+│                │            │              │ spi_mosi_PU      │               │
+│                │            │              │ spi_sclk         │               │
+│                │            │              │ spi_sclk_PD      │               │
+│                │            │              │ spi_sclk_PU      │               │
+└────────────────┴────────────┴──────────────┴──────────────────┴───────────────┘

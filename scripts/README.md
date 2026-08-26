@@ -88,5 +88,5 @@ magic
 
 ## Compile and Harden completed analog and digital circuit design
 ```
-SLOT=workshop make librelane LIBRELANE=/foss/tools/openroad-librelane/librelane PDK_ROOT=/workspace/gf180mcu
+SLOT=workshop make librelane LIBRELANE=/foss/tools/openroad-librelane/librelane PDK_ROOT=/workspace/gf180mcu PYTHONPATH=/workspace/scripts/python:$$PYTHONPATH
 ```

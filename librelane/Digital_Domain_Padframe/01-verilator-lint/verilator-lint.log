@@ -1,0 +1,66 @@
+%Warning-UNUSEDSIGNAL: /workspace/src/B18_top.sv:47:18: Signal is not used: 'spi_miso_IN'
+                                                      : ... note: In instance 'wrapper_top'
+   47 |     input  logic spi_miso_IN,
+      |                  ^~~~~~~~~~~
+                       ... For warning description see https://verilator.org/warn/UNUSEDSIGNAL?v=5.050
+                       ... Use "/* verilator lint_off UNUSEDSIGNAL */" and lint_on around source to disable this message.
+%Warning-UNUSEDSIGNAL: /workspace/src/B18_top.sv:62:18: Signal is not used: 'move_en_x_IN'
+                                                      : ... note: In instance 'wrapper_top'
+   62 |     input  logic move_en_x_IN,
+      |                  ^~~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: /workspace/src/B18_top.sv:74:18: Signal is not used: 'dir_x_IN'
+                                                      : ... note: In instance 'wrapper_top'
+   74 |     input  logic dir_x_IN,
+      |                  ^~~~~~~~
+%Warning-UNUSEDSIGNAL: /workspace/src/B18_top.sv:86:18: Signal is not used: 'move_en_y_IN'
+                                                      : ... note: In instance 'wrapper_top'
+   86 |     input  logic move_en_y_IN,
+      |                  ^~~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: /workspace/src/B18_top.sv:98:18: Signal is not used: 'dir_y_IN'
+                                                      : ... note: In instance 'wrapper_top'
+   98 |     input  logic dir_y_IN,
+      |                  ^~~~~~~~
+%Warning-UNUSEDSIGNAL: /workspace/src/B18_top.sv:113:18: Signal is not used: 'mems_drv_x_IN'
+                                                       : ... note: In instance 'wrapper_top'
+  113 |     input  logic mems_drv_x_IN,
+      |                  ^~~~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: /workspace/src/B18_top.sv:125:18: Signal is not used: 'mems_drv_y_IN'
+                                                       : ... note: In instance 'wrapper_top'
+  125 |     input  logic mems_drv_y_IN,
+      |                  ^~~~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: /workspace/src/B18_top.sv:140:18: Signal is not used: 'ref_wave_x_IN'
+                                                       : ... note: In instance 'wrapper_top'
+  140 |     input  logic ref_wave_x_IN,
+      |                  ^~~~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: /workspace/src/B18_top.sv:152:18: Signal is not used: 'ref_wave_y_IN'
+                                                       : ... note: In instance 'wrapper_top'
+  152 |     input  logic ref_wave_y_IN,
+      |                  ^~~~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: /workspace/src/B18_top.sv:167:18: Signal is not used: 'read_en_IN'
+                                                       : ... note: In instance 'wrapper_top'
+  167 |     input  logic read_en_IN,
+      |                  ^~~~~~~~~~
+%Warning-UNUSEDSIGNAL: /workspace/src/spi.sv:180:17: Bits of signal are not used: 'rx_shift'[7]
+                                                   : ... note: In instance 'wrapper_top.wrapper_inst.digital_domain_inst.spi_regs_inst'
+  180 |     logic [7:0] rx_shift;
+      |                 ^~~~~~~~
+                       /workspace/src/digital_domain.sv:15:1: ... note: In file included from 'digital_domain.sv'
+                       /workspace/src/B18_core.sv:4:1: ... note: In file included from 'B18_core.sv'
+                       /workspace/src/B18_top.sv:4:1: ... note: In file included from 'B18_top.sv'
+%Warning-UNUSEDSIGNAL: /workspace/src/wave_controller.sv:148:18: Bits of signal are not used: 'raw_delta'[18:0]
+                                                               : ... note: In instance 'wrapper_top.wrapper_inst.digital_domain_inst.wave_controller_y_inst'
+  148 |     logic [20:0] raw_delta;
+      |                  ^~~~~~~~~
+                       /workspace/src/digital_domain.sv:17:1: ... note: In file included from 'digital_domain.sv'
+                       /workspace/src/B18_core.sv:4:1: ... note: In file included from 'B18_core.sv'
+                       /workspace/src/B18_top.sv:4:1: ... note: In file included from 'B18_top.sv'
+%Warning-UNUSEDSIGNAL: /workspace/src/wave_controller.sv:355:27: Bits of signal are not used: 'ref_phase'[12:0]
+                                                               : ... note: In instance 'wrapper_top.wrapper_inst.digital_domain_inst.wave_controller_y_inst'
+  355 |     logic unsigned [20:0] ref_phase;
+      |                           ^~~~~~~~~
+                       /workspace/src/digital_domain.sv:17:1: ... note: In file included from 'digital_domain.sv'
+                       /workspace/src/B18_core.sv:4:1: ... note: In file included from 'B18_core.sv'
+                       /workspace/src/B18_top.sv:4:1: ... note: In file included from 'B18_top.sv'
+- V e r i l a t i o n   R e p o r t: Verilator 5.050 2026-07-01 rev v5.050
+- Verilator: Built from 0.470 MB sources in 325 modules, into 0.245 MB in 3 C++ files needing 0.000 MB
+- Verilator: Walltime 0.161 s (elab=0.015, cvt=0.032, bld=0.000); cpu 0.070 s on 1 threads; allocated 40.691 MB

@@ -38,7 +38,7 @@ module wrapper_top (
     output logic spi_miso_CS,
     output logic spi_miso_SL,
     output logic spi_miso_IE,
-    output logic spi_miso_OE,
+    output logic spi_miso_oe,
     output logic spi_miso_PU,
     output logic spi_miso_PD,
     output logic spi_miso_OUT,
@@ -207,7 +207,6 @@ module wrapper_top (
     assign spi_miso_PD      = 1'b0;
     assign spi_miso_PDRV0   = 1'b1;
     assign spi_miso_PDRV1   = 1'b0;
-    assign spi_miso_IN      = 1'b0;
 
     assign move_en_x_CS     = 1'b0;
     assign move_en_x_SL     = 1'b0;
@@ -217,7 +216,6 @@ module wrapper_top (
     assign move_en_x_PD     = 1'b0;
     assign move_en_x_PDRV0  = 1'b1;
     assign move_en_x_PDRV1  = 1'b0;
-    assign move_en_x_IN     = 1'b0;
 
     assign dir_x_CS         = 1'b0;
     assign dir_x_SL         = 1'b0;
@@ -227,7 +225,6 @@ module wrapper_top (
     assign dir_x_PD         = 1'b0;
     assign dir_x_PDRV0      = 1'b1;
     assign dir_x_PDRV1      = 1'b0;
-    assign dir_x_IN         = 1'b0;
 
     assign move_en_y_CS     = 1'b0;
     assign move_en_y_SL     = 1'b0;
@@ -237,7 +234,6 @@ module wrapper_top (
     assign move_en_y_PD     = 1'b0;
     assign move_en_y_PDRV0  = 1'b1;
     assign move_en_y_PDRV1  = 1'b0;
-    assign move_en_y_IN     = 1'b0;
 
     assign dir_y_CS         = 1'b0;
     assign dir_y_SL         = 1'b0;
@@ -247,7 +243,6 @@ module wrapper_top (
     assign dir_y_PD         = 1'b0;
     assign dir_y_PDRV0      = 1'b1;
     assign dir_y_PDRV1      = 1'b0;
-    assign dir_y_IN         = 1'b0;
 
     assign mems_drv_x_CS    = 1'b0;
     assign mems_drv_x_SL    = 1'b0;
@@ -257,7 +252,6 @@ module wrapper_top (
     assign mems_drv_x_PD    = 1'b0;
     assign mems_drv_x_PDRV0 = 1'b1;
     assign mems_drv_x_PDRV1 = 1'b0;
-    assign mems_drv_x_IN    = 1'b0;
 
     assign mems_drv_y_CS    = 1'b0;
     assign mems_drv_y_SL    = 1'b0;
@@ -267,7 +261,6 @@ module wrapper_top (
     assign mems_drv_y_PD    = 1'b0;
     assign mems_drv_y_PDRV0 = 1'b1;
     assign mems_drv_y_PDRV1 = 1'b0;
-    assign mems_drv_y_IN    = 1'b0;
 
     assign ref_wave_x_CS    = 1'b0;
     assign ref_wave_x_SL    = 1'b0;
@@ -277,7 +270,6 @@ module wrapper_top (
     assign ref_wave_x_PD    = 1'b0;
     assign ref_wave_x_PDRV0 = 1'b1;
     assign ref_wave_x_PDRV1 = 1'b0;
-    assign ref_wave_x_IN    = 1'b0;
 
     assign ref_wave_y_CS    = 1'b0;
     assign ref_wave_y_SL    = 1'b0;
@@ -287,7 +279,6 @@ module wrapper_top (
     assign ref_wave_y_PD    = 1'b0;
     assign ref_wave_y_PDRV0 = 1'b1;
     assign ref_wave_y_PDRV1 = 1'b0;
-    assign ref_wave_y_IN    = 1'b0;
 
     assign read_en_CS       = 1'b0;
     assign read_en_SL       = 1'b0;
@@ -297,7 +288,6 @@ module wrapper_top (
     assign read_en_PD       = 1'b0;
     assign read_en_PDRV0    = 1'b1;
     assign read_en_PDRV1    = 1'b0;
-    assign read_en_IN       = 1'b0;
 
 
 
@@ -312,7 +302,7 @@ module wrapper_top (
         .spi_sclk    (spi_sclk),
         .spi_mosi    (spi_mosi),
         .spi_miso    (spi_miso_OUT),
-        .spi_miso_oe (spi_miso_OE),
+        .spi_miso_oe (spi_miso_oe),
         .move_en_x   (move_en_x_OUT),
         .dir_x       (dir_x_OUT),
         .move_en_y   (move_en_y_OUT),

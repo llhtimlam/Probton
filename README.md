@@ -91,7 +91,7 @@ Setup pin: (4)
 ├── 📁 cocotb/                          # Digital SystemVerilog cocotb simulation results & verification
 │   └── 📄 README.md                    # Instructions for setting up cocotb & GTKWave simulation environment
 │   └── 📁 sim_build                    # GTKWave waveform simulation result
-├── 📁 Analog/
+├── 📁 Analog/                          # (Not implemented for tapeout)
 │   └── 📁 schematics/                  # Analog circuit design files
 │       └── 📄 B18_Probton.sch          # Integrated Schematic for whole system
 |       # Analog submodule folder
@@ -106,6 +106,8 @@ Setup pin: (4)
 |       # 📄 /**/*.sym                  # Symbol for schematic
 │       # 📁 /**/*/simulation_files     # Schematic Simmulation Raw file
 │       # 📁 /**/*/layout               # Analog layout files
+├── 📁 def/
+│   └── 📁 A                            # Chipathon provided def template
 ├── 📁 librelane/
 │   └── 📁 slots                        # Chipathon template for slots setting
 │   └── 📄 chip_top.sdc                 # Chipathon template
@@ -113,19 +115,23 @@ Setup pin: (4)
 |   # Digital Domain Layout Generation
 │   └── 📄 config.yaml                  # Layout generation setting
 │   └── 📄 pin_order.cfg                # Pin placement for Odb.CustomIOPlacement IO_PIN_ORDER_CFG
-│   └── 📄 analog_block.*               # Macro for analog blackbox
+│   └── 📄 analog_block.*               # Macro for analog blackbox (not used)
 │   └── 📁 Digital_Domain               # Digital domain layout report
+│   └── 📁 Digital_Domain_Padframe      # Digital domain integrated with padframe layout report
 |   # Digital Domain submodule (not used)
 │   └── 📁 Config                       # .yaml setting and Odb.CustomIOPlacement IO_PIN_ORDER_CFG .cfg setting for all module
 │   └── 📁 Submodule                    # Digital domain submodule layout report
 └── 📁 gds/
 │   └── 📄 B18_Probton.gds              # DRC dry run gds file for layout review*
 │   └── 📄 B18_Probton.lyrdb            # DRC check report for B18_Probton.gds
-│   └── 📁 analog_domain
-│   └── 📁 digital_domain
+│   └── 📁 analog_domain                # (Not used)
+│   └── 📁 digital_domain               # (Not used)
 ├── 📁 scripts/
 │   └── 📄 README.md                    # Instructions for setting up IIC-OSIC-TOOLS docker used for this project
-
+│   └── 📁 python                       # Librelane plugin forked from 9T DCIM SRAM Macro — Chipathon 2026 (Team A07 Blueprints)
+│       └── 📁 librelane_plugin_padframe_bridge
+│           └── 📄 __init__.py
+│           └── 📄 odbpy_script.py      # Script for flow: ClassicWithPadframeBridge
 ```
 
 ## Schematic Review
@@ -141,17 +147,17 @@ Presentation Deck for Schematic/Simulation Review : [Google Slides](https://docs
 
 ## Layout Review
 
-<img src="Media\Layout\pre-integration.png" width="100%" alt="Proposed Layout Floorplan">
+<img src="Media\Layout\B18_Probton_integration.png" width="100%" alt="Layout">
 
 Video for Layout Review: [Youtube](https://youtu.be/rO0A9EQpW5c)
 
 Presentation Deck for Layout Review : [Google Slides](https://docs.google.com/presentation/d/1-wRJ25tOpLcIwcqMKb84TJG7cVurhM7Yr_dMmYaoczU/edit?slide=id.g3f0ce36bc21_4_376#slide=id.g3f0ce36bc21_4_376)
 
-DRC Clean except Density Rule for M2 - MTop
+Antenna Clean
 
-LVS in progress
+DRC Clean except Density Rule for M1 - MTop
 
-Only Missing Analog Readout Layout
+LVS Clean
 
 
 ## Simulation result for core concept

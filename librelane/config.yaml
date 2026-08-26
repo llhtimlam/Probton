@@ -1,6 +1,6 @@
 meta:
   version: 3
-  flow: Classic
+  flow: ClassicWithPadframeBridge
 
 DESIGN_NAME: wrapper_top
 
@@ -15,10 +15,6 @@ CLOCK_PERIOD: 200   # 5 MHz
 
 # Routing / ESD
 DIODE_ON_PORTS: in
-
-# Disable core ring pad connection & enable seal ring
-PDN_CORE_RING: True
-PDN_CORE_RING_CONNECT_TO_PADS: False
 
 # Let the tool size the core
 FP_SIZING: absolute
@@ -112,19 +108,38 @@ VDD_NETS:
 GND_NETS:
   - VSS
 
-DIE_AREA: [0, 0.0, 1110, 1110]
-CORE_AREA: [0, 10.0, 1100, 1110]
+# Disable core ring pad connection & enable seal ring
+PDN_CORE_RING: True
+PDN_CORE_RING_CONNECT_TO_PADS: False
+
+DIE_AREA: [0, 0, 1110, 1110]
+CORE_AREA: [100, 100, 1010, 1010]
+
+# PDN - Straps
+PDN_VWIDTH: 5
+PDN_HWIDTH: 4
+PDN_VSPACING: 1
+PDN_HSPACING: 1
+PDN_VPITCH: 75
+PDN_HPITCH: 75
+
+# PDN - Core ring
+# Maximum metal width without slotting: 30um
+PDN_CORE_RING_VWIDTH: 25
+PDN_CORE_RING_HWIDTH: 25
+PDN_ENABLE_PINS: True
+PDN_CORE_VERTICAL_LAYER: Metal2
+PDN_CORE_HORIZONTAL_LAYER: Metal3
+
+# Halo around macros for row-cutting and for the PDN macro grid
+FP_MACRO_HORIZONTAL_HALO: 10
+FP_MACRO_VERTICAL_HALO: 10
+PDN_HORIZONTAL_HALO: 5
+PDN_VERTICAL_HALO: 5
 
 # Pin allocation
 # "IO_PIN_ORDER_CFG": "dir::pin_order.cfg"
 "ERRORS_ON_UNMATCHED_IO": "both"
-
-# Area reserve for Analog
-PDN_HORIZONTAL_HALO: 10
-PDN_VERTICAL_HALO:   10
-
-FP_MACRO_HORIZONTAL_HALO: 10
-FP_MACRO_VERTICAL_HALO: 10
 
 PDN_CFG: dir::pdn_cfg.tcl
 
@@ -151,3 +166,5 @@ KLAYOUT_ANTENNA_OPTIONS:
   decks: "antenna"
   variant: ref::$PDK
   workers: max
+
+MAGIC_EXT_UNIQUE: notopports
