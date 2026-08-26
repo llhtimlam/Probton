@@ -2,10 +2,12 @@ meta:
   version: 3
   flow: Classic
 
-DESIGN_NAME: wrapper
+DESIGN_NAME: wrapper_top
 
 VERILOG_FILES:
-  - dir::../src/wrapper.sv
+  - dir::../src/B18_top.sv
+
+FP_DEF_TEMPLATE: "dir::../def/A/B18_A.def"
 
 CLOCK_PORT: clk
 CLOCK_NET: clk
@@ -13,6 +15,10 @@ CLOCK_PERIOD: 200   # 5 MHz
 
 # Routing / ESD
 DIODE_ON_PORTS: in
+
+# Disable core ring pad connection & enable seal ring
+PDN_CORE_RING: True
+PDN_CORE_RING_CONNECT_TO_PADS: False
 
 # Let the tool size the core
 FP_SIZING: absolute
@@ -110,7 +116,7 @@ DIE_AREA: [0, 0.0, 1110, 1110]
 CORE_AREA: [0, 10.0, 1100, 1110]
 
 # Pin allocation
-"IO_PIN_ORDER_CFG": "dir::pin_order.cfg"
+# "IO_PIN_ORDER_CFG": "dir::pin_order.cfg"
 "ERRORS_ON_UNMATCHED_IO": "both"
 
 # Area reserve for Analog
@@ -121,3 +127,27 @@ FP_MACRO_HORIZONTAL_HALO: 10
 FP_MACRO_VERTICAL_HALO: 10
 
 PDN_CFG: dir::pdn_cfg.tcl
+
+# DRC options block containing worker count
+KLAYOUT_DRC_OPTIONS:
+  feol: true
+  beol: true
+  run_mode: "deep"
+  conn_drc: true
+  dummy: true
+  dummy_no_sub_prev: true
+  offgrid: true
+  wedge: true
+  decks: "all,-antenna,-density,-cup"
+  variant: ref::$PDK
+  workers: max
+
+KLAYOUT_DENSITY_OPTIONS:
+  decks: "density"
+  variant: ref::$PDK
+  workers: max
+
+KLAYOUT_ANTENNA_OPTIONS:
+  decks: "antenna"
+  variant: ref::$PDK
+  workers: max
