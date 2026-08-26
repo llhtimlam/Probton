@@ -166,19 +166,15 @@ module wrapper_top (
     output logic read_en_PDRV1,
     input  logic read_en_IN,
 
-    input  logic comp_x,     // bidir_out_13
+    // bidir_out_13
+    input  logic comp_x,
     output logic comp_x_PU,
     output logic comp_x_PD,
 
-    input  logic comp_y      // bidir_out_14
+    // bidir_out_14
+    input  logic comp_y,
     output logic comp_y_PU,
-    output logic comp_y_PD,
-
-    // Analog Module
-    //input  wire analog_readout_input,
-    //output wire analog_readout_output,
-    //output wire analog_error_x_output,
-    //output wire analog_error_y_output
+    output logic comp_y_PD
 );
 
     // Input pads:
