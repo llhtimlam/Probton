@@ -80,9 +80,10 @@ Setup pin: (4)
 │   └── 📄 chip_core.sv                 # Chipathon template for core level, compiled with digital domain (not used for layout generation flow)
 │   └── 📄 analog_macro.sv              # Analog Domaain wrapper (not used for layout generation)
 |   # Layout Review
-│   └── 📄 wrapper.sv                   # chip_core.sv replacement wrapper for the layout generation
-│   └── 📄 analog_block.sv              # 480μm x 240μm Analog Domaain wrapper blackbox
-│   └── 📄 digital_domain.sv            # 1117.5μm x 558.75μm Digital Domaain wrapper (carved out 480μm x 240μm analog domain)
+│   └── 📄 B18_Probton.sv               # chip_top.sv replacement wrapper for the padframe layout generation
+│   └── 📄 B18_core.sv                  # chip_core.sv replacement wrapper for the core layout generation
+│   └── 📄 analog_block.sv              # 480μm x 240μm Analog Domain wrapper blackbox (not used)
+│   └── 📄 digital_domain.sv            # 1110μm x 1110μm Digital Domain core top level
 │   └── 📄 state_machine.sv             # Finite State Machine controller
 │   └── 📄 spi.sv                       # SPI controller
 │   └── 📄 wave_controller.sv           # Handle timing, calibration, timing for readout, MEMS signal generation in ΔΣ Modulated Digital Waveform
@@ -116,13 +117,17 @@ Setup pin: (4)
 │   └── 📄 config.yaml                  # Layout generation setting
 │   └── 📄 pin_order.cfg                # Pin placement for Odb.CustomIOPlacement IO_PIN_ORDER_CFG
 │   └── 📄 analog_block.*               # Macro for analog blackbox (not used)
-│   └── 📁 Digital_Domain               # Digital domain layout report
+│   └── 📁 Digital_Domain               # Digital domain core layout report
 │   └── 📁 Digital_Domain_Padframe      # Digital domain integrated with padframe layout report
 |   # Digital Domain submodule (not used)
 │   └── 📁 Config                       # .yaml setting and Odb.CustomIOPlacement IO_PIN_ORDER_CFG .cfg setting for all module
 │   └── 📁 Submodule                    # Digital domain submodule layout report
+📄 info.yaml                            # Chipathon info.yaml pin setting template for tapeout
+└── 📁 lvs/
+│   └── 📄 lvs_config.json              # Chipathon lvs config template for tapeout
+│   └── 📄 B18_Probton.spice            # Spice netlist from librelane run report
 └── 📁 gds/
-│   └── 📄 B18_Probton.gds              # DRC dry run gds file for layout review*
+│   └── 📄 B18_Probton.gds              # Final gds file integrated with padframe ready for tapeout
 │   └── 📄 B18_Probton.lyrdb            # DRC check report for B18_Probton.gds
 │   └── 📁 analog_domain                # (Not used)
 │   └── 📁 digital_domain               # (Not used)
