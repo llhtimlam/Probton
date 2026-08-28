@@ -7,7 +7,7 @@ DESIGN_NAME: wrapper_top
 VERILOG_FILES:
   - dir::../src/B18_top.sv
 
-FP_DEF_TEMPLATE: "dir::../def/A/B18_A.def"
+FP_DEF_TEMPLATE: "dir::../def/A/B18_A_padring.def"
 
 CLOCK_PORT: clk
 CLOCK_NET: clk
