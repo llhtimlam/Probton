@@ -41,7 +41,7 @@ set ::env(CELL_PAD_EXCLUDE) "gf180mcu_fd_sc_mcu7t5v0__filltie \"gf180mcu_fd_sc_m
 set ::env(DIODE_CELL) gf180mcu_fd_sc_mcu7t5v0__antenna/I
 set ::env(WELLTAP_CELL) gf180mcu_fd_sc_mcu7t5v0__filltie
 set ::env(ENDCAP_CELL) gf180mcu_fd_sc_mcu7t5v0__endcap
-set ::env(DESIGN_NAME) wrapper_top
+set ::env(DESIGN_NAME) B18_Probton
 set ::env(CLOCK_PERIOD) 200
 set ::env(CLOCK_PORT) clk
 set ::env(CLOCK_NET) clk
@@ -86,6 +86,6 @@ set ::env(PL_OPTIMIZE_MIRRORING) 1
 set ::env(PL_MAX_DISPLACEMENT_X) 800
 set ::env(PL_MAX_DISPLACEMENT_Y) 500
 set ::env(DPL_CELL_PADDING) 2
-set ::env(CURRENT_ODB) /workspace/librelane/runs/RUN_2026-08-26_23-49-04/38-openroad-resizertimingpostcts/wrapper_top.odb
-set ::env(SAVE_ODB) /workspace/librelane/runs/RUN_2026-08-26_23-49-04/40-openroad-globalrouting/wrapper_top.odb
-set ::env(SAVE_DEF) /workspace/librelane/runs/RUN_2026-08-26_23-49-04/40-openroad-globalrouting/wrapper_top.def
+set ::env(CURRENT_ODB) /workspace/librelane/runs/RUN_2026-08-29_02-02-22/38-openroad-resizertimingpostcts/B18_Probton.odb
+set ::env(SAVE_ODB) /workspace/librelane/runs/RUN_2026-08-29_02-02-22/40-openroad-globalrouting/B18_Probton.odb
+set ::env(SAVE_DEF) /workspace/librelane/runs/RUN_2026-08-29_02-02-22/40-openroad-globalrouting/B18_Probton.def

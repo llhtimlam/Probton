@@ -8,94 +8,94 @@
 
 1. Executing Liberty frontend: /foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib
 Imported 229 cell types from liberty file.
-[INFO] Using SDC file '/workspace/librelane/runs/RUN_2026-08-26_23-49-04/06-yosys-synthesis/synthesis.abc.sdc' for ABC…use_slang
+[INFO] Using SDC file '/workspace/librelane/runs/RUN_2026-08-29_02-02-22/06-yosys-synthesis/synthesis.abc.sdc' for ABC…use_slang
 
 2. Executing SLANG frontend.
 Top level design units:
-    wrapper_top
+    B18_Probton
 
 
 Build succeeded: 0 errors, 0 warnings
 
 2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Found and cleaned up 1 empty switch in `\wrapper_top.$954'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$943'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$930'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$870'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$859'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$846'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$793'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$788'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$783'.
-Removing empty process `wrapper_top.$778'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$771'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$768'.
-Removing empty process `wrapper_top.$756'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$749'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$746'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$717'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$603'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$573'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$567'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$508'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$503'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$498'.
-Removing empty process `wrapper_top.$493'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$486'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$483'.
-Removing empty process `wrapper_top.$471'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$464'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$461'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$432'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$318'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$288'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$282'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$259'.
-Removing empty process `wrapper_top.$256'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$247'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$194'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$167'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$122'.
-Removing empty process `wrapper_top.$111'.
-Removing empty process `wrapper_top.$105'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$954'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$943'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$930'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$870'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$859'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$846'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$793'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$788'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$783'.
+Removing empty process `B18_Probton.$778'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$771'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$768'.
+Removing empty process `B18_Probton.$756'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$749'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$746'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$717'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$603'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$573'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$567'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$508'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$503'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$498'.
+Removing empty process `B18_Probton.$493'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$486'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$483'.
+Removing empty process `B18_Probton.$471'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$464'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$461'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$432'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$318'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$288'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$282'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$259'.
+Removing empty process `B18_Probton.$256'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$247'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$194'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$167'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$122'.
+Removing empty process `B18_Probton.$111'.
+Removing empty process `B18_Probton.$105'.
 Cleaned up 33 empty switches.
 
 2.2. Executing TRIBUF pass.
 
 2.3. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
-Marked 2 switch rules as full_case in process $788 in module wrapper_top.
-Marked 9 switch rules as full_case in process $954 in module wrapper_top.
-Marked 1 switch rules as full_case in process $771 in module wrapper_top.
-Removed 1 dead cases from process $768 in module wrapper_top.
-Marked 1 switch rules as full_case in process $768 in module wrapper_top.
-Marked 1 switch rules as full_case in process $943 in module wrapper_top.
-Marked 1 switch rules as full_case in process $749 in module wrapper_top.
-Removed 1 dead cases from process $746 in module wrapper_top.
-Marked 1 switch rules as full_case in process $746 in module wrapper_top.
-Marked 10 switch rules as full_case in process $717 in module wrapper_top.
-Marked 16 switch rules as full_case in process $603 in module wrapper_top.
-Marked 1 switch rules as full_case in process $573 in module wrapper_top.
-Marked 2 switch rules as full_case in process $567 in module wrapper_top.
-Marked 9 switch rules as full_case in process $508 in module wrapper_top.
-Marked 2 switch rules as full_case in process $503 in module wrapper_top.
-Marked 1 switch rules as full_case in process $930 in module wrapper_top.
-Marked 1 switch rules as full_case in process $486 in module wrapper_top.
-Removed 1 dead cases from process $483 in module wrapper_top.
-Marked 1 switch rules as full_case in process $483 in module wrapper_top.
-Marked 9 switch rules as full_case in process $870 in module wrapper_top.
-Marked 1 switch rules as full_case in process $464 in module wrapper_top.
-Removed 1 dead cases from process $461 in module wrapper_top.
-Marked 1 switch rules as full_case in process $461 in module wrapper_top.
-Marked 10 switch rules as full_case in process $432 in module wrapper_top.
-Marked 16 switch rules as full_case in process $318 in module wrapper_top.
-Marked 1 switch rules as full_case in process $288 in module wrapper_top.
-Marked 2 switch rules as full_case in process $282 in module wrapper_top.
-Marked 1 switch rules as full_case in process $859 in module wrapper_top.
-Marked 9 switch rules as full_case in process $247 in module wrapper_top.
-Marked 1 switch rules as full_case in process $167 in module wrapper_top.
-Marked 9 switch rules as full_case in process $122 in module wrapper_top.
-Marked 1 switch rules as full_case in process $846 in module wrapper_top.
-Marked 9 switch rules as full_case in process $793 in module wrapper_top.
+Marked 2 switch rules as full_case in process $788 in module B18_Probton.
+Marked 9 switch rules as full_case in process $954 in module B18_Probton.
+Marked 1 switch rules as full_case in process $771 in module B18_Probton.
+Removed 1 dead cases from process $768 in module B18_Probton.
+Marked 1 switch rules as full_case in process $768 in module B18_Probton.
+Marked 1 switch rules as full_case in process $943 in module B18_Probton.
+Marked 1 switch rules as full_case in process $749 in module B18_Probton.
+Removed 1 dead cases from process $746 in module B18_Probton.
+Marked 1 switch rules as full_case in process $746 in module B18_Probton.
+Marked 10 switch rules as full_case in process $717 in module B18_Probton.
+Marked 16 switch rules as full_case in process $603 in module B18_Probton.
+Marked 1 switch rules as full_case in process $573 in module B18_Probton.
+Marked 2 switch rules as full_case in process $567 in module B18_Probton.
+Marked 9 switch rules as full_case in process $508 in module B18_Probton.
+Marked 2 switch rules as full_case in process $503 in module B18_Probton.
+Marked 1 switch rules as full_case in process $930 in module B18_Probton.
+Marked 1 switch rules as full_case in process $486 in module B18_Probton.
+Removed 1 dead cases from process $483 in module B18_Probton.
+Marked 1 switch rules as full_case in process $483 in module B18_Probton.
+Marked 9 switch rules as full_case in process $870 in module B18_Probton.
+Marked 1 switch rules as full_case in process $464 in module B18_Probton.
+Removed 1 dead cases from process $461 in module B18_Probton.
+Marked 1 switch rules as full_case in process $461 in module B18_Probton.
+Marked 10 switch rules as full_case in process $432 in module B18_Probton.
+Marked 16 switch rules as full_case in process $318 in module B18_Probton.
+Marked 1 switch rules as full_case in process $288 in module B18_Probton.
+Marked 2 switch rules as full_case in process $282 in module B18_Probton.
+Marked 1 switch rules as full_case in process $859 in module B18_Probton.
+Marked 9 switch rules as full_case in process $247 in module B18_Probton.
+Marked 1 switch rules as full_case in process $167 in module B18_Probton.
+Marked 9 switch rules as full_case in process $122 in module B18_Probton.
+Marked 1 switch rules as full_case in process $846 in module B18_Probton.
+Marked 9 switch rules as full_case in process $793 in module B18_Probton.
 Removed a total of 4 dead cases.
 
 2.4. Executing PROC_PRUNE pass (remove redundant assignments in processes).
@@ -109,12 +109,12 @@ Converted 4 switches.
 <suppressed ~179 debug messages>
 
 2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
-Creating decoders for process `\wrapper_top.$788'.
+Creating decoders for process `\B18_Probton.$788'.
      1/2: $wrapper_inst.digital_domain_inst.wave_controller_y_inst.ds_code$790
      2/2: $wrapper_inst.digital_domain_inst.wave_controller_y_inst.ds_code$791
-Creating decoders for process `\wrapper_top.$783'.
+Creating decoders for process `\B18_Probton.$783'.
      1/1: $wrapper_inst.digital_domain_inst.wave_controller_y_inst.ref_ds_code$786
-Creating decoders for process `\wrapper_top.$954'.
+Creating decoders for process `\B18_Probton.$954'.
      1/39: $wrapper_inst.digital_domain_inst.signal_processor_y_inst.cycle_count$976
      2/39: $wrapper_inst.digital_domain_inst.signal_processor_y_inst.cnt_out$975
      3/39: $wrapper_inst.digital_domain_inst.signal_processor_y_inst.cnt_in$974
@@ -154,20 +154,20 @@ Creating decoders for process `\wrapper_top.$954'.
     37/39: $wrapper_inst.digital_domain_inst.signal_processor_y_inst.dir$989
     38/39: $wrapper_inst.digital_domain_inst.signal_processor_y_inst.latch_phase270_ack$988
     39/39: $wrapper_inst.digital_domain_inst.signal_processor_y_inst.latch_phase90_ack$987
-Creating decoders for process `\wrapper_top.$771'.
+Creating decoders for process `\B18_Probton.$771'.
      1/1: $wrapper_inst.digital_domain_inst.wave_controller_y_inst.u_ref_sine.amp$774
-Creating decoders for process `\wrapper_top.$768'.
+Creating decoders for process `\B18_Probton.$768'.
      1/1: $wrapper_inst.digital_domain_inst.wave_controller_y_inst.u_ref_sine.q_val$769
-Creating decoders for process `\wrapper_top.$943'.
+Creating decoders for process `\B18_Probton.$943'.
      1/4: $wrapper_inst.digital_domain_inst.signal_processor_y_inst.next_out$947
      2/4: $wrapper_inst.digital_domain_inst.signal_processor_y_inst.next_in$946
      3/4: $wrapper_inst.digital_domain_inst.signal_processor_y_inst.next_out$949
      4/4: $wrapper_inst.digital_domain_inst.signal_processor_y_inst.next_in$948
-Creating decoders for process `\wrapper_top.$749'.
+Creating decoders for process `\B18_Probton.$749'.
      1/1: $wrapper_inst.digital_domain_inst.wave_controller_y_inst.u_sine.amp$752
-Creating decoders for process `\wrapper_top.$746'.
+Creating decoders for process `\B18_Probton.$746'.
      1/1: $wrapper_inst.digital_domain_inst.wave_controller_y_inst.u_sine.q_val$747
-Creating decoders for process `\wrapper_top.$717'.
+Creating decoders for process `\B18_Probton.$717'.
      1/13: $wrapper_inst.digital_domain_inst.wave_controller_y_inst.latch_phase270$736
      2/13: $wrapper_inst.digital_domain_inst.wave_controller_y_inst.latch_phase90$735
      3/13: $wrapper_inst.digital_domain_inst.wave_controller_y_inst.latch_error$734
@@ -181,7 +181,7 @@ Creating decoders for process `\wrapper_top.$717'.
     11/13: $wrapper_inst.digital_domain_inst.wave_controller_y_inst.latch_error$740
     12/13: $wrapper_inst.digital_domain_inst.wave_controller_y_inst.latch_phase270$739
     13/13: $wrapper_inst.digital_domain_inst.wave_controller_y_inst.latch_phase90$738
-Creating decoders for process `\wrapper_top.$603'.
+Creating decoders for process `\B18_Probton.$603'.
      1/84: $wrapper_inst.digital_domain_inst.wave_controller_y_inst.capture_step$662
      2/84: $wrapper_inst.digital_domain_inst.wave_controller_y_inst.capture_pending$661
      3/84: $wrapper_inst.digital_domain_inst.wave_controller_y_inst.capture_step$640
@@ -266,16 +266,16 @@ Creating decoders for process `\wrapper_top.$603'.
     82/84: $wrapper_inst.digital_domain_inst.wave_controller_y_inst.delay_wave_cycle$693
     83/84: $wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_timeout$692
     84/84: $wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_done$691
-Creating decoders for process `\wrapper_top.$573'.
+Creating decoders for process `\B18_Probton.$573'.
      1/5: $wrapper_inst.digital_domain_inst.wave_controller_y_inst.comp_sync4$581
      2/5: $wrapper_inst.digital_domain_inst.wave_controller_y_inst.comp_sync3$580
      3/5: $wrapper_inst.digital_domain_inst.wave_controller_y_inst.comp_sync2$579
      4/5: $wrapper_inst.digital_domain_inst.wave_controller_y_inst.comp_sync1$578
      5/5: $wrapper_inst.digital_domain_inst.wave_controller_y_inst.comp_sync0$577
-Creating decoders for process `\wrapper_top.$567'.
+Creating decoders for process `\B18_Probton.$567'.
      1/2: $wrapper_inst.digital_domain_inst.wave_controller_y_inst.phase_acc$571
      2/2: $wrapper_inst.digital_domain_inst.wave_controller_y_inst.phase_acc$572
-Creating decoders for process `\wrapper_top.$508'.
+Creating decoders for process `\B18_Probton.$508'.
      1/20: $wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_burst_count$532
      2/20: $wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_burst_active$531
      3/20: $wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_burst_armed$530
@@ -296,20 +296,20 @@ Creating decoders for process `\wrapper_top.$508'.
     18/20: $wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_burst_count$522
     19/20: $wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_burst_active$521
     20/20: $wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_burst_armed$520
-Creating decoders for process `\wrapper_top.$503'.
+Creating decoders for process `\B18_Probton.$503'.
      1/2: $wrapper_inst.digital_domain_inst.wave_controller_x_inst.ds_code$505
      2/2: $wrapper_inst.digital_domain_inst.wave_controller_x_inst.ds_code$506
-Creating decoders for process `\wrapper_top.$498'.
+Creating decoders for process `\B18_Probton.$498'.
      1/1: $wrapper_inst.digital_domain_inst.wave_controller_x_inst.ref_ds_code$501
-Creating decoders for process `\wrapper_top.$930'.
+Creating decoders for process `\B18_Probton.$930'.
      1/3: $wrapper_inst.digital_domain_inst.signal_processor_y_inst.s270_pipe$936
      2/3: $wrapper_inst.digital_domain_inst.signal_processor_y_inst.s90_pipe$935
      3/3: $wrapper_inst.digital_domain_inst.signal_processor_y_inst.comp_pipe$934
-Creating decoders for process `\wrapper_top.$486'.
+Creating decoders for process `\B18_Probton.$486'.
      1/1: $wrapper_inst.digital_domain_inst.wave_controller_x_inst.u_ref_sine.amp$489
-Creating decoders for process `\wrapper_top.$483'.
+Creating decoders for process `\B18_Probton.$483'.
      1/1: $wrapper_inst.digital_domain_inst.wave_controller_x_inst.u_ref_sine.q_val$484
-Creating decoders for process `\wrapper_top.$870'.
+Creating decoders for process `\B18_Probton.$870'.
      1/39: $wrapper_inst.digital_domain_inst.signal_processor_x_inst.cycle_count$892
      2/39: $wrapper_inst.digital_domain_inst.signal_processor_x_inst.cnt_out$891
      3/39: $wrapper_inst.digital_domain_inst.signal_processor_x_inst.cnt_in$890
@@ -349,11 +349,11 @@ Creating decoders for process `\wrapper_top.$870'.
     37/39: $wrapper_inst.digital_domain_inst.signal_processor_x_inst.dir$905
     38/39: $wrapper_inst.digital_domain_inst.signal_processor_x_inst.latch_phase270_ack$904
     39/39: $wrapper_inst.digital_domain_inst.signal_processor_x_inst.latch_phase90_ack$903
-Creating decoders for process `\wrapper_top.$464'.
+Creating decoders for process `\B18_Probton.$464'.
      1/1: $wrapper_inst.digital_domain_inst.wave_controller_x_inst.u_sine.amp$467
-Creating decoders for process `\wrapper_top.$461'.
+Creating decoders for process `\B18_Probton.$461'.
      1/1: $wrapper_inst.digital_domain_inst.wave_controller_x_inst.u_sine.q_val$462
-Creating decoders for process `\wrapper_top.$432'.
+Creating decoders for process `\B18_Probton.$432'.
      1/13: $wrapper_inst.digital_domain_inst.wave_controller_x_inst.latch_phase270$451
      2/13: $wrapper_inst.digital_domain_inst.wave_controller_x_inst.latch_phase90$450
      3/13: $wrapper_inst.digital_domain_inst.wave_controller_x_inst.latch_error$449
@@ -367,7 +367,7 @@ Creating decoders for process `\wrapper_top.$432'.
     11/13: $wrapper_inst.digital_domain_inst.wave_controller_x_inst.latch_error$455
     12/13: $wrapper_inst.digital_domain_inst.wave_controller_x_inst.latch_phase270$454
     13/13: $wrapper_inst.digital_domain_inst.wave_controller_x_inst.latch_phase90$453
-Creating decoders for process `\wrapper_top.$318'.
+Creating decoders for process `\B18_Probton.$318'.
      1/84: $wrapper_inst.digital_domain_inst.wave_controller_x_inst.capture_step$377
      2/84: $wrapper_inst.digital_domain_inst.wave_controller_x_inst.capture_pending$376
      3/84: $wrapper_inst.digital_domain_inst.wave_controller_x_inst.capture_step$355
@@ -452,24 +452,24 @@ Creating decoders for process `\wrapper_top.$318'.
     82/84: $wrapper_inst.digital_domain_inst.wave_controller_x_inst.delay_wave_cycle$408
     83/84: $wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_timeout$407
     84/84: $wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_done$406
-Creating decoders for process `\wrapper_top.$288'.
+Creating decoders for process `\B18_Probton.$288'.
      1/5: $wrapper_inst.digital_domain_inst.wave_controller_x_inst.comp_sync4$296
      2/5: $wrapper_inst.digital_domain_inst.wave_controller_x_inst.comp_sync3$295
      3/5: $wrapper_inst.digital_domain_inst.wave_controller_x_inst.comp_sync2$294
      4/5: $wrapper_inst.digital_domain_inst.wave_controller_x_inst.comp_sync1$293
      5/5: $wrapper_inst.digital_domain_inst.wave_controller_x_inst.comp_sync0$292
-Creating decoders for process `\wrapper_top.$282'.
+Creating decoders for process `\B18_Probton.$282'.
      1/2: $wrapper_inst.digital_domain_inst.wave_controller_x_inst.phase_acc$286
      2/2: $wrapper_inst.digital_domain_inst.wave_controller_x_inst.phase_acc$287
-Creating decoders for process `\wrapper_top.$259'.
+Creating decoders for process `\B18_Probton.$259'.
      1/2: $wrapper_inst.digital_domain_inst.state_machine_inst.read_en$261
      2/2: $wrapper_inst.digital_domain_inst.state_machine_inst.cal_start$260
-Creating decoders for process `\wrapper_top.$859'.
+Creating decoders for process `\B18_Probton.$859'.
      1/4: $wrapper_inst.digital_domain_inst.signal_processor_x_inst.next_out$863
      2/4: $wrapper_inst.digital_domain_inst.signal_processor_x_inst.next_in$862
      3/4: $wrapper_inst.digital_domain_inst.signal_processor_x_inst.next_out$865
      4/4: $wrapper_inst.digital_domain_inst.signal_processor_x_inst.next_in$864
-Creating decoders for process `\wrapper_top.$247'.
+Creating decoders for process `\B18_Probton.$247'.
      1/7: $wrapper_inst.digital_domain_inst.state_machine_inst.state_d$251
      2/7: $wrapper_inst.digital_domain_inst.state_machine_inst.state_d$252
      3/7: $wrapper_inst.digital_domain_inst.state_machine_inst.state_d$249
@@ -477,9 +477,9 @@ Creating decoders for process `\wrapper_top.$247'.
      5/7: $wrapper_inst.digital_domain_inst.state_machine_inst.state_d$248
      6/7: $wrapper_inst.digital_domain_inst.state_machine_inst.state_d$253
      7/7: $wrapper_inst.digital_domain_inst.state_machine_inst.state_d$254
-Creating decoders for process `\wrapper_top.$194'.
+Creating decoders for process `\B18_Probton.$194'.
      1/1: $wrapper_inst.digital_domain_inst.spi_regs_inst.reg_rd_data$195
-Creating decoders for process `\wrapper_top.$167'.
+Creating decoders for process `\B18_Probton.$167'.
      1/38: $wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase270_offset_y$177 [20:16]
      2/38: $wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase270_offset_y$177 [15:8]
      3/38: $wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase270_offset_y$177 [7:0]
@@ -518,7 +518,7 @@ Creating decoders for process `\wrapper_top.$167'.
     36/38: $wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase0_offset_x$184
     37/38: $wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_f_MEMS_fcw_y$183
     38/38: $wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_f_MEMS_fcw_x$182
-Creating decoders for process `\wrapper_top.$122'.
+Creating decoders for process `\B18_Probton.$122'.
      1/35: $wrapper_inst.digital_domain_inst.spi_regs_inst.tx_shift$156
      2/35: $wrapper_inst.digital_domain_inst.spi_regs_inst.tx_shift$157
      3/35: $wrapper_inst.digital_domain_inst.spi_regs_inst.bit_cnt$139
@@ -554,11 +554,11 @@ Creating decoders for process `\wrapper_top.$122'.
     33/35: $wrapper_inst.digital_domain_inst.spi_regs_inst.rx_shift$162
     34/35: $wrapper_inst.digital_domain_inst.spi_regs_inst.spi_addr$161
     35/35: $wrapper_inst.digital_domain_inst.spi_regs_inst.rw_n$160
-Creating decoders for process `\wrapper_top.$846'.
+Creating decoders for process `\B18_Probton.$846'.
      1/3: $wrapper_inst.digital_domain_inst.signal_processor_x_inst.s270_pipe$852
      2/3: $wrapper_inst.digital_domain_inst.signal_processor_x_inst.s90_pipe$851
      3/3: $wrapper_inst.digital_domain_inst.signal_processor_x_inst.comp_pipe$850
-Creating decoders for process `\wrapper_top.$793'.
+Creating decoders for process `\B18_Probton.$793'.
      1/20: $wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_burst_count$817
      2/20: $wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_burst_active$816
      3/20: $wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_burst_armed$815
@@ -581,97 +581,97 @@ Creating decoders for process `\wrapper_top.$793'.
     20/20: $wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_burst_armed$805
 
 2.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Found and cleaned up 3 empty switches in `\wrapper_top.$788'.
-Removing empty process `wrapper_top.$788'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$783'.
-Removing empty process `wrapper_top.$783'.
-Found and cleaned up 11 empty switches in `\wrapper_top.$954'.
-Removing empty process `wrapper_top.$954'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$771'.
-Removing empty process `wrapper_top.$771'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$768'.
-Removing empty process `wrapper_top.$768'.
-Found and cleaned up 3 empty switches in `\wrapper_top.$943'.
-Removing empty process `wrapper_top.$943'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$749'.
-Removing empty process `wrapper_top.$749'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$746'.
-Removing empty process `wrapper_top.$746'.
-Found and cleaned up 13 empty switches in `\wrapper_top.$717'.
-Removing empty process `wrapper_top.$717'.
-Found and cleaned up 25 empty switches in `\wrapper_top.$603'.
-Removing empty process `wrapper_top.$603'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$573'.
-Removing empty process `wrapper_top.$573'.
-Found and cleaned up 3 empty switches in `\wrapper_top.$567'.
-Removing empty process `wrapper_top.$567'.
-Found and cleaned up 11 empty switches in `\wrapper_top.$508'.
-Removing empty process `wrapper_top.$508'.
-Found and cleaned up 3 empty switches in `\wrapper_top.$503'.
-Removing empty process `wrapper_top.$503'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$498'.
-Removing empty process `wrapper_top.$498'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$930'.
-Removing empty process `wrapper_top.$930'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$486'.
-Removing empty process `wrapper_top.$486'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$483'.
-Removing empty process `wrapper_top.$483'.
-Found and cleaned up 11 empty switches in `\wrapper_top.$870'.
-Removing empty process `wrapper_top.$870'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$464'.
-Removing empty process `wrapper_top.$464'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$461'.
-Removing empty process `wrapper_top.$461'.
-Found and cleaned up 13 empty switches in `\wrapper_top.$432'.
-Removing empty process `wrapper_top.$432'.
-Found and cleaned up 25 empty switches in `\wrapper_top.$318'.
-Removing empty process `wrapper_top.$318'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$288'.
-Removing empty process `wrapper_top.$288'.
-Found and cleaned up 3 empty switches in `\wrapper_top.$282'.
-Removing empty process `wrapper_top.$282'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$259'.
-Removing empty process `wrapper_top.$259'.
-Found and cleaned up 3 empty switches in `\wrapper_top.$859'.
-Removing empty process `wrapper_top.$859'.
-Found and cleaned up 13 empty switches in `\wrapper_top.$247'.
-Removing empty process `wrapper_top.$247'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$194'.
-Removing empty process `wrapper_top.$194'.
-Found and cleaned up 3 empty switches in `\wrapper_top.$167'.
-Removing empty process `wrapper_top.$167'.
-Found and cleaned up 13 empty switches in `\wrapper_top.$122'.
-Removing empty process `wrapper_top.$122'.
-Found and cleaned up 1 empty switch in `\wrapper_top.$846'.
-Removing empty process `wrapper_top.$846'.
-Found and cleaned up 11 empty switches in `\wrapper_top.$793'.
-Removing empty process `wrapper_top.$793'.
+Found and cleaned up 3 empty switches in `\B18_Probton.$788'.
+Removing empty process `B18_Probton.$788'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$783'.
+Removing empty process `B18_Probton.$783'.
+Found and cleaned up 11 empty switches in `\B18_Probton.$954'.
+Removing empty process `B18_Probton.$954'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$771'.
+Removing empty process `B18_Probton.$771'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$768'.
+Removing empty process `B18_Probton.$768'.
+Found and cleaned up 3 empty switches in `\B18_Probton.$943'.
+Removing empty process `B18_Probton.$943'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$749'.
+Removing empty process `B18_Probton.$749'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$746'.
+Removing empty process `B18_Probton.$746'.
+Found and cleaned up 13 empty switches in `\B18_Probton.$717'.
+Removing empty process `B18_Probton.$717'.
+Found and cleaned up 25 empty switches in `\B18_Probton.$603'.
+Removing empty process `B18_Probton.$603'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$573'.
+Removing empty process `B18_Probton.$573'.
+Found and cleaned up 3 empty switches in `\B18_Probton.$567'.
+Removing empty process `B18_Probton.$567'.
+Found and cleaned up 11 empty switches in `\B18_Probton.$508'.
+Removing empty process `B18_Probton.$508'.
+Found and cleaned up 3 empty switches in `\B18_Probton.$503'.
+Removing empty process `B18_Probton.$503'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$498'.
+Removing empty process `B18_Probton.$498'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$930'.
+Removing empty process `B18_Probton.$930'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$486'.
+Removing empty process `B18_Probton.$486'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$483'.
+Removing empty process `B18_Probton.$483'.
+Found and cleaned up 11 empty switches in `\B18_Probton.$870'.
+Removing empty process `B18_Probton.$870'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$464'.
+Removing empty process `B18_Probton.$464'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$461'.
+Removing empty process `B18_Probton.$461'.
+Found and cleaned up 13 empty switches in `\B18_Probton.$432'.
+Removing empty process `B18_Probton.$432'.
+Found and cleaned up 25 empty switches in `\B18_Probton.$318'.
+Removing empty process `B18_Probton.$318'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$288'.
+Removing empty process `B18_Probton.$288'.
+Found and cleaned up 3 empty switches in `\B18_Probton.$282'.
+Removing empty process `B18_Probton.$282'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$259'.
+Removing empty process `B18_Probton.$259'.
+Found and cleaned up 3 empty switches in `\B18_Probton.$859'.
+Removing empty process `B18_Probton.$859'.
+Found and cleaned up 13 empty switches in `\B18_Probton.$247'.
+Removing empty process `B18_Probton.$247'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$194'.
+Removing empty process `B18_Probton.$194'.
+Found and cleaned up 3 empty switches in `\B18_Probton.$167'.
+Removing empty process `B18_Probton.$167'.
+Found and cleaned up 13 empty switches in `\B18_Probton.$122'.
+Removing empty process `B18_Probton.$122'.
+Found and cleaned up 1 empty switch in `\B18_Probton.$846'.
+Removing empty process `B18_Probton.$846'.
+Found and cleaned up 11 empty switches in `\B18_Probton.$793'.
+Removing empty process `B18_Probton.$793'.
 Cleaned up 183 empty switches.
 
 2.9. Executing OPT_EXPR pass (perform const folding).
-Optimizing module wrapper_top.
+Optimizing module B18_Probton.
 <suppressed ~466 debug messages>
 
 3. Executing HIERARCHY pass (managing design hierarchy).
 
 3.1. Analyzing design hierarchy..
-Top module:  \wrapper_top
+Top module:  \B18_Probton
 
 3.2. Analyzing design hierarchy..
-Top module:  \wrapper_top
+Top module:  \B18_Probton
 Removed 0 unused modules.
-Renaming module wrapper_top to wrapper_top.
+Renaming module B18_Probton to B18_Probton.
 
 4. Executing ATTRMAP pass (move or copy attributes).
 
 5. Executing HIERARCHY pass (managing design hierarchy).
 
 5.1. Analyzing design hierarchy..
-Top module:  \wrapper_top
+Top module:  \B18_Probton
 
 5.2. Analyzing design hierarchy..
-Top module:  \wrapper_top
+Top module:  \B18_Probton
 Removed 0 unused modules.
 
 6. Executing PROC_CLEAN pass (remove empty switches from decision trees).
@@ -703,37 +703,37 @@ Converted 0 switches.
 Cleaned up 0 empty switches.
 
 17. Executing CHECK pass (checking for obvious problems).
-Checking module wrapper_top...
+Checking module B18_Probton...
 Found and reported 0 problems.
 
 18. Executing OPT_EXPR pass (perform const folding).
-Optimizing module wrapper_top.
+Optimizing module B18_Probton.
 
 19. Executing OPT_EXPR pass (perform const folding).
-Optimizing module wrapper_top.
+Optimizing module B18_Probton.
 
 20. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \wrapper_top..
+Finding unused cells or wires in module \B18_Probton..
 Removed 39 unused cells and 1796 unused wires.
 <suppressed ~414 debug messages>
 
 21. Executing OPT_EXPR pass (perform const folding).
-Optimizing module wrapper_top.
+Optimizing module B18_Probton.
 <suppressed ~292 debug messages>
 
 22. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\wrapper_top'.
-Computing hashes of 1789 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
-Computing hashes of 1701 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
-Computing hashes of 1699 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
+Finding identical cells in module `\B18_Probton'.
+Computing hashes of 1789 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
+Computing hashes of 1701 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
+Computing hashes of 1699 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
 <suppressed ~270 debug messages>
 Removed a total of 90 cells.
 
 23. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
-Running muxtree optimizer on module \wrapper_top..
+Running muxtree optimizer on module \B18_Probton..
   Creating internal representation of mux trees.
   Evaluating internal representation of mux trees.
       Replacing known input bits on port A of cell $procmux$1602: \wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_burst_armed -> 1'0
@@ -1662,147 +1662,147 @@ Removed 914 multiplexer ports.
 <suppressed ~1665 debug messages>
 
 24. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
-  Optimizing cells in module \wrapper_top.
+  Optimizing cells in module \B18_Probton.
     New ctrl vector for $pmux cell $procmux$3076: $auto$opt_reduce.cc:137:opt_pmux$4099
-  Optimizing cells in module \wrapper_top.
+  Optimizing cells in module \B18_Probton.
 Performed a total of 6 changes.
 
 25. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\wrapper_top'.
-Computing hashes of 781 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
-Computing hashes of 777 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
-Computing hashes of 773 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
+Finding identical cells in module `\B18_Probton'.
+Computing hashes of 781 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
+Computing hashes of 777 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
+Computing hashes of 773 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
 <suppressed ~24 debug messages>
 Removed a total of 8 cells.
 
 26. Executing OPT_DFF pass (perform DFF optimizations).
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cs_sync ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.sclk_sync ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.mosi_sync ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.sclk_d ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.spi_miso_oe ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.spi_state ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.bit_cnt ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.rw_n ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.spi_addr ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.rx_shift ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.tx_shift ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_en ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_addr ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_f_MEMS_fcw_x ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_f_MEMS_fcw_y ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase0_offset_x ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase90_offset_x ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase270_offset_x ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase0_offset_y ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase90_offset_y ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase270_offset_y ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.boot_complete ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_done ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.phase_offset_imported ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.soft_rst ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.state_machine_inst.state_q ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.phase_acc ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.comp_sync0 ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.comp_sync1 ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.comp_sync2 ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.comp_sync3 ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.comp_sync4 ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_done ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_timeout ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.delay_wave_cycle ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.raw_edge1 ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.raw_edge2 ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.raw_edge3 ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_dir ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.wave_cycle_cnt ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.capture_pending ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.capture_step ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.latch_phase90 ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.latch_phase270 ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.latch_error ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.ds_acc ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.ref_ds_acc ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.mems_drv ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.ref_wave ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_burst_armed ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_burst_active ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_burst_count ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.phase_acc ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.comp_sync0 ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.comp_sync1 ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.comp_sync2 ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.comp_sync3 ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.comp_sync4 ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_done ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_timeout ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.delay_wave_cycle ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.raw_edge1 ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.raw_edge2 ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.raw_edge3 ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_dir ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.wave_cycle_cnt ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.capture_pending ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.capture_step ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.latch_phase90 ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.latch_phase270 ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.latch_error ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.ds_acc ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.ref_ds_acc ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.mems_drv ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.ref_wave ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_burst_armed ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_burst_active ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_burst_count ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.comp_pipe ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.s90_pipe ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.s270_pipe ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.latch_phase90_ack ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.latch_phase270_ack ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.dir ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.move_en ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.jitter_flag ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.phase_state ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.votes_in_phase ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.votes_out_phase ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.s90 ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.s90_valid ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.cnt_in ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.cnt_out ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.cycle_count ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.comp_pipe ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.s90_pipe ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.s270_pipe ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.latch_phase90_ack ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.latch_phase270_ack ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.dir ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.move_en ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.jitter_flag ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.phase_state ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.votes_in_phase ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.votes_out_phase ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.s90 ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.s90_valid ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.cnt_in ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.cnt_out ($aldff) from module wrapper_top.
-Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.cycle_count ($aldff) from module wrapper_top.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cs_sync ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.sclk_sync ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.mosi_sync ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.sclk_d ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.spi_miso_oe ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.spi_state ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.bit_cnt ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.rw_n ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.spi_addr ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.rx_shift ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.tx_shift ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_en ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_addr ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_f_MEMS_fcw_x ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_f_MEMS_fcw_y ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase0_offset_x ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase90_offset_x ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase270_offset_x ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase0_offset_y ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase90_offset_y ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase270_offset_y ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.boot_complete ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_done ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.phase_offset_imported ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.soft_rst ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.state_machine_inst.state_q ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.phase_acc ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.comp_sync0 ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.comp_sync1 ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.comp_sync2 ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.comp_sync3 ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.comp_sync4 ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_done ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_timeout ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.delay_wave_cycle ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.raw_edge1 ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.raw_edge2 ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.raw_edge3 ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_dir ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.wave_cycle_cnt ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.capture_pending ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.capture_step ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.latch_phase90 ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.latch_phase270 ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.latch_error ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.ds_acc ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.ref_ds_acc ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.mems_drv ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.ref_wave ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_burst_armed ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_burst_active ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_burst_count ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.phase_acc ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.comp_sync0 ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.comp_sync1 ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.comp_sync2 ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.comp_sync3 ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.comp_sync4 ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_done ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_timeout ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.delay_wave_cycle ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.raw_edge1 ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.raw_edge2 ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.raw_edge3 ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_dir ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.wave_cycle_cnt ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.capture_pending ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.capture_step ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.latch_phase90 ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.latch_phase270 ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.latch_error ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.ds_acc ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.ref_ds_acc ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.mems_drv ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.ref_wave ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_burst_armed ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_burst_active ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_burst_count ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.comp_pipe ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.s90_pipe ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.s270_pipe ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.latch_phase90_ack ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.latch_phase270_ack ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.dir ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.move_en ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.jitter_flag ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.phase_state ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.votes_in_phase ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.votes_out_phase ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.s90 ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.s90_valid ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.cnt_in ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.cnt_out ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.cycle_count ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.comp_pipe ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.s90_pipe ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.s270_pipe ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.latch_phase90_ack ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.latch_phase270_ack ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.dir ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.move_en ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.jitter_flag ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.phase_state ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.votes_in_phase ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.votes_out_phase ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.s90 ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.s90_valid ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.cnt_in ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.cnt_out ($aldff) from module B18_Probton.
+Changing const-value async load to async reset on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.cycle_count ($aldff) from module B18_Probton.
 
 27. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \wrapper_top..
+Finding unused cells or wires in module \B18_Probton..
 Removed 1 unused cells and 1022 unused wires.
 <suppressed ~7 debug messages>
 
 28. Executing OPT_EXPR pass (perform const folding).
-Optimizing module wrapper_top.
+Optimizing module B18_Probton.
 
 29. Rerunning OPT passes. (Maybe there is more to do…)
 
 30. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
-Running muxtree optimizer on module \wrapper_top..
+Running muxtree optimizer on module \B18_Probton..
   Creating internal representation of mux trees.
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
@@ -1810,37 +1810,37 @@ Removed 0 multiplexer ports.
 <suppressed ~606 debug messages>
 
 31. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
-  Optimizing cells in module \wrapper_top.
+  Optimizing cells in module \B18_Probton.
     New ctrl vector for $pmux cell $procmux$2536: $auto$opt_reduce.cc:137:opt_pmux$4101
     New ctrl vector for $pmux cell $procmux$986: $auto$opt_reduce.cc:137:opt_pmux$4103
     New ctrl vector for $pmux cell $procmux$922: $auto$opt_reduce.cc:137:opt_pmux$4105
     New ctrl vector for $pmux cell $procmux$2600: $auto$opt_reduce.cc:137:opt_pmux$4107
-  Optimizing cells in module \wrapper_top.
+  Optimizing cells in module \B18_Probton.
 Performed a total of 4 changes.
 
 32. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\wrapper_top'.
-Computing hashes of 776 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
-Computing hashes of 774 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
+Finding identical cells in module `\B18_Probton'.
+Computing hashes of 776 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
+Computing hashes of 774 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
 <suppressed ~6 debug messages>
 Removed a total of 2 cells.
 
 33. Executing OPT_DFF pass (perform DFF optimizations).
 
 34. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \wrapper_top..
+Finding unused cells or wires in module \B18_Probton..
 Removed 0 unused cells and 2 unused wires.
 <suppressed ~1 debug messages>
 
 35. Executing OPT_EXPR pass (perform const folding).
-Optimizing module wrapper_top.
+Optimizing module B18_Probton.
 
 36. Rerunning OPT passes. (Maybe there is more to do…)
 
 37. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
-Running muxtree optimizer on module \wrapper_top..
+Running muxtree optimizer on module \B18_Probton..
   Creating internal representation of mux trees.
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
@@ -1848,33 +1848,33 @@ Removed 0 multiplexer ports.
 <suppressed ~590 debug messages>
 
 38. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
-  Optimizing cells in module \wrapper_top.
+  Optimizing cells in module \B18_Probton.
 Performed a total of 0 changes.
 
 39. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\wrapper_top'.
-Computing hashes of 774 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
+Finding identical cells in module `\B18_Probton'.
+Computing hashes of 774 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
 Removed a total of 0 cells.
 
 40. Executing OPT_DFF pass (perform DFF optimizations).
 
 41. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \wrapper_top..
+Finding unused cells or wires in module \B18_Probton..
 
 42. Executing OPT_EXPR pass (perform const folding).
-Optimizing module wrapper_top.
+Optimizing module B18_Probton.
 
 43. Executing FSM pass (extract and optimize FSM).
 
 43.1. Executing FSM_DETECT pass (finding FSMs in design).
-Not marking wrapper_top.wrapper_inst.digital_domain_inst.state_machine_inst.state_q as FSM state register:
+Not marking B18_Probton.wrapper_inst.digital_domain_inst.state_machine_inst.state_q as FSM state register:
     Users of register don't seem to benefit from recoding.
-Found FSM state register wrapper_top.wrapper_inst.digital_domain_inst.wave_controller_x_inst.capture_step.
-Found FSM state register wrapper_top.wrapper_inst.digital_domain_inst.wave_controller_y_inst.capture_step.
+Found FSM state register B18_Probton.wrapper_inst.digital_domain_inst.wave_controller_x_inst.capture_step.
+Found FSM state register B18_Probton.wrapper_inst.digital_domain_inst.wave_controller_y_inst.capture_step.
 
 43.2. Executing FSM_EXTRACT pass (extracting FSM from design).
-Extracting FSM `\wrapper_inst.digital_domain_inst.wave_controller_x_inst.capture_step' from module `\wrapper_top'.
+Extracting FSM `\wrapper_inst.digital_domain_inst.wave_controller_x_inst.capture_step' from module `\B18_Probton'.
   found $adff cell for state register: $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.capture_step
   root of input selection tree: $procmux$3014_Y
   found reset state: 2'00 (from async reset)
@@ -1920,7 +1920,7 @@ Extracting FSM `\wrapper_inst.digital_domain_inst.wave_controller_x_inst.capture
   transition:       2'01 8'0-1--101 ->       2'01 4'0110
   transition:       2'01 8'1-1--101 ->       2'00 4'0010
   transition:       2'01 8'------1- ->       2'00 4'0010
-Extracting FSM `\wrapper_inst.digital_domain_inst.wave_controller_y_inst.capture_step' from module `\wrapper_top'.
+Extracting FSM `\wrapper_inst.digital_domain_inst.wave_controller_y_inst.capture_step' from module `\B18_Probton'.
   found $adff cell for state register: $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.capture_step
   root of input selection tree: $procmux$1400_Y
   found reset state: 2'00 (from async reset)
@@ -1968,33 +1968,33 @@ Extracting FSM `\wrapper_inst.digital_domain_inst.wave_controller_y_inst.capture
   transition:       2'01 8'-------1 ->       2'00 4'0010
 
 43.3. Executing FSM_OPT pass (simple optimizations of FSMs).
-Optimizing FSM `$fsm$\wrapper_inst.digital_domain_inst.wave_controller_y_inst.capture_step$4112' from module `\wrapper_top'.
+Optimizing FSM `$fsm$\wrapper_inst.digital_domain_inst.wave_controller_y_inst.capture_step$4112' from module `\B18_Probton'.
   Merging pattern 8'0-1--110 and 8'1-1--110 from group (0 0 4'0001).
   Merging pattern 8'1-1--110 and 8'0-1--110 from group (0 0 4'0001).
-Optimizing FSM `$fsm$\wrapper_inst.digital_domain_inst.wave_controller_x_inst.capture_step$4108' from module `\wrapper_top'.
+Optimizing FSM `$fsm$\wrapper_inst.digital_domain_inst.wave_controller_x_inst.capture_step$4108' from module `\B18_Probton'.
   Merging pattern 8'0-1--101 and 8'1-1--101 from group (0 0 4'0001).
   Merging pattern 8'1-1--101 and 8'0-1--101 from group (0 0 4'0001).
 
 43.4. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \wrapper_top..
+Finding unused cells or wires in module \B18_Probton..
 Removed 28 unused cells and 28 unused wires.
 <suppressed ~29 debug messages>
 
 43.5. Executing FSM_OPT pass (simple optimizations of FSMs).
-Optimizing FSM `$fsm$\wrapper_inst.digital_domain_inst.wave_controller_y_inst.capture_step$4112' from module `\wrapper_top'.
+Optimizing FSM `$fsm$\wrapper_inst.digital_domain_inst.wave_controller_y_inst.capture_step$4112' from module `\B18_Probton'.
   Removing unused output signal $procmux$1400_Y [0].
   Removing unused output signal $procmux$1400_Y [1].
-Optimizing FSM `$fsm$\wrapper_inst.digital_domain_inst.wave_controller_x_inst.capture_step$4108' from module `\wrapper_top'.
+Optimizing FSM `$fsm$\wrapper_inst.digital_domain_inst.wave_controller_x_inst.capture_step$4108' from module `\B18_Probton'.
   Removing unused output signal $procmux$3014_Y [0].
   Removing unused output signal $procmux$3014_Y [1].
 
 43.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
-Recoding FSM `$fsm$\wrapper_inst.digital_domain_inst.wave_controller_y_inst.capture_step$4112' from module `\wrapper_top' using `auto' encoding:
+Recoding FSM `$fsm$\wrapper_inst.digital_domain_inst.wave_controller_y_inst.capture_step$4112' from module `\B18_Probton' using `auto' encoding:
   mapping auto encoding to `one-hot` for this FSM.
   00 -> --1
   10 -> -1-
   01 -> 1--
-Recoding FSM `$fsm$\wrapper_inst.digital_domain_inst.wave_controller_x_inst.capture_step$4108' from module `\wrapper_top' using `auto' encoding:
+Recoding FSM `$fsm$\wrapper_inst.digital_domain_inst.wave_controller_x_inst.capture_step$4108' from module `\B18_Probton' using `auto' encoding:
   mapping auto encoding to `one-hot` for this FSM.
   00 -> --1
   10 -> -1-
@@ -2002,7 +2002,7 @@ Recoding FSM `$fsm$\wrapper_inst.digital_domain_inst.wave_controller_x_inst.capt
 
 43.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
 
-FSM `$fsm$\wrapper_inst.digital_domain_inst.wave_controller_y_inst.capture_step$4112' from module `wrapper_top':
+FSM `$fsm$\wrapper_inst.digital_domain_inst.wave_controller_y_inst.capture_step$4112' from module `B18_Probton':
 -------------------------------------
 
   Information on FSM $fsm$\wrapper_inst.digital_domain_inst.wave_controller_y_inst.capture_step$4112 (\wrapper_inst.digital_domain_inst.wave_controller_y_inst.capture_step):
@@ -2059,7 +2059,7 @@ FSM `$fsm$\wrapper_inst.digital_domain_inst.wave_controller_y_inst.capture_step$
 
 -------------------------------------
 
-FSM `$fsm$\wrapper_inst.digital_domain_inst.wave_controller_x_inst.capture_step$4108' from module `wrapper_top':
+FSM `$fsm$\wrapper_inst.digital_domain_inst.wave_controller_x_inst.capture_step$4108' from module `B18_Probton':
 -------------------------------------
 
   Information on FSM $fsm$\wrapper_inst.digital_domain_inst.wave_controller_x_inst.capture_step$4108 (\wrapper_inst.digital_domain_inst.wave_controller_x_inst.capture_step):
@@ -2117,24 +2117,24 @@ FSM `$fsm$\wrapper_inst.digital_domain_inst.wave_controller_x_inst.capture_step$
 -------------------------------------
 
 43.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
-Mapping FSM `$fsm$\wrapper_inst.digital_domain_inst.wave_controller_y_inst.capture_step$4112' from module `\wrapper_top'.
-Mapping FSM `$fsm$\wrapper_inst.digital_domain_inst.wave_controller_x_inst.capture_step$4108' from module `\wrapper_top'.
+Mapping FSM `$fsm$\wrapper_inst.digital_domain_inst.wave_controller_y_inst.capture_step$4112' from module `\B18_Probton'.
+Mapping FSM `$fsm$\wrapper_inst.digital_domain_inst.wave_controller_x_inst.capture_step$4108' from module `\B18_Probton'.
 
 44. Executing OPT_EXPR pass (perform const folding).
-Optimizing module wrapper_top.
+Optimizing module B18_Probton.
 <suppressed ~8 debug messages>
 
 45. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\wrapper_top'.
-Computing hashes of 824 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
-Computing hashes of 808 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
+Finding identical cells in module `\B18_Probton'.
+Computing hashes of 824 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
+Computing hashes of 808 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
 <suppressed ~48 debug messages>
 Removed a total of 16 cells.
 
 46. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
-Running muxtree optimizer on module \wrapper_top..
+Running muxtree optimizer on module \B18_Probton..
   Creating internal representation of mux trees.
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
@@ -2142,118 +2142,118 @@ Removed 0 multiplexer ports.
 <suppressed ~556 debug messages>
 
 47. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
-  Optimizing cells in module \wrapper_top.
+  Optimizing cells in module \B18_Probton.
 Performed a total of 0 changes.
 
 48. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\wrapper_top'.
-Computing hashes of 808 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
+Finding identical cells in module `\B18_Probton'.
+Computing hashes of 808 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
 Removed a total of 0 cells.
 
 49. Executing OPT_DFF pass (perform DFF optimizations).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.wave_cycle_cnt ($adff) from module wrapper_top (D = $procmux$1408_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_y_inst.wave_cycle_cnt).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.raw_edge3 ($adff) from module wrapper_top (D = $procmux$1416_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_y_inst.raw_edge3).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.raw_edge2 ($adff) from module wrapper_top (D = $procmux$1420_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_y_inst.raw_edge2).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.raw_edge1 ($adff) from module wrapper_top (D = $procmux$1424_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_y_inst.raw_edge1).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.phase_acc ($adff) from module wrapper_top (D = $procmux$1460_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_y_inst.phase_acc).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.latch_phase90 ($adff) from module wrapper_top (D = $procmux$432_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_y_inst.latch_phase90).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.latch_phase270 ($adff) from module wrapper_top (D = $procmux$428_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_y_inst.latch_phase270).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.latch_error ($adff) from module wrapper_top (D = $procmux$424_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_y_inst.latch_error).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.delay_wave_cycle ($adff) from module wrapper_top (D = $procmux$1428_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_y_inst.delay_wave_cycle).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.capture_pending ($adff) from module wrapper_top (D = $procmux$1404_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_y_inst.capture_pending).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_timeout ($adff) from module wrapper_top (D = $procmux$1432_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_timeout).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_done ($adff) from module wrapper_top (D = $procmux$1436_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_done).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_dir ($adff) from module wrapper_top (D = $procmux$1412_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_dir).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_burst_count ($adff) from module wrapper_top (D = $procmux$3925_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_burst_count).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_burst_armed ($adff) from module wrapper_top (D = $procmux$3933_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_burst_armed).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_burst_active ($adff) from module wrapper_top (D = $procmux$3929_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_burst_active).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.wave_cycle_cnt ($adff) from module wrapper_top (D = $procmux$3022_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_x_inst.wave_cycle_cnt).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.raw_edge3 ($adff) from module wrapper_top (D = $procmux$3030_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_x_inst.raw_edge3).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.raw_edge2 ($adff) from module wrapper_top (D = $procmux$3034_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_x_inst.raw_edge2).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.raw_edge1 ($adff) from module wrapper_top (D = $procmux$3038_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_x_inst.raw_edge1).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.phase_acc ($adff) from module wrapper_top (D = $procmux$3074_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_x_inst.phase_acc).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.latch_phase90 ($adff) from module wrapper_top (D = $procmux$2046_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_x_inst.latch_phase90).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.latch_phase270 ($adff) from module wrapper_top (D = $procmux$2042_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_x_inst.latch_phase270).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.latch_error ($adff) from module wrapper_top (D = $procmux$2038_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_x_inst.latch_error).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.delay_wave_cycle ($adff) from module wrapper_top (D = $procmux$3042_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_x_inst.delay_wave_cycle).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.capture_pending ($adff) from module wrapper_top (D = $procmux$3018_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_x_inst.capture_pending).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_timeout ($adff) from module wrapper_top (D = $procmux$3046_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_timeout).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_done ($adff) from module wrapper_top (D = $procmux$3050_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_done).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_dir ($adff) from module wrapper_top (D = $procmux$3026_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_dir).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_burst_count ($adff) from module wrapper_top (D = $procmux$1464_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_burst_count).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_burst_armed ($adff) from module wrapper_top (D = $procmux$1472_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_burst_armed).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_burst_active ($adff) from module wrapper_top (D = $procmux$1468_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_burst_active).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.state_machine_inst.state_q ($adff) from module wrapper_top (D = \wrapper_inst.digital_domain_inst.state_machine_inst.state_d, Q = \wrapper_inst.digital_domain_inst.state_machine_inst.state_q).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.tx_shift ($adff) from module wrapper_top (D = $procmux$3650_Y, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.tx_shift).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.spi_state ($adff) from module wrapper_top (D = $procmux$3884_Y, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.spi_state).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.spi_addr ($adff) from module wrapper_top (D = $procmux$3711_Y, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.spi_addr).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.rx_shift ($adff) from module wrapper_top (D = { \wrapper_inst.digital_domain_inst.spi_regs_inst.rx_shift [6:0] \wrapper_inst.digital_domain_inst.spi_regs_inst.mosi_sync [1] }, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.rx_shift).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.rw_n ($adff) from module wrapper_top (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.rx_shift [6], Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.rw_n).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data ($adff) from module wrapper_top (D = { \wrapper_inst.digital_domain_inst.spi_regs_inst.rx_shift [6:0] \wrapper_inst.digital_domain_inst.spi_regs_inst.mosi_sync [1] }, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_addr ($adff) from module wrapper_top (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.spi_addr, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_addr).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.phase_offset_imported ($adff) from module wrapper_top (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data [2], Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.phase_offset_imported).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase90_offset_y ($adff) from module wrapper_top (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase90_offset_y [15:8]).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase90_offset_y ($adff) from module wrapper_top (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase90_offset_y [7:0]).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase90_offset_y ($adff) from module wrapper_top (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data [4:0], Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase90_offset_y [20:16]).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase90_offset_x ($adff) from module wrapper_top (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase90_offset_x [15:8]).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase90_offset_x ($adff) from module wrapper_top (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase90_offset_x [7:0]).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase90_offset_x ($adff) from module wrapper_top (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data [4:0], Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase90_offset_x [20:16]).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase270_offset_y ($adff) from module wrapper_top (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data [4:0], Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase270_offset_y [20:16]).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase270_offset_y ($adff) from module wrapper_top (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase270_offset_y [15:8]).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase270_offset_y ($adff) from module wrapper_top (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase270_offset_y [7:0]).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase270_offset_x ($adff) from module wrapper_top (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase270_offset_x [15:8]).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase270_offset_x ($adff) from module wrapper_top (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase270_offset_x [7:0]).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase270_offset_x ($adff) from module wrapper_top (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data [4:0], Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase270_offset_x [20:16]).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase0_offset_y ($adff) from module wrapper_top (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase0_offset_y [15:8]).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase0_offset_y ($adff) from module wrapper_top (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase0_offset_y [7:0]).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase0_offset_y ($adff) from module wrapper_top (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data [4:0], Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase0_offset_y [20:16]).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase0_offset_x ($adff) from module wrapper_top (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase0_offset_x [15:8]).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase0_offset_x ($adff) from module wrapper_top (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase0_offset_x [7:0]).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase0_offset_x ($adff) from module wrapper_top (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data [4:0], Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase0_offset_x [20:16]).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_f_MEMS_fcw_y ($adff) from module wrapper_top (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_f_MEMS_fcw_y [7:0]).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_f_MEMS_fcw_y ($adff) from module wrapper_top (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_f_MEMS_fcw_y [15:8]).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_f_MEMS_fcw_x ($adff) from module wrapper_top (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_f_MEMS_fcw_x [7:0]).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_f_MEMS_fcw_x ($adff) from module wrapper_top (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_f_MEMS_fcw_x [15:8]).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_done ($adff) from module wrapper_top (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data [1], Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_done).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.boot_complete ($adff) from module wrapper_top (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data [0], Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.boot_complete).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.bit_cnt ($adff) from module wrapper_top (D = $procmux$3880_Y, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.bit_cnt).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.votes_out_phase ($adff) from module wrapper_top (D = $procmux$279_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_y_inst.votes_out_phase).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.votes_in_phase ($adff) from module wrapper_top (D = $procmux$283_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_y_inst.votes_in_phase).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.s90_valid ($adff) from module wrapper_top (D = $procmux$271_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_y_inst.s90_valid).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.s90 ($adff) from module wrapper_top (D = $procmux$275_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_y_inst.s90).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.phase_state ($adff) from module wrapper_top (D = $procmux$287_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_y_inst.phase_state).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.move_en ($adff) from module wrapper_top (D = $procmux$295_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_y_inst.move_en).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.jitter_flag ($adff) from module wrapper_top (D = $procmux$291_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_y_inst.jitter_flag).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.dir ($adff) from module wrapper_top (D = $procmux$299_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_y_inst.dir).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.cycle_count ($adff) from module wrapper_top (D = $procmux$259_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_y_inst.cycle_count).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.cnt_out ($adff) from module wrapper_top (D = $procmux$263_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_y_inst.cnt_out).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.cnt_in ($adff) from module wrapper_top (D = $procmux$267_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_y_inst.cnt_in).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.votes_out_phase ($adff) from module wrapper_top (D = $procmux$1912_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_x_inst.votes_out_phase).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.votes_in_phase ($adff) from module wrapper_top (D = $procmux$1916_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_x_inst.votes_in_phase).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.s90_valid ($adff) from module wrapper_top (D = $procmux$1904_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_x_inst.s90_valid).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.s90 ($adff) from module wrapper_top (D = $procmux$1908_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_x_inst.s90).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.phase_state ($adff) from module wrapper_top (D = $procmux$1920_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_x_inst.phase_state).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.move_en ($adff) from module wrapper_top (D = $procmux$1928_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_x_inst.move_en).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.jitter_flag ($adff) from module wrapper_top (D = $procmux$1924_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_x_inst.jitter_flag).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.dir ($adff) from module wrapper_top (D = $procmux$1932_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_x_inst.dir).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.cycle_count ($adff) from module wrapper_top (D = $procmux$1892_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_x_inst.cycle_count).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.cnt_out ($adff) from module wrapper_top (D = $procmux$1896_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_x_inst.cnt_out).
-Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.cnt_in ($adff) from module wrapper_top (D = $procmux$1900_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_x_inst.cnt_in).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.wave_cycle_cnt ($adff) from module B18_Probton (D = $procmux$1408_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_y_inst.wave_cycle_cnt).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.raw_edge3 ($adff) from module B18_Probton (D = $procmux$1416_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_y_inst.raw_edge3).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.raw_edge2 ($adff) from module B18_Probton (D = $procmux$1420_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_y_inst.raw_edge2).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.raw_edge1 ($adff) from module B18_Probton (D = $procmux$1424_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_y_inst.raw_edge1).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.phase_acc ($adff) from module B18_Probton (D = $procmux$1460_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_y_inst.phase_acc).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.latch_phase90 ($adff) from module B18_Probton (D = $procmux$432_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_y_inst.latch_phase90).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.latch_phase270 ($adff) from module B18_Probton (D = $procmux$428_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_y_inst.latch_phase270).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.latch_error ($adff) from module B18_Probton (D = $procmux$424_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_y_inst.latch_error).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.delay_wave_cycle ($adff) from module B18_Probton (D = $procmux$1428_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_y_inst.delay_wave_cycle).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.capture_pending ($adff) from module B18_Probton (D = $procmux$1404_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_y_inst.capture_pending).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_timeout ($adff) from module B18_Probton (D = $procmux$1432_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_timeout).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_done ($adff) from module B18_Probton (D = $procmux$1436_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_done).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_dir ($adff) from module B18_Probton (D = $procmux$1412_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_dir).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_burst_count ($adff) from module B18_Probton (D = $procmux$3925_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_burst_count).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_burst_armed ($adff) from module B18_Probton (D = $procmux$3933_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_burst_armed).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_burst_active ($adff) from module B18_Probton (D = $procmux$3929_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_burst_active).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.wave_cycle_cnt ($adff) from module B18_Probton (D = $procmux$3022_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_x_inst.wave_cycle_cnt).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.raw_edge3 ($adff) from module B18_Probton (D = $procmux$3030_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_x_inst.raw_edge3).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.raw_edge2 ($adff) from module B18_Probton (D = $procmux$3034_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_x_inst.raw_edge2).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.raw_edge1 ($adff) from module B18_Probton (D = $procmux$3038_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_x_inst.raw_edge1).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.phase_acc ($adff) from module B18_Probton (D = $procmux$3074_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_x_inst.phase_acc).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.latch_phase90 ($adff) from module B18_Probton (D = $procmux$2046_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_x_inst.latch_phase90).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.latch_phase270 ($adff) from module B18_Probton (D = $procmux$2042_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_x_inst.latch_phase270).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.latch_error ($adff) from module B18_Probton (D = $procmux$2038_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_x_inst.latch_error).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.delay_wave_cycle ($adff) from module B18_Probton (D = $procmux$3042_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_x_inst.delay_wave_cycle).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.capture_pending ($adff) from module B18_Probton (D = $procmux$3018_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_x_inst.capture_pending).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_timeout ($adff) from module B18_Probton (D = $procmux$3046_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_timeout).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_done ($adff) from module B18_Probton (D = $procmux$3050_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_done).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_dir ($adff) from module B18_Probton (D = $procmux$3026_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_dir).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_burst_count ($adff) from module B18_Probton (D = $procmux$1464_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_burst_count).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_burst_armed ($adff) from module B18_Probton (D = $procmux$1472_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_burst_armed).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_burst_active ($adff) from module B18_Probton (D = $procmux$1468_Y, Q = \wrapper_inst.digital_domain_inst.wave_controller_x_inst.cal_burst_active).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.state_machine_inst.state_q ($adff) from module B18_Probton (D = \wrapper_inst.digital_domain_inst.state_machine_inst.state_d, Q = \wrapper_inst.digital_domain_inst.state_machine_inst.state_q).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.tx_shift ($adff) from module B18_Probton (D = $procmux$3650_Y, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.tx_shift).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.spi_state ($adff) from module B18_Probton (D = $procmux$3884_Y, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.spi_state).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.spi_addr ($adff) from module B18_Probton (D = $procmux$3711_Y, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.spi_addr).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.rx_shift ($adff) from module B18_Probton (D = { \wrapper_inst.digital_domain_inst.spi_regs_inst.rx_shift [6:0] \wrapper_inst.digital_domain_inst.spi_regs_inst.mosi_sync [1] }, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.rx_shift).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.rw_n ($adff) from module B18_Probton (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.rx_shift [6], Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.rw_n).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data ($adff) from module B18_Probton (D = { \wrapper_inst.digital_domain_inst.spi_regs_inst.rx_shift [6:0] \wrapper_inst.digital_domain_inst.spi_regs_inst.mosi_sync [1] }, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_addr ($adff) from module B18_Probton (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.spi_addr, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_addr).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.phase_offset_imported ($adff) from module B18_Probton (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data [2], Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.phase_offset_imported).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase90_offset_y ($adff) from module B18_Probton (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase90_offset_y [15:8]).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase90_offset_y ($adff) from module B18_Probton (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase90_offset_y [7:0]).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase90_offset_y ($adff) from module B18_Probton (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data [4:0], Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase90_offset_y [20:16]).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase90_offset_x ($adff) from module B18_Probton (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase90_offset_x [15:8]).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase90_offset_x ($adff) from module B18_Probton (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase90_offset_x [7:0]).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase90_offset_x ($adff) from module B18_Probton (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data [4:0], Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase90_offset_x [20:16]).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase270_offset_y ($adff) from module B18_Probton (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data [4:0], Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase270_offset_y [20:16]).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase270_offset_y ($adff) from module B18_Probton (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase270_offset_y [15:8]).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase270_offset_y ($adff) from module B18_Probton (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase270_offset_y [7:0]).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase270_offset_x ($adff) from module B18_Probton (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase270_offset_x [15:8]).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase270_offset_x ($adff) from module B18_Probton (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase270_offset_x [7:0]).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase270_offset_x ($adff) from module B18_Probton (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data [4:0], Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase270_offset_x [20:16]).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase0_offset_y ($adff) from module B18_Probton (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase0_offset_y [15:8]).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase0_offset_y ($adff) from module B18_Probton (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase0_offset_y [7:0]).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase0_offset_y ($adff) from module B18_Probton (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data [4:0], Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase0_offset_y [20:16]).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase0_offset_x ($adff) from module B18_Probton (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase0_offset_x [15:8]).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase0_offset_x ($adff) from module B18_Probton (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase0_offset_x [7:0]).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase0_offset_x ($adff) from module B18_Probton (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data [4:0], Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_phase0_offset_x [20:16]).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_f_MEMS_fcw_y ($adff) from module B18_Probton (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_f_MEMS_fcw_y [7:0]).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_f_MEMS_fcw_y ($adff) from module B18_Probton (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_f_MEMS_fcw_y [15:8]).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_f_MEMS_fcw_x ($adff) from module B18_Probton (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_f_MEMS_fcw_x [7:0]).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_f_MEMS_fcw_x ($adff) from module B18_Probton (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_f_MEMS_fcw_x [15:8]).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_done ($adff) from module B18_Probton (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data [1], Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_done).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.boot_complete ($adff) from module B18_Probton (D = \wrapper_inst.digital_domain_inst.spi_regs_inst.reg_wr_data [0], Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.boot_complete).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.spi_regs_inst.bit_cnt ($adff) from module B18_Probton (D = $procmux$3880_Y, Q = \wrapper_inst.digital_domain_inst.spi_regs_inst.bit_cnt).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.votes_out_phase ($adff) from module B18_Probton (D = $procmux$279_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_y_inst.votes_out_phase).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.votes_in_phase ($adff) from module B18_Probton (D = $procmux$283_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_y_inst.votes_in_phase).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.s90_valid ($adff) from module B18_Probton (D = $procmux$271_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_y_inst.s90_valid).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.s90 ($adff) from module B18_Probton (D = $procmux$275_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_y_inst.s90).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.phase_state ($adff) from module B18_Probton (D = $procmux$287_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_y_inst.phase_state).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.move_en ($adff) from module B18_Probton (D = $procmux$295_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_y_inst.move_en).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.jitter_flag ($adff) from module B18_Probton (D = $procmux$291_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_y_inst.jitter_flag).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.dir ($adff) from module B18_Probton (D = $procmux$299_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_y_inst.dir).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.cycle_count ($adff) from module B18_Probton (D = $procmux$259_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_y_inst.cycle_count).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.cnt_out ($adff) from module B18_Probton (D = $procmux$263_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_y_inst.cnt_out).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_y_inst.cnt_in ($adff) from module B18_Probton (D = $procmux$267_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_y_inst.cnt_in).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.votes_out_phase ($adff) from module B18_Probton (D = $procmux$1912_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_x_inst.votes_out_phase).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.votes_in_phase ($adff) from module B18_Probton (D = $procmux$1916_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_x_inst.votes_in_phase).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.s90_valid ($adff) from module B18_Probton (D = $procmux$1904_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_x_inst.s90_valid).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.s90 ($adff) from module B18_Probton (D = $procmux$1908_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_x_inst.s90).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.phase_state ($adff) from module B18_Probton (D = $procmux$1920_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_x_inst.phase_state).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.move_en ($adff) from module B18_Probton (D = $procmux$1928_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_x_inst.move_en).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.jitter_flag ($adff) from module B18_Probton (D = $procmux$1924_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_x_inst.jitter_flag).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.dir ($adff) from module B18_Probton (D = $procmux$1932_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_x_inst.dir).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.cycle_count ($adff) from module B18_Probton (D = $procmux$1892_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_x_inst.cycle_count).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.cnt_out ($adff) from module B18_Probton (D = $procmux$1896_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_x_inst.cnt_out).
+Adding EN signal on $driver$wrapper_inst.digital_domain_inst.signal_processor_x_inst.cnt_in ($adff) from module B18_Probton (D = $procmux$1900_Y, Q = \wrapper_inst.digital_domain_inst.signal_processor_x_inst.cnt_in).
 
 50. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \wrapper_top..
+Finding unused cells or wires in module \B18_Probton..
 Removed 57 unused cells and 85 unused wires.
 <suppressed ~58 debug messages>
 
 51. Executing OPT_EXPR pass (perform const folding).
-Optimizing module wrapper_top.
+Optimizing module B18_Probton.
 <suppressed ~116 debug messages>
 
 52. Rerunning OPT passes. (Maybe there is more to do…)
 
 53. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
-Running muxtree optimizer on module \wrapper_top..
+Running muxtree optimizer on module \B18_Probton..
   Creating internal representation of mux trees.
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
@@ -2261,34 +2261,34 @@ Removed 0 multiplexer ports.
 <suppressed ~484 debug messages>
 
 54. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
-  Optimizing cells in module \wrapper_top.
+  Optimizing cells in module \B18_Probton.
 Performed a total of 0 changes.
 
 55. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\wrapper_top'.
-Computing hashes of 978 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
-Computing hashes of 878 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
-Computing hashes of 861 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
+Finding identical cells in module `\B18_Probton'.
+Computing hashes of 978 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
+Computing hashes of 878 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
+Computing hashes of 861 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
 <suppressed ~351 debug messages>
 Removed a total of 117 cells.
 
 56. Executing OPT_DFF pass (perform DFF optimizations).
 
 57. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \wrapper_top..
+Finding unused cells or wires in module \B18_Probton..
 Removed 0 unused cells and 117 unused wires.
 <suppressed ~1 debug messages>
 
 58. Executing OPT_EXPR pass (perform const folding).
-Optimizing module wrapper_top.
+Optimizing module B18_Probton.
 
 59. Rerunning OPT passes. (Maybe there is more to do…)
 
 60. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
-Running muxtree optimizer on module \wrapper_top..
+Running muxtree optimizer on module \B18_Probton..
   Creating internal representation of mux trees.
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
@@ -2296,185 +2296,185 @@ Removed 0 multiplexer ports.
 <suppressed ~490 debug messages>
 
 61. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
-  Optimizing cells in module \wrapper_top.
+  Optimizing cells in module \B18_Probton.
 Performed a total of 0 changes.
 
 62. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\wrapper_top'.
-Computing hashes of 861 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
+Finding identical cells in module `\B18_Probton'.
+Computing hashes of 861 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
 Removed a total of 0 cells.
 
 63. Executing OPT_DFF pass (perform DFF optimizations).
 
 64. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \wrapper_top..
+Finding unused cells or wires in module \B18_Probton..
 
 65. Executing OPT_EXPR pass (perform const folding).
-Optimizing module wrapper_top.
+Optimizing module B18_Probton.
 
 66. Executing WREDUCE pass (reducing word size of cells).
-Removed top 26 address bits (of 32) from memory init port wrapper_top.$auto$mem.cc:351:emit$12 ($auto$proc_rom.cc:155:do_switch$10).
-Removed top 26 address bits (of 32) from memory init port wrapper_top.$auto$mem.cc:351:emit$16 ($auto$proc_rom.cc:155:do_switch$14).
-Removed top 26 address bits (of 32) from memory init port wrapper_top.$auto$mem.cc:351:emit$4 ($auto$proc_rom.cc:155:do_switch$2).
-Removed top 26 address bits (of 32) from memory init port wrapper_top.$auto$mem.cc:351:emit$8 ($auto$proc_rom.cc:155:do_switch$6).
-Removed top 1 bits (of 8) from FF cell wrapper_top.$auto$ff.cc:337:slice$4578 ($adffe).
-Removed top 1 bits (of 3) from port B of cell wrapper_top.$auto$opt_dff.cc:320:make_patterns_logic$4549 ($ne).
-Removed top 2 bits (of 4) from port B of cell wrapper_top.$auto$opt_dff.cc:320:make_patterns_logic$4539 ($ne).
-Removed top 2 bits (of 5) from port B of cell wrapper_top.$auto$opt_dff.cc:320:make_patterns_logic$4470 ($ne).
-Removed top 2 bits (of 5) from port B of cell wrapper_top.$auto$opt_dff.cc:320:make_patterns_logic$4467 ($ne).
-Removed top 1 bits (of 3) from port B of cell wrapper_top.$auto$opt_dff.cc:320:make_patterns_logic$4411 ($ne).
-Removed top 2 bits (of 4) from port B of cell wrapper_top.$auto$opt_dff.cc:320:make_patterns_logic$4401 ($ne).
-Removed top 2 bits (of 5) from port B of cell wrapper_top.$auto$opt_dff.cc:320:make_patterns_logic$4332 ($ne).
-Removed top 2 bits (of 5) from port B of cell wrapper_top.$auto$opt_dff.cc:320:make_patterns_logic$4329 ($ne).
-Removed top 1 bits (of 5) from port B of cell wrapper_top.$auto$fsm_map.cc:77:implement_pattern_cache$4266 ($eq).
-Removed top 1 bits (of 6) from port B of cell wrapper_top.$auto$fsm_map.cc:77:implement_pattern_cache$4262 ($eq).
-Removed top 2 bits (of 3) from port B of cell wrapper_top.$auto$fsm_map.cc:77:implement_pattern_cache$4249 ($eq).
-Removed top 1 bits (of 6) from port B of cell wrapper_top.$auto$fsm_map.cc:77:implement_pattern_cache$4241 ($eq).
-Removed top 1 bits (of 3) from port B of cell wrapper_top.$auto$fsm_map.cc:77:implement_pattern_cache$4191 ($eq).
-Removed top 1 bits (of 5) from port B of cell wrapper_top.$auto$fsm_map.cc:77:implement_pattern_cache$4187 ($eq).
-Removed top 1 bits (of 6) from port B of cell wrapper_top.$auto$fsm_map.cc:77:implement_pattern_cache$4183 ($eq).
-Removed top 1 bits (of 6) from port B of cell wrapper_top.$auto$fsm_map.cc:77:implement_pattern_cache$4162 ($eq).
-Removed top 6 bits (of 7) from port B of cell wrapper_top.$130 ($add).
-Removed top 2 bits (of 3) from port B of cell wrapper_top.$137 ($add).
-Removed top 1 bits (of 22) from port A of cell wrapper_top.$278 ($add).
-Removed top 6 bits (of 22) from port B of cell wrapper_top.$278 ($add).
-Removed top 7 bits (of 8) from port B of cell wrapper_top.$309 ($eq).
-Removed top 7 bits (of 8) from port B of cell wrapper_top.$325 ($add).
-Removed top 1 bits (of 21) from port B of cell wrapper_top.$418 ($add).
-Removed top 1 bits (of 21) from port B of cell wrapper_top.$422 ($add).
-Removed top 3 bits (of 21) from port B of cell wrapper_top.$426 ($sub).
-Removed top 3 bits (of 21) from port B of cell wrapper_top.$428 ($sub).
-Removed top 3 bits (of 21) from port B of cell wrapper_top.$430 ($sub).
-Removed top 5 bits (of 21) from port B of cell wrapper_top.$439 ($lt).
-Removed top 5 bits (of 21) from port B of cell wrapper_top.$443 ($lt).
-Removed top 1 bits (of 8) from port B of cell wrapper_top.$465 ($sub).
-Removed top 1 bits (of 8) from port B of cell wrapper_top.$466 ($add).
-Removed top 1 bits (of 9) from port A of cell wrapper_top.$474 ($add).
-Removed top 1 bits (of 9) from port B of cell wrapper_top.$474 ($add).
-Removed top 1 bits (of 8) from port B of cell wrapper_top.$487 ($sub).
-Removed top 1 bits (of 8) from port B of cell wrapper_top.$488 ($add).
-Removed top 1 bits (of 9) from port A of cell wrapper_top.$496 ($add).
-Removed top 1 bits (of 9) from port B of cell wrapper_top.$496 ($add).
-Removed top 1 bits (of 2) from port B of cell wrapper_top.$511 ($eq).
-Removed top 1 bits (of 2) from port B of cell wrapper_top.$512 ($add).
-Removed top 1 bits (of 22) from port A of cell wrapper_top.$563 ($add).
-Removed top 6 bits (of 22) from port B of cell wrapper_top.$563 ($add).
-Removed top 7 bits (of 8) from port B of cell wrapper_top.$594 ($eq).
-Removed top 7 bits (of 8) from port B of cell wrapper_top.$610 ($add).
-Removed top 1 bits (of 21) from port B of cell wrapper_top.$703 ($add).
-Removed top 1 bits (of 21) from port B of cell wrapper_top.$707 ($add).
-Removed top 3 bits (of 21) from port B of cell wrapper_top.$711 ($sub).
-Removed top 3 bits (of 21) from port B of cell wrapper_top.$713 ($sub).
-Removed top 3 bits (of 21) from port B of cell wrapper_top.$715 ($sub).
-Removed top 5 bits (of 21) from port B of cell wrapper_top.$724 ($lt).
-Removed top 5 bits (of 21) from port B of cell wrapper_top.$728 ($lt).
-Removed top 1 bits (of 8) from port B of cell wrapper_top.$750 ($sub).
-Removed top 1 bits (of 8) from port B of cell wrapper_top.$751 ($add).
-Removed top 1 bits (of 9) from port A of cell wrapper_top.$759 ($add).
-Removed top 1 bits (of 9) from port B of cell wrapper_top.$759 ($add).
-Removed top 1 bits (of 8) from port B of cell wrapper_top.$772 ($sub).
-Removed top 1 bits (of 8) from port B of cell wrapper_top.$773 ($add).
-Removed top 1 bits (of 9) from port A of cell wrapper_top.$781 ($add).
-Removed top 1 bits (of 9) from port B of cell wrapper_top.$781 ($add).
-Removed top 1 bits (of 2) from port B of cell wrapper_top.$796 ($eq).
-Removed top 1 bits (of 2) from port B of cell wrapper_top.$797 ($add).
-Removed top 3 bits (of 4) from port B of cell wrapper_top.$860 ($add).
-Removed top 3 bits (of 4) from port B of cell wrapper_top.$861 ($add).
-Removed top 3 bits (of 4) from port B of cell wrapper_top.$884 ($add).
-Removed top 3 bits (of 4) from port B of cell wrapper_top.$944 ($add).
-Removed top 3 bits (of 4) from port B of cell wrapper_top.$945 ($add).
-Removed top 3 bits (of 4) from port B of cell wrapper_top.$968 ($add).
-Removed top 1 bits (of 2) from port B of cell wrapper_top.$procmux$314_CMP0 ($eq).
-Removed top 1 bits (of 2) from port B of cell wrapper_top.$procmux$3083_CMP0 ($eq).
-Removed top 1 bits (of 3) from port B of cell wrapper_top.$procmux$3147_CMP0 ($eq).
-Removed top 2 bits (of 3) from port B of cell wrapper_top.$procmux$3149_CMP0 ($eq).
-Removed top 1 bits (of 7) from port B of cell wrapper_top.$procmux$3175_CMP0 ($eq).
-Removed top 1 bits (of 7) from port B of cell wrapper_top.$procmux$3176_CMP0 ($eq).
-Removed top 1 bits (of 7) from port B of cell wrapper_top.$procmux$3177_CMP0 ($eq).
-Removed top 1 bits (of 7) from port B of cell wrapper_top.$procmux$3178_CMP0 ($eq).
-Removed top 1 bits (of 7) from port B of cell wrapper_top.$procmux$3179_CMP0 ($eq).
-Removed top 1 bits (of 7) from port B of cell wrapper_top.$procmux$3180_CMP0 ($eq).
-Removed top 1 bits (of 7) from port B of cell wrapper_top.$procmux$3181_CMP0 ($eq).
-Removed top 1 bits (of 7) from port B of cell wrapper_top.$procmux$3182_CMP0 ($eq).
-Removed top 1 bits (of 7) from port B of cell wrapper_top.$procmux$3183_CMP0 ($eq).
-Removed top 1 bits (of 7) from port B of cell wrapper_top.$procmux$3184_CMP0 ($eq).
-Removed top 1 bits (of 7) from port B of cell wrapper_top.$procmux$3185_CMP0 ($eq).
-Removed top 1 bits (of 7) from port B of cell wrapper_top.$procmux$3186_CMP0 ($eq).
-Removed top 1 bits (of 7) from port B of cell wrapper_top.$procmux$3187_CMP0 ($eq).
-Removed top 1 bits (of 7) from port B of cell wrapper_top.$procmux$3188_CMP0 ($eq).
-Removed top 1 bits (of 7) from port B of cell wrapper_top.$procmux$3189_CMP0 ($eq).
-Removed top 1 bits (of 7) from port B of cell wrapper_top.$procmux$3190_CMP0 ($eq).
-Removed top 1 bits (of 7) from port B of cell wrapper_top.$procmux$3191_CMP0 ($eq).
-Removed top 1 bits (of 7) from port B of cell wrapper_top.$procmux$3192_CMP0 ($eq).
-Removed top 1 bits (of 7) from port B of cell wrapper_top.$procmux$3193_CMP0 ($eq).
-Removed top 1 bits (of 7) from port B of cell wrapper_top.$procmux$3194_CMP0 ($eq).
-Removed top 1 bits (of 7) from port B of cell wrapper_top.$procmux$3195_CMP0 ($eq).
-Removed top 1 bits (of 7) from port B of cell wrapper_top.$procmux$3196_CMP0 ($eq).
-Removed top 1 bits (of 7) from port B of cell wrapper_top.$procmux$3197_CMP0 ($eq).
-Removed top 1 bits (of 7) from port B of cell wrapper_top.$procmux$3198_CMP0 ($eq).
-Removed top 1 bits (of 7) from port B of cell wrapper_top.$procmux$3199_CMP0 ($eq).
-Removed top 1 bits (of 7) from port B of cell wrapper_top.$procmux$3200_CMP0 ($eq).
-Removed top 1 bits (of 7) from port B of cell wrapper_top.$procmux$3201_CMP0 ($eq).
-Removed top 1 bits (of 7) from port B of cell wrapper_top.$procmux$3202_CMP0 ($eq).
-Removed top 1 bits (of 7) from port B of cell wrapper_top.$procmux$3203_CMP0 ($eq).
-Removed top 1 bits (of 7) from port B of cell wrapper_top.$procmux$3204_CMP0 ($eq).
-Removed top 1 bits (of 7) from port B of cell wrapper_top.$procmux$3205_CMP0 ($eq).
-Removed top 1 bits (of 7) from port B of cell wrapper_top.$procmux$3206_CMP0 ($eq).
-Removed top 2 bits (of 7) from port B of cell wrapper_top.$procmux$3207_CMP0 ($eq).
-Removed top 2 bits (of 7) from port B of cell wrapper_top.$procmux$3208_CMP0 ($eq).
-Removed top 2 bits (of 7) from port B of cell wrapper_top.$procmux$3209_CMP0 ($eq).
-Removed top 2 bits (of 7) from port B of cell wrapper_top.$procmux$3210_CMP0 ($eq).
-Removed top 2 bits (of 7) from port B of cell wrapper_top.$procmux$3211_CMP0 ($eq).
-Removed top 2 bits (of 7) from port B of cell wrapper_top.$procmux$3212_CMP0 ($eq).
-Removed top 2 bits (of 7) from port B of cell wrapper_top.$procmux$3213_CMP0 ($eq).
-Removed top 2 bits (of 7) from port B of cell wrapper_top.$procmux$3214_CMP0 ($eq).
-Removed top 3 bits (of 7) from port B of cell wrapper_top.$procmux$3215_CMP0 ($eq).
-Removed top 3 bits (of 7) from port B of cell wrapper_top.$procmux$3216_CMP0 ($eq).
-Removed top 3 bits (of 7) from port B of cell wrapper_top.$procmux$3217_CMP0 ($eq).
-Removed top 3 bits (of 7) from port B of cell wrapper_top.$procmux$3218_CMP0 ($eq).
-Removed top 3 bits (of 7) from port B of cell wrapper_top.$procmux$3219_CMP0 ($eq).
-Removed top 3 bits (of 7) from port B of cell wrapper_top.$procmux$3220_CMP0 ($eq).
-Removed top 3 bits (of 7) from port B of cell wrapper_top.$procmux$3221_CMP0 ($eq).
-Removed top 3 bits (of 7) from port B of cell wrapper_top.$procmux$3222_CMP0 ($eq).
-Removed top 4 bits (of 7) from port B of cell wrapper_top.$procmux$3223_CMP0 ($eq).
-Removed top 4 bits (of 7) from port B of cell wrapper_top.$procmux$3224_CMP0 ($eq).
-Removed top 4 bits (of 7) from port B of cell wrapper_top.$procmux$3225_CMP0 ($eq).
-Removed top 4 bits (of 7) from port B of cell wrapper_top.$procmux$3226_CMP0 ($eq).
-Removed top 5 bits (of 7) from port B of cell wrapper_top.$procmux$3227_CMP0 ($eq).
-Removed top 5 bits (of 7) from port B of cell wrapper_top.$procmux$3228_CMP0 ($eq).
-Removed top 6 bits (of 7) from port B of cell wrapper_top.$procmux$3229_CMP0 ($eq).
-Removed top 2 bits (of 7) from port B of cell wrapper_top.$procmux$3233_CMP0 ($eq).
-Removed top 2 bits (of 7) from port B of cell wrapper_top.$procmux$3240_CMP0 ($eq).
-Removed top 2 bits (of 7) from port B of cell wrapper_top.$procmux$3248_CMP0 ($eq).
-Removed top 2 bits (of 7) from port B of cell wrapper_top.$procmux$3258_CMP0 ($eq).
-Removed top 2 bits (of 7) from port B of cell wrapper_top.$procmux$3269_CMP0 ($eq).
-Removed top 3 bits (of 7) from port B of cell wrapper_top.$procmux$3282_CMP0 ($eq).
-Removed top 3 bits (of 7) from port B of cell wrapper_top.$procmux$3296_CMP0 ($eq).
-Removed top 3 bits (of 7) from port B of cell wrapper_top.$procmux$3312_CMP0 ($eq).
-Removed top 3 bits (of 7) from port B of cell wrapper_top.$procmux$3329_CMP0 ($eq).
-Removed top 3 bits (of 7) from port B of cell wrapper_top.$procmux$3348_CMP0 ($eq).
-Removed top 3 bits (of 7) from port B of cell wrapper_top.$procmux$3368_CMP0 ($eq).
-Removed top 4 bits (of 7) from port B of cell wrapper_top.$procmux$3390_CMP0 ($eq).
-Removed top 4 bits (of 7) from port B of cell wrapper_top.$procmux$3413_CMP0 ($eq).
-Removed top 5 bits (of 7) from port B of cell wrapper_top.$procmux$3438_CMP0 ($eq).
-Removed top 6 bits (of 7) from port B of cell wrapper_top.$procmux$3465_CMP0 ($eq).
-Removed top 2 bits (of 7) from port B of cell wrapper_top.$procmux$3489_CMP0 ($eq).
-Removed top 2 bits (of 7) from port B of cell wrapper_top.$procmux$3501_CMP0 ($eq).
-Removed top 3 bits (of 7) from port B of cell wrapper_top.$procmux$3516_CMP0 ($eq).
-Removed top 3 bits (of 7) from port B of cell wrapper_top.$procmux$3534_CMP0 ($eq).
-Removed top 4 bits (of 7) from port B of cell wrapper_top.$procmux$3555_CMP0 ($eq).
-Removed top 4 bits (of 7) from port B of cell wrapper_top.$procmux$3579_CMP0 ($eq).
-Removed top 5 bits (of 7) from port B of cell wrapper_top.$procmux$3605_CMP0 ($eq).
-Removed top 2 bits (of 7) from port B of cell wrapper_top.$procmux$3610_CMP0 ($eq).
+Removed top 26 address bits (of 32) from memory init port B18_Probton.$auto$mem.cc:351:emit$12 ($auto$proc_rom.cc:155:do_switch$10).
+Removed top 26 address bits (of 32) from memory init port B18_Probton.$auto$mem.cc:351:emit$16 ($auto$proc_rom.cc:155:do_switch$14).
+Removed top 26 address bits (of 32) from memory init port B18_Probton.$auto$mem.cc:351:emit$4 ($auto$proc_rom.cc:155:do_switch$2).
+Removed top 26 address bits (of 32) from memory init port B18_Probton.$auto$mem.cc:351:emit$8 ($auto$proc_rom.cc:155:do_switch$6).
+Removed top 1 bits (of 8) from FF cell B18_Probton.$auto$ff.cc:337:slice$4578 ($adffe).
+Removed top 1 bits (of 3) from port B of cell B18_Probton.$auto$opt_dff.cc:320:make_patterns_logic$4549 ($ne).
+Removed top 2 bits (of 4) from port B of cell B18_Probton.$auto$opt_dff.cc:320:make_patterns_logic$4539 ($ne).
+Removed top 2 bits (of 5) from port B of cell B18_Probton.$auto$opt_dff.cc:320:make_patterns_logic$4470 ($ne).
+Removed top 2 bits (of 5) from port B of cell B18_Probton.$auto$opt_dff.cc:320:make_patterns_logic$4467 ($ne).
+Removed top 1 bits (of 3) from port B of cell B18_Probton.$auto$opt_dff.cc:320:make_patterns_logic$4411 ($ne).
+Removed top 2 bits (of 4) from port B of cell B18_Probton.$auto$opt_dff.cc:320:make_patterns_logic$4401 ($ne).
+Removed top 2 bits (of 5) from port B of cell B18_Probton.$auto$opt_dff.cc:320:make_patterns_logic$4332 ($ne).
+Removed top 2 bits (of 5) from port B of cell B18_Probton.$auto$opt_dff.cc:320:make_patterns_logic$4329 ($ne).
+Removed top 1 bits (of 5) from port B of cell B18_Probton.$auto$fsm_map.cc:77:implement_pattern_cache$4266 ($eq).
+Removed top 1 bits (of 6) from port B of cell B18_Probton.$auto$fsm_map.cc:77:implement_pattern_cache$4262 ($eq).
+Removed top 2 bits (of 3) from port B of cell B18_Probton.$auto$fsm_map.cc:77:implement_pattern_cache$4249 ($eq).
+Removed top 1 bits (of 6) from port B of cell B18_Probton.$auto$fsm_map.cc:77:implement_pattern_cache$4241 ($eq).
+Removed top 1 bits (of 3) from port B of cell B18_Probton.$auto$fsm_map.cc:77:implement_pattern_cache$4191 ($eq).
+Removed top 1 bits (of 5) from port B of cell B18_Probton.$auto$fsm_map.cc:77:implement_pattern_cache$4187 ($eq).
+Removed top 1 bits (of 6) from port B of cell B18_Probton.$auto$fsm_map.cc:77:implement_pattern_cache$4183 ($eq).
+Removed top 1 bits (of 6) from port B of cell B18_Probton.$auto$fsm_map.cc:77:implement_pattern_cache$4162 ($eq).
+Removed top 6 bits (of 7) from port B of cell B18_Probton.$130 ($add).
+Removed top 2 bits (of 3) from port B of cell B18_Probton.$137 ($add).
+Removed top 1 bits (of 22) from port A of cell B18_Probton.$278 ($add).
+Removed top 6 bits (of 22) from port B of cell B18_Probton.$278 ($add).
+Removed top 7 bits (of 8) from port B of cell B18_Probton.$309 ($eq).
+Removed top 7 bits (of 8) from port B of cell B18_Probton.$325 ($add).
+Removed top 1 bits (of 21) from port B of cell B18_Probton.$418 ($add).
+Removed top 1 bits (of 21) from port B of cell B18_Probton.$422 ($add).
+Removed top 3 bits (of 21) from port B of cell B18_Probton.$426 ($sub).
+Removed top 3 bits (of 21) from port B of cell B18_Probton.$428 ($sub).
+Removed top 3 bits (of 21) from port B of cell B18_Probton.$430 ($sub).
+Removed top 5 bits (of 21) from port B of cell B18_Probton.$439 ($lt).
+Removed top 5 bits (of 21) from port B of cell B18_Probton.$443 ($lt).
+Removed top 1 bits (of 8) from port B of cell B18_Probton.$465 ($sub).
+Removed top 1 bits (of 8) from port B of cell B18_Probton.$466 ($add).
+Removed top 1 bits (of 9) from port A of cell B18_Probton.$474 ($add).
+Removed top 1 bits (of 9) from port B of cell B18_Probton.$474 ($add).
+Removed top 1 bits (of 8) from port B of cell B18_Probton.$487 ($sub).
+Removed top 1 bits (of 8) from port B of cell B18_Probton.$488 ($add).
+Removed top 1 bits (of 9) from port A of cell B18_Probton.$496 ($add).
+Removed top 1 bits (of 9) from port B of cell B18_Probton.$496 ($add).
+Removed top 1 bits (of 2) from port B of cell B18_Probton.$511 ($eq).
+Removed top 1 bits (of 2) from port B of cell B18_Probton.$512 ($add).
+Removed top 1 bits (of 22) from port A of cell B18_Probton.$563 ($add).
+Removed top 6 bits (of 22) from port B of cell B18_Probton.$563 ($add).
+Removed top 7 bits (of 8) from port B of cell B18_Probton.$594 ($eq).
+Removed top 7 bits (of 8) from port B of cell B18_Probton.$610 ($add).
+Removed top 1 bits (of 21) from port B of cell B18_Probton.$703 ($add).
+Removed top 1 bits (of 21) from port B of cell B18_Probton.$707 ($add).
+Removed top 3 bits (of 21) from port B of cell B18_Probton.$711 ($sub).
+Removed top 3 bits (of 21) from port B of cell B18_Probton.$713 ($sub).
+Removed top 3 bits (of 21) from port B of cell B18_Probton.$715 ($sub).
+Removed top 5 bits (of 21) from port B of cell B18_Probton.$724 ($lt).
+Removed top 5 bits (of 21) from port B of cell B18_Probton.$728 ($lt).
+Removed top 1 bits (of 8) from port B of cell B18_Probton.$750 ($sub).
+Removed top 1 bits (of 8) from port B of cell B18_Probton.$751 ($add).
+Removed top 1 bits (of 9) from port A of cell B18_Probton.$759 ($add).
+Removed top 1 bits (of 9) from port B of cell B18_Probton.$759 ($add).
+Removed top 1 bits (of 8) from port B of cell B18_Probton.$772 ($sub).
+Removed top 1 bits (of 8) from port B of cell B18_Probton.$773 ($add).
+Removed top 1 bits (of 9) from port A of cell B18_Probton.$781 ($add).
+Removed top 1 bits (of 9) from port B of cell B18_Probton.$781 ($add).
+Removed top 1 bits (of 2) from port B of cell B18_Probton.$796 ($eq).
+Removed top 1 bits (of 2) from port B of cell B18_Probton.$797 ($add).
+Removed top 3 bits (of 4) from port B of cell B18_Probton.$860 ($add).
+Removed top 3 bits (of 4) from port B of cell B18_Probton.$861 ($add).
+Removed top 3 bits (of 4) from port B of cell B18_Probton.$884 ($add).
+Removed top 3 bits (of 4) from port B of cell B18_Probton.$944 ($add).
+Removed top 3 bits (of 4) from port B of cell B18_Probton.$945 ($add).
+Removed top 3 bits (of 4) from port B of cell B18_Probton.$968 ($add).
+Removed top 1 bits (of 2) from port B of cell B18_Probton.$procmux$314_CMP0 ($eq).
+Removed top 1 bits (of 2) from port B of cell B18_Probton.$procmux$3083_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell B18_Probton.$procmux$3147_CMP0 ($eq).
+Removed top 2 bits (of 3) from port B of cell B18_Probton.$procmux$3149_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell B18_Probton.$procmux$3175_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell B18_Probton.$procmux$3176_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell B18_Probton.$procmux$3177_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell B18_Probton.$procmux$3178_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell B18_Probton.$procmux$3179_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell B18_Probton.$procmux$3180_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell B18_Probton.$procmux$3181_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell B18_Probton.$procmux$3182_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell B18_Probton.$procmux$3183_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell B18_Probton.$procmux$3184_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell B18_Probton.$procmux$3185_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell B18_Probton.$procmux$3186_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell B18_Probton.$procmux$3187_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell B18_Probton.$procmux$3188_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell B18_Probton.$procmux$3189_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell B18_Probton.$procmux$3190_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell B18_Probton.$procmux$3191_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell B18_Probton.$procmux$3192_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell B18_Probton.$procmux$3193_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell B18_Probton.$procmux$3194_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell B18_Probton.$procmux$3195_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell B18_Probton.$procmux$3196_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell B18_Probton.$procmux$3197_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell B18_Probton.$procmux$3198_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell B18_Probton.$procmux$3199_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell B18_Probton.$procmux$3200_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell B18_Probton.$procmux$3201_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell B18_Probton.$procmux$3202_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell B18_Probton.$procmux$3203_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell B18_Probton.$procmux$3204_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell B18_Probton.$procmux$3205_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell B18_Probton.$procmux$3206_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell B18_Probton.$procmux$3207_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell B18_Probton.$procmux$3208_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell B18_Probton.$procmux$3209_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell B18_Probton.$procmux$3210_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell B18_Probton.$procmux$3211_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell B18_Probton.$procmux$3212_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell B18_Probton.$procmux$3213_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell B18_Probton.$procmux$3214_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell B18_Probton.$procmux$3215_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell B18_Probton.$procmux$3216_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell B18_Probton.$procmux$3217_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell B18_Probton.$procmux$3218_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell B18_Probton.$procmux$3219_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell B18_Probton.$procmux$3220_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell B18_Probton.$procmux$3221_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell B18_Probton.$procmux$3222_CMP0 ($eq).
+Removed top 4 bits (of 7) from port B of cell B18_Probton.$procmux$3223_CMP0 ($eq).
+Removed top 4 bits (of 7) from port B of cell B18_Probton.$procmux$3224_CMP0 ($eq).
+Removed top 4 bits (of 7) from port B of cell B18_Probton.$procmux$3225_CMP0 ($eq).
+Removed top 4 bits (of 7) from port B of cell B18_Probton.$procmux$3226_CMP0 ($eq).
+Removed top 5 bits (of 7) from port B of cell B18_Probton.$procmux$3227_CMP0 ($eq).
+Removed top 5 bits (of 7) from port B of cell B18_Probton.$procmux$3228_CMP0 ($eq).
+Removed top 6 bits (of 7) from port B of cell B18_Probton.$procmux$3229_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell B18_Probton.$procmux$3233_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell B18_Probton.$procmux$3240_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell B18_Probton.$procmux$3248_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell B18_Probton.$procmux$3258_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell B18_Probton.$procmux$3269_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell B18_Probton.$procmux$3282_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell B18_Probton.$procmux$3296_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell B18_Probton.$procmux$3312_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell B18_Probton.$procmux$3329_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell B18_Probton.$procmux$3348_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell B18_Probton.$procmux$3368_CMP0 ($eq).
+Removed top 4 bits (of 7) from port B of cell B18_Probton.$procmux$3390_CMP0 ($eq).
+Removed top 4 bits (of 7) from port B of cell B18_Probton.$procmux$3413_CMP0 ($eq).
+Removed top 5 bits (of 7) from port B of cell B18_Probton.$procmux$3438_CMP0 ($eq).
+Removed top 6 bits (of 7) from port B of cell B18_Probton.$procmux$3465_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell B18_Probton.$procmux$3489_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell B18_Probton.$procmux$3501_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell B18_Probton.$procmux$3516_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell B18_Probton.$procmux$3534_CMP0 ($eq).
+Removed top 4 bits (of 7) from port B of cell B18_Probton.$procmux$3555_CMP0 ($eq).
+Removed top 4 bits (of 7) from port B of cell B18_Probton.$procmux$3579_CMP0 ($eq).
+Removed top 5 bits (of 7) from port B of cell B18_Probton.$procmux$3605_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell B18_Probton.$procmux$3610_CMP0 ($eq).
 
 67. Executing PEEPOPT pass (run peephole optimizers).
 
 68. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \wrapper_top..
+Finding unused cells or wires in module \B18_Probton..
 
 69. Executing ALUMACC pass (create $alu and $macc cells).
-Extracting $alu and $macc cells in module wrapper_top:
+Extracting $alu and $macc cells in module B18_Probton:
   creating $macc model for $130 ($add).
   creating $macc model for $137 ($add).
   creating $macc model for $278 ($add).
@@ -2650,7 +2650,7 @@ Extracting $alu and $macc cells in module wrapper_top:
   created 54 $alu and 4 $macc cells.
 
 70. Executing SHARE pass (SAT-based resource sharing).
-Found 4 cells in module wrapper_top that may be considered for resource sharing.
+Found 4 cells in module B18_Probton that may be considered for resource sharing.
   Analyzing resource sharing options for $auto$mem.cc:305:emit$7 ($memrd_v2):
     Found 2 activation_patterns using ctrl signal { \wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_burst_active \wrapper_inst.digital_domain_inst.wave_controller_y_inst.cal_start \wrapper_inst.digital_domain_inst.spi_regs_inst.cfg_done }.
     No candidates found.
@@ -2665,17 +2665,17 @@ Found 4 cells in module wrapper_top that may be considered for resource sharing.
     No candidates found.
 
 71. Executing OPT_EXPR pass (perform const folding).
-Optimizing module wrapper_top.
+Optimizing module B18_Probton.
 <suppressed ~4 debug messages>
 
 72. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\wrapper_top'.
-Computing hashes of 885 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
+Finding identical cells in module `\B18_Probton'.
+Computing hashes of 885 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
 Removed a total of 0 cells.
 
 73. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
-Running muxtree optimizer on module \wrapper_top..
+Running muxtree optimizer on module \B18_Probton..
   Creating internal representation of mux trees.
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
@@ -2683,29 +2683,29 @@ Removed 0 multiplexer ports.
 <suppressed ~490 debug messages>
 
 74. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
-  Optimizing cells in module \wrapper_top.
+  Optimizing cells in module \B18_Probton.
 Performed a total of 0 changes.
 
 75. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\wrapper_top'.
-Computing hashes of 885 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
+Finding identical cells in module `\B18_Probton'.
+Computing hashes of 885 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
 Removed a total of 0 cells.
 
 76. Executing OPT_DFF pass (perform DFF optimizations).
 
 77. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \wrapper_top..
+Finding unused cells or wires in module \B18_Probton..
 Removed 4 unused cells and 14 unused wires.
 <suppressed ~9 debug messages>
 
 78. Executing OPT_EXPR pass (perform const folding).
-Optimizing module wrapper_top.
+Optimizing module B18_Probton.
 
 79. Rerunning OPT passes. (Maybe there is more to do…)
 
 80. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
-Running muxtree optimizer on module \wrapper_top..
+Running muxtree optimizer on module \B18_Probton..
   Creating internal representation of mux trees.
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
@@ -2713,22 +2713,22 @@ Removed 0 multiplexer ports.
 <suppressed ~490 debug messages>
 
 81. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
-  Optimizing cells in module \wrapper_top.
+  Optimizing cells in module \B18_Probton.
 Performed a total of 0 changes.
 
 82. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\wrapper_top'.
-Computing hashes of 881 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
+Finding identical cells in module `\B18_Probton'.
+Computing hashes of 881 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
 Removed a total of 0 cells.
 
 83. Executing OPT_DFF pass (perform DFF optimizations).
 
 84. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \wrapper_top..
+Finding unused cells or wires in module \B18_Probton..
 
 85. Executing OPT_EXPR pass (perform const folding).
-Optimizing module wrapper_top.
+Optimizing module B18_Probton.
 
 86. Executing MEMORY pass.
 
@@ -2743,17 +2743,17 @@ Performed a total of 0 transformations.
 86.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
 
 86.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
-Checking read port `$auto$proc_rom.cc:155:do_switch$10'[0] in module `\wrapper_top': no output FF found.
-Checking read port `$auto$proc_rom.cc:155:do_switch$14'[0] in module `\wrapper_top': no output FF found.
-Checking read port `$auto$proc_rom.cc:155:do_switch$2'[0] in module `\wrapper_top': no output FF found.
-Checking read port `$auto$proc_rom.cc:155:do_switch$6'[0] in module `\wrapper_top': no output FF found.
-Checking read port address `$auto$proc_rom.cc:155:do_switch$10'[0] in module `\wrapper_top': no address FF found.
-Checking read port address `$auto$proc_rom.cc:155:do_switch$14'[0] in module `\wrapper_top': no address FF found.
-Checking read port address `$auto$proc_rom.cc:155:do_switch$2'[0] in module `\wrapper_top': no address FF found.
-Checking read port address `$auto$proc_rom.cc:155:do_switch$6'[0] in module `\wrapper_top': no address FF found.
+Checking read port `$auto$proc_rom.cc:155:do_switch$10'[0] in module `\B18_Probton': no output FF found.
+Checking read port `$auto$proc_rom.cc:155:do_switch$14'[0] in module `\B18_Probton': no output FF found.
+Checking read port `$auto$proc_rom.cc:155:do_switch$2'[0] in module `\B18_Probton': no output FF found.
+Checking read port `$auto$proc_rom.cc:155:do_switch$6'[0] in module `\B18_Probton': no output FF found.
+Checking read port address `$auto$proc_rom.cc:155:do_switch$10'[0] in module `\B18_Probton': no address FF found.
+Checking read port address `$auto$proc_rom.cc:155:do_switch$14'[0] in module `\B18_Probton': no address FF found.
+Checking read port address `$auto$proc_rom.cc:155:do_switch$2'[0] in module `\B18_Probton': no address FF found.
+Checking read port address `$auto$proc_rom.cc:155:do_switch$6'[0] in module `\B18_Probton': no address FF found.
 
 86.6. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \wrapper_top..
+Finding unused cells or wires in module \B18_Probton..
 
 86.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
 
@@ -2761,66 +2761,66 @@ Finding unused cells or wires in module \wrapper_top..
 Performed a total of 0 transformations.
 
 86.9. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \wrapper_top..
+Finding unused cells or wires in module \B18_Probton..
 
 86.10. Executing MEMORY_COLLECT pass (generating $mem cells).
 
 87. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \wrapper_top..
+Finding unused cells or wires in module \B18_Probton..
 
 88. Executing OPT_EXPR pass (perform const folding).
-Optimizing module wrapper_top.
+Optimizing module B18_Probton.
 <suppressed ~208 debug messages>
 
 89. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\wrapper_top'.
-Computing hashes of 753 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
-Computing hashes of 746 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
+Finding identical cells in module `\B18_Probton'.
+Computing hashes of 753 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
+Computing hashes of 746 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
 <suppressed ~21 debug messages>
 Removed a total of 7 cells.
 
 90. Executing OPT_DFF pass (perform DFF optimizations).
 
 91. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \wrapper_top..
+Finding unused cells or wires in module \B18_Probton..
 Removed 4 unused cells and 203 unused wires.
 <suppressed ~5 debug messages>
 
 92. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
-Mapping memory $auto$proc_rom.cc:155:do_switch$10 in module \wrapper_top:
+Mapping memory $auto$proc_rom.cc:155:do_switch$10 in module \B18_Probton:
   created 64 $dff cells and 0 static cells of width 7.
   read interface: 0 $dff and 63 $mux cells.
   write interface: 0 write mux blocks.
-Mapping memory $auto$proc_rom.cc:155:do_switch$14 in module \wrapper_top:
+Mapping memory $auto$proc_rom.cc:155:do_switch$14 in module \B18_Probton:
   created 64 $dff cells and 0 static cells of width 7.
   read interface: 0 $dff and 63 $mux cells.
   write interface: 0 write mux blocks.
-Mapping memory $auto$proc_rom.cc:155:do_switch$2 in module \wrapper_top:
+Mapping memory $auto$proc_rom.cc:155:do_switch$2 in module \B18_Probton:
   created 64 $dff cells and 0 static cells of width 7.
   read interface: 0 $dff and 63 $mux cells.
   write interface: 0 write mux blocks.
-Mapping memory $auto$proc_rom.cc:155:do_switch$6 in module \wrapper_top:
+Mapping memory $auto$proc_rom.cc:155:do_switch$6 in module \B18_Probton:
   created 64 $dff cells and 0 static cells of width 7.
   read interface: 0 $dff and 63 $mux cells.
   write interface: 0 write mux blocks.
 
 93. Executing OPT_EXPR pass (perform const folding).
-Optimizing module wrapper_top.
+Optimizing module B18_Probton.
 <suppressed ~34 debug messages>
 
 94. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\wrapper_top'.
-Computing hashes of 966 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
-Computing hashes of 961 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
+Finding identical cells in module `\B18_Probton'.
+Computing hashes of 966 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
+Computing hashes of 961 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
 <suppressed ~15 debug messages>
 Removed a total of 5 cells.
 
 95. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
-Running muxtree optimizer on module \wrapper_top..
+Running muxtree optimizer on module \B18_Probton..
   Creating internal representation of mux trees.
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
@@ -2828,7 +2828,7 @@ Removed 0 multiplexer ports.
 <suppressed ~502 debug messages>
 
 96. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
-  Optimizing cells in module \wrapper_top.
+  Optimizing cells in module \B18_Probton.
     Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][5][1]$5749:
       Old ports: A=7'0001000, B=7'0001011, Y=$memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][4][0]$b$5700
       New ports: A=1'0, B=1'1, Y=$memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][4][0]$b$5700 [0]
@@ -3281,7 +3281,7 @@ Removed 0 multiplexer ports.
       Old ports: A=7'0001110, B=7'0010001, Y=$memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][4][1]$a$5702
       New ports: A=2'10, B=2'01, Y=$memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][4][1]$a$5702 [1:0]
       New connections: $memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][4][1]$a$5702 [6:2] = { 2'00 $memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][4][1]$a$5702 [0] $memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][4][1]$a$5702 [1] $memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][4][1]$a$5702 [1] }
-  Optimizing cells in module \wrapper_top.
+  Optimizing cells in module \B18_Probton.
     Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][4][13]$5737:
       Old ports: A=$memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][4][13]$a$5738, B=7'1111100, Y=$memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][3][6]$b$5694
       New ports: A={ 2'01 $memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][4][13]$a$5738 [0] }, B=3'100, Y=$memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][3][6]$b$5694 [2:0]
@@ -3522,7 +3522,7 @@ Removed 0 multiplexer ports.
       Old ports: A=$memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][3][7]$a$5129, B=7'1111111, Y=$memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][2][3]$b$5106
       New ports: A=$memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][3][7]$a$5129 [1:0], B=2'11, Y=$memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][2][3]$b$5106 [1:0]
       New connections: $memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][2][3]$b$5106 [6:2] = 5'11111
-  Optimizing cells in module \wrapper_top.
+  Optimizing cells in module \B18_Probton.
     Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][3][6]$5692:
       Old ports: A=$memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][3][6]$a$5693, B=$memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][3][6]$b$5694, Y=$memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][2][3]$a$5672
       New ports: A={ $memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][3][6]$a$5693 [3] $memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][3][6]$a$5693 [1] $memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][3][6]$a$5693 [1:0] }, B={ 1'1 $memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][3][6]$b$5694 [2:0] }, Y=$memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][2][3]$a$5672 [3:0]
@@ -3635,7 +3635,7 @@ Removed 0 multiplexer ports.
       Old ports: A=$memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][3][0]$a$5108, B=$memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][3][0]$b$5109, Y=$memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][2][0]$a$5096
       New ports: A={ 1'0 $memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][3][0]$a$5108 [3:0] }, B=$memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][3][0]$b$5109 [4:0], Y=$memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][2][0]$a$5096 [4:0]
       New connections: $memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][2][0]$a$5096 [6:5] = 2'00
-  Optimizing cells in module \wrapper_top.
+  Optimizing cells in module \B18_Probton.
     Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][2][3]$5671:
       Old ports: A=$memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][2][3]$a$5672, B=$memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][2][3]$b$5673, Y=$memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][1][1]$b$5661
       New ports: A=$memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][2][3]$a$5672 [3:0], B={ 2'11 $memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][2][3]$b$5673 [1:0] }, Y=$memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][1][1]$b$5661 [3:0]
@@ -3684,7 +3684,7 @@ Removed 0 multiplexer ports.
       Old ports: A=$memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][2][0]$a$5096, B=$memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][2][0]$b$5097, Y=$memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][1][0]$a$5090
       New ports: A={ 1'0 $memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][2][0]$a$5096 [4:0] }, B=$memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][2][0]$b$5097 [5:0], Y=$memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][1][0]$a$5090 [5:0]
       New connections: $memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][1][0]$a$5090 [6] = 1'0
-  Optimizing cells in module \wrapper_top.
+  Optimizing cells in module \B18_Probton.
     Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][1][1]$5659:
       Old ports: A=$memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][1][1]$a$5660, B=$memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][1][1]$b$5661, Y=$memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][0][0]$b$5655
       New ports: A=$memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][1][1]$a$5660 [5:0], B={ 2'11 $memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][1][1]$b$5661 [3:0] }, Y=$memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][0][0]$b$5655 [5:0]
@@ -3701,15 +3701,15 @@ Removed 0 multiplexer ports.
       Old ports: A=$memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][1][1]$a$5093, B=$memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][1][1]$b$5094, Y=$memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][0][0]$b$5088
       New ports: A=$memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][1][1]$a$5093 [5:0], B={ 2'11 $memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][1][1]$b$5094 [3:0] }, Y=$memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][0][0]$b$5088 [5:0]
       New connections: $memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][0][0]$b$5088 [6] = 1'1
-  Optimizing cells in module \wrapper_top.
+  Optimizing cells in module \B18_Probton.
 Performed a total of 217 changes.
 
 97. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\wrapper_top'.
-Computing hashes of 961 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
-Computing hashes of 865 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
+Finding identical cells in module `\B18_Probton'.
+Computing hashes of 961 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
+Computing hashes of 865 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
 <suppressed ~288 debug messages>
 Removed a total of 96 cells.
 
@@ -3718,18 +3718,18 @@ Removed a total of 96 cells.
 99. Executing OPT_DFF pass (perform DFF optimizations).
 
 100. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \wrapper_top..
+Finding unused cells or wires in module \B18_Probton..
 Removed 0 unused cells and 381 unused wires.
 <suppressed ~1 debug messages>
 
 101. Executing OPT_EXPR pass (perform const folding).
-Optimizing module wrapper_top.
+Optimizing module B18_Probton.
 <suppressed ~4 debug messages>
 
 102. Rerunning OPT passes. (Maybe there is more to do…)
 
 103. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
-Running muxtree optimizer on module \wrapper_top..
+Running muxtree optimizer on module \B18_Probton..
   Creating internal representation of mux trees.
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
@@ -3737,7 +3737,7 @@ Removed 0 multiplexer ports.
 <suppressed ~474 debug messages>
 
 104. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
-  Optimizing cells in module \wrapper_top.
+  Optimizing cells in module \B18_Probton.
     Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][4][12]$5734:
       Old ports: A={ 2'01 $memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][4][0]$b$5700 [0] }, B={ 2'10 $memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][4][0]$b$5700 [0] }, Y={ $memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][3][6]$a$5693 [3] $memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][3][6]$a$5693 [1:0] }
       New ports: A=2'01, B=2'10, Y={ $memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][3][6]$a$5693 [3] $memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][3][6]$a$5693 [1] }
@@ -3802,7 +3802,7 @@ Removed 0 multiplexer ports.
       Old ports: A={ $memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][4][0]$b$5133 [0] 1'0 }, B={ $memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][4][0]$b$5133 [0] 1'1 }, Y=$memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][3][3]$a$5117 [1:0]
       New ports: A=1'0, B=1'1, Y=$memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][3][3]$a$5117 [0]
       New connections: $memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][3][3]$a$5117 [1] = \wrapper_inst.digital_domain_inst.wave_controller_x_inst.u_ref_sine.addr [0]
-  Optimizing cells in module \wrapper_top.
+  Optimizing cells in module \B18_Probton.
     Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][3][4]$5686:
       Old ports: A={ $memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][3][4]$a$5687 [5] $memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][3][4]$a$5687 [3] $memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][3][4]$a$5687 [3:1] }, B={ 2'10 $memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][3][4]$b$5688 [3:1] }, Y=$memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][2][2]$a$5669 [5:1]
       New ports: A={ $memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][3][4]$a$5687 [5] $memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][3][4]$a$5687 [3] $memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][3][4]$a$5687 [3:2] }, B={ 2'10 $memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][3][4]$b$5688 [3:2] }, Y=$memory$auto$proc_rom.cc:155:do_switch$6$rdmux[0][2][2]$a$5669 [5:2]
@@ -3819,15 +3819,15 @@ Removed 0 multiplexer ports.
       Old ports: A={ $memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][3][4]$a$5120 [5] $memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][3][4]$a$5120 [3] $memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][3][4]$a$5120 [3:1] }, B={ 2'10 $memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][3][4]$b$5121 [3:1] }, Y=$memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][2][2]$a$5102 [5:1]
       New ports: A={ $memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][3][4]$a$5120 [5] $memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][3][4]$a$5120 [3] $memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][3][4]$a$5120 [3:2] }, B={ 2'10 $memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][3][4]$b$5121 [3:2] }, Y=$memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][2][2]$a$5102 [5:2]
       New connections: $memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][2][2]$a$5102 [1] = $memory$auto$proc_rom.cc:155:do_switch$10$rdmux[0][4][10]$a$5162 [1]
-  Optimizing cells in module \wrapper_top.
+  Optimizing cells in module \B18_Probton.
 Performed a total of 20 changes.
 
 105. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\wrapper_top'.
-Computing hashes of 861 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
-Computing hashes of 857 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
+Finding identical cells in module `\B18_Probton'.
+Computing hashes of 861 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
+Computing hashes of 857 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
 <suppressed ~12 debug messages>
 Removed a total of 4 cells.
 
@@ -3836,18 +3836,18 @@ Removed a total of 4 cells.
 107. Executing OPT_DFF pass (perform DFF optimizations).
 
 108. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \wrapper_top..
+Finding unused cells or wires in module \B18_Probton..
 Removed 0 unused cells and 8 unused wires.
 <suppressed ~1 debug messages>
 
 109. Executing OPT_EXPR pass (perform const folding).
-Optimizing module wrapper_top.
+Optimizing module B18_Probton.
 <suppressed ~4 debug messages>
 
 110. Rerunning OPT passes. (Maybe there is more to do…)
 
 111. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
-Running muxtree optimizer on module \wrapper_top..
+Running muxtree optimizer on module \B18_Probton..
   Creating internal representation of mux trees.
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
@@ -3855,13 +3855,13 @@ Removed 0 multiplexer ports.
 <suppressed ~466 debug messages>
 
 112. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
-  Optimizing cells in module \wrapper_top.
+  Optimizing cells in module \B18_Probton.
 Performed a total of 0 changes.
 
 113. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\wrapper_top'.
-Computing hashes of 853 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
+Finding identical cells in module `\B18_Probton'.
+Computing hashes of 853 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
 Removed a total of 0 cells.
 
 114. Executing OPT_SHARE pass.
@@ -3869,17 +3869,17 @@ Removed a total of 0 cells.
 115. Executing OPT_DFF pass (perform DFF optimizations).
 
 116. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \wrapper_top..
+Finding unused cells or wires in module \B18_Probton..
 Removed 0 unused cells and 4 unused wires.
 <suppressed ~1 debug messages>
 
 117. Executing OPT_EXPR pass (perform const folding).
-Optimizing module wrapper_top.
+Optimizing module B18_Probton.
 
 118. Rerunning OPT passes. (Maybe there is more to do…)
 
 119. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
-Running muxtree optimizer on module \wrapper_top..
+Running muxtree optimizer on module \B18_Probton..
   Creating internal representation of mux trees.
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
@@ -3887,13 +3887,13 @@ Removed 0 multiplexer ports.
 <suppressed ~466 debug messages>
 
 120. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
-  Optimizing cells in module \wrapper_top.
+  Optimizing cells in module \B18_Probton.
 Performed a total of 0 changes.
 
 121. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\wrapper_top'.
-Computing hashes of 853 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
+Finding identical cells in module `\B18_Probton'.
+Computing hashes of 853 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
 Removed a total of 0 cells.
 
 122. Executing OPT_SHARE pass.
@@ -3901,10 +3901,10 @@ Removed a total of 0 cells.
 123. Executing OPT_DFF pass (perform DFF optimizations).
 
 124. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \wrapper_top..
+Finding unused cells or wires in module \B18_Probton..
 
 125. Executing OPT_EXPR pass (perform const folding).
-Optimizing module wrapper_top.
+Optimizing module B18_Probton.
 
 126. Executing TECHMAP pass (map to technology primitives).
 
@@ -4007,61 +4007,61 @@ No more expansions possible.
 <suppressed ~5460 debug messages>
 
 127. Executing OPT_EXPR pass (perform const folding).
-Optimizing module wrapper_top.
+Optimizing module B18_Probton.
 <suppressed ~4634 debug messages>
 
 128. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\wrapper_top'.
-Computing hashes of 9472 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
-Computing hashes of 8663 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
-Computing hashes of 8392 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
-Computing hashes of 8269 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
-Computing hashes of 8267 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
-Computing hashes of 8265 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
-Computing hashes of 8263 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
-Computing hashes of 8261 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
-Computing hashes of 8259 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
-Computing hashes of 8255 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
+Finding identical cells in module `\B18_Probton'.
+Computing hashes of 9472 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
+Computing hashes of 8663 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
+Computing hashes of 8392 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
+Computing hashes of 8269 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
+Computing hashes of 8267 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
+Computing hashes of 8265 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
+Computing hashes of 8263 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
+Computing hashes of 8261 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
+Computing hashes of 8259 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
+Computing hashes of 8255 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
 <suppressed ~3651 debug messages>
 Removed a total of 1217 cells.
 
 129. Executing OPT_DFF pass (perform DFF optimizations).
 
 130. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \wrapper_top..
+Finding unused cells or wires in module \B18_Probton..
 Removed 574 unused cells and 3513 unused wires.
 <suppressed ~575 debug messages>
 
 131. Executing OPT_EXPR pass (perform const folding).
-Optimizing module wrapper_top.
+Optimizing module B18_Probton.
 <suppressed ~24 debug messages>
 
 132. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\wrapper_top'.
-Computing hashes of 7657 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
+Finding identical cells in module `\B18_Probton'.
+Computing hashes of 7657 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
 Removed a total of 0 cells.
 
 133. Executing OPT_DFF pass (perform DFF optimizations).
 
 134. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \wrapper_top..
+Finding unused cells or wires in module \B18_Probton..
 Removed 0 unused cells and 4 unused wires.
 <suppressed ~1 debug messages>
 
 135. Executing ABC pass (technology mapping using ABC).
 
-135.1. Extracting gate netlist of module `\wrapper_top' to `<abc-temp-dir>/input.blif'..
+135.1. Extracting gate netlist of module `\B18_Probton' to `<abc-temp-dir>/input.blif'..
 
 135.1.1. Executed ABC.
 Extracted 7089 gates and 7640 wires to a netlist network with 549 inputs and 389 outputs.
@@ -4098,22 +4098,22 @@ Removing global temp directory.
 136. Executing OPT pass (performing simple optimizations).
 
 136.1. Executing OPT_EXPR pass (perform const folding).
-Optimizing module wrapper_top.
+Optimizing module B18_Probton.
 <suppressed ~64 debug messages>
 
 136.2. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\wrapper_top'.
-Computing hashes of 7348 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
-Computing hashes of 7336 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
+Finding identical cells in module `\B18_Probton'.
+Computing hashes of 7348 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
+Computing hashes of 7336 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
 <suppressed ~36 debug messages>
 Removed a total of 12 cells.
 
 136.3. Executing OPT_DFF pass (perform DFF optimizations).
 
 136.4. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \wrapper_top..
+Finding unused cells or wires in module \B18_Probton..
 Removed 7 unused cells and 3723 unused wires.
 <suppressed ~87 debug messages>
 
@@ -4122,19 +4122,19 @@ Removed 7 unused cells and 3723 unused wires.
 137. Executing HIERARCHY pass (managing design hierarchy).
 
 137.1. Analyzing design hierarchy..
-Top module:  \wrapper_top
+Top module:  \B18_Probton
 
 137.2. Analyzing design hierarchy..
-Top module:  \wrapper_top
+Top module:  \B18_Probton
 Removed 0 unused modules.
 
 138. Executing CHECK pass (checking for obvious problems).
-Checking module wrapper_top...
+Checking module B18_Probton...
 Found and reported 0 problems.
 
 139. Printing statistics.
 
-=== wrapper_top ===
+=== B18_Probton ===
 
         +----------Local Count, excluding submodules.
         | 
@@ -4163,49 +4163,49 @@ Found and reported 0 problems.
 140. Executing OPT pass (performing simple optimizations).
 
 140.1. Executing OPT_EXPR pass (perform const folding).
-Optimizing module wrapper_top.
+Optimizing module B18_Probton.
 
 140.2. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\wrapper_top'.
-Computing hashes of 7329 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
+Finding identical cells in module `\B18_Probton'.
+Computing hashes of 7329 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
 Removed a total of 0 cells.
 
 140.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
-Running muxtree optimizer on module \wrapper_top..
+Running muxtree optimizer on module \B18_Probton..
   Creating internal representation of mux trees.
   No muxes found in this module.
 Removed 0 multiplexer ports.
 
 140.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
-  Optimizing cells in module \wrapper_top.
+  Optimizing cells in module \B18_Probton.
 Performed a total of 0 changes.
 
 140.5. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\wrapper_top'.
-Computing hashes of 7329 cells of `\wrapper_top'.
-Finding duplicate cells in `\wrapper_top'.
+Finding identical cells in module `\B18_Probton'.
+Computing hashes of 7329 cells of `\B18_Probton'.
+Finding duplicate cells in `\B18_Probton'.
 Removed a total of 0 cells.
 
 140.6. Executing OPT_DFF pass (perform DFF optimizations).
 
 140.7. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \wrapper_top..
+Finding unused cells or wires in module \B18_Probton..
 
 140.8. Executing OPT_EXPR pass (perform const folding).
-Optimizing module wrapper_top.
+Optimizing module B18_Probton.
 
 140.9. Finished fast OPT passes. (There is nothing left to do.)
 
 141. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \wrapper_top..
+Finding unused cells or wires in module \B18_Probton..
 Removed 0 unused cells and 178 unused wires.
 <suppressed ~178 debug messages>
 {
    "creator": "Yosys 0.67 (git sha1 2d1509d1b, Release, GNU /usr/bin/c++ 13.3.0)",
-   "invocation": "stat -json -liberty /workspace/librelane/runs/RUN_2026-08-26_23-49-04/tmp/3e0dbdad28c0490da4b8e99a199b652f.lib ",
+   "invocation": "stat -json -liberty /workspace/librelane/runs/RUN_2026-08-29_02-02-22/tmp/c5e3c194056848cf8ab5ec304d55ae6d.lib ",
    "modules": {
-      "\\wrapper_top": {
+      "\\B18_Probton": {
          "num_wires":         6970,
          "num_wire_bits":     7568,
          "num_pub_wires":     239,
@@ -4268,7 +4268,7 @@ Removed 0 unused cells and 178 unused wires.
 
 142. Printing statistics.
 
-=== wrapper_top ===
+=== B18_Probton ===
 
         +----------Local Count, excluding submodules.
         | 
@@ -4343,14 +4343,14 @@ Removed 0 unused cells and 178 unused wires.
     unmapped dff cell: $_DFFSR_PPP_
 
 143.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
-Mapping DFF cells in module `\wrapper_top':
+Mapping DFF cells in module `\B18_Probton':
   mapped 560 $_DFF_PN0_ cells to \gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 cells.
   mapped 8 $_DFF_PN1_ cells to \gf180mcu_fd_sc_mcu7t5v0__dffsnq_1 cells.
 {
    "creator": "Yosys 0.67 (git sha1 2d1509d1b, Release, GNU /usr/bin/c++ 13.3.0)",
-   "invocation": "stat -json -liberty /workspace/librelane/runs/RUN_2026-08-26_23-49-04/tmp/3e0dbdad28c0490da4b8e99a199b652f.lib ",
+   "invocation": "stat -json -liberty /workspace/librelane/runs/RUN_2026-08-29_02-02-22/tmp/c5e3c194056848cf8ab5ec304d55ae6d.lib ",
    "modules": {
-      "\\wrapper_top": {
+      "\\B18_Probton": {
          "num_wires":         7452,
          "num_wire_bits":     8050,
          "num_pub_wires":     239,
@@ -4413,7 +4413,7 @@ Mapping DFF cells in module `\wrapper_top':
 
 144. Printing statistics.
 
-=== wrapper_top ===
+=== B18_Probton ===
 
         +----------Local Count, excluding submodules.
         |        +-Local Area, excluding submodules.
@@ -4449,28 +4449,28 @@ Mapping DFF cells in module `\wrapper_top':
    Area for cell type $_XNOR_ is unknown!
    Area for cell type $_XOR_ is unknown!
 
-   Chip area for module '\wrapper_top': 42428.825600
+   Chip area for module '\B18_Probton': 42428.825600
      of which used for sequential elements: 42428.825600 (100.00%)
 
-[INFO] Using generated ABC script '/workspace/librelane/runs/RUN_2026-08-26_23-49-04/06-yosys-synthesis/DELAY_2.abc'…
+[INFO] Using generated ABC script '/workspace/librelane/runs/RUN_2026-08-29_02-02-22/06-yosys-synthesis/DELAY_2.abc'…
 
 145. Executing ABC pass (technology mapping using ABC).
 
-145.1. Extracting gate netlist of module `\wrapper_top' to `/tmp/yosys-abc-q81gtp/input.blif'..
+145.1. Extracting gate netlist of module `\B18_Probton' to `/tmp/yosys-abc-afQGsK/input.blif'..
 
 145.1.1. Executed ABC.
 Extracted 7243 gates and 7803 wires to a netlist network with 560 inputs and 562 outputs.
-Running ABC script: /tmp/yosys-abc-q81gtp/abc.script
+Running ABC script: /tmp/yosys-abc-afQGsK/abc.script
 ABC: UC Berkeley, ABC 1.01 (compiled Jul 27 2026 18:12:25)
 ABC: abc 01> empty
-ABC: abc 01> source /tmp/yosys-abc-q81gtp/abc.script
-ABC: + read_blif /tmp/yosys-abc-q81gtp/input.blif 
-ABC: + read_scl /tmp/yosys-liberty-scl-cache/yosys_merged_40599058.scl 
+ABC: abc 01> source /tmp/yosys-abc-afQGsK/abc.script
+ABC: + read_blif /tmp/yosys-abc-afQGsK/input.blif 
+ABC: + read_scl /tmp/yosys-liberty-scl-cache/yosys_merged_f0d47665.scl 
 ABC: Warning: Detected 6 multi-output cells (for example, "gf180mcu_fd_sc_mcu7t5v0__addf_1").
-ABC: + read_constr -v /workspace/librelane/runs/RUN_2026-08-26_23-49-04/06-yosys-synthesis/synthesis.abc.sdc 
+ABC: + read_constr -v /workspace/librelane/runs/RUN_2026-08-29_02-02-22/06-yosys-synthesis/synthesis.abc.sdc 
 ABC: Setting driving cell to be "gf180mcu_fd_sc_mcu7t5v0__inv_1/ZN".
 ABC: Setting output load to be 72.910004.
-ABC: + source /workspace/librelane/runs/RUN_2026-08-26_23-49-04/06-yosys-synthesis/DELAY_2.abc 
+ABC: + source /workspace/librelane/runs/RUN_2026-08-29_02-02-22/06-yosys-synthesis/DELAY_2.abc 
 ABC: Error: The network is combinational.
 ABC: The cell areas are multiplied by the factor: <num_fanins> ^ (0.90).
 ABC: The cell delays are multiplied by the factor: <num_fanins> ^ (0.20).
@@ -4496,7 +4496,7 @@ ABC: Path 16 --    3268 : 4    1 gf180mcu_fd_sc_mcu7t5v0__aoi211_1 A =  21.95  D
 ABC: Path 17 --    3270 : 4    1 gf180mcu_fd_sc_mcu7t5v0__oai31_1  A =  24.15  Df =19278.3-4524.9 ps  S =5900.7 ps  Cin =  4.4 ff  Cout =  72.9 ff  Cmax = 107.3 ff  G = 1649  
 ABC: Start-point = pi244 (\wrapper_inst.digital_domain_inst.raw_edge1_x [8]).  End-point = po119 ($auto$rtlil.cc:3510:MuxGate$29791).
 ABC: netlist                       : i/o =  560/  562  lat =    0  nd =  6101  edge =  17403  area =44662.35  delay =10290.49  lev = 25
-ABC: + write_blif /tmp/yosys-abc-q81gtp/output.blif 
+ABC: + write_blif /tmp/yosys-abc-afQGsK/output.blif 
 ABC:                                                                                
 ABC: YOSYS_ABC_DONE 
 
@@ -4545,20 +4545,20 @@ Removing global temp directory.
 148. Executing SPLITNETS pass (splitting up multi-bit signals).
 
 149. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \wrapper_top..
+Finding unused cells or wires in module \B18_Probton..
 Removed 15 unused cells and 8040 unused wires.
 <suppressed ~78 debug messages>
 
 150. Executing INSBUF pass (insert buffer cells for connected wires).
 
 151. Executing CHECK pass (checking for obvious problems).
-Checking module wrapper_top...
+Checking module B18_Probton...
 Found and reported 0 problems.
 {
    "creator": "Yosys 0.67 (git sha1 2d1509d1b, Release, GNU /usr/bin/c++ 13.3.0)",
-   "invocation": "stat -json -liberty /workspace/librelane/runs/RUN_2026-08-26_23-49-04/tmp/3e0dbdad28c0490da4b8e99a199b652f.lib ",
+   "invocation": "stat -json -liberty /workspace/librelane/runs/RUN_2026-08-29_02-02-22/tmp/c5e3c194056848cf8ab5ec304d55ae6d.lib ",
    "modules": {
-      "\\wrapper_top": {
+      "\\B18_Probton": {
          "num_wires":         6773,
          "num_wire_bits":     6773,
          "num_pub_wires":     679,
@@ -4667,7 +4667,7 @@ Found and reported 0 problems.
 
 152. Printing statistics.
 
-=== wrapper_top ===
+=== B18_Probton ===
 
         +----------Local Count, excluding submodules.
         |        +-Local Area, excluding submodules.
@@ -4715,10 +4715,10 @@ Found and reported 0 problems.
       229  6032.41   gf180mcu_fd_sc_mcu7t5v0__xor2_1
        78 3.94E+03   gf180mcu_fd_sc_mcu7t5v0__xor3_1
 
-   Chip area for module '\wrapper_top': 153552.044800
+   Chip area for module '\B18_Probton': 153552.044800
      of which used for sequential elements: 42279.552000 (27.53%)
 
 153. Executing Verilog backend.
-Dumping module `\wrapper_top'.
+Dumping module `\B18_Probton'.
 
 154. Executing JSON backend.

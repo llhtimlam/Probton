@@ -2,12 +2,12 @@ meta:
   version: 3
   flow: ClassicWithPadframeBridge
 
-DESIGN_NAME: wrapper_top
+DESIGN_NAME: B18_Probton
 
 VERILOG_FILES:
   - dir::../src/B18_Probton.sv
 
-FP_DEF_TEMPLATE: "dir::../def/A/B18_A_padring.def"
+FP_DEF_TEMPLATE: "dir::../def/A/B18_A.def"
 
 CLOCK_PORT: clk
 CLOCK_NET: clk

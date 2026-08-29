@@ -42,7 +42,7 @@ set ::env(CELL_PAD_EXCLUDE) "gf180mcu_fd_sc_mcu7t5v0__filltie \"gf180mcu_fd_sc_m
 set ::env(DIODE_CELL) gf180mcu_fd_sc_mcu7t5v0__antenna/I
 set ::env(WELLTAP_CELL) gf180mcu_fd_sc_mcu7t5v0__filltie
 set ::env(ENDCAP_CELL) gf180mcu_fd_sc_mcu7t5v0__endcap
-set ::env(DESIGN_NAME) wrapper_top
+set ::env(DESIGN_NAME) B18_Probton
 set ::env(CLOCK_PERIOD) 200
 set ::env(CLOCK_PORT) clk
 set ::env(CLOCK_NET) clk
@@ -82,7 +82,7 @@ set ::env(MAGIC_EXT_UNIQUE) notopports
 set ::env(MAGIC_EXT_SHORT_RESISTOR) 0
 set ::env(MAGIC_EXT_ABSTRACT) 0
 set ::env(MAGIC_FEEDBACK_CONVERSION_THRESHOLD) 10000
-set ::env(CURRENT_GDS) /workspace/librelane/runs/RUN_2026-08-26_23-49-04/58-magic-streamout/wrapper_top.gds
-set ::env(CURRENT_DEF) /workspace/librelane/runs/RUN_2026-08-26_23-49-04/54-odb-cellfrequencytables/wrapper_top.def
-set ::env(SAVE_SPICE) /workspace/librelane/runs/RUN_2026-08-26_23-49-04/69-magic-spiceextraction/wrapper_top.spice
+set ::env(CURRENT_GDS) /workspace/librelane/runs/RUN_2026-08-29_02-02-22/58-magic-streamout/B18_Probton.gds
+set ::env(CURRENT_DEF) /workspace/librelane/runs/RUN_2026-08-29_02-02-22/54-odb-cellfrequencytables/B18_Probton.def
+set ::env(SAVE_SPICE) /workspace/librelane/runs/RUN_2026-08-29_02-02-22/69-magic-spiceextraction/B18_Probton.spice
 set ::env(MACRO_GDS_FILES) ""

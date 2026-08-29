@@ -7,25 +7,25 @@
 //   2. Keep the waiver permanently if you are sure it is okay
 //   3. Keep the waiver temporarily to suppress the output
 
-// lint_off -rule UNUSEDSIGNAL -file "*/workspace/src/B18_top.sv" -match "Signal is not used: 'spi_miso_IN'*"
+// lint_off -rule UNUSEDSIGNAL -file "*/workspace/src/B18_Probton.sv" -match "Signal is not used: 'spi_miso_IN'*"
 
-// lint_off -rule UNUSEDSIGNAL -file "*/workspace/src/B18_top.sv" -match "Signal is not used: 'move_en_x_IN'*"
+// lint_off -rule UNUSEDSIGNAL -file "*/workspace/src/B18_Probton.sv" -match "Signal is not used: 'move_en_x_IN'*"
 
-// lint_off -rule UNUSEDSIGNAL -file "*/workspace/src/B18_top.sv" -match "Signal is not used: 'dir_x_IN'*"
+// lint_off -rule UNUSEDSIGNAL -file "*/workspace/src/B18_Probton.sv" -match "Signal is not used: 'dir_x_IN'*"
 
-// lint_off -rule UNUSEDSIGNAL -file "*/workspace/src/B18_top.sv" -match "Signal is not used: 'move_en_y_IN'*"
+// lint_off -rule UNUSEDSIGNAL -file "*/workspace/src/B18_Probton.sv" -match "Signal is not used: 'move_en_y_IN'*"
 
-// lint_off -rule UNUSEDSIGNAL -file "*/workspace/src/B18_top.sv" -match "Signal is not used: 'dir_y_IN'*"
+// lint_off -rule UNUSEDSIGNAL -file "*/workspace/src/B18_Probton.sv" -match "Signal is not used: 'dir_y_IN'*"
 
-// lint_off -rule UNUSEDSIGNAL -file "*/workspace/src/B18_top.sv" -match "Signal is not used: 'mems_drv_x_IN'*"
+// lint_off -rule UNUSEDSIGNAL -file "*/workspace/src/B18_Probton.sv" -match "Signal is not used: 'mems_drv_x_IN'*"
 
-// lint_off -rule UNUSEDSIGNAL -file "*/workspace/src/B18_top.sv" -match "Signal is not used: 'mems_drv_y_IN'*"
+// lint_off -rule UNUSEDSIGNAL -file "*/workspace/src/B18_Probton.sv" -match "Signal is not used: 'mems_drv_y_IN'*"
 
-// lint_off -rule UNUSEDSIGNAL -file "*/workspace/src/B18_top.sv" -match "Signal is not used: 'ref_wave_x_IN'*"
+// lint_off -rule UNUSEDSIGNAL -file "*/workspace/src/B18_Probton.sv" -match "Signal is not used: 'ref_wave_x_IN'*"
 
-// lint_off -rule UNUSEDSIGNAL -file "*/workspace/src/B18_top.sv" -match "Signal is not used: 'ref_wave_y_IN'*"
+// lint_off -rule UNUSEDSIGNAL -file "*/workspace/src/B18_Probton.sv" -match "Signal is not used: 'ref_wave_y_IN'*"
 
-// lint_off -rule UNUSEDSIGNAL -file "*/workspace/src/B18_top.sv" -match "Signal is not used: 'read_en_IN'*"
+// lint_off -rule UNUSEDSIGNAL -file "*/workspace/src/B18_Probton.sv" -match "Signal is not used: 'read_en_IN'*"
 
 // lint_off -rule UNUSEDSIGNAL -file "*/workspace/src/spi.sv" -match "Bits of signal are not used: 'rx_shift'[7]*"
 

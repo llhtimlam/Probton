@@ -41,7 +41,7 @@ set ::env(CELL_PAD_EXCLUDE) "gf180mcu_fd_sc_mcu7t5v0__filltie \"gf180mcu_fd_sc_m
 set ::env(DIODE_CELL) gf180mcu_fd_sc_mcu7t5v0__antenna/I
 set ::env(WELLTAP_CELL) gf180mcu_fd_sc_mcu7t5v0__filltie
 set ::env(ENDCAP_CELL) gf180mcu_fd_sc_mcu7t5v0__endcap
-set ::env(DESIGN_NAME) wrapper_top
+set ::env(DESIGN_NAME) B18_Probton
 set ::env(CLOCK_PERIOD) 200
 set ::env(CLOCK_PORT) clk
 set ::env(CLOCK_NET) clk
@@ -68,5 +68,5 @@ set ::env(PAD_ROTATION_CORNER) R0
 set ::env(MAGIC_EXT_USE_GDS) 0
 set ::env(NETGEN_SETUP) /workspace/gf180mcu/gf180mcuD/libs.tech/netgen/gf180mcuD_setup.tcl
 set ::env(LVS_INCLUDE_MARCO_NETLISTS) 0
-set ::env(CURRENT_SPICE) /workspace/librelane/runs/RUN_2026-08-26_23-49-04/69-magic-spiceextraction/wrapper_top.spice
-set ::env(CURRENT_PNL) /workspace/librelane/runs/RUN_2026-08-26_23-49-04/53-openroad-fillinsertion/wrapper_top.pnl.v
+set ::env(CURRENT_SPICE) /workspace/librelane/runs/RUN_2026-08-29_02-02-22/69-magic-spiceextraction/B18_Probton.spice
+set ::env(CURRENT_PNL) /workspace/librelane/runs/RUN_2026-08-29_02-02-22/53-openroad-fillinsertion/B18_Probton.pnl.v

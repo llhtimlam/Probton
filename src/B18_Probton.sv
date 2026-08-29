@@ -2,7 +2,7 @@
 
 `include "B18_core.sv"
 
-module wrapper_top (
+module B18_Probton (
     `ifdef USE_POWER_PINS
     inout  wire VDD,
     inout  wire VSS,

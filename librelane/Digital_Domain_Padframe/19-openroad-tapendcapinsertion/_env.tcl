@@ -41,7 +41,7 @@ set ::env(CELL_PAD_EXCLUDE) "gf180mcu_fd_sc_mcu7t5v0__filltie \"gf180mcu_fd_sc_m
 set ::env(DIODE_CELL) gf180mcu_fd_sc_mcu7t5v0__antenna/I
 set ::env(WELLTAP_CELL) gf180mcu_fd_sc_mcu7t5v0__filltie
 set ::env(ENDCAP_CELL) gf180mcu_fd_sc_mcu7t5v0__endcap
-set ::env(DESIGN_NAME) wrapper_top
+set ::env(DESIGN_NAME) B18_Probton
 set ::env(CLOCK_PERIOD) 200
 set ::env(CLOCK_PORT) clk
 set ::env(CLOCK_NET) clk
@@ -76,9 +76,9 @@ set ::env(DEDUPLICATE_CORNERS) 0
 set ::env(FP_TAPCELL_DIST) 20
 set ::env(FP_MACRO_HORIZONTAL_HALO) 10
 set ::env(FP_MACRO_VERTICAL_HALO) 10
-set ::env(CURRENT_ODB) /workspace/librelane/runs/RUN_2026-08-26_23-49-04/18-openroad-cutrows/wrapper_top.odb
-set ::env(SAVE_ODB) /workspace/librelane/runs/RUN_2026-08-26_23-49-04/19-openroad-tapendcapinsertion/wrapper_top.odb
-set ::env(SAVE_DEF) /workspace/librelane/runs/RUN_2026-08-26_23-49-04/19-openroad-tapendcapinsertion/wrapper_top.def
-set ::env(SAVE_SDC) /workspace/librelane/runs/RUN_2026-08-26_23-49-04/19-openroad-tapendcapinsertion/wrapper_top.sdc
-set ::env(SAVE_NL) /workspace/librelane/runs/RUN_2026-08-26_23-49-04/19-openroad-tapendcapinsertion/wrapper_top.nl.v
-set ::env(SAVE_PNL) /workspace/librelane/runs/RUN_2026-08-26_23-49-04/19-openroad-tapendcapinsertion/wrapper_top.pnl.v
+set ::env(CURRENT_ODB) /workspace/librelane/runs/RUN_2026-08-29_02-02-22/18-openroad-cutrows/B18_Probton.odb
+set ::env(SAVE_ODB) /workspace/librelane/runs/RUN_2026-08-29_02-02-22/19-openroad-tapendcapinsertion/B18_Probton.odb
+set ::env(SAVE_DEF) /workspace/librelane/runs/RUN_2026-08-29_02-02-22/19-openroad-tapendcapinsertion/B18_Probton.def
+set ::env(SAVE_SDC) /workspace/librelane/runs/RUN_2026-08-29_02-02-22/19-openroad-tapendcapinsertion/B18_Probton.sdc
+set ::env(SAVE_NL) /workspace/librelane/runs/RUN_2026-08-29_02-02-22/19-openroad-tapendcapinsertion/B18_Probton.nl.v
+set ::env(SAVE_PNL) /workspace/librelane/runs/RUN_2026-08-29_02-02-22/19-openroad-tapendcapinsertion/B18_Probton.pnl.v

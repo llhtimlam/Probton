@@ -6,8 +6,8 @@
  \----------------------------------------------------------------------------/
  Yosys 0.67 (git sha1 2d1509d1b, Release, GNU /usr/bin/c++ 13.3.0)
 
-1. Executing Verilog-2005 frontend: /workspace/librelane/runs/RUN_2026-08-26_23-49-04/tmp/8b798bec96e1416db3db5f97f4cbe0f6.bb.v
-Parsing SystemVerilog input from `/workspace/librelane/runs/RUN_2026-08-26_23-49-04/tmp/8b798bec96e1416db3db5f97f4cbe0f6.bb.v' to AST representation.
+1. Executing Verilog-2005 frontend: /workspace/librelane/runs/RUN_2026-08-29_02-02-22/tmp/5b2925dc3fb14f3294a54c31674d9326.bb.v
+Parsing SystemVerilog input from `/workspace/librelane/runs/RUN_2026-08-29_02-02-22/tmp/5b2925dc3fb14f3294a54c31674d9326.bb.v' to AST representation.
 Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__addf_1'.
 Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__addf_2'.
 Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__addf_4'.
@@ -308,8 +308,8 @@ Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__xor3_4'.
 Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__xor3_func'.
 Successfully finished Verilog frontend.
 
-2. Executing Verilog-2005 frontend: /workspace/librelane/runs/RUN_2026-08-26_23-49-04/tmp/c965df08b92d4600aaf5a3a689feb0cf.bb.v
-Parsing SystemVerilog input from `/workspace/librelane/runs/RUN_2026-08-26_23-49-04/tmp/c965df08b92d4600aaf5a3a689feb0cf.bb.v' to AST representation.
+2. Executing Verilog-2005 frontend: /workspace/librelane/runs/RUN_2026-08-29_02-02-22/tmp/858a31ae4ff84fd9b3e3565cdc494c25.bb.v
+Parsing SystemVerilog input from `/workspace/librelane/runs/RUN_2026-08-29_02-02-22/tmp/858a31ae4ff84fd9b3e3565cdc494c25.bb.v' to AST representation.
 Generating RTLIL representation for module `\gf180mcu_ef_io__bi_t'.
 Generating RTLIL representation for module `\gf180mcu_fd_io__asig_5p0'.
 Generating RTLIL representation for module `\gf180mcu_fd_io__bi_24t'.
@@ -332,90 +332,90 @@ use_slang
 
 3. Executing SLANG frontend.
 Top level design units:
-    wrapper_top
+    B18_Probton
 
 
 Build succeeded: 0 errors, 0 warnings
 
 3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$861'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$850'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$837'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$777'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$766'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$753'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$700'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$695'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$690'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$685'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$678'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$675'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$663'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$656'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$653'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$624'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$510'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$480'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$474'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$415'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$410'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$405'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$400'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$393'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$390'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$378'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$371'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$368'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$339'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$225'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$195'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$189'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$166'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$163'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$154'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$101'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$74'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$29'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$18'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$12'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$861'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$850'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$837'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$777'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$766'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$753'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$700'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$695'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$690'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$685'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$678'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$675'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$663'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$656'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$653'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$624'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$510'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$480'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$474'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$415'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$410'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$405'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$400'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$393'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$390'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$378'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$371'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$368'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$339'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$225'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$195'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$189'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$166'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$163'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$154'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$101'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$74'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$29'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$18'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$12'.
 Cleaned up 33 empty switches.
 
 3.2. Executing TRIBUF pass.
 
 3.3. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
-Marked 2 switch rules as full_case in process $695 in module digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.
-Marked 9 switch rules as full_case in process $861 in module digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.
-Marked 1 switch rules as full_case in process $678 in module digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.
-Removed 1 dead cases from process $675 in module digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.
-Marked 1 switch rules as full_case in process $675 in module digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.
-Marked 1 switch rules as full_case in process $850 in module digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.
-Marked 1 switch rules as full_case in process $656 in module digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.
-Removed 1 dead cases from process $653 in module digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.
-Marked 1 switch rules as full_case in process $653 in module digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.
-Marked 10 switch rules as full_case in process $624 in module digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.
-Marked 16 switch rules as full_case in process $510 in module digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.
-Marked 1 switch rules as full_case in process $480 in module digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.
-Marked 2 switch rules as full_case in process $474 in module digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.
-Marked 9 switch rules as full_case in process $415 in module digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.
-Marked 2 switch rules as full_case in process $410 in module digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.
-Marked 1 switch rules as full_case in process $837 in module digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.
-Marked 1 switch rules as full_case in process $393 in module digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.
-Removed 1 dead cases from process $390 in module digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.
-Marked 1 switch rules as full_case in process $390 in module digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.
-Marked 9 switch rules as full_case in process $777 in module digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.
-Marked 1 switch rules as full_case in process $371 in module digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.
-Removed 1 dead cases from process $368 in module digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.
-Marked 1 switch rules as full_case in process $368 in module digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.
-Marked 10 switch rules as full_case in process $339 in module digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.
-Marked 16 switch rules as full_case in process $225 in module digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.
-Marked 1 switch rules as full_case in process $195 in module digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.
-Marked 2 switch rules as full_case in process $189 in module digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.
-Marked 1 switch rules as full_case in process $766 in module digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.
-Marked 9 switch rules as full_case in process $154 in module digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.
-Marked 1 switch rules as full_case in process $74 in module digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.
-Marked 9 switch rules as full_case in process $29 in module digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.
-Marked 1 switch rules as full_case in process $753 in module digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.
-Marked 9 switch rules as full_case in process $700 in module digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.
+Marked 2 switch rules as full_case in process $695 in module digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.
+Marked 9 switch rules as full_case in process $861 in module digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.
+Marked 1 switch rules as full_case in process $678 in module digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.
+Removed 1 dead cases from process $675 in module digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.
+Marked 1 switch rules as full_case in process $675 in module digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.
+Marked 1 switch rules as full_case in process $850 in module digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.
+Marked 1 switch rules as full_case in process $656 in module digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.
+Removed 1 dead cases from process $653 in module digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.
+Marked 1 switch rules as full_case in process $653 in module digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.
+Marked 10 switch rules as full_case in process $624 in module digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.
+Marked 16 switch rules as full_case in process $510 in module digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.
+Marked 1 switch rules as full_case in process $480 in module digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.
+Marked 2 switch rules as full_case in process $474 in module digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.
+Marked 9 switch rules as full_case in process $415 in module digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.
+Marked 2 switch rules as full_case in process $410 in module digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.
+Marked 1 switch rules as full_case in process $837 in module digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.
+Marked 1 switch rules as full_case in process $393 in module digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.
+Removed 1 dead cases from process $390 in module digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.
+Marked 1 switch rules as full_case in process $390 in module digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.
+Marked 9 switch rules as full_case in process $777 in module digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.
+Marked 1 switch rules as full_case in process $371 in module digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.
+Removed 1 dead cases from process $368 in module digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.
+Marked 1 switch rules as full_case in process $368 in module digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.
+Marked 10 switch rules as full_case in process $339 in module digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.
+Marked 16 switch rules as full_case in process $225 in module digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.
+Marked 1 switch rules as full_case in process $195 in module digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.
+Marked 2 switch rules as full_case in process $189 in module digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.
+Marked 1 switch rules as full_case in process $766 in module digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.
+Marked 9 switch rules as full_case in process $154 in module digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.
+Marked 1 switch rules as full_case in process $74 in module digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.
+Marked 9 switch rules as full_case in process $29 in module digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.
+Marked 1 switch rules as full_case in process $753 in module digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.
+Marked 9 switch rules as full_case in process $700 in module digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.
 Removed a total of 4 dead cases.
 
 3.4. Executing PROC_PRUNE pass (remove redundant assignments in processes).
@@ -429,12 +429,12 @@ Converted 4 switches.
 <suppressed ~179 debug messages>
 
 3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
-Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$695'.
+Creating decoders for process `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$695'.
      1/2: $wave_controller_y_inst.ds_code$697
      2/2: $wave_controller_y_inst.ds_code$698
-Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$690'.
+Creating decoders for process `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$690'.
      1/1: $wave_controller_y_inst.ref_ds_code$693
-Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$861'.
+Creating decoders for process `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$861'.
      1/39: $signal_processor_y_inst.cycle_count$883
      2/39: $signal_processor_y_inst.cnt_out$882
      3/39: $signal_processor_y_inst.cnt_in$881
@@ -474,20 +474,20 @@ Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_
     37/39: $signal_processor_y_inst.dir$896
     38/39: $signal_processor_y_inst.latch_phase270_ack$895
     39/39: $signal_processor_y_inst.latch_phase90_ack$894
-Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$678'.
+Creating decoders for process `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$678'.
      1/1: $wave_controller_y_inst.u_ref_sine.amp$681
-Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$675'.
+Creating decoders for process `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$675'.
      1/1: $wave_controller_y_inst.u_ref_sine.q_val$676
-Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$850'.
+Creating decoders for process `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$850'.
      1/4: $signal_processor_y_inst.next_out$854
      2/4: $signal_processor_y_inst.next_in$853
      3/4: $signal_processor_y_inst.next_out$856
      4/4: $signal_processor_y_inst.next_in$855
-Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$656'.
+Creating decoders for process `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$656'.
      1/1: $wave_controller_y_inst.u_sine.amp$659
-Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$653'.
+Creating decoders for process `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$653'.
      1/1: $wave_controller_y_inst.u_sine.q_val$654
-Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$624'.
+Creating decoders for process `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$624'.
      1/13: $wave_controller_y_inst.latch_phase270$643
      2/13: $wave_controller_y_inst.latch_phase90$642
      3/13: $wave_controller_y_inst.latch_error$641
@@ -501,7 +501,7 @@ Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_
     11/13: $wave_controller_y_inst.latch_error$647
     12/13: $wave_controller_y_inst.latch_phase270$646
     13/13: $wave_controller_y_inst.latch_phase90$645
-Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$510'.
+Creating decoders for process `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$510'.
      1/84: $wave_controller_y_inst.capture_step$569
      2/84: $wave_controller_y_inst.capture_pending$568
      3/84: $wave_controller_y_inst.capture_step$547
@@ -586,16 +586,16 @@ Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_
     82/84: $wave_controller_y_inst.delay_wave_cycle$600
     83/84: $wave_controller_y_inst.cal_timeout$599
     84/84: $wave_controller_y_inst.cal_done$598
-Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$480'.
+Creating decoders for process `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$480'.
      1/5: $wave_controller_y_inst.comp_sync4$488
      2/5: $wave_controller_y_inst.comp_sync3$487
      3/5: $wave_controller_y_inst.comp_sync2$486
      4/5: $wave_controller_y_inst.comp_sync1$485
      5/5: $wave_controller_y_inst.comp_sync0$484
-Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$474'.
+Creating decoders for process `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$474'.
      1/2: $wave_controller_y_inst.phase_acc$478
      2/2: $wave_controller_y_inst.phase_acc$479
-Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$415'.
+Creating decoders for process `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$415'.
      1/20: $wave_controller_x_inst.cal_burst_count$439
      2/20: $wave_controller_x_inst.cal_burst_active$438
      3/20: $wave_controller_x_inst.cal_burst_armed$437
@@ -616,20 +616,20 @@ Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_
     18/20: $wave_controller_x_inst.cal_burst_count$429
     19/20: $wave_controller_x_inst.cal_burst_active$428
     20/20: $wave_controller_x_inst.cal_burst_armed$427
-Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$410'.
+Creating decoders for process `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$410'.
      1/2: $wave_controller_x_inst.ds_code$412
      2/2: $wave_controller_x_inst.ds_code$413
-Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$405'.
+Creating decoders for process `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$405'.
      1/1: $wave_controller_x_inst.ref_ds_code$408
-Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$837'.
+Creating decoders for process `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$837'.
      1/3: $signal_processor_y_inst.s270_pipe$843
      2/3: $signal_processor_y_inst.s90_pipe$842
      3/3: $signal_processor_y_inst.comp_pipe$841
-Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$393'.
+Creating decoders for process `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$393'.
      1/1: $wave_controller_x_inst.u_ref_sine.amp$396
-Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$390'.
+Creating decoders for process `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$390'.
      1/1: $wave_controller_x_inst.u_ref_sine.q_val$391
-Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$777'.
+Creating decoders for process `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$777'.
      1/39: $signal_processor_x_inst.cycle_count$799
      2/39: $signal_processor_x_inst.cnt_out$798
      3/39: $signal_processor_x_inst.cnt_in$797
@@ -669,11 +669,11 @@ Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_
     37/39: $signal_processor_x_inst.dir$812
     38/39: $signal_processor_x_inst.latch_phase270_ack$811
     39/39: $signal_processor_x_inst.latch_phase90_ack$810
-Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$371'.
+Creating decoders for process `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$371'.
      1/1: $wave_controller_x_inst.u_sine.amp$374
-Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$368'.
+Creating decoders for process `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$368'.
      1/1: $wave_controller_x_inst.u_sine.q_val$369
-Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$339'.
+Creating decoders for process `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$339'.
      1/13: $wave_controller_x_inst.latch_phase270$358
      2/13: $wave_controller_x_inst.latch_phase90$357
      3/13: $wave_controller_x_inst.latch_error$356
@@ -687,7 +687,7 @@ Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_
     11/13: $wave_controller_x_inst.latch_error$362
     12/13: $wave_controller_x_inst.latch_phase270$361
     13/13: $wave_controller_x_inst.latch_phase90$360
-Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$225'.
+Creating decoders for process `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$225'.
      1/84: $wave_controller_x_inst.capture_step$284
      2/84: $wave_controller_x_inst.capture_pending$283
      3/84: $wave_controller_x_inst.capture_step$262
@@ -772,24 +772,24 @@ Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_
     82/84: $wave_controller_x_inst.delay_wave_cycle$315
     83/84: $wave_controller_x_inst.cal_timeout$314
     84/84: $wave_controller_x_inst.cal_done$313
-Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$195'.
+Creating decoders for process `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$195'.
      1/5: $wave_controller_x_inst.comp_sync4$203
      2/5: $wave_controller_x_inst.comp_sync3$202
      3/5: $wave_controller_x_inst.comp_sync2$201
      4/5: $wave_controller_x_inst.comp_sync1$200
      5/5: $wave_controller_x_inst.comp_sync0$199
-Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$189'.
+Creating decoders for process `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$189'.
      1/2: $wave_controller_x_inst.phase_acc$193
      2/2: $wave_controller_x_inst.phase_acc$194
-Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$166'.
+Creating decoders for process `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$166'.
      1/2: $state_machine_inst.read_en$168
      2/2: $state_machine_inst.cal_start$167
-Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$766'.
+Creating decoders for process `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$766'.
      1/4: $signal_processor_x_inst.next_out$770
      2/4: $signal_processor_x_inst.next_in$769
      3/4: $signal_processor_x_inst.next_out$772
      4/4: $signal_processor_x_inst.next_in$771
-Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$154'.
+Creating decoders for process `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$154'.
      1/7: $state_machine_inst.state_d$158
      2/7: $state_machine_inst.state_d$159
      3/7: $state_machine_inst.state_d$156
@@ -797,9 +797,9 @@ Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_
      5/7: $state_machine_inst.state_d$155
      6/7: $state_machine_inst.state_d$160
      7/7: $state_machine_inst.state_d$161
-Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$101'.
+Creating decoders for process `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$101'.
      1/1: $spi_regs_inst.reg_rd_data$102
-Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$74'.
+Creating decoders for process `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$74'.
      1/38: $spi_regs_inst.cfg_phase270_offset_y$84 [20:16]
      2/38: $spi_regs_inst.cfg_phase270_offset_y$84 [15:8]
      3/38: $spi_regs_inst.cfg_phase270_offset_y$84 [7:0]
@@ -838,7 +838,7 @@ Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_
     36/38: $spi_regs_inst.cfg_phase0_offset_x$91
     37/38: $spi_regs_inst.cfg_f_MEMS_fcw_y$90
     38/38: $spi_regs_inst.cfg_f_MEMS_fcw_x$89
-Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$29'.
+Creating decoders for process `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$29'.
      1/35: $spi_regs_inst.tx_shift$63
      2/35: $spi_regs_inst.tx_shift$64
      3/35: $spi_regs_inst.bit_cnt$46
@@ -874,11 +874,11 @@ Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_
     33/35: $spi_regs_inst.rx_shift$69
     34/35: $spi_regs_inst.spi_addr$68
     35/35: $spi_regs_inst.rw_n$67
-Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$753'.
+Creating decoders for process `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$753'.
      1/3: $signal_processor_x_inst.s270_pipe$759
      2/3: $signal_processor_x_inst.s90_pipe$758
      3/3: $signal_processor_x_inst.comp_pipe$757
-Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$700'.
+Creating decoders for process `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$700'.
      1/20: $wave_controller_y_inst.cal_burst_count$724
      2/20: $wave_controller_y_inst.cal_burst_active$723
      3/20: $wave_controller_y_inst.cal_burst_armed$722
@@ -901,93 +901,93 @@ Creating decoders for process `\digital_domain$wrapper_top.wrapper_inst.digital_
     20/20: $wave_controller_y_inst.cal_burst_armed$712
 
 3.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Found and cleaned up 3 empty switches in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$695'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$695'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$690'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$690'.
-Found and cleaned up 11 empty switches in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$861'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$861'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$678'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$678'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$675'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$675'.
-Found and cleaned up 3 empty switches in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$850'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$850'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$656'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$656'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$653'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$653'.
-Found and cleaned up 13 empty switches in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$624'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$624'.
-Found and cleaned up 25 empty switches in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$510'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$510'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$480'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$480'.
-Found and cleaned up 3 empty switches in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$474'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$474'.
-Found and cleaned up 11 empty switches in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$415'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$415'.
-Found and cleaned up 3 empty switches in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$410'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$410'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$405'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$405'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$837'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$837'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$393'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$393'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$390'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$390'.
-Found and cleaned up 11 empty switches in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$777'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$777'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$371'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$371'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$368'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$368'.
-Found and cleaned up 13 empty switches in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$339'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$339'.
-Found and cleaned up 25 empty switches in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$225'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$225'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$195'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$195'.
-Found and cleaned up 3 empty switches in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$189'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$189'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$166'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$166'.
-Found and cleaned up 3 empty switches in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$766'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$766'.
-Found and cleaned up 13 empty switches in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$154'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$154'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$101'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$101'.
-Found and cleaned up 3 empty switches in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$74'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$74'.
-Found and cleaned up 13 empty switches in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$29'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$29'.
-Found and cleaned up 1 empty switch in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$753'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$753'.
-Found and cleaned up 11 empty switches in `\digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$700'.
-Removing empty process `digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.$700'.
+Found and cleaned up 3 empty switches in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$695'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$695'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$690'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$690'.
+Found and cleaned up 11 empty switches in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$861'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$861'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$678'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$678'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$675'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$675'.
+Found and cleaned up 3 empty switches in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$850'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$850'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$656'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$656'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$653'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$653'.
+Found and cleaned up 13 empty switches in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$624'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$624'.
+Found and cleaned up 25 empty switches in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$510'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$510'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$480'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$480'.
+Found and cleaned up 3 empty switches in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$474'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$474'.
+Found and cleaned up 11 empty switches in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$415'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$415'.
+Found and cleaned up 3 empty switches in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$410'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$410'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$405'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$405'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$837'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$837'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$393'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$393'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$390'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$390'.
+Found and cleaned up 11 empty switches in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$777'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$777'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$371'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$371'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$368'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$368'.
+Found and cleaned up 13 empty switches in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$339'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$339'.
+Found and cleaned up 25 empty switches in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$225'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$225'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$195'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$195'.
+Found and cleaned up 3 empty switches in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$189'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$189'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$166'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$166'.
+Found and cleaned up 3 empty switches in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$766'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$766'.
+Found and cleaned up 13 empty switches in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$154'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$154'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$101'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$101'.
+Found and cleaned up 3 empty switches in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$74'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$74'.
+Found and cleaned up 13 empty switches in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$29'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$29'.
+Found and cleaned up 1 empty switch in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$753'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$753'.
+Found and cleaned up 11 empty switches in `\digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$700'.
+Removing empty process `digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.$700'.
 Cleaned up 183 empty switches.
 
 3.9. Executing OPT_EXPR pass (perform const folding).
-Optimizing module digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.
+Optimizing module digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.
 <suppressed ~466 debug messages>
-Optimizing module wrapper$wrapper_top.wrapper_inst.
-Optimizing module wrapper_top.
+Optimizing module wrapper$B18_Probton.wrapper_inst.
+Optimizing module B18_Probton.
 
 4. Executing HIERARCHY pass (managing design hierarchy).
 
 4.1. Analyzing design hierarchy..
-Top module:  \wrapper_top
-Used module:     \wrapper$wrapper_top.wrapper_inst
-Used module:         \digital_domain$wrapper_top.wrapper_inst.digital_domain_inst
+Top module:  \B18_Probton
+Used module:     \wrapper$B18_Probton.wrapper_inst
+Used module:         \digital_domain$B18_Probton.wrapper_inst.digital_domain_inst
 
 4.2. Analyzing design hierarchy..
-Top module:  \wrapper_top
-Used module:     \wrapper$wrapper_top.wrapper_inst
-Used module:         \digital_domain$wrapper_top.wrapper_inst.digital_domain_inst
+Top module:  \B18_Probton
+Used module:     \wrapper$B18_Probton.wrapper_inst
+Used module:         \digital_domain$B18_Probton.wrapper_inst.digital_domain_inst
 Removed 0 unused modules.
-Renaming module wrapper_top to wrapper_top.
+Renaming module B18_Probton to B18_Probton.
 
 5. Executing PROC pass (convert processes to netlists).
 
@@ -1020,16 +1020,16 @@ Converted 0 switches.
 Cleaned up 0 empty switches.
 
 5.12. Executing OPT_EXPR pass (perform const folding).
-Optimizing module wrapper_top.
-Optimizing module wrapper$wrapper_top.wrapper_inst.
-Optimizing module digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.
+Optimizing module B18_Probton.
+Optimizing module wrapper$B18_Probton.wrapper_inst.
+Optimizing module digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.
 
 6. Executing FLATTEN pass (flatten design).
-Deleting now unused module wrapper$wrapper_top.wrapper_inst.
-Deleting now unused module digital_domain$wrapper_top.wrapper_inst.digital_domain_inst.
+Deleting now unused module wrapper$B18_Probton.wrapper_inst.
+Deleting now unused module digital_domain$B18_Probton.wrapper_inst.digital_domain_inst.
 <suppressed ~2 debug messages>
 
 7. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \wrapper_top..
+Finding unused cells or wires in module \B18_Probton..
 Removed 41 unused cells and 2015 unused wires.
 <suppressed ~599 debug messages>

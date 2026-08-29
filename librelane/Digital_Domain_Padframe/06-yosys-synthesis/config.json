@@ -88,7 +88,7 @@
     "ENDCAP_CELL": "gf180mcu_fd_sc_mcu7t5v0__endcap",
     "DESIGN_DIR": "/workspace/librelane",
     "PDK_ROOT": "/workspace/gf180mcu",
-    "DESIGN_NAME": "wrapper_top",
+    "DESIGN_NAME": "B18_Probton",
     "PDK": "gf180mcuD",
     "CLOCK_PERIOD": 200,
     "CLOCK_PORT": "clk",
@@ -230,7 +230,7 @@
     "SYNTH_WRITE_NOATTR": true,
     "SYNTH_NORMALIZE_SINGLE_BIT_VECTORS": true,
     "VERILOG_FILES": [
-        "/workspace/src/B18_top.sv"
+        "/workspace/src/B18_Probton.sv"
     ],
     "VERILOG_DEFINES": [
         "SLOT_WORKSHOP"

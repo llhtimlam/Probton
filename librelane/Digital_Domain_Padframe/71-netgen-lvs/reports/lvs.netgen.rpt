@@ -413,24 +413,6 @@ VSS                                        |VSS
 Cell pin lists are equivalent.
 Device classes gf180mcu_fd_sc_mcu7t5v0__oai21_2 and gf180mcu_fd_sc_mcu7t5v0__oai21_2 are equivalent.
 
-Cell gf180mcu_fd_sc_mcu7t5v0__tiel (0) disconnected node: ZN
-Cell gf180mcu_fd_sc_mcu7t5v0__tiel (0) disconnected node: VDD
-Cell gf180mcu_fd_sc_mcu7t5v0__tiel (0) disconnected node: VNW
-Cell gf180mcu_fd_sc_mcu7t5v0__tiel (0) disconnected node: VPW
-Cell gf180mcu_fd_sc_mcu7t5v0__tiel (0) disconnected node: VSS
-
-Subcircuit pins:
-Circuit 1: gf180mcu_fd_sc_mcu7t5v0__tiel   |Circuit 2: gf180mcu_fd_sc_mcu7t5v0__tiel   
--------------------------------------------|-------------------------------------------
-ZN                                         |ZN                                         
-VDD                                        |VDD                                        
-VNW                                        |VNW                                        
-VPW                                        |VPW                                        
-VSS                                        |VSS                                        
----------------------------------------------------------------------------------------
-Cell pin lists are equivalent.
-Device classes gf180mcu_fd_sc_mcu7t5v0__tiel and gf180mcu_fd_sc_mcu7t5v0__tiel are equivalent.
-
 Cell gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 (0) disconnected node: D
 Cell gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 (0) disconnected node: RN
 Cell gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 (0) disconnected node: CLK
@@ -1307,6 +1289,42 @@ VSS                                        |VSS
 Cell pin lists are equivalent.
 Device classes gf180mcu_fd_sc_mcu7t5v0__nand2_4 and gf180mcu_fd_sc_mcu7t5v0__nand2_4 are equivalent.
 
+Cell gf180mcu_fd_sc_mcu7t5v0__tiel (0) disconnected node: ZN
+Cell gf180mcu_fd_sc_mcu7t5v0__tiel (0) disconnected node: VDD
+Cell gf180mcu_fd_sc_mcu7t5v0__tiel (0) disconnected node: VNW
+Cell gf180mcu_fd_sc_mcu7t5v0__tiel (0) disconnected node: VPW
+Cell gf180mcu_fd_sc_mcu7t5v0__tiel (0) disconnected node: VSS
+
+Subcircuit pins:
+Circuit 1: gf180mcu_fd_sc_mcu7t5v0__tiel   |Circuit 2: gf180mcu_fd_sc_mcu7t5v0__tiel   
+-------------------------------------------|-------------------------------------------
+ZN                                         |ZN                                         
+VDD                                        |VDD                                        
+VNW                                        |VNW                                        
+VPW                                        |VPW                                        
+VSS                                        |VSS                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes gf180mcu_fd_sc_mcu7t5v0__tiel and gf180mcu_fd_sc_mcu7t5v0__tiel are equivalent.
+
+Cell gf180mcu_fd_sc_mcu7t5v0__tieh (0) disconnected node: Z
+Cell gf180mcu_fd_sc_mcu7t5v0__tieh (0) disconnected node: VDD
+Cell gf180mcu_fd_sc_mcu7t5v0__tieh (0) disconnected node: VNW
+Cell gf180mcu_fd_sc_mcu7t5v0__tieh (0) disconnected node: VPW
+Cell gf180mcu_fd_sc_mcu7t5v0__tieh (0) disconnected node: VSS
+
+Subcircuit pins:
+Circuit 1: gf180mcu_fd_sc_mcu7t5v0__tieh   |Circuit 2: gf180mcu_fd_sc_mcu7t5v0__tieh   
+-------------------------------------------|-------------------------------------------
+Z                                          |Z                                          
+VDD                                        |VDD                                        
+VNW                                        |VNW                                        
+VPW                                        |VPW                                        
+VSS                                        |VSS                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes gf180mcu_fd_sc_mcu7t5v0__tieh and gf180mcu_fd_sc_mcu7t5v0__tieh are equivalent.
+
 Cell gf180mcu_fd_sc_mcu7t5v0__oai32_4 (0) disconnected node: A1
 Cell gf180mcu_fd_sc_mcu7t5v0__oai32_4 (0) disconnected node: A2
 Cell gf180mcu_fd_sc_mcu7t5v0__oai32_4 (0) disconnected node: A3
@@ -2147,24 +2165,6 @@ VSS                                        |VSS
 Cell pin lists are equivalent.
 Device classes gf180mcu_fd_sc_mcu7t5v0__oai22_4 and gf180mcu_fd_sc_mcu7t5v0__oai22_4 are equivalent.
 
-Cell gf180mcu_fd_sc_mcu7t5v0__tieh (0) disconnected node: Z
-Cell gf180mcu_fd_sc_mcu7t5v0__tieh (0) disconnected node: VDD
-Cell gf180mcu_fd_sc_mcu7t5v0__tieh (0) disconnected node: VNW
-Cell gf180mcu_fd_sc_mcu7t5v0__tieh (0) disconnected node: VPW
-Cell gf180mcu_fd_sc_mcu7t5v0__tieh (0) disconnected node: VSS
-
-Subcircuit pins:
-Circuit 1: gf180mcu_fd_sc_mcu7t5v0__tieh   |Circuit 2: gf180mcu_fd_sc_mcu7t5v0__tieh   
--------------------------------------------|-------------------------------------------
-Z                                          |Z                                          
-VDD                                        |VDD                                        
-VNW                                        |VNW                                        
-VPW                                        |VPW                                        
-VSS                                        |VSS                                        
----------------------------------------------------------------------------------------
-Cell pin lists are equivalent.
-Device classes gf180mcu_fd_sc_mcu7t5v0__tieh and gf180mcu_fd_sc_mcu7t5v0__tieh are equivalent.
-
 Cell gf180mcu_fd_sc_mcu7t5v0__oai221_4 (0) disconnected node: A1
 Cell gf180mcu_fd_sc_mcu7t5v0__oai221_4 (0) disconnected node: A2
 Cell gf180mcu_fd_sc_mcu7t5v0__oai221_4 (0) disconnected node: B1
@@ -2447,50 +2447,50 @@ VSS                                        |VSS
 Cell pin lists are equivalent.
 Device classes gf180mcu_fd_sc_mcu7t5v0__inv_1 and gf180mcu_fd_sc_mcu7t5v0__inv_1 are equivalent.
 
-Cell wrapper_top (0) disconnected node: dir_x_IN
-Cell wrapper_top (0) disconnected node: dir_y_IN
-Cell wrapper_top (0) disconnected node: mems_drv_x_IN
-Cell wrapper_top (0) disconnected node: mems_drv_y_IN
-Cell wrapper_top (0) disconnected node: move_en_x_IN
-Cell wrapper_top (0) disconnected node: move_en_y_IN
-Cell wrapper_top (0) disconnected node: read_en_IN
-Cell wrapper_top (0) disconnected node: ref_wave_x_IN
-Cell wrapper_top (0) disconnected node: ref_wave_y_IN
-Cell wrapper_top (0) disconnected node: spi_miso_IN
-Cell wrapper_top (1) disconnected node: dir_x_IN
-Cell wrapper_top (1) disconnected node: dir_y_IN
-Cell wrapper_top (1) disconnected node: mems_drv_x_IN
-Cell wrapper_top (1) disconnected node: mems_drv_y_IN
-Cell wrapper_top (1) disconnected node: move_en_x_IN
-Cell wrapper_top (1) disconnected node: move_en_y_IN
-Cell wrapper_top (1) disconnected node: read_en_IN
-Cell wrapper_top (1) disconnected node: ref_wave_x_IN
-Cell wrapper_top (1) disconnected node: ref_wave_y_IN
-Cell wrapper_top (1) disconnected node: spi_miso_IN
-Class wrapper_top (0):  Merged 11783 parallel devices.
-Class wrapper_top (1):  Merged 11783 parallel devices.
-Cell wrapper_top (0) disconnected node: dir_x_IN
-Cell wrapper_top (0) disconnected node: dir_y_IN
-Cell wrapper_top (0) disconnected node: mems_drv_x_IN
-Cell wrapper_top (0) disconnected node: mems_drv_y_IN
-Cell wrapper_top (0) disconnected node: move_en_x_IN
-Cell wrapper_top (0) disconnected node: move_en_y_IN
-Cell wrapper_top (0) disconnected node: read_en_IN
-Cell wrapper_top (0) disconnected node: ref_wave_x_IN
-Cell wrapper_top (0) disconnected node: ref_wave_y_IN
-Cell wrapper_top (0) disconnected node: spi_miso_IN
-Cell wrapper_top (1) disconnected node: dir_x_IN
-Cell wrapper_top (1) disconnected node: dir_y_IN
-Cell wrapper_top (1) disconnected node: mems_drv_x_IN
-Cell wrapper_top (1) disconnected node: mems_drv_y_IN
-Cell wrapper_top (1) disconnected node: move_en_x_IN
-Cell wrapper_top (1) disconnected node: move_en_y_IN
-Cell wrapper_top (1) disconnected node: read_en_IN
-Cell wrapper_top (1) disconnected node: ref_wave_x_IN
-Cell wrapper_top (1) disconnected node: ref_wave_y_IN
-Cell wrapper_top (1) disconnected node: spi_miso_IN
+Cell B18_Probton (0) disconnected node: dir_x_IN
+Cell B18_Probton (0) disconnected node: dir_y_IN
+Cell B18_Probton (0) disconnected node: mems_drv_x_IN
+Cell B18_Probton (0) disconnected node: mems_drv_y_IN
+Cell B18_Probton (0) disconnected node: move_en_x_IN
+Cell B18_Probton (0) disconnected node: move_en_y_IN
+Cell B18_Probton (0) disconnected node: read_en_IN
+Cell B18_Probton (0) disconnected node: ref_wave_x_IN
+Cell B18_Probton (0) disconnected node: ref_wave_y_IN
+Cell B18_Probton (0) disconnected node: spi_miso_IN
+Cell B18_Probton (1) disconnected node: dir_x_IN
+Cell B18_Probton (1) disconnected node: dir_y_IN
+Cell B18_Probton (1) disconnected node: mems_drv_x_IN
+Cell B18_Probton (1) disconnected node: mems_drv_y_IN
+Cell B18_Probton (1) disconnected node: move_en_x_IN
+Cell B18_Probton (1) disconnected node: move_en_y_IN
+Cell B18_Probton (1) disconnected node: read_en_IN
+Cell B18_Probton (1) disconnected node: ref_wave_x_IN
+Cell B18_Probton (1) disconnected node: ref_wave_y_IN
+Cell B18_Probton (1) disconnected node: spi_miso_IN
+Class B18_Probton (0):  Merged 11783 parallel devices.
+Class B18_Probton (1):  Merged 11783 parallel devices.
+Cell B18_Probton (0) disconnected node: dir_x_IN
+Cell B18_Probton (0) disconnected node: dir_y_IN
+Cell B18_Probton (0) disconnected node: mems_drv_x_IN
+Cell B18_Probton (0) disconnected node: mems_drv_y_IN
+Cell B18_Probton (0) disconnected node: move_en_x_IN
+Cell B18_Probton (0) disconnected node: move_en_y_IN
+Cell B18_Probton (0) disconnected node: read_en_IN
+Cell B18_Probton (0) disconnected node: ref_wave_x_IN
+Cell B18_Probton (0) disconnected node: ref_wave_y_IN
+Cell B18_Probton (0) disconnected node: spi_miso_IN
+Cell B18_Probton (1) disconnected node: dir_x_IN
+Cell B18_Probton (1) disconnected node: dir_y_IN
+Cell B18_Probton (1) disconnected node: mems_drv_x_IN
+Cell B18_Probton (1) disconnected node: mems_drv_y_IN
+Cell B18_Probton (1) disconnected node: move_en_x_IN
+Cell B18_Probton (1) disconnected node: move_en_y_IN
+Cell B18_Probton (1) disconnected node: read_en_IN
+Cell B18_Probton (1) disconnected node: ref_wave_x_IN
+Cell B18_Probton (1) disconnected node: ref_wave_y_IN
+Cell B18_Probton (1) disconnected node: spi_miso_IN
 Subcircuit summary:
-Circuit 1: wrapper_top                     |Circuit 2: wrapper_top                     
+Circuit 1: B18_Probton                     |Circuit 2: B18_Probton                     
 -------------------------------------------|-------------------------------------------
 gf180mcu_fd_sc_mcu7t5v0__fillcap_4 (5834-> |gf180mcu_fd_sc_mcu7t5v0__fillcap_4 (5834-> 
 gf180mcu_fd_sc_mcu7t5v0__aoi21_4 (19)      |gf180mcu_fd_sc_mcu7t5v0__aoi21_4 (19)      
@@ -2511,7 +2511,6 @@ gf180mcu_fd_sc_mcu7t5v0__nand2_1 (1033)    |gf180mcu_fd_sc_mcu7t5v0__nand2_1 (10
 gf180mcu_fd_sc_mcu7t5v0__nand4_1 (197)     |gf180mcu_fd_sc_mcu7t5v0__nand4_1 (197)     
 gf180mcu_fd_sc_mcu7t5v0__xor2_1 (192)      |gf180mcu_fd_sc_mcu7t5v0__xor2_1 (192)      
 gf180mcu_fd_sc_mcu7t5v0__oai21_2 (52)      |gf180mcu_fd_sc_mcu7t5v0__oai21_2 (52)      
-gf180mcu_fd_sc_mcu7t5v0__tiel (71)         |gf180mcu_fd_sc_mcu7t5v0__tiel (71)         
 gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 (391)    |gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 (391)    
 gf180mcu_fd_sc_mcu7t5v0__nor3_2 (26)       |gf180mcu_fd_sc_mcu7t5v0__nor3_2 (26)       
 gf180mcu_fd_sc_mcu7t5v0__clkbuf_1 (201)    |gf180mcu_fd_sc_mcu7t5v0__clkbuf_1 (201)    
@@ -2549,6 +2548,8 @@ gf180mcu_fd_sc_mcu7t5v0__xnor2_1 (29)      |gf180mcu_fd_sc_mcu7t5v0__xnor2_1 (29
 gf180mcu_fd_sc_mcu7t5v0__oai31_1 (48)      |gf180mcu_fd_sc_mcu7t5v0__oai31_1 (48)      
 gf180mcu_fd_sc_mcu7t5v0__inv_2 (37)        |gf180mcu_fd_sc_mcu7t5v0__inv_2 (37)        
 gf180mcu_fd_sc_mcu7t5v0__nand2_4 (1)       |gf180mcu_fd_sc_mcu7t5v0__nand2_4 (1)       
+gf180mcu_fd_sc_mcu7t5v0__tiel (71)         |gf180mcu_fd_sc_mcu7t5v0__tiel (71)         
+gf180mcu_fd_sc_mcu7t5v0__tieh (22)         |gf180mcu_fd_sc_mcu7t5v0__tieh (22)         
 gf180mcu_fd_sc_mcu7t5v0__oai32_4 (8)       |gf180mcu_fd_sc_mcu7t5v0__oai32_4 (8)       
 gf180mcu_fd_sc_mcu7t5v0__aoi221_1 (43)     |gf180mcu_fd_sc_mcu7t5v0__aoi221_1 (43)     
 gf180mcu_fd_sc_mcu7t5v0__aoi211_4 (20)     |gf180mcu_fd_sc_mcu7t5v0__aoi211_4 (20)     
@@ -2583,7 +2584,6 @@ gf180mcu_fd_sc_mcu7t5v0__clkbuf_16 (1)     |gf180mcu_fd_sc_mcu7t5v0__clkbuf_16 (
 gf180mcu_fd_sc_mcu7t5v0__and4_4 (2)        |gf180mcu_fd_sc_mcu7t5v0__and4_4 (2)        
 gf180mcu_fd_sc_mcu7t5v0__clkinv_2 (11)     |gf180mcu_fd_sc_mcu7t5v0__clkinv_2 (11)     
 gf180mcu_fd_sc_mcu7t5v0__oai22_4 (3)       |gf180mcu_fd_sc_mcu7t5v0__oai22_4 (3)       
-gf180mcu_fd_sc_mcu7t5v0__tieh (22)         |gf180mcu_fd_sc_mcu7t5v0__tieh (22)         
 gf180mcu_fd_sc_mcu7t5v0__oai221_4 (9)      |gf180mcu_fd_sc_mcu7t5v0__oai221_4 (9)      
 gf180mcu_fd_sc_mcu7t5v0__oai221_2 (9)      |gf180mcu_fd_sc_mcu7t5v0__oai221_2 (9)      
 gf180mcu_fd_sc_mcu7t5v0__nand3_4 (3)       |gf180mcu_fd_sc_mcu7t5v0__nand3_4 (3)       
@@ -2603,19 +2603,24 @@ Resolving symmetries by pin name.
 Netlists match uniquely.
 
 Subcircuit pins:
-Circuit 1: wrapper_top                     |Circuit 2: wrapper_top                     
+Circuit 1: B18_Probton                     |Circuit 2: B18_Probton                     
 -------------------------------------------|-------------------------------------------
-dir_y_OUT                                  |dir_y_OUT                                  
-dir_x_OUT                                  |dir_x_OUT                                  
-spi_miso_oe                                |spi_miso_oe                                
-spi_miso_OUT                               |spi_miso_OUT                               
-ref_wave_x_OUT                             |ref_wave_x_OUT                             
-read_en_OUT                                |read_en_OUT                                
-move_en_y_OUT                              |move_en_y_OUT                              
-ref_wave_y_OUT                             |ref_wave_y_OUT                             
-mems_drv_x_OUT                             |mems_drv_x_OUT                             
-move_en_x_OUT                              |move_en_x_OUT                              
-mems_drv_y_OUT                             |mems_drv_y_OUT                             
+clk_PD                                     |clk_PD                                     
+dir_x_PD                                   |dir_x_PD                                   
+mems_drv_x_CS                              |mems_drv_x_CS                              
+dir_x_IE                                   |dir_x_IE                                   
+mems_drv_y_PU                              |mems_drv_y_PU                              
+dir_y_SL                                   |dir_y_SL                                   
+dir_x_CS                                   |dir_x_CS                                   
+move_en_y_PD                               |move_en_y_PD                               
+mems_drv_y_PDRV1                           |mems_drv_y_PDRV1                           
+dir_y_PU                                   |dir_y_PU                                   
+comp_y_PU                                  |comp_y_PU                                  
+ref_wave_x_CS                              |ref_wave_x_CS                              
+move_en_y_IE                               |move_en_y_IE                               
+mems_drv_y_PD                              |mems_drv_y_PD                              
+dir_y_PDRV1                                |dir_y_PDRV1                                
+comp_y_PD                                  |comp_y_PD                                  
 read_en_SL                                 |read_en_SL                                 
 move_en_y_CS                               |move_en_y_CS                               
 mems_drv_y_IE                              |mems_drv_y_IE                              
@@ -2671,22 +2676,9 @@ ref_wave_x_IE                              |ref_wave_x_IE
 spi_sclk_PU                                |spi_sclk_PU                                
 ref_wave_y_SL                              |ref_wave_y_SL                              
 spi_sclk_PD                                |spi_sclk_PD                                
-clk_PD                                     |clk_PD                                     
-dir_x_PD                                   |dir_x_PD                                   
-mems_drv_x_CS                              |mems_drv_x_CS                              
-dir_x_IE                                   |dir_x_IE                                   
-mems_drv_y_PU                              |mems_drv_y_PU                              
-dir_y_SL                                   |dir_y_SL                                   
-dir_x_CS                                   |dir_x_CS                                   
-move_en_y_PD                               |move_en_y_PD                               
-mems_drv_y_PDRV1                           |mems_drv_y_PDRV1                           
-dir_y_PU                                   |dir_y_PU                                   
-comp_y_PU                                  |comp_y_PU                                  
-ref_wave_x_CS                              |ref_wave_x_CS                              
-move_en_y_IE                               |move_en_y_IE                               
-mems_drv_y_PD                              |mems_drv_y_PD                              
-dir_y_PDRV1                                |dir_y_PDRV1                                
-comp_y_PD                                  |comp_y_PD                                  
+spi_cs_n_PU                                |spi_cs_n_PU                                
+move_en_x_OE                               |move_en_x_OE                               
+rst_n_PU                                   |rst_n_PU                                   
 mems_drv_y_PDRV0                           |mems_drv_y_PDRV0                           
 ref_wave_y_PDRV0                           |ref_wave_y_PDRV0                           
 mems_drv_y_OE                              |mems_drv_y_OE                              
@@ -2706,9 +2698,17 @@ spi_miso_SL                                |spi_miso_SL
 move_en_y_OE                               |move_en_y_OE                               
 spi_miso_PDRV0                             |spi_miso_PDRV0                             
 move_en_x_PDRV0                            |move_en_x_PDRV0                            
-spi_cs_n_PU                                |spi_cs_n_PU                                
-move_en_x_OE                               |move_en_x_OE                               
-rst_n_PU                                   |rst_n_PU                                   
+dir_y_OUT                                  |dir_y_OUT                                  
+dir_x_OUT                                  |dir_x_OUT                                  
+spi_miso_oe                                |spi_miso_oe                                
+spi_miso_OUT                               |spi_miso_OUT                               
+ref_wave_x_OUT                             |ref_wave_x_OUT                             
+read_en_OUT                                |read_en_OUT                                
+move_en_y_OUT                              |move_en_y_OUT                              
+ref_wave_y_OUT                             |ref_wave_y_OUT                             
+mems_drv_x_OUT                             |mems_drv_x_OUT                             
+move_en_x_OUT                              |move_en_x_OUT                              
+mems_drv_y_OUT                             |mems_drv_y_OUT                             
 clk                                        |clk                                        
 comp_x                                     |comp_x                                     
 spi_cs_n                                   |spi_cs_n                                   
@@ -2730,7 +2730,7 @@ ref_wave_y_IN                              |ref_wave_y_IN
 spi_miso_IN                                |spi_miso_IN                                
 ---------------------------------------------------------------------------------------
 Cell pin lists are equivalent.
-Device classes wrapper_top and wrapper_top are equivalent.
+Device classes B18_Probton and B18_Probton are equivalent.
 
 Final result: Circuits match uniquely.
 .
