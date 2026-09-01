@@ -140,7 +140,8 @@ Setup pin: (4)
 │           └── 📄 __init__.py
 │           └── 📄 odbpy_script.py      # Script for flow: ClassicWithPadframeBridge
 ├── 📁 SSCS_2026_01/                    # Chipathon provided MPW integration (A09, A30, A40, B18)
-│   └── 📄 SSCS_2026_01.gds             # MPW gds file
+│   └── 📁 SSCS_2026_01.tar.xz
+│       └── 📄 SSCS_2026_01.gds         # MPW gds file
 │   └── 📄 SSCS_2026_01.lyrdb           # MPW gds file DRC Check result
 │   └── 📄 SSCS_2026_01.v               # MPW verilog netlist file
 │   └── 📄 SSCS_2026_01_padring.v       # MPW padring verilog netlist file

@@ -1,0 +1,167 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Mon Jul 20 21:15:31 2026
+[*]
+[dumpfile] "C:\Users\User\Documents\GitHub\Probton\cocotb\sim_build\spi_regs.fst"
+[dumpfile_mtime] "Mon Jul 20 21:07:01 2026"
+[dumpfile_size] 3027
+[savefile] "C:\Users\User\Documents\GitHub\Probton\cocotb\sim_build\spi_regs.gtkw"
+[timestart] 0
+[size] 823 600
+[pos] 212 -21
+*0.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 197
+[signals_width] 246
+[sst_expanded] 1
+[sst_vpaned_height] 153
+@28
+spi_regs.clk
+spi_regs.rst_n
+spi_regs.spi_cs_n
+spi_regs.spi_sclk
+spi_regs.spi_mosi
+spi_regs.spi_miso
+spi_regs.spi_miso_oe
+@22
+spi_regs.cfg_amp_ratio[7:0]
+spi_regs.cfg_f_MEMS_fcw_x[15:0]
+spi_regs.cfg_f_MEMS_fcw_y[15:0]
+spi_regs.cfg_phase0_offset_x[20:0]
+spi_regs.cfg_phase90_offset_x[20:0]
+spi_regs.cfg_phase270_offset_x[20:0]
+spi_regs.cfg_phase0_offset_y[20:0]
+spi_regs.cfg_phase90_offset_y[20:0]
+spi_regs.cfg_phase270_offset_y[20:0]
+@28
+spi_regs.boot_complete
+spi_regs.cfg_done
+spi_regs.phase_offset_imported
+spi_regs.soft_rst
+@22
+spi_regs.delay_wave_cycle_x[7:0]
+spi_regs.raw_edge1_x[20:0]
+spi_regs.raw_edge2_x[20:0]
+spi_regs.raw_edge3_x[20:0]
+@28
+spi_regs.cal_dir_x
+@22
+spi_regs.cal_phase0_offset_x[20:0]
+spi_regs.cal_phase90_offset_x[20:0]
+spi_regs.cal_phase270_offset_x[20:0]
+@28
+spi_regs.cal_timeout_x
+@22
+spi_regs.delay_wave_cycle_y[7:0]
+spi_regs.raw_edge1_y[20:0]
+spi_regs.raw_edge2_y[20:0]
+spi_regs.raw_edge3_y[20:0]
+@28
+spi_regs.cal_dir_y
+@22
+spi_regs.cal_phase0_offset_y[20:0]
+spi_regs.cal_phase90_offset_y[20:0]
+spi_regs.cal_phase270_offset_y[20:0]
+@28
+spi_regs.cal_timeout_y
+spi_regs.latch_error_x
+spi_regs.latch_error_y
+@420
+spi_regs.ADDR_AMP_RATIO
+spi_regs.ADDR_CAL_PHASE0_OFF_X_B0
+spi_regs.ADDR_CAL_PHASE0_OFF_X_B1
+spi_regs.ADDR_CAL_PHASE0_OFF_X_B2
+spi_regs.ADDR_CAL_PHASE0_OFF_Y_B0
+spi_regs.ADDR_CAL_PHASE0_OFF_Y_B1
+spi_regs.ADDR_CAL_PHASE0_OFF_Y_B2
+spi_regs.ADDR_CAL_PHASE90_OFF_X_B0
+@421
+spi_regs.ADDR_CAL_PHASE90_OFF_X_B1
+@420
+spi_regs.ADDR_CAL_PHASE90_OFF_X_B2
+spi_regs.ADDR_CAL_PHASE90_OFF_Y_B0
+spi_regs.ADDR_CAL_PHASE90_OFF_Y_B1
+spi_regs.ADDR_CAL_PHASE90_OFF_Y_B2
+spi_regs.ADDR_CAL_PHASE270_OFF_X_B0
+spi_regs.ADDR_CAL_PHASE270_OFF_X_B1
+spi_regs.ADDR_CAL_PHASE270_OFF_X_B2
+spi_regs.ADDR_CAL_PHASE270_OFF_Y_B0
+spi_regs.ADDR_CAL_PHASE270_OFF_Y_B1
+spi_regs.ADDR_CAL_PHASE270_OFF_Y_B2
+spi_regs.ADDR_CTRL
+spi_regs.ADDR_DELAY_WAVE_CYC_X
+spi_regs.ADDR_DELAY_WAVE_CYC_Y
+spi_regs.ADDR_MEMS_FCW_X_H
+spi_regs.ADDR_MEMS_FCW_X_L
+spi_regs.ADDR_MEMS_FCW_Y_H
+spi_regs.ADDR_MEMS_FCW_Y_L
+spi_regs.ADDR_PHASE0_OFF_X_B0
+spi_regs.ADDR_PHASE0_OFF_X_B1
+spi_regs.ADDR_PHASE0_OFF_X_B2
+spi_regs.ADDR_PHASE0_OFF_Y_B0
+spi_regs.ADDR_PHASE0_OFF_Y_B1
+spi_regs.ADDR_PHASE0_OFF_Y_B2
+spi_regs.ADDR_PHASE90_OFF_X_B0
+spi_regs.ADDR_PHASE90_OFF_X_B1
+spi_regs.ADDR_PHASE90_OFF_X_B2
+spi_regs.ADDR_PHASE90_OFF_Y_B0
+spi_regs.ADDR_PHASE90_OFF_Y_B1
+spi_regs.ADDR_PHASE90_OFF_Y_B2
+spi_regs.ADDR_PHASE270_OFF_X_B0
+spi_regs.ADDR_PHASE270_OFF_X_B1
+spi_regs.ADDR_PHASE270_OFF_X_B2
+spi_regs.ADDR_PHASE270_OFF_Y_B0
+spi_regs.ADDR_PHASE270_OFF_Y_B1
+spi_regs.ADDR_PHASE270_OFF_Y_B2
+spi_regs.ADDR_RAW_EDGE1_X_B0
+spi_regs.ADDR_RAW_EDGE1_X_B1
+spi_regs.ADDR_RAW_EDGE1_X_B2
+spi_regs.ADDR_RAW_EDGE1_Y_B0
+spi_regs.ADDR_RAW_EDGE1_Y_B1
+spi_regs.ADDR_RAW_EDGE1_Y_B2
+spi_regs.ADDR_RAW_EDGE2_X_B0
+spi_regs.ADDR_RAW_EDGE2_X_B1
+spi_regs.ADDR_RAW_EDGE2_X_B2
+spi_regs.ADDR_RAW_EDGE2_Y_B0
+spi_regs.ADDR_RAW_EDGE2_Y_B1
+spi_regs.ADDR_RAW_EDGE2_Y_B2
+spi_regs.ADDR_RAW_EDGE3_X_B0
+spi_regs.ADDR_RAW_EDGE3_X_B1
+spi_regs.ADDR_RAW_EDGE3_X_B2
+spi_regs.ADDR_RAW_EDGE3_Y_B0
+spi_regs.ADDR_RAW_EDGE3_Y_B1
+spi_regs.ADDR_RAW_EDGE3_Y_B2
+spi_regs.ADDR_STATE
+spi_regs.ADDR_STATUS
+spi_regs.DEFAULT_AMP_RATIO
+spi_regs.DEFAULT_MEMS_FCW
+spi_regs.DEFAULT_PHASE_OFF
+spi_regs.SPI_ADDR_WIDTH
+@28
+spi_regs.bit_cnt[2:0]
+spi_regs.cs_n_sync
+spi_regs.cs_sync[1:0]
+@22
+spi_regs.reg_rd_data[7:0]
+spi_regs.reg_wr_addr[6:0]
+spi_regs.reg_wr_data[7:0]
+@28
+spi_regs.reg_wr_en
+spi_regs.rw_n
+@22
+spi_regs.rx_shift[7:0]
+spi_regs.rx_shift_next[7:0]
+@28
+spi_regs.sclk_d
+spi_regs.sclk_fall
+spi_regs.sclk_rise
+spi_regs.sclk_sync[1:0]
+spi_regs.sclk_sync_q
+@22
+spi_regs.spi_addr[6:0]
+@28
+spi_regs.spi_state
+spi_regs.state_o[2:0]
+@22
+spi_regs.tx_shift[7:0]
+[pattern_trace] 1
+[pattern_trace] 0

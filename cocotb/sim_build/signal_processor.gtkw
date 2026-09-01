@@ -1,0 +1,64 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Mon Jul 20 21:23:45 2026
+[*]
+[dumpfile] "C:\Users\User\Documents\GitHub\Probton\cocotb\sim_build\signal_processor.fst"
+[dumpfile_mtime] "Mon Jul 20 21:04:19 2026"
+[dumpfile_size] 2727
+[savefile] "C:\Users\User\Documents\GitHub\Probton\cocotb\sim_build\signal_processor.gtkw"
+[timestart] 34136020
+[size] 1280 649
+[pos] -35 -35
+*0.000000 34136021 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 197
+[signals_width] 190
+[sst_expanded] 1
+[sst_vpaned_height] 170
+@420
+signal_processor.VOTE_WINDOW
+signal_processor.VOTE_THRESHOLD
+signal_processor.SYNC_DEPTH
+signal_processor.ST_IN_PHASE
+signal_processor.ST_OUT_PHASE
+@28
+signal_processor.clk
+signal_processor.rst_n
+signal_processor.latch_phase90
+signal_processor.latch_phase90_ack
+signal_processor.latch_phase270
+signal_processor.latch_phase270_ack
+signal_processor.amp_ratio_en
+signal_processor.amp_update_done
+signal_processor.dir
+signal_processor.move_en
+signal_processor.jitter_flag
+signal_processor.phase_state[1:0]
+@22
+signal_processor.votes_in_phase[4:0]
+signal_processor.votes_out_phase[4:0]
+@28
+signal_processor.comp_raw
+@25
+signal_processor.comp_pipe[3:0]
+@28
+signal_processor.comp_sync
+signal_processor.s90
+@22
+signal_processor.s90_pipe[3:0]
+signal_processor.s270_pipe[3:0]
+@28
+signal_processor.strobe90
+signal_processor.strobe270
+signal_processor.freeze
+signal_processor.s90_valid
+signal_processor.vote_now
+signal_processor.window_done
+@24
+signal_processor.state_now[1:0]
+signal_processor.cycle_count[4:0]
+signal_processor.cnt_in[4:0]
+signal_processor.next_in[4:0]
+signal_processor.cnt_out[4:0]
+signal_processor.next_out[4:0]
+[pattern_trace] 1
+[pattern_trace] 0

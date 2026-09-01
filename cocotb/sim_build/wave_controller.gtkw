@@ -1,0 +1,119 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Mon Jul 20 21:01:27 2026
+[*]
+[dumpfile] "C:\Users\User\Documents\GitHub\Probton\cocotb\sim_build\wave_controller.fst"
+[dumpfile_mtime] "Mon Jul 20 20:11:11 2026"
+[dumpfile_size] 30015006
+[savefile] "C:\Users\User\Documents\GitHub\Probton\cocotb\sim_build\wave_controller.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -1 -1
+*-29.000000 2374000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] wave_controller.
+[sst_width] 197
+[signals_width] 230
+[sst_expanded] 1
+[sst_vpaned_height] 153
+@24
+wave_controller.delta_N[20:0]
+wave_controller.cfg_f_MEMS_fcw[15:0]
+wave_controller.cfg_phase0_offset[20:0]
+wave_controller.cfg_phase90_offset[20:0]
+wave_controller.cfg_phase270_offset[20:0]
+@28
+wave_controller.clk
+wave_controller.rst_n
+wave_controller.cfg_done
+wave_controller.cal_start
+wave_controller.nco_en
+wave_controller.cal_done
+wave_controller.cal_timeout
+wave_controller.cal_dir
+@24
+wave_controller.cal_phase0_offset[20:0]
+wave_controller.cal_phase90_offset[20:0]
+wave_controller.cal_phase270_offset[20:0]
+@28
+wave_controller.capture_pending
+@22
+wave_controller.cycle_delta[7:0]
+wave_controller.wave_cycle_cnt[7:0]
+wave_controller.delay_wave_cycle[7:0]
+@28
+wave_controller.phase_overflow
+@8024
+wave_controller.phase_acc[20:0]
+wave_controller.phase_next[21:0]
+@28
+wave_controller.window_open
+wave_controller.wave_is_valid
+wave_controller.capture_step[1:0]
+@8022
+wave_controller.sine_amp[7:0]
+@28
+wave_controller.mems_drv
+wave_controller.ref_wave
+@29
+wave_controller.comp
+@28
+wave_controller.comp_sync0
+wave_controller.comp_sync1
+wave_controller.comp_sync2
+wave_controller.comp_sync3
+wave_controller.comp_sync4
+wave_controller.comp_negedge
+wave_controller.comp_posedge
+wave_controller.soft_rst_n
+wave_controller.latch_phase90
+wave_controller.latch_phase90_ack
+wave_controller.latch_phase270
+wave_controller.latch_phase270_ack
+wave_controller.latch_error
+@24
+wave_controller.sync_delay[20:0]
+wave_controller.raw_delta[20:0]
+wave_controller.raw_edge1[20:0]
+wave_controller.raw_edge2[20:0]
+wave_controller.raw_edge3[20:0]
+wave_controller.raw_phase90_offset[20:0]
+wave_controller.raw_phase270_offset[20:0]
+wave_controller.step_baseline[20:0]
+@8024
+wave_controller.ref_phase[20:0]
+@28
+wave_controller.cal_burst_count[1:0]
+wave_controller.cal_burst_active
+wave_controller.cal_burst_armed
+@420
+wave_controller.CAL_BURST_PERIODS
+@28
+wave_controller.ds_bit
+@420
+wave_controller.DS_MID
+@22
+wave_controller.ds_acc[8:0]
+wave_controller.ds_acc[8:0]
+wave_controller.ds_code[7:0]
+@c08022
+wave_controller.u_sine.addr[5:0]
+@28
+(0)wave_controller.u_sine.addr[5:0]
+(1)wave_controller.u_sine.addr[5:0]
+(2)wave_controller.u_sine.addr[5:0]
+(3)wave_controller.u_sine.addr[5:0]
+(4)wave_controller.u_sine.addr[5:0]
+(5)wave_controller.u_sine.addr[5:0]
+@1401200
+-group_end
+@8022
+wave_controller.u_sine.amp[7:0]
+wave_controller.u_sine.idx[5:0]
+@8024
+wave_controller.u_sine.phase[7:0]
+@8022
+wave_controller.u_sine.q_val[6:0]
+@28
+wave_controller.u_sine.sign_bit
+[pattern_trace] 1
+[pattern_trace] 0
