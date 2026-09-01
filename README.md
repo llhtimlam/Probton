@@ -126,6 +126,8 @@ Setup pin: (4)
 └── 📁 lvs/
 │   └── 📄 lvs_config.json              # Chipathon lvs config template for tapeout
 │   └── 📄 B18_Probton.spice            # Spice netlist from librelane run report
+│   └── 📄 lvs.netgen.rpt               # Librelane run lvs report
+│   └── 📄 netgen-lvs.log               # Librelane run lvs report
 └── 📁 gds/
 │   └── 📄 B18_Probton.gds              # Final gds file integrated with padframe ready for tapeout
 │   └── 📄 B18_Probton.lyrdb            # DRC check report for B18_Probton.gds
@@ -137,6 +139,11 @@ Setup pin: (4)
 │       └── 📁 librelane_plugin_padframe_bridge
 │           └── 📄 __init__.py
 │           └── 📄 odbpy_script.py      # Script for flow: ClassicWithPadframeBridge
+├── 📁 SSCS_2026_01/                    # Chipathon provided MPW integration (A09, A30, A40, B18)
+│   └── 📄 SSCS_2026_01.gds             # MPW gds file
+│   └── 📄 SSCS_2026_01.lyrdb           # MPW gds file DRC Check result
+│   └── 📄 SSCS_2026_01.v               # MPW verilog netlist file
+│   └── 📄 SSCS_2026_01_padring.v       # MPW padring verilog netlist file
 ```
 
 ## Schematic Review
