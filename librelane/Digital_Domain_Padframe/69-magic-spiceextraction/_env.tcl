@@ -82,7 +82,7 @@ set ::env(MAGIC_EXT_UNIQUE) notopports
 set ::env(MAGIC_EXT_SHORT_RESISTOR) 0
 set ::env(MAGIC_EXT_ABSTRACT) 0
 set ::env(MAGIC_FEEDBACK_CONVERSION_THRESHOLD) 10000
-set ::env(CURRENT_GDS) /workspace/librelane/runs/RUN_2026-08-29_02-02-22/58-magic-streamout/B18_Probton.gds
-set ::env(CURRENT_DEF) /workspace/librelane/runs/RUN_2026-08-29_02-02-22/54-odb-cellfrequencytables/B18_Probton.def
-set ::env(SAVE_SPICE) /workspace/librelane/runs/RUN_2026-08-29_02-02-22/69-magic-spiceextraction/B18_Probton.spice
+set ::env(CURRENT_GDS) /workspace/librelane/runs/RUN_2026-09-02_02-09-59/58-magic-streamout/B18_Probton.gds
+set ::env(CURRENT_DEF) /workspace/librelane/runs/RUN_2026-09-02_02-09-59/54-odb-cellfrequencytables/B18_Probton.def
+set ::env(SAVE_SPICE) /workspace/librelane/runs/RUN_2026-09-02_02-09-59/69-magic-spiceextraction/B18_Probton.spice
 set ::env(MACRO_GDS_FILES) ""

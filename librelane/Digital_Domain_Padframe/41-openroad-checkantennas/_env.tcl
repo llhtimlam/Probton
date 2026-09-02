@@ -73,4 +73,4 @@ set ::env(CLOCK_WIRE_RC_LAYERS) "Metal2 Metal3 Metal4"
 set ::env(PDN_CONNECT_MACROS_TO_GRID) 1
 set ::env(PDN_ENABLE_GLOBAL_CONNECTIONS) 1
 set ::env(DEDUPLICATE_CORNERS) 0
-set ::env(CURRENT_ODB) /workspace/librelane/runs/RUN_2026-08-29_02-02-22/40-openroad-globalrouting/B18_Probton.odb
+set ::env(CURRENT_ODB) /workspace/librelane/runs/RUN_2026-09-02_02-09-59/40-openroad-globalrouting/B18_Probton.odb

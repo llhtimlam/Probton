@@ -75,6 +75,6 @@ set ::env(PDN_ENABLE_GLOBAL_CONNECTIONS) 1
 set ::env(DEDUPLICATE_CORNERS) 0
 set ::env(FP_MACRO_HORIZONTAL_HALO) 10
 set ::env(FP_MACRO_VERTICAL_HALO) 10
-set ::env(CURRENT_ODB) /workspace/librelane/runs/RUN_2026-08-29_02-02-22/16-odb-setpowerconnections/B18_Probton.odb
-set ::env(SAVE_ODB) /workspace/librelane/runs/RUN_2026-08-29_02-02-22/18-openroad-cutrows/B18_Probton.odb
-set ::env(SAVE_DEF) /workspace/librelane/runs/RUN_2026-08-29_02-02-22/18-openroad-cutrows/B18_Probton.def
+set ::env(CURRENT_ODB) /workspace/librelane/runs/RUN_2026-09-02_02-09-59/16-odb-setpowerconnections/B18_Probton.odb
+set ::env(SAVE_ODB) /workspace/librelane/runs/RUN_2026-09-02_02-09-59/18-openroad-cutrows/B18_Probton.odb
+set ::env(SAVE_DEF) /workspace/librelane/runs/RUN_2026-09-02_02-09-59/18-openroad-cutrows/B18_Probton.def

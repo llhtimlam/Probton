@@ -1,7 +1,118 @@
 [WARNING ORD-0039] .openroad ignored with -python
-VSS west ring segments (DBU): [(88440, 2130280)]
-VSS bridge window (on a real pad finger): y=[132280,163280] clean_fit=True
-VSS bridge x-extent after clipping clear of VDD's own Metal2: [0,133480]
-VDD north ring segments (DBU): [(138480, 2081360)]
-VDD bridge window (on a real pad finger): x=[1582280,1613280] clean_fit=True
+------- STARTING GLOBAL METAL2 PDN TRACK SCAN -------
+ -> Found Metal2 VSS Stripe #1:
+    Y-Center: 1109360 DBU | Width: 2091840 DBU | Bounds: Y=[63440, 2155280], X=[2112000, 2162000]
+ -> Found Metal2 VSS Stripe #2:
+    Y-Center: 1109360 DBU | Width: 2091840 DBU | Bounds: Y=[63440, 2155280], X=[58960, 108960]
+------- END OF GLOBAL METAL2 PDN TRACK SCAN -------
+------- STARTING GLOBAL METAL3 PDN TRACK SCAN -------
+ -> Found Metal3 VDD Stripe #1:
+    Y-Center: 2130280 DBU | Width: 50000 DBU | Bounds: Y=[2105280, 2155280], X=[58960, 2162000]
+ -> Found Metal3 VDD Stripe #2:
+    Y-Center: 88440 DBU | Width: 50000 DBU | Bounds: Y=[63440, 113440], X=[58960, 2162000]
+ -> Found Metal3 VDD Stripe #3:
+    Y-Center: 1958740 DBU | Width: 6760 DBU | Bounds: Y=[1955360, 1962120], X=[2112440, 2161560]
+ -> Found Metal3 VDD Stripe #4:
+    Y-Center: 1808740 DBU | Width: 6760 DBU | Bounds: Y=[1805360, 1812120], X=[2112440, 2161560]
+ -> Found Metal3 VDD Stripe #5:
+    Y-Center: 1658740 DBU | Width: 6760 DBU | Bounds: Y=[1655360, 1662120], X=[2112440, 2161560]
+ -> Found Metal3 VDD Stripe #6:
+    Y-Center: 1508740 DBU | Width: 6760 DBU | Bounds: Y=[1505360, 1512120], X=[2112440, 2161560]
+ -> Found Metal3 VDD Stripe #7:
+    Y-Center: 1358740 DBU | Width: 6760 DBU | Bounds: Y=[1355360, 1362120], X=[2112440, 2161560]
+ -> Found Metal3 VDD Stripe #8:
+    Y-Center: 1208740 DBU | Width: 6760 DBU | Bounds: Y=[1205360, 1212120], X=[2112440, 2161560]
+ -> Found Metal3 VDD Stripe #9:
+    Y-Center: 1058740 DBU | Width: 6760 DBU | Bounds: Y=[1055360, 1062120], X=[2112440, 2161560]
+ -> Found Metal3 VDD Stripe #10:
+    Y-Center: 908740 DBU | Width: 6760 DBU | Bounds: Y=[905360, 912120], X=[2112440, 2161560]
+ -> Found Metal3 VDD Stripe #11:
+    Y-Center: 758740 DBU | Width: 6760 DBU | Bounds: Y=[755360, 762120], X=[2112440, 2161560]
+ -> Found Metal3 VDD Stripe #12:
+    Y-Center: 608740 DBU | Width: 6760 DBU | Bounds: Y=[605360, 612120], X=[2112440, 2161560]
+ -> Found Metal3 VDD Stripe #13:
+    Y-Center: 458740 DBU | Width: 6760 DBU | Bounds: Y=[455360, 462120], X=[2112440, 2161560]
+ -> Found Metal3 VDD Stripe #14:
+    Y-Center: 308740 DBU | Width: 6760 DBU | Bounds: Y=[305360, 312120], X=[2112440, 2161560]
+ -> Found Metal3 VDD Stripe #15:
+    Y-Center: 158740 DBU | Width: 6760 DBU | Bounds: Y=[155360, 162120], X=[2112440, 2161560]
+ -> Found Metal3 VDD Stripe #16:
+    Y-Center: 1958740 DBU | Width: 6760 DBU | Bounds: Y=[1955360, 1962120], X=[59400, 108520]
+ -> Found Metal3 VDD Stripe #17:
+    Y-Center: 1808740 DBU | Width: 6760 DBU | Bounds: Y=[1805360, 1812120], X=[59400, 108520]
+ -> Found Metal3 VDD Stripe #18:
+    Y-Center: 1658740 DBU | Width: 6760 DBU | Bounds: Y=[1655360, 1662120], X=[59400, 108520]
+ -> Found Metal3 VDD Stripe #19:
+    Y-Center: 1508740 DBU | Width: 6760 DBU | Bounds: Y=[1505360, 1512120], X=[59400, 108520]
+ -> Found Metal3 VDD Stripe #20:
+    Y-Center: 1358740 DBU | Width: 6760 DBU | Bounds: Y=[1355360, 1362120], X=[59400, 108520]
+ -> Found Metal3 VDD Stripe #21:
+    Y-Center: 1208740 DBU | Width: 6760 DBU | Bounds: Y=[1205360, 1212120], X=[59400, 108520]
+ -> Found Metal3 VDD Stripe #22:
+    Y-Center: 1058740 DBU | Width: 6760 DBU | Bounds: Y=[1055360, 1062120], X=[59400, 108520]
+ -> Found Metal3 VDD Stripe #23:
+    Y-Center: 908740 DBU | Width: 6760 DBU | Bounds: Y=[905360, 912120], X=[59400, 108520]
+ -> Found Metal3 VDD Stripe #24:
+    Y-Center: 758740 DBU | Width: 6760 DBU | Bounds: Y=[755360, 762120], X=[59400, 108520]
+ -> Found Metal3 VDD Stripe #25:
+    Y-Center: 608740 DBU | Width: 6760 DBU | Bounds: Y=[605360, 612120], X=[59400, 108520]
+ -> Found Metal3 VDD Stripe #26:
+    Y-Center: 458740 DBU | Width: 6760 DBU | Bounds: Y=[455360, 462120], X=[59400, 108520]
+ -> Found Metal3 VDD Stripe #27:
+    Y-Center: 308740 DBU | Width: 6760 DBU | Bounds: Y=[305360, 312120], X=[59400, 108520]
+ -> Found Metal3 VDD Stripe #28:
+    Y-Center: 158740 DBU | Width: 6760 DBU | Bounds: Y=[155360, 162120], X=[59400, 108520]
+------- END OF GLOBAL METAL3 PDN TRACK SCAN -------
+VSS west ring segments (DBU): [(10040, 2208680)]
+VSS bridge windows found: 6 fingers. clean_fit=True
+ -> Rendering VSS Finger #1 at Y: [138280,157280], X-extent: [0,55080]
+ -> Rendering VSS Finger #2 at Y: [111980,132480], X-extent: [0,55080]
+ -> Rendering VSS Finger #3 at Y: [88280,108780], X-extent: [0,55080]
+ -> Rendering VSS Finger #4 at Y: [61220,81720], X-extent: [0,55080]
+ -> Rendering VSS Finger #5 at Y: [37520,58020], X-extent: [0,55080]
+ -> Rendering VSS Finger #6 at Y: [12720,31720], X-extent: [0,55080]
+VDD north ring segments (DBU): [(58960, 2162000)]
+VDD bridge windows found: 6 fingers. clean_fit=True
+ -> Rendering VDD Finger #1 at X: [1588280,1607280], Y-extent: [2105280,2220000]
+    [VIA INFO] Finger #1 | Row Offset dy=10000:
+       -> Left  Via Location: X = 795.640 um (1591280 DBU), Y = 1057.640 um (2115280 DBU)
+       -> Right Via Location: X = 802.140 um (1604280 DBU), Y = 1057.640 um (2115280 DBU)
+    [VIA INFO] Finger #1 | Row Offset dy=35000:
+       -> Left  Via Location: X = 795.640 um (1591280 DBU), Y = 1070.140 um (2140280 DBU)
+       -> Right Via Location: X = 802.140 um (1604280 DBU), Y = 1070.140 um (2140280 DBU)
+ -> Rendering VDD Finger #2 at X: [1561980,1582480], Y-extent: [2105280,2220000]
+    [VIA INFO] Finger #2 | Row Offset dy=10000:
+       -> Left  Via Location: X = 782.490 um (1564980 DBU), Y = 1057.640 um (2115280 DBU)
+       -> Right Via Location: X = 789.740 um (1579480 DBU), Y = 1057.640 um (2115280 DBU)
+    [VIA INFO] Finger #2 | Row Offset dy=35000:
+       -> Left  Via Location: X = 782.490 um (1564980 DBU), Y = 1070.140 um (2140280 DBU)
+       -> Right Via Location: X = 789.740 um (1579480 DBU), Y = 1070.140 um (2140280 DBU)
+ -> Rendering VDD Finger #3 at X: [1538280,1558780], Y-extent: [2105280,2220000]
+    [VIA INFO] Finger #3 | Row Offset dy=10000:
+       -> Left  Via Location: X = 770.640 um (1541280 DBU), Y = 1057.640 um (2115280 DBU)
+       -> Right Via Location: X = 777.890 um (1555780 DBU), Y = 1057.640 um (2115280 DBU)
+    [VIA INFO] Finger #3 | Row Offset dy=35000:
+       -> Left  Via Location: X = 770.640 um (1541280 DBU), Y = 1070.140 um (2140280 DBU)
+       -> Right Via Location: X = 777.890 um (1555780 DBU), Y = 1070.140 um (2140280 DBU)
+ -> Rendering VDD Finger #4 at X: [1511220,1531720], Y-extent: [2105280,2220000]
+    [VIA INFO] Finger #4 | Row Offset dy=10000:
+       -> Left  Via Location: X = 757.110 um (1514220 DBU), Y = 1057.640 um (2115280 DBU)
+       -> Right Via Location: X = 764.360 um (1528720 DBU), Y = 1057.640 um (2115280 DBU)
+    [VIA INFO] Finger #4 | Row Offset dy=35000:
+       -> Left  Via Location: X = 757.110 um (1514220 DBU), Y = 1070.140 um (2140280 DBU)
+       -> Right Via Location: X = 764.360 um (1528720 DBU), Y = 1070.140 um (2140280 DBU)
+ -> Rendering VDD Finger #5 at X: [1487520,1508020], Y-extent: [2105280,2220000]
+    [VIA INFO] Finger #5 | Row Offset dy=10000:
+       -> Left  Via Location: X = 745.260 um (1490520 DBU), Y = 1057.640 um (2115280 DBU)
+       -> Right Via Location: X = 752.510 um (1505020 DBU), Y = 1057.640 um (2115280 DBU)
+    [VIA INFO] Finger #5 | Row Offset dy=35000:
+       -> Left  Via Location: X = 745.260 um (1490520 DBU), Y = 1070.140 um (2140280 DBU)
+       -> Right Via Location: X = 752.510 um (1505020 DBU), Y = 1070.140 um (2140280 DBU)
+ -> Rendering VDD Finger #6 at X: [1462720,1481720], Y-extent: [2105280,2220000]
+    [VIA INFO] Finger #6 | Row Offset dy=10000:
+       -> Left  Via Location: X = 732.860 um (1465720 DBU), Y = 1057.640 um (2115280 DBU)
+       -> Right Via Location: X = 739.360 um (1478720 DBU), Y = 1057.640 um (2115280 DBU)
+    [VIA INFO] Finger #6 | Row Offset dy=35000:
+       -> Left  Via Location: X = 732.860 um (1465720 DBU), Y = 1070.140 um (2140280 DBU)
+       -> Right Via Location: X = 739.360 um (1478720 DBU), Y = 1070.140 um (2140280 DBU)
 Sanity check passed: no VDD/VSS overlap on any layer.

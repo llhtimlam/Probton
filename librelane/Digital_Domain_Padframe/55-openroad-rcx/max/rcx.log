@@ -97,36 +97,36 @@ Reading gpio pad LEF file at '/workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd
 The NOWIREEXTENSIONATPIN statement will be ignored. See file /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_ws_io__dvss.lef at line 2.
 
 [INFO ODB-0227] LEF file: /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_ws_io__dvss.lef, created 1 library cells
-[INFO ODB-0127] Reading DEF file: /workspace/librelane/runs/RUN_2026-08-29_02-02-22/54-odb-cellfrequencytables/B18_Probton.def
+[INFO ODB-0127] Reading DEF file: /workspace/librelane/runs/RUN_2026-09-02_02-09-59/54-odb-cellfrequencytables/B18_Probton.def
 [INFO ODB-0128] Design: B18_Probton
 [INFO ODB-0130]     Created 123 pins.
-[INFO ODB-0131]     Created 39903 components and 179393 component-terminals.
-[INFO ODB-0132]     Created 2 special nets and 147966 connections.
-[INFO ODB-0133]     Created 9506 nets and 31378 connections.
-[INFO ODB-0134] Finished DEF file: /workspace/librelane/runs/RUN_2026-08-29_02-02-22/54-odb-cellfrequencytables/B18_Probton.def
+[INFO ODB-0131]     Created 43668 components and 192768 component-terminals.
+[INFO ODB-0132]     Created 2 special nets and 161014 connections.
+[INFO ODB-0133]     Created 9669 nets and 31702 connections.
+[INFO ODB-0134] Finished DEF file: /workspace/librelane/runs/RUN_2026-09-02_02-09-59/54-odb-cellfrequencytables/B18_Probton.def
 Using RCX ruleset '/workspace/gf180mcu/gf180mcuD/libs.tech/librelane/rules.openrcx.gf180mcuD.max'…
 [INFO RCX-0431] Defined process_corner CURRENT_CORNER with ext_model_index 0
 [INFO RCX-0029] Defined extraction corner CURRENT_CORNER
 + extract_parasitics  -ext_model_file /workspace/gf180mcu/gf180mcuD/libs.tech/librelane/rules.openrcx.gf180mcuD.max -lef_res
 [INFO RCX-0435] Reading extraction model file /workspace/gf180mcu/gf180mcuD/libs.tech/librelane/rules.openrcx.gf180mcuD.max ...
 [INFO RCX-0436] RC segment generation B18_Probton (max_merge_res 50.0) ...
-[INFO RCX-0040] Final 36675 rc segments
+[INFO RCX-0040] Final 36839 rc segments
 [INFO RCX-0439] Coupling Cap extraction B18_Probton ...
 [INFO RCX-0440] Coupling threshhold is 0.1000 fF, coupling capacitance less than 0.1000 fF will be grounded.
-[INFO RCX-0442] 47% of 82460 wires extracted
-[INFO RCX-0442] 100% of 82460 wires extracted
-[INFO RCX-0045] Extract 9506 nets, 46171 rsegs, 46171 caps, 125698 ccs
+[INFO RCX-0442] 47% of 79827 wires extracted
+[INFO RCX-0442] 100% of 79827 wires extracted
+[INFO RCX-0045] Extract 9669 nets, 46498 rsegs, 46498 caps, 121966 ccs
 Setting global connections for newly added cells…
 [INFO] Setting global connections...
 [INFO ODB-0403] 0 connections made, 0 conflicts skipped.
 Updating metrics…
 Cell type report:                       Count       Area
-  Endcap cell                             462    2028.36
-  Fill cell                             24525  555278.04
-  Tap cell                               5361   23536.93
-  Antenna cell                             17      74.64
+  Endcap cell                             502    2203.98
+  Fill cell                             27123  698729.96
+  Tap cell                               6327   27778.06
+  Antenna cell                             12      52.68
   Tie cell                                 93     816.61
-  Standard cell                          9445  241781.52
-  Total                                 39903  823516.11
-Writing extracted parasitics to '/workspace/librelane/runs/RUN_2026-08-29_02-02-22/55-openroad-rcx/max/B18_Probton.max.spef'…
-[INFO RCX-0443] 9506 nets finished
+  Standard cell                          9611  244027.21
+  Total                                 43668  973608.52
+Writing extracted parasitics to '/workspace/librelane/runs/RUN_2026-09-02_02-09-59/55-openroad-rcx/max/B18_Probton.max.spef'…
+[INFO RCX-0443] 9669 nets finished

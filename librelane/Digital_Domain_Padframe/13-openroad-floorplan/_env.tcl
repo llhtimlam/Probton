@@ -1,4 +1,4 @@
-set ::env(TRACKS_INFO_FILE_PROCESSED) /workspace/librelane/runs/RUN_2026-08-29_02-02-22/13-openroad-floorplan/config.tracks
+set ::env(TRACKS_INFO_FILE_PROCESSED) /workspace/librelane/runs/RUN_2026-09-02_02-09-59/13-openroad-floorplan/config.tracks
 set ::env(STEP_ID) OpenROAD.Floorplan
 set ::env(TECH_LEF) /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/techlef/gf180mcu_fd_sc_mcu7t5v0__nom.tlef
 set ::env(MACRO_LEFS) ""
@@ -78,14 +78,14 @@ set ::env(FP_TRACKS_INFO) /workspace/gf180mcu/gf180mcuD/libs.tech/librelane/gf18
 set ::env(FP_SIZING) absolute
 set ::env(FP_ASPECT_RATIO) 1
 set ::env(FP_CORE_UTIL) 10
-set ::env(CORE_AREA) "100 100 1010 1010"
+set ::env(CORE_AREA) "60 60 1050 1050"
 set ::env(BOTTOM_MARGIN_MULT) 4
 set ::env(TOP_MARGIN_MULT) 4
 set ::env(LEFT_MARGIN_MULT) 12
 set ::env(RIGHT_MARGIN_MULT) 12
-set ::env(CURRENT_NL) /workspace/librelane/runs/RUN_2026-08-29_02-02-22/06-yosys-synthesis/B18_Probton.nl.v
-set ::env(SAVE_ODB) /workspace/librelane/runs/RUN_2026-08-29_02-02-22/13-openroad-floorplan/B18_Probton.odb
-set ::env(SAVE_DEF) /workspace/librelane/runs/RUN_2026-08-29_02-02-22/13-openroad-floorplan/B18_Probton.def
-set ::env(SAVE_SDC) /workspace/librelane/runs/RUN_2026-08-29_02-02-22/13-openroad-floorplan/B18_Probton.sdc
-set ::env(SAVE_NL) /workspace/librelane/runs/RUN_2026-08-29_02-02-22/13-openroad-floorplan/B18_Probton.nl.v
-set ::env(SAVE_PNL) /workspace/librelane/runs/RUN_2026-08-29_02-02-22/13-openroad-floorplan/B18_Probton.pnl.v
+set ::env(CURRENT_NL) /workspace/librelane/runs/RUN_2026-09-02_02-09-59/06-yosys-synthesis/B18_Probton.nl.v
+set ::env(SAVE_ODB) /workspace/librelane/runs/RUN_2026-09-02_02-09-59/13-openroad-floorplan/B18_Probton.odb
+set ::env(SAVE_DEF) /workspace/librelane/runs/RUN_2026-09-02_02-09-59/13-openroad-floorplan/B18_Probton.def
+set ::env(SAVE_SDC) /workspace/librelane/runs/RUN_2026-09-02_02-09-59/13-openroad-floorplan/B18_Probton.sdc
+set ::env(SAVE_NL) /workspace/librelane/runs/RUN_2026-09-02_02-09-59/13-openroad-floorplan/B18_Probton.nl.v
+set ::env(SAVE_PNL) /workspace/librelane/runs/RUN_2026-09-02_02-09-59/13-openroad-floorplan/B18_Probton.pnl.v

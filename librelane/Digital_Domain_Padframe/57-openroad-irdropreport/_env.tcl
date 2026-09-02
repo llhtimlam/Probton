@@ -1,5 +1,5 @@
 set ::env(LIB_VOLTAGE) 3.3
-set ::env(CURRENT_SPEF_DEFAULT_CORNER) /workspace/librelane/runs/RUN_2026-08-29_02-02-22/55-openroad-rcx/nom/B18_Probton.nom.spef
+set ::env(CURRENT_SPEF_DEFAULT_CORNER) /workspace/librelane/runs/RUN_2026-09-02_02-09-59/55-openroad-rcx/nom/B18_Probton.nom.spef
 set ::env(STEP_ID) OpenROAD.IRDropReport
 set ::env(TECH_LEF) /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/techlef/gf180mcu_fd_sc_mcu7t5v0__nom.tlef
 set ::env(MACRO_LEFS) ""
@@ -75,5 +75,5 @@ set ::env(CLOCK_WIRE_RC_LAYERS) "Metal2 Metal3 Metal4"
 set ::env(PDN_CONNECT_MACROS_TO_GRID) 1
 set ::env(PDN_ENABLE_GLOBAL_CONNECTIONS) 1
 set ::env(DEDUPLICATE_CORNERS) 0
-set ::env(CURRENT_ODB) /workspace/librelane/runs/RUN_2026-08-29_02-02-22/54-odb-cellfrequencytables/B18_Probton.odb
-set ::env(CURRENT_SPEF) "\"nom_*\" /workspace/librelane/runs/RUN_2026-08-29_02-02-22/55-openroad-rcx/nom/B18_Probton.nom.spef \"min_*\" /workspace/librelane/runs/RUN_2026-08-29_02-02-22/55-openroad-rcx/min/B18_Probton.min.spef \"max_*\" /workspace/librelane/runs/RUN_2026-08-29_02-02-22/55-openroad-rcx/max/B18_Probton.max.spef"
+set ::env(CURRENT_ODB) /workspace/librelane/runs/RUN_2026-09-02_02-09-59/54-odb-cellfrequencytables/B18_Probton.odb
+set ::env(CURRENT_SPEF) "\"nom_*\" /workspace/librelane/runs/RUN_2026-09-02_02-09-59/55-openroad-rcx/nom/B18_Probton.nom.spef \"min_*\" /workspace/librelane/runs/RUN_2026-09-02_02-09-59/55-openroad-rcx/min/B18_Probton.min.spef \"max_*\" /workspace/librelane/runs/RUN_2026-09-02_02-09-59/55-openroad-rcx/max/B18_Probton.max.spef"

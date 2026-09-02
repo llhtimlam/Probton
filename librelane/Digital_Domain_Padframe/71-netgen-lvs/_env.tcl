@@ -68,5 +68,5 @@ set ::env(PAD_ROTATION_CORNER) R0
 set ::env(MAGIC_EXT_USE_GDS) 0
 set ::env(NETGEN_SETUP) /workspace/gf180mcu/gf180mcuD/libs.tech/netgen/gf180mcuD_setup.tcl
 set ::env(LVS_INCLUDE_MARCO_NETLISTS) 0
-set ::env(CURRENT_SPICE) /workspace/librelane/runs/RUN_2026-08-29_02-02-22/69-magic-spiceextraction/B18_Probton.spice
-set ::env(CURRENT_PNL) /workspace/librelane/runs/RUN_2026-08-29_02-02-22/53-openroad-fillinsertion/B18_Probton.pnl.v
+set ::env(CURRENT_SPICE) /workspace/librelane/runs/RUN_2026-09-02_02-09-59/69-magic-spiceextraction/B18_Probton.spice
+set ::env(CURRENT_PNL) /workspace/librelane/runs/RUN_2026-09-02_02-09-59/53-openroad-fillinsertion/B18_Probton.pnl.v
