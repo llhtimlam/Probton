@@ -78,6 +78,6 @@ set ::env(CELL_MAGLEFS) "/workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_sc_m
 set ::env(MAGIC_CAPTURE_ERRORS) 1
 set ::env(MAGIC_DRC_USE_GDS) 1
 set ::env(MAGIC_GDS_FLATGLOB) "\"*_CDNS_*\" \"*\\\$\\\$*\" \"M1_N*\" \"M1_P*\" \"M2_M1*\" \"M3_M2*\" \"nmos_5p0*\" \"nmos_1p2*\" \"pmos_5p0*\" \"pmos_1p2*\" \"via1_*\" \"ypass_gate*\" \"G_ring_*\" \"dcap_103*\" \"din_*\" \"mux821_*\" \"rdummy_*\" \"pmoscap_*\" \"xdec_*\" \"ypredec*\" \"xpredec*\" \"prexdec_*\" \"xdec8_*\" \"xdec16_*\" \"xdec32_*\" \"sa_*\" analog_block"
-set ::env(CURRENT_DEF) /workspace/librelane/runs/RUN_2026-09-02_02-09-59/54-odb-cellfrequencytables/B18_Probton.def
-set ::env(CURRENT_GDS) /workspace/librelane/runs/RUN_2026-09-02_02-09-59/58-magic-streamout/B18_Probton.gds
+set ::env(CURRENT_DEF) /workspace/librelane/runs/RUN_2026-09-02_07-28-27/54-odb-cellfrequencytables/B18_Probton.def
+set ::env(CURRENT_GDS) /workspace/librelane/runs/RUN_2026-09-02_07-28-27/58-magic-streamout/B18_Probton.gds
 set ::env(MACRO_GDS_FILES) ""

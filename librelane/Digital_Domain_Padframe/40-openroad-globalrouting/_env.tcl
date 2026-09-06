@@ -86,6 +86,6 @@ set ::env(PL_OPTIMIZE_MIRRORING) 1
 set ::env(PL_MAX_DISPLACEMENT_X) 800
 set ::env(PL_MAX_DISPLACEMENT_Y) 500
 set ::env(DPL_CELL_PADDING) 2
-set ::env(CURRENT_ODB) /workspace/librelane/runs/RUN_2026-09-02_02-09-59/38-openroad-resizertimingpostcts/B18_Probton.odb
-set ::env(SAVE_ODB) /workspace/librelane/runs/RUN_2026-09-02_02-09-59/40-openroad-globalrouting/B18_Probton.odb
-set ::env(SAVE_DEF) /workspace/librelane/runs/RUN_2026-09-02_02-09-59/40-openroad-globalrouting/B18_Probton.def
+set ::env(CURRENT_ODB) /workspace/librelane/runs/RUN_2026-09-02_07-28-27/38-openroad-resizertimingpostcts/B18_Probton.odb
+set ::env(SAVE_ODB) /workspace/librelane/runs/RUN_2026-09-02_07-28-27/40-openroad-globalrouting/B18_Probton.odb
+set ::env(SAVE_DEF) /workspace/librelane/runs/RUN_2026-09-02_07-28-27/40-openroad-globalrouting/B18_Probton.def

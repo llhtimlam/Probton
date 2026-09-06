@@ -74,6 +74,6 @@ set ::env(PDN_CONNECT_MACROS_TO_GRID) 1
 set ::env(PDN_ENABLE_GLOBAL_CONNECTIONS) 1
 set ::env(DEDUPLICATE_CORNERS) 0
 set ::env(STA_MACRO_PRIORITIZE_NL) 1
-set ::env(CURRENT_NL) /workspace/librelane/runs/RUN_2026-09-02_02-09-59/06-yosys-synthesis/B18_Probton.nl.v
-set ::env(SAVE_SDC) /workspace/librelane/runs/RUN_2026-09-02_02-09-59/12-openroad-staprepnr/B18_Probton.sdc
+set ::env(CURRENT_NL) /workspace/librelane/runs/RUN_2026-09-02_07-28-27/06-yosys-synthesis/B18_Probton.nl.v
+set ::env(SAVE_SDC) /workspace/librelane/runs/RUN_2026-09-02_07-28-27/12-openroad-staprepnr/B18_Probton.sdc
 set ::env(OPENLANE_SDC_IDEAL_CLOCKS) 1

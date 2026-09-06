@@ -79,9 +79,9 @@ set ::env(MAGIC_CAPTURE_ERRORS) 1
 set ::env(MAGIC_ZEROIZE_ORIGIN) 0
 set ::env(MAGIC_DISABLE_CIF_INFO) 1
 set ::env(MAGIC_MACRO_STD_CELL_SOURCE) macro
-set ::env(CURRENT_DEF) /workspace/librelane/runs/RUN_2026-09-02_02-09-59/54-odb-cellfrequencytables/B18_Probton.def
-set ::env(SAVE_GDS) /workspace/librelane/runs/RUN_2026-09-02_02-09-59/58-magic-streamout/B18_Probton.gds
-set ::env(SAVE_MAG_GDS) /workspace/librelane/runs/RUN_2026-09-02_02-09-59/58-magic-streamout/B18_Probton.magic.gds
-set ::env(SAVE_MAG) /workspace/librelane/runs/RUN_2026-09-02_02-09-59/58-magic-streamout/B18_Probton.mag
+set ::env(CURRENT_DEF) /workspace/librelane/runs/RUN_2026-09-02_07-28-27/54-odb-cellfrequencytables/B18_Probton.def
+set ::env(SAVE_GDS) /workspace/librelane/runs/RUN_2026-09-02_07-28-27/58-magic-streamout/B18_Probton.gds
+set ::env(SAVE_MAG_GDS) /workspace/librelane/runs/RUN_2026-09-02_07-28-27/58-magic-streamout/B18_Probton.magic.gds
+set ::env(SAVE_MAG) /workspace/librelane/runs/RUN_2026-09-02_07-28-27/58-magic-streamout/B18_Probton.mag
 set ::env(MACRO_GDS_FILES) ""
 set ::env(MAGTYPE) mag

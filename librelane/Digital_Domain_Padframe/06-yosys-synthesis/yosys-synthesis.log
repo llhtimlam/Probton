@@ -8,7 +8,7 @@
 
 1. Executing Liberty frontend: /foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib
 Imported 229 cell types from liberty file.
-[INFO] Using SDC file '/workspace/librelane/runs/RUN_2026-09-02_02-09-59/06-yosys-synthesis/synthesis.abc.sdc' for ABC…use_slang
+[INFO] Using SDC file '/workspace/librelane/runs/RUN_2026-09-02_07-28-27/06-yosys-synthesis/synthesis.abc.sdc' for ABC…use_slang
 
 2. Executing SLANG frontend.
 Top level design units:
@@ -4203,7 +4203,7 @@ Removed 0 unused cells and 178 unused wires.
 <suppressed ~178 debug messages>
 {
    "creator": "Yosys 0.67 (git sha1 2d1509d1b, Release, GNU /usr/bin/c++ 13.3.0)",
-   "invocation": "stat -json -liberty /workspace/librelane/runs/RUN_2026-09-02_02-09-59/tmp/05f2c5da3e874bf381498a0e77a3f5da.lib ",
+   "invocation": "stat -json -liberty /workspace/librelane/runs/RUN_2026-09-02_07-28-27/tmp/be41eb16aa7a4f2ba824cba5e60eee82.lib ",
    "modules": {
       "\\B18_Probton": {
          "num_wires":         6970,
@@ -4348,7 +4348,7 @@ Mapping DFF cells in module `\B18_Probton':
   mapped 8 $_DFF_PN1_ cells to \gf180mcu_fd_sc_mcu7t5v0__dffsnq_1 cells.
 {
    "creator": "Yosys 0.67 (git sha1 2d1509d1b, Release, GNU /usr/bin/c++ 13.3.0)",
-   "invocation": "stat -json -liberty /workspace/librelane/runs/RUN_2026-09-02_02-09-59/tmp/05f2c5da3e874bf381498a0e77a3f5da.lib ",
+   "invocation": "stat -json -liberty /workspace/librelane/runs/RUN_2026-09-02_07-28-27/tmp/be41eb16aa7a4f2ba824cba5e60eee82.lib ",
    "modules": {
       "\\B18_Probton": {
          "num_wires":         7452,
@@ -4452,25 +4452,25 @@ Mapping DFF cells in module `\B18_Probton':
    Chip area for module '\B18_Probton': 42428.825600
      of which used for sequential elements: 42428.825600 (100.00%)
 
-[INFO] Using generated ABC script '/workspace/librelane/runs/RUN_2026-09-02_02-09-59/06-yosys-synthesis/DELAY_2.abc'…
+[INFO] Using generated ABC script '/workspace/librelane/runs/RUN_2026-09-02_07-28-27/06-yosys-synthesis/DELAY_2.abc'…
 
 145. Executing ABC pass (technology mapping using ABC).
 
-145.1. Extracting gate netlist of module `\B18_Probton' to `/tmp/yosys-abc-V7fR5N/input.blif'..
+145.1. Extracting gate netlist of module `\B18_Probton' to `/tmp/yosys-abc-c3rFLs/input.blif'..
 
 145.1.1. Executed ABC.
 Extracted 7243 gates and 7803 wires to a netlist network with 560 inputs and 562 outputs.
-Running ABC script: /tmp/yosys-abc-V7fR5N/abc.script
+Running ABC script: /tmp/yosys-abc-c3rFLs/abc.script
 ABC: UC Berkeley, ABC 1.01 (compiled Jul 27 2026 18:12:25)
 ABC: abc 01> empty
-ABC: abc 01> source /tmp/yosys-abc-V7fR5N/abc.script
-ABC: + read_blif /tmp/yosys-abc-V7fR5N/input.blif 
-ABC: + read_scl /tmp/yosys-liberty-scl-cache/yosys_merged_59491e72.scl 
+ABC: abc 01> source /tmp/yosys-abc-c3rFLs/abc.script
+ABC: + read_blif /tmp/yosys-abc-c3rFLs/input.blif 
+ABC: + read_scl /tmp/yosys-liberty-scl-cache/yosys_merged_6eed6827.scl 
 ABC: Warning: Detected 6 multi-output cells (for example, "gf180mcu_fd_sc_mcu7t5v0__addf_1").
-ABC: + read_constr -v /workspace/librelane/runs/RUN_2026-09-02_02-09-59/06-yosys-synthesis/synthesis.abc.sdc 
+ABC: + read_constr -v /workspace/librelane/runs/RUN_2026-09-02_07-28-27/06-yosys-synthesis/synthesis.abc.sdc 
 ABC: Setting driving cell to be "gf180mcu_fd_sc_mcu7t5v0__inv_1/ZN".
 ABC: Setting output load to be 72.910004.
-ABC: + source /workspace/librelane/runs/RUN_2026-09-02_02-09-59/06-yosys-synthesis/DELAY_2.abc 
+ABC: + source /workspace/librelane/runs/RUN_2026-09-02_07-28-27/06-yosys-synthesis/DELAY_2.abc 
 ABC: Error: The network is combinational.
 ABC: The cell areas are multiplied by the factor: <num_fanins> ^ (0.90).
 ABC: The cell delays are multiplied by the factor: <num_fanins> ^ (0.20).
@@ -4496,7 +4496,7 @@ ABC: Path 16 --    3268 : 4    1 gf180mcu_fd_sc_mcu7t5v0__aoi211_1 A =  21.95  D
 ABC: Path 17 --    3270 : 4    1 gf180mcu_fd_sc_mcu7t5v0__oai31_1  A =  24.15  Df =19278.3-4524.9 ps  S =5900.7 ps  Cin =  4.4 ff  Cout =  72.9 ff  Cmax = 107.3 ff  G = 1649  
 ABC: Start-point = pi244 (\wrapper_inst.digital_domain_inst.raw_edge1_x [8]).  End-point = po119 ($auto$rtlil.cc:3510:MuxGate$29791).
 ABC: netlist                       : i/o =  560/  562  lat =    0  nd =  6101  edge =  17403  area =44662.35  delay =10290.49  lev = 25
-ABC: + write_blif /tmp/yosys-abc-V7fR5N/output.blif 
+ABC: + write_blif /tmp/yosys-abc-c3rFLs/output.blif 
 ABC:                                                                                
 ABC: YOSYS_ABC_DONE 
 
@@ -4556,7 +4556,7 @@ Checking module B18_Probton...
 Found and reported 0 problems.
 {
    "creator": "Yosys 0.67 (git sha1 2d1509d1b, Release, GNU /usr/bin/c++ 13.3.0)",
-   "invocation": "stat -json -liberty /workspace/librelane/runs/RUN_2026-09-02_02-09-59/tmp/05f2c5da3e874bf381498a0e77a3f5da.lib ",
+   "invocation": "stat -json -liberty /workspace/librelane/runs/RUN_2026-09-02_07-28-27/tmp/be41eb16aa7a4f2ba824cba5e60eee82.lib ",
    "modules": {
       "\\B18_Probton": {
          "num_wires":         6773,

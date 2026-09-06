@@ -79,7 +79,7 @@ set ::env(MAGIC_CAPTURE_ERRORS) 1
 set ::env(MAGIC_LEF_WRITE_USE_GDS) 0
 set ::env(MAGIC_WRITE_FULL_LEF) 0
 set ::env(MAGIC_WRITE_LEF_PINONLY) 0
-set ::env(CURRENT_GDS) /workspace/librelane/runs/RUN_2026-09-02_02-09-59/58-magic-streamout/B18_Probton.gds
-set ::env(CURRENT_DEF) /workspace/librelane/runs/RUN_2026-09-02_02-09-59/54-odb-cellfrequencytables/B18_Probton.def
-set ::env(SAVE_LEF) /workspace/librelane/runs/RUN_2026-09-02_02-09-59/61-magic-writelef/B18_Probton.lef
+set ::env(CURRENT_GDS) /workspace/librelane/runs/RUN_2026-09-02_07-28-27/58-magic-streamout/B18_Probton.gds
+set ::env(CURRENT_DEF) /workspace/librelane/runs/RUN_2026-09-02_07-28-27/54-odb-cellfrequencytables/B18_Probton.def
+set ::env(SAVE_LEF) /workspace/librelane/runs/RUN_2026-09-02_07-28-27/61-magic-writelef/B18_Probton.lef
 set ::env(MACRO_GDS_FILES) ""

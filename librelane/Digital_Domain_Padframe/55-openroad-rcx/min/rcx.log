@@ -97,13 +97,13 @@ Reading gpio pad LEF file at '/workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd
 The NOWIREEXTENSIONATPIN statement will be ignored. See file /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_ws_io__dvss.lef at line 2.
 
 [INFO ODB-0227] LEF file: /workspace/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_io/lef/gf180mcu_ws_io__dvss.lef, created 1 library cells
-[INFO ODB-0127] Reading DEF file: /workspace/librelane/runs/RUN_2026-09-02_02-09-59/54-odb-cellfrequencytables/B18_Probton.def
+[INFO ODB-0127] Reading DEF file: /workspace/librelane/runs/RUN_2026-09-02_07-28-27/54-odb-cellfrequencytables/B18_Probton.def
 [INFO ODB-0128] Design: B18_Probton
 [INFO ODB-0130]     Created 123 pins.
 [INFO ODB-0131]     Created 43668 components and 192768 component-terminals.
 [INFO ODB-0132]     Created 2 special nets and 161014 connections.
 [INFO ODB-0133]     Created 9669 nets and 31702 connections.
-[INFO ODB-0134] Finished DEF file: /workspace/librelane/runs/RUN_2026-09-02_02-09-59/54-odb-cellfrequencytables/B18_Probton.def
+[INFO ODB-0134] Finished DEF file: /workspace/librelane/runs/RUN_2026-09-02_07-28-27/54-odb-cellfrequencytables/B18_Probton.def
 Using RCX ruleset '/workspace/gf180mcu/gf180mcuD/libs.tech/librelane/rules.openrcx.gf180mcuD.min'…
 [INFO RCX-0431] Defined process_corner CURRENT_CORNER with ext_model_index 0
 [INFO RCX-0029] Defined extraction corner CURRENT_CORNER
@@ -128,5 +128,5 @@ Cell type report:                       Count       Area
   Tie cell                                 93     816.61
   Standard cell                          9611  244027.21
   Total                                 43668  973608.52
-Writing extracted parasitics to '/workspace/librelane/runs/RUN_2026-09-02_02-09-59/55-openroad-rcx/min/B18_Probton.min.spef'…
+Writing extracted parasitics to '/workspace/librelane/runs/RUN_2026-09-02_07-28-27/55-openroad-rcx/min/B18_Probton.min.spef'…
 [INFO RCX-0443] 9669 nets finished
