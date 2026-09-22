@@ -17,6 +17,10 @@ project:
   discord: "timlam0531"                   # Optional: Discord username (for support / communication)
   description: "Dithering Auto Aligner Processor"  # Short one-line description
   lvs_config: "lvs/lvs_config.json"
+  gf_def_ready: true
+  ws_def_ready: true
+  drc_ready: true
+  lvs_ready: true
 
 # Bottom left to Upper left to Upper right (1/4 of 2.235μm x 2.235μm)
 pins:
